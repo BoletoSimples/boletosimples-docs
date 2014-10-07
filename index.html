@@ -53,13 +53,13 @@
       <div class="row">
 
         <!--Side menu-->
-        <div class="col-lg-3">
+        <aside class="col-lg-3">
           <p>Documentação</p>
           <ul class="nav">
-            <li>
+            <li class="active">
               <a href="index.html" title="Começando">Começando</a>
             </li>
-            <li>
+            <li class="submenu">
               <a href="#autenticacao" title="Autenticação">Autenticação</a>
               <ul class="nav">
                 <li>
@@ -92,7 +92,7 @@
               <a href="#app-register" title="Registre um app">Registre um app</a>
             </li>
           </ul>
-        </div>
+        </aside>
         <!--Side menu-->
 
         <!--Main Content-->
@@ -299,6 +299,13 @@
   <footer>
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        $('aside .nav a').click(function(){
+          $(this).parent().toggleClass('active')
+        });
+      });
+    </script>
   </footer>
 
 </body>
