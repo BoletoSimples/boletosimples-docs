@@ -1,7 +1,57 @@
 @import url("bootstrap.min.css");
 @import url("bootstrap-theme.min.css");
 
+/*resets*/
+
+a:hover {
+  color: #008de4;
+  text-decoration: none;
+}
+
+body {
+  color: #4d4d4d;
+  font-family: 'Open Sans', helvetica, sans-serif;
+  font-size: 14px;
+}
+
+.btn {
+  border: none;
+  padding: 10px 20px;
+}
+
+.btn-primary {
+  background: #008de4;
+}
+
+/******************************************************************************/
+
 /*Header*/
+header {
+  border-bottom: solid 1px #ecf0f1;
+  padding: 20px 0;
+}
+
+header .logo { margin: 6px 0 0 0; }
+
+header nav ul { margin: 0; }
+
+header nav li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+header nav li:last-child { margin-right: 0; }
+
+header nav li a {
+  color: rgba(44,62,80,0.6);
+  font-size: 0.95em;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+header .btn { font-weight: 300; }
 
 /******************************************************************************/
 
