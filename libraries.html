@@ -11,7 +11,7 @@
 
   <title>
 
-      Notificações - Boleto Simples API
+      Bibliotecas - Boleto Simples API
 
   </title>
 
@@ -76,10 +76,10 @@
             <li>
               <a href="#permissions" title="Permissões">Permissões</a>
             </li>
-            <li class="active">
+            <li>
               <a href="notifications.html" title="Notificações">Notificações</a>
             </li>
-            <li>
+            <li class="active">
               <a href="libraries.html" title="Bibliotecas">Bibliotecas</a>
             </li>
             <li>
@@ -96,33 +96,54 @@
         <div class="content col-lg-9">
           <article>
 
-            <h2>Notificações</h2>
+            <h2>Bibliotecas</h2>
 
-            <p>O Boleto Simples envia notificações para um sistema externo após algum evento ocorrer no boleto.</p>
+            <p>Bibliotecas podem ajudar você a integrar rapidamente seu sistema ao Boleto Simples.</p>
 
-            <p>
-              Essas notificações são realizadas através de uma requisição
-              <code>HTTP POST</code> no endereço configurado no
-              <code>boleto</code> ou na <br/>
-              <code>conta do usuário</code> através do campo <code>notification_url</code>.
-            </p>
+            <p>Note que se você está usando autenticação OAuth2,
+              na maioria das vezes usar a biblioteca OAuth2 oficial da sua linguagem é a melhor escolha e proporciona maior
+              rapidez na integração.</p>
 
-            <p>Os logs das notificações realizadas são salvos.</p>
+            <p><a href="https://github.com/boletosimples/" target="_blank">Nós disponibilizamos todas as nossas bibliotecas e plugins aqui.</a></p>
 
-            <p>Parâmetros passados na requisição:</p>
+            <h3>Bibliotecas Oficiais</h3>
 
-            <pre>
-id => ID no Boleto Simples
-our_number => Código
-expire_at => Data de Vencimento
-customer_person_name => Nome/Razão Social do Pagador
-customer_cnpj_cpf => CNPJ/CPF do Pagador
-amount => Valor do Boleto
-paid_amount => Valor Pago
-paid_at => Data do Pagamento
-status => Situação do Boleto (generating, opened, cancelled, paid)
-shortener_url => URL pública do Boleto
-            </pre>
+            <ul>
+              <li>
+                <a href="http://rubygems.org/gems/boletosimples" target="_blank">boletosimples</a> - Ruby gem para
+                a API do Boleto Simples
+              </li>
+              <li>
+                <a href="https://github.com/BoletoSimples/boletosimples-ruby" target="_blank">boletosimples-ruby</a> - Fonte
+                da Ruby gem para a API do Boleto Simples
+              </li>
+
+              <li>
+                <a href="http://rubygems.org/gems/omniauth-boletosimples" target="_blank">omniauth-boletosimples</a> - Ruby
+                Omniauth gem para
+                a API do Boleto Simples
+              </li>
+              <li>
+                <a href="https://github.com/BoletoSimples/omniauth-boletosimples" target="_blank">omniauth-boletosimples</a> -
+                Fonte
+                da Ruby Omniauth gem para a API do Boleto Simples
+              </li>
+            </ul>
+
+            <h3>Aplicações e códigos de exemplos</h3>
+
+            <ul>
+              <li>
+                <a href="https://github.com/BoletoSimples/login-with-boletosimples-demo-rails" target="_blank">login-with-boletosimples-demo-rails</a>
+                - Exemplo utilizando a gem omniauth-boletosimples para auntenticar por Oauth2
+              </li>
+            </ul>
+
+            <div class="alert alert-info">Nós planejamos lançar novas bibliotecas no futuro. Se você desenvolver uma
+              biblioteca que seja pública e deseja que listemos aqui,
+              por favor entre em contato pelo <a href="http://suporte.boletosimples.com.br" target="_blank">suporte</a>.
+              Nós ficaremos felizes em divulgar o seu trabalho.
+            </div>
 
           </article>
         </div>
