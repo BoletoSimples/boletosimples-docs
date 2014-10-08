@@ -11,7 +11,7 @@
 
   <title>
 
-      Permissões - Boleto Simples API
+      Notificações - Boleto Simples API
 
   </title>
 
@@ -73,10 +73,10 @@
                 </li>
               </ul>
             </li>
-            <li class="active">
-              <a href="permissions.html" title="Permissões">Permissões</a>
-            </li>
             <li>
+              <a href="#permissions" title="Permissões">Permissões</a>
+            </li>
+            <li class="active">
               <a href="notifications.html" title="Notificações">Notificações</a>
             </li>
             <li>
@@ -96,49 +96,33 @@
         <div class="content col-lg-9">
           <article>
 
-            <h2>Permissões da API</h2>
+            <h2>Notificações</h2>
 
-            <p>Quando autenticar o usuário com OAuth2, você pode especificar quais dados o token terá acesso.</p>
+            <p>O Boleto Simples envia notificações para um sistema externo após algum evento ocorrer no boleto.</p>
 
-            <p>Aqui está a lista de todas as permissões que você pode solicitar:</p>
-            <dl class="dl-horizontal">
-              <dt>login</dt>
-              <dd>Autenticar com seu usuário</dd>
-              <dt>email</dt>
-              <dd>Visualizar ao seu endereço de e-mail</dd>
-              <dt>profile</dt>
-              <dd>Visualizar dados da sua conta</dd>
-              <dt>address</dt>
-              <dd>Visualizar seu endereço</dd>
-              <dt>phone</dt>
-              <dd>Visualizar seu telefone</dd>
-              <dt>banking</dt>
-              <dd>Visualizar seus dados bancários</dd>
-              <dt>business</dt>
-              <dd>Visualizar seus dados da empresa</dd>
-              <dt>write</dt>
-              <dd>Criar e visualizar boletos bancários e clientes</dd>
-              <dt>read</dt>
-              <dd>Visualizar boletos bancários, clientes e extrato de transações</dd>
-              <dt>webhook</dt>
-              <dd>Receber notificações a cada mudança de status dos boletos</dd>
-            </dl>
+            <p>
+              Essas notificações são realizadas através de uma requisição
+              <code>HTTP POST</code> no endereço configurado no
+              <code>boleto</code> ou na <br/>
+              <code>conta do usuário</code> através do campo <code>notification_url</code>.
+            </p>
 
-            <h3>OAuth2</h3>
+            <p>Os logs das notificações realizadas são salvos.</p>
 
-            <p>Para OAuth2, permissões são acessadas através do parâmetro <code>scope</code> em sua requisição OAuth2.</p>
+            <p>Parâmetros passados na requisição:</p>
 
-            <p>Por exemplo, sua aplicação pode precisar logar como o usuário para gerar boletos,
-              porém não precisará saber quais são os dados bancários do usuário.</p>
-
-            <p>A permissão padrão é <code>login</code>. Caso você não especifice um scope;</p>
-
-            <p>Isso dará permissão para logar como o usuário e gerar boletos.
-              Você pode solicitar permissões individuais ou em grupo.
-              Permissões em grupo devem ser separadas com caracter<code>+</code> na URL.</p>
-
-            <p>Aqui um exemplo de URL de requisição com parâmetro <code>scope</code> no final:</p>
-            <pre>https://boletosimples.com.br/api/v1/oauth/authorize?response_type=code&amp;client_id=YOUR_CLIENT_ID&amp;redirect_uri=YOUR_CALLBACK_URL&amp;scope=login+email+profile</pre>
+            <pre>
+id => ID no Boleto Simples
+our_number => Código
+expire_at => Data de Vencimento
+customer_person_name => Nome/Razão Social do Pagador
+customer_cnpj_cpf => CNPJ/CPF do Pagador
+amount => Valor do Boleto
+paid_amount => Valor Pago
+paid_at => Data do Pagamento
+status => Situação do Boleto (generating, opened, cancelled, paid)
+shortener_url => URL pública do Boleto
+            </pre>
 
           </article>
         </div>
