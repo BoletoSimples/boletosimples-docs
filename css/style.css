@@ -77,6 +77,17 @@ aside .nav > li > a {
   padding: 5px 5px !important;
 }
 
+.affix {
+	position: fixed;
+	top: 60px;
+}
+.affix-top {
+	position: static;
+}
+.affix-bottom {
+	position: absolute;
+}
+
 .nav > li > a:hover,
 .nav > li.active > a {
   background-color: #fff !important;
