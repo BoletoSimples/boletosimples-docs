@@ -231,7 +231,7 @@
              <p>
                Erro 500 significa que a aplicação está completamente indisponível,
                mas você pode receber também outros erros
-               da família 500 em casos específicos, tais como <code>502 Bad Gateway</code>,
+               da família 500 em casos específicos, tais como <code>502 Bad Gateway</code>, <br/>
                <code>503 Service Unavailable</code> ou <code>504 Gateway
                Timeout</code>.
              </p>
@@ -275,7 +275,7 @@
              <p>
                A cada requisição realizada, o servidor retorna os headers
                <code>X-RateLimit-Limit</code> e
-               <code>X-RateLimit-Remaining</code> com o
+               <br/><code>X-RateLimit-Remaining</code> com o
                número de requisições permitidas e o número de requisições
                restantes para aquela hora. Exemplo:
              </p>
@@ -305,7 +305,7 @@
 
              <p>
                Caso atinja o número máximo de requisições dentro de uma hora,
-               o servidor retorna o status <code>HTTP 429 Too Many Requests</code>.
+               o servidor retorna o status <br/> <code>HTTP 429 Too Many Requests</code>.
                Neste caso, você deve esperar até o primeiro minuto da hora
                seguinte para realizar a próxima requisição.
              </p>
