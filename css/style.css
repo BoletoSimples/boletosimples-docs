@@ -1,5 +1,6 @@
 @import url("bootstrap.min.css");
 @import url("bootstrap-theme.min.css");
+@import url("offcanvas.css");
 
 /*resets*/
 
@@ -21,6 +22,15 @@ body {
 
 .btn-primary {
   background: #008de4;
+}
+
+.icon-bar {
+  background-color: #fff;
+  border-radius: 1px;
+  display: block;
+  height: 2px;
+  margin: 3px 0;
+  width: 22px;
 }
 
 /******************************************************************************/
@@ -104,6 +114,38 @@ aside .nav > li > a {
 }
 
 .nav > li.submenu.active > .nav { display: block; }
+
+/*Off canvas Navigation*/
+.sidebar-offcanvas {
+  background: #f9f9f9;
+  padding: 0;
+}
+
+.sidebar-offcanvas p {
+  color: #2f4255;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 20px 10px 10px;
+  text-transform: uppercase;
+}
+
+.sidebar-offcanvas ul {
+   list-style: none;
+   padding: 0;
+}
+
+.sidebar-offcanvas ul li {
+  border-bottom: solid 1px #ecf0f1;
+  margin: 5px 0;
+  padding: 10px;
+}
+
+.sidebar-offcanvas ul li:last-child { border: none; }
+
+.sidebar-offcanvas ul li a {
+  font-weight: 300;
+  letter-spacing: 0.03em;
+}
 
 /*Article*/
 hgroup {
@@ -267,4 +309,8 @@ footer .copyright p {
   .container {
     width: 960px !important;
   }
+}
+
+@media (max-width:1199px) {
+  article { margin: 0; }
 }
