@@ -55,9 +55,9 @@
 
   <section class="main">
     <div class="container">
-
       <div class="row row-offcanvas row-offcanvas-right">
 
+        <!--Sidebar visibe only in mobile devices-->
         <div class="hidden-lg col-xs-6 col-sm-6 col-md-6 sidebar-offcanvas" id="sidebar" role="navigation">
           <nav class="main-menu">
             <ul>
@@ -108,6 +108,7 @@
             </li>
           </ul>
         </div>
+        <!--Sidebar visibe only in mobile devices-->
 
         <!--Side menu-->
         <aside class="col-lg-3 visible-lg">
@@ -450,8 +451,11 @@
 
   <script>
     $(document).ready(function () {
-      $('[data-toggle="offcanvas"]').click(function () {
-        $('.row-offcanvas').toggleClass('active')
+      $('[data-toggle="offcanvas"]').focus(function () {
+        $('.row-offcanvas').addClass('active')
+      });
+      $('[data-toggle="offcanvas"]').focusout(function () {
+        $('.row-offcanvas').removeClass('active')
       });
     });
   </script>

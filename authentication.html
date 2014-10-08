@@ -32,7 +32,7 @@
       <a class="logo pull-left" href="index.html" title="inicio">
         <img src="img/logo.png" alt="logotipo boleto simples" height="30"/>
       </a>
-      <nav class="pull-right">
+      <nav class="pull-right visible-lg">
         <ul>
           <li>
             <a href="http://boletosimples.com.br" title="ir para o site">Início</a>
@@ -45,15 +45,73 @@
           </li>
         </ul>
       </nav>
+      <button type="button" class="hidden-lg btn btn-primary btn-xs pull-right" data-toggle="offcanvas">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
     </div>
   </header>
 
   <section class="main">
     <div class="container">
-      <div class="row">
+      <div class="row row-offcanvas row-offcanvas-right">
+
+        <!--Sidebar visibe only in mobile devices-->
+        <div class="hidden-lg col-xs-6 col-sm-6 col-md-6 sidebar-offcanvas" id="sidebar" role="navigation">
+          <nav class="main-menu">
+            <ul>
+              <li>
+                <a href="http://boletosimples.com.br" title="ir para o site">Início</a>
+              </li>
+              <li>
+                <a href="http://boletosimples.com.br/preco" title="Preço">Preço</a>
+              </li>
+              <li>
+                <a href="https://boletosimples.com.br/users/sign_in" title="Logar">Login</a>
+              </li>
+            </ul>
+          </nav>
+          <p>Documentação</p>
+          <ul class="nav">
+            <li>
+              <a href="index.html" title="Começando">Começando</a>
+            </li>
+            <li class="submenu active">
+              <a href="authentication.html" title="Autenticação">Autenticação</a>
+              <ul class="nav">
+                <li>
+                  <a href="#basic_auth" title="Email + Senha">Email + Senha</a>
+                </li>
+                <li>
+                  <a href="#oauth2" title="Autenticação Oauth2">Autenticação Oauth2</a>
+                </li>
+                <li>
+                  <a href="#security" title="Segurança">Segurança</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="permissions.html" title="Permissões">Permissões</a>
+            </li>
+            <li>
+              <a href="notifications.html" title="Notificações">Notificações</a>
+            </li>
+            <li>
+              <a href="libraries.html" title="Bibliotecas">Bibliotecas</a>
+            </li>
+            <li>
+              <a href="https://boletosimples.com.br/docs/api/reference" target="_blank" title="APIs Disponíveis">APIs Disponíveis</a>
+            </li>
+            <li>
+              <a href="https://boletosimples.zendesk.com/hc/pt-br" target="_blank" title="Registre um app">Registre um app</a>
+            </li>
+          </ul>
+        </div>
+        <!--Sidebar visibe only in mobile devices-->
 
         <!--Side menu-->
-        <aside class="col-lg-3">
+        <aside class="col-lg-3 visible-lg">
           <div class="affix" data-spy="affix" data-offset-top="60" data-offset-bottom="450" >
             <p>Documentação</p>
             <ul class="nav">
@@ -371,6 +429,7 @@ POST   https://boletosimples.com.br/api/v1/oauth/token         endpoint para ger
 
   <script src="js/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
+
   <script>
     $(document).ready(function(){
       $('aside .nav .submenu a').click(function(){
@@ -378,6 +437,17 @@ POST   https://boletosimples.com.br/api/v1/oauth/token         endpoint para ger
       });
     });
 
+  </script>
+
+  <script>
+    $(document).ready(function () {
+      $('[data-toggle="offcanvas"]').focus(function () {
+        $('.row-offcanvas').addClass('active')
+      });
+      $('[data-toggle="offcanvas"]').focusout(function () {
+        $('.row-offcanvas').removeClass('active')
+      });
+    });
   </script>
 
 </body>

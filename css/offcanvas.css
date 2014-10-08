@@ -39,6 +39,7 @@ body {
 
   .row-offcanvas-right.active {
     right: 50%; /* 6 columns */
+    min-height: 675px;
   }
 
   .row-offcanvas-left.active {
