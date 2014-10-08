@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Boleto simples API documentation">
+  <meta name="keywords" content="boleto, boleto simples, api, documentação, documentation">
+  <meta name="author" content="Boleto Simples">
+
+  <title>
+
+      Permissões - Boleto Simples API
+
+  </title>
+
+  <link href="css/style.css" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.ico">
+
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300' rel='stylesheet' type='text/css'>
+
+</head>
+
+
+<body>
+
+  <header>
+    <div class="container">
+      <a class="logo pull-left" href="index.html" title="inicio">
+        <img src="img/logo.png" alt="logotipo boleto simples" height="30"/>
+      </a>
+      <nav class="pull-right">
+        <ul>
+          <li>
+            <a href="http://boletosimples.com.br" title="ir para o site">Início</a>
+          </li>
+          <li>
+            <a href="http://boletosimples.com.br/preco" title="Preço">Preço</a>
+          </li>
+          <li>
+            <a class="btn btn-primary" href="https://boletosimples.com.br/users/sign_in" title="Logar">Login</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="main">
+    <div class="container">
+      <div class="row">
+
+        <!--Side menu-->
+        <aside class="col-lg-3">
+          <p>Documentação</p>
+          <ul class="nav">
+            <li>
+              <a href="index.html" title="Começando">Começando</a>
+            </li>
+            <li class="submenu">
+              <a href="authentication.html" title="Autenticação">Autenticação</a>
+              <ul class="nav">
+                <li>
+                  <a href="#basic_auth" title="Email + Senha">Email + Senha</a>
+                </li>
+                <li>
+                  <a href="#oauth2" title="Autenticação Oauth2">Autenticação Oauth2</a>
+                </li>
+                <li>
+                  <a href="#security" title="Segurança">Segurança</a>
+                </li>
+              </ul>
+            </li>
+            <li class="active">
+              <a href="#permissions" title="Permissões">Permissões</a>
+            </li>
+            <li>
+              <a href="#notifications" title="Notificações">Notificações</a>
+            </li>
+            <li>
+              <a href="#libraries" title="Bibliotecas">Bibliotecas</a>
+            </li>
+            <li>
+              <a href="#available-apis" title="APIs Disponíveis">APIs Disponíveis</a>
+            </li>
+            <li>
+              <a href="#app-register" title="Registre um app">Registre um app</a>
+            </li>
+          </ul>
+        </aside>
+        <!--Side menu-->
+
+        <!--Main Content-->
+        <div class="content col-lg-9">
+          <article>
+
+            <h2>Permissões da API</h2>
+
+            <p>Quando autenticar o usuário com OAuth2, você pode especificar quais dados o token terá acesso.</p>
+
+            <p>Aqui está a lista de todas as permissões que você pode solicitar:</p>
+            <dl class="dl-horizontal">
+              <dt>login</dt>
+              <dd>Autenticar com seu usuário</dd>
+              <dt>email</dt>
+              <dd>Visualizar ao seu endereço de e-mail</dd>
+              <dt>profile</dt>
+              <dd>Visualizar dados da sua conta</dd>
+              <dt>address</dt>
+              <dd>Visualizar seu endereço</dd>
+              <dt>phone</dt>
+              <dd>Visualizar seu telefone</dd>
+              <dt>banking</dt>
+              <dd>Visualizar seus dados bancários</dd>
+              <dt>business</dt>
+              <dd>Visualizar seus dados da empresa</dd>
+              <dt>write</dt>
+              <dd>Criar e visualizar boletos bancários e clientes</dd>
+              <dt>read</dt>
+              <dd>Visualizar boletos bancários, clientes e extrato de transações</dd>
+              <dt>webhook</dt>
+              <dd>Receber notificações a cada mudança de status dos boletos</dd>
+            </dl>
+
+            <h3>OAuth2</h3>
+
+            <p>Para OAuth2, permissões são acessadas através do parâmetro <code>scope</code> em sua requisição OAuth2.</p>
+
+            <p>Por exemplo, sua aplicação pode precisar logar como o usuário para gerar boletos,
+              porém não precisará saber quais são os dados bancários do usuário.</p>
+
+            <p>A permissão padrão é <code>login</code>. Caso você não especifice um scope;</p>
+
+            <p>Isso dará permissão para logar como o usuário e gerar boletos.
+              Você pode solicitar permissões individuais ou em grupo.
+              Permissões em grupo devem ser separadas com caracter<code>+</code> na URL.</p>
+
+            <p>Aqui um exemplo de URL de requisição com parâmetro <code>scope</code> no final:</p>
+            <pre>https://boletosimples.com.br/api/v1/oauth/authorize?response_type=code&amp;client_id=YOUR_CLIENT_ID&amp;redirect_uri=YOUR_CALLBACK_URL&amp;scope=login+email+profile</pre>
+
+          </article>
+        </div>
+        <!--Main Content-->
+
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        $('aside .nav a').click(function(){
+          $(this).parent().toggleClass('active')
+        });
+      });
+    </script>
+  </footer>
+
+</body>

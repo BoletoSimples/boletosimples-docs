@@ -118,6 +118,11 @@ article h3 {
   font-weight: 700;
 }
 
+article code {
+  background-color: #e64848;
+  color: #fff;
+}
+
 hgroup h2,
 hgroup h3,
 hgroup h4 {
