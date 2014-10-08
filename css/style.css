@@ -131,6 +131,28 @@ hgroup h4 {
   font-weight: 700;
 }
 
+.panel { border: solid 1px #cccccc; }
+
+.panel pre {
+  margin: 0;
+}
+
+.panel small {
+  display: inline-block;
+  margin: 20px 0 0 0;
+}
+
+.panel .panel-heading {
+  background: #2a86c1;
+  border-bottom: solid 1px #cccccc;
+  border-radius: 4px 4px 0 0;
+  padding: 20px 15px;
+}
+
+.panel .panel-heading p {
+  color: #fff;
+  margin: 0;
+}
 
 /******************************************************************************/
 

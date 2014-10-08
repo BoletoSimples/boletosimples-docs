@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Boleto simples API documentation">
+  <meta name="keywords" content="boleto, boleto simples, api, documentação, documentation">
+  <meta name="author" content="Boleto Simples">
+
+  <title>
+
+      Autenticação - Boleto Simples API
+
+  </title>
+
+  <link href="css/style.css" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.ico">
+
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300' rel='stylesheet' type='text/css'>
+
+</head>
+
+
+<body>
+
+  <header>
+    <div class="container">
+      <a class="logo pull-left" href="index.html" title="inicio">
+        <img src="img/logo.png" alt="logotipo boleto simples" height="30"/>
+      </a>
+      <nav class="pull-right">
+        <ul>
+          <li>
+            <a href="http://boletosimples.com.br" title="ir para o site">Início</a>
+          </li>
+          <li>
+            <a href="http://boletosimples.com.br/preco" title="Preço">Preço</a>
+          </li>
+          <li>
+            <a class="btn btn-primary" href="https://boletosimples.com.br/users/sign_in" title="Logar">Login</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="main">
+    <div class="container">
+      <div class="row">
+
+        <!--Side menu-->
+        <aside class="col-lg-3">
+          <p>Documentação</p>
+          <ul class="nav">
+            <li>
+              <a href="index.html" title="Começando">Começando</a>
+            </li>
+            <li class="submenu active">
+              <a href="authentication.html" title="Autenticação">Autenticação</a>
+              <ul class="nav">
+                <li>
+                  <a href="#basic_auth" title="Email + Senha">Email + Senha</a>
+                </li>
+                <li>
+                  <a href="#oauth2" title="Autenticação Oauth2">Autenticação Oauth2</a>
+                </li>
+                <li>
+                  <a href="#security" title="Segurança">Segurança</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#permissions" title="Permissões">Permissões</a>
+            </li>
+            <li>
+              <a href="#notifications" title="Notificações">Notificações</a>
+            </li>
+            <li>
+              <a href="#libraries" title="Bibliotecas">Bibliotecas</a>
+            </li>
+            <li>
+              <a href="#available-apis" title="APIs Disponíveis">APIs Disponíveis</a>
+            </li>
+            <li>
+              <a href="#app-register" title="Registre um app">Registre um app</a>
+            </li>
+          </ul>
+        </aside>
+        <!--Side menu-->
+
+        <!--Main Content-->
+        <div class="content col-lg-9">
+          <article>
+
+            <h2>Api de autenticação</h2>
+
+            <p>Nós oferecemos duas formas de autenticação para acessar a API do Boleto Simples:</p>
+
+            <table class="table table-bordered features">
+              <thead>
+              <tr>
+                <th>Método</th>
+                <th>Melhor para</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td><a href="#basic_auth"><i class="fa fa-lock"></i> Email + Senha</a></td>
+                <td>Acessar sua prórpia conta.</td>
+              </tr>
+              <tr>
+                <td><a href="#oauth2"><i class="fa fa-lock"></i> OAuth2</a></td>
+                <td>Permite conseguir permissões para acessar contas de terceiros.</td>
+              </tr>
+              </tbody>
+            </table>
+
+            <hgroup>
+              <h2 id="basic_auth"> Email + Senha </h2>
+              <h4>
+                Nós recomendamos essa opção se você precisar apenas acessar a
+                sua conta.
+              </h4>
+            </hgroup>
+
+            <p> Como começar </p>
+
+            <p>Exemplo:</p>
+
+            <small>Requisição:</small>
+
+            <pre>
+curl "http://boletosimples.com.br/api/v1/userinfo" -X GET \
+-H "User-Agent: Meu e-Commerce (meuecommerce@example.com)" \
+-u EMAIL:SENHA \
+-H "Accept: application/json" \
+-H "Content-Type: application/json"
+            </pre>
+
+            <small>Resposta:</small>
+
+            <pre>{"id":1016,"email":"EMAIL","account_type":"individual","cpf":"142.578.243-44","address_street_name":"Av. Burkhard Hehn Simões","address_state":"RJ","address_neighborhood":"São Francisco","address_postal_code":"24360-440","address_number":"120","address_complement":"709","phone_number":"2199999999","banking_agency_number":"4042","banking_account_number":"8873","banking_account_digit":"0","withdrawal_period":"biweekly","notification_url":"http://example.com.br/notify","banking_agency_digit":"8","first_name":"Margret","middle_name":"Simões","last_name":"Gonçalo","date_of_birth":"1970-03-01","business_category":1000,"business_subcategory":2173,"business_website":"http://example.com.br","business_name":"Sebastian Elias Publicidade LTDA.","business_type":"mei","business_cnpj":"18.174.681/0001-70","address_city_name":"Rio de Janeiro","banking_bank_number":"001","full_name":"Margret Simões Gonçalo","balance":100.0}</pre>
+
+            <p>O <code>EMAIL</code> deve ser trocado pelo email usado para acessar sua conta.</p>
+
+            <p>A <code>SENHA</code> deve ser trocada pela senha usada para acessar sua conta.</p>
+
+            <hgroup>
+              <h2 id="oauth2"> Autenticação OAuth2 </h2>
+              <h4>Nós recomendamos essa opção caso sua app necessite acessar contas de terceiros. </h4>
+            </hgroup>
+
+            <p>
+              O protocolo <a href="http://en.wikipedia.org/wiki/OAuth#OAuth_2.0"> OAuth2</a>
+              permite o acesso parcial ou total por terceiros sem necessidade de
+              compartilhar sua senha. É mais complexo que acessar por usuário
+              e senha mas é mais flexível. OAuth2 funciona muito bem para
+              aplicações web, assim como para desktop e mobile.
+            </p>
+
+            <p>
+              Há bibliotecas OAuth2 para quase todas as linguagens visto que é
+              um protocolo amplamente utilizado na industria
+              de software e por empresas como like Google e Facebook.
+            </p>
+
+            <h3>Registro</h3>
+
+            <p>
+              Para começar você precisa
+              <a href="http://suporte.boletosimples.com.br" target="_blank">solicitar o cadastro da sua aplicação</a>
+              em nossos servidores. Nós te enviaremos um <code>client_id</code>
+              e <code>client_secret</code>.
+            </p>
+
+            <p>
+              Você também deverá nos fornecer uma URL de redirecionamento
+              <code>redirect_uri</code> para o seu site. Se você desenvolve
+              para desktop ou mobile, veja na seção a baixo como configurar a
+              <code>redirect_uri</code>.
+            </p>
+
+            <p>OAuth2 requer que o usuário autorize o acesso da sua app à conta dele. Para autenticar o usuário no OAuth2:</p>
+
+            <ul>
+              <li>Use o <code>client_id</code> e <code>client_secret</code> que você obteve conosco durante o registro para
+                gerar uma <code>authorize_url</code> e redirecionar o usuário para esta url. Opcionalmente inclua o
+                <code>scope</code> para acessar alguma <a href="/docs/api/permissions">informação em específico</a>.
+              </li>
+              <li>Se o usuário autorizar sua app, ele será redirecionado para a <code>redirect_uri</code> que você configurou
+                no registro com o parâmetro <code>code</code>.
+              </li>
+              <li>Use o parâmetro <code>code</code> na url para gerar um <code>access_token</code></li>
+              <li>Use o <code>access_token</code> para fazer as requisições em nome do usuário.</li>
+            </ul>
+
+            <h3>Exemplos</h3>
+
+            <div class="panel">
+              <div class="panel-heading">
+                <p>Oauth2 em Ruby</p>
+              </div>
+              <div class="panel-body">
+                <div class="highlight" style="">
+                  <pre><span class="nb">require</span> <span class="s1">'oauth2'</span>
+<span class="n">redirect_uri</span> <span class="o">=</span> <span class="s1">'http://www.seusite.com.br/oauth2/callback'</span> <span class="c1"># tem que ser a mesma url do registro</span>
+<span class="n">client</span> <span class="o">=</span> <span class="no">OAuth2</span><span class="o">::</span><span class="no">Client</span><span class="o">.</span><span class="n">new</span><span>(</span><span class="no">CLIENT_ID</span><span class="p">,</span> <span class="no">CLIENT_SECRET</span><span class="p">,</span> <span class="ss">site</span><span class="p">:</span> <span class="s1">'https://boletosimples.com.br/api/v1'</span><span class="p">)</span>
+<span class="sb">`open "</span><span class="si">#{</span><span class="n">client</span><span class="o">.</span><span class="n">auth_code</span><span class="o">.</span><span class="n">authorize_url</span><span class="p">(</span><span class="n">redirect_uri</span><span class="p">:</span> <span class="n">redirect_uri</span><span class="p">)</span><span class="si">}</span><span class="sb">"`</span>
+<span class="nb">print</span> <span class="s2">"Coloque o código retornado na URL: "</span>
+<span class="n">code</span> <span class="o">=</span> <span class="no">STDIN</span><span class="o">.</span><span class="n">readline</span><span class="o">.</span><span class="n">chomp</span>
+<span class="n">token</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">auth_code</span><span class="o">.</span><span class="n">get_token</span><span>(</span><span class="n">code</span><span class="p">,</span> <span class="n">redirect_uri</span><span class="p">:</span> <span class="n">redirect_uri</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="no">JSON</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">token</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'/api/v1/userinfo'</span><span class="p">)</span><span class="o">.</span><span class="n">body</span><span class="p">)</span>
+                </pre>
+                </div>
+              </div>
+            </div>
+
+            <div class="panel">
+              <div class="panel-heading">
+                <p>Oauth2</p>
+              </div>
+              <div class="panel-body">
+                <small>
+                  Os seguintes caminhos são usados para gerar tokens (usando um code, email e senha, ou refresh
+                  token):
+                </small>
+
+                <pre>
+GET    https://boletosimples.com.br/api/v1/oauth/authorize     mostra form de autorização
+POST   https://boletosimples.com.br/api/v1/oauth/token         endpoint para gerar o token
+                </pre>
+
+                  <small>Aqui um exemplo simples de como talvez a app se comportará:</small>
+                <pre>
+  # Redireciona o usuário para essa página
+  https://boletosimples.com.br/api/v1/oauth/authorize?response_type=code&amp;client_id=YOUR_CLIENT_ID&amp;redirect_uri=YOUR_CALLBACK_URL
+
+  # Se o usuário aceitar, ele vai ser redirecionado para:
+  YOUR_CALLBACK_URL?code=CODE
+
+  # Faça um POST solicitando um access token
+  https://boletosimples.com.br/api/v1/oauth/token?grant_type=authorization_code&amp;code=CODE&amp;redirect_uri=YOUR_CALLBACK_URL&amp;client_id=CLIENT_ID&amp;client_secret=CLIENT_SECRET
+
+  # Resposta com o 'access_token'
+  {
+      "access_token": "...",
+      "refresh_token": "...",
+      "token_type": "bearer",
+      "scope": "login"
+  }
+
+  # Agora você pode usar o 'access_token' para realizar chamadas a API
+  http://boletosimples.com.br/api/v1/userinfo?access_token=...
+
+  # Resposta
+  {"id":1017,"email":"meuecommerce@example.com","account_type":"individual","first_name":"Margret","middle_name":"Simões","last_name":"Gonçalo","full_name":"Margret Simões Gonçalo","cpf":"142.578.243-44","date_of_birth":"1970-03-01","phone_number":"2199999999","address_street_name":"Av. Burkhard Hehn Simões","address_number":"120","address_complement":"709","address_neighborhood":"São Francisco","address_postal_code":"24360-440","address_city_name":"Rio de Janeiro","address_state":"RJ","banking_bank_number":"001","banking_agency_number":"4042","banking_agency_digit":"8","banking_account_number":"8873","banking_account_digit":"0","business_name":"Sebastian Elias Publicidade LTDA.","business_cnpj":"18.174.681/0001-70"}
+                </pre>
+              </div>
+            </div>
+
+            <h3 id="mobile">Desenvolvendo aplicações para Mobile e Desktop</h3>
+
+            <p>
+              Se você está desenvolvendo para mobile ou desktop, você talvez não tenha uma url de redirecionamento. Nestes
+              casos você pode configurar a url para: <code>urn:ietf:wg:oauth:2.0:oob</code>. Isto faz com que o servidor
+              mostre uma página em branco com o código de autorização na url e título da página. Você pode ler essa informação
+              de alguma forma dentro da sua aplicação para poder utilizada mais tarde.
+            </p>
+
+            <p>
+              Isso usa a mesma técnica adotada pelo
+              <a href="https://developers.google.com/accounts/docs/OAuth2InstalledApp" target="_blank">Google</a>.
+              <a href="http://www.slideshare.net/briandavidcampbell/is-that-a-token-in-your-phone-in-your-pocket-or-are-you-just-glad-to-see-me-oauth-20-and-mobile-devices" target="_blank">Aqui
+              tem um guia(Em inglês)</a> com um exemplo para iOS e Android.
+            </p>
+
+            <hgroup>
+              <h2 id="security">Segurança</h2>
+              <h4>Salvar credenciais de forma segura</h4>
+            </hgroup>
+
+            <p>Você deve se preocupar em como guardar as credencias que você consegue de forma segura. Se alguém obtém o
+              <code>access_token</code> com permissões, eles poderão acessar informações particulares suas e dos seus
+              clientes.</p>
+
+            <p>Nunca salve suas credenciais junto ao seu código fonte ou em seu banco de dados à menos que estejam
+              criptografadas. Separar as credencias do seu código fonte e do banco de dados são excelentes práticas a serem
+              adotadas.</p>
+
+          </article>
+        </div>
+        <!--Main Content-->
+
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        $('aside .nav a').click(function(){
+          $(this).parent().toggleClass('active')
+        });
+      });
+    </script>
+  </footer>
+
+</body>

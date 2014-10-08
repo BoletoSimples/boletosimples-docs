@@ -29,7 +29,7 @@
 
   <header>
     <div class="container">
-      <a class="logo pull-left" href="http://boletosimples.com.br" title="Ir para o site">
+      <a class="logo pull-left" href="index.html" title="inicio">
         <img src="img/logo.png" alt="logotipo boleto simples" height="30"/>
       </a>
       <nav class="pull-right">
@@ -60,7 +60,7 @@
               <a href="index.html" title="Começando">Começando</a>
             </li>
             <li class="submenu">
-              <a href="#autenticacao" title="Autenticação">Autenticação</a>
+              <a href="authentication.html" title="Autenticação">Autenticação</a>
               <ul class="nav">
                 <li>
                   <a href="#authentication-api" title="Api de autenticação">Api de autenticação</a>
@@ -231,39 +231,61 @@
 
              <p>Se os nossos servidores estiverem com problema, sua requisição receberá um retorno de erro com status 5xx.</p>
 
-             <p>Erro 500 significa que a aplicação está completamente indisponível, mas você pode receber também outros erros
+             <p>
+               Erro 500 significa que a aplicação está completamente indisponível,
+               mas você pode receber também outros erros
                da família 500 em casos específicos, tais como <code>502 Bad Gateway</code>,
                <code>503 Service Unavailable</code> ou <code>504 Gateway
-               Timeout</code>.</p>
+               Timeout</code>.
+             </p>
 
-             <p>É de sua responsabilidade identificar o erro e lidar com esses casos, fazendo com que o aplicativo tente enviar
-               a requisição novamente depois de alguns minutos.</p>
+             <p>
+               É de sua responsabilidade identificar o erro e lidar com esses
+               casos, fazendo com que o aplicativo tente enviar
+               a requisição novamente depois de alguns minutos.
+             </p>
 
-             <p>Nós temos uma página que informa o status dos servidores do Boleto Simples em
-               http://status.boletosimples.com.br/</p>
+             <p>
+               Nós temos uma página que informa o status dos servidores do Boleto Simples em
+               <a href="http://status.boletosimples.com.br/" title="Status">http://status.boletosimples.com.br/</a>
+             </p>
 
              <h2>Limite de Requisições</h2>
 
-             <p>Existem dois tipos de limite de requisições. Em ambos os casos a contagem é feita para cada usuário.</p>
+             <p>
+               Existem dois tipos de limite de requisições. Em ambos os casos a
+               contagem é feita para cada usuário.
+             </p>
 
              <h3>Intervalo</h3>
 
-             <p>Cada usuário pode realizar uma requisição a cada 1 segundo. Caso o usuário realize duas requisições
-               simultâneas, o servidor retorna o status HTTP 429 Too Many Requests. Neste caso, o servidor envia o header
-               <code>Retry-After</code> com o número de segundos que você deve esperar até realizar a próxima requisição.</p>
+             <p>
+               Cada usuário pode realizar uma requisição a cada 1 segundo. Caso
+               o usuário realize duas requisições simultâneas, o servidor
+               retorna o status HTTP 429 Too Many Requests. Neste caso, o
+               servidor envia o header <code>Retry-After</code> com o número de
+               segundos que você deve esperar até realizar a próxima requisição.
+             </p>
 
              <h3>Requisições por Hora</h3>
 
-             <p>Cada usuário pode realizar no máximo 500 requisições por hora. O número de requisições feitas pelo usuário é
-               zerada no primeiro minuto de cada hora.</p>
+             <p>
+               Cada usuário pode realizar no máximo 500 requisições por hora.
+               O número de requisições feitas pelo usuário é
+               zerada no primeiro minuto de cada hora.
+             </p>
 
-             <p>A cada requisição realizada, o servidor retorna os headers <code>X-RateLimit-Limit</code> e
+             <p>
+               A cada requisição realizada, o servidor retorna os headers
+               <code>X-RateLimit-Limit</code> e
                <code>X-RateLimit-Remaining</code> com o
-               número de requisições permitidas e o número de requisições restantes para aquela hora. Exemplo:</p>
+               número de requisições permitidas e o número de requisições
+               restantes para aquela hora. Exemplo:
+             </p>
 
              <h3>Exemplo</h3>
 
-             <p>Requisição:</p>
+             <small>Requisição:</small>
 
              <pre>
                curl -i \
@@ -274,7 +296,7 @@
                https://boletosimples.com.br/api/v1/userinfo
              </pre>
 
-             <p>Resposta:</p>
+             <small>Resposta:</small>
 
              <pre>
                HTTP/1.1 200 OK
@@ -283,10 +305,13 @@
                X-RateLimit-Limit: 500
                X-RateLimit-Remaining: 486
              </pre>
-             <p>Caso atinja o número máximo de requisições dentro de uma hora, o servidor retorna o status
-               <code>HTTP 429 Too Many
-                 Requests</code>. Neste caso, você deve esperar até o primeiro minuto da hora seguinte para realizar a próxima
-               requisição.</p>
+
+             <p>
+               Caso atinja o número máximo de requisições dentro de uma hora,
+               o servidor retorna o status <code>HTTP 429 Too Many Requests</code>.
+               Neste caso, você deve esperar até o primeiro minuto da hora
+               seguinte para realizar a próxima requisição.
+             </p>
 
           </article>
         </div>
