@@ -163,4 +163,97 @@ hgroup h4 {
 
 /*Footer*/
 
+footer {
+  border-top: 2px dashed #e5e8e9;
+  clear: both;
+  margin: 30px 0 0 0;
+  position: relative;
+  width: 100%;
+}
+
+footer .sitemap {
+  background: #ecf0f1;
+  padding: 40px 0;
+}
+
+footer .sitemap ul {
+  list-style: none;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  width: 100%;
+}
+
+footer .sitemap h4 {
+  color: #2c3e50;
+  font-size: 1.1em;
+  letter-spacing: 0.04em;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+footer .sitemap a {
+  display: block;
+  color: rgba(44, 62, 80, 0.6);
+  margin: 10px 0;
+}
+
+footer .sitemap a:hover {
+  color: #008de4;
+  text-decoration: none;
+}
+
+footer .more-infos {
+  background: #2c3e50;
+  overflow: auto;
+  padding: 20px 0 5px;
+}
+
+footer .more-infos address {
+  float: left;
+  width: 30%;
+}
+
+footer .more-infos address p {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 1em;
+  letter-spacing: 0.03em;
+  margin: 5px 0;
+}
+
+footer .more-infos .logos {
+  float: left;
+  width: 70%;
+}
+
+footer .more-infos .logos #selo_siteforte {
+  float: right;
+  margin-top: 30px;
+}
+
+footer .more-infos .logos #selo_siteforte a {
+  background: #fff;
+  border-radius: 3px;
+  margin-left: 20px;
+  padding: 20px;
+}
+
+footer .copyright {
+  background: rgba(44, 62, 80, 0.98);
+  padding: 15px 0;
+}
+
+footer .copyright p {
+  color: rgba(255, 255, 255, 0.4);
+  margin: 0;
+  text-align: center;
+}
+
 /******************************************************************************/
+
+
+@media (min-width: 980px) {
+  .container {
+    width: 960px !important;
+  }
+}
