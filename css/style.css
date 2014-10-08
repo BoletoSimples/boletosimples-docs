@@ -57,6 +57,7 @@ header .btn { font-weight: 300; }
 
 /*Main*/
 
+/*sidebar*/
 aside {
   margin: 30px 0;
   border-right: solid 1px #ecf0f1;
@@ -69,7 +70,7 @@ aside p {
   text-transform: uppercase;
 }
 
-aside .nav > li { margin: 10px 0; }
+aside .nav > li { margin: 15px 0; }
 
 aside .nav > li > a {
   color: #5e5e5e;
@@ -92,6 +93,44 @@ aside .nav > li > a {
 }
 
 .nav > li.submenu.active > .nav { display: block; }
+
+/*Article*/
+hgroup {
+  border-bottom: solid 1px #8a949f;
+  margin: 0 0 22px 0;
+}
+
+article { margin: 0 0 0 15px; }
+
+article h2 {
+  border-bottom: solid 1px #8a949f;
+  color: #62a4cf;
+  font-size: 30px;
+  font-weight: 600;
+  padding: 0 0 5px 0;
+}
+
+article p { color: #4d4d4d; }
+
+article h3 {
+  color: #393939;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+hgroup h2,
+hgroup h3,
+hgroup h4 {
+  border:none;
+  padding: 0;
+}
+
+hgroup h4 {
+  color: #393939;
+  font-size: 14px;
+  font-weight: 700;
+}
+
 
 /******************************************************************************/
 
