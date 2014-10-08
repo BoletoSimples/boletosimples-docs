@@ -314,3 +314,7 @@ footer .copyright p {
 @media (max-width:1199px) {
   article { margin: 0; }
 }
+
+@media (max-width:767px) {
+  footer .logos a { float: left; }
+}
