@@ -168,6 +168,8 @@ article code {
   color: #fff;
 }
 
+article small { text-transform: uppercase; }
+
 hgroup h2,
 hgroup h3,
 hgroup h4 {
