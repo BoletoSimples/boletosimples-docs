@@ -430,8 +430,10 @@ POST   https://boletosimples.com.br/api/v1/oauth/token         endpoint para ger
 
   <script>
     $(document).ready(function(){
-      $('aside .nav .submenu a').click(function(){
-        $(this).parent().toggleClass('active')
+      var selector = "aside .nav .submenu li a"
+      $(selector).click(function(){
+        $(selector).parent().removeClass('active');
+        $(this).parent().addClass('active')
       });
     });
 
