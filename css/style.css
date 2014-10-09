@@ -134,6 +134,9 @@ aside .nav > li > a {
   letter-spacing: 0.03em;
 }
 
+.sidebar-offcanvas ul li a:hover,
+.sidebar-offcanvas ul li.active a { padding: 10px 13px !important; }
+
 /*Article*/
 hgroup {
   border-bottom: solid 1px #8a949f;
