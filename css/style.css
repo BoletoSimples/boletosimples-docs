@@ -84,7 +84,7 @@ aside .nav > li { margin: 15px 0; }
 
 aside .nav > li > a {
   color: #5e5e5e;
-  padding: 5px 5px !important;
+  padding: 5px 7px !important;
 }
 
 .nav > li > a:hover,
@@ -92,7 +92,7 @@ aside .nav > li > a {
   background-color: #fff !important;
   border-left: solid 2px #2f4255;
   color: #2f4255;
-  font-weight: 600;
+  padding: 5px 5px !important;
 }
 
 .nav > li.active > .nav a { font-weight: normal; }
