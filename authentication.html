@@ -16,6 +16,7 @@
   </title>
 
   <link href="css/style.css" rel="stylesheet">
+  <link href="css/github.css" rel="stylesheet">
 
   <!-- Favicon -->
   <link rel="icon" href="favicon.ico">
@@ -191,17 +192,15 @@
 
             <small>Requisição:</small>
 
-            <pre>
-curl "http://boletosimples.com.br/api/v1/userinfo" -X GET \
+            <pre><code class="bash">curl "http://boletosimples.com.br/api/v1/userinfo" -X GET \
 -H "User-Agent: Meu e-Commerce (meuecommerce@example.com)" \
 -u EMAIL:SENHA \
 -H "Accept: application/json" \
--H "Content-Type: application/json"
-            </pre>
+-H "Content-Type: application/json"</code></pre>
 
             <small>Resposta:</small>
 
-            <pre>{"id":1016,"email":"EMAIL","account_type":"individual","cpf":"142.578.243-44","address_street_name":"Av. Burkhard Hehn Simões","address_state":"RJ","address_neighborhood":"São Francisco","address_postal_code":"24360-440","address_number":"120","address_complement":"709","phone_number":"2199999999","banking_agency_number":"4042","banking_account_number":"8873","banking_account_digit":"0","withdrawal_period":"biweekly","notification_url":"http://example.com.br/notify","banking_agency_digit":"8","first_name":"Margret","middle_name":"Simões","last_name":"Gonçalo","date_of_birth":"1970-03-01","business_category":1000,"business_subcategory":2173,"business_website":"http://example.com.br","business_name":"Sebastian Elias Publicidade LTDA.","business_type":"mei","business_cnpj":"18.174.681/0001-70","address_city_name":"Rio de Janeiro","banking_bank_number":"001","full_name":"Margret Simões Gonçalo","balance":100.0}</pre>
+            <pre><code class="json">{"id":1016,"email":"EMAIL","account_type":"individual","cpf":"142.578.243-44","address_street_name":"Av. Burkhard Hehn Simões","address_state":"RJ","address_neighborhood":"São Francisco","address_postal_code":"24360-440","address_number":"120","address_complement":"709","phone_number":"2199999999","banking_agency_number":"4042","banking_account_number":"8873","banking_account_digit":"0","withdrawal_period":"biweekly","notification_url":"http://example.com.br/notify","banking_agency_digit":"8","first_name":"Margret","middle_name":"Simões","last_name":"Gonçalo","date_of_birth":"1970-03-01","business_category":1000,"business_subcategory":2173,"business_website":"http://example.com.br","business_name":"Sebastian Elias Publicidade LTDA.","business_type":"mei","business_cnpj":"18.174.681/0001-70","address_city_name":"Rio de Janeiro","banking_bank_number":"001","full_name":"Margret Simões Gonçalo","balance":100.0}</code></pre>
 
             <p>O <code>EMAIL</code> deve ser trocado pelo email usado para acessar sua conta.</p>
 
@@ -264,15 +263,14 @@ curl "http://boletosimples.com.br/api/v1/userinfo" -X GET \
               </div>
               <div class="panel-body">
                 <div class="highlight" style="">
-                  <pre><span class="nb">require</span> <span class="s1">'oauth2'</span>
+                  <pre><code class="ruby"><span class="nb">require</span> <span class="s1">'oauth2'</span>
 <span class="n">redirect_uri</span> <span class="o">=</span> <span class="s1">'http://www.seusite.com.br/oauth2/callback'</span> <span class="c1"># tem que ser a mesma url do registro</span>
 <span class="n">client</span> <span class="o">=</span> <span class="no">OAuth2</span><span class="o">::</span><span class="no">Client</span><span class="o">.</span><span class="n">new</span><span>(</span><span class="no">CLIENT_ID</span><span class="p">,</span> <span class="no">CLIENT_SECRET</span><span class="p">,</span> <span class="ss">site</span><span class="p">:</span> <span class="s1">'https://boletosimples.com.br/api/v1'</span><span class="p">)</span>
 <span class="sb">`open "</span><span class="si">#{</span><span class="n">client</span><span class="o">.</span><span class="n">auth_code</span><span class="o">.</span><span class="n">authorize_url</span><span class="p">(</span><span class="n">redirect_uri</span><span class="p">:</span> <span class="n">redirect_uri</span><span class="p">)</span><span class="si">}</span><span class="sb">"`</span>
 <span class="nb">print</span> <span class="s2">"Coloque o código retornado na URL: "</span>
 <span class="n">code</span> <span class="o">=</span> <span class="no">STDIN</span><span class="o">.</span><span class="n">readline</span><span class="o">.</span><span class="n">chomp</span>
 <span class="n">token</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">auth_code</span><span class="o">.</span><span class="n">get_token</span><span>(</span><span class="n">code</span><span class="p">,</span> <span class="n">redirect_uri</span><span class="p">:</span> <span class="n">redirect_uri</span><span class="p">)</span>
-<span class="nb">puts</span> <span class="no">JSON</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">token</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'/api/v1/userinfo'</span><span class="p">)</span><span class="o">.</span><span class="n">body</span><span class="p">)</span>
-                </pre>
+<span class="nb">puts</span> <span class="no">JSON</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">token</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'/api/v1/userinfo'</span><span class="p">)</span><span class="o">.</span><span class="n">body</span><span class="p">)</span></code></pre>
                 </div>
               </div>
             </div>
@@ -287,36 +285,33 @@ curl "http://boletosimples.com.br/api/v1/userinfo" -X GET \
                   token):
                 </small>
 
-                <pre>
-GET    https://boletosimples.com.br/api/v1/oauth/authorize     mostra form de autorização
-POST   https://boletosimples.com.br/api/v1/oauth/token         endpoint para gerar o token
-                </pre>
+                <pre><code class="ruby">GET    https://boletosimples.com.br/api/v1/oauth/authorize     mostra form de autorização
+POST   https://boletosimples.com.br/api/v1/oauth/token         endpoint para gerar o token</code></pre>
 
                   <small>Aqui um exemplo simples de como talvez a app se comportará:</small>
-                <pre>
-  # Redireciona o usuário para essa página
-  https://boletosimples.com.br/api/v1/oauth/authorize?response_type=code&amp;client_id=YOUR_CLIENT_ID&amp;redirect_uri=YOUR_CALLBACK_URL
+                <pre><code># Redireciona o usuário para essa página
+https://boletosimples.com.br/api/v1/oauth/authorize?response_type=code&amp;client_id=YOUR_CLIENT_ID&amp;redirect_uri=YOUR_CALLBACK_URL
 
-  # Se o usuário aceitar, ele vai ser redirecionado para:
-  YOUR_CALLBACK_URL?code=CODE
+# Se o usuário aceitar, ele vai ser redirecionado para:
+YOUR_CALLBACK_URL?code=CODE
 
-  # Faça um POST solicitando um access token
-  https://boletosimples.com.br/api/v1/oauth/token?grant_type=authorization_code&amp;code=CODE&amp;redirect_uri=YOUR_CALLBACK_URL&amp;client_id=CLIENT_ID&amp;client_secret=CLIENT_SECRET
+# Faça um POST solicitando um access token
+https://boletosimples.com.br/api/v1/oauth/token?grant_type=authorization_code&amp;code=CODE&amp;redirect_uri=YOUR_CALLBACK_URL&amp;client_id=CLIENT_ID&amp;client_secret=CLIENT_SECRET
 
-  # Resposta com o 'access_token'
-  {
-      "access_token": "...",
-      "refresh_token": "...",
-      "token_type": "bearer",
-      "scope": "login"
-  }
+# Resposta com o 'access_token'
+{
+    "access_token": "...",
+    "refresh_token": "...",
+    "token_type": "bearer",
+    "scope": "login"
+}
 
-  # Agora você pode usar o 'access_token' para realizar chamadas a API
-  http://boletosimples.com.br/api/v1/userinfo?access_token=...
+# Agora você pode usar o 'access_token' para realizar chamadas a API
+http://boletosimples.com.br/api/v1/userinfo?access_token=...</code></pre>
 
-  # Resposta
-  {"id":1017,"email":"meuecommerce@example.com","account_type":"individual","first_name":"Margret","middle_name":"Simões","last_name":"Gonçalo","full_name":"Margret Simões Gonçalo","cpf":"142.578.243-44","date_of_birth":"1970-03-01","phone_number":"2199999999","address_street_name":"Av. Burkhard Hehn Simões","address_number":"120","address_complement":"709","address_neighborhood":"São Francisco","address_postal_code":"24360-440","address_city_name":"Rio de Janeiro","address_state":"RJ","banking_bank_number":"001","banking_agency_number":"4042","banking_agency_digit":"8","banking_account_number":"8873","banking_account_digit":"0","business_name":"Sebastian Elias Publicidade LTDA.","business_cnpj":"18.174.681/0001-70"}
-                </pre>
+<small>Resposta:</small>
+<pre><code class="json">
+{"id":1017,"email":"meuecommerce@example.com","account_type":"individual","first_name":"Margret","middle_name":"Simões","last_name":"Gonçalo","full_name":"Margret Simões Gonçalo","cpf":"142.578.243-44","date_of_birth":"1970-03-01","phone_number":"2199999999","address_street_name":"Av. Burkhard Hehn Simões","address_number":"120","address_complement":"709","address_neighborhood":"São Francisco","address_postal_code":"24360-440","address_city_name":"Rio de Janeiro","address_state":"RJ","banking_bank_number":"001","banking_agency_number":"4042","banking_agency_digit":"8","banking_account_number":"8873","banking_account_digit":"0","business_name":"Sebastian Elias Publicidade LTDA.","business_cnpj":"18.174.681/0001-70"}</code></pre>
               </div>
             </div>
 
@@ -427,6 +422,15 @@ POST   https://boletosimples.com.br/api/v1/oauth/token         endpoint para ger
 
   <script src="js/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
+  <script src="js/highlight.pack.js"></script>
+
+  <script>
+    $(document).ready(function() {
+      $('pre code').each(function(i, block) {
+        hljs.highlightBlock(block);
+      });
+    });
+  </script>
 
   <script>
     $(document).ready(function(){

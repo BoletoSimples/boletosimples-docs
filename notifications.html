@@ -16,6 +16,7 @@
   </title>
 
   <link href="css/style.css" rel="stylesheet">
+  <link href="css/github.css" rel="stylesheet">
 
   <!-- Favicon -->
   <link rel="icon" href="favicon.ico">
@@ -169,8 +170,7 @@
 
             <p>Parâmetros passados na requisição:</p>
 
-            <pre>
-id => ID no Boleto Simples
+            <pre><code>id => ID no Boleto Simples
 our_number => Código
 expire_at => Data de Vencimento
 customer_person_name => Nome/Razão Social do Pagador
@@ -179,8 +179,7 @@ amount => Valor do Boleto
 paid_amount => Valor Pago
 paid_at => Data do Pagamento
 status => Situação do Boleto (generating, opened, cancelled, paid)
-shortener_url => URL pública do Boleto
-            </pre>
+shortener_url => URL pública do Boleto</code></pre>
 
           </article>
         </div>
@@ -260,6 +259,15 @@ shortener_url => URL pública do Boleto
 
   <script src="js/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
+  <script src="js/highlight.pack.js"></script>
+
+  <script>
+    $(document).ready(function() {
+      $('pre code').each(function(i, block) {
+        hljs.highlightBlock(block);
+      });
+    });
+  </script>
 
   <script>
     $(document).ready(function () {

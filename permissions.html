@@ -16,6 +16,7 @@
   </title>
 
   <link href="css/style.css" rel="stylesheet">
+  <link href="css/github.css" rel="stylesheet">
 
   <!-- Favicon -->
   <link rel="icon" href="favicon.ico">
@@ -196,7 +197,7 @@
               Permissões em grupo devem ser separadas com caracter<code>+</code> na URL.</p>
 
             <p>Aqui um exemplo de URL de requisição com parâmetro <code>scope</code> no final:</p>
-            <pre>https://boletosimples.com.br/api/v1/oauth/authorize?response_type=code&amp;client_id=YOUR_CLIENT_ID&amp;redirect_uri=YOUR_CALLBACK_URL&amp;scope=login+email+profile</pre>
+            <pre><code class="html">https://boletosimples.com.br/api/v1/oauth/authorize?response_type=code&amp;client_id=YOUR_CLIENT_ID&amp;redirect_uri=YOUR_CALLBACK_URL&amp;scope=login+email+profile</code></pre>
 
           </article>
         </div>
@@ -276,6 +277,15 @@
 
   <script src="js/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
+  <script src="js/highlight.pack.js"></script>
+
+  <script>
+    $(document).ready(function() {
+      $('pre code').each(function(i, block) {
+        hljs.highlightBlock(block);
+      });
+    });
+  </script>
 
   <script>
     $(document).ready(function () {

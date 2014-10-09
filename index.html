@@ -16,6 +16,7 @@
   </title>
 
   <link href="css/style.css" rel="stylesheet">
+  <link href="css/github.css" rel="stylesheet">
 
   <!-- Favicon -->
   <link rel="icon" href="favicon.ico">
@@ -342,24 +343,20 @@
 
              <small>Requisição:</small>
 
-             <pre>
-               curl -i \
-               -u $USERNAME:$PASSWORD \
-               -H 'Content-Type: application/json' \
-               -H 'User-Agent: MyApp (myapp@example.com)' \
-               -X GET \
-               https://boletosimples.com.br/api/v1/userinfo
-             </pre>
+             <pre><code class="bash">curl -i \
+-u $USERNAME:$PASSWORD \
+-H 'Content-Type: application/json' \
+-H 'User-Agent: MyApp (myapp@example.com)' \
+-X GET \
+https://boletosimples.com.br/api/v1/userinfo</code></pre>
 
              <small>Resposta:</small>
 
-             <pre>
-               HTTP/1.1 200 OK
-               Date: Fri, 05 Nov 2010 12:00:00 GMT
-               Content-Type: application/xml; charset=utf-8
-               X-RateLimit-Limit: 500
-               X-RateLimit-Remaining: 486
-             </pre>
+             <pre><code class="json">HTTP/1.1 200 OK
+Date: Fri, 05 Nov 2010 12:00:00 GMT
+Content-Type: application/xml; charset=utf-8
+X-RateLimit-Limit: 500
+X-RateLimit-Remaining: 486</code></pre>
 
              <p>
                Caso atinja o número máximo de requisições dentro de uma hora,
@@ -446,6 +443,15 @@
 
   <script src="js/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
+  <script src="js/highlight.pack.js"></script>
+
+  <script>
+    $(document).ready(function() {
+      $('pre code').each(function(i, block) {
+        hljs.highlightBlock(block);
+      });
+    });
+  </script>
 
   <script>
     $(document).ready(function () {

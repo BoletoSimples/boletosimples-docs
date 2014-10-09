@@ -170,6 +170,8 @@ article code {
 
 article small { text-transform: uppercase; }
 
+article pre { padding:0; }
+
 hgroup h2,
 hgroup h3,
 hgroup h4 {
@@ -204,6 +206,7 @@ hgroup h4 {
 .panel .panel-heading p {
   color: #fff;
   margin: 0;
+  text-transform: uppercase;
 }
 
 /******************************************************************************/
