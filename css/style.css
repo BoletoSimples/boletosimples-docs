@@ -98,11 +98,9 @@ aside .nav > li > a {
 .nav > li.active > .nav a { font-weight: normal; }
 
 .nav > li > .nav {
-  display:none;
+  display:block;
   margin: 0 0 0 10px;
 }
-
-.nav > li.submenu.active > .nav { display: block; }
 
 /*Off canvas Navigation*/
 .sidebar-offcanvas {
