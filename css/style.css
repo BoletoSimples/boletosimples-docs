@@ -1,6 +1,7 @@
 @import url("bootstrap.min.css");
 @import url("bootstrap-theme.min.css");
 @import url("offcanvas.css");
+@import url("fontface.css");
 
 /*resets*/
 
@@ -11,8 +12,9 @@ a:hover {
 
 body {
   color: #4d4d4d;
-  font-family: 'Open Sans', helvetica, sans-serif;
+  font-family: 'proxima_nova_rgregular', 'Open Sans', helvetica, sans-serif;
   font-size: 14px;
+  line-height: 1.428571429;
 }
 
 .btn {
@@ -54,11 +56,11 @@ header nav li:last-child { margin-right: 0; }
 
 header nav li a {
   color: rgba(44,62,80,0.6);
+  font-family: 'proxima_novalight', 'Open Sans', helvetica, sans-serif;
   font-size: 0.95em;
   font-weight: 300;
   text-transform: uppercase;
   letter-spacing: 0.03em;
-  text-transform: uppercase;
 }
 
 header .btn { font-weight: 300; }
@@ -157,8 +159,8 @@ article p { color: #4d4d4d; }
 
 article h3 {
   color: #393939;
+  font-family: 'proxima_nova_rgbold';
   font-size: 15px;
-  font-weight: 700;
 }
 
 article code {
@@ -175,8 +177,8 @@ hgroup h4 {
 
 hgroup h4 {
   color: #393939;
+  font-family: 'proxima_nova_rgbold';
   font-size: 14px;
-  font-weight: 700;
 }
 
 .panel { border: solid 1px #cccccc; }
