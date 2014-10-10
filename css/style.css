@@ -164,8 +164,12 @@ article h3 {
 }
 
 article code {
-  background-color: #e64848;
-  color: #fff;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  color: #666;
+  font-family: Monaco,"DejaVu Sans Mono","Courier New",monospace;
+  font-size: 13px;
+  padding: 0px 5px 2px;
 }
 
 article small { text-transform: uppercase; }
