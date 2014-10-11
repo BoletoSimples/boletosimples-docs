@@ -1,461 +1,177 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Boleto simples API documentation">
-  <meta name="keywords" content="boleto, boleto simples, api, documentação, documentation">
-  <meta name="author" content="Boleto Simples">
-
-  <title>
-
-      Boleto Simples API
-
-  </title>
-
-  <link href="css/style.css" rel="stylesheet">
-
-  <!-- Favicon -->
-  <link rel="icon" href="favicon.ico">
-
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300' rel='stylesheet' type='text/css'>
-
-</head>
-
-
-<body>
-
-  <header>
-    <div class="container">
-      <a class="logo pull-left" href="index.html" title="inicio">
-        <img src="img/logo.png" alt="logotipo boleto simples" height="30"/>
-      </a>
-      <nav class="pull-right visible-lg">
-        <ul>
-          <li>
-            <a href="http://boletosimples.com.br" title="ir para o site">Início</a>
-          </li>
-          <li>
-            <a href="http://boletosimples.com.br/preco" title="Preço">Preço</a>
-          </li>
-          <li>
-            <a class="btn btn-primary" href="https://boletosimples.com.br/users/sign_in" title="Logar">Login</a>
-          </li>
-        </ul>
-      </nav>
-      <button type="button" class="hidden-lg btn btn-primary btn-xs pull-right" data-toggle="offcanvas">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-    </div>
-  </header>
-
-  <section class="main">
-    <div class="container">
-      <div class="row row-offcanvas row-offcanvas-right">
-
-        <!--Sidebar visibe only in mobile devices-->
-        <div class="hidden-lg col-xs-6 col-sm-6 col-md-6 sidebar-offcanvas" id="sidebar" role="navigation">
-          <nav class="main-menu">
-            <ul>
-              <li>
-                <a href="http://boletosimples.com.br" title="ir para o site">Início</a>
-              </li>
-              <li>
-                <a href="http://boletosimples.com.br/preco" title="Preço">Preço</a>
-              </li>
-              <li>
-                <a href="https://boletosimples.com.br/users/sign_in" title="Logar">Login</a>
-              </li>
-            </ul>
-          </nav>
-          <p>Documentação</p>
-          <ul class="nav">
-            <li class="active">
-              <a href="index.html" title="Começando">Começando</a>
-            </li>
-            <li class="submenu">
-              <a href="authentication.html" title="Autenticação">Autenticação</a>
-              <ul class="nav">
-                <li>
-                  <a href="http://apidoc.boletosimples.com.br/authentication.html#basic_auth" title="Email + Senha">Email + Senha</a>
-                </li>
-                <li>
-                  <a href="http://apidoc.boletosimples.com.br/authentication.html#oauth2" title="Autenticação Oauth2">Autenticação Oauth2</a>
-                </li>
-                <li>
-                  <a href="http://apidoc.boletosimples.com.br/authentication.html#security" title="Segurança">Segurança</a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a href="permissions.html" title="Permissões">Permissões</a>
-            </li>
-            <li>
-              <a href="notifications.html" title="Notificações">Notificações</a>
-            </li>
-            <li>
-              <a href="libraries.html" title="Bibliotecas">Bibliotecas</a>
-            </li>
-            <li>
-              <a href="https://boletosimples.com.br/docs/api/reference" target="_blank" title="APIs Disponíveis">APIs Disponíveis</a>
-            </li>
-            <li>
-              <a href="https://boletosimples.zendesk.com/hc/pt-br" target="_blank" title="Registre um app">Registre um app</a>
-            </li>
-          </ul>
-        </div>
-        <!--Sidebar visibe only in mobile devices-->
-
-        <!--Side menu-->
-        <aside class="col-lg-3 visible-lg">
-          <p>Documentação</p>
-          <ul class="nav">
-            <li class="active">
-              <a href="index.html" title="Começando">Começando</a>
-            </li>
-            <li class="submenu">
-              <a href="authentication.html" title="Autenticação">Autenticação</a>
-              <ul class="nav">
-                <li>
-                  <a href="http://apidoc.boletosimples.com.br/authentication.html#basic_auth" title="Email + Senha">Email + Senha</a>
-                </li>
-                <li>
-                  <a href="http://apidoc.boletosimples.com.br/authentication.html#oauth2" title="Autenticação Oauth2">Autenticação Oauth2</a>
-                </li>
-                <li>
-                  <a href="http://apidoc.boletosimples.com.br/authentication.html#security" title="Segurança">Segurança</a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a href="permissions.html" title="Permissões">Permissões</a>
-            </li>
-            <li>
-              <a href="notifications.html" title="Notificações">Notificações</a>
-            </li>
-            <li>
-              <a href="libraries.html" title="Bibliotecas">Bibliotecas</a>
-            </li>
-            <li>
-              <a href="https://boletosimples.com.br/docs/api/reference" target="_blank" title="APIs Disponíveis">APIs Disponíveis</a>
-            </li>
-            <li>
-              <a href="https://boletosimples.zendesk.com/hc/pt-br" target="_blank" title="Registre um app">Registre um app</a>
-            </li>
-          </ul>
-        </aside>
-        <!--Side menu-->
-
-        <!--Main Content-->
-        <div class="content col-lg-9 col-md-12 col-sm-12 col-xs-12">
-          <article>
-
-            <hgroup>
-              <h2>Boleto Simples API</h2>
-              <h4>Integre pagamentos por boletos bancários em seu site ou aplicação</h3>
-            </hgroup>
-
-            <p>
-              Boleto Simples fornece uma api simples e poderosa em REST para
-              integrar pagamentos por boletos bancários em seu site ou aplicação.
-            </p>
-
-            <h2>Benefícios da API</h2>
-
-            <ul>
-              <li>
-                Programadores conseguem incluir o Boleto Simples como meio de pagamento em um e-commerce.
-              </li>
-              <li>
-                Criar boletos bancários a partir de um sistema de ERP.
-              </li>
-              <li>
-                Integração com o sistema de Contas a Receber.
-              </li>
-              <li>
-                Desenvolver aplicativos móveis para emissão e gerenciamento de boleto bancário.
-              </li>
-              <li>
-                Liberdade para fazer o que quiser, todo programador clama por isso!
-              </li>
-            </ul>
-
-            <p>
-              Todas as requisições usam <code>application/json</code> como content type e usam <code>https.</code>
-            </p>
-
-            <p>
-              A URL Base da API é <code>https://boletosimples.com.br/api/v1/.</code>
-            </p>
-
-            <p>
-              Para dúvidas sobre a API faça suas perguntas em nossa central de suporte.
-            </p>
-
-            <h2>Começando</h2>
-
-            <ul>
-              <li><a href="#" title="Autenticação">Autenticação</a></li>
-              <li><a href="#" title="Permissões">Permissões</a></li>
-              <li><a href="#" title="Notificações">Notificações</a></li>
-              <li><a href="#" title="Bibliotecas">Bibliotecas</a></li>
-              <li><a href="#" title="API">API</a></li>
-              <li><a href="#" title="Registre um App">Registre um App</a></li>
-            </ul>
-
-            <h2>Códigos de Retorno</h2>
-
-            <p>A API retorna os códigos de resposta HTTP. Estas são as informações mais relevantes:</p>
-
-            <ul>
-              <li>200 OK - A chamada foi bem sucedida.</li>
-              <li>400 Bad Request - A requisição é inválida, em geral conteúdo mal formado.</li>
-              <li>401 Unauthorized - O usuário e senha são inválidos.</li>
-              <li>403 Forbidden - O acesso à API está bloqueado.</li>
-              <li>404 Not Found - O endereço acessado não existe.</li>
-              <li>429 Too Many Requests - O usuário atingiu o  de requisições.</li>
-              <li>503 Service Unavailable - O usuário atingiu algum dos s de uso.</li>
-              <li>500 Internal Server Error - Houve um erro interno do servidor ao processar a requisição.</li>
-            </ul>
-
-            <h2>Segurança</h2>
-
-            <p>O Boleto Simples utiliza Certificados SSL 2048 bits.</p>
-
-            <p>
-              Toda requisição realizada através da API deve utilizar o protocolo
-              HTTPS pois estará passando informações de autenticação no cabeçalho da requisição.
-            </p>
-
-             <p>
-               As requisições realizadas na porta 80, serão automaticamente
-               redirecionadas para a porta 443. Esta medida garante que nenhuma
-               requisição realizada na API estará fora do protocolo seguro.
-             </p>
-
-             <p>Todas as requisições realizadas nos servidore do Boleto Simples serão criptografadas.</p>
-
-             <h2>Identificando sua aplicação</h2>
-
-             <p>
-               Você deve incluir o header User-Agent com o nome da sua aplicação
-               e um endereço de e-mail válido, para que possamos entrar em contato caso:
-             </p>
-
-             <ol>
-               <li>
-                 Você esteja fazendo algo errado, e possamos avisá-lo antecipadamente antes de você ser bloqueado;
-               </li>
-               <li>
-                 Esteja fazendo algo muito legal, e possamos dar-lhe os parabéns :)
-               </li>
-             </ol>
-
-             <p>Segue um Exemplo:</p>
-
-             <code>User-Agent: Meu e-Commerce (meuecommerce@example.com)</code>
-
-             <p>Se você não informar este cabeçalho, você receberá um erro <code>400 Bad Request.</code></p>
-
-             <h2>Cache HTTP</h2>
-
-             <p>
-               Você deve fazer uso dos cabeçalhos HTTP de cache para diminuir a
-               carga em nossos servidores (e aumentar a velocidade do seu aplicativo!).
-             </p>
-
-             <p>
-               A maioria dos retornos das requisições irão incluir um header <code>ETag</code>
-               ou <code>Last-Modified.</code> Quando você solicitar um recurso pela primeira vez,
-               armazene esse valor e nos envie de volta nas requisições seguintes
-               nos headers <code>If-None-Match</code> e <code>If-Modified-Since.</code> Se o recurso não
-               foi alterado, você receberá uma resposta com o header <code>304 Not Modified</code>,
-               o que  economiza tempo e largura de banda, por
-               evitar de te enviar os dados que você já tem.
-             </p>
-
-             <p>
-               <a href="http://www.mnot.net/cache_docs/">Mais informações sobre Cache HTTP (em inglês)</a>
-             </p>
-
-             <h2>Tratamento de erros</h2>
-
-             <p>Se os nossos servidores estiverem com problema, sua requisição receberá um retorno de erro com status 5xx.</p>
-
-             <p>
-               Erro 500 significa que a aplicação está completamente indisponível,
-               mas você pode receber também outros erros
-               da família 500 em casos específicos, tais como <code>502 Bad Gateway</code>, <br/>
-               <code>503 Service Unavailable</code> ou <code>504 Gateway
-               Timeout</code>.
-             </p>
-
-             <p>
-               É de sua responsabilidade identificar o erro e lidar com esses
-               casos, fazendo com que o aplicativo tente enviar
-               a requisição novamente depois de alguns minutos.
-             </p>
-
-             <p>
-               Nós temos uma página que informa o status dos servidores do Boleto Simples em
-               <a href="http://status.boletosimples.com.br/" title="Status">http://status.boletosimples.com.br/</a>
-             </p>
-
-             <h2>Limite de Requisições</h2>
-
-             <p>
-               Existem dois tipos de limite de requisições. Em ambos os casos a
-               contagem é feita para cada usuário.
-             </p>
-
-             <h3>Intervalo</h3>
-
-             <p>
-               Cada usuário pode realizar uma requisição a cada 1 segundo. Caso
-               o usuário realize duas requisições simultâneas, o servidor
-               retorna o status HTTP 429 Too Many Requests. Neste caso, o
-               servidor envia o header <code>Retry-After</code> com o número de
-               segundos que você deve esperar até realizar a próxima requisição.
-             </p>
-
-             <h3>Requisições por Hora</h3>
-
-             <p>
-               Cada usuário pode realizar no máximo 500 requisições por hora.
-               O número de requisições feitas pelo usuário é
-               zerada no primeiro minuto de cada hora.
-             </p>
-
-             <p>
-               A cada requisição realizada, o servidor retorna os headers
-               <code>X-RateLimit-Limit</code> e
-               <br/><code>X-RateLimit-Remaining</code> com o
-               número de requisições permitidas e o número de requisições
-               restantes para aquela hora. Exemplo:
-             </p>
-
-             <h3>Exemplo</h3>
-
-             <small>Requisição:</small>
-
-             <pre>
-               curl -i \
-               -u $USERNAME:$PASSWORD \
-               -H 'Content-Type: application/json' \
-               -H 'User-Agent: MyApp (myapp@example.com)' \
-               -X GET \
-               https://boletosimples.com.br/api/v1/userinfo
-             </pre>
-
-             <small>Resposta:</small>
-
-             <pre>
-               HTTP/1.1 200 OK
-               Date: Fri, 05 Nov 2010 12:00:00 GMT
-               Content-Type: application/xml; charset=utf-8
-               X-RateLimit-Limit: 500
-               X-RateLimit-Remaining: 486
-             </pre>
-
-             <p>
-               Caso atinja o número máximo de requisições dentro de uma hora,
-               o servidor retorna o status <br/> <code>HTTP 429 Too Many Requests</code>.
-               Neste caso, você deve esperar até o primeiro minuto da hora
-               seguinte para realizar a próxima requisição.
-             </p>
-
-          </article>
-        </div>
-        <!--Main Content-->
-
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <div class="sitemap">
-      <div class="container">
-        <ul>
-          <li class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-            <h4>Boleto Simples</h4>
-            <a href="https://boletosimples.com.br/preco">Preço</a>
-            <a href="https://boletosimples.zendesk.com/hc/pt-br/requests/new">Fale Conosco</a>
-          </li>
-          <li class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-            <h4>Produto</h4>
-            <a href="https://boletosimples.zendesk.com/hc/pt-br/articles/201253460-Pol%C3%ADtica-de-Privacidade">Política de Privacidade</a>
-            <a href="https://boletosimples.zendesk.com/hc/pt-br/articles/201253470-Pol%C3%ADtica-de-Seguran%C3%A7a">Política de Segurança</a>
-            <a href="https://boletosimples.zendesk.com/hc/pt-br/articles/201196074-Termos-de-Uso">Termos de Uso</a>
-          </li>
-          <li class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-            <h4>Suporte</h4>
-            <a href="https://boletosimples.zendesk.com/hc/pt-br/requests/new">Enviar solicitação</a>
-            <a href="https://boletosimples.zendesk.com/hc/pt-br">Perguntas Frequentes</a>
-            <a href="https://boletosimples.zendesk.com/hc/communities/public/topics">Comunidade</a>
-          </li>
-          <li class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-            <h4>Desenvolvedores</h4>
-            <a href="http://api.boletosimples.com.br">Documentação da API</a>
-            <a href="https://boletosimples.zendesk.com/hc/pt-br/sections/200249970-Integra%C3%A7%C3%B5es">Integrações</a>
-            <a href="http://status.boletosimples.com.br">Status dos servidores</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div class="more-infos">
-      <div class="container">
-        <address>
-          <p>Boleto Simples Cobranças Ltda.</p>
-          <p>CNPJ: 05.813.794/0001-26</p>
-          <p>Av. Pres. Vargas, 633 sl 1716</p>
-          <p>Rio de Janeiro, RJ - 20071-004</p>
-        </address>
-        <div class="logos">
-          <div id="selo_siteforte">
-            <a href="javascript:window.open('http://abcomm.org/certificado.php?url=boletosimples.com.br', 'c_TW', 'location=no, toolbar=no, width=600, height=670');">
-              <img alt="Abcomm logo" height="35" src="img/abcomm_logo.png" width="142">
-            </a>
-            <script>
-              var _sfurl = "boletosimples.com.br";
-              var _sfid = "535f9b9349b8a903bc000002";
-              var _sfhttptls = ('https:' == document.location.protocol ? 'https://' : 'http://');
-              (function () {
-                var _sfa = document.createElement('script');
-                _sfa.type = 'text/javascript';
-                _sfa.src = _sfhttptls + 'siteforte.com.br/selo.js';
-                var s = document.getElementsByTagName('script')[0];
-                s.parentNode.insertBefore(_sfa, s);
-              })();
-            </script>
-            <a href="http://www.google.com/safebrowsing/diagnostic?site=boletosimples.com.br" target="_blank" title="Google Safe Browsing">
-              <img alt="Google Safe Browsing" src="img/stamp_google_safe_browsing.png" title="Google Safe Browsing">
-            </a>
-        </div>
-      </div>
-    </div>
-    <div class="copyright">
-      <div class="inner">
-        <p>©2014 Boleto Simples - Gerar Boletos Bancários ficou simples!</p>
-      </div>
-    </div>
-  </footer>
-
-  <script src="js/jquery.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-
-  <script>
-    $(document).ready(function () {
-      $('[data-toggle="offcanvas"]').focus(function () {
-        $('.row-offcanvas').addClass('active')
-      });
-      $('[data-toggle="offcanvas"]').focusout(function () {
-        $('.row-offcanvas').removeClass('active')
-      });
-    });
-  </script>
-
-</body>
+---
+layout: pt
+title: API do Boleto Simples
+en: /en/
+---
+
+<article>
+  <hgroup>
+    <h2>Boleto Simples API</h2>
+    <h4>Integre pagamentos por boletos bancários em seu site ou aplicação.</h3>
+  </hgroup>
+  <p>
+    Boleto Simples fornece uma api simples e poderosa em REST para
+    integrar pagamentos por boletos bancários em seu site ou aplicação.
+  </p>
+  <h2>Benefícios da API</h2>
+  <ul>
+    <li>
+      Programadores conseguem incluir o Boleto Simples como meio de pagamento em um e-commerce.
+    </li>
+    <li>
+      Criar boletos bancários a partir de um sistema de ERP.
+    </li>
+    <li>
+      Integração com o sistema de Contas a Receber.
+    </li>
+    <li>
+      Desenvolver aplicativos móveis para emissão e gerenciamento de boleto bancário.
+    </li>
+    <li>
+      Liberdade para fazer o que quiser, todo programador clama por isso!
+    </li>
+  </ul>
+  <p>
+    Todas as requisições usam <code>application/json</code> como content type e usam <code>https.</code>
+  </p>
+  <p>
+    A URL Base da API é <code>https://boletosimples.com.br/api/v1/.</code>
+  </p>
+  <p>
+    Para dúvidas sobre a API faça suas perguntas em nossa central de suporte.
+  </p>
+  <h2>Começando</h2>
+  <ul>
+    <li><a href="#" title="Autenticação">Autenticação</a></li>
+    <li><a href="#" title="Permissões">Permissões</a></li>
+    <li><a href="#" title="Notificações">Notificações</a></li>
+    <li><a href="#" title="Bibliotecas">Bibliotecas</a></li>
+    <li><a href="#" title="API">API</a></li>
+    <li><a href="#" title="Registre um App">Registre um App</a></li>
+  </ul>
+  <h2>Códigos de Retorno</h2>
+  <p>A API retorna os códigos de resposta HTTP. Estas são as informações mais relevantes:</p>
+  <ul>
+    <li>200 OK - A chamada foi bem sucedida.</li>
+    <li>400 Bad Request - A requisição é inválida, em geral conteúdo mal formado.</li>
+    <li>401 Unauthorized - O usuário e senha são inválidos.</li>
+    <li>403 Forbidden - O acesso à API está bloqueado.</li>
+    <li>404 Not Found - O endereço acessado não existe.</li>
+    <li>429 Too Many Requests - O usuário atingiu o  de requisições.</li>
+    <li>503 Service Unavailable - O usuário atingiu algum dos s de uso.</li>
+    <li>500 Internal Server Error - Houve um erro interno do servidor ao processar a requisição.</li>
+  </ul>
+  <h2>Segurança</h2>
+  <p>O Boleto Simples utiliza Certificados SSL 2048 bits.</p>
+  <p>
+    Toda requisição realizada através da API deve utilizar o protocolo
+    HTTPS pois estará passando informações de autenticação no cabeçalho da requisição.
+  </p>
+   <p>
+     As requisições realizadas na porta 80, serão automaticamente
+     redirecionadas para a porta 443. Esta medida garante que nenhuma
+     requisição realizada na API estará fora do protocolo seguro.
+   </p>
+   <p>Todas as requisições realizadas nos servidore do Boleto Simples serão criptografadas.</p>
+   <h2>Identificando sua aplicação</h2>
+   <p>
+     Você deve incluir o header User-Agent com o nome da sua aplicação
+     e um endereço de e-mail válido, para que possamos entrar em contato caso:
+   </p>
+   <ol>
+     <li>
+       Você esteja fazendo algo errado, e possamos avisá-lo antecipadamente antes de você ser bloqueado;
+     </li>
+     <li>
+       Esteja fazendo algo muito legal, e possamos dar-lhe os parabéns :)
+     </li>
+   </ol>
+   <p>Segue um Exemplo:</p>
+   <code>User-Agent: Meu e-Commerce (meuecommerce@example.com)</code>
+   <p>Se você não informar este cabeçalho, você receberá um erro <code>400 Bad Request.</code></p>
+   <h2>Cache HTTP</h2>
+   <p>
+     Você deve fazer uso dos cabeçalhos HTTP de cache para diminuir a
+     carga em nossos servidores (e aumentar a velocidade do seu aplicativo!).
+   </p>
+   <p>
+     A maioria dos retornos das requisições irão incluir um header <code>ETag</code>
+     ou <code>Last-Modified.</code> Quando você solicitar um recurso pela primeira vez,
+     armazene esse valor e nos envie de volta nas requisições seguintes
+     nos headers <code>If-None-Match</code> e <code>If-Modified-Since.</code> Se o recurso não
+     foi alterado, você receberá uma resposta com o header <code>304 Not Modified</code>,
+     o que  economiza tempo e largura de banda, por
+     evitar de te enviar os dados que você já tem.
+   </p>
+   <p>
+     <a href="http://www.mnot.net/cache_docs/">Mais informações sobre Cache HTTP (em inglês)</a>
+   </p>
+   <h2>Tratamento de erros</h2>
+   <p>Se os nossos servidores estiverem com problema, sua requisição receberá um retorno de erro com status 5xx.</p>
+   <p>
+     Erro 500 significa que a aplicação está completamente indisponível,
+     mas você pode receber também outros erros
+     da família 500 em casos específicos, tais como <code>502 Bad Gateway</code>, <br/>
+     <code>503 Service Unavailable</code> ou <code>504 Gateway
+     Timeout</code>.
+   </p>
+   <p>
+     É de sua responsabilidade identificar o erro e lidar com esses
+     casos, fazendo com que o aplicativo tente enviar
+     a requisição novamente depois de alguns minutos.
+   </p>
+   <p>
+     Nós temos uma página que informa o status dos servidores do Boleto Simples em
+     <a href="http://status.boletosimples.com.br/" title="Status">http://status.boletosimples.com.br/</a>
+   </p>
+   <h2>Limite de Requisições</h2>
+   <p>
+     Existem dois tipos de limite de requisições. Em ambos os casos a
+     contagem é feita para cada usuário.
+   </p>
+   <h3>Intervalo</h3>
+   <p>
+     Cada usuário pode realizar uma requisição a cada 1 segundo. Caso
+     o usuário realize duas requisições simultâneas, o servidor
+     retorna o status HTTP 429 Too Many Requests. Neste caso, o
+     servidor envia o header <code>Retry-After</code> com o número de
+     segundos que você deve esperar até realizar a próxima requisição.
+   </p>
+   <h3>Requisições por Hora</h3>
+   <p>
+     Cada usuário pode realizar no máximo 500 requisições por hora.
+     O número de requisições feitas pelo usuário é
+     zerada no primeiro minuto de cada hora.
+   </p>
+   <p>
+     A cada requisição realizada, o servidor retorna os headers
+     <code>X-RateLimit-Limit</code> e
+     <br/><code>X-RateLimit-Remaining</code> com o
+     número de requisições permitidas e o número de requisições
+     restantes para aquela hora. Exemplo:
+   </p>
+   <h3>Exemplo</h3>
+   <small>Requisição:</small>
+   <pre>
+     curl -i \
+     -u $USERNAME:$PASSWORD \
+     -H 'Content-Type: application/json' \
+     -H 'User-Agent: MyApp (myapp@example.com)' \
+     -X GET \
+     https://boletosimples.com.br/api/v1/userinfo
+   </pre>
+   <small>Resposta:</small>
+   <pre>
+     HTTP/1.1 200 OK
+     Date: Fri, 05 Nov 2010 12:00:00 GMT
+     Content-Type: application/xml; charset=utf-8
+     X-RateLimit-Limit: 500
+     X-RateLimit-Remaining: 486
+   </pre>
+   <p>
+     Caso atinja o número máximo de requisições dentro de uma hora,
+     o servidor retorna o status <br/> <code>HTTP 429 Too Many Requests</code>.
+     Neste caso, você deve esperar até o primeiro minuto da hora
+     seguinte para realizar a próxima requisição.
+   </p>
+</article>

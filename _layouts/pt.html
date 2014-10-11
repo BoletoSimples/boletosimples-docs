@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Documentação da API do Boleto Simples, sistema de emissão de boleto bancário online.">
+  <meta name="keywords" content="boleto, boleto simples, api, documentação, documentation, webservice">
+  <meta name="author" content="Boleto Simples">
+  <title>{{ page.title }}</title>
+  <link href="/css/style.css" rel="stylesheet">
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico">
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300' rel='stylesheet' type='text/css'>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <a class="logo pull-left" href="/" title="inicio">
+        <img src="/img/logo.png" alt="logotipo boleto simples" height="30"/>
+      </a>
+      <nav class="pull-right visible-lg">
+        <ul>
+          <li>
+            <a href="http://boletosimples.com.br" title="ir para o site">Início</a>
+          </li>
+          <li>
+            <a href="http://boletosimples.com.br/preco" title="Preço">Preço</a>
+          </li>
+          <li>
+            <a class="btn btn-primary" href="https://boletosimples.com.br/users/sign_in" title="Logar">Login</a>
+          </li>
+        </ul>
+      </nav>
+      <button type="button" class="hidden-lg btn btn-primary btn-xs pull-right" data-toggle="offcanvas">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+  </header>
+  <section class="main">
+    <div class="container">
+      <div class="row row-offcanvas row-offcanvas-right">
+        <!--Sidebar visibe only in mobile devices-->
+        <div class="hidden-lg col-xs-6 col-sm-6 col-md-6 sidebar-offcanvas" id="sidebar" role="navigation">
+          <nav class="main-menu">
+            <ul>
+              <li>
+                <a href="http://boletosimples.com.br" title="ir para o site">Início</a>
+              </li>
+              <li>
+                <a href="http://boletosimples.com.br/preco" title="Preço">Preço</a>
+              </li>
+              <li>
+                <a href="https://boletosimples.com.br/users/sign_in" title="Logar">Login</a>
+              </li>
+            </ul>
+          </nav>
+          <p>Documentação</p>
+          <ul class="nav">
+            <li class="active">
+              <a href="/" title="Começando">Começando</a>
+            </li>
+            <li class="submenu">
+              <a href="/authentication" title="Autenticação">Autenticação</a>
+              <ul class="nav">
+                <li>
+                  <a href="/authentication#basic_auth" title="Email + Senha">Email + Senha</a>
+                </li>
+                <li>
+                  <a href="/authentication#oauth2" title="Autenticação Oauth2">Autenticação Oauth2</a>
+                </li>
+                <li>
+                  <a href="/authentication#security" title="Segurança">Segurança</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="/permissions" title="Permissões">Permissões</a>
+            </li>
+            <li>
+              <a href="/notifications" title="Notificações">Notificações</a>
+            </li>
+            <li>
+              <a href="/libraries" title="Bibliotecas">Bibliotecas</a>
+            </li>
+            <li>
+              <a href="https://boletosimples.com.br/docs/api/reference" target="_blank" title="APIs Disponíveis">APIs Disponíveis</a>
+            </li>
+            <li>
+              <a href="https://boletosimples.zendesk.com/hc/pt-br" target="_blank" title="Registre um app">Registre um app</a>
+            </li>
+          </ul>
+        </div>
+        <!--Sidebar visibe only in mobile devices-->
+        <!--Side menu-->
+        <aside class="col-lg-3 visible-lg">
+          <p>Documentação</p>
+          <ul class="nav">
+            <li class="active">
+              <a href="/" title="Começando">Começando</a>
+            </li>
+            <li class="submenu">
+              <a href="/authentication" title="Autenticação">Autenticação</a>
+              <ul class="nav">
+                <li>
+                  <a href="/authentication#basic_auth" title="Email + Senha">Email + Senha</a>
+                </li>
+                <li>
+                  <a href="/authentication#oauth2" title="Autenticação Oauth2">Autenticação Oauth2</a>
+                </li>
+                <li>
+                  <a href="/authentication#security" title="Segurança">Segurança</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="/permissions" title="Permissões">Permissões</a>
+            </li>
+            <li>
+              <a href="/notifications" title="Notificações">Notificações</a>
+            </li>
+            <li>
+              <a href="/libraries" title="Bibliotecas">Bibliotecas</a>
+            </li>
+            <li>
+              <a href="https://boletosimples.com.br/docs/api/reference" target="_blank" title="APIs Disponíveis">APIs Disponíveis</a>
+            </li>
+            <li>
+              <a href="https://boletosimples.zendesk.com/hc/pt-br" target="_blank" title="Registre um app">Registre um app</a>
+            </li>
+          </ul>
+        </aside>
+        <!--Side menu-->
+        <!--Main Content-->
+        <div class="content col-lg-9 col-md-12 col-sm-12 col-xs-12">
+          {{ content }}
+        </div>
+        <!--Main Content-->
+      </div>
+    </div>
+  </section>
+  <footer>
+    <div class="sitemap">
+      <div class="container">
+        <ul>
+          <li class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+            <h4>Boleto Simples</h4>
+            <a href="https://boletosimples.com.br/preco">Preço</a>
+            <a href="https://boletosimples.zendesk.com/hc/pt-br/requests/new">Fale Conosco</a>
+          </li>
+          <li class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+            <h4>Produto</h4>
+            <a href="https://boletosimples.zendesk.com/hc/pt-br/articles/201253460-Pol%C3%ADtica-de-Privacidade">Política de Privacidade</a>
+            <a href="https://boletosimples.zendesk.com/hc/pt-br/articles/201253470-Pol%C3%ADtica-de-Seguran%C3%A7a">Política de Segurança</a>
+            <a href="https://boletosimples.zendesk.com/hc/pt-br/articles/201196074-Termos-de-Uso">Termos de Uso</a>
+          </li>
+          <li class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+            <h4>Suporte</h4>
+            <a href="https://boletosimples.zendesk.com/hc/pt-br/requests/new">Enviar solicitação</a>
+            <a href="https://boletosimples.zendesk.com/hc/pt-br">Perguntas Frequentes</a>
+            <a href="https://boletosimples.zendesk.com/hc/communities/public/topics">Comunidade</a>
+          </li>
+          <li class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+            <h4>Desenvolvedores</h4>
+            <a href="http://api.boletosimples.com.br">Documentação da API</a>
+            <a href="https://boletosimples.zendesk.com/hc/pt-br/sections/200249970-Integra%C3%A7%C3%B5es">Integrações</a>
+            <a href="http://status.boletosimples.com.br">Status dos servidores</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="more-infos">
+      <div class="container">
+        <address>
+          <p>Boleto Simples Cobranças Ltda.</p>
+          <p>CNPJ: 05.813.794/0001-26</p>
+          <p>Av. Pres. Vargas, 633 sl 1716</p>
+          <p>Rio de Janeiro, RJ - 20071-004</p>
+        </address>
+        <div class="logos">
+          <div id="selo_siteforte">
+            <a href="javascript:window.open('http://abcomm.org/certificado.php?url=boletosimples.com.br', 'c_TW', 'location=no, toolbar=no, width=600, height=670');">
+              <img alt="Abcomm logo" height="35" src="/img/abcomm_logo.png" width="142">
+            </a>
+            <script>
+              var _sfurl = "boletosimples.com.br";
+              var _sfid = "535f9b9349b8a903bc000002";
+              var _sfhttptls = ('https:' == document.location.protocol ? 'https://' : 'http://');
+              (function () {
+                var _sfa = document.createElement('script');
+                _sfa.type = 'text/javascript';
+                _sfa.src = _sfhttptls + 'siteforte.com.br/selo.js';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(_sfa, s);
+              })();
+            </script>
+            <a href="http://www.google.com/safebrowsing/diagnostic?site=boletosimples.com.br" target="_blank" title="Google Safe Browsing">
+              <img alt="Google Safe Browsing" src="/img/stamp_google_safe_browsing.png" title="Google Safe Browsing">
+            </a>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">
+      <div class="inner">
+        <p>©2014 Boleto Simples - Gerar Boletos Bancários ficou simples!</p>
+      </div>
+    </div>
+  </footer>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('[data-toggle="offcanvas"]').focus(function () {
+        $('.row-offcanvas').addClass('active')
+      });
+      $('[data-toggle="offcanvas"]').focusout(function () {
+        $('.row-offcanvas').removeClass('active')
+      });
+    });
+  </script>
+</body>
