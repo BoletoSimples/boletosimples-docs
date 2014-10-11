@@ -43,7 +43,7 @@ en: /en/authentication
 
   <small>Requisição:</small>
 
-  <pre>
+  <pre class="bash">
 curl "http://boletosimples.com.br/api/v1/userinfo" -X GET \
 -H "User-Agent: Meu e-Commerce (meuecommerce@example.com)" \
 -u EMAIL:SENHA \
@@ -53,7 +53,7 @@ curl "http://boletosimples.com.br/api/v1/userinfo" -X GET \
 
   <small>Resposta:</small>
 
-  <pre>{"id":1016,"email":"EMAIL","account_type":"individual","cpf":"142.578.243-44","address_street_name":"Av. Burkhard Hehn Simões","address_state":"RJ","address_neighborhood":"São Francisco","address_postal_code":"24360-440","address_number":"120","address_complement":"709","phone_number":"2199999999","banking_agency_number":"4042","banking_account_number":"8873","banking_account_digit":"0","withdrawal_period":"biweekly","notification_url":"http://example.com.br/notify","banking_agency_digit":"8","first_name":"Margret","middle_name":"Simões","last_name":"Gonçalo","date_of_birth":"1970-03-01","business_category":1000,"business_subcategory":2173,"business_website":"http://example.com.br","business_name":"Sebastian Elias Publicidade LTDA.","business_type":"mei","business_cnpj":"18.174.681/0001-70","address_city_name":"Rio de Janeiro","banking_bank_number":"001","full_name":"Margret Simões Gonçalo","balance":100.0}</pre>
+  <pre class="json">{"id":1016,"email":"EMAIL","account_type":"individual","cpf":"142.578.243-44","address_street_name":"Av. Burkhard Hehn Simões","address_state":"RJ","address_neighborhood":"São Francisco","address_postal_code":"24360-440","address_number":"120","address_complement":"709","phone_number":"2199999999","banking_agency_number":"4042","banking_account_number":"8873","banking_account_digit":"0","withdrawal_period":"biweekly","notification_url":"http://example.com.br/notify","banking_agency_digit":"8","first_name":"Margret","middle_name":"Simões","last_name":"Gonçalo","date_of_birth":"1970-03-01","business_category":1000,"business_subcategory":2173,"business_website":"http://example.com.br","business_name":"Sebastian Elias Publicidade LTDA.","business_type":"mei","business_cnpj":"18.174.681/0001-70","address_city_name":"Rio de Janeiro","banking_bank_number":"001","full_name":"Margret Simões Gonçalo","balance":100.0}</pre>
 
   <p>O <code>EMAIL</code> deve ser trocado pelo email usado para acessar sua conta.</p>
 

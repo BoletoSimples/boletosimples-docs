@@ -41,15 +41,6 @@ en: /en/
   <p>
     Para dúvidas sobre a API faça suas perguntas em nossa <a href="http://suporte.boletosimples.com.br">central de suporte</a>.
   </p>
-  <h2>Começando</h2>
-  <ul>
-    <li><a href="#" title="Autenticação">Autenticação</a></li>
-    <li><a href="#" title="Permissões">Permissões</a></li>
-    <li><a href="#" title="Notificações">Notificações</a></li>
-    <li><a href="#" title="Bibliotecas">Bibliotecas</a></li>
-    <li><a href="#" title="API">API</a></li>
-    <li><a href="#" title="Registre um App">Registre um App</a></li>
-  </ul>
   <h2>Códigos de Retorno</h2>
   <p>A API retorna os códigos de resposta HTTP. Estas são as informações mais relevantes:</p>
   <ul>
@@ -153,21 +144,21 @@ en: /en/
    </p>
    <h3>Exemplo</h3>
    <small>Requisição:</small>
-   <pre>
-     curl -i \
-     -u $USERNAME:$PASSWORD \
-     -H 'Content-Type: application/json' \
-     -H 'User-Agent: MyApp (myapp@example.com)' \
-     -X GET \
-     https://boletosimples.com.br/api/v1/userinfo
+   <pre class="bash">
+curl -i \
+-u $USERNAME:$PASSWORD \
+-H 'Content-Type: application/json' \
+-H 'User-Agent: MyApp (myapp@example.com)' \
+-X GET \
+https://boletosimples.com.br/api/v1/userinfo
    </pre>
    <small>Resposta:</small>
-   <pre>
-     HTTP/1.1 200 OK
-     Date: Fri, 05 Nov 2010 12:00:00 GMT
-     Content-Type: application/xml; charset=utf-8
-     X-RateLimit-Limit: 500
-     X-RateLimit-Remaining: 486
+   <pre class="json">
+HTTP/1.1 200 OK
+Date: Fri, 05 Nov 2010 12:00:00 GMT
+Content-Type: application/xml; charset=utf-8
+X-RateLimit-Limit: 500
+X-RateLimit-Remaining: 486
    </pre>
    <p>
      Caso atinja o número máximo de requisições dentro de uma hora,
@@ -175,4 +166,13 @@ en: /en/
      Neste caso, você deve esperar até o primeiro minuto da hora
      seguinte para realizar a próxima requisição.
    </p>
+   <h2>Começando</h2>
+   <ul>
+     <li><a href="/authentication" title="Autenticação">Autenticação</a></li>
+     <li><a href="/permissions" title="Permissões">Permissões</a></li>
+     <li><a href="/notifications" title="Notificações">Notificações</a></li>
+     <li><a href="/libraries" title="Bibliotecas">Bibliotecas</a></li>
+     <li><a href="https://boletosimples.com.br/docs/api/reference" target="_blank" title="APIs Disponíveis">API</a></li>
+     <li><a href="https://boletosimples.zendesk.com/hc/pt-br" target="_blank" title="Registre um App">Registre um App</a></li>
+   </ul>
 </article>
