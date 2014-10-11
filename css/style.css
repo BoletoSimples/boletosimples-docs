@@ -164,8 +164,7 @@ article h3 {
 }
 
 article code {
-  background-color: #e64848;
-  color: #fff;
+  background-color: rgba(0,0,0,0.04);
 }
 
 hgroup h2,
