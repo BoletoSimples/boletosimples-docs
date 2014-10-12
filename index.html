@@ -36,7 +36,7 @@ en: /en/
     A URL Base da API é <code>https://boletosimples.com.br/api/v1/</code>
   </p>
   <p>
-    Todas as requisições usam <code>application/json</code> como content type e usam <code>https.</code>
+    Todas as requisições usam <code>application/json</code> como content type e usam <code>https</code>.
   </p>
   <p>
     Para dúvidas sobre a API faça suas perguntas em nossa <a href="http://suporte.boletosimples.com.br">central de suporte</a>.
@@ -44,14 +44,14 @@ en: /en/
   <h2>Códigos de Retorno</h2>
   <p>A API retorna os códigos de resposta HTTP. Estas são as informações mais relevantes:</p>
   <ul>
-    <li>200 OK - A chamada foi bem sucedida.</li>
-    <li>400 Bad Request - A requisição é inválida, em geral conteúdo mal formado.</li>
-    <li>401 Unauthorized - O usuário e senha são inválidos.</li>
-    <li>403 Forbidden - O acesso à API está bloqueado.</li>
-    <li>404 Not Found - O endereço acessado não existe.</li>
-    <li>429 Too Many Requests - O usuário atingiu o  de requisições.</li>
-    <li>503 Service Unavailable - O usuário atingiu algum dos s de uso.</li>
-    <li>500 Internal Server Error - Houve um erro interno do servidor ao processar a requisição.</li>
+    <li><code>200 OK</code> - A chamada foi bem sucedida.</li>
+    <li><code>400 Bad Request</code> - A requisição é inválida, em geral conteúdo mal formado.</li>
+    <li><code>401 Unauthorized</code> - O usuário e senha são inválidos.</li>
+    <li><code>403 Forbidden</code> - O acesso à API está bloqueado.</li>
+    <li><code>404 Not Found</code> - O endereço acessado não existe.</li>
+    <li><code>429 Too Many Requests</code> - O usuário atingiu o  de requisições.</li>
+    <li><code>503 Service Unavailable</code> - O usuário atingiu algum dos s de uso.</li>
+    <li><code>500 Internal Server Error</code> - Houve um erro interno do servidor ao processar a requisição.</li>
   </ul>
   <h2>Segurança</h2>
   <p>O Boleto Simples utiliza Certificados SSL 2048 bits.</p>
@@ -153,7 +153,7 @@ curl -i \
 https://boletosimples.com.br/api/v1/userinfo
    </pre>
    <small>Resposta:</small>
-   <pre class="json">
+   <pre class="bash">
 HTTP/1.1 200 OK
 Date: Fri, 05 Nov 2010 12:00:00 GMT
 Content-Type: application/xml; charset=utf-8
