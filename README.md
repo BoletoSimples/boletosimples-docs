@@ -8,7 +8,13 @@ Se você deseja ter acesso a documentação offline, siga os seguintes passos:
 
 	```sh
 	git clone https://github.com/BoletoSimples/boletosimples-api.git
+	```
+
+1. Atualize as dependências
+
+	```sh
 	cd boletosimples-api
+	bundle install
 	```
 
 1. Rode o servidor
