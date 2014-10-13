@@ -1,0 +1,38 @@
+<p>Documentação</p>
+<ul class="nav">
+  <li {% if page.url == '/' %}class="active"{% endif %}>
+    <a href="/" title="Introdução">Introdução</a>
+  </li>
+  <li class="submenu {% if page.url == '/authentication/' %}active{% endif %}">
+    <a href="/authentication" title="Autenticação">Autenticação</a>
+    <ul class="nav">
+      <li>
+        <a href="/authentication#basic_auth" title="Email + Senha">Email + Senha</a>
+      </li>
+      <li>
+        <a href="/authentication#oauth2" title="Autenticação Oauth2">Autenticação Oauth2</a>
+      </li>
+      <li>
+        <a href="/authentication#security" title="Segurança">Segurança</a>
+      </li>
+    </ul>
+  </li>
+  <li {% if page.url == '/permissions/' %}class="active"{% endif %}>
+    <a href="/permissions" title="Permissões">Permissões</a>
+  </li>
+  <li {% if page.url == '/notifications/' %}class="active"{% endif %}>
+    <a href="/notifications" title="Notificações">Notificações</a>
+  </li>
+  <li {% if page.url == '/libraries/' %}class="active"{% endif %}>
+    <a href="/libraries" title="Bibliotecas">Bibliotecas</a>
+  </li>
+  <li {% if page.url == '/sandbox/' %}class="active"{% endif %}>
+    <a href="/sandbox" title="Sandbox">Ambiente Sandbox</a>
+  </li>
+  <li>
+    <a href="https://boletosimples.com.br/docs/api/reference" target="_blank" title="APIs Disponíveis">APIs Disponíveis</a>
+  </li>
+  <li>
+    <a href="https://boletosimples.zendesk.com/hc/pt-br" target="_blank" title="Registre um app">Registre um app</a>
+  </li>
+</ul>
