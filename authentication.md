@@ -4,11 +4,9 @@ title: Autenticação - API do Boleto Simples
 en: /en/authentication
 ---
 
-<article>
+## Autenticação
 
-  <h2>Autenticação</h2>
-
-  <p>Nós oferecemos duas formas de autenticação para acessar a API do Boleto Simples:</p>
+Nós oferecemos duas formas de autenticação para acessar a API do Boleto Simples:
 
   <table class="table table-bordered features">
     <thead>
@@ -29,86 +27,102 @@ en: /en/authentication
     </tbody>
   </table>
 
-  <hgroup>
-    <h2 id="basic_auth"> Email + Senha </h2>
-    <h4>
-      Nós recomendamos essa opção se você precisar apenas acessar a
-      sua conta.
-    </h4>
-  </hgroup>
 
-  <p> Como começar </p>
+##  Email + Senha
 
-  <p>Exemplo:</p>
+#### Nós recomendamos essa opção se você precisar apenas acessar a sua conta.
 
-  <small>Requisição:</small>
+Como começar
 
-  <pre class="bash">
+Exemplo:
+
+<small>Requisição:</small>
+
+<pre class="bash">
 curl "http://boletosimples.com.br/api/v1/userinfo" -X GET \
 -H "User-Agent: Meu e-Commerce (meuecommerce@example.com)" \
 -u EMAIL:SENHA \
 -H "Accept: application/json" \
 -H "Content-Type: application/json"
-  </pre>
+</pre>
 
-  <small>Resposta:</small>
+<small>Resposta:</small>
 
-  <pre class="json">{"id":1016,"email":"EMAIL","account_type":"individual","cpf":"142.578.243-44","address_street_name":"Av. Burkhard Hehn Simões","address_state":"RJ","address_neighborhood":"São Francisco","address_postal_code":"24360-440","address_number":"120","address_complement":"709","phone_number":"2199999999","banking_agency_number":"4042","banking_account_number":"8873","banking_account_digit":"0","withdrawal_period":"biweekly","notification_url":"http://example.com.br/notify","banking_agency_digit":"8","first_name":"Margret","middle_name":"Simões","last_name":"Gonçalo","date_of_birth":"1970-03-01","business_category":1000,"business_subcategory":2173,"business_website":"http://example.com.br","business_name":"Sebastian Elias Publicidade LTDA.","business_type":"mei","business_cnpj":"18.174.681/0001-70","address_city_name":"Rio de Janeiro","banking_bank_number":"001","full_name":"Margret Simões Gonçalo","balance":100.0}</pre>
+<pre class="json">{
+  "id":1016,
+  "email":"EMAIL",
+  "account_type":"individual",
+  "cpf":"142.578.243-44",
+  "address_street_name":"Av. Burkhard Hehn Simões",
+  "address_state":"RJ",
+  "address_neighborhood":"São Francisco",
+  "address_postal_code":"24360-440",
+  "address_number":"120",
+  "address_complement":"709",
+  "phone_number":"2199999999",
+  "banking_agency_number":"4042",
+  "banking_account_number":"8873",
+  "banking_account_digit":"0",
+  "withdrawal_period":"biweekly",
+  "notification_url":"http://example.com.br/notify",
+  "banking_agency_digit":"8",
+  "first_name":"Margret",
+  "middle_name":"Simões",
+  "last_name":"Gonçalo",
+  "date_of_birth":"1970-03-01",
+  "business_category":1000,
+  "business_subcategory":2173,
+  "business_website":"http://example.com.br",
+  "business_name":"Sebastian Elias Publicidade LTDA.",
+  "business_type":"mei",
+  "business_cnpj":"18.174.681/0001-70",
+  "address_city_name":"Rio de Janeiro",
+  "banking_bank_number":"001",
+  "full_name":"Margret Simões Gonçalo",
+  "balance":100.0
+}</pre>
 
-  <p>O <code>EMAIL</code> deve ser trocado pelo email usado para acessar sua conta.</p>
+O `EMAIL` deve ser trocado pelo email usado para acessar sua conta.
 
-  <p>A <code>SENHA</code> deve ser trocada pela senha usada para acessar sua conta.</p>
+A `SENHA` deve ser trocada pela senha usada para acessar sua conta.
 
-  <hgroup>
-    <h2 id="oauth2"> Autenticação OAuth2 </h2>
-    <h4>Nós recomendamos essa opção caso sua app necessite acessar contas de terceiros. </h4>
-  </hgroup>
+##  Autenticação OAuth2
 
-  <p>
-    O protocolo <a href="http://en.wikipedia.org/wiki/OAuth#OAuth_2.0"> OAuth2</a>
-    permite o acesso parcial ou total por terceiros sem necessidade de
-    compartilhar sua senha. É mais complexo que acessar por usuário
-    e senha mas é mais flexível. OAuth2 funciona muito bem para
-    aplicações web, assim como para desktop e mobile.
-  </p>
+#### Nós recomendamos essa opção caso sua app necessite acessar contas de terceiros.
 
-  <p>
-    Há bibliotecas OAuth2 para quase todas as linguagens visto que é
-    um protocolo amplamente utilizado na industria
-    de software e por empresas como like Google e Facebook.
-  </p>
+O protocolo [ OAuth2](http://en.wikipedia.org/wiki/OAuth#OAuth_2.0)
+permite o acesso parcial ou total por terceiros sem necessidade de
+compartilhar sua senha. É mais complexo que acessar por usuário
+e senha mas é mais flexível. OAuth2 funciona muito bem para
+aplicações web, assim como para desktop e mobile.
 
-  <h3>Registro</h3>
+Há bibliotecas OAuth2 para quase todas as linguagens visto que é
+um protocolo amplamente utilizado na industria
+de software e por empresas como like Google e Facebook.
 
-  <p>
-    Para começar você precisa
-    <a href="http://suporte.boletosimples.com.br" target="_blank">solicitar o cadastro da sua aplicação</a>
-    em nossos servidores. Nós te enviaremos um <code>client_id</code>
-    e <code>client_secret</code>.
-  </p>
+### Registro
 
-  <p>
-    Você também deverá nos fornecer uma URL de redirecionamento
-    <code>redirect_uri</code> para o seu site. Se você desenvolve
-    para desktop ou mobile, veja na seção a baixo como configurar a
-    <code>redirect_uri</code>.
-  </p>
+Para começar você precisa
+[solicitar o cadastro da sua aplicação](http://suporte.boletosimples.com.br)
+em nossos servidores. Nós te enviaremos um `client_id`
+e `client_secret`.
 
-  <p>OAuth2 requer que o usuário autorize o acesso da sua app à conta dele. Para autenticar o usuário no OAuth2:</p>
+Você também deverá nos fornecer uma URL de redirecionamento
+`redirect_uri` para o seu site. Se você desenvolve
+para desktop ou mobile, veja na seção a baixo como configurar a
+`redirect_uri`.
 
-  <ul>
-    <li>Use o <code>client_id</code> e <code>client_secret</code> que você obteve conosco durante o registro para
-      gerar uma <code>authorize_url</code> e redirecionar o usuário para esta url. Opcionalmente inclua o
-      <code>scope</code> para acessar alguma <a href="/docs/api/permissions">informação em específico</a>.
-    </li>
-    <li>Se o usuário autorizar sua app, ele será redirecionado para a <code>redirect_uri</code> que você configurou
-      no registro com o parâmetro <code>code</code>.
-    </li>
-    <li>Use o parâmetro <code>code</code> na url para gerar um <code>access_token</code></li>
-    <li>Use o <code>access_token</code> para fazer as requisições em nome do usuário.</li>
-  </ul>
+OAuth2 requer que o usuário autorize o acesso da sua app à conta dele. Para autenticar o usuário no OAuth2:
 
-  <h3>Exemplos</h3>
+*   Use o `client_id` e `client_secret` que você obteve conosco durante o registro para
+gerar uma `authorize_url` e redirecionar o usuário para esta url. Opcionalmente inclua o
+`scope` para acessar alguma [informação em específico](/docs/api/permissions).
+*   Se o usuário autorizar sua app, ele será redirecionado para a `redirect_uri` que você configurou
+no registro com o parâmetro `code`.
+*   Use o parâmetro `code` na url para gerar um `access_token`
+*   Use o `access_token` para fazer as requisições em nome do usuário.
+
+### Exemplos
 
   <div class="panel">
     <div class="panel-heading">
@@ -172,33 +186,26 @@ http://boletosimples.com.br/api/v1/userinfo?access_token=...
     </div>
   </div>
 
-  <h3 id="mobile">Desenvolvendo aplicações para Mobile e Desktop</h3>
+### Desenvolvendo aplicações para Mobile e Desktop
 
-  <p>
-    Se você está desenvolvendo para mobile ou desktop, você talvez não tenha uma url de redirecionamento. Nestes
-    casos você pode configurar a url para: <code>urn:ietf:wg:oauth:2.0:oob</code>. Isto faz com que o servidor
-    mostre uma página em branco com o código de autorização na url e título da página. Você pode ler essa informação
-    de alguma forma dentro da sua aplicação para poder utilizada mais tarde.
-  </p>
+Se você está desenvolvendo para mobile ou desktop, você talvez não tenha uma url de redirecionamento. Nestes
+casos você pode configurar a url para: `urn:ietf:wg:oauth:2.0:oob`. Isto faz com que o servidor
+mostre uma página em branco com o código de autorização na url e título da página. Você pode ler essa informação
+de alguma forma dentro da sua aplicação para poder utilizada mais tarde.
 
-  <p>
-    Isso usa a mesma técnica adotada pelo
-    <a href="https://developers.google.com/accounts/docs/OAuth2InstalledApp" target="_blank">Google</a>.
-    <a href="http://www.slideshare.net/briandavidcampbell/is-that-a-token-in-your-phone-in-your-pocket-or-are-you-just-glad-to-see-me-oauth-20-and-mobile-devices" target="_blank">Aqui
-    tem um guia(Em inglês)</a> com um exemplo para iOS e Android.
-  </p>
+Isso usa a mesma técnica adotada pelo
+[Google](https://developers.google.com/accounts/docs/OAuth2InstalledApp).
+[Aqui
+tem um guia(Em inglês)](http://www.slideshare.net/briandavidcampbell/is-that-a-token-in-your-phone-in-your-pocket-or-are-you-just-glad-to-see-me-oauth-20-and-mobile-devices) com um exemplo para iOS e Android.
 
-  <hgroup>
-    <h2 id="security">Segurança</h2>
-    <h4>Salvar credenciais de forma segura</h4>
-  </hgroup>
+## Segurança
 
-  <p>Você deve se preocupar em como guardar as credencias que você consegue de forma segura. Se alguém obtém o
-    <code>access_token</code> com permissões, eles poderão acessar informações particulares suas e dos seus
-    clientes.</p>
+#### Salvar credenciais de forma segura
 
-  <p>Nunca salve suas credenciais junto ao seu código fonte ou em seu banco de dados à menos que estejam
-    criptografadas. Separar as credencias do seu código fonte e do banco de dados são excelentes práticas a serem
-    adotadas.</p>
+Você deve se preocupar em como guardar as credencias que você consegue de forma segura. Se alguém obtém o
+`access_token` com permissões, eles poderão acessar informações particulares suas e dos seus
+clientes.
 
-</article>
+Nunca salve suas credenciais junto ao seu código fonte ou em seu banco de dados à menos que estejam
+criptografadas. Separar as credencias do seu código fonte e do banco de dados são excelentes práticas a serem
+adotadas.
