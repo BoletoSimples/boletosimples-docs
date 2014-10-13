@@ -181,7 +181,32 @@ https://boletosimples.com.br/api/v1/oauth/token?grant_type=authorization_code&am
 http://boletosimples.com.br/api/v1/userinfo?access_token=...
 
 # Resposta
-{"id":1017,"email":"meuecommerce@example.com","account_type":"individual","first_name":"Margret","middle_name":"Simões","last_name":"Gonçalo","full_name":"Margret Simões Gonçalo","cpf":"142.578.243-44","date_of_birth":"1970-03-01","phone_number":"2199999999","address_street_name":"Av. Burkhard Hehn Simões","address_number":"120","address_complement":"709","address_neighborhood":"São Francisco","address_postal_code":"24360-440","address_city_name":"Rio de Janeiro","address_state":"RJ","banking_bank_number":"001","banking_agency_number":"4042","banking_agency_digit":"8","banking_account_number":"8873","banking_account_digit":"0","business_name":"Sebastian Elias Publicidade LTDA.","business_cnpj":"18.174.681/0001-70"}
+{
+  "id":1017,
+  "email":"meuecommerce@example.com",
+  "account_type":"individual",
+  "first_name":"Margret",
+  "middle_name":"Simões",
+  "last_name":"Gonçalo",
+  "full_name":"Margret Simões Gonçalo",
+  "cpf":"142.578.243-44",
+  "date_of_birth":"1970-03-01",
+  "phone_number":"2199999999",
+  "address_street_name":"Av. Burkhard Hehn Simões",
+  "address_number":"120",
+  "address_complement":"709",
+  "address_neighborhood":"São Francisco",
+  "address_postal_code":"24360-440",
+  "address_city_name":"Rio de Janeiro",
+  "address_state":"RJ",
+  "banking_bank_number":"001",
+  "banking_agency_number":"4042",
+  "banking_agency_digit":"8",
+  "banking_account_number":"8873",
+  "banking_account_digit":"0",
+  "business_name":"Sebastian Elias Publicidade LTDA.",
+  "business_cnpj":"18.174.681/0001-70"
+}
       </pre>
     </div>
   </div>
