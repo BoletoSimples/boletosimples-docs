@@ -140,14 +140,20 @@ aside .nav > li > a {
 .sidebar-offcanvas ul li.active a { padding: 10px 13px !important; }
 
 /*Article*/
-hgroup {
+h2 + h4 {
   border-bottom: solid 1px #8a949f;
   margin: 0 0 22px 0;
+  padding: 0 0 5px 0;
 }
 
 article { margin: 0 0 0 15px; }
 
-article h2 {
+article  h2:first-of-type {
+  border:none;
+  margin-bottom: 0;
+}
+
+article  h2 {
   border-bottom: solid 1px #8a949f;
   color: #62a4cf;
   font-size: 30px;
@@ -177,14 +183,7 @@ article small { text-transform: uppercase; }
 
 article pre { padding:0; }
 
-hgroup h2,
-hgroup h3,
-hgroup h4 {
-  border:none;
-  padding: 0;
-}
-
-hgroup h4 {
+h4 {
   color: #393939;
   font-family: 'proxima_nova_rgbold';
   font-size: 14px;
