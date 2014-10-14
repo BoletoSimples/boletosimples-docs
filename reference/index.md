@@ -6,7 +6,7 @@ en: /en/reference
 
 ## Recursos
 
-### [Parceiros - Usuários](/reference/v1/apiv1partnerusers)
+### Parceiros - Usuários
 
 <table class='table table-bordered features'>
 <thead>
@@ -25,9 +25,7 @@ en: /en/reference
 </tbody>
 </table>
 
-<!--
-
-### [Boletos](/docs/api/reference/v1/bank_billets.html)
+### Boletos
 
 <table class='table table-bordered features'>
 <thead>
@@ -39,13 +37,13 @@ en: /en/reference
 <tbody>
       <tr>
         <td>
-          <a href="/docs/api/reference/v1/bank_billets/index.html">GET /api/v1/bank_billets</a>
+          <a href="/reference/v1/bank_billets">GET /api/v1/bank_billets</a>
         </td>
         <td width='60%'>Listar boletos</td>
       </tr>
       <tr>
         <td>
-          <a href="/docs/api/reference/v1/bank_billets/create.html">POST /api/v1/bank_billets</a>
+          <a href="/reference/v1/bank_billets/create">POST /api/v1/bank_billets</a>
         </td>
         <td width='60%'>Criar boleto</td>
       </tr>
@@ -57,6 +55,8 @@ en: /en/reference
       </tr>
 </tbody>
 </table>
+
+<!--
 
 ### [Clientes](/docs/api/reference/v1/customers.html)
 
