@@ -192,6 +192,11 @@ h4 {
   margin: 20px 0 0 0;
 }
 
+table small {
+  margin: 0;
+  text-transform: none;
+}
+
 .panel .panel-heading {
   background: #2a86c1;
   border-bottom: solid 1px #cccccc;
