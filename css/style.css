@@ -142,6 +142,8 @@ aside .nav > li > a {
 /*Article*/
 article { margin: 0 0 0 15px; }
 
+article .breadcrumb { margin-top: 30px; }
+
 article h2 {
   border-bottom: solid 1px #8a949f;
   color: #62a4cf;
