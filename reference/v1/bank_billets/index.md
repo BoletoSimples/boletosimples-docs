@@ -1,6 +1,6 @@
 ---
 layout: reference
-title: Boletos
+title: Listar Boletos - API do Boleto Simples
 en: /en/reference
 ---
 
