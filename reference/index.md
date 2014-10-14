@@ -49,7 +49,7 @@ en: /en/reference
       </tr>
       <tr>
         <td>
-          <a href="/docs/api/reference/v1/bank_billets/show.html">GET /api/v1/bank_billets/:id</a>
+          <a href="/reference/v1/bank_billets/show">GET /api/v1/bank_billets/:id</a>
         </td>
         <td width='60%'>Informações do Boleto</td>
       </tr>
