@@ -140,6 +140,7 @@ restantes para aquela hora. Exemplo:
 ### Exemplo
 
 <small>Requisição:</small>
+
 <pre class="bash">
 curl -i \
 -u $USERNAME:$PASSWORD \
@@ -148,7 +149,9 @@ curl -i \
 -X GET \
 https://boletosimples.com.br/api/v1/userinfo
 </pre>
+
 <small>Resposta:</small>
+
 <pre class="bash">
 HTTP/1.1 200 OK
 Date: Fri, 05 Nov 2010 12:00:00 GMT
