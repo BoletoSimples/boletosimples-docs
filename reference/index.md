@@ -18,7 +18,7 @@ en: /en/reference
 <tbody>
       <tr>
         <td>
-          <a href="/docs/api/reference/v1/apiv1partnerusers/create.html">POST /api/v1/partner/users</a>
+          <a href="/reference/v1/apiv1partnerusers">POST /api/v1/partner/users</a>
         </td>
         <td width='60%'>Criar cliente</td>
       </tr>
