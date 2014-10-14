@@ -39,13 +39,16 @@ O sistema espera que a requisição retorne o status code `200 OK`. Caso a requi
 Considerando que o valor do `notification_url` passado na criação do boleto bancário foi **http://seudominio.com.br/boletosimples**, a requisição relizada e a resposta esperada são iguais as definidas abaixo.
 
 <small>Requisição:</small>
+
 <pre class="bash">
 curl -I \
 -D '{"id": 1, "event": "status-changed", "status": "paid"}' \
 -X POST \
 http://seudominio.com.br/boletosimples
 </pre>
+
 <small>Resposta:</small>
+
 <pre class="json">
 HTTP/1.1 200 OK
 Date: Fri, 05 Nov 2010 12:00:00 GMT
