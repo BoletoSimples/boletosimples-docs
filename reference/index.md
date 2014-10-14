@@ -25,6 +25,8 @@ en: /en/reference
 </tbody>
 </table>
 
+<!--
+
 ### [Boletos](/docs/api/reference/v1/bank_billets.html)
 
 <table class='table table-bordered features'>
@@ -123,4 +125,4 @@ en: /en/reference
         <td width='60%'>Informações do Usuário autenticado</td>
       </tr>
 </tbody>
-</table>
+</table> -->
