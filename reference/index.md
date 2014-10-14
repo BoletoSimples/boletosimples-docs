@@ -75,13 +75,13 @@ en: /en/reference
     </tr>
     <tr>
       <td>
-        <a href="/docs/api/reference/v1/customers/create.html">POST /api/v1/customers</a>
+        <a href="/reference/v1/customers/create">POST /api/v1/customers</a>
       </td>
       <td width='60%'>Criar cliente</td>
     </tr>
     <tr>
       <td>
-        <a href="/docs/api/reference/v1/customers/show.html">GET /api/v1/customers/:id</a>
+        <a href="/reference/v1/customers/show">GET /api/v1/customers/:id</a>
       </td>
       <td width='60%'>Informações do Cliente</td>
     </tr>
