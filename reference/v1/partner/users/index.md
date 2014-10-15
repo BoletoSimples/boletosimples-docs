@@ -10,10 +10,6 @@ en: /en/reference
 
 Criar cliente
 
-### Formatos suportados
-
-json
-
 ### Exemplos
 
 <pre class="prettyprint">Request Headers

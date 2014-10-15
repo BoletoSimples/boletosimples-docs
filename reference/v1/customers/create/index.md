@@ -9,9 +9,6 @@ en: /en/references
 ### POST /api/v1/customers
 Criar cliente
 
-### Formatos suportados
-json
-
 ### Parâmetros
 
 <table class='table table-bordered'>

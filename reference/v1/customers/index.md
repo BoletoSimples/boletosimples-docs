@@ -9,9 +9,6 @@ en: /en/references
 ### GET /api/v1/customers
 Listar clientes
 
-### Formatos suportados
-json
-
 ### Parâmetros
 
 <table class='table table-bordered'>
@@ -51,6 +48,6 @@ json
         Value: Must be a number.
       </td>
     </tr>
-    
+
   </tbody>
 </table>

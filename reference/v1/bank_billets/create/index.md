@@ -9,9 +9,6 @@ en: /en/reference
 ### POST /api/v1/ s
 Criar boleto
 
-### Formatos suportados
-json
-
 ### Parâmetros
 
 <table class='table table-bordered'>
