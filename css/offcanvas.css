@@ -21,6 +21,7 @@ body {
 
   .row-offcanvas-right {
     right: 0;
+    min-height: 900px;
   }
 
   .row-offcanvas-left {
