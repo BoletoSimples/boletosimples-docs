@@ -88,9 +88,7 @@ en: /en/reference
   </tbody>
 </table>
 
-<!--
-
-### [Transações](/docs/api/reference/v1/transactions.html)
+### Transações
 
 <table class='table table-bordered features'>
 <thead>
@@ -102,12 +100,14 @@ en: /en/reference
 <tbody>
       <tr>
         <td>
-          <a href="/docs/api/reference/v1/transactions/index.html">GET /api/v1/transactions</a>
+          <a href="/reference/v1/transactions/">GET /api/v1/transactions</a>
         </td>
         <td width='60%'>Listar transações</td>
       </tr>
 </tbody>
 </table>
+
+<!--
 
 ### [Usuários](/docs/api/reference/v1/users.html)
 
