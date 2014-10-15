@@ -18,17 +18,31 @@ O Boleto Simples envia notificações para um sistema externo após algum evento
 
 Parâmetros passados:
 
-<pre class="bash">{
-"id": 1,
-"event": "status-changed",
-"status": "paid",
+<pre class="bash">{  
+   "id":1,
+   "event":"status-changed",
+   "status":"paid",
+   "expire_at":'2014-10-31',
+   "customer_person_name":'Boleto Simples Cobranças Ltda',
+   "customer_cnpj_cpf":'05.813.794/0001-26',
+   "amount":'55.78',
+   "paid_amount":'55.78',
+   "paid_at":'2014-10-30',
+   "shortener_url":'http://bole.to/identificador'
 }</pre>
 
 Onde:
 
 *   `id` - Identificador do registro no Boleto Simples.
 *   `event` - Evento que modificou alguma informação no boleto. Por hora o único possível valor é `status-changed`. Este campo irá ser usado nas próximas implementações de notificações.
-*   `status` - Status do boleto bancário, cujos possíveis valores são: `generating`, `opened`, `paid`, `canceled`.
+*   `status` - Status do boleto bancário, cujos possíveis valores são: `generating`, `opened`, `paid`, `canceled`, `due`.
+*   `expire_at` - Data de vencimento.
+*   `customer_person_name` - Nome do cliente.
+*   `customer_cnpj_cpf` - CPF ou CNPJ do cliente.
+*   `amount` - Valor do boleto.
+*   `paid_amount` - Valor pago pelo cliente.
+*   `paid_at` - Data de pagamento.
+*   `shortener_url` - URL pública do boleto.
 
 ### Retorno
 
@@ -42,7 +56,7 @@ Considerando que o valor do `notification_url` passado na criação do boleto ba
 
 <pre class="bash">
 curl -I \
--D '{"id": 1, "event": "status-changed", "status": "paid"}' \
+-D '{"id":1,"event":"status-changed","status":"paid","expire_at":'2014-10-31',"customer_person_name":'Boleto Simples',"customer_cnpj_cpf":'05.813.794/0001-26',"amount":'55.78',"paid_amount":'55.78',"paid_at":'2014-10-30',"shortener_url":'http://bole.to/identificador'}' \
 -X POST \
 http://seudominio.com.br/boletosimples
 </pre>
