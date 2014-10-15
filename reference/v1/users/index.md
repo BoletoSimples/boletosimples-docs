@@ -6,5 +6,5 @@ en: /en/references
 
 ## Usuários
 
-### GET /api/v1/userinfo
-Informações do Usuário autenticado
+### Informações do Usuário autenticado
+<code>GET /api/v1/userinfo</code>
