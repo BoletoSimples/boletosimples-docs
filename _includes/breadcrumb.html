@@ -3,9 +3,9 @@
 {% assign previous="" %}
 <ol class="breadcrumb">
  {% if num_parts == "0" or num_parts == "-1" %}
-  <li><a href="/reference">APIs Disponíveis</a> &nbsp; </li>
+  <li><a href="/reference">Referências</a> &nbsp; </li>
  {% else %}
-  <li><a href="/reference">APIs Disponíveis</a> </li>
+  <li><a href="/reference">Referências</a> </li>
 
   {% for unused in page.content limit:num_parts %}
    {% capture first_word %}{{ url_parts | truncatewords:1 | remove:"..."}}{% endcapture %}

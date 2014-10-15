@@ -4,7 +4,7 @@ title: Referências - API do Boleto Simples
 en: /en/reference
 ---
 
-## Recursos
+## Referências
 
 ### Parceiros - Usuários
 
