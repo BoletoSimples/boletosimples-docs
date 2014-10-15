@@ -6,7 +6,7 @@ en: /en/reference
 
 ## Parceiros - Usuários
 
-### x POST /api/v1/partner/users
+### POST /api/v1/partner/users
 
 Criar cliente
 
