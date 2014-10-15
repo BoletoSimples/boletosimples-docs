@@ -160,6 +160,8 @@ article h3 {
   font-size: 18px;
 }
 
+h3 + table { margin: 0 0 35px 0 !important; }
+
 article code {
   background-color: rgba(0,0,0,0.04);
   border: 1px solid #ddd;

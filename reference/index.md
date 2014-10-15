@@ -56,7 +56,6 @@ en: /en/reference
   </tbody>
 </table>
 
-
 ###  Clientes
 
 <table class='table table-bordered features'>
