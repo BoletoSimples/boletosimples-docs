@@ -17,11 +17,11 @@ Nós oferecemos duas formas de autenticação para acessar a API do Boleto Simpl
     </thead>
     <tbody>
     <tr>
-      <td><a href="#basic_auth"><i class="fa fa-lock"></i> Email + Senha</a></td>
+      <td><a href="#email--senha">Email + Senha</a></td>
       <td>Acessar sua prórpia conta.</td>
     </tr>
     <tr>
-      <td><a href="#oauth2"><i class="fa fa-lock"></i> OAuth2</a></td>
+      <td><a href="#autenticao-oauth2">OAuth2</a></td>
       <td>Permite conseguir permissões para acessar contas de terceiros.</td>
     </tr>
     </tbody>
