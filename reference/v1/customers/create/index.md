@@ -6,8 +6,8 @@ en: /en/references
 
 ## Clientes
 
-### POST /api/v1/customers
-Criar cliente
+### Criar cliente
+<code>POST /api/v1/customers</code>
 
 ### Parâmetros
 
