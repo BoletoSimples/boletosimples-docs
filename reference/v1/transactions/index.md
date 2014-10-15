@@ -6,8 +6,9 @@ en: /en/references
 
 ## Transações
 
-### GET /api/v1/transactions
-Listar transações
+### Listar transações
+<code>GET /api/v1/transactions</code>
+
 
 ### Parâmetros
 
