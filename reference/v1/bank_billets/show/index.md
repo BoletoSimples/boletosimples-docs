@@ -6,8 +6,8 @@ en: /en/reference
 
 ## Boletos
 
-### GET /api/v1/bank_billets/:id
-Informações do Boleto
+### Informações do Boleto
+<code>GET /api/v1/bank_billets/:id</code>
 
 ### Parâmetros
 
