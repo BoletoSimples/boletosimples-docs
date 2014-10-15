@@ -6,24 +6,7 @@ en: /en/reference
 
 ## Referências
 
-### Parceiros - Usuários
-
-<table class='table table-bordered features'>
-  <thead>
-    <tr>
-      <th>Recurso</th>
-      <th>Descrição</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>
-        <a href="/reference/v1/partner/users">POST /api/v1/partner/users</a>
-      </td>
-      <td width='60%'>Criar cliente</td>
-    </tr>
-  </tbody>
-</table>
+### Usuários
 
 ### Boletos
 
@@ -123,4 +106,25 @@ en: /en/reference
         <td width='60%'>Informações do Usuário autenticado</td>
       </tr>
 </tbody>
+</table>
+
+### Parceiros
+
+### Parceiros - Usuários
+
+<table class='table table-bordered features'>
+  <thead>
+    <tr>
+      <th>Recurso</th>
+      <th>Descrição</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <a href="/reference/v1/partner/users">POST /api/v1/partner/users</a>
+      </td>
+      <td width='60%'>Criar cliente</td>
+    </tr>
+  </tbody>
 </table>
