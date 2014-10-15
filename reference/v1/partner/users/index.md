@@ -6,9 +6,9 @@ en: /en/reference
 
 ## Parceiros - Usuários
 
-### POST /api/v1/partner/users
+### Criar cliente
 
-Criar cliente
+<code>POST /api/v1/partner/users </code>
 
 ### Exemplos
 
