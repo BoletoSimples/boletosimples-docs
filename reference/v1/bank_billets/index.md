@@ -6,14 +6,16 @@ en: /en/reference
 
 ## Boletos
 
+### Listar boletos
 
-### GET /api/v1/bank_billets
-Listar boletos
+<code>/api/v1/bank_billets</code>
 
 <table class='table table-bordered features'>
   <thead>
     <tr>
-      <th>Nome do Parâmetro</th>
+      <th>Parâmetro</th>
+      <th data-container="body" data-toggle="tooltip" title="Obrigatório">Obr.</th>
+      <th>Tipo</th>
       <th>Descrição</th>
     </tr>
   </thead>
@@ -22,24 +24,29 @@ Listar boletos
     <td>
       <strong>page</strong>
       <br/>
-      <small>opcional</small>
     </td>
     <td>
-        Número da Página
-        <br/>
-        Value: Must be a number.
+      Não
+    </td>
+    <td>
+        Number
+    </td>
+    <td>
+      Número da Página
     </td>
   </tr>
   <tr>
     <td>
       <strong>per_page<strong>
-      <br/>
-      <small>opcional</small>
+    </td>
+    <td>
+      Não
+    </td>
+    <td>
+        Number
     </td>
     <td>
       Quantidade de registros por página
-      <br/>
-      Value: Must be a number.
     </td>
   </tr>
   </tbody>
