@@ -1,6 +1,6 @@
 ---
 layout: reference
-title: Criar Clientes - API do Boleto Simples
+title: Informações do Cliente - API do Boleto Simples
 en: /en/references
 ---
 
