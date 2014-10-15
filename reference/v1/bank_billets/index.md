@@ -8,7 +8,7 @@ en: /en/reference
 
 ### Listar boletos
 
-<code>/api/v1/bank_billets</code>
+<code>GET /api/v1/bank_billets</code>
 
 <table class='table table-bordered features'>
   <thead>
