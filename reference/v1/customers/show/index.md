@@ -6,8 +6,8 @@ en: /en/references
 
 ## Clientes
 
-### GET /api/v1/customers/:id
-Informações do Cliente
+### Informações do Cliente
+<code>GET /api/v1/customers/:id</code>
 
 ### Parâmetros
 
