@@ -107,9 +107,7 @@ en: /en/reference
 </tbody>
 </table>
 
-<!--
-
-### [Usuários](/docs/api/reference/v1/users.html)
+### Usuários
 
 <table class='table table-bordered features'>
 <thead>
@@ -121,9 +119,9 @@ en: /en/reference
 <tbody>
       <tr>
         <td>
-          <a href="/docs/api/reference/v1/users/show.html">GET /api/v1/userinfo</a>
+          <a href="/reference/v1/users/">GET /api/v1/userinfo</a>
         </td>
         <td width='60%'>Informações do Usuário autenticado</td>
       </tr>
 </tbody>
-</table> -->
+</table>
