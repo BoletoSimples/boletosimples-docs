@@ -6,7 +6,7 @@ en: /en/reference
 
 ## Boletos
 
-### POST /api/v1/bank_billets
+### POST /api/v1/ s
 Criar boleto
 
 ### Formatos suportados
@@ -22,24 +22,10 @@ json
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>
-        <strong>bank_billet </strong>
-        <br>
-        <small>
-          obrigatório
-        </small>
-      </td>
-      <td>
-        Informações do Cliente
-        <br>
-        Value: Must be a Hash
-      </td>
-    </tr>
 
     <tr>
       <td>
-        <strong>bank_billet[amount] </strong>
+        <strong> [amount] </strong>
         <br>
         <small>
           obrigatório
@@ -54,7 +40,7 @@ json
 
     <tr>
       <td>
-        <strong>bank_billet[expire_at] </strong><br>
+        <strong> [expire_at] </strong><br>
         <small>
           obrigatório
         </small>
@@ -68,7 +54,7 @@ json
 
     <tr>
       <td>
-        <strong>bank_billet[description] </strong>
+        <strong> [description] </strong>
         <br>
         <small>
           obrigatório
@@ -83,7 +69,7 @@ json
 
     <tr>
       <td>
-        <strong>bank_billet[customer_person_name] </strong>
+        <strong> [customer_person_name] </strong>
         <br>
         <small>
           obrigatório
@@ -98,7 +84,7 @@ json
 
     <tr>
       <td>
-        <strong>bank_billet[customer_cnpj_cpf] </strong>
+        <strong> [customer_cnpj_cpf] </strong>
         <br>
         <small>
           obrigatório
@@ -113,7 +99,7 @@ json
 
     <tr>
       <td>
-        <strong>bank_billet[customer_email] </strong>
+        <strong> [customer_email] </strong>
         <br>
         <small>
           opcional
@@ -128,7 +114,7 @@ json
 
     <tr>
       <td>
-        <strong>bank_billet[customer_address] </strong>
+        <strong> [customer_address] </strong>
         <br>
         <small>
           opcional
@@ -143,7 +129,7 @@ json
 
     <tr>
       <td>
-        <strong>bank_billet[customer_city_name] </strong>
+        <strong> [customer_city_name] </strong>
         <br>
         <small>
           opcional
@@ -158,7 +144,7 @@ json
 
     <tr>
       <td>
-        <strong>bank_billet[customer_state] </strong>
+        <strong> [customer_state] </strong>
         <br>
         <small>
           opcional
@@ -173,7 +159,7 @@ json
 
     <tr>
       <td>
-        <strong>bank_billet[customer_neighborhood] </strong>
+        <strong> [customer_neighborhood] </strong>
         <br>
         <small>
           opcional
@@ -188,7 +174,7 @@ json
 
     <tr>
       <td>
-        <strong>bank_billet[customer_zipcode] </strong>
+        <strong> [customer_zipcode] </strong>
         <br>
         <small>
           opcional
@@ -203,7 +189,7 @@ json
 
     <tr>
       <td>
-        <strong>bank_billet[customer_address_number] </strong>
+        <strong> [customer_address_number] </strong>
         <br>
         <small>
           opcional
@@ -218,7 +204,7 @@ json
 
     <tr>
       <td>
-        <strong>bank_billet[customer_address_complement] </strong>
+        <strong> [customer_address_complement] </strong>
         <br>
         <small>
           opcional
@@ -233,7 +219,7 @@ json
 
     <tr>
       <td>
-        <strong>bank_billet[customer_phone_number] </strong>
+        <strong> [customer_phone_number] </strong>
         <br>
         <small>
           opcional
@@ -248,7 +234,7 @@ json
 
     <tr>
       <td>
-        <strong>bank_billet[customer_id] </strong>
+        <strong> [customer_id] </strong>
         <br>
         <small>
           opcional
@@ -263,7 +249,7 @@ json
 
     <tr>
       <td>
-        <strong>bank_billet[notification_url] </strong>
+        <strong> [notification_url] </strong>
         <br>
         <small>
           opcional
@@ -276,19 +262,5 @@ json
         </td>
       </tr>
 
-      <tr>
-        <td>
-          <strong>bank_billet[send_email_on_creation] </strong>
-          <br>
-          <small>
-            opcional
-          </small>
-        </td>
-        <td>
-          Enviar por email
-          <br>
-          Value: Must be &#39;true&#39; or &#39;false&#39;
-        </td>
-      </tr>
     </tbody>
   </table>
