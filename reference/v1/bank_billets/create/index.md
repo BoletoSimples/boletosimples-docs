@@ -6,8 +6,9 @@ en: /en/reference
 
 ## Boletos
 
-### POST /api/v1/ s
-Criar boleto
+### Criar boleto
+
+<code>POST /api/v1/ s</code>
 
 ### Parâmetros
 
@@ -19,7 +20,6 @@ Criar boleto
     </tr>
   </thead>
   <tbody>
-
     <tr>
       <td>
         <strong> [amount] </strong>
