@@ -22,7 +22,7 @@ en: /en/reference
   <tbody>
     <tr>
       <td>
-        <strong> [amount] </strong>
+        <strong> amount </strong>
         <br>
         <small>
           obrigatório
@@ -37,7 +37,7 @@ en: /en/reference
 
     <tr>
       <td>
-        <strong> [expire_at] </strong><br>
+        <strong> expire_at </strong><br>
         <small>
           obrigatório
         </small>
@@ -51,7 +51,7 @@ en: /en/reference
 
     <tr>
       <td>
-        <strong> [description] </strong>
+        <strong> description </strong>
         <br>
         <small>
           obrigatório
@@ -66,7 +66,7 @@ en: /en/reference
 
     <tr>
       <td>
-        <strong> [customer_person_name] </strong>
+        <strong> customer_person_name </strong>
         <br>
         <small>
           obrigatório
@@ -81,7 +81,7 @@ en: /en/reference
 
     <tr>
       <td>
-        <strong> [customer_cnpj_cpf] </strong>
+        <strong> customer_cnpj_cpf </strong>
         <br>
         <small>
           obrigatório
@@ -96,7 +96,7 @@ en: /en/reference
 
     <tr>
       <td>
-        <strong> [customer_email] </strong>
+        <strong> customer_email </strong>
         <br>
         <small>
           opcional
@@ -111,7 +111,7 @@ en: /en/reference
 
     <tr>
       <td>
-        <strong> [customer_address] </strong>
+        <strong> customer_address </strong>
         <br>
         <small>
           opcional
@@ -126,7 +126,7 @@ en: /en/reference
 
     <tr>
       <td>
-        <strong> [customer_city_name] </strong>
+        <strong> customer_city_name </strong>
         <br>
         <small>
           opcional
@@ -141,7 +141,7 @@ en: /en/reference
 
     <tr>
       <td>
-        <strong> [customer_state] </strong>
+        <strong> customer_state </strong>
         <br>
         <small>
           opcional
@@ -156,7 +156,7 @@ en: /en/reference
 
     <tr>
       <td>
-        <strong> [customer_neighborhood] </strong>
+        <strong> customer_neighborhood </strong>
         <br>
         <small>
           opcional
@@ -171,7 +171,7 @@ en: /en/reference
 
     <tr>
       <td>
-        <strong> [customer_zipcode] </strong>
+        <strong> customer_zipcode </strong>
         <br>
         <small>
           opcional
@@ -186,7 +186,7 @@ en: /en/reference
 
     <tr>
       <td>
-        <strong> [customer_address_number] </strong>
+        <strong> customer_address_number </strong>
         <br>
         <small>
           opcional
@@ -201,7 +201,7 @@ en: /en/reference
 
     <tr>
       <td>
-        <strong> [customer_address_complement] </strong>
+        <strong> customer_address_complement </strong>
         <br>
         <small>
           opcional
@@ -216,7 +216,7 @@ en: /en/reference
 
     <tr>
       <td>
-        <strong> [customer_phone_number] </strong>
+        <strong> customer_phone_number </strong>
         <br>
         <small>
           opcional
@@ -231,7 +231,7 @@ en: /en/reference
 
     <tr>
       <td>
-        <strong> [customer_id] </strong>
+        <strong> customer_id </strong>
         <br>
         <small>
           opcional
@@ -246,7 +246,7 @@ en: /en/reference
 
     <tr>
       <td>
-        <strong> [notification_url] </strong>
+        <strong> notification_url </strong>
         <br>
         <small>
           opcional
@@ -261,7 +261,7 @@ en: /en/reference
 
     <tr>
       <td>
-        <strong> [meta] </strong>
+        <strong> meta </strong>
         <br>
         <small>
           opcional
@@ -271,7 +271,7 @@ en: /en/reference
  Campo Genérico -  Aceita qualquer formato passado. Pode ser usado para salvar dados que não existam dentro do Boleto Simples.
           <br>
           Exemplo JSON: {pedido: 12345}<br>
-          Exemplo Array: [pedido: 12345]
+          Exemplo Array: pedido: 12345
       </td>
     </tr>
 
@@ -286,7 +286,7 @@ en: /en/reference
   {
     "verb": "POST",
     "path": "/api/v1/bank_billets",
-    "versions": [
+    "versions":
       "v1"
     ],
 </pre>
