@@ -32,20 +32,19 @@ Nós oferecemos duas formas de autenticação para acessar a API do Boleto Simpl
 
 #### Nós recomendamos essa opção se você precisar acessar apenas os dados da sua conta.
 
-Para poder usar a autenticação via API Token, você precisa usar o seu **token de acesso**, que pode ser encontrado a [página de API](https://boletosimples.com.br/conta/api) da sua conta, por exemplo:
+Para poder usar a autenticação via **API Token**, você precisa usar o seu **token de acesso**, que pode ser encontrado a [página de API](https://boletosimples.com.br/conta/api) da sua conta, por exemplo:
 
 ![](/img/api-token.png)
 
-A autenticação é feita via **HTTP Basic**, porém ao invés de passar o login e senha do usuário, como é tradicional, deve-se fornecer o **API Token** do usuário no campo ‘login’ e nada no campo ‘password’. Alguns clientes HTTP podem reclamar do fato do campo ‘password’ estar vazio, nesse caso pode-se informar ‘X’ como senha, que o sistema irá ignorar.
+O **token de acesso** deve ser enviado através do parâmetro `access_token` em todas as chamadas à **API**.
 
 Exemplo:
 
 <small>Requisição:</small>
 
 <pre class="bash">
-curl "http://boletosimples.com.br/api/v1/userinfo" -X GET \
+curl "https://boletosimples.com.br/api/v1/userinfo?access_token=API_TOKEN" -X GET \
   -H "User-Agent: Meu e-Commerce (meuecommerce@example.com)" \
-  -u "API_TOKEN:" \
   -H "Accept: application/json" \
   -H "Content-Type: application/json"
 </pre>
