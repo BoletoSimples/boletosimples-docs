@@ -9,7 +9,7 @@ en: /en/reference
 ### Informações do Boleto
 <code>GET /api/v1/bank_billets/:id</code>
 
-### Parâmetros
+**Parâmetros**
 
 <table class='table table-bordered'>
   <thead>

@@ -9,7 +9,7 @@ en: /en/references
 ### Criar cliente
 <code>POST /api/v1/customers</code>
 
-### Parâmetros
+**Parâmetros**
 
 <table class='table table-bordered'>
   <thead>

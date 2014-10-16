@@ -10,6 +10,8 @@ en: /en/reference
 
 <code>GET /api/v1/bank_billets</code>
 
+**Parâmetros**
+
 <table class='table table-bordered features'>
   <thead>
     <tr>

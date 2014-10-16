@@ -10,7 +10,7 @@ en: /en/references
 <code>GET /api/v1/transactions</code>
 
 
-### Parâmetros
+**Parâmetros**
 
 <table class='table table-bordered'>
   <thead>

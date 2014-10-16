@@ -9,7 +9,7 @@ en: /en/references
 ### Listar clientes
 <code>GET /api/v1/customers</code>
 
-### Parâmetros
+**Parâmetros**
 
 <table class='table table-bordered'>
   <thead>

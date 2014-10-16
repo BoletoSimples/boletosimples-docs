@@ -10,7 +10,7 @@ en: /en/reference
 
 <code>POST /api/v1/bank_billets</code>
 
-### Parâmetros
+**Parâmetros**
 
 <table class='table table-bordered'>
   <thead>
