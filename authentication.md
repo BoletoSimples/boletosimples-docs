@@ -17,40 +17,43 @@ Nós oferecemos duas formas de autenticação para acessar a API do Boleto Simpl
     </thead>
     <tbody>
     <tr>
-      <td><a href="#email--senha">Email + Senha</a></td>
+      <td><a href="#api-token">API Token</a></td>
       <td>Acessar sua prórpia conta.</td>
     </tr>
     <tr>
-      <td><a href="#autenticao-oauth2">OAuth2</a></td>
+      <td><a href="#oauth2">OAuth2</a></td>
       <td>Permite conseguir permissões para acessar contas de terceiros.</td>
     </tr>
     </tbody>
   </table>
 
 
-##  Email + Senha
+## API Token
 
-#### Nós recomendamos essa opção se você precisar apenas acessar a sua conta.
+#### Nós recomendamos essa opção se você precisar acessar apenas os dados da sua conta.
 
-Como começar
+Para poder usar a autenticação via **API Token**, você precisa usar o seu **token de acesso**, que pode ser encontrado a [página de API](https://boletosimples.com.br/conta/api) da sua conta, por exemplo:
+
+![](/img/api-token.png)
+
+O **token de acesso** deve ser enviado através do parâmetro `access_token` em todas as chamadas à **API**.
 
 Exemplo:
 
 <small>Requisição:</small>
 
 <pre class="bash">
-curl "http://boletosimples.com.br/api/v1/userinfo" -X GET \
--H "User-Agent: Meu e-Commerce (meuecommerce@example.com)" \
--u EMAIL:SENHA \
--H "Accept: application/json" \
--H "Content-Type: application/json"
+curl "https://boletosimples.com.br/api/v1/userinfo?access_token=API_TOKEN" -X GET \
+  -H "User-Agent: Meu e-Commerce (meuecommerce@example.com)" \
+  -H "Accept: application/json" \
+  -H "Content-Type: application/json"
 </pre>
 
 <small>Resposta:</small>
 
 <pre class="json">{
   "id":1016,
-  "email":"EMAIL",
+  "email":"email@example.com",
   "account_type":"individual",
   "cpf":"142.578.243-44",
   "address_street_name":"Av. Burkhard Hehn Simões",
@@ -82,11 +85,7 @@ curl "http://boletosimples.com.br/api/v1/userinfo" -X GET \
   "balance":100.0
 }</pre>
 
-O `EMAIL` deve ser trocado pelo email usado para acessar sua conta.
-
-A `SENHA` deve ser trocada pela senha usada para acessar sua conta.
-
-##  Autenticação OAuth2
+## OAuth2
 
 #### Nós recomendamos essa opção caso sua app necessite acessar contas de terceiros.
 
@@ -126,7 +125,7 @@ no registro com o parâmetro `code`.
 
   <div class="panel">
     <div class="panel-heading">
-      <p>Oauth2 em Ruby</p>
+      <p>OAuth2 em Ruby</p>
     </div>
     <div class="panel-body">
       <div class="highlight" style="">
@@ -145,7 +144,7 @@ no registro com o parâmetro `code`.
 
   <div class="panel">
     <div class="panel-heading">
-      <p>Oauth2</p>
+      <p>OAuth2</p>
     </div>
     <div class="panel-body">
       <small>

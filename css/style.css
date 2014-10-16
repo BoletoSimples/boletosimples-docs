@@ -240,6 +240,11 @@ article h3#parceiros:after { margin-right: 0; }
 article strong,
 article b { font-family: 'proxima_nova_rgbold'; }
 
+article img {
+  max-width: 100%;
+  border: 1px solid #DDD;
+}
+
 /******************************************************************************/
 
 /*Footer*/
