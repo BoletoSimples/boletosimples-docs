@@ -51,7 +51,7 @@ en: /en/reference
   <tbody>
     <tr>
       <td>
-        <a href="/reference/v1/customers">GET /api/v1/customers</a>
+        <a href="/reference/v1/customers/list">GET /api/v1/customers</a>
       </td>
       <td width='60%'>Listar clientes</td>
     </tr>

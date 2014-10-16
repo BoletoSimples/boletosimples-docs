@@ -6,48 +6,31 @@ en: /en/references
 
 ## Clientes
 
-### Listar clientes
-<code>GET /api/v1/customers</code>
-
-### Parâmetros
-
-<table class='table table-bordered'>
+<table class='table table-bordered features'>
   <thead>
     <tr>
-      <th>Nome do Parâmetro</th>
+      <th>Recurso</th>
       <th>Descrição</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>
-        <strong>page </strong>
-        <br>
-        <small>
-          opcional
-        </small>
+        <a href="/reference/v1/customers/list">GET /api/v1/customers</a>
       </td>
-      <td>
-        Número da Página
-        <br>
-        Value: Must be a number.
-      </td>
+      <td width='60%'>Listar clientes</td>
     </tr>
-
     <tr>
       <td>
-        <strong>per_page </strong>
-        <br>
-        <small>
-          opcional
-        </small>
+        <a href="/reference/v1/customers/create">POST /api/v1/customers</a>
       </td>
-      <td>
-        Quantidade de registros por página
-        <br>
-        Value: Must be a number.
-      </td>
+      <td width='60%'>Criar cliente</td>
     </tr>
-
+    <tr>
+      <td>
+        <a href="/reference/v1/customers/show">GET /api/v1/customers/:id</a>
+      </td>
+      <td width='60%'>Informações do Cliente</td>
+    </tr>
   </tbody>
 </table>
