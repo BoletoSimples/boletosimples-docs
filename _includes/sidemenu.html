@@ -32,19 +32,19 @@
   <li {% if page.url == '/reference/' %}class="active"{% endif %}>
     <a href="/reference" title="Referências">Referências</a>
     <ul class="nav">
-      <li>
+      <li {% if page.url == '/reference/v1/bank_billets/' %}class="active"{% endif %}>
         <a href="/reference/v1/bank_billets/" title="Boletos">Boletos</a>
       </li>
-      <li>
+      <li {% if page.url == '/reference/v1/customers/' %}class="active"{% endif %}>
         <a href="/reference/v1/customers/" title="Clientes">Clientes</a>
       </li>
-      <li>
+      <li {% if page.url == '/reference/v1/transactions/' %}class="active"{% endif %}>
         <a href="/reference/v1/transactions/" title="Transações">Transações</a>
       </li>
-      <li>
+      <li {% if page.url == '/reference/v1/users/' %}class="active"{% endif %}>
         <a href="/reference/v1/users/" title="Usuários">Usuários</a>
       </li>
-      <li>
+      <li {% if page.url == '/reference/v1/partner/users/' %}class="active"{% endif %}>
         <a href="/reference/v1/partner/users" title="Parceiros e Usuários">Parceiros - Usuários</a>
       </li>
     </ul>
