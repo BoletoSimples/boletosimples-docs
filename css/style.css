@@ -237,6 +237,11 @@ article h3#parceiros:before { margin-left: 0; }
 article h3#usurios:after,
 article h3#parceiros:after { margin-right: 0; }
 
+article img {
+  max-width: 100%;
+  border: 1px solid #DDD;
+}
+
 /******************************************************************************/
 
 /*Footer*/
