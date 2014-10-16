@@ -28,7 +28,8 @@ Parâmetros passados:
    "amount":'55.78',
    "paid_amount":'55.78',
    "paid_at":'2014-10-30',
-   "shortener_url":'http://bole.to/identificador'
+   "shortener_url":'http://bole.to/identificador',
+   "meta": 'meu metadado'
 }</pre>
 
 Onde:
@@ -43,6 +44,7 @@ Onde:
 *   `paid_amount` - Valor pago pelo cliente.
 *   `paid_at` - Data de pagamento.
 *   `shortener_url` - URL pública do boleto.
+*   `meta` - Campo Genérico -  Aceita qualquer formato passado. Pode ser usado para salvar dados que não existam dentro do Boleto Simples.
 
 ### Retorno
 
