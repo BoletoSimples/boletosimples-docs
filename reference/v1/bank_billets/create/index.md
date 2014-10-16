@@ -8,7 +8,7 @@ en: /en/reference
 
 ### Criar boleto
 
-<code>POST /api/v1/ s</code>
+<code>POST /api/v1/bank_billets</code>
 
 ### Parâmetros
 
@@ -256,8 +256,24 @@ en: /en/reference
         URL de notificação para onde serão enviadas notificações nas mudanças de status do boleto
           <br>
           Value: Must be String
-        </td>
-      </tr>
-
+      </td>
+    </tr>
+      
+    <tr>
+      <td>
+        <strong> [meta] </strong>
+        <br>
+        <small>
+          opcional
+        </small>
+      </td>
+      <td>
+ Campo Genérico -  Aceita qualquer formato passado. Pode ser usado para salvar dados que não existam dentro do Boleto Simples.
+          <br>
+          Exemplo JSON: {pedido: 12345}<br>
+          Exemplo Array: [pedido: 12345]
+      </td>
+    </tr>
+            
     </tbody>
   </table>
