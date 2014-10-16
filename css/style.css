@@ -237,6 +237,9 @@ article h3#parceiros:before { margin-left: 0; }
 article h3#usurios:after,
 article h3#parceiros:after { margin-right: 0; }
 
+article strong,
+article b { font-family: 'proxima_nova_rgbold'; }
+
 /******************************************************************************/
 
 /*Footer*/
