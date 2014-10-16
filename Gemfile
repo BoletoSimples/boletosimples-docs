@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
-ruby '2.1.1'
+ruby '2.1.3'
 
-gem 'github-pages', '28'
+gem 'github-pages'
 
 group :development do
-  gem 'foreman', '0.63.0'
+  gem 'foreman'
 end
