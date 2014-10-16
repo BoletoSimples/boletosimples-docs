@@ -15,7 +15,9 @@ en: /en/reference
 <table class='table table-bordered'>
   <thead>
     <tr>
-      <th>Nome do Parâmetro</th>
+      <th>Parâmetro</th>
+      <th data-container="body" data-toggle="tooltip" title="Obrigatório">Obr.</th>
+      <th>Tipo</th>
       <th>Descrição</th>
     </tr>
   </thead>
@@ -24,416 +26,418 @@ en: /en/reference
     <tr>
       <td>
         <strong>user </strong>
-        <br>
-        <small>
-          obrigatório
-        </small>
+      </td>
+      <td>
+        Sim
+      </td>
+      <td>
+        Hash
       </td>
       <td>
         Informações do Cliente
-        <br>
-        Value: Must be a Hash
       </td>
     </tr>
 
     <tr>
       <td>
-        <strong>user[email] </strong>
-        <br>
-        <small>
-          obrigatório
-        </small>
+        <strong>email</strong>
+      </td>
+      <td>
+        Sim
+      </td>
+      <td>
+        String
       </td>
       <td>
         E-mail
-        <br>
-        Value: Must be String
       </td>
     </tr>
 
     <tr>
       <td>
-        <strong>user[account_type] </strong>
-        <br>
-        <small>
-          opcional
-        </small>
+        <strong>account_type</strong>
       </td>
-
+      <td>
+        Não
+      </td>
+      <td>
+        individual, juridical
+      </td>
       <td>
         Pessoa Física ou Jurídica
-        <br>
-        Value: Must be one of: individual, juridical.
       </td>
     </tr>
 
-
     <tr>
       <td>
-        <strong>user[first_name] </strong>
-        <br>
-        <small>
-          opcional
-        </small>
+        <strong>first_name</strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        String
       </td>
       <td>
         Nome
-        <br>
-        Value: Must be String
       </td>
     </tr>
 
-
     <tr>
       <td>
-        <strong>user[middle_name] </strong>
-        <br>
-        <small>
-          opcional
-        </small>
+        <strong>middle_name</strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        String
       </td>
       <td>
         Nome do Meio
-        <br>
-        Value: Must be String
       </td>
     </tr>
 
-
     <tr>
       <td>
-        <strong>user[last_name] </strong>
-        <br>
-        <small>
-          opcional
-        </small>
+        <strong>last_name</strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        String
       </td>
       <td>
         Sobrenome
-        <br>
-        Value: Must be String
       </td>
     </tr>
 
-
     <tr>
       <td>
-        <strong>user[cpf] </strong>
-        <br>
-        <small>
-          opcional
-        </small>
+        <strong>cpf</strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        String
       </td>
       <td>
         CPF
-        <br>
-        Value: Must be String
       </td>
     </tr>
 
     <tr>
       <td>
-        <strong>user[address_street_name] </strong>
-        <br>
-        <small>
-          opcional
-        </small>
+        <strong>address_street_name</strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        String
       </td>
       <td>
         Endereço
-        <br>
-        Value: Must be String
       </td>
     </tr>
 
     <tr>
       <td>
-        <strong>user[address_state] </strong>
-        <br>
-        <small>
-          opcional
-        </small>
+        <strong>address_state</strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        String
       </td>
       <td>
         Estado
-        <br>
-        Value: Must be String
       </td>
     </tr>
 
     <tr>
       <td>
-        <strong>user[address_neighborhood]</strong>
-        <br>
-        <small>
-          opcional
-        </small>
+        <strong>address_neighborhood</strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        String
       </td>
       <td>
         Bairro
-        <br>
-        Value: Must be String
       </td>
     </tr>
 
     <tr>
       <td>
-        <strong>user[address_postal_code] </strong>
-        <br>
-        <small>
-          opcional
-        </small>
+        <strong>address_postal_code</strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        String
       </td>
       <td>
         CEP
-        <br>
-        Value: Must be String
       </td>
     </tr>
 
 
     <tr>
       <td>
-        <strong>user[address_number] </strong>
-        <br>
-        <small>
-          opcional
-        </small>
+        <strong>address_number</strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        String
       </td>
       <td>
         Número
-        <br>
-        Value: Must be String
       </td>
     </tr>
 
 
     <tr>
       <td>
-        <strong>user[address_complement] </strong>
-        <br>
-        <small>
-          opcional
-        </small>
+        <strong>address_complement</strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        String
       </td>
       <td>
         Complemento
-        <br>
-        Value: Must be String
       </td>
     </tr>
 
 
     <tr>
       <td>
-        <strong>user[address_city_name] </strong>
-        <br>
-        <small>
-          opcional
-        </small>
+        <strong>address_city_name</strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        String
       </td>
       <td>
         Cidade
-        <br>
-        Value: Must be String
       </td>
     </tr>
 
     <tr>
       <td>
-        <strong>user[phone_number] </strong>
-        <br>
-        <small>
-          opcional
-        </small>
+        <strong>phone_number</strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        String
       </td>
       <td>
         Telefone
-        <br>
-        Value: Must be String
       </td>
     </tr>
 
     <tr>
       <td>
-        <strong>user[notification_url] </strong>
-        <br>
-        <small>
-          opcional
-        </small>
+        <strong>notification_url</strong>
       </td>
       <td>
-        URL de notificacao
-        <br>
-        Value: Must be String
+        Não
       </td>
-
+      <td>
+        String
+      </td>
+      <td>
+        URL de notificação
+      </td>
     </tr>
-
 
     <tr>
       <td>
-        <strong>user[date_of_birth] </strong>
-        <br>
-        <small>
-          opcional
-        </small>
+        <strong>date_of_birth</strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        Date
       </td>
       <td>
         Data de Nascimento
-        <br>
-        Value: Must be Date
       </td>
     </tr>
 
     <tr>
       <td>
-        <strong>user[business_category] </strong>
+        <strong>business_category</strong>
         <br>
         <small>
           opcional
         </small>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        Number
       </td>
       <td>
         Categoria
-        <br>
-        Value: Must be a number.
       </td>
     </tr>
 
-
     <tr>
       <td>
-        <strong>user[business_subcategory] </strong>
+        <strong>business_subcategory</strong>
         <br>
         <small>
           opcional
         </small>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        Number
       </td>
       <td>
         Subcategoria
-        <br>
-        Value: Must be a number.
       </td>
     </tr>
 
     <tr>
       <td>
-        <strong>user[business_website] </strong><br>
-        <small>
-          opcional
-        </small>
+        <strong>business_website</strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        Number
       </td>
       <td>
         Website
-        <br>
-        Value: Must be a number.
       </td>
     </tr>
 
-
     <tr>
       <td>
-        <strong>user[business_name] </strong><br>
-        <small>
-          opcional
-        </small>
+        <strong>business_name</strong><br>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        String
       </td>
       <td>
         Nome Fantasia
-        <br>
-        Value: Must be String
       </td>
     </tr>
 
-
     <tr>
       <td>
-        <strong>user[business_legal_name] </strong><br>
-        <small>
-          opcional
-        </small>
+        <strong>business_legal_name</strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        String
       </td>
       <td>
         Razão Social
-        <br>
-        Value: Must be String
       </td>
     </tr>
 
     <tr>
       <td>
-        <strong>user[business_type] </strong><br>
-        <small>
-          opcional
-        </small>
+        <strong>business_type</strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        individual, juridical
       </td>
       <td>
         Tipo da Empresa
-        <br>
-        Value: Must be one of: individual, juridical.
       </td>
     </tr>
 
-
     <tr>
       <td>
-        <strong>user[business_cnpj] </strong><br>
-        <small>
-          opcional
-        </small>
+        <strong>business_cnpj</strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        String
       </td>
       <td>
         CNPJ da Empresa
-        <br>
-        Value: Must be String
       </td>
     </tr>
 
 
     <tr>
       <td>
-        <strong>user[withdrawal_automatic] </strong>
-        <br>
-        <small>
-          opcional
-        </small>
+        <strong>withdrawal_automatic</strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        &#39;true&#39; or &#39;false&#39;
       </td>
       <td>
         Saque Automático
-        <br>
-        Value: Must be &#39;true&#39; or &#39;false&#39;
       </td>
     </tr>
 
 
     <tr>
       <td>
-        <strong>user[mother_name] </strong>
-        <br>
-        <small>
-          opcional
-        </small>
+        <strong>mother_name</strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        &#39;true&#39; or &#39;false&#39;
       </td>
       <td>
         Nome da Mãe
-        <br>
-        Value: Must be &#39;true&#39; or &#39;false&#39;
       </td>
     </tr>
 
     <tr>
       <td>
-        <strong>user[father_name] </strong>
-        <br>
-        <small>
-          opcional
-        </small>
+        <strong>father_name</strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        &#39;true&#39; or &#39;false&#39;
       </td>
       <td>
         Nome do Pai
-        <br>
-        Value: Must be &#39;true&#39; or &#39;false&#39;
       </td>
     </tr>
   </tbody>
