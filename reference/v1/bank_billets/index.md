@@ -6,48 +6,33 @@ en: /en/reference
 
 ## Boletos
 
-### Listar boletos
-
-<code>GET /api/v1/bank_billets</code>
+### Boletos
 
 <table class='table table-bordered features'>
   <thead>
     <tr>
-      <th>Parâmetro</th>
-      <th data-container="body" data-toggle="tooltip" title="Obrigatório">Obr.</th>
-      <th>Tipo</th>
+      <th>Recurso</th>
       <th>Descrição</th>
     </tr>
   </thead>
   <tbody>
-  <tr>
-    <td>
-      <strong>page</strong>
-      <br/>
-    </td>
-    <td>
-      Não
-    </td>
-    <td>
-        Number
-    </td>
-    <td>
-      Número da Página
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <strong>per_page<strong>
-    </td>
-    <td>
-      Não
-    </td>
-    <td>
-        Number
-    </td>
-    <td>
-      Quantidade de registros por página
-    </td>
-  </tr>
+    <tr>
+      <td>
+        <a href="/reference/v1/bank_billets/list">GET /api/v1/bank_billets</a>
+      </td>
+      <td width='60%'>Listar boletos</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="/reference/v1/bank_billets/create">POST /api/v1/bank_billets</a>
+      </td>
+      <td width='60%'>Criar boleto</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="/reference/v1/bank_billets/show">GET /api/v1/bank_billets/:id</a>
+      </td>
+      <td width='60%'>Informações do Boleto</td>
+    </tr>
   </tbody>
 </table>

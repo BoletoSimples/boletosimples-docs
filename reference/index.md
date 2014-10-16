@@ -20,7 +20,7 @@ en: /en/reference
   <tbody>
     <tr>
       <td>
-        <a href="/reference/v1/bank_billets">GET /api/v1/bank_billets</a>
+        <a href="/reference/v1/bank_billets/list">GET /api/v1/bank_billets</a>
       </td>
       <td width='60%'>Listar boletos</td>
     </tr>
