@@ -14,7 +14,9 @@ en: /en/references
 <table class='table table-bordered'>
   <thead>
     <tr>
-      <th>Nome do Parâmetro</th>
+      <th>Parâmetro</th>
+      <th data-container="body" data-toggle="tooltip" title="Obrigatório">Obr.</th>
+      <th>Tipo</th>
       <th>Descrição</th>
     </tr>
   </thead>
@@ -22,15 +24,50 @@ en: /en/references
     <tr>
       <td>
         <strong>id </strong><br>
-        <small>
-          obrigatório
-        </small>
+      </td>
+      <td>
+        Sim
+      </td>
+      <td>
+        Number
       </td>
       <td>
         ID do Cliente
-        <br>
-        Value: Must be a number.
       </td>
     </tr>
   </tbody>
 </table>
+
+### Exemplo
+
+<small>requisição</small>
+
+<pre class="bash">"customers#show": [
+  {
+    "verb": "GET",
+    "path": "/api/v1/customers/13",
+    "versions": [
+      "v1"
+    ],
+</pre>
+
+<small>resposta</small>
+
+<pre class="json">"response_data": {
+  "id": 13,
+  "city_name": "Rio de Janeiro",
+  "person_name": "Margret Santos Filgueiras",
+  "address": "Av. Burkhard Hehn Simões",
+  "address_complement": "709",
+  "address_number": "120",
+  "mobile_number": null,
+  "cnpj_cpf": "889.403.083-01",
+  "email": "roberta@batistaalbuquerque.org",
+  "neighborhood": "São Francisco",
+  "person_type": "individual",
+  "phone_number": "2199999999",
+  "zipcode": "24360-440",
+  "mobile_local_code": null,
+  "state": "RJ"
+},
+</pre>
