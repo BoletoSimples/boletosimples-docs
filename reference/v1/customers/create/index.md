@@ -14,7 +14,9 @@ en: /en/references
 <table class='table table-bordered'>
   <thead>
     <tr>
-      <th>Nome do Parâmetro</th>
+      <th>Parâmetro</th>
+      <th data-container="body" data-toggle="tooltip" title="Obrigatório">Obr.</th>
+      <th>Tipo</th>
       <th>Descrição</th>
     </tr>
   </thead>
@@ -22,212 +24,246 @@ en: /en/references
     <tr>
       <td>
         <strong>customer</strong>
-        <br>
-        <small>
-          obrigatório
-        </small>
+      </td>
+      <td>
+        Sim
+      </td>
+      <td>
+        Hash
       </td>
       <td>
         Informações do Cliente
-        <br>
-        Value: Must be a Hash
       </td>
     </tr>
 
     <tr>
       <td>
-        <strong>customer[person_name] </strong><br>
-        <small>
-          obrigatório
-        </small>
+        <strong>person_name</strong>
+      </td>
+      <td>
+        Sim
+      </td>
+      <td>
+        String
       </td>
       <td>
         Nome
-        <br>
-        Value: Must be String
       </td>
     </tr>
 
     <tr>
       <td>
-        <strong>customer[cnpj_cpf] </strong>
-        <br>
-        <small>
-          obrigatório
-        </small>
+        <strong>cnpj_cpf</strong>
+      </td>
+      <td>
+        Sim
+      </td>
+      <td>
+        String
       </td>
       <td>
         CNPJ/CPF
-        <br>
-        Value: Must be String
       </td>
     </tr>
 
     <tr>
       <td>
-        <strong>customer[address] </strong>
-        <br>
-        <small>
-          opcional  
-        </small>
+        <strong>address</strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        String
       </td>
       <td>
         Endereço
-        <br>
-        Value: Must be String
       </td>
     </tr>
 
     <tr>
       <td>
-        <strong>customer[city_name] </strong>
-        <br>
-        <small>
-          opcional  
-        </small>
+        <strong>city_name</strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        String
       </td>
       <td>
         Cidade
-        <br>
-        Value: Must be String
       </td>
     </tr>
 
     <tr>
       <td>
-        <strong>customer[state] </strong>
-        <br>
-        <small>
-          opcional  
-        </small>
+        <strong>state</strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        String
       </td>
       <td>
         Estado
-        <br>
-        Value: Must be String
       </td>
     </tr>
 
     <tr>
       <td>
-        <strong>customer[neighborhood] </strong>
-        <br>
-        <small>
-          opcional  
-        </small>
+        <strong>neighborhood</strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        String
       </td>
       <td>
         Bairro
-        <br>
-        Value: Must be String
       </td>
     </tr>
 
     <tr>
       <td>
-        <strong>customer[zipcode] </strong>
-        <br>
-        <small>
-          opcional  
-        </small>
+        <strong>zipcode</strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        String
       </td>
       <td>
         CEP
-        <br>
-        Value: Must be String
       </td>
     </tr>
 
     <tr>
       <td>
-        <strong>customer[address_number] </strong>
-        <br>
-        <small>
-          opcional  
-        </small>
+        <strong>address_number</strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        String
       </td>
       <td>
         Número
-        <br>
-        Value: Must be String
       </td>
     </tr>
 
     <tr>
       <td>
-        <strong>customer[address_complement] </strong>
-        <br>
-        <small>
-          opcional  
-        </small>
+        <strong>address_complement</strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        String
       </td>
       <td>
         Complemento
-        <br>
-        Value: Must be String
       </td>
     </tr>
 
     <tr>
       <td>
-        <strong>customer[phone_number] </strong>
-        <br>
-        <small>
-          opcional  
-        </small>
+        <strong>phone_number</strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        String
       </td>
       <td>
         Telefone
-        <br>
-        Value: Must be String
       </td>
     </tr>
 
     <tr>
       <td>
-        <strong>customer[email] </strong>
-        <br>
-        <small>
-          opcional  
-        </small>
+        <strong>email</strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        String
       </td>
       <td>
         E-mail
-        <br>
-        Value: Must be String
       </td>
     </tr>
 
     <tr>
       <td>
-        <strong>customer[mobile_local_code] </strong>
-        <br>
-        <small>
-          opcional  
-        </small>
+        <strong>mobile_local_code</strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        String
       </td>
       <td>
         Celular(DDD)
-        <br>
-        Value: Must be a number.
       </td>
     </tr>
 
-
     <tr>
       <td>
-        <strong>customer[mobile_number] </strong>
-        <br>
-        <small>
-          opcional  
-        </small>
+        <strong>mobile_number</strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        String
       </td>
       <td>
         Celular
-        <br>
-        Value: Must be a number.
       </td>
     </tr>
 
   </tbody>
 </table>
+
+### Exemplo
+
+<small>requisição</small>
+
+<pre class="bash"> "customers#create": [
+  {
+    "verb": "POST",
+    "path": "/api/v1/customers",
+    "versions": [
+      "v1"
+    ],
+</pre>
+
+<small>resposta</small>
+
+<pre class="json">"response_data": {
+  "id": 14,
+  "city_name": "Rio de Janeiro",
+  "person_name": "Joao da Silva",
+  "address": "Rua quinhentos",
+  "address_complement": "Sala 4",
+  "address_number": "111",
+  "mobile_number": "99998888",
+  "cnpj_cpf": "012.345.678-90",
+  "email": "cliente@bom.com",
+  "neighborhood": "bairro",
+  "person_type": "individual",
+  "phone_number": "2112123434",
+  "zipcode": "12312-123",
+  "mobile_local_code": "21",
+  "state": "RJ"
+},
+</pre>
