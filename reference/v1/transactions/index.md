@@ -15,7 +15,9 @@ en: /en/references
 <table class='table table-bordered'>
   <thead>
     <tr>
-      <th>Nome do Parâmetro</th>
+      <th>Parâmetro</th>
+      <th data-container="body" data-toggle="tooltip" title="Obrigatório">Obr.</th>
+      <th>Tipo</th>
       <th>Descrição</th>
     </tr>
   </thead>
@@ -23,32 +25,62 @@ en: /en/references
     <tr>
       <td>
         <strong>page </strong>
-        <br>
-        <small>
-          opcional
-        </small>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        Number
       </td>
       <td>
         Número da Página
-        <br>
-        Value: Must be a number.
       </td>
     </tr>
 
     <tr>
       <td>
         <strong>per_page </strong>
-        <br>
-        <small>
-          opcional
-        </small>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        Number
       </td>
       <td>
         Quantidade de registros por página
-        <br>
-        Value: Must be a number.
       </td>
     </tr>
 
   </tbody>
 </table>
+
+### Exemplo
+
+<small>requisição</small>
+
+<pre class="bash">"transactions#index": [
+  {
+    "verb": "GET",
+    "path": "/api/v1/transactions",
+    "versions": [
+      "v1"
+    ],
+</pre>
+
+<small>resposta</small>
+
+<pre class="json">"response_data": [
+  {
+    "id": 8,
+    "amount": -5.0,
+    "created_at": "2014-05-22",
+    "description": "Boleto Bancário 12345",
+    "kind": "fee",
+    "processed_at": null,
+    "sent_at": null,
+    "status": "unprocessed",
+    "credit_at": "2014-05-27"
+  }
+],
+</pre>
