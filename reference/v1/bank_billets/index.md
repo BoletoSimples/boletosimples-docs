@@ -1,12 +1,10 @@
 ---
 layout: reference
-title: Listar Boletos - API do Boleto Simples
+title: Boletos - API do Boleto Simples
 en: /en/reference
 ---
 
 ## Boletos
-
-### Boletos
 
 <table class='table table-bordered features'>
   <thead>
