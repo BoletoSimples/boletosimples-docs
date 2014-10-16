@@ -258,7 +258,7 @@ en: /en/reference
           Value: Must be String
       </td>
     </tr>
-      
+
     <tr>
       <td>
         <strong> [meta] </strong>
@@ -274,6 +274,48 @@ en: /en/reference
           Exemplo Array: [pedido: 12345]
       </td>
     </tr>
-            
+
     </tbody>
   </table>
+
+### Exemplo
+
+<small>requisição:</small>
+
+<pre class="bash">"bank_billets#create": [
+  {
+    "verb": "POST",
+    "path": "/api/v1/bank_billets",
+    "versions": [
+      "v1"
+    ],
+</pre>
+
+<small>resposta:</small>
+
+<pre class="json">"response_data": {
+  "id": 16,
+  "expire_at": "2014-10-17",
+  "paid_at": null,
+  "description": "Despesas do contrato 0012",
+  "status": "generating",
+  "shorten_url": null,
+  "customer_person_type": "individual",
+  "customer_person_name": "Joao da Silva",
+  "customer_cnpj_cpf": "012.345.678-90",
+  "customer_address": "Rua quinhentos",
+  "customer_state": "RJ",
+  "customer_neighborhood": "Sao Francisco",
+  "customer_zipcode": "12312-123",
+  "customer_address_number": "111",
+  "customer_address_complement": "Sala 4",
+  "customer_phone_number": "2112123434",
+  "customer_email": "cliente@bom.com",
+  "notification_url": "http://example.com.br/notify",
+  "send_email_on_creation": true,
+  "created_via_api": true,
+  "customer_city_name": "Rio de Janeiro",
+  "paid_amount": 0.0,
+  "amount": 41.01
+},
+</pre>
