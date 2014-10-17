@@ -45,7 +45,7 @@ Por esse motivo, este ambiente possui algumas restrições. São elas:
 
 Não pague um boleto gerado pelo ambiente Sandbox sob nenhuma hipótese.
 
-Ao realizar login no ambiente de staging é possível emular o pagamento de um boleto.
+Ao realizar login no Ambiente de Sandbox é possível emular o pagamento de um boleto.
 
 ## Fraude
 

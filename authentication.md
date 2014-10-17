@@ -17,7 +17,7 @@ Nós oferecemos duas formas de autenticação para acessar a API do Boleto Simpl
     </thead>
     <tbody>
     <tr>
-      <td><a href="#api-token">API Token</a></td>
+      <td><a href="#api-token">Token de Acesso</a></td>
       <td>Acessar sua prórpia conta.</td>
     </tr>
     <tr>
@@ -28,62 +28,61 @@ Nós oferecemos duas formas de autenticação para acessar a API do Boleto Simpl
   </table>
 
 
-## API Token
+## Token de Acesso
 
 #### Nós recomendamos essa opção se você precisar acessar apenas os dados da sua conta.
 
-Para poder usar a autenticação via **API Token**, você precisa usar o seu **token de acesso**, que pode ser encontrado a [página de API](https://boletosimples.com.br/conta/api) da sua conta, por exemplo:
+Para poder usar a autenticação via **Token de Acesso**, você precisa pegar o seu `Token` na [página de API (Sandbox)](https://sandbox.boletosimples.com.br/conta/api) da sua conta.
 
 ![](/img/api-token.png)
 
-O **token de acesso** deve ser enviado através do parâmetro `access_token` em todas as chamadas à **API**.
+A autenticação usando o `Token de Acesso` é feita via `HTTP Basic`, porém ao invés de passar o login e senha do usuário, como é tradicional, deve-se fornecer o `Token de Acesso` do usuário no campo ‘login’ e nada no campo ‘password’. Alguns clientes HTTP podem reclamar do fato do campo ‘password’ estar vazio, nesse caso pode-se informar ‘X’ como senha, que o sistema irá ignorar.
 
-Exemplo:
+Exemplo de chamada API autenticada (onde "zjuio96wkixkzy6z98sy" é o Token de Acesso do usuário):
+
+### Exemplo de token válido
 
 <small>Requisição:</small>
 
 <pre class="bash">
-curl "https://boletosimples.com.br/api/v1/userinfo?access_token=API_TOKEN" -X GET \
-  -H "User-Agent: Meu e-Commerce (meuecommerce@example.com)" \
-  -H "Accept: application/json" \
-  -H "Content-Type: application/json"
+curl -i \
+-u zjuio96wkixkzy6z98sy:x \
+-H 'Content-Type: application/json' \
+-H 'User-Agent: MyApp (myapp@example.com)' \
+-X GET https://sandbox.boletosimples.com.br/api/v1/userinfo
 </pre>
 
 <small>Resposta:</small>
 
-<pre class="json">{
-  "id":1016,
-  "email":"email@example.com",
-  "account_type":"individual",
-  "cpf":"142.578.243-44",
-  "address_street_name":"Av. Burkhard Hehn Simões",
-  "address_state":"RJ",
-  "address_neighborhood":"São Francisco",
-  "address_postal_code":"24360-440",
-  "address_number":"120",
-  "address_complement":"709",
-  "phone_number":"2199999999",
-  "banking_agency_number":"4042",
-  "banking_account_number":"8873",
-  "banking_account_digit":"0",
-  "withdrawal_period":"biweekly",
-  "notification_url":"http://example.com.br/notify",
-  "banking_agency_digit":"8",
-  "first_name":"Margret",
-  "middle_name":"Simões",
-  "last_name":"Gonçalo",
-  "date_of_birth":"1970-03-01",
-  "business_category":1000,
-  "business_subcategory":2173,
-  "business_website":"http://example.com.br",
-  "business_name":"Sebastian Elias Publicidade LTDA.",
-  "business_type":"mei",
-  "business_cnpj":"18.174.681/0001-70",
-  "address_city_name":"Rio de Janeiro",
-  "banking_bank_number":"001",
-  "full_name":"Margret Simões Gonçalo",
-  "balance":100.0
-}</pre>
+<pre class="bash">
+HTTP/1.1 200 OK
+Date: Fri, 17 Oct 2014 18:14:56 GMT
+Status: 200 OK
+...
+</pre>
+
+### Exemplo de token inválido
+
+<small>Requisição:</small>
+
+<pre class="bash">
+curl -i \
+-u tokeninvalido:x \
+-H 'Content-Type: application/json' \
+-H 'User-Agent: MyApp (myapp@example.com)' \
+-X GET https://sandbox.boletosimples.com.br/api/v1/userinfo
+</pre>
+
+<small>Resposta:</small>
+
+<pre class="bash">
+HTTP/1.1 401 Unauthorized
+Date: Fri, 17 Oct 2014 18:20:18 GMT
+Status: 401 Unauthorized
+...
+
+{"error":"Email ou senha inválidos."}
+</pre>
 
 ## OAuth2
 

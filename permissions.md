@@ -39,15 +39,16 @@ Aqui está a lista de todos os escopos que você pode solicitar:
 
 Para OAuth2, permissões são acessadas através do parâmetro `scope` em sua requisição OAuth2.
 
-Por exemplo, sua aplicação pode precisar logar como o usuário para gerar boletos,
-  porém não precisará saber quais são os dados bancários do usuário.
+Por exemplo, sua aplicação pode precisar logar como o usuário para gerar boletos, porém não precisará saber quais são os dados bancários do usuário.
 
-A permissão padrão é `login`. Caso você não especifice um scope;
+A permissão padrão é `login` caso você não especifice um scope.
 
-Isso dará permissão para logar como o usuário e gerar boletos.
-  Você pode solicitar permissões individuais ou em grupo.
-  Permissões em grupo devem ser separadas com caracter`+` na URL.
+#### Grupo de permissões
 
-Aqui um exemplo de URL de requisição com parâmetro `scope` no final:
+Você pode solicitar permissões individuais ou em grupo.
+
+Permissões em grupo devem ser separadas com caracter`+` na URL.
+
+Abaixo um exemplo de URL de requisição com parâmetro `scope` no final:
 
 <pre class="html">https://boletosimples.com.br/api/v1/oauth/authorize?response_type=code&amp;client_id=YOUR_CLIENT_ID&amp;redirect_uri=YOUR_CALLBACK_URL&amp;scope=login+email+profile</pre>

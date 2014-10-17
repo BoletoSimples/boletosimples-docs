@@ -7,8 +7,6 @@ breadcrumb: true
 
 ## Referências
 
-### Usuários
-
 ### Boletos
 
 <table class='table table-bordered features'>
@@ -90,7 +88,7 @@ breadcrumb: true
 </tbody>
 </table>
 
-### Usuários
+### Informação do Usuário
 
 <table class='table table-bordered features'>
 <thead>
@@ -111,7 +109,7 @@ breadcrumb: true
 
 ### Parceiros
 
-### Parceiros - Usuários
+### Usuários
 
 <table class='table table-bordered features'>
   <thead>

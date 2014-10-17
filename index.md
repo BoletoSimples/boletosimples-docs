@@ -4,8 +4,6 @@ title: API do Boleto Simples
 en: /en/
 ---
 
-
-
 ## API do Boleto Simples
 
 #### Integre pagamentos por boletos bancários em seu site ou aplicação.
@@ -35,6 +33,16 @@ O Boleto Simples possui também um [Ambiente Sandbox](/sandbox).
 ## Formato
 
 A API aceita apenas o formato `JSON`, sendo assim todas as requisições usam content type `application/json`.
+
+## Convenções da API
+
+Na documentação da API, utilizamos as seguintes convenções:
+
+* **#{variable}** - Indica o nome de uma variável que precisa ser substituída por valores da sua conta.
+* **...** - Indica o conteúdo da resposta de uma requisição, que foi truncado para facilitar a leitura da documentação.
+* **$TOKEN** - Indica o Token de Autenticação e está neste formato para facilitar os testes na linha de comando. Supondo que o seu token é "zjuio96wkixkzy6z98sy", você pode rodar o comando abaixo e posteriormente copiar e colar os comandos desta documentação no terminal.
+
+  `export TOKEN=zjuio96wkixkzy6z98sy`
 
 ## Códigos de Retorno
 
@@ -143,11 +151,10 @@ restantes para aquela hora. Exemplo:
 
 <pre class="bash">
 curl -i \
--u $USERNAME:$PASSWORD \
+-u $TOKEN:x \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X GET \
-https://boletosimples.com.br/api/v1/userinfo
+-X GET https://sandbox.boletosimples.com.br/api/v1/userinfo
 </pre>
 
 <small>Resposta:</small>
@@ -173,5 +180,4 @@ seguinte para realizar a próxima requisição.
 *   [Permissões](/permissions "Permissões")
 *   [Notificações](/notifications "Notificações")
 *   [Bibliotecas](/libraries "Bibliotecas")
-*   [API](https://boletosimples.com.br/docs/api/reference "APIs Disponíveis")
-*   [Registre um App](https://boletosimples.zendesk.com/hc/pt-br "Registre um App")
+*   [Referências](/reference "Referências")

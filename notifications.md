@@ -6,6 +6,8 @@ en: /en/notifications
 
 ## Notificações
 
+### Boletos
+
 O Boleto Simples envia notificações para um sistema externo após algum evento ocorrer no boleto.
 
   Essas notificações são realizadas através de uma requisição
@@ -14,11 +16,9 @@ O Boleto Simples envia notificações para um sistema externo após algum evento
 
 <div class="alert alert-info">Os logs das notificações realizadas são salvos em nossa base de dados.</div>
 
-### Requisição
+#### Parâmetros passados
 
-Parâmetros passados:
-
-<pre class="bash">{  
+<pre class="bash">{
    "id":1,
    "event":"status-changed",
    "status":"paid",
@@ -46,21 +46,20 @@ Onde:
 *   `shortener_url` - URL pública do boleto.
 *   `meta` - Campo Genérico -  Aceita qualquer formato passado. Pode ser usado para salvar dados que não existam dentro do Boleto Simples.
 
-### Retorno
+#### Retorno
 
 O sistema espera que a requisição retorne o status code `200 OK`. Caso a requisição retorne erro, ou seja, status code `5XX` o sistema irá continuar tentando realizar a requisição. Caso a requisição bloqueia por falha na autenticação, ou seja status code `4XX`, o sistema irá ignorar a requisição e não tentará novamente.
 
-### Exemplo
+#### Exemplo
 
 Considerando que o valor do `notification_url` passado na criação do boleto bancário foi **http://seudominio.com.br/boletosimples**, a requisição relizada e a resposta esperada são iguais as definidas abaixo.
 
 <small>Requisição:</small>
 
 <pre class="bash">
-curl -I \
--D '{"id":1,"event":"status-changed","status":"paid","expire_at":'2014-10-31',"customer_person_name":'Boleto Simples',"customer_cnpj_cpf":'05.813.794/0001-26',"amount":'55.78',"paid_amount":'55.78',"paid_at":'2014-10-30',"shortener_url":'http://bole.to/identificador',"meta":'meu metadado'}' \
--X POST \
-http://seudominio.com.br/boletosimples
+curl -i \
+-d '{"id":1,"event":"status-changed","status":"paid","expire_at":'2014-10-31',"customer_person_name":'Boleto Simples',"customer_cnpj_cpf":'05.813.794/0001-26',"amount":'55.78',"paid_amount":'55.78',"paid_at":'2014-10-30',"shortener_url":'http://bole.to/identificador',"meta":'meu metadado'}' \
+-X POST http://seudominio.com.br/boletosimples
 </pre>
 
 <small>Resposta:</small>
