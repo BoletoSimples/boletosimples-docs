@@ -8,9 +8,8 @@ breadcrumb: true
 ## Clientes
 
 ### Listar clientes
-<code>GET /api/v1/customers</code>
 
-**Parâmetros**
+`GET /api/v1/customers`
 
 <table class='table table-bordered'>
   <thead>
@@ -53,38 +52,3 @@ breadcrumb: true
     </tr>
   </tbody>
 </table>
-
-### Exemplo
-
-<small>requisição:</small>
-
-<pre class="bash">"customers#index": [
-  {
-    "verb": "GET",
-    "path": "/api/v1/customers",
-    "versions": [
-      "v1"
-    ],
-</pre>
-
-<small>resposta:</small>
-
-<pre class="json"> "response_data": [
-  {
-    "id": 11,
-    "city_name": "Rio de Janeiro",
-    "person_name": "Ana Júlia",
-    "address": "Av. Burkhard Hehn Simões",
-    "address_complement": "709",
-    "address_number": "120",
-    "mobile_number": null,
-    "cnpj_cpf": "517.317.498-64",
-    "email": "lorraine@martinscarvalho.net",
-    "neighborhood": "São Francisco",
-    "person_type": "individual",
-    "phone_number": "2199999999",
-    "zipcode": "24360-440",
-    "mobile_local_code": null,
-    "state": "RJ"
-  },
-</pre>

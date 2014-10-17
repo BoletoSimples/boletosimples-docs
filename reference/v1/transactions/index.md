@@ -8,10 +8,8 @@ breadcrumb: true
 ## Transações
 
 ### Listar transações
-<code>GET /api/v1/transactions</code>
 
-
-**Parâmetros**
+`GET /api/v1/transactions`
 
 <table class='table table-bordered'>
   <thead>
@@ -55,33 +53,3 @@ breadcrumb: true
 
   </tbody>
 </table>
-
-### Exemplo
-
-<small>requisição</small>
-
-<pre class="bash">"transactions#index": [
-  {
-    "verb": "GET",
-    "path": "/api/v1/transactions",
-    "versions": [
-      "v1"
-    ],
-</pre>
-
-<small>resposta</small>
-
-<pre class="json">"response_data": [
-  {
-    "id": 8,
-    "amount": -5.0,
-    "created_at": "2014-05-22",
-    "description": "Boleto Bancário 12345",
-    "kind": "fee",
-    "processed_at": null,
-    "sent_at": null,
-    "status": "unprocessed",
-    "credit_at": "2014-05-27"
-  }
-],
-</pre>

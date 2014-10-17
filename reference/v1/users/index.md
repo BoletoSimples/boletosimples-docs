@@ -7,25 +7,32 @@ breadcrumb: true
 
 ## Usuários
 
-### Informações do Usuário autenticado
-<code>GET /api/v1/userinfo</code>
+### Informações do Usuário Autenticado
 
-### Exemplo
+`GET /api/v1/userinfo`
 
-<small>requisição</small>
+#### Exemplo
 
-<pre class="bash">"users#show": [
-  {
-    "verb": "GET",
-    "path": "/api/v1/userinfo",
-    "versions": [
-      "v1"
-    ],
+<small>Requisição:</small>
+
+<pre class="bash">
+curl -i \
+-u $TOKEN:x \
+-H 'Content-Type: application/json' \
+-H 'User-Agent: MyApp (myapp@example.com)' \
+-X GET https://sandbox.boletosimples.com.br/api/v1/userinfo
 </pre>
 
-<small>resposta</small>
+<small>Resposta:</small>
 
-<pre class="json">"response_data": {
+<pre class="bash">
+HTTP/1.1 200 OK
+Date: Fri, 17 Oct 2014 19:46:16 GMT
+Status: 200 OK
+Content-Type: application/json; charset=utf-8
+...
+
+{
   "id": 53,
   "email": "meuecommerce@example.com",
   "account_type": "juridical",
@@ -53,8 +60,8 @@ breadcrumb: true
   "business_cnpj": "18.174.681/0001-70",
   "address_city_name": "Rio de Janeiro",
   "full_name": "Margret Simões Gonçalo",
-  "login_url": "http://boletosimples-test.ngrok.com/welcome?email=meuecommerce%40example.com&token=UCefpzbGRrM1UrLEuUDS",
+  "login_url": "https://sandbox.boletosimples.com.br/welcome?email=meuecommerce%40example.com&token=UCefpzbGRrM1UrLEuUDS",
   "mother_name": "Lenadra Simões Gonçalo",
   "father_name": "José Simões Gonçalo"
-},
+}
 </pre>

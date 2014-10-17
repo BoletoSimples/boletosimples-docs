@@ -8,9 +8,8 @@ breadcrumb: true
 ## Clientes
 
 ### Criar cliente
-<code>POST /api/v1/customers</code>
 
-**Parâmetros**
+`POST /api/v1/customers`
 
 <table class='table table-bordered'>
   <thead>
@@ -234,37 +233,3 @@ breadcrumb: true
 
   </tbody>
 </table>
-
-### Exemplo
-
-<small>requisição</small>
-
-<pre class="bash"> "customers#create": [
-  {
-    "verb": "POST",
-    "path": "/api/v1/customers",
-    "versions": [
-      "v1"
-    ],
-</pre>
-
-<small>resposta</small>
-
-<pre class="json">"response_data": {
-  "id": 14,
-  "city_name": "Rio de Janeiro",
-  "person_name": "Joao da Silva",
-  "address": "Rua quinhentos",
-  "address_complement": "Sala 4",
-  "address_number": "111",
-  "mobile_number": "99998888",
-  "cnpj_cpf": "012.345.678-90",
-  "email": "cliente@bom.com",
-  "neighborhood": "bairro",
-  "person_type": "individual",
-  "phone_number": "2112123434",
-  "zipcode": "12312-123",
-  "mobile_local_code": "21",
-  "state": "RJ"
-},
-</pre>
