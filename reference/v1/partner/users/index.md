@@ -1,7 +1,8 @@
 ---
-layout: reference
+layout: pt
 title: Parceiros e Usuários - API do Boleto Simples
 en: /en/reference
+breadcrumb: true
 ---
 
 ## Parceiros - Usuários

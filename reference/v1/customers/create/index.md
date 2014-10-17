@@ -1,7 +1,8 @@
 ---
-layout: reference
+layout: pt
 title: Criar Clientes - API do Boleto Simples
 en: /en/references
+breadcrumb: true
 ---
 
 ## Clientes

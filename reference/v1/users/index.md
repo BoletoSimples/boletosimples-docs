@@ -1,7 +1,8 @@
 ---
-layout: reference
+layout: pt
 title: Informações do Usuário - API do Boleto Simples
 en: /en/references
+breadcrumb: true
 ---
 
 ## Usuários

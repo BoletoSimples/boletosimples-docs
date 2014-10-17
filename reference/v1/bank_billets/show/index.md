@@ -1,7 +1,8 @@
 ---
-layout: reference
+layout: pt
 title: Informações do Boleto - API do Boleto Simples
 en: /en/reference
+breadcrumb: true
 ---
 
 ## Boletos
