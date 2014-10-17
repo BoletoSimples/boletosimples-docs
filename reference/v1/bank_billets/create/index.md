@@ -9,9 +9,7 @@ breadcrumb: true
 
 ### Criar boleto
 
-<code>POST /api/v1/bank_billets</code>
-
-**Parâmetros**
+`POST /api/v1/bank_billets`
 
 <table class='table table-bordered'>
   <thead>
@@ -64,7 +62,7 @@ breadcrumb: true
         String
       </td>
       <td>
-        Descrição dos Serviços prestados conforme contrato.
+        Descrição do produto ou serviço
       </td>
     </tr>
 
@@ -79,7 +77,7 @@ breadcrumb: true
         String
       </td>
       <td>
-        <p>Nome ou Razão Social do Cliente</p>
+        <p>Nome ou Razão Social do Pagador</p>
       </td>
     </tr>
 
@@ -94,10 +92,23 @@ breadcrumb: true
         String
       </td>
       <td>
-        CNPJ ou CPF do Cliente
+        CNPJ ou CPF do Pagador
       </td>
     </tr>
-
+    <tr>
+      <td>
+        <strong> customer_id </strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        Number
+      </td>
+      <td>
+        ID do Cliente Cadastrado. Quando passado os campos <code>customer_person_name</code> e <code>customer_cnpj_cpf</code> não são obrigatórios.
+      </td>
+    </tr>
     <tr>
       <td>
         <strong> customer_email </strong>
@@ -109,9 +120,7 @@ breadcrumb: true
         String
       </td>
       <td>
-        E-mail do cliente
-        <br>
-        Value: Must be String
+        E-mail do Pagador
       </td>
     </tr>
 
@@ -219,7 +228,6 @@ breadcrumb: true
         Complemento
       </td>
     </tr>
-
     <tr>
       <td>
         <strong> customer_phone_number </strong>
@@ -232,26 +240,8 @@ breadcrumb: true
       </td>
       <td>
         Telefone (com DDD)
-        <br>
-        Value: Must be String
       </td>
     </tr>
-
-    <tr>
-      <td>
-        <strong> customer_id </strong>
-      </td>
-      <td>
-        Não
-      </td>
-      <td>
-        Number
-      </td>
-      <td>
-        ID do Cliente Cadastrado
-      </td>
-    </tr>
-
     <tr>
       <td>
         <strong> notification_url </strong>
@@ -263,10 +253,10 @@ breadcrumb: true
         String
       </td>
       <td>
-        URL de notificação para onde serão enviadas notificações nas mudanças de status do boleto
+        URL de notificação para onde serão enviadas notificações nas mudanças de status do boleto.
+        <a href="/notifications">Leia mais</a>
       </td>
     </tr>
-
     <tr>
       <td>
         <strong> meta </strong>
@@ -278,54 +268,86 @@ breadcrumb: true
         &nbsp;
       </td>
       <td>
- Campo Genérico -  Aceita qualquer formato passado. Pode ser usado para salvar dados que não existam dentro do Boleto Simples.
-          <br>
-          Exemplo JSON: {pedido: 12345}<br>
-          Exemplo Array: pedido: 12345
+        Campo Genérico -  Aceita qualquer formato passado. Pode ser usado para salvar dados que não existam dentro do Boleto Simples.
+        <br>
+        Exemplo JSON: {pedido: 12345}<br>
+        Exemplo Array: pedido: 12345
       </td>
     </tr>
-
     </tbody>
   </table>
 
-### Exemplo
+#### Exemplo de requisição inválida
 
-<small>requisição:</small>
+<small>Requisição:</small>
 
-<pre class="bash">"bank_billets#create": [
-  {
-    "verb": "POST",
-    "path": "/api/v1/bank_billets",
-    "versions":
-      "v1"
-    ],
+<pre class="bash">
+curl -i \
+-u $TOKEN:x \
+-d '{"bank_billet":{}}'
+-H 'Content-Type: application/json' \
+-H 'User-Agent: MyApp (myapp@example.com)' \
+-X POST https://sandbox.boletosimples.com.br/api/v1/bank_billets
 </pre>
 
-<small>resposta:</small>
+<small>Resposta:</small>
 
-<pre class="json">"response_data": {
-  "id": 16,
-  "expire_at": "2014-10-17",
-  "paid_at": null,
-  "description": "Despesas do contrato 0012",
-  "status": "generating",
-  "shorten_url": null,
-  "customer_person_type": "individual",
-  "customer_person_name": "Joao da Silva",
-  "customer_cnpj_cpf": "012.345.678-90",
-  "customer_address": "Rua quinhentos",
-  "customer_state": "RJ",
-  "customer_neighborhood": "Sao Francisco",
-  "customer_zipcode": "12312-123",
-  "customer_address_number": "111",
-  "customer_address_complement": "Sala 4",
-  "customer_phone_number": "2112123434",
-  "customer_email": "cliente@bom.com",
-  "notification_url": "http://example.com.br/notify",
-  "send_email_on_creation": true,
-  "created_via_api": true,
-  "customer_city_name": "Rio de Janeiro",
-  "paid_amount": 0.0,
-  "amount": 41.01
-},
+<pre class="bash">
+HTTP/1.1 422 Unprocessable Entity
+Date: Fri, 17 Oct 2014 18:39:47 GMT
+Status: 422 Unprocessable Entity
+Content-Type: application/json; charset=utf-8
+...
+
+{"errors":{"bank_billet":["não pode ficar em branco"]}}
+</pre>
+
+#### Exemplo de requisição válida
+
+<small>Requisição:</small>
+
+<pre class="bash">
+curl -i \
+-u $TOKEN:x \
+-d '{"bank_billet":{"amount":12.34, "expire_at": "2014-11-15", "description": "Prestação de Serviço", "customer_person_name": "Nome do Cliente", "customer_cnpj_cpf": "125.812.717-28"}}'
+-H 'Content-Type: application/json' \
+-H 'User-Agent: MyApp (myapp@example.com)' \
+-X POST https://sandbox.boletosimples.com.br/api/v1/bank_billets
+</pre>
+
+<small>Resposta:</small>
+
+<pre class="bash">
+HTTP/1.1 201 Created
+Date: Fri, 17 Oct 2014 19:30:06 GMT
+Status: 201 Created
+Location: https://sandbox.boletosimples.com.br/api/v1/bank_billets/1
+Content-Type: application/json; charset=utf-8
+...
+
+{
+  "id":1,
+  "expire_at":"2014-11-15",
+  "paid_at":null,
+  "description":"Prestação de Serviço",
+  "status":"generating",
+  "shorten_url":null,
+  "customer_person_type":"individual",
+  "customer_person_name":"Nome do Cliente",
+  "customer_cnpj_cpf":"125.812.717-28",
+  "customer_address":null,
+  "customer_state":null,
+  "customer_neighborhood":null,
+  "customer_zipcode":null,
+  "customer_address_number":null,
+  "customer_address_complement":null,
+  "customer_phone_number":null,
+  "customer_email":null,
+  "notification_url":null,
+  "send_email_on_creation":null,
+  "created_via_api":true,
+  "customer_city_name":null,
+  "paid_amount":0.0,
+  "amount":12.34
+}
 </pre>
