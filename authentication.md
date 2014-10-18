@@ -88,126 +88,115 @@ Status: 401 Unauthorized
 
 #### Nós recomendamos essa opção caso sua app necessite acessar contas de terceiros.
 
-O protocolo [ OAuth2](http://en.wikipedia.org/wiki/OAuth#OAuth_2.0)
-permite o acesso parcial ou total por terceiros sem necessidade de
-compartilhar sua senha. É mais complexo que acessar por usuário
-e senha mas é mais flexível. OAuth2 funciona muito bem para
-aplicações web, assim como para desktop e mobile.
+O protocolo [OAuth2](http://en.wikipedia.org/wiki/OAuth#OAuth_2.0) permite o acesso parcial ou total por terceiros sem necessidade de compartilhar sua senha. É mais complexo que acessar por usuário e senha mas é mais flexível. OAuth2 funciona muito bem para aplicações web, assim como para desktop e mobile.
 
-Há bibliotecas OAuth2 para quase todas as linguagens visto que é
-um protocolo amplamente utilizado na industria
-de software e por empresas como like Google e Facebook.
+### Bibliotecas
 
-### Registro
+Há bibliotecas OAuth2 para quase todas as linguagens visto que é um protocolo amplamente utilizado na industria de software e por empresas como like Google e Facebook.
 
-Para começar você precisa
-[solicitar o cadastro da sua aplicação](http://suporte.boletosimples.com.br)
-em nossos servidores. Nós te enviaremos um `client_id`
-e `client_secret`.
+[Escolha uma biblioteca antes de começar](http://oauth.net/code/).
 
-Você também deverá nos fornecer uma URL de redirecionamento
-`redirect_uri` para o seu site. Se você desenvolve
-para desktop ou mobile, veja na seção a baixo como configurar a
-`redirect_uri`.
+### Registro da Aplicação
+
+Para começar você precisa [solicitar o cadastro da sua aplicação](http://suporte.boletosimples.com.br) em nossos servidores. Nós te enviaremos um `client_id` e `client_secret`.
+
+Você também deverá nos fornecer uma URL de redirecionamento `redirect_uri` para o seu site. Se você desenvolve para desktop ou mobile, veja na seção a baixo como configurar a `redirect_uri`.
+
+### Endpoints
+
+<table class='table table-bordered features'>
+  <thead>
+    <tr>
+      <th width='150px'>Sandbox</th>
+      <th>URL</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Authorize URL</td>
+      <td>GET https://sandbox.boletosimples.com.br/api/v1/oauth2/authorize</td>
+    </tr>
+    <tr>
+      <td>Token URL</td>
+      <td>POST https://sandbox.boletosimples.com.br/api/v1/oauth2/token</td>
+    </tr>
+  </tbody>
+</table>
+
+<table class='table table-bordered features'>
+  <thead>
+    <tr>
+      <th width='150px'>Produção</th>
+      <th>URL</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Authorize URL</td>
+      <td>GET https://boletosimples.com.br/api/v1/oauth2/authorize</td>
+    </tr>
+    <tr>
+      <td>Token URL</td>
+      <td>POST https://boletosimples.com.br/api/v1/oauth2/token</td>
+    </tr>
+  </tbody>
+</table>
+
+### Resumo do funcionamento
 
 OAuth2 requer que o usuário autorize o acesso da sua app à conta dele. Para autenticar o usuário no OAuth2:
 
-*   Use o `client_id` e `client_secret` que você obteve conosco durante o registro para
-gerar uma `authorize_url` e redirecionar o usuário para esta url. Opcionalmente inclua o
-`scope` para acessar alguma [informação em específico](/docs/api/permissions).
-*   Se o usuário autorizar sua app, ele será redirecionado para a `redirect_uri` que você configurou
-no registro com o parâmetro `code`.
-*   Use o parâmetro `code` na url para gerar um `access_token`
+*   Use o `client_id` e `client_secret` que você obteve conosco durante o registro para redircionar o usuário para a `Authorize URL`. Opcionalmente inclua o `scope` para acessar alguma [informação em específico](/permissions).
+*   Se o usuário autorizar sua app, ele será redirecionado para a `redirect_uri` que você configurou no registro com o parâmetro `code`.
+*   Use o parâmetro `code` recebido para gerar um `access_token` fazendo uma requisição no `Token URL`.
 *   Use o `access_token` para fazer as requisições em nome do usuário.
 
-### Exemplos
 
-  <div class="panel">
-    <div class="panel-heading">
-      <p>OAuth2 em Ruby</p>
-    </div>
-    <div class="panel-body">
-      <div class="highlight" style="">
-        <pre><span class="nb">require</span> <span class="s1">'oauth2'</span>
-<span class="n">redirect_uri</span> <span class="o">=</span> <span class="s1">'http://www.seusite.com.br/oauth2/callback'</span> <span class="c1"># tem que ser a mesma url do registro</span>
-<span class="n">client</span> <span class="o">=</span> <span class="no">OAuth2</span><span class="o">::</span><span class="no">Client</span><span class="o">.</span><span class="n">new</span><span>(</span><span class="no">CLIENT_ID</span><span class="p">,</span> <span class="no">CLIENT_SECRET</span><span class="p">,</span> <span class="ss">site</span><span class="p">:</span> <span class="s1">'https://boletosimples.com.br/api/v1'</span><span class="p">)</span>
-<span class="sb">`open "</span><span class="si">#{</span><span class="n">client</span><span class="o">.</span><span class="n">auth_code</span><span class="o">.</span><span class="n">authorize_url</span><span class="p">(</span><span class="n">redirect_uri</span><span class="p">:</span> <span class="n">redirect_uri</span><span class="p">)</span><span class="si">}</span><span class="sb">"`</span>
-<span class="nb">print</span> <span class="s2">"Coloque o código retornado na URL: "</span>
-<span class="n">code</span> <span class="o">=</span> <span class="no">STDIN</span><span class="o">.</span><span class="n">readline</span><span class="o">.</span><span class="n">chomp</span>
-<span class="n">token</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">auth_code</span><span class="o">.</span><span class="n">get_token</span><span>(</span><span class="n">code</span><span class="p">,</span> <span class="n">redirect_uri</span><span class="p">:</span> <span class="n">redirect_uri</span><span class="p">)</span>
-<span class="nb">puts</span> <span class="no">JSON</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">token</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'/api/v1/userinfo'</span><span class="p">)</span><span class="o">.</span><span class="n">body</span><span class="p">)</span>
-      </pre>
-      </div>
-    </div>
-  </div>
+### Passo a Passo detalhado
 
-  <div class="panel">
-    <div class="panel-heading">
-      <p>OAuth2</p>
-    </div>
-    <div class="panel-body">
-      <small>
-        Os seguintes caminhos são usados para gerar tokens (usando um code, email e senha, ou refresh
-        token):
-      </small>
+1. Redirecione o usuário para o endereço abaixo, substituindo `BOLETOSIMPLES_ID` e `YOUR_CALLBACK_URL`
 
-      <pre>
-GET    https://boletosimples.com.br/api/v1/oauth/authorize     mostra form de autorização
-POST   https://boletosimples.com.br/api/v1/oauth/token         endpoint para gerar o token
-      </pre>
+    <pre class="bash">https://sandbox.boletosimples.com.br/api/v1/oauth/authorize?response_type=code&amp;client_id=BOLETOSIMPLES_ID&amp;redirect_uri=YOUR_CALLBACK_URL</pre>
 
-        <small>Aqui um exemplo simples de como talvez a app se comportará:</small>
-      <pre>
-# Redireciona o usuário para essa página
-https://boletosimples.com.br/api/v1/oauth/authorize?response_type=code&amp;client_id=YOUR_CLIENT_ID&amp;redirect_uri=YOUR_CALLBACK_URL
+1. O usuário verá uma tela solicitando a autorização para a sua aplicação acessar os dados dele. Se ele aceitar, será redirecionado para o endereço abaixo, onde `CODE` é o código para que você possa solicitar o token de acesso.
 
-# Se o usuário aceitar, ele vai ser redirecionado para:
-YOUR_CALLBACK_URL?code=CODE
+    <pre class="bash">http://yourcallback.com/?code=CODE</pre>
 
-# Faça um POST solicitando um access token
-https://boletosimples.com.br/api/v1/oauth/token?grant_type=authorization_code&amp;code=CODE&amp;redirect_uri=YOUR_CALLBACK_URL&amp;client_id=CLIENT_ID&amp;client_secret=CLIENT_SECRET
+1. Faça uma requisição POST para o endereço abaixo para receber o access token, substituindo `CODE`, `YOUR_CALLBACK_URL`, `BOLETOSIMPLES_ID` e `BOLETOSIMPLES_SECRET`
 
-# Resposta com o 'access_token'
-{
-"access_token": "...",
-"refresh_token": "...",
-"token_type": "bearer",
-"scope": "login"
-}
+    <pre class="bash">https://sandbox.boletosimples.com.br/api/v1/oauth/token?grant_type=authorization_code&amp;code=CODE&amp;redirect_uri=YOUR_CALLBACK_URL&amp;client_id=BOLETOSIMPLES_ID&amp;client_secret=BOLETOSIMPLES_SECRET</pre>
 
-# Agora você pode usar o 'access_token' para realizar chamadas a API
-http://boletosimples.com.br/api/v1/userinfo?access_token=...
+    <small>Resposta:</small>
 
-# Resposta
-{
-  "id":1017,
-  "email":"meuecommerce@example.com",
-  "account_type":"individual",
-  "first_name":"Margret",
-  "middle_name":"Simões",
-  "last_name":"Gonçalo",
-  "full_name":"Margret Simões Gonçalo",
-  "cpf":"142.578.243-44",
-  "date_of_birth":"1970-03-01",
-  "phone_number":"2199999999",
-  "address_street_name":"Av. Burkhard Hehn Simões",
-  "address_number":"120",
-  "address_complement":"709",
-  "address_neighborhood":"São Francisco",
-  "address_postal_code":"24360-440",
-  "address_city_name":"Rio de Janeiro",
-  "address_state":"RJ",
-  "banking_bank_number":"001",
-  "banking_agency_number":"4042",
-  "banking_agency_digit":"8",
-  "banking_account_number":"8873",
-  "banking_account_digit":"0",
-  "business_name":"Sebastian Elias Publicidade LTDA.",
-  "business_cnpj":"18.174.681/0001-70"
-}
-      </pre>
-    </div>
-  </div>
+    <pre class="json">
+    {
+      "access_token": "...",
+      "refresh_token": "...",
+      "token_type": "bearer",
+      "scope": "login"
+    }
+    </pre>
+
+1. Agora você pode usar o `access_token` para realizar chamadas a API. Esse token não expira.
+
+### Exemplo em Ruby
+
+<pre class="ruby">
+require 'oauth2'
+
+redirect_uri = 'http://www.seusite.com.br/oauth2/callback' # tem que ser a mesma url do registro
+
+client = OAuth2::Client.new(ENV['BOLETOSIMPLES_ID'], ENV['BOLETOSIMPLES_SECRET'], site: 'https://sandbox.boletosimples.com.br/api/v1')
+
+`open "#{client.auth_code.authorize_url(redirect_uri: redirect_uri)}"`
+print "Coloque o código retornado na URL: "
+
+code = STDIN.readline.chomp
+
+token = client.auth_code.get_token(code, redirect_uri: redirect_uri)
+
+puts JSON.parse(token.get('/api/v1/userinfo').body)
+</pre>
 
 ### Desenvolvendo aplicações para Mobile e Desktop
 
@@ -218,17 +207,13 @@ de alguma forma dentro da sua aplicação para poder utilizada mais tarde.
 
 Isso usa a mesma técnica adotada pelo
 [Google](https://developers.google.com/accounts/docs/OAuth2InstalledApp).
-[Aqui
-tem um guia(Em inglês)](http://www.slideshare.net/briandavidcampbell/is-that-a-token-in-your-phone-in-your-pocket-or-are-you-just-glad-to-see-me-oauth-20-and-mobile-devices) com um exemplo para iOS e Android.
+
+[Aqui tem um guia (Em inglês)](http://www.slideshare.net/briandavidcampbell/is-that-a-token-in-your-phone-in-your-pocket-or-are-you-just-glad-to-see-me-oauth-20-and-mobile-devices) com um exemplo para iOS e Android.
 
 ## Segurança
 
-#### Salvar credenciais de forma segura
+#### Salvar credenciais de forma segura!
 
-Você deve se preocupar em como guardar as credencias que você consegue de forma segura. Se alguém obtém o
-`access_token` com permissões, eles poderão acessar informações particulares suas e dos seus
-clientes.
+Você deve se preocupar em como guardar as credencias que você consegue de forma segura. Se alguém obtém o `access_token` com permissões, eles poderão acessar informações particulares suas e dos seus clientes.
 
-Nunca salve suas credenciais junto ao seu código fonte ou em seu banco de dados à menos que estejam
-criptografadas. Separar as credencias do seu código fonte e do banco de dados são excelentes práticas a serem
-adotadas.
+Nunca salve suas credenciais junto ao seu código fonte ou em seu banco de dados à menos que estejam criptografadas. Separar as credencias do seu código fonte e do banco de dados são excelentes práticas a serem adotadas.

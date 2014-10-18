@@ -65,39 +65,39 @@ en: /en/reference
 ### Transações
 
 <table class='table table-bordered features'>
-<thead>
-  <tr>
-    <th>Recurso</th>
-    <th>Descrição</th>
-  </tr>
-</thead>
-<tbody>
-      <tr>
-        <td>
-          <a href="/reference/v1/transactions/">GET /api/v1/transactions</a>
-        </td>
-        <td width='60%'>Listar transações</td>
-      </tr>
-</tbody>
+  <thead>
+    <tr>
+      <th>Recurso</th>
+      <th>Descrição</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <a href="/reference/v1/transactions/">GET /api/v1/transactions</a>
+      </td>
+      <td width='60%'>Listar transações</td>
+    </tr>
+  </tbody>
 </table>
 
 ### Usuário Autenticado
 
 <table class='table table-bordered features'>
-<thead>
-  <tr>
-    <th>Recurso</th>
-    <th>Descrição</th>
-  </tr>
-</thead>
-<tbody>
-      <tr>
-        <td>
-          <a href="/reference/v1/users/">GET /api/v1/userinfo</a>
-        </td>
-        <td width='60%'>Informações do usuário</td>
-      </tr>
-</tbody>
+  <thead>
+    <tr>
+      <th>Recurso</th>
+      <th>Descrição</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <a href="/reference/v1/users/">GET /api/v1/userinfo</a>
+      </td>
+      <td width='60%'>Informações do usuário</td>
+    </tr>
+  </tbody>
 </table>
 
 ### Parceiros
