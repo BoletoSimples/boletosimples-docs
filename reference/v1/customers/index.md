@@ -324,7 +324,7 @@ Content-Type: application/json; charset=utf-8
 }
 </pre>
 
-### Informações do Cliente
+### Informações do cliente
 
 `GET /api/v1/customers/:id`
 

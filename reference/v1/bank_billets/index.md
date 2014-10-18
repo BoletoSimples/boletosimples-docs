@@ -375,7 +375,7 @@ Content-Type: application/json; charset=utf-8
 }
 </pre>
 
-### Informações do Boleto
+### Informações do boleto
 
 `GET /api/v1/bank_billets/:id`
 
