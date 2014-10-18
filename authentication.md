@@ -18,7 +18,7 @@ Nós oferecemos duas formas de autenticação para acessar a API do Boleto Simpl
     <tbody>
     <tr>
       <td><a href="#api-token">Token de Acesso</a></td>
-      <td>Acessar sua prórpia conta.</td>
+      <td>Acessar sua própria conta.</td>
     </tr>
     <tr>
       <td><a href="#oauth2">OAuth2</a></td>
