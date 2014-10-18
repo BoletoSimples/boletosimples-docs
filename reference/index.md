@@ -17,22 +17,16 @@ en: /en/reference
   </thead>
   <tbody>
     <tr>
-      <td>
-        <a href="/reference/v1/bank_billets/list">GET /api/v1/bank_billets</a>
-      </td>
-      <td width='60%'>Listar boletos</td>
-    </tr>
-    <tr>
-      <td>
-        <a href="/reference/v1/bank_billets/create">POST /api/v1/bank_billets</a>
-      </td>
+      <td><a href="/reference/v1/bank_billets#criar-boleto">POST /api/v1/bank_billets</a></td>
       <td width='60%'>Criar boleto</td>
     </tr>
     <tr>
-      <td>
-        <a href="/reference/v1/bank_billets/show">GET /api/v1/bank_billets/:id</a>
-      </td>
-      <td width='60%'>Informações do Boleto</td>
+      <td><a href="/reference/v1/bank_billets#informaes-do-boleto">GET /api/v1/bank_billets/:id</a></td>
+      <td width='60%'>Informações do boleto</td>
+    </tr>
+    <tr>
+      <td><a href="/reference/v1/bank_billets#listar-boletos">GET /api/v1/bank_billets</a></td>
+      <td width='60%'>Listar boletos</td>
     </tr>
   </tbody>
 </table>
@@ -49,21 +43,21 @@ en: /en/reference
   <tbody>
     <tr>
       <td>
-        <a href="/reference/v1/customers/list">GET /api/v1/customers</a>
-      </td>
-      <td width='60%'>Listar clientes</td>
-    </tr>
-    <tr>
-      <td>
-        <a href="/reference/v1/customers/create">POST /api/v1/customers</a>
+        <a href="/reference/v1/customers#criar-cliente">POST /api/v1/customers</a>
       </td>
       <td width='60%'>Criar cliente</td>
     </tr>
     <tr>
       <td>
-        <a href="/reference/v1/customers/show">GET /api/v1/customers/:id</a>
+        <a href="/reference/v1/customers#informaes-do-cliente">GET /api/v1/customers/:id</a>
       </td>
-      <td width='60%'>Informações do Cliente</td>
+      <td width='60%'>Informações do cliente</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="/reference/v1/customers#listar-clientes">GET /api/v1/customers</a>
+      </td>
+      <td width='60%'>Listar clientes</td>
     </tr>
   </tbody>
 </table>
@@ -87,7 +81,7 @@ en: /en/reference
 </tbody>
 </table>
 
-### Informação do Usuário
+### Usuário Autenticado
 
 <table class='table table-bordered features'>
 <thead>
@@ -101,7 +95,7 @@ en: /en/reference
         <td>
           <a href="/reference/v1/users/">GET /api/v1/userinfo</a>
         </td>
-        <td width='60%'>Informações do Usuário autenticado</td>
+        <td width='60%'>Informações do usuário</td>
       </tr>
 </tbody>
 </table>
@@ -122,7 +116,7 @@ en: /en/reference
       <td>
         <a href="/reference/v1/partner/users">POST /api/v1/partner/users</a>
       </td>
-      <td width='60%'>Criar cliente</td>
+      <td width='60%'>Criar usuário</td>
     </tr>
   </tbody>
 </table>
