@@ -1,88 +1,8 @@
 ---
 layout: pt
-title: Autenticação - API do Boleto Simples
+title: OAuth2 - API do Boleto Simples
 en: /en/authentication
 ---
-
-## Autenticação
-
-Nós oferecemos duas formas de autenticação para acessar a API do Boleto Simples:
-
-  <table class="table table-bordered features">
-    <thead>
-    <tr>
-      <th>Método</th>
-      <th>Melhor para</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-      <td><a href="#api-token">Token de Acesso</a></td>
-      <td>Acessar sua própria conta.</td>
-    </tr>
-    <tr>
-      <td><a href="#oauth2">OAuth2</a></td>
-      <td>Permite conseguir permissões para acessar contas de terceiros.</td>
-    </tr>
-    </tbody>
-  </table>
-
-
-## Token de Acesso
-
-#### Nós recomendamos essa opção se você precisar acessar apenas os dados da sua conta.
-
-Para poder usar a autenticação via **Token de Acesso**, você precisa pegar o seu `Token` na [página de API (Sandbox)](https://sandbox.boletosimples.com.br/conta/api) da sua conta.
-
-![](/img/api-token.png)
-
-A autenticação usando o `Token de Acesso` é feita via `HTTP Basic`, porém ao invés de passar o login e senha do usuário, como é tradicional, deve-se fornecer o `Token de Acesso` do usuário no campo ‘login’ e nada no campo ‘password’. Alguns clientes HTTP podem reclamar do fato do campo ‘password’ estar vazio, nesse caso pode-se informar ‘X’ como senha, que o sistema irá ignorar.
-
-Exemplo de chamada API autenticada (onde "zjuio96wkixkzy6z98sy" é o Token de Acesso do usuário):
-
-### Exemplo de token válido
-
-<small>Requisição:</small>
-
-<pre class="bash">
-curl -i \
--u zjuio96wkixkzy6z98sy:x \
--H 'Content-Type: application/json' \
--H 'User-Agent: MyApp (myapp@example.com)' \
--X GET https://sandbox.boletosimples.com.br/api/v1/userinfo
-</pre>
-
-<small>Resposta:</small>
-
-<pre class="bash">
-HTTP/1.1 200 OK
-Date: Fri, 17 Oct 2014 18:14:56 GMT
-Status: 200 OK
-...
-</pre>
-
-### Exemplo de token inválido
-
-<small>Requisição:</small>
-
-<pre class="bash">
-curl -i \
--u tokeninvalido:x \
--H 'Content-Type: application/json' \
--H 'User-Agent: MyApp (myapp@example.com)' \
--X GET https://sandbox.boletosimples.com.br/api/v1/userinfo
-</pre>
-
-<small>Resposta:</small>
-
-<pre class="bash">
-HTTP/1.1 401 Unauthorized
-Date: Fri, 17 Oct 2014 18:20:18 GMT
-Status: 401 Unauthorized
-...
-
-{"error":"Email ou senha inválidos."}
-</pre>
 
 ## OAuth2
 
@@ -269,11 +189,3 @@ Isso usa a mesma técnica adotada pelo
 [Google](https://developers.google.com/accounts/docs/OAuth2InstalledApp).
 
 [Aqui tem um guia (Em inglês)](http://www.slideshare.net/briandavidcampbell/is-that-a-token-in-your-phone-in-your-pocket-or-are-you-just-glad-to-see-me-oauth-20-and-mobile-devices) com um exemplo para iOS e Android.
-
-## Segurança
-
-#### Salvar credenciais de forma segura!
-
-Você deve se preocupar em como guardar as credencias que você consegue de forma segura. Se alguém obtém o `access_token` com permissões, eles poderão acessar informações particulares suas e dos seus clientes.
-
-Nunca salve suas credenciais junto ao seu código fonte ou em seu banco de dados à menos que estejam criptografadas. Separar as credencias do seu código fonte e do banco de dados são excelentes práticas a serem adotadas.
