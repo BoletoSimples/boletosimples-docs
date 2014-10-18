@@ -34,16 +34,40 @@ O Boleto Simples possui também um [Ambiente Sandbox](/sandbox).
 
 A API aceita apenas o formato `JSON`, sendo assim todas as requisições usam content type `application/json`.
 
-## Convenções da API
+## Convenções
 
-Na documentação da API, utilizamos as seguintes convenções:
+Utilizamos as seguintes convenções nesta documentação:
 
-* **:variable** - Indica o nome de uma variável que precisa ser substituída em uma URL.
-* **#{variable}** - Indica o nome de uma variável que precisa ser substituída por valores da sua conta.
-* **...** - Indica o conteúdo da resposta de uma requisição, que foi truncado para facilitar a leitura da documentação.
-* **$TOKEN** - Indica o [Token de Acesso](/authentication/#token-de-acesso) e está neste formato para facilitar os testes na linha de comando. Supondo que o seu token é "zjuio96wkixkzy6z98sy", você pode rodar o comando abaixo e posteriormente copiar e colar os comandos desta documentação no terminal.
-
-  `export TOKEN=zjuio96wkixkzy6z98sy`
+<table class='table table-bordered'>
+  <thead>
+    <tr>
+      <th>Convenção</th>
+      <th>Descrição</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>:variable</th>
+      <td>Indica o nome de uma variável que precisa ser substituída em uma URL.</td>
+    </tr>
+    <tr>
+      <th>#{variable}</th>
+      <td>Indica o nome de uma variável que precisa ser substituída por valores da sua conta.</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>Indica o conteúdo da resposta de uma requisição, que foi truncado para facilitar a leitura da documentação.</td>
+    </tr>
+    <tr>
+      <th>$TOKEN</th>
+      <td>
+        Indica o <a href="/authentication/#token-de-acesso">Token de Acesso</a> e está neste formato para facilitar os testes na linha de comando. Supondo que o seu token é "zjuio96wkixkzy6z98sy", você pode rodar o comando abaixo e posteriormente copiar e colar os comandos desta documentação no terminal.
+        <br/>
+        <code>export TOKEN=zjuio96wkixkzy6z98sy</code>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 ## Códigos de Retorno
 
