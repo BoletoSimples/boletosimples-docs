@@ -156,7 +156,7 @@ OAuth2 requer que o usuário autorize o acesso da sua app à conta dele. Para au
 
 1. Redirecione o usuário para o endereço abaixo, substituindo `BOLETOSIMPLES_ID` e `YOUR_CALLBACK_URL`
 
-    <pre class="bash">https://sandbox.boletosimples.com.br/api/v1/oauth/authorize?response_type=code&amp;client_id=BOLETOSIMPLES_ID&amp;redirect_uri=YOUR_CALLBACK_URL</pre>
+    <pre class="bash">https://sandbox.boletosimples.com.br/api/v1/oauth2/authorize?response_type=code&amp;client_id=BOLETOSIMPLES_ID&amp;redirect_uri=YOUR_CALLBACK_URL</pre>
 
 1. O usuário verá uma tela solicitando a autorização para a sua aplicação acessar os dados dele. Se ele aceitar, será redirecionado para o endereço abaixo, onde `CODE` é o código para que você possa solicitar o token de acesso.
 
@@ -164,7 +164,7 @@ OAuth2 requer que o usuário autorize o acesso da sua app à conta dele. Para au
 
 1. Faça uma requisição POST para o endereço abaixo para receber o access token, substituindo `CODE`, `YOUR_CALLBACK_URL`, `BOLETOSIMPLES_ID` e `BOLETOSIMPLES_SECRET`
 
-    <pre class="bash">https://sandbox.boletosimples.com.br/api/v1/oauth/token?grant_type=authorization_code&amp;code=CODE&amp;redirect_uri=YOUR_CALLBACK_URL&amp;client_id=BOLETOSIMPLES_ID&amp;client_secret=BOLETOSIMPLES_SECRET</pre>
+    <pre class="bash">https://sandbox.boletosimples.com.br/api/v1/oauth2/token?grant_type=authorization_code&amp;code=CODE&amp;redirect_uri=YOUR_CALLBACK_URL&amp;client_id=BOLETOSIMPLES_ID&amp;client_secret=BOLETOSIMPLES_SECRET</pre>
 
     <small>Resposta:</small>
 
