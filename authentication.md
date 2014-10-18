@@ -154,30 +154,90 @@ OAuth2 requer que o usuário autorize o acesso da sua app à conta dele. Para au
 
 ### Passo a Passo detalhado
 
-1. Redirecione o usuário para o endereço abaixo, substituindo `BOLETOSIMPLES_ID` e `YOUR_CALLBACK_URL`
+1. Considerando as seguintes informações:
 
-    <pre class="bash">https://sandbox.boletosimples.com.br/api/v1/oauth2/authorize?response_type=code&amp;client_id=BOLETOSIMPLES_ID&amp;redirect_uri=YOUR_CALLBACK_URL</pre>
+    * **Client ID** -> fc4e525ff3
+    * **Client Secret** -> 95ea9a477d
+    * **Redirect URL** -> http://seusite.com.br
 
-1. O usuário verá uma tela solicitando a autorização para a sua aplicação acessar os dados dele. Se ele aceitar, será redirecionado para o endereço abaixo, onde `CODE` é o código para que você possa solicitar o token de acesso.
 
-    <pre class="bash">http://yourcallback.com/?code=CODE</pre>
+1. Redirecione o usuário para o endereço abaixo.
 
-1. Faça uma requisição POST para o endereço abaixo para receber o access token, substituindo `CODE`, `YOUR_CALLBACK_URL`, `BOLETOSIMPLES_ID` e `BOLETOSIMPLES_SECRET`
+    <pre class="bash">https://sandbox.boletosimples.com.br/api/v1/oauth2/authorize?response_type=code&amp;client_id=fc4e525ff3&amp;redirect_uri=http://seusite.com.br</pre>
 
-    <pre class="bash">https://sandbox.boletosimples.com.br/api/v1/oauth2/token?grant_type=authorization_code&amp;code=CODE&amp;redirect_uri=YOUR_CALLBACK_URL&amp;client_id=BOLETOSIMPLES_ID&amp;client_secret=BOLETOSIMPLES_SECRET</pre>
+1. O usuário verá uma tela solicitando a autorização para a sua aplicação acessar os dados dele e com dois links, um para declinar e outro para autorizar que redirecionam para os seguintes endereços:
 
-    <small>Resposta:</small>
+    <small>Caso seja declinado</small>
 
-    <pre class="json">
-    {
-      "access_token": "...",
-      "refresh_token": "...",
-      "token_type": "bearer",
-      "scope": "login"
-    }
+    <pre class="bash">http://seusite.com.br/?error=access_denied&error_description=O+dono+do+recurso+ou+servidor+de+autorização+negou+a+solicitação</pre>
+
+    <small>Caso seja autorizado</small>
+
+    <pre class="bash">http://seusite.com.br/?code=57858ba460</pre>
+
+    `code` é o código para que você possa solicitar o token de acesso.
+
+1. Faça uma requisição `POST` para o endereço abaixo para receber o access token.
+
+    <pre class="bash">https://sandbox.boletosimples.com.br/api/v1/oauth2/token?grant_type=authorization_code&amp;code=57858ba460&amp;redirect_uri=http://seusite.com.br&amp;client_id=fc4e525ff3&amp;client_secret=95ea9a477d</pre>
+
+    <small>Requisição:</small>
+
+    <pre class="bash">
+    curl -i \
+    -d 'grant_type=authorization_code&code=57858ba460&redirect_uri=http://seusite.com.br&client_id=fc4e525ff3&client_secret=95ea9a477d' \
+    -H 'User-Agent: MyApp (myapp@example.com)' \
+    -X POST https://sandbox.boletosimples.com.br/api/v1/oauth2/token
+    </pre>
+
+    <small>Resposta em caso de erro:</small>
+
+    <pre class="bash">
+    HTTP/1.1 401 Unauthorized
+    Date: Fri, 17 Oct 2014 18:39:47 GMT
+    Status: 401 Unauthorized
+    Content-Type: application/json; charset=utf-8
+    ...
+
+    {"error":"invalid_grant","error_description":"A permissão de autorização provida é inválida, está expirada, revogada, não coincide com a URL de redirecionamento usada na requisição de autorização ou foi emitida por outro cliente."}
+    </pre>
+
+    <small>Resposta em caso de sucesso:</small>
+
+    <pre class="bash">
+    HTTP/1.1 200 OK
+    Date: Fri, 17 Oct 2014 18:39:47 GMT
+    Status: 200 OK
+    Content-Type: application/json; charset=utf-8
+    ...
+
+    {"access_token":"ada046e3cc","token_type":"bearer","scope":"login"}
     </pre>
 
 1. Agora você pode usar o `access_token` para realizar chamadas a API. Esse token não expira.
+
+    <small>Requisição:</small>
+
+    <pre class="bash">
+    curl -i \
+    -u ada046e3cc:x \
+    -H 'Content-Type: application/json' \
+    -H 'User-Agent: MyApp (myapp@example.com)' \
+    -X GET https://sandbox.boletosimples.com.br/api/v1/userinfo
+    </pre>
+
+    <small>Resposta:</small>
+
+    <pre class="bash">
+    HTTP/1.1 200 OK
+    Date: Fri, 17 Oct 2014 18:14:56 GMT
+    Status: 200 OK
+    ...
+
+    # dados do usuário que autorizou o acesso
+    </pre>
+
+
 
 ### Exemplo em Ruby
 
