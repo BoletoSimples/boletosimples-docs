@@ -73,14 +73,48 @@ Utilizamos as seguintes convenções nesta documentação:
 
 A API retorna os códigos de resposta HTTP. Estas são as informações mais relevantes:
 
-*   `200 OK` - A chamada foi bem sucedida.
-*   `400 Bad Request` - A requisição é inválida, em geral conteúdo mal formado.
-*   `401 Unauthorized` - O usuário e senha são inválidos.
-*   `403 Forbidden` - O acesso à API está bloqueado.
-*   `404 Not Found` - O endereço acessado não existe.
-*   `429 Too Many Requests` - O usuário atingiu o  de requisições.
-*   `503 Service Unavailable` - O usuário atingiu algum dos s de uso.
-*   `500 Internal Server Error` - Houve um erro interno do servidor ao processar a requisição.
+<table class='table table-bordered'>
+  <thead>
+    <tr>
+      <th width="200px">Código</th>
+      <th>Descrição</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>200 OK</th>
+      <td>A chamada foi bem sucedida.</td>
+    </tr>
+    <tr>
+      <th>400 Bad Request</th>
+      <td>A requisição é inválida, em geral conteúdo mal formado.</td>
+    </tr>
+    <tr>
+      <th>401 Unauthorized</th>
+      <td>O usuário e senha ou token de acesso são inválidos. <a href="/authentication">Leia mais.</a></td>
+    </tr>
+    <tr>
+      <th>403 Forbidden</th>
+      <td>O acesso à API está bloqueado.</td>
+    </tr>
+    <tr>
+      <th>404 Not Found</th>
+      <td>O endereço acessado não existe.</td>
+    </tr>
+    <tr>
+      <th>429 Too Many Requests</th>
+      <td>O usuário atingiu o <a href="#limite-de-requisies">limite de requisições</a>.</td>
+    </tr>
+    <tr>
+      <th>503 Service Unavailable</th>
+      <td>O usuário está bloqueado.</td>
+    </tr>
+    <tr>
+      <th>500 Internal Server Error</th>
+      <td>Houve um erro interno do servidor ao processar a requisição. Consulte o <a href="http://status.boletosimples.com.br">status dos servidores</a>.</td>
+    </tr>
+  </tbody>
+</table>
 
 ## Segurança
 
