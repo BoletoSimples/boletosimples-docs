@@ -5,9 +5,9 @@ en: /en/references
 breadcrumb: true
 ---
 
-## Usuários
+## Usuário Autenticado
 
-### Informações do Usuário Autenticado
+### Informações do usuário
 
 `GET /api/v1/userinfo`
 
