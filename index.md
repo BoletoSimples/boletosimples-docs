@@ -40,7 +40,7 @@ Na documentação da API, utilizamos as seguintes convenções:
 
 * **#{variable}** - Indica o nome de uma variável que precisa ser substituída por valores da sua conta.
 * **...** - Indica o conteúdo da resposta de uma requisição, que foi truncado para facilitar a leitura da documentação.
-* **$TOKEN** - Indica o Token de Autenticação e está neste formato para facilitar os testes na linha de comando. Supondo que o seu token é "zjuio96wkixkzy6z98sy", você pode rodar o comando abaixo e posteriormente copiar e colar os comandos desta documentação no terminal.
+* **$TOKEN** - Indica o [Token de Acesso](/authentication/#token-de-acesso) e está neste formato para facilitar os testes na linha de comando. Supondo que o seu token é "zjuio96wkixkzy6z98sy", você pode rodar o comando abaixo e posteriormente copiar e colar os comandos desta documentação no terminal.
 
   `export TOKEN=zjuio96wkixkzy6z98sy`
 
