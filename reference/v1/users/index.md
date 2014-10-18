@@ -1,8 +1,8 @@
 ---
 layout: pt
-title: Informações do Usuário - API do Boleto Simples
+title: Usuário Autenticado - API do Boleto Simples
 en: /en/references
-breadcrumb: true
+breadcrumb: Usuário Autenticado
 ---
 
 ## Usuário Autenticado

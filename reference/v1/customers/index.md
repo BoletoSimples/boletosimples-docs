@@ -1,8 +1,8 @@
 ---
 layout: pt
-title: Listar Clientes - API do Boleto Simples
+title: Clientes - API do Boleto Simples
 en: /en/references
-breadcrumb: true
+breadcrumb: Clientes
 ---
 
 ## Clientes

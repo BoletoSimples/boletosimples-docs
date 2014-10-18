@@ -1,8 +1,8 @@
 ---
 layout: pt
-title: Listar Transações - API do Boleto Simples
+title: Transações - API do Boleto Simples
 en: /en/references
-breadcrumb: true
+breadcrumb: Transações
 ---
 
 ## Transações

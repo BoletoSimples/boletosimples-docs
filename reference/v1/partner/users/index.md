@@ -1,11 +1,11 @@
 ---
 layout: pt
-title: Parceiros e Usuários - API do Boleto Simples
+title: Parceiros - API do Boleto Simples
 en: /en/reference
-breadcrumb: true
+breadcrumb: Parceiros
 ---
 
-## Parceiros - Usuários
+## Parceiros
 
 ### Criar usuário
 
