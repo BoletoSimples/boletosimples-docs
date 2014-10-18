@@ -11,6 +11,45 @@ breadcrumb: Usuário Autenticado
 
 `GET /api/v1/userinfo`
 
+Quando acessado através do [OAuth2](/authentication/oauth2), as informações retornadas variam de acordo com as [permissões](/authentication/permissions) concedidas pelo usuário de acordo com a tabela abaixo:
+
+Quando acessodo através do [Token de Acesso](/authentication/token), todass as informações são retornadas.
+
+<table class='table table-bordered'>
+  <thead>
+    <tr>
+      <th width="200px">Escopo</th>
+      <th>Campos Retornados</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>login</th>
+      <td>[:login_url]</td>
+    </tr>
+    <tr>
+      <th>email</th>
+      <td>[:email]</td>
+    </tr>
+    <tr>
+      <th>profile</th>
+      <td>[:account_type, :first_name, :middle_name, :last_name, :full_name, :cpf, :date_of_birth, :mother_name, :father_name, :account_level]</td>
+    </tr>
+    <tr>
+      <th>address</th>
+      <td>[:address_street_name, :address_number, :address_complement, :address_neighborhood, :address_postal_code, :address_city_name, :address_state]</td>
+    </tr>
+    <tr>
+      <th>phone</th>
+      <td>[:phone_number]</td>
+    </tr>
+    <tr>
+      <th>business</th>
+      <td>[:business_name, :business_cnpj, :business_legal_name]</td>
+    </tr>
+  </tbody>
+</table>
+
 #### Exemplo
 
 <small>Requisição:</small>
