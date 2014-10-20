@@ -2,6 +2,7 @@
 @import url("bootstrap-theme.min.css");
 @import url("offcanvas.css");
 @import url("fontface.css");
+@import url("mobile.css");
 
 /*resets*/
 
@@ -262,37 +263,3 @@ footer .copyright p {
 }
 
 /******************************************************************************/
-
-@media (max-width:1199px) {
-  article { margin: 0; }
-
-}
-
-@media (min-width: 921px) {
-  .row-offcanvas-right .sidebar-offcanvas { right: -65.7%; }
-}
-
-@media (min-width: 980px) {
-  .container {
-    width: 960px !important;
-  }
-  .row-offcanvas-right .sidebar-offcanvas { right: -53.7%; }
-}
-
-@media (min-width: 1030px) {
-  .row-offcanvas-right .sidebar-offcanvas { right: -63.7%; }
-}
-
-@media (min-width: 910px) and (max-width: 920px) {
-  .row-offcanvas-right .sidebar-offcanvas { right: -60.7%; }
-}
-
-
-@media (min-width:800px) and (max-width:909px) {
-  .row-offcanvas-right .sidebar-offcanvas { right: -60.7%; }
-}
-
-
-@media (min-width:320px) and (max-width:799px) {
-  .row-offcanvas-right .sidebar-offcanvas { right: -52.7%; }
-}
