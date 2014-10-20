@@ -27,11 +27,6 @@ body {
     left: 0;
   }
 
-  .row-offcanvas-right
-  .sidebar-offcanvas {
-    right: -54.7%; /* 6 columns */
-  }
-
   .row-offcanvas-left
   .sidebar-offcanvas {
     left: -50%; /* 6 columns */

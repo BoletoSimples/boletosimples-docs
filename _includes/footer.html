@@ -10,8 +10,8 @@
 <script src="/js/highlight.pack.js"></script>
 <script>
   $(document).ready(function () {
-    $('[data-toggle="offcanvas"]').focus(function () {
-      $('.row-offcanvas').addClass('active')
+    $('[data-toggle="offcanvas"]').click(function () {
+      $('.row-offcanvas').toggleClass('active')
     });
     $('[data-toggle="offcanvas"]').focusout(function () {
       $('.row-offcanvas').removeClass('active')
