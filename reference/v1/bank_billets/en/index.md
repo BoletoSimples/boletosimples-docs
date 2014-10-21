@@ -1,8 +1,8 @@
 ---
 layout: en
-title: Boletos - API do Boleto Yesples
+title: Billets - Boleto Simples API
 en: /en/reference
-breadcrumb: Boletos
+breadcrumb: Billets
 ---
 
 ## Billets
