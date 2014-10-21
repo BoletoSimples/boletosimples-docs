@@ -1,0 +1,49 @@
+<p>Documentação</p>
+<ul class="nav">
+  <li {% if page.url == '/' %}class="active"{% endif %}>
+    <a href="/" title="Introdução">Introdução</a>
+  </li>
+  <li class="submenu {% if page.url == '/authentication/' %}active{% endif %}">
+    <a href="/authentication" title="Autenticação">Autenticação</a>
+    <ul class="nav">
+      <li>
+        <a href="/authentication/token" title="Token de Acesso">Token de Acesso</a>
+      </li>
+      <li>
+        <a href="/authentication/oauth2" title="OAuth2">OAuth2</a>
+      </li>
+      <li {% if page.url == '/permissions/' %}class="active"{% endif %}>
+        <a href="/authentication/permissions" title="Permissões">Permissões</a>
+      </li>
+    </ul>
+  </li>
+  <li {% if page.url == '/notifications/' %}class="active"{% endif %}>
+    <a href="/notifications" title="Notificações">Notificações</a>
+  </li>
+  <li {% if page.url == '/libraries/' %}class="active"{% endif %}>
+    <a href="/libraries" title="Bibliotecas">Bibliotecas</a>
+  </li>
+  <li {% if page.url == '/sandbox/' %}class="active"{% endif %}>
+    <a href="/sandbox" title="Sandbox">Ambiente Sandbox</a>
+  </li>
+  <li {% if page.url == '/reference/en/' %}class="active"{% endif %}>
+    <a href="/reference/en" title="Referências">Referências</a>
+    <ul class="nav">
+      <li {% if page.url == '/reference/v1/bank_billets/' %}class="active"{% endif %}>
+        <a href="/reference/v1/bank_billets/" title="Boletos">Boletos</a>
+      </li>
+      <li {% if page.url == '/reference/v1/customers/' %}class="active"{% endif %}>
+        <a href="/reference/v1/customers/" title="Clientes">Clientes</a>
+      </li>
+      <li {% if page.url == '/reference/v1/transactions/' %}class="active"{% endif %}>
+        <a href="/reference/v1/transactions/" title="Transações">Transações</a>
+      </li>
+      <li {% if page.url == '/reference/v1/users/' %}class="active"{% endif %}>
+        <a href="/reference/v1/users/" title="Usuário Autenticado">Usuário Autenticado</a>
+      </li>
+      <li {% if page.url == '/reference/v1/partner/users/' %}class="active"{% endif %}>
+        <a href="/reference/v1/partner/users" title="Parceiros e Usuários">Parceiros - Usuários</a>
+      </li>
+    </ul>
+  </li>
+</ul>

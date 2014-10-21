@@ -1,16 +1,35 @@
 <nav class="pull-right visible-lg">
   <ul>
     <li>
-      <a href="https://boletosimples.com.br" title="Ir para o site">Início</a>
+      <a href="https://boletosimples.com.br" title="{% if page.url == '/' %}Início{% endif %}
+      {% if page.url == '/en/' %}Home{% endif %}">
+        {% if page.layout == 'pt' %}Inicio{% endif %}
+        {% if page.layout == 'en' %}Home{% endif %}
+      </a>
     </li>
     <li>
-      <a href="https://boletosimples.com.br/preco" title="Preço">Preço</a>
+      <a href="https://boletosimples.com.br/preco" title="{% if page.url == '/' %}Preço{% endif %}
+      {% if page.url == '/en/' %}Price{% endif %}">
+        {% if page.layout == 'pt' %}Preço{% endif %}
+        {% if page.layout == 'en' %}Price{% endif %}
+      </a>
     </li>
     <li>
-      Documentação
+      {% if page.layout == 'pt' %}Documentação{% endif %}
+      {% if page.layout == 'en' %}Documentation{% endif %}
     </li>
     <li>
-      <a class="btn btn-primary" href="https://boletosimples.com.br/users/sign_in" title="Logar">Login</a>
+      <a class="btn btn-primary" href="https://boletosimples.com.br/users/sign_in" title="{% if page.url == '/' %}Documentação{% endif %}
+      {% if page.url == '/en/' %}Sign in{% endif %}">
+        {% if page.layout == 'pt' %}Login{% endif %}
+        {% if page.layout == 'en' %}Sign in{% endif %}
+      </a>
+    </li>
+    <li>
+      <a href="{% if page.layout == 'pt' %}/en/{% endif %} {% if page.layout == 'en' %}/{% endif %}">
+        <img src="{% if page.layout == 'pt' %}/img/usa-flag.png{% endif %}
+                  {% if page.layout == 'en' %}/img/bra-flag.png{% endif %}" alt="" width="25">
+      </a>
     </li>
   </ul>
 </nav>
