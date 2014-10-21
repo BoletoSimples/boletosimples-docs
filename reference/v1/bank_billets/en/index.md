@@ -218,7 +218,7 @@ breadcrumb: Boletos
         String
       </td>
       <td>
-        CEP
+        Zipcode
       </td>
     </tr>
 
@@ -233,7 +233,7 @@ breadcrumb: Boletos
         String
       </td>
       <td>
-        House Number
+        Address Number
       </td>
     </tr>
 
@@ -248,7 +248,7 @@ breadcrumb: Boletos
         String
       </td>
       <td>
-        Complemento
+        Adress complement
       </td>
     </tr>
     <tr>
