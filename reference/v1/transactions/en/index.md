@@ -5,19 +5,19 @@ en: /en/references
 breadcrumb: Transactions
 ---
 
-## Transações
+## Transactions
 
-### Listar transações
+### List transactions
 
 `GET /api/v1/transactions`
 
 <table class='table table-bordered'>
   <thead>
     <tr>
-      <th>Parâmetro</th>
-      <th data-container="body" data-toggle="tooltip" title="Obrigatório">Obr.</th>
-      <th>Tipo</th>
-      <th>Descrição</th>
+      <th>Parameter</th>
+      <th data-container="body" data-toggle="tooltip" title="Required">Req.</th>
+      <th>Type</th>
+      <th>Description</th>
     </tr>
   </thead>
   <tbody>
@@ -26,13 +26,13 @@ breadcrumb: Transactions
         <strong>page </strong>
       </td>
       <td>
-        Não
+        No
       </td>
       <td>
         Number
       </td>
       <td>
-        Número da Página
+        Page number
       </td>
     </tr>
 
@@ -41,13 +41,13 @@ breadcrumb: Transactions
         <strong>per_page </strong>
       </td>
       <td>
-        Não
+        No
       </td>
       <td>
         Number
       </td>
       <td>
-        Quantidade de registros por página
+        Quantity of records per page
       </td>
     </tr>
 
