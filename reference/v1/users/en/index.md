@@ -1,7 +1,7 @@
 ---
 layout: en
 title: Authenticated User - Boleto Simples API
-pt: /references/users/
+pt: /reference/v1/users/
 breadcrumb: Authenticated User
 ---
 

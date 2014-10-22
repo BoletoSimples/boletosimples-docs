@@ -1,7 +1,7 @@
 ---
 layout: en
 title: Transactions - Boleto SimplesAPI
-pt: /references/transations/
+pt: /reference/v1/transactions/
 breadcrumb: Transactions
 ---
 

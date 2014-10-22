@@ -1,7 +1,7 @@
 ---
 layout: en
 title: Partners -  Boleto Simples API
-pt: /reference/users/partner
+pt: /reference/v1/partner/users/
 breadcrumb: Partners
 ---
 
