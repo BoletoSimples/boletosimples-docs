@@ -1,7 +1,7 @@
 ---
 layout: en
 title: OAuth2 - Boleto Simples API
-en: /en/authentication
+pt: /authentication/oauth2
 ---
 
 ## OAuth2

@@ -1,12 +1,12 @@
 ---
 layout: en
 title: Boleto Simples API
-en: /en/
+pt: /
 ---
 
-## API do Boleto Simples
+## Boleto Simples API
 
-#### Integre pagamentos por boletos bancários em seu site ou aplicação.
+#### Intagrate payments for bank billets on your website or application.
 
 
 Boleto Simples fornece uma API simples e poderosa em REST para

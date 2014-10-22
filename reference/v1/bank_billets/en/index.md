@@ -1,7 +1,7 @@
 ---
 layout: en
 title: Billets - Boleto Simples API
-en: /en/reference
+pt: /reference/bank_billets/
 breadcrumb: Billets
 ---
 

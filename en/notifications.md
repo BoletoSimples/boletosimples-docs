@@ -1,7 +1,7 @@
 ---
 layout: en
 title: Notifications - Boleto Simples API
-en: /en/notifications
+pt: /notifications
 ---
 
 ## Notifications

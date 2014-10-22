@@ -1,7 +1,7 @@
 ---
 layout: pt
 title: Autenticação - API do Boleto Simples
-en: /en/authentication
+en: /authentication/en/
 ---
 
 ## Autenticação

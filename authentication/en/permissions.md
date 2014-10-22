@@ -1,7 +1,7 @@
 ---
 layout: en
 title: Permissions - Boleto Simples API
-en: /en/permissions
+pt: /authentication/permissions
 ---
 
 ## Permissions

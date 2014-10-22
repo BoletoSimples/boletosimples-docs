@@ -1,7 +1,7 @@
 ---
 layout: en
 title: Customers - Boleto Simples API
-en: /en/references
+pt: /references/customers/
 breadcrumb: Customers
 ---
 

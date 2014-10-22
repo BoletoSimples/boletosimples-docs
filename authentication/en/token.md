@@ -1,7 +1,7 @@
 ---
 layout: en
 title: Access Token - Boleto Simples API
-en: /en/authentication
+pt: /authentication/token
 ---
 
 ## Access Token
