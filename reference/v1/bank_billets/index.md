@@ -302,8 +302,14 @@ breadcrumb: Boletos
 
 #### Exemplo de requisição inválida
 
-<small>Requisição:</small>
+<ul class="nav nav-tabs" role="tablist">
+  <li class="active"><a href="#bash" role="tab" data-toggle="tab">Bash</a></li>
+  <li><a href="#ruby" role="tab" data-toggle="tab">Ruby</a></li>
+</ul>
 
+<div class="tab-content">
+  <div class="tab-pane active" id="bash">
+    <small>Requisição:</small>
 <pre class="bash">
 curl -i \
 -u $TOKEN:x \
@@ -313,7 +319,7 @@ curl -i \
 -X POST https://sandbox.boletosimples.com.br/api/v1/bank_billets
 </pre>
 
-<small>Resposta:</small>
+    <small>Resposta:</small>
 
 <pre class="bash">
 HTTP/1.1 422 Unprocessable Entity
@@ -324,10 +330,20 @@ Content-Type: application/json; charset=utf-8
 
 {"errors":{"bank_billet":["não pode ficar em branco"]}}
 </pre>
+  </div>
+  <div class="tab-pane" id="ruby">2...</div>
+</div>
 
 #### Exemplo de requisição válida
 
-<small>Requisição:</small>
+<ul class="nav nav-tabs" role="tablist">
+  <li class="active"><a href="#bash2" role="tab" data-toggle="tab">Bash</a></li>
+  <li><a href="#ruby2" role="tab" data-toggle="tab">Ruby</a></li>
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="bash2">
+    <small>Requisição:</small>
 
 <pre class="bash">
 curl -i \
@@ -338,7 +354,7 @@ curl -i \
 -X POST https://sandbox.boletosimples.com.br/api/v1/bank_billets
 </pre>
 
-<small>Resposta:</small>
+    <small>Resposta:</small>
 
 <pre class="bash">
 HTTP/1.1 201 Created
@@ -374,6 +390,11 @@ Content-Type: application/json; charset=utf-8
   "amount":12.34
 }
 </pre>
+  </div>
+  <div class="tab-pane" id="ruby2">2...</div>
+</div>
+
+
 
 ### Informações do boleto
 
@@ -381,7 +402,14 @@ Content-Type: application/json; charset=utf-8
 
 #### Exemplo
 
-<small>Requisição:</small>
+<ul class="nav nav-tabs" role="tablist">
+  <li class="active"><a href="#bash3" role="tab" data-toggle="tab">Bash</a></li>
+  <li><a href="#ruby3" role="tab" data-toggle="tab">Ruby</a></li>
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="bash3">
+    <small>Requisição:</small>
 
 <pre class="bash">
 curl -i \
@@ -426,8 +454,11 @@ Content-Type: application/json; charset=utf-8
   "amount":12.34
 }
 </pre>
+  </div>
+  <div class="tab-pane" id="ruby3">2...</div>
+</div>
 
-### Listar boletos
+## Listar boletos
 
 `GET /api/v1/bank_billets`
 
@@ -475,7 +506,14 @@ Content-Type: application/json; charset=utf-8
 
 #### Exemplo
 
-<small>Requisição:</small>
+<ul class="nav nav-tabs" role="tablist">
+  <li class="active"><a href="#bash4" role="tab" data-toggle="tab">Bash</a></li>
+  <li><a href="#ruby4" role="tab" data-toggle="tab">Ruby</a></li>
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="bash4">
+    <small>Requisição:</small>
 
 <pre class="bash">
 curl -i \
@@ -485,7 +523,7 @@ curl -i \
 -X GET https://sandbox.boletosimples.com.br/api/v1/bank_billets?page=1&per_page=50
 </pre>
 
-<small>Resposta:</small>
+    <small>Resposta:</small>
 
 <pre class="bash">
 HTTP/1.1 200 OK
@@ -523,3 +561,6 @@ Content-Type: application/json; charset=utf-8
   }
 ]
 </pre>
+  </div>
+  <div class="tab-pane" id="ruby4">2...</div>
+</div>
