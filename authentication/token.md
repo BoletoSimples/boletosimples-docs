@@ -18,7 +18,14 @@ Exemplo de chamada API autenticada (onde "zjuio96wkixkzy6z98sy" é o Token de Ac
 
 ### Exemplo de token válido
 
-<small>Requisição:</small>
+<ul class="nav nav-tabs" role="tablist">
+  <li class="active"><a href="#bash" role="tab" data-toggle="tab">Bash</a></li>
+  <li><a href="#ruby" role="tab" data-toggle="tab">Ruby</a></li>
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="bash">
+    <small>Requisição:</small>
 
 <pre class="bash">
 curl -i \
@@ -28,7 +35,7 @@ curl -i \
 -X GET https://sandbox.boletosimples.com.br/api/v1/userinfo
 </pre>
 
-<small>Resposta:</small>
+    <small>Resposta:</small>
 
 <pre class="bash">
 HTTP/1.1 200 OK
@@ -36,10 +43,20 @@ Date: Fri, 17 Oct 2014 18:14:56 GMT
 Status: 200 OK
 ...
 </pre>
+  </div>
+  <div class="tab-pane" id="ruby">2...</div>
+</div>
 
 ### Exemplo de token inválido
 
-<small>Requisição:</small>
+<ul class="nav nav-tabs" role="tablist">
+  <li class="active"><a href="#bash2" role="tab" data-toggle="tab">Bash</a></li>
+  <li><a href="#ruby2" role="tab" data-toggle="tab">Ruby</a></li>
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="bash2">
+    <small>Requisição:</small>
 
 <pre class="bash">
 curl -i \
@@ -49,7 +66,7 @@ curl -i \
 -X GET https://sandbox.boletosimples.com.br/api/v1/userinfo
 </pre>
 
-<small>Resposta:</small>
+    <small>Resposta:</small>
 
 <pre class="bash">
 HTTP/1.1 401 Unauthorized
@@ -59,3 +76,6 @@ Status: 401 Unauthorized
 
 {"error":"Email ou senha inválidos."}
 </pre>
+  </div>
+  <div class="tab-pane" id="ruby2">2...</div>
+</div>
