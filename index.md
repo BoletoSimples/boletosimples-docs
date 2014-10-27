@@ -206,7 +206,14 @@ restantes para aquela hora. Exemplo:
 
 ### Exemplo
 
-<small>Requisição:</small>
+<ul class="nav nav-tabs" role="tablist">
+  <li class="active"><a href="#bash" role="tab" data-toggle="tab">Bash</a></li>
+  <li><a href="#ruby" role="tab" data-toggle="tab">Ruby</a></li>
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="bash">
+    <small>Requisição:</small>
 
 <pre class="bash">
 curl -i \
@@ -216,7 +223,7 @@ curl -i \
 -X GET https://sandbox.boletosimples.com.br/api/v1/userinfo
 </pre>
 
-<small>Resposta:</small>
+    <small>Resposta:</small>
 
 <pre class="bash">
 HTTP/1.1 200 OK
@@ -225,6 +232,10 @@ Content-Type: application/xml; charset=utf-8
 X-RateLimit-Limit: 500
 X-RateLimit-Remaining: 486
 </pre>
+  </div>
+  <div class="tab-pane" id="ruby">2...</div>
+</div>
+
 
 Caso atinja o número máximo de requisições dentro de uma hora,
 o servidor retorna o status
