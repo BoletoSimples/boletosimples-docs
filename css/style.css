@@ -249,7 +249,7 @@ article img {
 .nav.nav-tabs > li.active > a,
 .nav.nav-tabs > li > a:hover { border-left: 1px solid #ddd; }
 
-.tab-content { margin: 15px 0 0 0; }
+.tab-content { margin: 15px 0 30px 0; }
 
 /******************************************************************************/
 
