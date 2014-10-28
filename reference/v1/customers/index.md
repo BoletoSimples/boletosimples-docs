@@ -289,7 +289,40 @@ Content-Type: application/json; charset=utf-8
 {"errors":{"customer":["não pode ficar em branco"]}}
 </pre>
   </div>
-  <div class="tab-pane" id="ruby">2...</div>
+  <div class="tab-pane" id="ruby">
+    <small>Requisição:</small>
+
+<pre class="ruby">
+client = BoletoSimples::Client.new('yourtoken', user_agent: 'Meu e-Commerce (meuecommerce@example.com)', production: true)
+client.create_customer({
+  "customer" => {
+    "person_name" => "Joao da Silva",
+    "cnpj_cpf"=> " ",
+    "email" => "cliente@bom.com",
+    "address" => "Rua quinhentos",
+    "city_name" => "Rio de Janeiro",
+    "state" => "RJ",
+    "neighborhood" => "bairro",
+    "zipcode" => "12312-123",
+    "address_number" => "111",
+    "address_complement" => "Sala 4",
+    "phone_number" => "213223"
+  }
+})
+</pre>
+
+    <small>Resposta:</small>
+
+<pre class="ruby">
+{
+  "errors" => {
+    "cnpj_cpf" => ["não pode ficar em branco"],
+    "phone_number" => ["é muito curto (mínimo: 10 caracteres)"]
+  }
+}
+</pre>
+
+  </div>
 </div>
 
 #### Exemplo de requisição válida
@@ -341,7 +374,49 @@ Content-Type: application/json; charset=utf-8
 }
 </pre>
   </div>
-  <div class="tab-pane" id="ruby2">2...</div>
+  <div class="tab-pane" id="ruby2">
+    <small>Requisição:</small>
+
+<pre class="ruby">
+client = BoletoSimples::Client.new('yourtoken', user_agent: 'Meu e-Commerce (meuecommerce@example.com)', production: true)
+client.create_customer({
+  "customer" => {
+    "person_name" => "Joao da Silva",
+    "cnpj_cpf"=> "012.345.678-90",
+    "email" => "cliente@bom.com",
+    "address" => "Rua quinhentos",
+    "city_name" => "Rio de Janeiro",
+    "state" => "RJ",
+    "neighborhood" => "bairro",
+    "zipcode" => "12312-123",
+    "address_number" => "111",
+    "address_complement" => "Sala 4",
+    "phone_number" => "2112123434"
+  }
+})
+</pre>
+  <small>Resposta:</small>
+
+<pre class="ruby">
+{
+  "id" => 32,
+  "mobile_local_code" => nil,
+  "mobile_number" => nil,
+  "person_type" => "individual",
+  "person_name" => "Joao da Silva",
+  "cnpj_cpf"=> "012.345.678-90",
+  "email" => "cliente@bom.com",
+  "address" => "Rua quinhentos",
+  "city_name" => "Rio de Janeiro",
+  "state" => "RJ",
+  "neighborhood" => "bairro",
+  "zipcode" => "12312-123",
+  "address_number" => "111",
+  "address_complement" => "Sala 4",
+  "phone_number" => "2112123434"
+}
+</pre>
+  </div>
 </div>
 
 ### Informações do cliente
@@ -395,7 +470,36 @@ Content-Type: application/json; charset=utf-8
 }
 </pre>
   </div>
-  <div class="tab-pane" id="ruby3">2...</div>
+  <div class="tab-pane" id="ruby3">
+    <small>Requisição:</small>
+
+<pre class="ruby">
+client = BoletoSimples::Client.new('yourtoken', user_agent: 'Meu e-Commerce (meuecommerce@example.com)', production: true)
+client.customer(32)
+</pre>
+
+    <small>Resposta:</small>
+
+<pre class="ruby">
+{
+  "id"=>32,
+  "city_name" => "Rio de Janeiro",
+  "person_name" => "Joao da Silva",
+  "address" => "Rua quinhentos",
+  "address_complement" => "Sala 4",
+  "address_number" => "111",
+  "mobile_number" => nil,
+  "cnpj_cpf" => "012.345.678-90",
+  "email" => "cliente@bom.com",
+  "neighborhood" => "bairro",
+  "person_type" => "individual",
+  "phone_number" => "2112123434",
+  "zipcode" => "12312-123",
+  "mobile_local_code" => nil,
+  "state" => "RJ"
+}
+</pre>
+  </div>
 </div>
 
 ### Listar clientes
@@ -494,5 +598,36 @@ Content-Type: application/json; charset=utf-8
 ]
 </pre>
   </div>
-  <div class="tab-pane" id="ruby4">2...</div>
+  <div class="tab-pane" id="ruby4">
+    <small>Requisição:</small>
+
+<pre class="ruby">
+client = BoletoSimples::Client.new('yourtoken', user_agent: 'Meu e-Commerce (meuecommerce@example.com)', production: true)
+client.customers
+</pre>
+
+    <small>Resposta:</small>
+
+<pre class="ruby">
+[
+  {
+    "id"=>32,
+    "city_name" => "Rio de Janeiro",
+    "person_name" => "Joao da Silva",
+    "address" => "Rua quinhentos",
+    "address_complement" => "Sala 4",
+    "address_number" => "111",
+    "mobile_number" => nil,
+    "cnpj_cpf" => "012.345.678-90",
+    "email" => "cliente@bom.com",
+    "neighborhood" => "bairro",
+    "person_type" => "individual",
+    "phone_number" => "2112123434",
+    "zipcode" => "12312-123",
+    "mobile_local_code" => nil,
+    "state" => "RJ"
+  }
+]
+</pre>
+  </div>
 </div>
