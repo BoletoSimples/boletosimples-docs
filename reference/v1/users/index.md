@@ -112,5 +112,43 @@ Content-Type: application/json; charset=utf-8
 }
 </pre>
   </div>
-  <div class="tab-pane" id="ruby">2...</div>
+  <div class="tab-pane" id="ruby">
+    <small>Requisição:</small>
+
+<pre class="ruby">
+client = BoletoSimples::Client.new('yourtoken', user_agent: 'Meu e-Commerce (meuecommerce@example.com)', production: true)
+client.userinfo
+</pre>
+
+    <small>Resposta:</small>
+
+<pre class="ruby">
+{
+  "id"=>38,
+  "login_url"=>"https://sandbox.boletosimples.com.br/welcome?email=marciojunior1991%40gmail.com&token=yourtoken",
+  "email"=>"marciojunior1991@gmail.com",
+  "account_type"=>nil,
+  "first_name"=>nil,
+  "middle_name"=>nil,
+  "last_name"=>nil,
+  "full_name"=>nil,
+  "cpf"=>nil,
+  "date_of_birth"=>nil,
+  "mother_name"=>nil,
+  "father_name"=>nil,
+  "account_level"=>2,
+  "phone_number"=>nil,
+  "address_street_name"=>nil,
+  "address_number"=>nil,
+  "address_complement"=>nil,
+  "address_neighborhood"=>nil,
+  "address_postal_code"=>nil,
+  "address_city_name"=>nil,
+  "address_state"=>nil,
+  "business_name"=>nil,
+  "business_cnpj"=>nil,
+  "business_legal_name"=>nil
+}
+</pre>
+  </div>
 </div>
