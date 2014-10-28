@@ -44,7 +44,20 @@ Status: 200 OK
 ...
 </pre>
   </div>
-  <div class="tab-pane" id="ruby">2...</div>
+  <div class="tab-pane" id="ruby">
+    <small>Requisição:</small>
+
+<pre class="ruby">
+client = BoletoSimples::Client.new('yourtoken', user_agent: 'Meu e-Commerce (meuecommerce@example.com)', production: true)
+client.userinfo
+</pre>
+
+    <small>Resposta:</small>
+
+<pre class="html">
+{ ... json com informações do usuário ... }
+</pre>
+  </div>
 </div>
 
 ### Exemplo de token inválido
@@ -77,5 +90,18 @@ Status: 401 Unauthorized
 {"error":"Email ou senha inválidos."}
 </pre>
   </div>
-  <div class="tab-pane" id="ruby2">2...</div>
+  <div class="tab-pane" id="ruby2">
+    <small>Requisição:</small>
+
+<pre class="ruby">
+client = BoletoSimples::Client.new('invalidtoken', user_agent: 'Meu e-Commerce (meuecommerce@example.com)', production: true)
+client.userinfo
+</pre>
+
+    <small>Resposta:</small>
+
+<pre class="ruby">
+{"error"=>"Email ou senha inválidos."}
+</pre>
+  </div>
 </div>
