@@ -83,7 +83,28 @@ OAuth2 requer que o usuário autorize o acesso da sua app à conta dele. Para au
 
 1. Redirecione o usuário para o endereço abaixo.
 
-    <pre class="bash">https://sandbox.boletosimples.com.br/api/v1/oauth2/authorize?response_type=code&amp;client_id=fc4e525ff3&amp;redirect_uri=http://seusite.com.br</pre>
+    <ul class="nav nav-tabs" role="tablist">
+      <li class="active"><a href="#bash1" role="tab" data-toggle="tab">Bash</a></li>
+      <li><a href="#ruby1" role="tab" data-toggle="tab">Ruby</a></li>
+    </ul>
+
+    <div class="tab-content">
+      <div class="tab-pane active" id="bash1">
+       <pre class="bash">https://sandbox.boletosimples.com.br/api/v1/oauth2/authorize?response_type=code&amp;client_id=fc4e525ff3&amp;redirect_uri=http://seusite.com.br</pre>
+      </div>
+
+      <div class="tab-pane" id="ruby1">
+        <pre class="ruby">
+    client_id = 'fc4e525ff3'
+    client_secret = '95ea9a477d'
+    redirect_url = 'http://seusite.com.br'
+
+    client = OAuth2::Client.new(client_id, client_secret, site: 'https://sandbox.boletosimples.com.br/api/v1')
+    redirect_to client.auth_code.authorize_url(redirect_uri: redirect_url)
+        </pre>
+      </div>
+
+    </div>
 
 1. O usuário verá uma tela solicitando a autorização para a sua aplicação acessar os dados dele e com dois links, um para declinar e outro para autorizar que redirecionam para os seguintes endereços:
 
@@ -101,82 +122,96 @@ OAuth2 requer que o usuário autorize o acesso da sua app à conta dele. Para au
 
     <pre class="bash">https://sandbox.boletosimples.com.br/api/v1/oauth2/token?grant_type=authorization_code&amp;code=57858ba460&amp;redirect_uri=http://seusite.com.br&amp;client_id=fc4e525ff3&amp;client_secret=95ea9a477d</pre>
 
-    <small>Requisição:</small>
+    <ul class="nav nav-tabs" role="tablist">
+      <li class="active"><a href="#bash2" role="tab" data-toggle="tab">Bash</a></li>
+      <li><a href="#ruby2" role="tab" data-toggle="tab">Ruby</a></li>
+    </ul>
 
-    <pre class="bash">
-    curl -i \
-    -d 'grant_type=authorization_code&code=57858ba460&redirect_uri=http://seusite.com.br&client_id=fc4e525ff3&client_secret=95ea9a477d' \
-    -H 'User-Agent: MyApp (myapp@example.com)' \
-    -X POST https://sandbox.boletosimples.com.br/api/v1/oauth2/token
-    </pre>
+    <div class="tab-content">
+      <div class="tab-pane active" id="bash2">
+        <small>Requisição:</small>
 
-    <small>Resposta em caso de erro:</small>
+        <pre class="bash">
+curl -i \
+-d 'grant_type=authorization_code&code=57858ba460&redirect_uri=http://seusite.com.br&client_id=fc4e525ff3&client_secret=95ea9a477d' \
+-H 'User-Agent: MyApp (myapp@example.com)' \
+-X POST https://sandbox.boletosimples.com.br/api/v1/oauth2/token
+        </pre>
 
-    <pre class="bash">
-    HTTP/1.1 401 Unauthorized
-    Date: Fri, 17 Oct 2014 18:39:47 GMT
-    Status: 401 Unauthorized
-    Content-Type: application/json; charset=utf-8
-    ...
+        <small>Resposta em caso de erro:</small>
 
-    {"error":"invalid_grant","error_description":"A permissão de autorização provida é inválida, está expirada, revogada, não coincide com a URL de redirecionamento usada na requisição de autorização ou foi emitida por outro cliente."}
-    </pre>
+        <pre class="bash">
+        HTTP/1.1 401 Unauthorized
+        Date: Fri, 17 Oct 2014 18:39:47 GMT
+        Status: 401 Unauthorized
+        Content-Type: application/json; charset=utf-8
+        ...
 
-    <small>Resposta em caso de sucesso:</small>
+        {"error":"invalid_grant","error_description":"A permissão de autorização provida é inválida, está expirada, revogada, não coincide com a URL de redirecionamento usada na requisição de autorização ou foi emitida por outro cliente."}
+        </pre>
 
-    <pre class="bash">
-    HTTP/1.1 200 OK
-    Date: Fri, 17 Oct 2014 18:39:47 GMT
-    Status: 200 OK
-    Content-Type: application/json; charset=utf-8
-    ...
+        <small>Resposta em caso de sucesso:</small>
 
-    {"access_token":"ada046e3cc","token_type":"bearer","scope":"login"}
-    </pre>
+        <pre class="bash">
+        HTTP/1.1 200 OK
+        Date: Fri, 17 Oct 2014 18:39:47 GMT
+        Status: 200 OK
+        Content-Type: application/json; charset=utf-8
+        ...
+
+        {"access_token":"ada046e3cc","token_type":"bearer","scope":"login"}
+        </pre>
+      </div>
+      <div class="tab-pane" id="ruby2">
+        <pre class="ruby">
+    client_id = 'fc4e525ff3'
+    client_secret = '95ea9a477d'
+    redirect_url = 'http://seusite.com.br'
+    code = 'código de autorização retornado'
+
+    client = OAuth2::Client.new(client_id, client_secret, site: 'https://sandbox.boletosimples.com.br/api/v1')
+    access_token = client.auth_code.get_token(code, redirect_uri: redirect_uri)
+        </pre>
+      </div>
+    </div>
 
 1. Agora você pode usar o `access_token` para realizar chamadas a API. Esse token não expira.
 
-    <small>Requisição:</small>
+    <ul class="nav nav-tabs" role="tablist">
+      <li class="active"><a href="#bash3" role="tab" data-toggle="tab">Bash</a></li>
+      <li><a href="#ruby3" role="tab" data-toggle="tab">Ruby</a></li>
+    </ul>
 
-    <pre class="bash">
-    curl -i \
-    -u ada046e3cc:x \
-    -H 'Content-Type: application/json' \
-    -H 'User-Agent: MyApp (myapp@example.com)' \
-    -X GET https://sandbox.boletosimples.com.br/api/v1/userinfo
-    </pre>
+    <div class="tab-content">
+      <div class="tab-pane active" id="bash3">
+        <small>Requisição:</small>
 
-    <small>Resposta:</small>
+        <pre class="bash">
+curl -i \
+-u ada046e3cc:x \
+-H 'Content-Type: application/json' \
+-H 'User-Agent: MyApp (myapp@example.com)' \
+-X GET https://sandbox.boletosimples.com.br/api/v1/userinfo
+        </pre>
 
-    <pre class="bash">
-    HTTP/1.1 200 OK
-    Date: Fri, 17 Oct 2014 18:14:56 GMT
-    Status: 200 OK
-    ...
+        <small>Resposta:</small>
 
-    # dados do usuário que autorizou o acesso
-    </pre>
+        <pre class="bash">
+        HTTP/1.1 200 OK
+        Date: Fri, 17 Oct 2014 18:14:56 GMT
+        Status: 200 OK
+        ...
 
+        # dados do usuário que autorizou o acesso
+        </pre>
 
-
-### Exemplo em Ruby
-
-<pre class="ruby">
-require 'oauth2'
-
-redirect_uri = 'http://www.seusite.com.br/oauth2/callback' # tem que ser a mesma url do registro
-
-client = OAuth2::Client.new(ENV['BOLETOSIMPLES_ID'], ENV['BOLETOSIMPLES_SECRET'], site: 'https://sandbox.boletosimples.com.br/api/v1')
-
-`open "#{client.auth_code.authorize_url(redirect_uri: redirect_uri)}"`
-print "Coloque o código retornado na URL: "
-
-code = STDIN.readline.chomp
-
-token = client.auth_code.get_token(code, redirect_uri: redirect_uri)
-
-puts JSON.parse(token.get('/api/v1/userinfo').body)
-</pre>
+      </div>
+      <div class="tab-pane" id="ruby3">
+        <pre class="ruby">
+access_token.get('/api/v1/userinfo').body
+        </pre>
+      </div>
+    </div>
 
 ### Desenvolvendo aplicações para Mobile e Desktop
 

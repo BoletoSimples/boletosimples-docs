@@ -302,8 +302,14 @@ breadcrumb: Boletos
 
 #### Exemplo de requisição inválida
 
-<small>Requisição:</small>
+<ul class="nav nav-tabs" role="tablist">
+  <li class="active"><a href="#bash" role="tab" data-toggle="tab">Bash</a></li>
+  <li><a href="#ruby" role="tab" data-toggle="tab">Ruby</a></li>
+</ul>
 
+<div class="tab-content">
+  <div class="tab-pane active" id="bash">
+    <small>Requisição:</small>
 <pre class="bash">
 curl -i \
 -u $TOKEN:x \
@@ -313,7 +319,7 @@ curl -i \
 -X POST https://sandbox.boletosimples.com.br/api/v1/bank_billets
 </pre>
 
-<small>Resposta:</small>
+    <small>Resposta:</small>
 
 <pre class="bash">
 HTTP/1.1 422 Unprocessable Entity
@@ -324,10 +330,66 @@ Content-Type: application/json; charset=utf-8
 
 {"errors":{"bank_billet":["não pode ficar em branco"]}}
 </pre>
+  </div>
+
+  <div class="tab-pane" id="ruby">
+    <small>Requisição:</small>
+<pre class="ruby">
+client = BoletoSimples::Client.new('yourtoken', user_agent: 'Meu e-Commerce (meuecommerce@example.com)', production: true)
+client.create_bank_billet({
+  "bank_billet" => {
+    "amount" => 19.01,
+      "customer_address" => 'Rua quinhentos',
+      "customer_address_complement" => 'Sala 4',
+      "customer_address_number" => '111',
+      "customer_city_name" => 'Rio de Janeiro',
+      "customer_cnpj_cpf" => ' ',
+      "customer_email" => 'clientebom.com',
+      "customer_neighborhood" => 'Sao Francisco',
+      "customer_person_name" => 'Joao da Silva',
+      "customer_person_type" => 'individual',
+      "customer_phone_number" => '113223',
+      "customer_state" => 'RJ',
+      "customer_zipcode" => '12312-123',
+      "description" => 'Despesas do contrato 0012',
+      "expire_at" => '2014-01-01',
+      "notification_url" => 'http://example.com.br/notify'
+  }
+})
+</pre>
+
+    <small>Resposta:</small>
+
+<pre class="bash">
+{
+  "errors"=> {
+    "customer_cnpj_cpf" => ["não pode ficar em branco"],
+    "customer_email" => ["não é válido"],
+    "customer" => [
+      {
+        "cnpj_cpf" => ["não pode ficar em branco"],
+        "phone_number" => ["é muito curto (mínimo: 10 caracteres)"],
+        "email" => ["não é válido"]
+      }
+    ],
+    "amount"=>["deve ser menor ou igual a 10"]
+  }
+}
+
+</pre>
+  </div>
+</div>
 
 #### Exemplo de requisição válida
 
-<small>Requisição:</small>
+<ul class="nav nav-tabs" role="tablist">
+  <li class="active"><a href="#bash2" role="tab" data-toggle="tab">Bash</a></li>
+  <li><a href="#ruby2" role="tab" data-toggle="tab">Ruby</a></li>
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="bash2">
+    <small>Requisição:</small>
 
 <pre class="bash">
 curl -i \
@@ -338,7 +400,7 @@ curl -i \
 -X POST https://sandbox.boletosimples.com.br/api/v1/bank_billets
 </pre>
 
-<small>Resposta:</small>
+    <small>Resposta:</small>
 
 <pre class="bash">
 HTTP/1.1 201 Created
@@ -374,6 +436,66 @@ Content-Type: application/json; charset=utf-8
   "amount":12.34
 }
 </pre>
+  </div>
+  <div class="tab-pane" id="ruby2">
+    <small>Requisição:</small>
+<pre class="ruby">
+client = BoletoSimples::Client.new('yourtoken', user_agent: 'Meu e-Commerce (meuecommerce@example.com)', production: true)
+client.create_bank_billet({
+  "bank_billet" => {
+    "amount" => 9.01,
+      "customer_address" => 'Rua quinhentos',
+      "customer_address_complement" => 'Sala 4',
+      "customer_address_number" => '111',
+      "customer_city_name" => 'Rio de Janeiro',
+      "customer_cnpj_cpf" => '012.345.678-90',
+      "customer_email" => 'cliente@bom.com',
+      "customer_neighborhood" => 'Sao Francisco',
+      "customer_person_name" => 'Joao da Silva',
+      "customer_person_type" => 'individual',
+      "customer_phone_number" => '2112123434',
+      "customer_state" => 'RJ',
+      "customer_zipcode" => '12312-123',
+      "description" => 'Despesas do contrato 0012',
+      "expire_at" => '2014-01-01',
+      "notification_url" => 'http://example.com.br/notify'
+  }
+})
+</pre>
+
+  <small>Resposta:</small>
+
+<pre class="ruby">
+{
+  "amount" => 9.01,
+  "created_via_api" => true,
+  "customer_address" => "Rua quinhentos",
+  "customer_address_complement" => "Sala 4",
+  "customer_address_number" => "111",
+  "customer_city_name" => "Rio de Janeiro",
+  "customer_cnpj_cpf" => "012.345.678-90",
+  "customer_email" => "cliente@bom.com",
+  "customer_neighborhood" => "Sao Francisco",
+  "customer_person_name" => "Joao da Silva",
+  "customer_person_type" => "individual",
+  "customer_phone_number" => "2112123434",
+  "customer_state" => "RJ",
+  "customer_zipcode" => "12312-123",
+  "description" => "Despesas do contrato 0012",
+  "expire_at" => "2014-01-01",
+  "id" => 113,
+  "notification_url" => "http://example.com.br/notify",
+  "paid_amount" => 0.0,
+  "paid_at" => nil,
+  "send_email_on_creation" => nil,
+  "shorten_url" => nil,
+  "status" => "generating"
+}
+</pre>
+  </div>
+</div>
+
+
 
 ### Informações do boleto
 
@@ -381,7 +503,14 @@ Content-Type: application/json; charset=utf-8
 
 #### Exemplo
 
-<small>Requisição:</small>
+<ul class="nav nav-tabs" role="tablist">
+  <li class="active"><a href="#bash3" role="tab" data-toggle="tab">Bash</a></li>
+  <li><a href="#ruby3" role="tab" data-toggle="tab">Ruby</a></li>
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="bash3">
+    <small>Requisição:</small>
 
 <pre class="bash">
 curl -i \
@@ -426,8 +555,49 @@ Content-Type: application/json; charset=utf-8
   "amount":12.34
 }
 </pre>
+  </div>
+  <div class="tab-pane" id="ruby3">
+    <small>Requisição:</small>
 
-### Listar boletos
+<pre class="ruby">
+client = BoletoSimples::Client.new('yourtoken', user_agent: 'Meu e-Commerce (meuecommerce@example.com)', production: true)
+client.bank_billet(113)
+</pre>
+
+    <small>Resposta:</small>
+
+<pre class="ruby">
+{
+  "id"=>113,
+  "expire_at"=>"2014-01-01",
+  "paid_at"=>nil,
+  "description"=>"Despesas do contrato 0012",
+  "status"=>"opened",
+  "shorten_url"=>"http://staging.bole.to/nhhvauui",
+  "customer_person_type"=>"individual",
+  "customer_person_name"=>"Joao da Silva",
+  "customer_cnpj_cpf"=>"012.345.678-90",
+  "customer_address"=>"Rua quinhentos",
+  "customer_state"=>"RJ",
+  "customer_neighborhood"=>"Sao Francisco",
+  "customer_zipcode"=>"12312-123",
+  "customer_address_number"=>"111",
+  "customer_address_complement"=>"Sala 4",
+  "customer_phone_number"=>"2112123434",
+  "customer_email"=>"cliente@bom.com",
+  "notification_url"=>"http://example.com.br/notify",
+  "send_email_on_creation"=>nil,
+  "created_via_api"=>true,
+  "customer_city_name"=>"Rio de Janeiro",
+  "paid_amount"=>0.0,
+  "amount"=>9.01
+}
+</pre>
+
+  </div>
+</div>
+
+## Listar boletos
 
 `GET /api/v1/bank_billets`
 
@@ -475,7 +645,14 @@ Content-Type: application/json; charset=utf-8
 
 #### Exemplo
 
-<small>Requisição:</small>
+<ul class="nav nav-tabs" role="tablist">
+  <li class="active"><a href="#bash4" role="tab" data-toggle="tab">Bash</a></li>
+  <li><a href="#ruby4" role="tab" data-toggle="tab">Ruby</a></li>
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="bash4">
+    <small>Requisição:</small>
 
 <pre class="bash">
 curl -i \
@@ -485,7 +662,7 @@ curl -i \
 -X GET https://sandbox.boletosimples.com.br/api/v1/bank_billets?page=1&per_page=50
 </pre>
 
-<small>Resposta:</small>
+    <small>Resposta:</small>
 
 <pre class="bash">
 HTTP/1.1 200 OK
@@ -523,3 +700,46 @@ Content-Type: application/json; charset=utf-8
   }
 ]
 </pre>
+  </div>
+  <div class="tab-pane" id="ruby4">
+    <small>Requisição</small>
+
+<pre class="ruby">
+client = BoletoSimples::Client.new('yourtoken', user_agent: 'Meu e-Commerce (meuecommerce@example.com)', production: true)
+client.bank_billets
+</pre>
+
+    <small>Resposta:</small>
+
+<pre class="ruby">
+[
+  {
+    "id"=>113,
+    "expire_at"=>"2014-01-01",
+    "paid_at"=>nil,
+    "description"=>"Despesas do contrato 0012",
+    "status"=>"opened",
+    "shorten_url"=>"http://staging.bole.to/nhhvauui",
+    "customer_person_type"=>"individual",
+    "customer_person_name"=>"Joao da Silva",
+    "customer_cnpj_cpf"=>"012.345.678-90",
+    "customer_address"=>"Rua quinhentos",
+    "customer_state"=>"RJ",
+    "customer_neighborhood"=>"Sao Francisco",
+    "customer_zipcode"=>"12312-123",
+    "customer_address_number"=>"111",
+    "customer_address_complement"=>"Sala 4",
+    "customer_phone_number"=>"2112123434",
+    "customer_email"=>"cliente@bom.com",
+    "notification_url"=>"http://example.com.br/notify",
+    "send_email_on_creation"=>nil,
+    "created_via_api"=>true,
+    "customer_city_name"=>"Rio de Janeiro",
+    "paid_amount"=>0.0,
+    "amount"=>9.01
+  }
+]
+</pre>
+
+  </div>
+</div>

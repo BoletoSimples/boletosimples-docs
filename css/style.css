@@ -244,6 +244,13 @@ article img {
   border: 1px solid #DDD;
 }
 
+.nav.nav-tabs > li > a { padding: 10px 15px !important; }
+
+.nav.nav-tabs > li.active > a,
+.nav.nav-tabs > li > a:hover { border-left: 1px solid #ddd; }
+
+.tab-content { margin: 15px 0 30px 0; }
+
 /******************************************************************************/
 
 /*Footer*/

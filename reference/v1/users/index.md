@@ -52,7 +52,14 @@ Quando acessodo através do [Token de Acesso](/authentication/token), todass as 
 
 #### Exemplo
 
-<small>Requisição:</small>
+<ul class="nav nav-tabs" role="tablist">
+  <li class="active"><a href="#bash" role="tab" data-toggle="tab">Bash</a></li>
+  <li><a href="#ruby" role="tab" data-toggle="tab">Ruby</a></li>
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="bash">
+    <small>Requisição:</small>
 
 <pre class="bash">
 curl -i \
@@ -62,7 +69,7 @@ curl -i \
 -X GET https://sandbox.boletosimples.com.br/api/v1/userinfo
 </pre>
 
-<small>Resposta:</small>
+    <small>Resposta:</small>
 
 <pre class="bash">
 HTTP/1.1 200 OK
@@ -104,3 +111,44 @@ Content-Type: application/json; charset=utf-8
   "father_name": "José Simões Gonçalo"
 }
 </pre>
+  </div>
+  <div class="tab-pane" id="ruby">
+    <small>Requisição:</small>
+
+<pre class="ruby">
+client = BoletoSimples::Client.new('yourtoken', user_agent: 'Meu e-Commerce (meuecommerce@example.com)', production: true)
+client.userinfo
+</pre>
+
+    <small>Resposta:</small>
+
+<pre class="ruby">
+{
+  "id"=>38,
+  "login_url"=>"https://sandbox.boletosimples.com.br/welcome?email=marciojunior1991%40gmail.com&token=yourtoken",
+  "email"=>"marciojunior1991@gmail.com",
+  "account_type"=>nil,
+  "first_name"=>nil,
+  "middle_name"=>nil,
+  "last_name"=>nil,
+  "full_name"=>nil,
+  "cpf"=>nil,
+  "date_of_birth"=>nil,
+  "mother_name"=>nil,
+  "father_name"=>nil,
+  "account_level"=>2,
+  "phone_number"=>nil,
+  "address_street_name"=>nil,
+  "address_number"=>nil,
+  "address_complement"=>nil,
+  "address_neighborhood"=>nil,
+  "address_postal_code"=>nil,
+  "address_city_name"=>nil,
+  "address_state"=>nil,
+  "business_name"=>nil,
+  "business_cnpj"=>nil,
+  "business_legal_name"=>nil
+}
+</pre>
+  </div>
+</div>

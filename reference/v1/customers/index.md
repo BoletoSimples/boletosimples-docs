@@ -259,7 +259,14 @@ breadcrumb: Clientes
 
 #### Exemplo de requisição inválida
 
-<small>Requisição:</small>
+<ul class="nav nav-tabs" role="tablist">
+  <li class="active"><a href="#bash" role="tab" data-toggle="tab">Bash</a></li>
+  <li><a href="#ruby" role="tab" data-toggle="tab">Ruby</a></li>
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="bash">
+    <small>Requisição:</small>
 
 <pre class="bash">
 curl -i \
@@ -270,7 +277,7 @@ curl -i \
 -X POST https://sandbox.boletosimples.com.br/api/v1/customers
 </pre>
 
-<small>Resposta:</small>
+    <small>Resposta:</small>
 
 <pre class="bash">
 HTTP/1.1 422 Unprocessable Entity
@@ -281,10 +288,53 @@ Content-Type: application/json; charset=utf-8
 
 {"errors":{"customer":["não pode ficar em branco"]}}
 </pre>
+  </div>
+  <div class="tab-pane" id="ruby">
+    <small>Requisição:</small>
+
+<pre class="ruby">
+client = BoletoSimples::Client.new('yourtoken', user_agent: 'Meu e-Commerce (meuecommerce@example.com)', production: true)
+client.create_customer({
+  "customer" => {
+    "person_name" => "Joao da Silva",
+    "cnpj_cpf"=> " ",
+    "email" => "cliente@bom.com",
+    "address" => "Rua quinhentos",
+    "city_name" => "Rio de Janeiro",
+    "state" => "RJ",
+    "neighborhood" => "bairro",
+    "zipcode" => "12312-123",
+    "address_number" => "111",
+    "address_complement" => "Sala 4",
+    "phone_number" => "213223"
+  }
+})
+</pre>
+
+    <small>Resposta:</small>
+
+<pre class="ruby">
+{
+  "errors" => {
+    "cnpj_cpf" => ["não pode ficar em branco"],
+    "phone_number" => ["é muito curto (mínimo: 10 caracteres)"]
+  }
+}
+</pre>
+
+  </div>
+</div>
 
 #### Exemplo de requisição válida
 
-<small>Requisição:</small>
+<ul class="nav nav-tabs" role="tablist">
+  <li class="active"><a href="#bash2" role="tab" data-toggle="tab">Bash</a></li>
+  <li><a href="#ruby2" role="tab" data-toggle="tab">Ruby</a></li>
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="bash2">
+    <small>Requisição:</small>
 
 <pre class="bash">
 curl -i \
@@ -295,7 +345,7 @@ curl -i \
 -X POST https://sandbox.boletosimples.com.br/api/v1/customers
 </pre>
 
-<small>Resposta:</small>
+    <small>Resposta:</small>
 
 <pre class="bash">
 HTTP/1.1 201 Created
@@ -323,6 +373,51 @@ Content-Type: application/json; charset=utf-8
   "state":null
 }
 </pre>
+  </div>
+  <div class="tab-pane" id="ruby2">
+    <small>Requisição:</small>
+
+<pre class="ruby">
+client = BoletoSimples::Client.new('yourtoken', user_agent: 'Meu e-Commerce (meuecommerce@example.com)', production: true)
+client.create_customer({
+  "customer" => {
+    "person_name" => "Joao da Silva",
+    "cnpj_cpf"=> "012.345.678-90",
+    "email" => "cliente@bom.com",
+    "address" => "Rua quinhentos",
+    "city_name" => "Rio de Janeiro",
+    "state" => "RJ",
+    "neighborhood" => "bairro",
+    "zipcode" => "12312-123",
+    "address_number" => "111",
+    "address_complement" => "Sala 4",
+    "phone_number" => "2112123434"
+  }
+})
+</pre>
+  <small>Resposta:</small>
+
+<pre class="ruby">
+{
+  "id" => 32,
+  "mobile_local_code" => nil,
+  "mobile_number" => nil,
+  "person_type" => "individual",
+  "person_name" => "Joao da Silva",
+  "cnpj_cpf"=> "012.345.678-90",
+  "email" => "cliente@bom.com",
+  "address" => "Rua quinhentos",
+  "city_name" => "Rio de Janeiro",
+  "state" => "RJ",
+  "neighborhood" => "bairro",
+  "zipcode" => "12312-123",
+  "address_number" => "111",
+  "address_complement" => "Sala 4",
+  "phone_number" => "2112123434"
+}
+</pre>
+  </div>
+</div>
 
 ### Informações do cliente
 
@@ -330,7 +425,14 @@ Content-Type: application/json; charset=utf-8
 
 #### Exemplo
 
-<small>Requisição:</small>
+<ul class="nav nav-tabs" role="tablist">
+  <li class="active"><a href="#bash3" role="tab" data-toggle="tab">Bash</a></li>
+  <li><a href="#ruby3" role="tab" data-toggle="tab">Ruby</a></li>
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="bash3">
+    <small>Requisição:</small>
 
 <pre class="bash">
 curl -i \
@@ -340,7 +442,7 @@ curl -i \
 -X GET https://sandbox.boletosimples.com.br/api/v1/customers/1
 </pre>
 
-<small>Resposta:</small>
+    <small>Resposta:</small>
 
 <pre class="bash">
 HTTP/1.1 200 OK
@@ -367,6 +469,38 @@ Content-Type: application/json; charset=utf-8
   "state":null
 }
 </pre>
+  </div>
+  <div class="tab-pane" id="ruby3">
+    <small>Requisição:</small>
+
+<pre class="ruby">
+client = BoletoSimples::Client.new('yourtoken', user_agent: 'Meu e-Commerce (meuecommerce@example.com)', production: true)
+client.customer(32)
+</pre>
+
+    <small>Resposta:</small>
+
+<pre class="ruby">
+{
+  "id"=>32,
+  "city_name" => "Rio de Janeiro",
+  "person_name" => "Joao da Silva",
+  "address" => "Rua quinhentos",
+  "address_complement" => "Sala 4",
+  "address_number" => "111",
+  "mobile_number" => nil,
+  "cnpj_cpf" => "012.345.678-90",
+  "email" => "cliente@bom.com",
+  "neighborhood" => "bairro",
+  "person_type" => "individual",
+  "phone_number" => "2112123434",
+  "zipcode" => "12312-123",
+  "mobile_local_code" => nil,
+  "state" => "RJ"
+}
+</pre>
+  </div>
+</div>
 
 ### Listar clientes
 
@@ -416,7 +550,14 @@ Content-Type: application/json; charset=utf-8
 
 #### Exemplo
 
-<small>Requisição:</small>
+<ul class="nav nav-tabs" role="tablist">
+  <li class="active"><a href="#bash4" role="tab" data-toggle="tab">Bash</a></li>
+  <li><a href="#ruby4" role="tab" data-toggle="tab">Ruby</a></li>
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="bash4">
+    <small>Requisição:</small>
 
 <pre class="bash">
 curl -i \
@@ -426,7 +567,7 @@ curl -i \
 -X GET https://sandbox.boletosimples.com.br/api/v1/customers?page=1&per_page=50
 </pre>
 
-<small>Resposta:</small>
+    <small>Resposta:</small>
 
 <pre class="bash">
 HTTP/1.1 200 OK
@@ -456,3 +597,37 @@ Content-Type: application/json; charset=utf-8
   }
 ]
 </pre>
+  </div>
+  <div class="tab-pane" id="ruby4">
+    <small>Requisição:</small>
+
+<pre class="ruby">
+client = BoletoSimples::Client.new('yourtoken', user_agent: 'Meu e-Commerce (meuecommerce@example.com)', production: true)
+client.customers
+</pre>
+
+    <small>Resposta:</small>
+
+<pre class="ruby">
+[
+  {
+    "id"=>32,
+    "city_name" => "Rio de Janeiro",
+    "person_name" => "Joao da Silva",
+    "address" => "Rua quinhentos",
+    "address_complement" => "Sala 4",
+    "address_number" => "111",
+    "mobile_number" => nil,
+    "cnpj_cpf" => "012.345.678-90",
+    "email" => "cliente@bom.com",
+    "neighborhood" => "bairro",
+    "person_type" => "individual",
+    "phone_number" => "2112123434",
+    "zipcode" => "12312-123",
+    "mobile_local_code" => nil,
+    "state" => "RJ"
+  }
+]
+</pre>
+  </div>
+</div>
