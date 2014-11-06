@@ -6,13 +6,16 @@
   <li class="submenu {% if page.url == '/authentication/' %}active{% endif %}">
     <a href="/authentication" title="Autenticação">Autenticação</a>
     <ul class="nav">
-      <li>
+      <li {% if page.url == '/authentication/token/' %}class="active"{% endif %}>
         <a href="/authentication/token" title="Token de Acesso">Token de Acesso</a>
       </li>
-      <li>
+      <li {% if page.url == '/authentication/key/' %}class="active"{% endif %}>
+        <a href="/authentication/key" title="Chave secreta da API">Chave secreta da API</a>
+      </li>
+      <li {% if page.url == '/authentication/oauth2/' %}class="active"{% endif %}>
         <a href="/authentication/oauth2" title="OAuth2">OAuth2</a>
       </li>
-      <li {% if page.url == '/permissions/' %}class="active"{% endif %}>
+      <li {% if page.url == '/authentication/permissions/' %}class="active"{% endif %}>
         <a href="/authentication/permissions" title="Permissões">Permissões</a>
       </li>
     </ul>
