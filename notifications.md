@@ -27,7 +27,8 @@ Essas notificações são realizadas através de uma requisição `HTTP POST` no
    "paid_amount":'55.78',
    "paid_at":'2014-10-30',
    "shortener_url":'http://bole.to/identificador',
-   "meta": 'meu metadado'
+   "meta": 'meu metadado',
+   "environment": 'sandbox'
 }</pre>
 
 Onde:
@@ -43,6 +44,7 @@ Onde:
 *   `paid_at` - Data de pagamento.
 *   `shortener_url` - URL pública do boleto.
 *   `meta` - Campo Genérico -  Aceita qualquer formato passado. Pode ser usado para salvar dados que não existam dentro do Boleto Simples.
+*   `environment` - Ambiente de onde veio a requisição (sandbox, test, development, production) - Considere apenas `production` como transação oficial.
 
 #### Retorno
 
@@ -56,7 +58,7 @@ Considerando que o valor do `notification_url` passado na criação do boleto ba
 
 <pre class="bash">
 curl -i \
--d '{"id":1,"event":"status-changed","status":"paid","expire_at":'2014-10-31',"customer_person_name":'Boleto Simples',"customer_cnpj_cpf":'05.813.794/0001-26',"amount":'55.78',"paid_amount":'55.78',"paid_at":'2014-10-30',"shortener_url":'http://bole.to/identificador',"meta":'meu metadado'}' \
+-d '{"id":1,"event":"status-changed","status":"paid","expire_at":'2014-10-31',"customer_person_name":'Boleto Simples',"customer_cnpj_cpf":'05.813.794/0001-26',"amount":'55.78',"paid_amount":'55.78',"paid_at":'2014-10-30',"shortener_url":'http://bole.to/identificador',"meta":'meu metadado',"environment": 'sandbox'}' \
 -X POST http://setusite.com.br/boletosimples
 </pre>
 
