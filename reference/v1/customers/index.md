@@ -154,7 +154,7 @@ breadcrumb: Clientes
         <strong>zipcode</strong>
       </td>
       <td>
-        Não
+        Sim
       </td>
       <td>
         String

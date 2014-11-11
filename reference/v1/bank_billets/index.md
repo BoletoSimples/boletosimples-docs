@@ -212,7 +212,7 @@ breadcrumb: Boletos
         <strong> customer_zipcode </strong>
       </td>
       <td>
-        Não
+        Sim
       </td>
       <td>
         String
@@ -394,7 +394,7 @@ client.create_bank_billet({
 <pre class="bash">
 curl -i \
 -u $TOKEN:x \
--d '{"bank_billet":{"amount":12.34, "expire_at": "2014-11-15", "description": "Prestação de Serviço", "customer_person_name": "Nome do Cliente", "customer_cnpj_cpf": "125.812.717-28"}}' \
+-d '{"bank_billet":{"amount":12.34, "expire_at": "2014-11-15", "description": "Prestação de Serviço", "customer_person_name": "Nome do Cliente", "customer_cnpj_cpf": "125.812.717-28", "customer_zipcode": "12312-123"}}' \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
 -X POST https://sandbox.boletosimples.com.br/api/v1/bank_billets
