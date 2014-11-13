@@ -48,7 +48,7 @@ Status: 200 OK
     <small>Requisição:</small>
 
 <pre class="ruby">
-client = BoletoSimples::Client.new('yourtoken', user_agent: 'Meu e-Commerce (meuecommerce@example.com)', production: true)
+client = BoletoSimples::Client.new('yourtoken', user_agent: 'Meu e-Commerce (meuecommerce@example.com)')
 client.userinfo
 </pre>
 
@@ -94,7 +94,7 @@ Status: 401 Unauthorized
     <small>Requisição:</small>
 
 <pre class="ruby">
-client = BoletoSimples::Client.new('invalidtoken', user_agent: 'Meu e-Commerce (meuecommerce@example.com)', production: true)
+client = BoletoSimples::Client.new('invalidtoken', user_agent: 'Meu e-Commerce (meuecommerce@example.com)')
 client.userinfo
 </pre>
 

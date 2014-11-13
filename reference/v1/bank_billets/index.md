@@ -335,7 +335,7 @@ Content-Type: application/json; charset=utf-8
   <div class="tab-pane" id="ruby">
     <small>Requisição:</small>
 <pre class="ruby">
-client = BoletoSimples::Client.new('yourtoken', user_agent: 'Meu e-Commerce (meuecommerce@example.com)', production: true)
+client = BoletoSimples::Client.new('yourtoken', user_agent: 'Meu e-Commerce (meuecommerce@example.com)')
 client.create_bank_billet({
   "bank_billet" => {
     "amount" => 19.01,
@@ -440,7 +440,7 @@ Content-Type: application/json; charset=utf-8
   <div class="tab-pane" id="ruby2">
     <small>Requisição:</small>
 <pre class="ruby">
-client = BoletoSimples::Client.new('yourtoken', user_agent: 'Meu e-Commerce (meuecommerce@example.com)', production: true)
+client = BoletoSimples::Client.new('yourtoken', user_agent: 'Meu e-Commerce (meuecommerce@example.com)')
 client.create_bank_billet({
   "bank_billet" => {
     "amount" => 9.01,
@@ -560,7 +560,7 @@ Content-Type: application/json; charset=utf-8
     <small>Requisição:</small>
 
 <pre class="ruby">
-client = BoletoSimples::Client.new('yourtoken', user_agent: 'Meu e-Commerce (meuecommerce@example.com)', production: true)
+client = BoletoSimples::Client.new('yourtoken', user_agent: 'Meu e-Commerce (meuecommerce@example.com)')
 client.bank_billet(113)
 </pre>
 
@@ -705,7 +705,7 @@ Content-Type: application/json; charset=utf-8
     <small>Requisição</small>
 
 <pre class="ruby">
-client = BoletoSimples::Client.new('yourtoken', user_agent: 'Meu e-Commerce (meuecommerce@example.com)', production: true)
+client = BoletoSimples::Client.new('yourtoken', user_agent: 'Meu e-Commerce (meuecommerce@example.com)')
 client.bank_billets
 </pre>
 
