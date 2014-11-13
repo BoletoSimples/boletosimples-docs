@@ -9,9 +9,6 @@
       <li {% if page.url == '/authentication/token/' %}class="active"{% endif %}>
         <a href="/authentication/token" title="Token de Acesso">Token de Acesso</a>
       </li>
-      <li {% if page.url == '/authentication/key/' %}class="active"{% endif %}>
-        <a href="/authentication/key" title="Chave secreta da API">Chave secreta da API</a>
-      </li>
       <li {% if page.url == '/authentication/oauth2/' %}class="active"{% endif %}>
         <a href="/authentication/oauth2" title="OAuth2">OAuth2</a>
       </li>
@@ -19,6 +16,9 @@
         <a href="/authentication/permissions" title="Permissões">Permissões</a>
       </li>
     </ul>
+  </li>
+  <li {% if page.url == '/key/' %}class="active"{% endif %}>
+    <a href="/key" title="Chave secreta da API">Chave secreta da API</a>
   </li>
   <li {% if page.url == '/notifications/' %}class="active"{% endif %}>
     <a href="/notifications" title="Notificações">Notificações</a>
