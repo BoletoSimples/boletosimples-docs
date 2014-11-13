@@ -28,7 +28,8 @@ Essas notificações são realizadas através de uma requisição `HTTP POST` no
    "paid_at":'2014-10-30',
    "shortener_url":'http://bole.to/identificador',
    "meta": 'meu metadado',
-   "environment": 'sandbox'
+   "environment": 'sandbox',
+   "secret_key": '17ade36081c0801770a43559a204fc8cdbcd7ea3b4bcf498167333f0198f023a'
 }</pre>
 
 Onde:
@@ -45,6 +46,7 @@ Onde:
 *   `shortener_url` - URL pública do boleto.
 *   `meta` - Campo Genérico -  Aceita qualquer formato passado. Pode ser usado para salvar dados que não existam dentro do Boleto Simples.
 *   `environment` - Ambiente de onde veio a requisição (sandbox, test, development, production) - Considere apenas `production` como transação oficial.
+*   `secret_key` - Chave secreta - Use essa chave para validar as requisições que chegam ao seu site.
 
 #### Retorno
 
