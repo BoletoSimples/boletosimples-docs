@@ -125,8 +125,8 @@ client.userinfo
 <pre class="ruby">
 {
   "id"=>38,
-  "login_url"=>"https://sandbox.boletosimples.com.br/welcome?email=marciojunior1991%40gmail.com&token=yourtoken",
-  "email"=>"marciojunior1991@gmail.com",
+  "login_url"=>"https://sandbox.boletosimples.com.br/welcome?email=meuecommerce%40example.com&token=yourtoken",
+  "email"=>"meuecommerce@example.com",
   "account_type"=>nil,
   "first_name"=>nil,
   "middle_name"=>nil,
