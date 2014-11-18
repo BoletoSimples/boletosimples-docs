@@ -293,7 +293,7 @@ Content-Type: application/json; charset=utf-8
     <small>Requisição:</small>
 
 <pre class="ruby">
-client = BoletoSimples::Client.new('yourtoken', user_agent: 'Meu e-Commerce (meuecommerce@example.com)')
+client = BoletoSimples::Client.new('ENV['BOLETOSIMPLES_TOKEN']', user_agent: 'Meu e-Commerce (meuecommerce@example.com)')
 client.create_customer({
   "customer" => {
     "person_name" => "Joao da Silva",
@@ -378,7 +378,7 @@ Content-Type: application/json; charset=utf-8
     <small>Requisição:</small>
 
 <pre class="ruby">
-client = BoletoSimples::Client.new('yourtoken', user_agent: 'Meu e-Commerce (meuecommerce@example.com)')
+client = BoletoSimples::Client.new('ENV['BOLETOSIMPLES_TOKEN']', user_agent: 'Meu e-Commerce (meuecommerce@example.com)')
 client.create_customer({
   "customer" => {
     "person_name" => "Joao da Silva",
@@ -474,7 +474,7 @@ Content-Type: application/json; charset=utf-8
     <small>Requisição:</small>
 
 <pre class="ruby">
-client = BoletoSimples::Client.new('yourtoken', user_agent: 'Meu e-Commerce (meuecommerce@example.com)')
+client = BoletoSimples::Client.new('ENV['BOLETOSIMPLES_TOKEN']', user_agent: 'Meu e-Commerce (meuecommerce@example.com)')
 client.customer(32)
 </pre>
 
@@ -602,7 +602,7 @@ Content-Type: application/json; charset=utf-8
     <small>Requisição:</small>
 
 <pre class="ruby">
-client = BoletoSimples::Client.new('yourtoken', user_agent: 'Meu e-Commerce (meuecommerce@example.com)')
+client = BoletoSimples::Client.new('ENV['BOLETOSIMPLES_TOKEN']', user_agent: 'Meu e-Commerce (meuecommerce@example.com)')
 client.customers
 </pre>
 
