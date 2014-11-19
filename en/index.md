@@ -63,7 +63,7 @@ Utilizamos as seguintes convenções nesta documentação:
       <td>
         Indica o <a href="/authentication/token">Token de Acesso</a> e está neste formato para facilitar os testes na linha de comando. Supondo que o seu token é "zjuio96wkixkzy6z98sy", você pode rodar o comando abaixo e posteriormente copiar e colar os comandos desta documentação no terminal.
         <br/>
-        <code>export TOKEN=zjuio96wkixkzy6z98sy</code>
+        <code>export BOLETOSIMPLES_TOKEN=zjuio96wkixkzy6z98sy</code>
       </td>
     </tr>
   </tbody>
