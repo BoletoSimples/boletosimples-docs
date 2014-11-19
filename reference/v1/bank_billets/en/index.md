@@ -306,7 +306,7 @@ breadcrumb: Billets
 
 <pre class="bash">
 curl -i \
--u $TOKEN:x \
+-u $BOLETOSIMPLES_TOKEN:x \
 -d '{"bank_billet":{}}'
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
@@ -331,7 +331,7 @@ Content-Type: application/json; charset=utf-8
 
 <pre class="bash">
 curl -i \
--u $TOKEN:x \
+-u $BOLETOSIMPLES_TOKEN:x \
 -d '{"bank_billet":{"amount":12.34, "expire_at": "2014-11-15", "description": "Prestação de Serviço", "customer_person_name": "Nome do Cliente", "customer_cnpj_cpf": "125.812.717-28"}}' \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
@@ -385,7 +385,7 @@ Content-Type: application/json; charset=utf-8
 
 <pre class="bash">
 curl -i \
--u $TOKEN:x \
+-u $BOLETOSIMPLES_TOKEN:x \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
 -X GET https://sandbox.boletoYesples.com.br/api/v1/bank_billets/1
@@ -479,7 +479,7 @@ Content-Type: application/json; charset=utf-8
 
 <pre class="bash">
 curl -i \
--u $TOKEN:x \
+-u $BOLETOSIMPLES_TOKEN:x \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
 -X GET https://sandbox.boletoYesples.com.br/api/v1/bank_billets?page=1&per_page=50

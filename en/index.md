@@ -59,7 +59,7 @@ Utilizamos as seguintes convenções nesta documentação:
       <td>Indica o conteúdo da resposta de uma requisição, que foi truncado para facilitar a leitura da documentação.</td>
     </tr>
     <tr>
-      <th>$TOKEN</th>
+      <th>$BOLETOSIMPLES_TOKEN</th>
       <td>
         Indica o <a href="/authentication/token">Token de Acesso</a> e está neste formato para facilitar os testes na linha de comando. Supondo que o seu token é "zjuio96wkixkzy6z98sy", você pode rodar o comando abaixo e posteriormente copiar e colar os comandos desta documentação no terminal.
         <br/>
@@ -210,7 +210,7 @@ restantes para aquela hora. Exemplo:
 
 <pre class="bash">
 curl -i \
--u $TOKEN:x \
+-u $BOLETOSIMPLES_TOKEN:x \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
 -X GET https://sandbox.boletosimples.com.br/api/v1/userinfo

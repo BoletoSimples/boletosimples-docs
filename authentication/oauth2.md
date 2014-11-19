@@ -188,7 +188,7 @@ curl -i \
 
         <pre class="bash">
 curl -i \
--u ada046e3cc:x \
+-u $BOLETOSIMPLES_TOKEN:x \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
 -X GET https://sandbox.boletosimples.com.br/api/v1/userinfo

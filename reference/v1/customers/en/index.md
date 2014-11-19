@@ -263,7 +263,7 @@ breadcrumb: Customers
 
 <pre class="bash">
 curl -i \
--u $TOKEN:x \
+-u $BOLETOSIMPLES_TOKEN:x \
 -d '{"customer":{}}'
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
@@ -288,7 +288,7 @@ Content-Type: application/json; charset=utf-8
 
 <pre class="bash">
 curl -i \
--u $TOKEN:x \
+-u $BOLETOSIMPLES_TOKEN:x \
 -d '{"customer":{"person_name":"Nome do Cliente", "cnpj_cpf": "125.812.717-28"}}' \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
@@ -334,7 +334,7 @@ Content-Type: application/json; charset=utf-8
 
 <pre class="bash">
 curl -i \
--u $TOKEN:x \
+-u $BOLETOSIMPLES_TOKEN:x \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
 -X GET https://sandbox.boletosimples.com.br/api/v1/customers/1
@@ -420,7 +420,7 @@ Content-Type: application/json; charset=utf-8
 
 <pre class="bash">
 curl -i \
--u $TOKEN:x \
+-u $BOLETOSIMPLES_TOKEN:x \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
 -X GET https://sandbox.boletosimples.com.br/api/v1/customers?page=1&per_page=50

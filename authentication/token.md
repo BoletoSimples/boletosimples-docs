@@ -29,7 +29,7 @@ Exemplo de chamada API autenticada (onde "zjuio96wkixkzy6z98sy" é o Token de Ac
 
 <pre class="bash">
 curl -i \
--u zjuio96wkixkzy6z98sy:x \
+-u $BOLETOSIMPLES_TOKEN:x \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
 -X GET https://sandbox.boletosimples.com.br/api/v1/userinfo

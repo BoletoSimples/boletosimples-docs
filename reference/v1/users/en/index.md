@@ -56,7 +56,7 @@ When assessed by [Access Token](/authentication/token), all information are retu
 
 <pre class="bash">
 curl -i \
--u $TOKEN:x \
+-u $BOLETOSIMPLES_TOKEN:x \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
 -X GET https://sandbox.boletosimples.com.br/api/v1/userinfo
