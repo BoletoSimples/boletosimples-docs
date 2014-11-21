@@ -116,7 +116,7 @@ Content-Type: application/json; charset=utf-8
     <small>Requisição:</small>
 
 <pre class="ruby">
-client = BoletoSimples::Client.new('ENV['BOLETOSIMPLES_TOKEN']', user_agent: 'Meu e-Commerce (meuecommerce@example.com)')
+client = BoletoSimples::Client.new(ENV['BOLETOSIMPLES_TOKEN'], user_agent: 'Meu e-Commerce (meuecommerce@example.com)')
 client.userinfo
 </pre>
 
@@ -125,7 +125,7 @@ client.userinfo
 <pre class="ruby">
 {
   "id"=>38,
-  "login_url"=>"https://sandbox.boletosimples.com.br/welcome?email=meuecommerce%40example.com&token=ENV['BOLETOSIMPLES_TOKEN']",
+  "login_url"=>"https://sandbox.boletosimples.com.br/welcome?email=meuecommerce%40example.com&token=yourtoken",
   "email"=>"meuecommerce@example.com",
   "account_type"=>nil,
   "first_name"=>nil,
