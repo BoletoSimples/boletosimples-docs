@@ -88,7 +88,20 @@ breadcrumb: Customers
         CNPJ/CPF
       </td>
     </tr>
-
+    <tr>
+      <td>
+        <strong>zipcode</strong>
+      </td>
+      <td>
+        No
+      </td>
+      <td>
+        String
+      </td>
+      <td>
+        Postal code
+      </td>
+    </tr>
     <tr>
       <td>
         <strong>address</strong>
@@ -148,22 +161,6 @@ breadcrumb: Customers
         Neighborhood
       </td>
     </tr>
-
-    <tr>
-      <td>
-        <strong>zipcode</strong>
-      </td>
-      <td>
-        No
-      </td>
-      <td>
-        String
-      </td>
-      <td>
-        Zipcode
-      </td>
-    </tr>
-
     <tr>
       <td>
         <strong>address_number</strong>

@@ -88,7 +88,20 @@ breadcrumb: Clientes
         CNPJ/CPF
       </td>
     </tr>
-
+    <tr>
+      <td>
+        <strong>zipcode</strong>
+      </td>
+      <td>
+        Sim
+      </td>
+      <td>
+        String
+      </td>
+      <td>
+        CEP
+      </td>
+    </tr>
     <tr>
       <td>
         <strong>address</strong>
@@ -148,22 +161,6 @@ breadcrumb: Clientes
         Bairro
       </td>
     </tr>
-
-    <tr>
-      <td>
-        <strong>zipcode</strong>
-      </td>
-      <td>
-        Sim
-      </td>
-      <td>
-        String
-      </td>
-      <td>
-        CEP
-      </td>
-    </tr>
-
     <tr>
       <td>
         <strong>address_number</strong>
@@ -178,7 +175,6 @@ breadcrumb: Clientes
         Número
       </td>
     </tr>
-
     <tr>
       <td>
         <strong>address_complement</strong>

@@ -124,6 +124,20 @@ breadcrumb: Boletos
     </tr>
     <tr>
       <td>
+        <strong> customer_zipcode </strong>
+      </td>
+      <td>
+        Sim
+      </td>
+      <td>
+        String
+      </td>
+      <td>
+        CEP
+      </td>
+    </tr>
+    <tr>
+      <td>
         <strong> customer_id </strong>
       </td>
       <td>
@@ -208,21 +222,6 @@ breadcrumb: Boletos
       </td>
       <td>
         Bairro
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        <strong> customer_zipcode </strong>
-      </td>
-      <td>
-        Sim
-      </td>
-      <td>
-        String
-      </td>
-      <td>
-        CEP
       </td>
     </tr>
 

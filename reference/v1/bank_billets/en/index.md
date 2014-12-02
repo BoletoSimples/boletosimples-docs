@@ -120,6 +120,20 @@ breadcrumb: Billets
     </tr>
     <tr>
       <td>
+        <strong> customer_zipcode </strong>
+      </td>
+      <td>
+        Yes
+      </td>
+      <td>
+        String
+      </td>
+      <td>
+        Zipcode
+      </td>
+    </tr>
+    <tr>
+      <td>
         <strong> customer_id </strong>
       </td>
       <td>
@@ -206,22 +220,6 @@ breadcrumb: Billets
         Neighborhood
       </td>
     </tr>
-
-    <tr>
-      <td>
-        <strong> customer_zipcode </strong>
-      </td>
-      <td>
-        No
-      </td>
-      <td>
-        String
-      </td>
-      <td>
-        Zipcode
-      </td>
-    </tr>
-
     <tr>
       <td>
         <strong> customer_address_number </strong>
