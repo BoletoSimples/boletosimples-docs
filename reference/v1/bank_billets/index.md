@@ -751,6 +751,8 @@ client.bank_billets
 
 `GET /api/v1/bank_billets/:id/cancel`
 
+Você pode cancelar boletos nos status de Aberto(`opened`) ou Vencido(`due`)
+
 #### Exemplo de requisição inválida
 
 <ul class="nav nav-tabs" role="tablist">

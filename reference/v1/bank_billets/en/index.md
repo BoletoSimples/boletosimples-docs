@@ -17,15 +17,19 @@ breadcrumb: Billets
   <tbody>
     <tr>
       <td><a href="#billet-create">POST /api/v1/bank_billets</a></td>
-      <td width='60%'>Billet create</td>
+      <td width='60%'>Bank billet create</td>
     </tr>
     <tr>
       <td><a href="#billets-info">GET /api/v1/bank_billets/:id</a></td>
-      <td width='60%'>Billet's info</td>
+      <td width='60%'>Bank billet's info</td>
     </tr>
     <tr>
       <td><a href="#list-billets">GET /api/v1/bank_billets</a></td>
-      <td width='60%'>List billets</td>
+      <td width='60%'>List bank billets</td>
+    </tr>
+    <tr>
+      <td><a href="#cancel-billets">GET /api/v1/bank_billets/:id/cancel</a></td>
+      <td width='60%'>Cancel bank billets</td>
     </tr>
   </tbody>
 </table>
@@ -373,11 +377,11 @@ Content-Type: application/json; charset=utf-8
 }
 </pre>
 
-### Billet's Info
+### Bank billet's information
 
 `GET /api/v1/bank_billets/:id`
 
-#### Example
+#### Valid request sample
 
 <small>Request:</small>
 
@@ -425,7 +429,7 @@ Content-Type: application/json; charset=utf-8
 }
 </pre>
 
-### List billets
+### List bank billets
 
 `GET /api/v1/bank_billets`
 
@@ -471,7 +475,7 @@ Content-Type: application/json; charset=utf-8
   </tbody>
 </table>
 
-#### Example
+#### Valid request sample
 
 <small>Request:</small>
 
@@ -521,3 +525,161 @@ Content-Type: application/json; charset=utf-8
   }
 ]
 </pre>
+
+### Cancel bank billet
+
+`GET /api/v1/bank_billets/:id/cancel`
+
+You can cancel bank billet in `opened` or `due` status
+
+#### Invalid request sample
+
+<ul class="nav nav-tabs" role="tablist">
+  <li class="active"><a href="#bash5" role="tab" data-toggle="tab">Bash</a></li>
+  <li><a href="#ruby5" role="tab" data-toggle="tab">Ruby</a></li>
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="bash5">
+    <small>Request:</small>
+
+<pre class="bash">
+curl -i \
+-u $BOLETOSIMPLES_TOKEN:x \
+-H 'Content-Type: application/json' \
+-H 'User-Agent: MyApp (myapp@example.com)' \
+-X PUT https://sandbox.boletosimples.com.br/api/v1/bank_billets/1/cancel
+</pre>
+
+    <small>Response:</small>
+
+<pre class="bash">
+HTTP/1.1 200 OK
+Date: Fri, 17 Oct 2014 19:46:16 GMT
+Status: 200 OK
+Content-Type: application/json; charset=utf-8
+...
+
+{
+  "errors": {
+    "status": ["cannot transition via cancel"]
+  }
+}
+</pre>
+  </div>
+  <div class="tab-pane" id="ruby5">
+    <small>Request</small>
+
+<pre class="ruby">
+client = BoletoSimples::Client.new(ENV['BOLETOSIMPLES_TOKEN'], user_agent: 'Meu e-Commerce (meuecommerce@example.com)')
+client.cancel_bank_billet(1)
+</pre>
+
+    <small>Response:</small>
+
+<pre class="ruby">
+{
+  "errors"=> {
+    "status"=> ["cannot transition via cancel"]
+  }
+}
+</pre>
+
+  </div>
+</div>
+
+#### Valid request sample
+
+<ul class="nav nav-tabs" role="tablist">
+  <li class="active"><a href="#bash6" role="tab" data-toggle="tab">Bash</a></li>
+  <li><a href="#ruby6" role="tab" data-toggle="tab">Ruby</a></li>
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="bash6">
+    <small>Request:</small>
+
+<pre class="bash">
+curl -i \
+-u $BOLETOSIMPLES_TOKEN:x \
+-H 'Content-Type: application/json' \
+-H 'User-Agent: MyApp (myapp@example.com)' \
+-X PUT https://sandbox.boletosimples.com.br/api/v1/bank_billets/1/cancel
+</pre>
+
+    <small>Response:</small>
+
+<pre class="bash">
+HTTP/1.1 200 OK
+Date: Fri, 17 Oct 2014 19:46:16 GMT
+Status: 200 OK
+Content-Type: application/json; charset=utf-8
+...
+
+{
+  "id":1,
+  "expire_at":"2014-11-15",
+  "paid_at":null,
+  "description":"Prestação de Serviço",
+  "status":"canceled",
+  "shorten_url":"http://bole.to/xxxxxxxx",
+  "customer_person_type":"individual",
+  "customer_person_name":"Nome do Cliente",
+  "customer_cnpj_cpf":"125.812.717-28",
+  "customer_address":null,
+  "customer_state":null,
+  "customer_neighborhood":null,
+  "customer_zipcode":null,
+  "customer_address_number":null,
+  "customer_address_complement":null,
+  "customer_phone_number":null,
+  "customer_email":null,
+  "notification_url":null,
+  "send_email_on_creation":null,
+  "created_via_api":true,
+  "customer_city_name":null,
+  "paid_amount":0.0,
+  "amount":12.34
+}
+</pre>
+  </div>
+  <div class="tab-pane" id="ruby6">
+    <small>Requisição</small>
+
+<pre class="ruby">
+client = BoletoSimples::Client.new(ENV['BOLETOSIMPLES_TOKEN'], user_agent: 'Meu e-Commerce (meuecommerce@example.com)')
+client.cancel_bank_billet(1)
+</pre>
+
+    <small>Resposta:</small>
+
+<pre class="ruby">
+{
+  "id"=>1,
+  "expire_at"=>"2014-01-01",
+  "paid_at"=>nil,
+  "description"=>"Despesas do contrato 0012",
+  "status"=>"canceled",
+  "shorten_url"=>"http://staging.bole.to/nhhvauui",
+  "customer_person_type"=>"individual",
+  "customer_person_name"=>"Joao da Silva",
+  "customer_cnpj_cpf"=>"012.345.678-90",
+  "customer_address"=>"Rua quinhentos",
+  "customer_state"=>"RJ",
+  "customer_neighborhood"=>"Sao Francisco",
+  "customer_zipcode"=>"12312-123",
+  "customer_address_number"=>"111",
+  "customer_address_complement"=>"Sala 4",
+  "customer_phone_number"=>"2112123434",
+  "customer_email"=>"cliente@example.com",
+  "notification_url"=>"http://example.com.br/notify",
+  "send_email_on_creation"=>nil,
+  "created_via_api"=>true,
+  "customer_city_name"=>"Rio de Janeiro",
+  "paid_amount"=>0.0,
+  "amount"=>9.01
+}
+</pre>
+
+  </div>
+</div>
