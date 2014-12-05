@@ -300,6 +300,20 @@ breadcrumb: Boletos
         Exemplo Array: pedido: 12345
       </td>
     </tr>
+    <tr>
+      <td>
+        <strong> parcels </strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        Number
+      </td>
+      <td>
+        Quantidade de parcelas desejadas
+      </td>
+    </tr>
   </tbody>
 </table>
 
@@ -339,26 +353,26 @@ Content-Type: application/json; charset=utf-8
     <small>Requisição:</small>
 <pre class="ruby">
 client = BoletoSimples::Client.new(ENV['BOLETOSIMPLES_TOKEN'], user_agent: 'Meu e-Commerce (meuecommerce@example.com)')
-client.create_bank_billet({
-  "bank_billet" => {
+client.create_bank_billet(
+  {
     "amount" => 19.01,
-      "customer_address" => 'Rua quinhentos',
-      "customer_address_complement" => 'Sala 4',
-      "customer_address_number" => '111',
-      "customer_city_name" => 'Rio de Janeiro',
-      "customer_cnpj_cpf" => ' ',
-      "customer_email" => 'clientebom.com',
-      "customer_neighborhood" => 'Sao Francisco',
-      "customer_person_name" => 'Joao da Silva',
-      "customer_person_type" => 'individual',
-      "customer_phone_number" => '113223',
-      "customer_state" => 'RJ',
-      "customer_zipcode" => '12312-123',
-      "description" => 'Despesas do contrato 0012',
-      "expire_at" => '2014-01-01',
-      "notification_url" => 'http://example.com.br/notify'
+    "customer_address" => 'Rua quinhentos',
+    "customer_address_complement" => 'Sala 4',
+    "customer_address_number" => '111',
+    "customer_city_name" => 'Rio de Janeiro',
+    "customer_cnpj_cpf" => ' ',
+    "customer_email" => 'clientebom.com',
+    "customer_neighborhood" => 'Sao Francisco',
+    "customer_person_name" => 'Joao da Silva',
+    "customer_person_type" => 'individual',
+    "customer_phone_number" => '113223',
+    "customer_state" => 'RJ',
+    "customer_zipcode" => '12312-123',
+    "description" => 'Despesas do contrato 0012',
+    "expire_at" => '2014-01-01',
+    "notification_url" => 'http://example.com.br/notify'
   }
-})
+)
 </pre>
 
     <small>Resposta:</small>
@@ -368,13 +382,6 @@ client.create_bank_billet({
   "errors"=> {
     "customer_cnpj_cpf" => ["não pode ficar em branco"],
     "customer_email" => ["não é válido"],
-    "customer" => [
-      {
-        "cnpj_cpf" => ["não pode ficar em branco"],
-        "phone_number" => ["é muito curto (mínimo: 10 caracteres)"],
-        "email" => ["não é válido"]
-      }
-    ],
     "amount"=>["deve ser menor ou igual a 10"]
   }
 }
@@ -383,7 +390,7 @@ client.create_bank_billet({
   </div>
 </div>
 
-#### Exemplo de requisição válida
+#### Criando boleto
 
 <ul class="nav nav-tabs" role="tablist">
   <li class="active"><a href="#bash2" role="tab" data-toggle="tab">Bash</a></li>
@@ -436,7 +443,10 @@ Content-Type: application/json; charset=utf-8
   "created_via_api":true,
   "customer_city_name":null,
   "paid_amount":0.0,
-  "amount":12.34
+  "amount":12.34,
+  "parcel":1,
+  "parent_id":null,
+  "all_parcels_ids":[1]
 }
 </pre>
   </div>
@@ -444,26 +454,26 @@ Content-Type: application/json; charset=utf-8
     <small>Requisição:</small>
 <pre class="ruby">
 client = BoletoSimples::Client.new(ENV['BOLETOSIMPLES_TOKEN'], user_agent: 'Meu e-Commerce (meuecommerce@example.com)')
-client.create_bank_billet({
-  "bank_billet" => {
+client.create_bank_billet(
+  {
     "amount" => 9.01,
-      "customer_address" => 'Rua quinhentos',
-      "customer_address_complement" => 'Sala 4',
-      "customer_address_number" => '111',
-      "customer_city_name" => 'Rio de Janeiro',
-      "customer_cnpj_cpf" => '012.345.678-90',
-      "customer_email" => 'cliente@example.com',
-      "customer_neighborhood" => 'Sao Francisco',
-      "customer_person_name" => 'Joao da Silva',
-      "customer_person_type" => 'individual',
-      "customer_phone_number" => '2112123434',
-      "customer_state" => 'RJ',
-      "customer_zipcode" => '12312-123',
-      "description" => 'Despesas do contrato 0012',
-      "expire_at" => '2014-01-01',
-      "notification_url" => 'http://example.com.br/notify'
+    "customer_address" => 'Rua quinhentos',
+    "customer_address_complement" => 'Sala 4',
+    "customer_address_number" => '111',
+    "customer_city_name" => 'Rio de Janeiro',
+    "customer_cnpj_cpf" => '012.345.678-90',
+    "customer_email" => 'cliente@example.com',
+    "customer_neighborhood" => 'Sao Francisco',
+    "customer_person_name" => 'Joao da Silva',
+    "customer_person_type" => 'individual',
+    "customer_phone_number" => '2112123434',
+    "customer_state" => 'RJ',
+    "customer_zipcode" => '12312-123',
+    "description" => 'Despesas do contrato 0012',
+    "expire_at" => '2014-01-01',
+    "notification_url" => 'http://example.com.br/notify'
   }
-})
+)
 </pre>
 
   <small>Resposta:</small>
@@ -492,13 +502,145 @@ client.create_bank_billet({
   "paid_at" => nil,
   "send_email_on_creation" => nil,
   "shorten_url" => nil,
-  "status" => "generating"
+  "status" => "generating",
+  "parcel":1,
+  "parent_id":null,
+  "all_parcels_ids":[1]
 }
 </pre>
   </div>
 </div>
 
+#### Criando boleto parcelado
 
+As parcelas serão criadas com meses subsequentes ao da data de vencimento informada.
+
+Por exemplo, caso informe 3 parcelas e a data de vencimento 01/01/2014,
+as parcelas sairão com vencimentos em 01/01/2014, 01/02/2014 e 01/03/2014.
+
+O campo `all_parcels_ids` irá retornar os IDs das parcelas solicitadas.
+<br />
+Basta consultar cada ID para ter as informações referentes a cada uma delas.
+
+<ul class="nav nav-tabs" role="tablist">
+  <li class="active"><a href="#bash2" role="tab" data-toggle="tab">Bash</a></li>
+  <li><a href="#ruby2" role="tab" data-toggle="tab">Ruby</a></li>
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="bash2">
+    <small>Requisição:</small>
+
+<pre class="bash">
+curl -i \
+-u $BOLETOSIMPLES_TOKEN:x \
+-d '{"bank_billet":{"amount":12.34, "expire_at": "2014-11-15", "description": "Prestação de Serviço", "customer_person_name": "Nome do Cliente", "customer_cnpj_cpf": "125.812.717-28", "customer_zipcode": "12312-123", "parcels": 3}}' \
+-H 'Content-Type: application/json' \
+-H 'User-Agent: MyApp (myapp@example.com)' \
+-X POST https://sandbox.boletosimples.com.br/api/v1/bank_billets
+</pre>
+
+    <small>Resposta:</small>
+
+<pre class="bash">
+HTTP/1.1 201 Created
+Date: Fri, 17 Oct 2014 19:30:06 GMT
+Status: 201 Created
+Location: https://sandbox.boletosimples.com.br/api/v1/bank_billets/1
+Content-Type: application/json; charset=utf-8
+...
+
+{
+  "id":1,
+  "expire_at":"2014-11-15",
+  "paid_at":null,
+  "description":"Prestação de Serviço",
+  "status":"generating",
+  "shorten_url":null,
+  "customer_person_type":"individual",
+  "customer_person_name":"Nome do Cliente",
+  "customer_cnpj_cpf":"125.812.717-28",
+  "customer_address":null,
+  "customer_state":null,
+  "customer_neighborhood":null,
+  "customer_zipcode":null,
+  "customer_address_number":null,
+  "customer_address_complement":null,
+  "customer_phone_number":null,
+  "customer_email":null,
+  "notification_url":null,
+  "send_email_on_creation":null,
+  "created_via_api":true,
+  "customer_city_name":null,
+  "paid_amount":0.0,
+  "amount":12.34,
+  "parcel":1,
+  "parent_id":null,
+  "all_parcels_ids":[1,2,3]  
+}
+</pre>
+  </div>
+  <div class="tab-pane" id="ruby2">
+    <small>Requisição:</small>
+<pre class="ruby">
+client = BoletoSimples::Client.new(ENV['BOLETOSIMPLES_TOKEN'], user_agent: 'Meu e-Commerce (meuecommerce@example.com)')
+client.create_bank_billet(
+  {
+    "amount" => 9.01,
+    "customer_address" => 'Rua quinhentos',
+    "customer_address_complement" => 'Sala 4',
+    "customer_address_number" => '111',
+    "customer_city_name" => 'Rio de Janeiro',
+    "customer_cnpj_cpf" => '012.345.678-90',
+    "customer_email" => 'cliente@example.com',
+    "customer_neighborhood" => 'Sao Francisco',
+    "customer_person_name" => 'Joao da Silva',
+    "customer_person_type" => 'individual',
+    "customer_phone_number" => '2112123434',
+    "customer_state" => 'RJ',
+    "customer_zipcode" => '12312-123',
+    "description" => 'Despesas do contrato 0012',
+    "expire_at" => '2014-01-01',
+    "notification_url" => 'http://example.com.br/notify',
+    "parcels" => 3
+  }
+)
+</pre>
+
+  <small>Resposta:</small>
+
+<pre class="ruby">
+{
+  "amount" => 9.01,
+  "created_via_api" => true,
+  "customer_address" => "Rua quinhentos",
+  "customer_address_complement" => "Sala 4",
+  "customer_address_number" => "111",
+  "customer_city_name" => "Rio de Janeiro",
+  "customer_cnpj_cpf" => "012.345.678-90",
+  "customer_email" => "cliente@example.com",
+  "customer_neighborhood" => "Sao Francisco",
+  "customer_person_name" => "Joao da Silva",
+  "customer_person_type" => "individual",
+  "customer_phone_number" => "2112123434",
+  "customer_state" => "RJ",
+  "customer_zipcode" => "12312-123",
+  "description" => "Despesas do contrato 0012",
+  "expire_at" => "2014-01-01",
+  "id" => 113,
+  "notification_url" => "http://example.com.br/notify",
+  "paid_amount" => 0.0,
+  "paid_at" => nil,
+  "send_email_on_creation" => nil,
+  "shorten_url" => nil,
+  "status" => "generating",
+  "parcel":1,
+  "parent_id":null,
+  "all_parcels_ids":[1,2,3] 
+}
+</pre>
+  </div>
+</div>
 
 ### Informações do boleto
 
@@ -555,7 +697,10 @@ Content-Type: application/json; charset=utf-8
   "created_via_api":true,
   "customer_city_name":null,
   "paid_amount":0.0,
-  "amount":12.34
+  "amount":12.34,
+  "parcel":1,
+  "parent_id":null,
+  "all_parcels_ids":[1]  
 }
 </pre>
   </div>
@@ -593,7 +738,10 @@ client.bank_billet(113)
   "created_via_api"=>true,
   "customer_city_name"=>"Rio de Janeiro",
   "paid_amount"=>0.0,
-  "amount"=>9.01
+  "amount"=>9.01,
+  "parcel":1,
+  "parent_id":null,
+  "all_parcels_ids":[1]  
 }
 </pre>
 
@@ -699,7 +847,10 @@ Content-Type: application/json; charset=utf-8
     "created_via_api":true,
     "customer_city_name":null,
     "paid_amount":0.0,
-    "amount":12.34
+    "amount":12.34,
+    "parcel":1,
+    "parent_id":null,
+    "all_parcels_ids":[1]    
   }
 ]
 </pre>
@@ -739,7 +890,10 @@ client.bank_billets
     "created_via_api"=>true,
     "customer_city_name"=>"Rio de Janeiro",
     "paid_amount"=>0.0,
-    "amount"=>9.01
+    "amount"=>9.01,
+    "parcel":1,
+    "parent_id":null,
+    "all_parcels_ids":[1]    
   }
 ]
 </pre>
@@ -860,7 +1014,10 @@ Content-Type: application/json; charset=utf-8
   "created_via_api":true,
   "customer_city_name":null,
   "paid_amount":0.0,
-  "amount":12.34
+  "amount":12.34,
+  "parcel":1,
+  "parent_id":null,
+  "all_parcels_ids":[1]  
 }
 </pre>
   </div>
@@ -898,7 +1055,10 @@ client.cancel_bank_billet(1)
   "created_via_api"=>true,
   "customer_city_name"=>"Rio de Janeiro",
   "paid_amount"=>0.0,
-  "amount"=>9.01
+  "amount"=>9.01,
+  "parcel":1,
+  "parent_id":null,
+  "all_parcels_ids":[1]  
 }
 </pre>
 
