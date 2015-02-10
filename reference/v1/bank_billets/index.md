@@ -576,7 +576,7 @@ Content-Type: application/json; charset=utf-8
   "amount":12.34,
   "parcel":1,
   "parent_id":null,
-  "all_parcels_ids":[1,2,3]  
+  "all_parcels_ids":[1,2,3]
 }
 </pre>
   </div>
@@ -636,7 +636,7 @@ client.create_bank_billet(
   "status" => "generating",
   "parcel":1,
   "parent_id":null,
-  "all_parcels_ids":[1,2,3] 
+  "all_parcels_ids":[1,2,3]
 }
 </pre>
   </div>
@@ -700,7 +700,7 @@ Content-Type: application/json; charset=utf-8
   "amount":12.34,
   "parcel":1,
   "parent_id":null,
-  "all_parcels_ids":[1]  
+  "all_parcels_ids":[1]
 }
 </pre>
   </div>
@@ -741,7 +741,7 @@ client.bank_billet(113)
   "amount"=>9.01,
   "parcel":1,
   "parent_id":null,
-  "all_parcels_ids":[1]  
+  "all_parcels_ids":[1]
 }
 </pre>
 
@@ -850,7 +850,7 @@ Content-Type: application/json; charset=utf-8
     "amount":12.34,
     "parcel":1,
     "parent_id":null,
-    "all_parcels_ids":[1]    
+    "all_parcels_ids":[1]
   }
 ]
 </pre>
@@ -893,7 +893,7 @@ client.bank_billets
     "amount"=>9.01,
     "parcel":1,
     "parent_id":null,
-    "all_parcels_ids":[1]    
+    "all_parcels_ids":[1]
   }
 ]
 </pre>
@@ -903,7 +903,7 @@ client.bank_billets
 
 ### Cancelar boleto
 
-`GET /api/v1/bank_billets/:id/cancel`
+`PUT /api/v1/bank_billets/:id/cancel`
 
 Você pode cancelar boletos nos status de Aberto(`opened`) ou Vencido(`due`)
 
@@ -1017,7 +1017,7 @@ Content-Type: application/json; charset=utf-8
   "amount":12.34,
   "parcel":1,
   "parent_id":null,
-  "all_parcels_ids":[1]  
+  "all_parcels_ids":[1]
 }
 </pre>
   </div>
@@ -1058,7 +1058,7 @@ client.cancel_bank_billet(1)
   "amount"=>9.01,
   "parcel":1,
   "parent_id":null,
-  "all_parcels_ids":[1]  
+  "all_parcels_ids":[1]
 }
 </pre>
 
