@@ -1,7 +1,64 @@
-<footer>
-  <div class="copyright">
-    <div class="inner">
-      <p>©2014 Boleto Simples - Gerar Boletos Bancários ficou simples!</p>
+<footer id='main-footer'>
+  <div class='containner'>
+    <div class='ft-billet'>
+      Billet.
+    </div>
+    <div class='sitemap'>
+      <div class='column'>
+        <h4>Boleto Simples</h4>
+        <ul>
+          <li><a href="http://boletosimples.com.br/">O que é?</a></li>
+          <li><a href="http://boletosimples.com.br/recursos">Recursos</a></li>
+          <li><a href="http://boletosimples.com.br/preco">Preço</a></li>
+        </ul>
+      </div>
+      <div class='column'>
+        <h4>Produto</h4>
+        <ul>
+          <li><a href="https://boletosimples.zendesk.com/hc/pt-br/articles/201253460-Pol%C3%ADtica-de-Privacidade">Política de Privacidade</a></li>
+          <li><a href="https://boletosimples.zendesk.com/hc/pt-br/articles/201253470-Pol%C3%ADtica-de-Seguran%C3%A7a">Política de Segurança</a></li>
+          <li><a href="https://boletosimples.zendesk.com/hc/pt-br/articles/201196074-Termos-de-Uso">Termos de Uso</a></li>
+        </ul>
+      </div>
+      <div class='column'>
+        <h4>Suporte</h4>
+        <ul>
+          <li><a href="https://boletosimples.zendesk.com/hc/pt-br/requests/new">Enviar solicitação</a></li>
+          <li><a href="https://boletosimples.zendesk.com/hc/pt-br">Perguntas Frequentes</a></li>
+          <li><a href="https://boletosimples.zendesk.com/hc/communities/public/topics">Comunidade</a></li>
+        </ul>
+      </div>
+      <div class='column'>
+        <h4>Desenvolvedores</h4>
+        <ul>
+          <li><a href="http://api.boletosimples.com.br">Documentação da API</a></li>
+          <li><a href="https://boletosimples.zendesk.com/hc/pt-br/sections/200249970-Integra%C3%A7%C3%B5es">Integrações</a></li>
+          <li><a href="http://status.boletosimples.com.br">Status dos servidores</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class='more-infos'>
+    <div class='containner'>
+      <div class='logos'>
+        <a href="http://www.google.com/safebrowsing/diagnostic?site=boletosimples.com.br" target="_blank" title="Google Safe Browsing"><img alt='Google Safe Browsing' src='/img/footer-google-safe-browsing.png' width="100" height="50" title='Google Safe Browsing'>
+        </a>
+        <a href="http://abcomm.com.br/abcomm/Associados_1.php?p=0&amp;s=boletosimples" id="abccomm" target="_blank" title="Abcomm"><img alt='ABCOMM' src='/img/footer-abcomm.png' width="120" height="34"  title='ABCOMM'>
+        </a>
+        <a href="https://aws.amazon.com/security/" target="_blank" title="Amazon Web Services"><img alt='Amazon Web Services' src='/img/footer-aws.png' width="105" height="39"  title='Amazon Web Services'>
+        </a>
+      </div>
+      <div class='bs-infos'>
+        <ul>
+          <li>Boleto Simples Cobranças LTDA</li>
+          <li>CNPJ: 05.813.794/0001-26</li>
+          <li>Av. Pres. Vargas, 633 sl 1716</li>
+          <li>Rio de Janeiro, RJ - 20071-004</li>
+        </ul>
+        <p>
+          © 2013/2015 Boleto Simples. Gerar boletos bancários ficou mais simples!
+        </p>
+      </div>
     </div>
   </div>
 </footer>
@@ -19,9 +76,7 @@
     $('pre').each(function(i, block) {
       hljs.highlightBlock(block);
     });
+    $('th').tooltip();
   });
-</script>
-<script>
-  $('th').tooltip()
 </script>
 </body>
