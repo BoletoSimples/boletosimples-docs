@@ -28,7 +28,7 @@ breadcrumb: Boletos
       <td width='60%'>Listar boletos</td>
     </tr>
     <tr>
-      <td><a href="#cancelar-boleto">GET /api/v1/bank_billets/:id/cancel</a></td>
+      <td><a href="#cancelar-boleto">PUT /api/v1/bank_billets/:id/cancel</a></td>
       <td width='60%'>Cancelar boleto</td>
     </tr>
   </tbody>
