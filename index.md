@@ -231,12 +231,3 @@ o servidor retorna o status
 `HTTP 429 Too Many Requests`.
 Neste caso, você deve esperar até o primeiro minuto da hora
 seguinte para realizar a próxima requisição.
-
-
-## Começando
-
-*   [Autenticação](/authentication "Autenticação")
-*   [Permissões](/permissions "Permissões")
-*   [Notificações](/notifications "Notificações")
-*   [Bibliotecas](/libraries "Bibliotecas")
-*   [Referências](/reference "Referências")
