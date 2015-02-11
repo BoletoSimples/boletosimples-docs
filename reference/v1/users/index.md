@@ -116,8 +116,7 @@ Content-Type: application/json; charset=utf-8
     <small>Requisição:</small>
 
 <pre class="ruby">
-client = BoletoSimples::Client.new(ENV['BOLETOSIMPLES_TOKEN'], user_agent: 'Meu e-Commerce (meuecommerce@example.com)')
-client.userinfo
+BoletoSimples::Extra.userinfo
 </pre>
 
     <small>Resposta:</small>

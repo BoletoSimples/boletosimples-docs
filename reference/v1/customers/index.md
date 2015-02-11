@@ -289,8 +289,7 @@ Content-Type: application/json; charset=utf-8
     <small>Requisição:</small>
 
 <pre class="ruby">
-client = BoletoSimples::Client.new(ENV['BOLETOSIMPLES_TOKEN'], user_agent: 'Meu e-Commerce (meuecommerce@example.com)')
-client.create_customer({
+BoletoSimples::Customer.create({
   "customer" => {
     "person_name" => "Joao da Silva",
     "cnpj_cpf"=> " ",
@@ -374,8 +373,7 @@ Content-Type: application/json; charset=utf-8
     <small>Requisição:</small>
 
 <pre class="ruby">
-client = BoletoSimples::Client.new(ENV['BOLETOSIMPLES_TOKEN'], user_agent: 'Meu e-Commerce (meuecommerce@example.com)')
-client.create_customer({
+BoletoSimples::Customer.create({
   "customer" => {
     "person_name" => "Joao da Silva",
     "cnpj_cpf"=> "012.345.678-90",
@@ -470,8 +468,7 @@ Content-Type: application/json; charset=utf-8
     <small>Requisição:</small>
 
 <pre class="ruby">
-client = BoletoSimples::Client.new(ENV['BOLETOSIMPLES_TOKEN'], user_agent: 'Meu e-Commerce (meuecommerce@example.com)')
-client.customer(32)
+BoletoSimples::Customer.find(32)
 </pre>
 
     <small>Resposta:</small>
@@ -598,8 +595,7 @@ Content-Type: application/json; charset=utf-8
     <small>Requisição:</small>
 
 <pre class="ruby">
-client = BoletoSimples::Client.new(ENV['BOLETOSIMPLES_TOKEN'], user_agent: 'Meu e-Commerce (meuecommerce@example.com)')
-client.customers
+BoletoSimples::Customer.all
 </pre>
 
     <small>Resposta:</small>

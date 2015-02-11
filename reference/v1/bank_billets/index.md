@@ -338,8 +338,7 @@ Content-Type: application/json; charset=utf-8
   <div class="tab-pane" id="ruby">
     <small>Requisição:</small>
 <pre class="ruby">
-client = BoletoSimples::Client.new(ENV['BOLETOSIMPLES_TOKEN'], user_agent: 'Meu e-Commerce (meuecommerce@example.com)')
-client.create_bank_billet(
+BoletoSimples::BankBillet.create(
   {
     "amount" => 19.01,
     "customer_address" => 'Rua quinhentos',
@@ -436,8 +435,7 @@ Content-Type: application/json; charset=utf-8
   <div class="tab-pane" id="ruby2">
     <small>Requisição:</small>
 <pre class="ruby">
-client = BoletoSimples::Client.new(ENV['BOLETOSIMPLES_TOKEN'], user_agent: 'Meu e-Commerce (meuecommerce@example.com)')
-client.create_bank_billet(
+BoletoSimples::BankBillet.create(
   {
     "amount" => 9.01,
     "customer_address" => 'Rua quinhentos',
@@ -554,8 +552,7 @@ Content-Type: application/json; charset=utf-8
     <small>Requisição:</small>
 
 <pre class="ruby">
-client = BoletoSimples::Client.new(ENV['BOLETOSIMPLES_TOKEN'], user_agent: 'Meu e-Commerce (meuecommerce@example.com)')
-client.bank_billet(113)
+BoletoSimples::BankBillet.find(113)
 </pre>
 
     <small>Resposta:</small>
@@ -699,8 +696,7 @@ Content-Type: application/json; charset=utf-8
     <small>Requisição</small>
 
 <pre class="ruby">
-client = BoletoSimples::Client.new(ENV['BOLETOSIMPLES_TOKEN'], user_agent: 'Meu e-Commerce (meuecommerce@example.com)')
-client.bank_billets
+BoletoSimples::BankBillet.all
 </pre>
 
     <small>Resposta:</small>
@@ -783,8 +779,10 @@ Content-Type: application/json; charset=utf-8
     <small>Requisição</small>
 
 <pre class="ruby">
-client = BoletoSimples::Client.new(ENV['BOLETOSIMPLES_TOKEN'], user_agent: 'Meu e-Commerce (meuecommerce@example.com)')
-client.cancel_bank_billet(1)
+@bank_billet = BoletoSimples::BankBillet.find(1)
+@bank_billet.status
+# => "paid"
+@bank_billet.cancel
 </pre>
 
     <small>Resposta:</small>
@@ -859,8 +857,10 @@ Content-Type: application/json; charset=utf-8
     <small>Requisição</small>
 
 <pre class="ruby">
-client = BoletoSimples::Client.new(ENV['BOLETOSIMPLES_TOKEN'], user_agent: 'Meu e-Commerce (meuecommerce@example.com)')
-client.cancel_bank_billet(1)
+@bank_billet = BoletoSimples::BankBillet.find(1)
+@bank_billet.status
+# => "due"
+@bank_billet.cancel
 </pre>
 
     <small>Resposta:</small>
