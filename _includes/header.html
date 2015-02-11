@@ -1,30 +1,78 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Documentação da API do Boleto Simples, sistema de emissão de boleto bancário online.">
-  <meta name="keywords" content="boleto, boleto simples, api, documentação, documentation, webservice">
-  <meta name="author" content="Boleto Simples">
   <title>{{ page.title }}</title>
+  <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+  <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+  <meta content='width=device-width, initial-scale=1.0' name='viewport'>
+  <meta content='Boleto Simples' name='application-name'>
+  <meta content='Boleto Simples' name='author'>
+  <meta content='© 2014 Boleto Simples Cobranças Ltda.' name='copyright'>
+  <meta content='index, follow' name='robots'>
+  <meta content='Gerar boleto bancario na internet com sistema online sem ter conta em banco é fácil com o Boleto Simples' name='description'>
+  <meta content='boleto bancario, gerar boleto, criar boleto, boleto internet, emitir boleto, gerar boletos, sistema boleto, pagamento boletos, boleto facil' name='keywords'>
+  <link href="/assets/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+  <link href='/assets/apple-touch-icon.png' rel='apple-touch-icon'>
+  <link href='/assets/apple-touch-icon-57x57.png' rel='apple-touch-icon' sizes='57x57'>
+  <link href='/assets/apple-touch-icon-72x72.png' rel='apple-touch-icon' sizes='72x72'>
+  <link href='/assets/apple-touch-icon-76x76.png' rel='apple-touch-icon' sizes='76x76'>
+  <link href='/assets/apple-touch-icon-114x114.png' rel='apple-touch-icon' sizes='114x114'>
+  <link href='/assets/apple-touch-icon-120x120.png' rel='apple-touch-icon' sizes='120x120'>
+  <link href='/assets/apple-touch-icon-144x144.png' rel='apple-touch-icon' sizes='144x144'>
+  <link href='/assets/apple-touch-icon-152x152.png' rel='apple-touch-icon' sizes='152x152'>
+  <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+  <link href='/assets/apple-touch-icon-152x152.png' rel='apple-touch-icon-precomposed'>
+  <!-- For the iPad mini and the first- and second-generation iPad on iOS ≤ 6: -->
+  <link href='/assets/apple-touch-icon-72x72.png' rel='apple-touch-icon-precomposed' sizes='72x72'>
+  <!-- For the iPad mini and the first- and second-generation iPad on iOS ≥ 7: -->
+  <link href='/assets/apple-touch-icon-76x76.png' rel='apple-touch-icon-precomposed' sizes='76x76'>
+  <!-- For iPhone with high-resolution Retina display running iOS ≤ 6: -->
+  <link href='/assets/apple-touch-icon-114x114.png' rel='apple-touch-icon-precomposed' sizes='114x114'>
+  <!-- For iPhone with high-resolution Retina display running iOS ≥ 7: -->
+  <link href='/assets/apple-touch-icon-120x120.png' rel='apple-touch-icon-precomposed' sizes='120x120'>
+  <!-- For iPad with high-resolution Retina display running iOS ≤ 6: -->
+  <link href='/assets/apple-touch-icon-144x144.png' rel='apple-touch-icon-precomposed' sizes='144x144'>
+  <!-- For iPad with high-resolution Retina display running iOS ≥ 7: -->
+  <link href='/assets/apple-touch-icon-152x152.png' rel='apple-touch-icon-precomposed' sizes='152x152'>
+  <!-- Chrome v31+ for Android -->
+  <link href='/assets/apple-touch-icon-152x152.png' rel='icon' sizes='196x196'>
+  <meta content='pt_BR' property='og:locale'>
+  <meta content='Boleto Simples' property='og:site_name'>
+  <meta content='Receba via Boleto Bancário, sem ter conta em banco - Boleto Simples' property='og:title'>
+  <meta content='Gerar boleto bancario na internet com sistema online sem ter conta em banco é fácil com o Boleto Simples' property='og:description'>
+  <meta content='https://boletosimples.com.br/' property='og:url'>
+  <meta content='https://boletosimples.com.br/logo.png' property='og:image'>
+  <meta content='image/png' property='og:image:type'>
+  <meta content='500' property='og:image:width'>
+  <meta content='85' property='og:image:height'>
+  <meta content='website' property='og:type'>
   <link href="/css/style.css" rel="stylesheet">
   <link href="/css/github.css" rel="stylesheet">
   <!-- Favicon -->
-  <link rel="icon" href="/favicon.ico">
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300' rel='stylesheet' type='text/css'>
 </head>
-<body>
-  <header>
-    <div class="container">
-      <a class="logo pull-left" href="https://boletosimples.com.br" title="Voltar para o Início">
-        <img src="/img/logo.png" alt="logotipo Boleto Simples" height="30"/>
-      </a>
-      {% include main-menu.html %}
-      <button type="button" class="hidden-lg btn btn-primary btn-xs pull-right" data-toggle="offcanvas">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
+<body class="home-generic">
+  <header id='main-header'>
+    <div class='containner'>
+      <div class='logo'>
+        <a href="https://boletosimples.com.br/"><img alt="Boleto Simples" src="/img/logo.png" title="Gerar Boleto Bancário com Boleto Simples" /></a>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="https://boletosimples.com.br/">O que é?</a></li>
+          <li><a href="https://boletosimples.com.br/recursos">Recursos</a></li>
+          <li><a href="https://boletosimples.com.br/preco">Preço</a></li>
+          <li><a href="http://suporte.boletosimples.com.br">Suporte</a></li>
+        </ul>
+        <a class="signup-trigger" href="https://boletosimples.com.br/users/sign_up">Criar conta</a>
+        <a href="#" id="menu-trigger">☰</a>
+      </nav>
     </div>
   </header>
+  <section class='home-recursos'>
+    <div class='first-call generic-call'>
+      <div class='containner'>
+        <h2>Documentação para Desenvolvedores</h2>
+      </div>
+    </div>
+  </section>

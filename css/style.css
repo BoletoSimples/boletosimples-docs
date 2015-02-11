@@ -4,19 +4,76 @@
 @import url("fontface.css");
 @import url("mobile.css");
 
+@import url("header.css");
+@import url("footer.css");
+
 /*resets*/
 
-a:hover {
-  color: #008de4;
+/* line 20, /Users/rafael/Projects/boletosimples-app/app/assets/stylesheets/home/style.scss */
+.containner {
+  width: 960px;
+  margin: auto;
+  padding: 0;
+}
+
+/* line 25, /Users/rafael/Projects/boletosimples-app/app/assets/stylesheets/home/style.scss */
+a {
   text-decoration: none;
 }
 
+/* line 29, /Users/rafael/Projects/boletosimples-app/app/assets/stylesheets/home/style.scss */
+.half {
+  display: inline-block;
+  padding-top: 30px;
+  text-align: center;
+  vertical-align: middle;
+  width: calc(100% / 2.1);
+}
+
+/* line 37, /Users/rafael/Projects/boletosimples-app/app/assets/stylesheets/home/style.scss */
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 43, /Users/rafael/Projects/boletosimples-app/app/assets/stylesheets/home/style.scss */
 body {
+  background: white;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
   color: #4d4d4d;
   font-family: 'proxima_nova_rgregular', 'Open Sans', helvetica, sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.428571429;
   overflow: hidden;
+}
+
+/* line 56, /Users/rafael/Projects/boletosimples-app/app/assets/stylesheets/home/style.scss */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "proxima-nova-soft", Helvetica, Arial, sans-serif;
+}
+
+/* line 62, /Users/rafael/Projects/boletosimples-app/app/assets/stylesheets/home/style.scss */
+.button {
+  background: #008de4;
+  color: white;
+  border-radius: 3px;
+  font-size: 1.05em;
+  letter-spacing: 0.06em;
+  padding: 15px 40px;
+  text-transform: uppercase;
+}
+/* line 70, /Users/rafael/Projects/boletosimples-app/app/assets/stylesheets/home/style.scss */
+.button:hover {
+  background: rgba(0, 141, 228, 0.8);
+  text-decoration: none;
+  color: white;
 }
 
 .btn {
@@ -36,40 +93,6 @@ body {
   margin: 3px 0;
   width: 22px;
 }
-
-/******************************************************************************/
-
-/*Header*/
-header {
-  border-bottom: solid 1px #ecf0f1;
-  padding: 20px 0;
-}
-
-header .logo { margin: 6px 0 0 0; }
-
-header nav ul { margin: 0; }
-
-header nav li {
-  display: inline-block;
-  margin: 0 10px;
-  text-transform: uppercase;
-  color: #008de4;
-}
-
-header nav li:last-child { margin-right: 0; }
-
-header nav li a {
-  color: rgba(44,62,80,0.6);
-  font-family: 'proxima_novalight', 'Open Sans', helvetica, sans-serif;
-  font-size: 0.95em;
-  font-weight: 300;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-}
-
-header .btn { font-weight: 300; }
-
-/******************************************************************************/
 
 /*Main*/
 
@@ -155,8 +178,6 @@ article h2 {
   font-weight: 600;
   padding: 0 0 5px 0;
 }
-
-article p { color: #4d4d4d; }
 
 article h3 {
   color: #393939;
@@ -251,22 +272,56 @@ article img {
 
 .tab-content { margin: 15px 0 30px 0; }
 
-/******************************************************************************/
 
-/*Footer*/
-
-footer { margin: 30px 0 0 0; }
-
-footer .copyright {
-  background: rgba(44, 62, 80, 0.98);
-  padding: 15px 0;
+/* line 413, /Users/rafael/Projects/boletosimples-app/app/assets/stylesheets/home/home.scss */
+.first-call {
+  margin-top: 40px;
 }
-
-footer .copyright p {
-  color: rgba(255, 255, 255, 0.4);
-  font-family: 'proxima_novalight';
+/* line 416, /Users/rafael/Projects/boletosimples-app/app/assets/stylesheets/home/home.scss */
+.first-call h2 {
+  text-transform: uppercase;
+  font-family: 'PT Sans Narrow', sans-serif;
   margin: 0;
+  font-size: 2.4em;
   text-align: center;
 }
+/* line 425, /Users/rafael/Projects/boletosimples-app/app/assets/stylesheets/home/home.scss */
+.first-call p {
+  margin-top: 10px;
+  font-size: 1.3em;
+  text-align: center;
+}
+/* line 436, /Users/rafael/Projects/boletosimples-app/app/assets/stylesheets/home/home.scss */
+.generic-call {
+  background: #008de4;
+  margin-top: -1px;
+  padding: 40px 0;
+}
+/* line 442, /Users/rafael/Projects/boletosimples-app/app/assets/stylesheets/home/home.scss */
+.generic-call .containner {
+  position: relative;
+}
+/* line 446, /Users/rafael/Projects/boletosimples-app/app/assets/stylesheets/home/home.scss */
+.generic-call h2 {
+  color: #fff;
+  text-align: left;
+}
 
-/******************************************************************************/
+/* line 452, /Users/rafael/Projects/boletosimples-app/app/assets/stylesheets/home/home.scss */
+.generic-entry {
+  padding: 40px 0;
+}
+/* line 455, /Users/rafael/Projects/boletosimples-app/app/assets/stylesheets/home/home.scss */
+.generic-entry p {
+  font-size: 1em;
+  line-height: 1.6em;
+  acolor: #777777;
+}
+/* line 461, /Users/rafael/Projects/boletosimples-app/app/assets/stylesheets/home/home.scss */
+.generic-entry ol {
+  margin: 20px 0;
+}
+/* line 465, /Users/rafael/Projects/boletosimples-app/app/assets/stylesheets/home/home.scss */
+.generic-entry li {
+  margin-top: 5px;
+}
