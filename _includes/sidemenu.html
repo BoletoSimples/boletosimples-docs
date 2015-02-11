@@ -3,6 +3,12 @@
   <li {% if page.url == '/' %}class="active"{% endif %}>
     <a href="/" title="Introdução">Introdução</a>
   </li>
+  <li {% if page.url == '/libraries/' %}class="active"{% endif %}>
+    <a href="/libraries" title="Bibliotecas">Bibliotecas</a>
+  </li>
+  <li {% if page.url == '/sandbox/' %}class="active"{% endif %}>
+    <a href="/sandbox" title="Sandbox">Ambiente Sandbox</a>
+  </li>
   <li class="submenu {% if page.url == '/authentication/' %}active{% endif %}">
     <a href="/authentication" title="Autenticação">Autenticação</a>
     <ul class="nav">
@@ -16,18 +22,6 @@
         <a href="/authentication/permissions" title="Permissões">Permissões</a>
       </li>
     </ul>
-  </li>
-  <li {% if page.url == '/key/' %}class="active"{% endif %}>
-    <a href="/key" title="Chave secreta da API">Chave secreta da API</a>
-  </li>
-  <li {% if page.url == '/notifications/' %}class="active"{% endif %}>
-    <a href="/notifications" title="Notificações">Notificações</a>
-  </li>
-  <li {% if page.url == '/libraries/' %}class="active"{% endif %}>
-    <a href="/libraries" title="Bibliotecas">Bibliotecas</a>
-  </li>
-  <li {% if page.url == '/sandbox/' %}class="active"{% endif %}>
-    <a href="/sandbox" title="Sandbox">Ambiente Sandbox</a>
   </li>
   <li {% if page.url == '/reference/' %}class="active"{% endif %}>
     <a href="/reference" title="Referências">Referências</a>
@@ -46,6 +40,14 @@
       </li>
       <li {% if page.url == '/reference/v1/partner/users/' %}class="active"{% endif %}>
         <a href="/reference/v1/partner/users" title="Parceiros e Usuários">Parceiros - Usuários</a>
+      </li>
+    </ul>
+  </li>
+  <li class="submenu {% if page.url == '/notifications/' %}active{% endif %}">
+    <a href="/notifications" title="Notificações">Notificações</a>
+    <ul class="nav">
+      <li {% if page.url == '/notifications/secret_key/' %}class="active"{% endif %}>
+        <a href="/notifications/secret_key" title="Chave secreta">Chave Secreta</a>
       </li>
     </ul>
   </li>
