@@ -628,7 +628,7 @@ BoletoSimples::BankBillet.find(113)
         Number
       </td>
       <td>
-        Quantidade de registros por página
+        Quantidade de registros por página (Maximo de 250)
       </td>
     </tr>
   </tbody>
@@ -650,7 +650,7 @@ curl -i \
 -u $BOLETOSIMPLES_TOKEN:x \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X GET https://sandbox.boletosimples.com.br/api/v1/bank_billets?page=1&per_page=50
+-X GET "https://sandbox.boletosimples.com.br/api/v1/bank_billets?page=1&per_page=50"
 </pre>
 
     <small>Resposta:</small>
@@ -659,7 +659,8 @@ curl -i \
 HTTP/1.1 200 OK
 Date: Fri, 17 Oct 2014 19:46:16 GMT
 Status: 200 OK
-Total: 2
+Link: <https://sandbox.boletosimples.com.br/api/v1/bank_billets?page=3&per_page=50>; rel="last", <https://sandbox.boletosimples.com.br/api/v1/bank_billets?page=2&per_page=50>; rel="next"
+Total: 101
 Content-Type: application/json; charset=utf-8
 ...
 
@@ -729,6 +730,14 @@ BoletoSimples::BankBillet.all(page: 1, per_page: 50)
     "amount"=>9.01
   }
 ]
+
+# Após realizar a chamada na listagem, você terá acesso aos seguintes dados:
+
+BoletoSimples.last_request.total # número total de boletos
+BoletoSimples.last_request.links[:first] # url da primeira página
+BoletoSimples.last_request.links[:prev] # url da página anterior
+BoletoSimples.last_request.links[:next] # url da próxima página
+BoletoSimples.last_request.links[:last] # url da última página
 </pre>
 
   </div>
