@@ -696,7 +696,7 @@ Content-Type: application/json; charset=utf-8
     <small>Requisição</small>
 
 <pre class="ruby">
-BoletoSimples::BankBillet.all
+BoletoSimples::BankBillet.all(page: 1, per_page: 50)
 </pre>
 
     <small>Resposta:</small>

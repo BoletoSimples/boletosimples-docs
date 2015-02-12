@@ -595,7 +595,7 @@ Content-Type: application/json; charset=utf-8
     <small>Requisição:</small>
 
 <pre class="ruby">
-BoletoSimples::Customer.all
+BoletoSimples::Customer.all(page: 1, per_page: 50)
 </pre>
 
     <small>Resposta:</small>
