@@ -18,7 +18,7 @@
 
 /* line 25, /Users/rafael/Projects/boletosimples-app/app/assets/stylesheets/home/style.scss */
 a {
-  text-decoration: none;
+  text-decoration: none !important;
 }
 
 /* line 29, /Users/rafael/Projects/boletosimples-app/app/assets/stylesheets/home/style.scss */
