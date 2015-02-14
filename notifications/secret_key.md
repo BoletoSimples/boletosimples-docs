@@ -22,7 +22,7 @@ compare se a chave presente na requisição é a mesma chave que está presente 
 Para saber qual é a sua **Chave Secreta**,
 você precisa ir na [página de API (Sandbox)](https://sandbox.boletosimples.com.br/conta/api) da sua conta.
 
-![](/img/api-token-key.png)
+![](/img/api-secret-key.png)
 
 A chave pode ser renovada a qualquer momento,
 sempre que você precisar ou entender que para a sua segurança,
