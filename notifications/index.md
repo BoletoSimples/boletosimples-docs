@@ -46,7 +46,7 @@ Onde:
 *   `shortener_url` - URL pública do boleto.
 *   `meta` - Campo Genérico -  Aceita qualquer formato passado. Pode ser usado para salvar dados que não existam dentro do Boleto Simples.
 *   `environment` - Ambiente de onde veio a requisição (sandbox, test, development, production) - Considere apenas `production` como transação oficial.
-*   `secret_key` - [Chave secreta da API](/key).
+*   `secret_key` - [Leia mais](/notifications/secret_key).
 
 #### Retorno
 

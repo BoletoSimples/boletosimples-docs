@@ -1,7 +1,7 @@
 ---
 layout: pt
 title: Chave secreta - API do Boleto Simples
-en: /en/key
+en: /en/notifications/secret_key
 ---
 
 ## Chave Secreta
