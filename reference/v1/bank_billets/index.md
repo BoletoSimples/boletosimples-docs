@@ -747,7 +747,7 @@ BoletoSimples.last_request.links[:last] # url da última página
 
 `PUT /api/v1/bank_billets/:id/cancel`
 
-Você pode cancelar boletos nos status de Aberto(`opened`) ou Vencido(`due`)
+Você pode cancelar boletos nos status de Aberto(`opened`) ou Vencido(`overdue`)
 
 #### Exemplo de requisição inválida
 
@@ -868,7 +868,7 @@ Content-Type: application/json; charset=utf-8
 <pre class="ruby">
 @bank_billet = BoletoSimples::BankBillet.find(1)
 @bank_billet.status
-# => "due"
+# => "overdue"
 @bank_billet.cancel
 </pre>
 

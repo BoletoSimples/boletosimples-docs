@@ -36,7 +36,7 @@ Onde:
 
 *   `id` - Identificador do registro no Boleto Simples.
 *   `event` - Evento que modificou alguma informação no boleto. Por hora o único possível valor é `status-changed`. Este campo irá ser usado nas próximas implementações de notificações.
-*   `status` - Status do boleto bancário, cujos possíveis valores são: `generating`, `opened`, `paid`, `canceled`, `due`.
+*   `status` - Status do boleto bancário, cujos possíveis valores são: `generating`, `opened`, `paid`, `canceled`, `overdue`.
 *   `expire_at` - Data de vencimento.
 *   `customer_person_name` - Nome do cliente.
 *   `customer_cnpj_cpf` - CPF ou CNPJ do cliente.
