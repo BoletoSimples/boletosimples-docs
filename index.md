@@ -22,7 +22,7 @@ Os benefícios da API são:
 
 Para dúvidas sobre a API faça suas perguntas em nossa [central de suporte](http://suporte.boletosimples.com.br).
 
-## Endpoint da API
+### Endpoint da API
 
 A URL Base da API é `https://boletosimples.com.br/api/v1/`
 
@@ -30,11 +30,11 @@ Todas as requisições devem usar o schema `https` por questões de segurança.
 
 O Boleto Simples possui também um [Ambiente Sandbox](/sandbox).
 
-## Formato
+### Formato
 
 A API aceita apenas o formato `JSON`, sendo assim todas as requisições usam content type `application/json`.
 
-## Convenções
+### Convenções
 
 Utilizamos as seguintes convenções nesta documentação:
 
@@ -69,7 +69,7 @@ Utilizamos as seguintes convenções nesta documentação:
   </tbody>
 </table>
 
-## Códigos de Retorno
+### Códigos de Retorno
 
 A API retorna os códigos de resposta HTTP. Estas são as informações mais relevantes:
 
@@ -116,7 +116,7 @@ A API retorna os códigos de resposta HTTP. Estas são as informações mais rel
   </tbody>
 </table>
 
-## Segurança
+### Segurança
 
 O Boleto Simples utiliza Certificados SSL 2048 bits.
 
@@ -129,7 +129,7 @@ requisição realizada na API estará fora do protocolo seguro.
 
 Todas as requisições realizadas nos servidore do Boleto Simples serão criptografadas.
 
-## Identificando sua aplicação
+### Identificando sua aplicação
 
 Você deve incluir o header User-Agent com o nome da sua aplicação
 e um endereço de e-mail válido, para que possamos entrar em contato caso:
@@ -143,7 +143,7 @@ Segue um Exemplo:
 
 Se você não informar este cabeçalho, você receberá um erro `400 Bad Request.`
 
-## Cache HTTP
+### Cache HTTP
 
 Você deve fazer uso dos cabeçalhos HTTP de cache para diminuir a
 carga em nossos servidores (e aumentar a velocidade do seu aplicativo!).
@@ -159,7 +159,7 @@ evitar de te enviar os dados que você já tem.
 [Mais informações sobre Cache HTTP (em inglês)](http://www.mnot.net/cache_docs/)
 
 
-## Tratamento de erros
+### Tratamento de erros
 
 Se os nossos servidores estiverem com problema, sua requisição receberá um retorno de erro com status 5xx.
 
@@ -178,12 +178,12 @@ Nós temos uma página que informa o status dos servidores do Boleto Simples em
 [http://status.boletosimples.com.br/](http://status.boletosimples.com.br/ "Status")
 
 
-## Limite de Requisições
+### Limite de Requisições
 
 Existem dois tipos de limite de requisições. Em ambos os casos a
 contagem é feita para cada usuário.
 
-### Intervalo
+#### Intervalo
 
 Cada usuário pode realizar uma requisição a cada 1 segundo. Caso
 o usuário realize duas requisições simultâneas, o servidor
@@ -191,7 +191,7 @@ retorna o status HTTP 429 Too Many Requests. Neste caso, o
 servidor envia o header `Retry-After` com o número de
 segundos que você deve esperar até realizar a próxima requisição.
 
-### Requisições por Hora
+#### Requisições por Hora
 
 Cada usuário pode realizar no máximo 500 requisições por hora.
 O número de requisições feitas pelo usuário é
@@ -204,7 +204,7 @@ A cada requisição realizada, o servidor retorna os headers
 número de requisições permitidas e o número de requisições
 restantes para aquela hora. Exemplo:
 
-### Exemplo
+#### Exemplo
 
 <small>Requisição:</small>
 
@@ -218,7 +218,7 @@ curl -i \
 
 <small>Resposta:</small>
 
-<pre class="bash">
+<pre class="http">
 HTTP/1.1 200 OK
 Date: Fri, 05 Nov 2010 12:00:00 GMT
 Content-Type: application/xml; charset=utf-8

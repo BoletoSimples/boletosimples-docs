@@ -37,7 +37,7 @@ curl -i \
 
     <small>Resposta:</small>
 
-<pre class="bash">
+<pre class="http">
 HTTP/1.1 200 OK
 Date: Fri, 17 Oct 2014 18:14:56 GMT
 Status: 200 OK
@@ -54,7 +54,7 @@ client.userinfo
 
     <small>Resposta:</small>
 
-<pre class="html">
+<pre class="json">
 { ... json com informações do usuário ... }
 </pre>
   </div>
@@ -81,7 +81,7 @@ curl -i \
 
     <small>Resposta:</small>
 
-<pre class="bash">
+<pre class="http">
 HTTP/1.1 401 Unauthorized
 Date: Fri, 17 Oct 2014 18:20:18 GMT
 Status: 401 Unauthorized

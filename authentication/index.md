@@ -27,7 +27,7 @@ Nós oferecemos duas formas de autenticação para acessar a API do Boleto Simpl
   </tbody>
 </table>
 
-## Segurança
+### Segurança
 
 #### Salve as credenciais de forma segura!
 

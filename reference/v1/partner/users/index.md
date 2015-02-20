@@ -5,7 +5,7 @@ en: /en/reference
 breadcrumb: Parceiros
 ---
 
-## Parceiros
+## API de Parceiros
 
 ### Criar usuário
 

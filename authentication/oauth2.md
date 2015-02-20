@@ -140,27 +140,27 @@ curl -i \
 
         <small>Resposta em caso de erro:</small>
 
-        <pre class="bash">
-        HTTP/1.1 401 Unauthorized
-        Date: Fri, 17 Oct 2014 18:39:47 GMT
-        Status: 401 Unauthorized
-        Content-Type: application/json; charset=utf-8
-        ...
+    <pre class="http">
+    HTTP/1.1 401 Unauthorized
+    Date: Fri, 17 Oct 2014 18:39:47 GMT
+    Status: 401 Unauthorized
+    Content-Type: application/json; charset=utf-8
+    ...
 
-        {"error":"invalid_grant","error_description":"A permissão de autorização provida é inválida, está expirada, revogada, não coincide com a URL de redirecionamento usada na requisição de autorização ou foi emitida por outro cliente."}
-        </pre>
+    {"error":"invalid_grant","error_description":"A permissão de autorização provida é inválida, está expirada, revogada, não coincide com a URL de redirecionamento usada na requisição de autorização ou foi emitida por outro cliente."}
+    </pre>
 
         <small>Resposta em caso de sucesso:</small>
 
-        <pre class="bash">
-        HTTP/1.1 200 OK
-        Date: Fri, 17 Oct 2014 18:39:47 GMT
-        Status: 200 OK
-        Content-Type: application/json; charset=utf-8
-        ...
+    <pre class="http">
+    HTTP/1.1 200 OK
+    Date: Fri, 17 Oct 2014 18:39:47 GMT
+    Status: 200 OK
+    Content-Type: application/json; charset=utf-8
+    ...
 
-        {"access_token":"ada046e3cc","token_type":"bearer","scope":"login"}
-        </pre>
+    {"access_token":"ada046e3cc","token_type":"bearer","scope":"login"}
+    </pre>
       </div>
       <div class="tab-pane" id="ruby2">
         <pre class="ruby">
@@ -196,14 +196,14 @@ curl -i \
 
         <small>Resposta:</small>
 
-        <pre class="bash">
-        HTTP/1.1 200 OK
-        Date: Fri, 17 Oct 2014 18:14:56 GMT
-        Status: 200 OK
-        ...
+    <pre class="http">
+    HTTP/1.1 200 OK
+    Date: Fri, 17 Oct 2014 18:14:56 GMT
+    Status: 200 OK
+    ...
 
-        # dados do usuário que autorizou o acesso
-        </pre>
+    # dados do usuário que autorizou o acesso
+    </pre>
 
       </div>
       <div class="tab-pane" id="ruby3">

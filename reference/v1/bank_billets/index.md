@@ -324,7 +324,7 @@ curl -i \
 
     <small>Resposta:</small>
 
-<pre class="bash">
+<pre class="http">
 HTTP/1.1 422 Unprocessable Entity
 Date: Fri, 17 Oct 2014 18:39:47 GMT
 Status: 422 Unprocessable Entity
@@ -362,7 +362,7 @@ BoletoSimples::BankBillet.create(
 
     <small>Resposta:</small>
 
-<pre class="bash">
+<pre class="ruby">
 {
   "errors"=> {
     "customer_cnpj_cpf" => ["não pode ficar em branco"],
@@ -397,7 +397,7 @@ curl -i \
 
     <small>Resposta:</small>
 
-<pre class="bash">
+<pre class="http">
 HTTP/1.1 201 Created
 Date: Fri, 17 Oct 2014 19:30:06 GMT
 Status: 201 Created
@@ -514,7 +514,7 @@ curl -i \
 
 <small>Resposta:</small>
 
-<pre class="bash">
+<pre class="http">
 HTTP/1.1 200 OK
 Date: Fri, 17 Oct 2014 19:46:16 GMT
 Status: 200 OK
@@ -655,7 +655,7 @@ curl -i \
 
     <small>Resposta:</small>
 
-<pre class="bash">
+<pre class="http">
 HTTP/1.1 200 OK
 Date: Fri, 17 Oct 2014 19:46:16 GMT
 Status: 200 OK
@@ -770,7 +770,7 @@ curl -i \
 
     <small>Resposta:</small>
 
-<pre class="bash">
+<pre class="http">
 HTTP/1.1 200 OK
 Date: Fri, 17 Oct 2014 19:46:16 GMT
 Status: 200 OK
@@ -828,7 +828,7 @@ curl -i \
 
     <small>Resposta:</small>
 
-<pre class="bash">
+<pre class="http">
 HTTP/1.1 200 OK
 Date: Fri, 17 Oct 2014 19:46:16 GMT
 Status: 200 OK

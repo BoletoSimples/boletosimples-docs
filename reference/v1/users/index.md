@@ -11,9 +11,9 @@ breadcrumb: Usuário Autenticado
 
 `GET /api/v1/userinfo`
 
-Quando acessado através do [OAuth2](/authentication/oauth2), as informações retornadas variam de acordo com as [permissões](/authentication/permissions) concedidas pelo usuário de acordo com a tabela abaixo:
+Quando acessado através do [OAuth2](/authentication/oauth2), as informações retornadas variam de acordo com as [permissões](/authentication/permissions) concedidas pelo usuário conforme a tabela abaixo:
 
-Quando acessodo através do [Token de Acesso](/authentication/token), todass as informações são retornadas.
+Quando acessado através do [Token de Acesso](/authentication/token), todass as informações são retornadas.
 
 <table class='table table-bordered'>
   <thead>

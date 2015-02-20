@@ -245,26 +245,6 @@ table small {
   text-transform: uppercase;
 }
 
-article h3#parceiros {
-  color: #868686;
-  font-family: proxima_nova_rgregular;
-  text-align: center;
-}
-
-article h3#parceiros:before,
-article h3#parceiros:after {
-  border-top: dotted 1px #bebebe;
-  content: " ";
-  display: inline-block;
-  height: 1px;
-  margin: 5px 10px;
-  width: 43%;
-}
-
-article h3#parceiros:before { margin-left: 0; }
-
-article h3#parceiros:after { margin-right: 0; }
-
 article strong,
 article b { font-family: 'proxima_nova_rgbold'; }
 

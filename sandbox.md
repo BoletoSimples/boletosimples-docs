@@ -12,7 +12,7 @@ Este ambiente é completamente separado do ambiente de Produção. Nenhum dado �
 
 A versão do sistema no ambiente Sandbox é sempre a mesma versão do ambiente de Produção.
 
-## Começando
+### Começando
 
 Para começar a utilizar o ambiente Sandbox, é necessário criar uma conta neste ambiente, através do endereço [https://sandbox.boletosimples.com.br/users/sign_up](https://sandbox.boletosimples.com.br/users/sign_up).
 
@@ -22,13 +22,13 @@ Nenhuma validação de conta é realizada neste ambiente e logo após a criaçã
 
 Atenção que o token de acesso da conta no ambiente Sandbox é diferente do token da sua conta no ambiente de Produção.
 
-## Endpoint do Sandbox
+### Endpoint do Sandbox
 
 A URL Base do ambiente Sandbox é `https://sandbox.boletosimples.com.br/api/v1/`
 
 Todas as requisições devem usar o schema `https` por questões de segurança.
 
-## Restrições
+### Restrições
 
 O ambiente Sandbox não deve ser usado com o objetivo de gerar boletos bancários reais. Ele deve ser usado apenas para testar a integração de seu sistema com a API do Boleto Simples, sem afetar os dados da sua conta real.
 
@@ -41,13 +41,13 @@ Por esse motivo, este ambiente possui algumas restrições. São elas:
 *   As instruções para o caixa no boleto gerado vão com a mensagem: **"SR(a) CAIXA, NÃO AUTORIZAMOS RECEBER ESTE BOLETO"**.
 *   Nenhum valor é transferido para nenhuma conta bancária caso um boleto bancário gerado pelo ambiente Sandbox seja pago.
 
-## Pagamento
+### Pagamento
 
 Não pague um boleto gerado pelo ambiente Sandbox sob nenhuma hipótese.
 
 Ao realizar login no Ambiente de Sandbox é possível emular o pagamento de um boleto.
 
-## Fraude
+### Fraude
 
 Os boletos de teste gerados pelo ambiente Sandbox não são válidos e não devem ser pagos sob nenhuma hipótese.
 
