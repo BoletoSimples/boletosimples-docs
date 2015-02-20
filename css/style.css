@@ -182,10 +182,18 @@ article h2 {
 article h3 {
   color: #393939;
   font-family: 'proxima_nova_rgbold';
-  font-size: 18px;
+  font-size: 22px;
 }
 
 h3 + table { margin: 0 0 35px 0 !important; }
+
+article h4 {
+  color: #393939;
+  font-family: 'proxima_nova_rgbold';
+  font-size: 16px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
 
 article code {
   background-color: rgba(0,0,0,0.04);
