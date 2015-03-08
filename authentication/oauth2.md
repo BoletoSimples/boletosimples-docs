@@ -66,7 +66,7 @@ Você também deverá nos fornecer uma URL de redirecionamento `redirect_uri` pa
 
 OAuth2 requer que o usuário autorize o acesso da sua app à conta dele. Para autenticar o usuário no OAuth2:
 
-*   Use o `client_id` e `client_secret` que você obteve conosco durante o registro para redircionar o usuário para a `Authorize URL`. Opcionalmente inclua o `scope` para acessar alguma [informação em específico](/permissions).
+*   Use o `client_id` e `client_secret` que você obteve conosco durante o registro para redircionar o usuário para a `Authorize URL`. Opcionalmente inclua o `scope` para acessar alguma [informação em específico](/authentication/permissions).
 *   Se o usuário autorizar sua app, ele será redirecionado para a `redirect_uri` que você configurou no registro com o parâmetro `code`.
 *   Use o parâmetro `code` recebido para gerar um `access_token` fazendo uma requisição no `Token URL`.
 *   Use o `access_token` para fazer as requisições em nome do usuário.
