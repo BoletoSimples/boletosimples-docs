@@ -92,7 +92,6 @@ Content-Type: application/json; charset=utf-8
   "address_complement": "709",
   "phone_number": "2199999999",
   "withdrawal_period": "biweekly",
-  "notification_url": "http://example.com.br/notify",
   "first_name": "Margret",
   "middle_name": "Simões",
   "last_name": "Gonçalo",

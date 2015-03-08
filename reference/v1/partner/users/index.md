@@ -237,21 +237,6 @@ breadcrumb: Parceiros
 
     <tr>
       <td>
-        <strong>notification_url</strong>
-      </td>
-      <td>
-        Não
-      </td>
-      <td>
-        String
-      </td>
-      <td>
-        URL de notificação
-      </td>
-    </tr>
-
-    <tr>
-      <td>
         <strong>date_of_birth</strong>
       </td>
       <td>

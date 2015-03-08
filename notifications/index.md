@@ -4,7 +4,9 @@ title: Notificações - API do Boleto Simples
 en: /en/notifications
 ---
 
-## Notificações
+## Notificações (Deprecated)
+
+<div class="alert alert-danger"><strong>ATENÇÃO</strong> Estas notificações estão descontinuadas e serão removidas do sistema em breve. Para receber notificações sobre as mudanças que ocorrem no sistema, utilize os <a href="/webhooks">Webhooks</a>.</div>
 
 ### Boletos
 

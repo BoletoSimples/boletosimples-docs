@@ -4,7 +4,9 @@ title: Chave secreta - API do Boleto Simples
 en: /en/notifications/secret_key
 ---
 
-## Chave Secreta
+## Chave Secreta (Deprecated)
+
+<div class="alert alert-danger"><strong>ATENÇÃO</strong> Estas notificações estão descontinuadas e serão removidas do sistema em breve. Para receber notificações sobre as mudanças que ocorrem no sistema, utilize os <a href="/webhooks">Webhooks</a>.</div>
 
 #### Chave autenticadora de requisições das notificações
 

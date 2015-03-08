@@ -270,7 +270,8 @@ breadcrumb: Boletos
     </tr>
     <tr>
       <td>
-        <strong> notification_url </strong>
+        <strong> notification_url </strong><br/>
+        <span style="color: red">DESCONTINUADO</span>
       </td>
       <td>
         Não
@@ -279,8 +280,7 @@ breadcrumb: Boletos
         String
       </td>
       <td>
-        URL de notificação para onde serão enviadas notificações nas mudanças de status do boleto.
-        <a href="/notifications">Leia mais</a>
+        Não use mais este campo, este recurso foi substituido pelos <a href="/webhooks">Webhooks</a>.
       </td>
     </tr>
     <tr>
@@ -354,8 +354,7 @@ BoletoSimples::BankBillet.create(
     "customer_state" => 'RJ',
     "customer_zipcode" => '12312-123',
     "description" => 'Despesas do contrato 0012',
-    "expire_at" => '2014-01-01',
-    "notification_url" => 'http://example.com.br/notify'
+    "expire_at" => '2014-01-01'
   }
 )
 </pre>
@@ -423,7 +422,6 @@ Content-Type: application/json; charset=utf-8
   "customer_address_complement":null,
   "customer_phone_number":null,
   "customer_email":null,
-  "notification_url":null,
   "send_email_on_creation":null,
   "created_via_api":true,
   "customer_city_name":null,
@@ -451,8 +449,7 @@ BoletoSimples::BankBillet.create(
     "customer_state" => 'RJ',
     "customer_zipcode" => '12312-123',
     "description" => 'Despesas do contrato 0012',
-    "expire_at" => '2014-01-01',
-    "notification_url" => 'http://example.com.br/notify'
+    "expire_at" => '2014-01-01'
   }
 )
 </pre>
@@ -478,7 +475,6 @@ BoletoSimples::BankBillet.create(
   "description" => "Despesas do contrato 0012",
   "expire_at" => "2014-01-01",
   "id" => 113,
-  "notification_url" => "http://example.com.br/notify",
   "paid_amount" => 0.0,
   "paid_at" => nil,
   "send_email_on_creation" => nil,
@@ -539,7 +535,6 @@ Content-Type: application/json; charset=utf-8
   "customer_address_complement":null,
   "customer_phone_number":null,
   "customer_email":null,
-  "notification_url":null,
   "send_email_on_creation":null,
   "created_via_api":true,
   "customer_city_name":null,
@@ -576,7 +571,6 @@ BoletoSimples::BankBillet.find(113)
   "customer_address_complement"=>"Sala 4",
   "customer_phone_number"=>"2112123434",
   "customer_email"=>"cliente@example.com",
-  "notification_url"=>"http://example.com.br/notify",
   "send_email_on_creation"=>nil,
   "created_via_api"=>true,
   "customer_city_name"=>"Rio de Janeiro",
@@ -683,7 +677,6 @@ Content-Type: application/json; charset=utf-8
     "customer_address_complement":null,
     "customer_phone_number":null,
     "customer_email":null,
-    "notification_url":null,
     "send_email_on_creation":null,
     "created_via_api":true,
     "customer_city_name":null,
@@ -722,7 +715,6 @@ BoletoSimples::BankBillet.all(page: 1, per_page: 50)
     "customer_address_complement"=>"Sala 4",
     "customer_phone_number"=>"2112123434",
     "customer_email"=>"cliente@example.com",
-    "notification_url"=>"http://example.com.br/notify",
     "send_email_on_creation"=>nil,
     "created_via_api"=>true,
     "customer_city_name"=>"Rio de Janeiro",
@@ -853,7 +845,6 @@ Content-Type: application/json; charset=utf-8
   "customer_address_complement":null,
   "customer_phone_number":null,
   "customer_email":null,
-  "notification_url":null,
   "send_email_on_creation":null,
   "created_via_api":true,
   "customer_city_name":null,
@@ -893,7 +884,6 @@ Content-Type: application/json; charset=utf-8
   "customer_address_complement"=>"Sala 4",
   "customer_phone_number"=>"2112123434",
   "customer_email"=>"cliente@example.com",
-  "notification_url"=>"http://example.com.br/notify",
   "send_email_on_creation"=>nil,
   "created_via_api"=>true,
   "customer_city_name"=>"Rio de Janeiro",
