@@ -308,6 +308,7 @@ breadcrumb: Boletos
 <ul class="nav nav-tabs" role="tablist">
   <li class="active"><a href="#bash" role="tab" data-toggle="tab">Bash</a></li>
   <li><a href="#ruby" role="tab" data-toggle="tab">Ruby</a></li>
+  <li><a href="#php" role="tab" data-toggle="tab">PHP</a></li>
 </ul>
 
 <div class="tab-content">
@@ -338,40 +339,88 @@ Content-Type: application/json; charset=utf-8
   <div class="tab-pane" id="ruby">
     <small>Requisição:</small>
 <pre class="ruby">
-BoletoSimples::BankBillet.create(
-  {
-    "amount" => 19.01,
-    "customer_address" => 'Rua quinhentos',
-    "customer_address_complement" => 'Sala 4',
-    "customer_address_number" => '111',
-    "customer_city_name" => 'Rio de Janeiro',
-    "customer_cnpj_cpf" => ' ',
-    "customer_email" => 'clientebom.com',
-    "customer_neighborhood" => 'Sao Francisco',
-    "customer_person_name" => 'Joao da Silva',
-    "customer_person_type" => 'individual',
-    "customer_phone_number" => '113223',
-    "customer_state" => 'RJ',
-    "customer_zipcode" => '12312-123',
-    "description" => 'Despesas do contrato 0012',
-    "expire_at" => '2014-01-01'
-  }
-)
+@bank_billet = BoletoSimples::BankBillet.create({amount: 9.10})
+if @bank_billet.persisted?
+  puts "Sucesso :)"
+  puts @bank_billet.attributes
+else
+  puts "Erro :("
+  puts @bank_billet.response_errors
+end
 </pre>
 
     <small>Resposta:</small>
 
 <pre class="ruby">
+Erro :(
 {
-  "errors"=> {
-    "customer_cnpj_cpf" => ["não pode ficar em branco"],
-    "customer_email" => ["não é válido"],
-    "amount"=>["deve ser menor ou igual a 10"]
-  }
+  :expire_at => [
+    [0] "não pode ficar em branco",
+    [1] "não é uma data válida"
+  ],
+  :customer_person_name => [
+    [0] "não pode ficar em branco"
+  ],
+  :customer_cnpj_cpf => [
+    [0] "não pode ficar em branco"
+  ],
+  :description => [
+    [0] "não pode ficar em branco"
+  ],
+  :customer_zipcode => [
+    [0] "não pode ficar em branco"
+  ]
 }
-
 </pre>
   </div>
+    <div class="tab-pane" id="php">
+      <small>Requisição:</small>
+<pre class="php">
+$bank_billet = BoletoSimples\BankBillet::create(['amount' => 9.1]);
+if($bank_billet->isPersisted()) {
+  echo "Sucesso :)\n";
+  print_r($bank_billet->attributes());
+} else {
+  echo "Erro :(\n";
+  print_r($bank_billet->response_errors);
+}
+</pre>
+
+      <small>Resposta:</small>
+
+<pre class="php">
+Erro :(
+Array
+(
+    [expire_at] => Array
+        (
+            [0] => não pode ficar em branco
+            [1] => não é uma data válida
+        )
+
+    [customer_person_name] => Array
+        (
+            [0] => não pode ficar em branco
+        )
+
+    [customer_cnpj_cpf] => Array
+        (
+            [0] => não pode ficar em branco
+        )
+
+    [description] => Array
+        (
+            [0] => não pode ficar em branco
+        )
+
+    [customer_zipcode] => Array
+        (
+            [0] => não pode ficar em branco
+        )
+
+)
+</pre>
+    </div>
 </div>
 
 #### Criando boleto
@@ -379,6 +428,7 @@ BoletoSimples::BankBillet.create(
 <ul class="nav nav-tabs" role="tablist">
   <li class="active"><a href="#bash2" role="tab" data-toggle="tab">Bash</a></li>
   <li><a href="#ruby2" role="tab" data-toggle="tab">Ruby</a></li>
+  <li><a href="#php2" role="tab" data-toggle="tab">PHP</a></li>
 </ul>
 
 <div class="tab-content">
@@ -433,56 +483,124 @@ Content-Type: application/json; charset=utf-8
   <div class="tab-pane" id="ruby2">
     <small>Requisição:</small>
 <pre class="ruby">
-BoletoSimples::BankBillet.create(
-  {
-    "amount" => 9.01,
-    "customer_address" => 'Rua quinhentos',
-    "customer_address_complement" => 'Sala 4',
-    "customer_address_number" => '111',
-    "customer_city_name" => 'Rio de Janeiro',
-    "customer_cnpj_cpf" => '012.345.678-90',
-    "customer_email" => 'cliente@example.com',
-    "customer_neighborhood" => 'Sao Francisco',
-    "customer_person_name" => 'Joao da Silva',
-    "customer_person_type" => 'individual',
-    "customer_phone_number" => '2112123434',
-    "customer_state" => 'RJ',
-    "customer_zipcode" => '12312-123',
-    "description" => 'Despesas do contrato 0012',
-    "expire_at" => '2014-01-01'
-  }
-)
+@bank_billet = BoletoSimples::BankBillet.create({
+  amount: 9.01,
+  description: 'Despesas do contrato 0012',
+  expire_at: '2014-01-01',
+  customer_address: 'Rua quinhentos',
+  customer_address_complement: 'Sala 4',
+  customer_address_number: '111',
+  customer_city_name: 'Rio de Janeiro',
+  customer_cnpj_cpf: '012.345.678-90',
+  customer_email: 'cliente@example.com',
+  customer_neighborhood: 'Sao Francisco',
+  customer_person_name: 'Joao da Silva',
+  customer_person_type: 'individual',
+  customer_phone_number: '2112123434',
+  customer_state: 'RJ',
+  customer_zipcode: '12312-123'
+})
+if @bank_billet.persisted?
+  puts "Sucesso :)"
+  puts @bank_billet.attributes
+else
+  puts "Erro :("
+  puts @bank_billet.response_errors
+end
 </pre>
 
   <small>Resposta:</small>
 
 <pre class="ruby">
+Sucesso :)
 {
-  "amount" => 9.01,
-  "created_via_api" => true,
-  "customer_address" => "Rua quinhentos",
-  "customer_address_complement" => "Sala 4",
-  "customer_address_number" => "111",
-  "customer_city_name" => "Rio de Janeiro",
-  "customer_cnpj_cpf" => "012.345.678-90",
-  "customer_email" => "cliente@example.com",
-  "customer_neighborhood" => "Sao Francisco",
-  "customer_person_name" => "Joao da Silva",
-  "customer_person_type" => "individual",
-  "customer_phone_number" => "2112123434",
-  "customer_state" => "RJ",
-  "customer_zipcode" => "12312-123",
-  "description" => "Despesas do contrato 0012",
-  "expire_at" => "2014-01-01",
-  "id" => 113,
-  "paid_amount" => 0.0,
-  "paid_at" => nil,
-  "send_email_on_creation" => nil,
-  "shorten_url" => nil,
-  "status" => "generating"
+                         "amount" => 9.01,
+                    "description" => "Despesas do contrato 0012",
+                      "expire_at" => "2014-01-01",
+               "customer_address" => "Rua quinhentos",
+    "customer_address_complement" => "Sala 4",
+        "customer_address_number" => "111",
+             "customer_city_name" => "Rio de Janeiro",
+              "customer_cnpj_cpf" => "012.345.678-90",
+                 "customer_email" => "cliente@example.com",
+          "customer_neighborhood" => "Sao Francisco",
+           "customer_person_name" => "Joao da Silva",
+           "customer_person_type" => "individual",
+          "customer_phone_number" => "2112123434",
+                 "customer_state" => "RJ",
+               "customer_zipcode" => "12312-123",
+                             "id" => 854,
+                        "paid_at" => nil,
+                         "status" => "generating",
+                    "shorten_url" => nil,
+               "notification_url" => nil,
+         "send_email_on_creation" => nil,
+                "created_via_api" => true,
+                    "paid_amount" => 0.0
 }
 </pre>
   </div>
+    <div class="tab-pane" id="php2">
+      <small>Requisição:</small>
+<pre class="php">
+$bank_billet = BoletoSimples\BankBillet::create(array (
+  'amount' => 9.01,
+  'description' => 'Despesas do contrato 0012',
+  'expire_at' => '2014-01-01',
+  'customer_address' => 'Rua quinhentos',
+  'customer_address_complement' => 'Sala 4',
+  'customer_address_number' => '111',
+  'customer_city_name' => 'Rio de Janeiro',
+  'customer_cnpj_cpf' => '012.345.678-90',
+  'customer_email' => 'cliente@example.com',
+  'customer_neighborhood' => 'Sao Francisco',
+  'customer_person_name' => 'Joao da Silva',
+  'customer_person_type' => 'individual',
+  'customer_phone_number' => '2112123434',
+  'customer_state' => 'RJ',
+  'customer_zipcode' => '12312-123'
+));
+if($bank_billet->isPersisted()) {
+  echo "Sucesso :)\n";
+  print_r($bank_billet->attributes());
+} else {
+  echo "Erro :(\n";
+  print_r($bank_billet->response_errors);
+}
+</pre>
+
+    <small>Resposta:</small>
+
+<pre class="php">
+Sucesso :)
+Array
+(
+    [id] => 857
+    [expire_at] => 2014-01-01
+    [paid_at] =>
+    [description] => Despesas do contrato 0012
+    [status] => generating
+    [shorten_url] =>
+    [customer_person_type] => individual
+    [customer_person_name] => Joao da Silva
+    [customer_cnpj_cpf] => 012.345.678-90
+    [customer_address] => Rua quinhentos
+    [customer_state] => RJ
+    [customer_neighborhood] => Sao Francisco
+    [customer_zipcode] => 12312-123
+    [customer_address_number] => 111
+    [customer_address_complement] => Sala 4
+    [customer_phone_number] => 2112123434
+    [customer_email] => cliente@example.com
+    [notification_url] =>
+    [send_email_on_creation] =>
+    [created_via_api] => 1
+    [customer_city_name] => Rio de Janeiro
+    [paid_amount] => 0
+    [amount] => 9.01
+)
+</pre>
+    </div>
 </div>
 
 ### Informações do boleto
@@ -494,6 +612,7 @@ BoletoSimples::BankBillet.create(
 <ul class="nav nav-tabs" role="tablist">
   <li class="active"><a href="#bash3" role="tab" data-toggle="tab">Bash</a></li>
   <li><a href="#ruby3" role="tab" data-toggle="tab">Ruby</a></li>
+  <li><a href="#php3" role="tab" data-toggle="tab">PHP</a></li>
 </ul>
 
 <div class="tab-content">
@@ -547,39 +666,81 @@ Content-Type: application/json; charset=utf-8
     <small>Requisição:</small>
 
 <pre class="ruby">
-BoletoSimples::BankBillet.find(113)
+@bank_billet = BoletoSimples::BankBillet.find(854)
+puts @bank_billet.attributes
 </pre>
 
     <small>Resposta:</small>
 
 <pre class="ruby">
 {
-  "id"=>113,
-  "expire_at"=>"2014-01-01",
-  "paid_at"=>nil,
-  "description"=>"Despesas do contrato 0012",
-  "status"=>"opened",
-  "shorten_url"=>"http://staging.bole.to/nhhvauui",
-  "customer_person_type"=>"individual",
-  "customer_person_name"=>"Joao da Silva",
-  "customer_cnpj_cpf"=>"012.345.678-90",
-  "customer_address"=>"Rua quinhentos",
-  "customer_state"=>"RJ",
-  "customer_neighborhood"=>"Sao Francisco",
-  "customer_zipcode"=>"12312-123",
-  "customer_address_number"=>"111",
-  "customer_address_complement"=>"Sala 4",
-  "customer_phone_number"=>"2112123434",
-  "customer_email"=>"cliente@example.com",
-  "send_email_on_creation"=>nil,
-  "created_via_api"=>true,
-  "customer_city_name"=>"Rio de Janeiro",
-  "paid_amount"=>0.0,
-  "amount"=>9.01
+                      "expire_at" => "2014-01-01",
+                        "paid_at" => nil,
+                    "description" => "Despesas do contrato 0012",
+                         "status" => "opened",
+                    "shorten_url" => "http://bole.to/xxxxxxxx",
+           "customer_person_type" => "individual",
+           "customer_person_name" => "Joao da Silva",
+              "customer_cnpj_cpf" => "012.345.678-90",
+               "customer_address" => "Rua quinhentos",
+                 "customer_state" => "RJ",
+          "customer_neighborhood" => "Sao Francisco",
+               "customer_zipcode" => "12312-123",
+        "customer_address_number" => "111",
+    "customer_address_complement" => "Sala 4",
+          "customer_phone_number" => "2112123434",
+                 "customer_email" => "cliente@example.com",
+               "notification_url" => nil,
+         "send_email_on_creation" => nil,
+                "created_via_api" => true,
+             "customer_city_name" => "Rio de Janeiro",
+                    "paid_amount" => 0.0,
+                         "amount" => 9.01,
+                             "id" => 854
 }
 </pre>
 
   </div>
+    <div class="tab-pane" id="php3">
+      <small>Requisição:</small>
+
+<pre class="php">
+$bank_billet = BoletoSimples\BankBillet::find(857);
+print_r($bank_billet->attributes());
+</pre>
+
+      <small>Resposta:</small>
+
+<pre class="php">
+Array
+(
+    [id] => 857
+    [expire_at] => 2014-01-01
+    [paid_at] =>
+    [description] => Despesas do contrato 0012
+    [status] => opened
+    [shorten_url] => http://bole.to/xxxxxxxx
+    [customer_person_type] => individual
+    [customer_person_name] => Joao da Silva
+    [customer_cnpj_cpf] => 012.345.678-90
+    [customer_address] => Rua quinhentos
+    [customer_state] => RJ
+    [customer_neighborhood] => Sao Francisco
+    [customer_zipcode] => 12312-123
+    [customer_address_number] => 111
+    [customer_address_complement] => Sala 4
+    [customer_phone_number] => 2112123434
+    [customer_email] => cliente@example.com
+    [notification_url] =>
+    [send_email_on_creation] =>
+    [created_via_api] => 1
+    [customer_city_name] => Rio de Janeiro
+    [paid_amount] => 0
+    [amount] => 9.01
+)
+</pre>
+
+    </div>
 </div>
 
 ### Listar boletos
@@ -633,6 +794,7 @@ BoletoSimples::BankBillet.find(113)
 <ul class="nav nav-tabs" role="tablist">
   <li class="active"><a href="#bash4" role="tab" data-toggle="tab">Bash</a></li>
   <li><a href="#ruby4" role="tab" data-toggle="tab">Ruby</a></li>
+  <li><a href="#php4" role="tab" data-toggle="tab">PHP</a></li>
 </ul>
 
 <div class="tab-content">
@@ -690,49 +852,52 @@ Content-Type: application/json; charset=utf-8
     <small>Requisição</small>
 
 <pre class="ruby">
-BoletoSimples::BankBillet.all(page: 1, per_page: 50)
+@bank_billets = BoletoSimples::BankBillet.all(page: 1, per_page: 2)
+puts "Boletos Retornados: #{@bank_billets.count}"
+puts "Total: #{BoletoSimples.last_request.total}"
+puts "Primeira Página: #{BoletoSimples.last_request.links[:first]}"
+puts "Página Anterior: #{BoletoSimples.last_request.links[:prev]}"
+puts "Próxima Página: #{BoletoSimples.last_request.links[:next]}"
+puts "Última Página: #{BoletoSimples.last_request.links[:last]}"
 </pre>
 
     <small>Resposta:</small>
 
-<pre class="ruby">
-[
-  {
-    "id"=>113,
-    "expire_at"=>"2014-01-01",
-    "paid_at"=>nil,
-    "description"=>"Despesas do contrato 0012",
-    "status"=>"opened",
-    "shorten_url"=>"http://staging.bole.to/nhhvauui",
-    "customer_person_type"=>"individual",
-    "customer_person_name"=>"Joao da Silva",
-    "customer_cnpj_cpf"=>"012.345.678-90",
-    "customer_address"=>"Rua quinhentos",
-    "customer_state"=>"RJ",
-    "customer_neighborhood"=>"Sao Francisco",
-    "customer_zipcode"=>"12312-123",
-    "customer_address_number"=>"111",
-    "customer_address_complement"=>"Sala 4",
-    "customer_phone_number"=>"2112123434",
-    "customer_email"=>"cliente@example.com",
-    "send_email_on_creation"=>nil,
-    "created_via_api"=>true,
-    "customer_city_name"=>"Rio de Janeiro",
-    "paid_amount"=>0.0,
-    "amount"=>9.01
-  }
-]
-
-# Após realizar a chamada na listagem, você terá acesso aos seguintes dados:
-
-BoletoSimples.last_request.total # número total de boletos
-BoletoSimples.last_request.links[:first] # url da primeira página
-BoletoSimples.last_request.links[:prev] # url da página anterior
-BoletoSimples.last_request.links[:next] # url da próxima página
-BoletoSimples.last_request.links[:last] # url da última página
+<pre class="http">
+Boletos Retornados: 2
+Total: 124
+Primeira Página:
+Página Anterior:
+Próxima Página: https://sandbox.boletosimples.com.br/api/v1/bank_billets?page=2&per_page=2
+Última Página: https://sandbox.boletosimples.com.br/api/v1/bank_billets?page=62&per_page=2
 </pre>
 
   </div>
+    <div class="tab-pane" id="php4">
+      <small>Requisição</small>
+
+<pre class="php">
+$bank_billets = BoletoSimples\BankBillet::all(['page' => 1, 'per_page' => 2]);
+echo "Boletos Retornados: " . sizeof($bank_billets) . "\n";
+echo "Total: " . BoletoSimples::$last_request->total . "\n";
+echo "Primeira Página: " . BoletoSimples::$last_request->links['first'] . "\n";
+echo "Página Anterior: " . BoletoSimples::$last_request->links['prev'] . "\n";
+echo "Próxima Página: " . BoletoSimples::$last_request->links['next'] . "\n";
+echo "Última Página: " . BoletoSimples::$last_request->links['last'] . "\n";
+</pre>
+
+      <small>Resposta:</small>
+
+<pre class="http">
+Boletos Retornados: 2
+Total: 124
+Primeira Página:
+Página Anterior:
+Próxima Página: https://sandbox.boletosimples.com.br/api/v1/bank_billets?page=2&per_page=2
+Última Página: https://sandbox.boletosimples.com.br/api/v1/bank_billets?page=62&per_page=2
+</pre>
+
+    </div>
 </div>
 
 ### Cancelar boleto
@@ -746,6 +911,7 @@ Você pode cancelar boletos nos status de Aberto(`opened`) ou Vencido(`overdue`)
 <ul class="nav nav-tabs" role="tablist">
   <li class="active"><a href="#bash5" role="tab" data-toggle="tab">Bash</a></li>
   <li><a href="#ruby5" role="tab" data-toggle="tab">Ruby</a></li>
+  <li><a href="#php5" role="tab" data-toggle="tab">PHP</a></li>
 </ul>
 
 <div class="tab-content">
@@ -780,23 +946,59 @@ Content-Type: application/json; charset=utf-8
     <small>Requisição</small>
 
 <pre class="ruby">
-@bank_billet = BoletoSimples::BankBillet.find(1)
-@bank_billet.status
-# => "paid"
-@bank_billet.cancel
+@bank_billet = BoletoSimples::BankBillet.find(863)
+puts "Status Anterior: #{@bank_billet.status}"
+if @bank_billet.cancel
+  puts "Cancelado :)"
+else
+  puts "Erro :)"
+  puts @bank_billet.response_errors
+end
+puts "Status Final: #{@bank_billet.status}"
 </pre>
 
     <small>Resposta:</small>
 
 <pre class="ruby">
-{
-  "errors"=> {
-    "status"=> ["cannot transition via cancel"]
-  }
-}
+Status Anterior: paid
+Erro :)
+{:status=>["cannot transition via cancel"]}
+Status Final: paid
 </pre>
 
   </div>
+    <div class="tab-pane" id="php5">
+      <small>Requisição</small>
+
+<pre class="php">
+$bank_billet = BoletoSimples\BankBillet::find(863);
+echo "Status Anterior: " . $bank_billet->status . "\n";
+if($bank_billet->cancel()) {
+  echo "Cancelado :)\n";
+} else {
+  echo "Erro :)\n";
+  print_r($bank_billet->response_errors);
+}
+echo "Status Final: " . $bank_billet->status . "\n";
+</pre>
+
+      <small>Resposta:</small>
+
+<pre class="php">
+Status Anterior: paid
+Erro :)
+Array
+(
+    [status] => Array
+        (
+            [0] => cannot transition via cancel
+        )
+
+)
+Status Final: paid
+</pre>
+
+    </div>
 </div>
 
 #### Exemplo de requisição válida
@@ -804,6 +1006,7 @@ Content-Type: application/json; charset=utf-8
 <ul class="nav nav-tabs" role="tablist">
   <li class="active"><a href="#bash6" role="tab" data-toggle="tab">Bash</a></li>
   <li><a href="#ruby6" role="tab" data-toggle="tab">Ruby</a></li>
+  <li><a href="#php6" role="tab" data-toggle="tab">PHP</a></li>
 </ul>
 
 <div class="tab-content">
@@ -857,40 +1060,48 @@ Content-Type: application/json; charset=utf-8
     <small>Requisição</small>
 
 <pre class="ruby">
-@bank_billet = BoletoSimples::BankBillet.find(1)
-@bank_billet.status
-# => "overdue"
-@bank_billet.cancel
+@bank_billet = BoletoSimples::BankBillet.find(862)
+puts "Status Anterior: #{@bank_billet.status}"
+if @bank_billet.cancel
+  puts "Cancelado :)"
+else
+  puts "Erro :)"
+  puts @bank_billet.response_errors
+end
+puts "Status Final: #{@bank_billet.status}"
 </pre>
 
     <small>Resposta:</small>
 
-<pre class="ruby">
-{
-  "id"=>1,
-  "expire_at"=>"2014-01-01",
-  "paid_at"=>nil,
-  "description"=>"Despesas do contrato 0012",
-  "status"=>"canceled",
-  "shorten_url"=>"http://staging.bole.to/nhhvauui",
-  "customer_person_type"=>"individual",
-  "customer_person_name"=>"Joao da Silva",
-  "customer_cnpj_cpf"=>"012.345.678-90",
-  "customer_address"=>"Rua quinhentos",
-  "customer_state"=>"RJ",
-  "customer_neighborhood"=>"Sao Francisco",
-  "customer_zipcode"=>"12312-123",
-  "customer_address_number"=>"111",
-  "customer_address_complement"=>"Sala 4",
-  "customer_phone_number"=>"2112123434",
-  "customer_email"=>"cliente@example.com",
-  "send_email_on_creation"=>nil,
-  "created_via_api"=>true,
-  "customer_city_name"=>"Rio de Janeiro",
-  "paid_amount"=>0.0,
-  "amount"=>9.01
-}
+<pre class="http">
+Status Anterior: opened
+Cancelado :)
+Status Final: canceled
 </pre>
 
   </div>
+    <div class="tab-pane" id="php6">
+      <small>Requisição</small>
+
+<pre class="php">
+$bank_billet = BoletoSimples\BankBillet::find(860);
+echo "Status Anterior: " . $bank_billet->status . "\n";
+if($bank_billet->cancel()) {
+  echo "Cancelado :)\n";
+} else {
+  echo "Erro :)\n";
+  print_r($bank_billet->response_errors);
+}
+echo "Status Final: " . $bank_billet->status . "\n";
+</pre>
+
+      <small>Resposta:</small>
+
+<pre class="http">
+Status Anterior: opened
+Cancelado :)
+Status Final: canceled
+</pre>
+
+    </div>
 </div>

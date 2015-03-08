@@ -55,6 +55,7 @@ Quando acessado através do [Token de Acesso](/authentication/token), todass as 
 <ul class="nav nav-tabs" role="tablist">
   <li class="active"><a href="#bash" role="tab" data-toggle="tab">Bash</a></li>
   <li><a href="#ruby" role="tab" data-toggle="tab">Ruby</a></li>
+  <li><a href="#php" role="tab" data-toggle="tab">PHP</a></li>
 </ul>
 
 <div class="tab-content">
@@ -115,38 +116,79 @@ Content-Type: application/json; charset=utf-8
     <small>Requisição:</small>
 
 <pre class="ruby">
-BoletoSimples::Extra.userinfo
+@userinfo = BoletoSimples::Extra.userinfo
+puts @userinfo
 </pre>
 
     <small>Resposta:</small>
 
 <pre class="ruby">
 {
-  "id"=>38,
-  "login_url"=>"https://sandbox.boletosimples.com.br/welcome?email=meuecommerce%40example.com&token=yourtoken",
-  "email"=>"meuecommerce@example.com",
-  "account_type"=>nil,
-  "first_name"=>nil,
-  "middle_name"=>nil,
-  "last_name"=>nil,
-  "full_name"=>nil,
-  "cpf"=>nil,
-  "date_of_birth"=>nil,
-  "mother_name"=>nil,
-  "father_name"=>nil,
-  "account_level"=>2,
-  "phone_number"=>nil,
-  "address_street_name"=>nil,
-  "address_number"=>nil,
-  "address_complement"=>nil,
-  "address_neighborhood"=>nil,
-  "address_postal_code"=>nil,
-  "address_city_name"=>nil,
-  "address_state"=>nil,
-  "business_name"=>nil,
-  "business_cnpj"=>nil,
-  "business_legal_name"=>nil
+                      :id => 1,
+               :login_url => "https://sandbox.boletosimples.com.br/welcome?email=user1%40example.com&token=xxx",
+                   :email => "user@example.com",
+            :account_type => nil,
+              :first_name => nil,
+             :middle_name => nil,
+               :last_name => nil,
+               :full_name => nil,
+                     :cpf => nil,
+           :date_of_birth => nil,
+             :mother_name => nil,
+             :father_name => nil,
+           :account_level => 0,
+            :phone_number => nil,
+     :address_street_name => nil,
+          :address_number => nil,
+      :address_complement => nil,
+    :address_neighborhood => nil,
+     :address_postal_code => nil,
+       :address_city_name => nil,
+           :address_state => nil,
+           :business_name => nil,
+           :business_cnpj => nil,
+     :business_legal_name => nil
 }
+</pre>
+  </div>
+  <div class="tab-pane" id="php">
+    <small>Requisição:</small>
+
+<pre class="php">
+$userinfo = BoletoSimples\Extra::userinfo();
+print_r($userinfo);
+</pre>
+
+    <small>Resposta:</small>
+
+<pre class="php">
+Array
+(
+    [id] => 1
+    [login_url] => https://sandbox.boletosimples.com.br/welcome?email=user1%40example.com&token=xxx
+    [email] => user@example.com
+    [account_type] =>
+    [first_name] =>
+    [middle_name] =>
+    [last_name] =>
+    [full_name] =>
+    [cpf] =>
+    [date_of_birth] =>
+    [mother_name] =>
+    [father_name] =>
+    [account_level] => 0
+    [phone_number] =>
+    [address_street_name] =>
+    [address_number] =>
+    [address_complement] =>
+    [address_neighborhood] =>
+    [address_postal_code] =>
+    [address_city_name] =>
+    [address_state] =>
+    [business_name] =>
+    [business_cnpj] =>
+    [business_legal_name] =>
+)
 </pre>
   </div>
 </div>
