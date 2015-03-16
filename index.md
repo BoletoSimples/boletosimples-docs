@@ -76,7 +76,7 @@ A API retorna os códigos de resposta HTTP. Estas são as informações mais rel
 <table class='table table-bordered'>
   <thead>
     <tr>
-      <th width="200px">Código</th>
+      <th width="220px">Código</th>
       <th>Descrição</th>
     </tr>
   </thead>
@@ -100,6 +100,10 @@ A API retorna os códigos de resposta HTTP. Estas são as informações mais rel
     <tr>
       <th>404 Not Found</th>
       <td>O endereço acessado não existe.</td>
+    </tr>
+    <tr>
+      <th>422 Unprocessable Entity</th>
+      <td>A requisição é válida, mas os dados passados não são válidos.</td>
     </tr>
     <tr>
       <th>429 Too Many Requests</th>
