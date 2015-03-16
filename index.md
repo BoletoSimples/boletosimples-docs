@@ -95,7 +95,7 @@ A API retorna os códigos de resposta HTTP. Estas são as informações mais rel
     </tr>
     <tr>
       <th>403 Forbidden</th>
-      <td>O acesso à API está bloqueado.</td>
+      <td>O acesso à API está bloqueado ou o usuário está bloqueado.</td>
     </tr>
     <tr>
       <th>404 Not Found</th>
@@ -104,10 +104,6 @@ A API retorna os códigos de resposta HTTP. Estas são as informações mais rel
     <tr>
       <th>429 Too Many Requests</th>
       <td>O usuário atingiu o <a href="#limite-de-requisicoes">limite de requisições</a>.</td>
-    </tr>
-    <tr>
-      <th>503 Service Unavailable</th>
-      <td>O usuário está bloqueado.</td>
     </tr>
     <tr>
       <th>500 Internal Server Error</th>
