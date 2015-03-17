@@ -8,6 +8,10 @@ en: /en/changelog
 
 #### Log das últimas alterações realizadas na API.
 
+### 08/03/2015
+
+* As notificações antigas ficaram obsoletas e não devem ser mais utilizadas. Para receber notificações sobre os eventos que ocorrem no sistema é necessário usar os Webhooks.
+
 ### 16/02/2015
 
 * O código do status (`BankBillet#status`) de um boleto vencido mudou de `due` para `overdue`.
