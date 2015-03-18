@@ -33,7 +33,7 @@ curl -i \
 -u $BOLETOSIMPLES_TOKEN:x \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X GET https://sandbox.boletosimples.com.br/api/v1/userinfo
+-X GET 'https://sandbox.boletosimples.com.br/api/v1/userinfo'
 </pre>
 
     <small>Resposta:</small>
@@ -150,7 +150,7 @@ curl -i \
 -u tokeninvalido:x \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X GET https://sandbox.boletosimples.com.br/api/v1/userinfo
+-X GET 'https://sandbox.boletosimples.com.br/api/v1/userinfo'
 </pre>
 
     <small>Resposta:</small>

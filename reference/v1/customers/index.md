@@ -523,7 +523,7 @@ curl -i \
 -u $BOLETOSIMPLES_TOKEN:x \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X GET https://sandbox.boletosimples.com.br/api/v1/customers/1
+-X GET 'https://sandbox.boletosimples.com.br/api/v1/customers/1'
 </pre>
 
     <small>Resposta:</small>
