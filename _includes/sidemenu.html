@@ -32,8 +32,17 @@
       <li {% if page.url == '/reference/v1/customers/' %}class="active"{% endif %}>
         <a href="/reference/v1/customers/" title="Clientes">Clientes</a>
       </li>
+      <li {% if page.url == '/reference/v1/events/' %}class="active"{% endif %}>
+        <a href="/reference/v1/events/" title="Eventos">Eventos</a>
+      </li>
       <li {% if page.url == '/reference/v1/transactions/' %}class="active"{% endif %}>
         <a href="/reference/v1/transactions/" title="Transações">Transações</a>
+      </li>
+      <li {% if page.url == '/reference/v1/webhooks/' %}class="active"{% endif %}>
+        <a href="/reference/v1/webhooks/" title="Webhooks">Webhooks</a>
+      </li>
+      <li {% if page.url == '/reference/v1/webhook_deliveries/' %}class="active"{% endif %}>
+        <a href="/reference/v1/webhook_deliveries/" title="Webhooks Deliveries">Webhooks Deliveries</a>
       </li>
       <li {% if page.url == '/reference/v1/users/' %}class="active"{% endif %}>
         <a href="/reference/v1/users/" title="Usuário Autenticado">Usuário Autenticado</a>
@@ -43,7 +52,7 @@
       </li>
     </ul>
   </li>
-  <li class="submenu {% if page.url == '/notifications/' %}active{% endif %}">
+  <li class="submenu {% if page.url == '/webhooks/' %}active{% endif %}">
     <a href="/webhooks" title="Webhooks">Webhooks</a>
     <ul class="nav">
       <li {% if page.url == '/webhooks/events/' %}class="active"{% endif %}>
