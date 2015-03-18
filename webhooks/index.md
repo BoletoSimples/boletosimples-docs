@@ -48,7 +48,7 @@ X-Boletosimples-Environment: sandbox
 {
   "event_code": "ping",
   "webhook": {
-    "id": 11,
+    "id": 1,
     "url": "http://requestb.in/15a0nqn1"
   }
 }

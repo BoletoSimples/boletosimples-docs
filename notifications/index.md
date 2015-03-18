@@ -63,12 +63,12 @@ Considerando que o valor do `notification_url` passado na criação do boleto ba
 <pre class="bash">
 curl -i \
 -d '{"id":1,"event":"status-changed","status":"paid","expire_at":'2014-10-31',"customer_person_name":'Boleto Simples',"customer_cnpj_cpf":'05.813.794/0001-26',"amount":'55.78',"paid_amount":'55.78',"paid_at":'2014-10-30',"shortener_url":'http://bole.to/identificador',"meta":'meu metadado',"environment": 'sandbox'}' \
--X POST http://setusite.com.br/boletosimples
+-X POST 'http://setusite.com.br/boletosimples'
 </pre>
 
 <small>Resposta Esperada:</small>
 
-<pre class="json">
+<pre class="http">
 HTTP/1.1 200 OK
 Status: 200 OK
 ...

@@ -268,15 +268,15 @@ breadcrumb: Clientes
 <pre class="bash">
 curl -i \
 -u $BOLETOSIMPLES_TOKEN:x \
--d '{"customer":{}}'
+-d '{"customer":{}}' \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X POST https://sandbox.boletosimples.com.br/api/v1/customers
+-X POST 'https://sandbox.boletosimples.com.br/api/v1/customers'
 </pre>
 
     <small>Resposta:</small>
 
-<pre class="bash">
+<pre class="http">
 HTTP/1.1 422 Unprocessable Entity
 Date: Fri, 17 Oct 2014 18:39:47 GMT
 Status: 422 Unprocessable Entity
@@ -369,12 +369,12 @@ curl -i \
 -d '{"customer":{"person_name":"Nome do Cliente", "cnpj_cpf": "125.812.717-28"}}' \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X POST https://sandbox.boletosimples.com.br/api/v1/customers
+-X POST 'https://sandbox.boletosimples.com.br/api/v1/customers'
 </pre>
 
     <small>Resposta:</small>
 
-<pre class="bash">
+<pre class="http">
 HTTP/1.1 201 Created
 Date: Fri, 17 Oct 2014 19:30:06 GMT
 Status: 201 Created
@@ -528,7 +528,7 @@ curl -i \
 
     <small>Resposta:</small>
 
-<pre class="bash">
+<pre class="http">
 HTTP/1.1 200 OK
 Date: Fri, 17 Oct 2014 19:46:16 GMT
 Status: 200 OK
@@ -687,7 +687,7 @@ curl -i \
 
     <small>Resposta:</small>
 
-<pre class="bash">
+<pre class="http">
 HTTP/1.1 200 OK
 Date: Fri, 17 Oct 2014 19:46:16 GMT
 Status: 200 OK

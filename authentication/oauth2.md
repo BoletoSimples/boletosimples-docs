@@ -135,7 +135,7 @@ OAuth2 requer que o usuário autorize o acesso da sua app à conta dele. Para au
 curl -i \
 -d 'grant_type=authorization_code&code=57858ba460&redirect_uri=http://seusite.com.br&client_id=fc4e525ff3&client_secret=95ea9a477d' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X POST https://sandbox.boletosimples.com.br/api/v1/oauth2/token
+-X POST 'https://sandbox.boletosimples.com.br/api/v1/oauth2/token'
         </pre>
 
         <small>Resposta em caso de erro:</small>
