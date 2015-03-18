@@ -7,251 +7,35 @@ breadcrumb: Clientes
 
 ## Clientes
 
-<table class='table table-bordered features'>
-  <thead>
-    <tr>
-      <th>Recurso</th>
-      <th>Descrição</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><a href="#criar-cliente">POST /api/v1/customers</a></td>
-      <td width='60%'>Criar cliente</td>
-    </tr>
-    <tr>
-      <td><a href="#informaes-do-cliente">GET /api/v1/customers/:id</a></td>
-      <td width='60%'>Informações do cliente</td>
-    </tr>
-    <tr>
-      <td><a href="#listar-clientes">GET /api/v1/customers</a></td>
-      <td width='60%'>Listar clientes</td>
-    </tr>
-  </tbody>
-</table>
+| Recurso                  | Descrição
+| ------------------------ | ------------------------
+| [POST /api/v1/customers](#criar-cliente) | Criar cliente
+| [GET /api/v1/customers/:id](#informaes-do-cliente) | Informações do cliente
+| [PATCH /api/v1/customers/:id](#atualizar-cliente) | Atualizar cliente
+| [PUT /api/v1/customers/:id](#atualizar-cliente) | Atualizar cliente
+| [GET /api/v1/customers](#listar-clientes) | Listar clientes
+
+### Modelo de Dados
+
+| Parâmetro              | Obr.  | Tipo   | Tamanho | Descrição
+| ---------------------- | ----- | ------ | ------- | ------------------------
+| **person_name**        | Sim   | String | 255     | Nome Completo ou Razão Social
+| **cnpj_cpf**           | Sim   | String | 20      | CNPJ/CPF (formato 999.999.999-99 ou 99.999.999/9999-99)
+| **zipcode**            | Sim   | String | 9       | CEP (formato 99999-999)
+| **address**            | Não   | Text   |         | Endereço
+| **city_name**          | Não   | String | 255     | Cidade
+| **state**              | Não   | String | 2       | Estado (sigla do estado, Ex: RJ)
+| **neighborhood**       | Não   | String | 255     | Bairro
+| **address_number**     | Não   | String | 255     | Número
+| **address_complement** | Não   | String | 255     | Complemento
+| **phone_number**       | Não   | String | 255     | Telefone (formato 9988888888)
+| **email**              | Não   | String | 255     | E-mail
+| **mobile_local_code**  | Não   | String | 4       | DDD do Celular
+| **mobile_number**      | Não   | String | 15      | Celular
 
 ### Criar cliente
 
 `POST /api/v1/customers`
-
-<table class='table table-bordered'>
-  <thead>
-    <tr>
-      <th>Parâmetro</th>
-      <th data-container="body" data-toggle="tooltip" title="Obrigatório">Obr.</th>
-      <th>Tipo</th>
-      <th>Descrição</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>
-        <strong>customer</strong>
-      </td>
-      <td>
-        Sim
-      </td>
-      <td>
-        Hash
-      </td>
-      <td>
-        Informações do Cliente
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        <strong>person_name</strong>
-      </td>
-      <td>
-        Sim
-      </td>
-      <td>
-        String
-      </td>
-      <td>
-        Nome
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        <strong>cnpj_cpf</strong>
-      </td>
-      <td>
-        Sim
-      </td>
-      <td>
-        String
-      </td>
-      <td>
-        CNPJ/CPF
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <strong>zipcode</strong>
-      </td>
-      <td>
-        Sim
-      </td>
-      <td>
-        String
-      </td>
-      <td>
-        CEP
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <strong>address</strong>
-      </td>
-      <td>
-        Não
-      </td>
-      <td>
-        String
-      </td>
-      <td>
-        Endereço
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        <strong>city_name</strong>
-      </td>
-      <td>
-        Não
-      </td>
-      <td>
-        String
-      </td>
-      <td>
-        Cidade
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        <strong>state</strong>
-      </td>
-      <td>
-        Não
-      </td>
-      <td>
-        String
-      </td>
-      <td>
-        Estado
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        <strong>neighborhood</strong>
-      </td>
-      <td>
-        Não
-      </td>
-      <td>
-        String
-      </td>
-      <td>
-        Bairro
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <strong>address_number</strong>
-      </td>
-      <td>
-        Não
-      </td>
-      <td>
-        String
-      </td>
-      <td>
-        Número
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <strong>address_complement</strong>
-      </td>
-      <td>
-        Não
-      </td>
-      <td>
-        String
-      </td>
-      <td>
-        Complemento
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        <strong>phone_number</strong>
-      </td>
-      <td>
-        Não
-      </td>
-      <td>
-        String
-      </td>
-      <td>
-        Telefone
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        <strong>email</strong>
-      </td>
-      <td>
-        Não
-      </td>
-      <td>
-        String
-      </td>
-      <td>
-        E-mail
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        <strong>mobile_local_code</strong>
-      </td>
-      <td>
-        Não
-      </td>
-      <td>
-        String
-      </td>
-      <td>
-        Celular(DDD)
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        <strong>mobile_number</strong>
-      </td>
-      <td>
-        Não
-      </td>
-      <td>
-        String
-      </td>
-      <td>
-        Celular
-      </td>
-    </tr>
-
-  </tbody>
-</table>
 
 #### Exemplo de requisição inválida
 
@@ -619,6 +403,197 @@ Array
   </div>
 </div>
 
+### Atualizar cliente
+
+`PATCH /api/v1/customers/:id` ou `PUT /api/v1/customers/:id`
+
+#### Exemplo de requisição inválida
+
+<ul class="nav nav-tabs" role="tablist">
+  <li class="active"><a href="#bash4" role="tab" data-toggle="tab">Bash</a></li>
+  <li><a href="#ruby4" role="tab" data-toggle="tab">Ruby</a></li>
+  <li><a href="#php4" role="tab" data-toggle="tab">PHP</a></li>
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="bash4">
+    <small>Requisição:</small>
+
+<pre class="bash">
+curl -i \
+-u $BOLETOSIMPLES_TOKEN:x \
+-d '{"customer":{"person_name":""}}' \
+-H 'Content-Type: application/json' \
+-H 'User-Agent: MyApp (myapp@example.com)' \
+-X PATCH 'https://sandbox.boletosimples.com.br/api/v1/customers/1'
+</pre>
+
+    <small>Resposta:</small>
+
+<pre class="http">
+HTTP/1.1 422 Unprocessable Entity
+Date: Fri, 17 Oct 2014 18:39:47 GMT
+Status: 422 Unprocessable Entity
+Content-Type: application/json; charset=utf-8
+...
+
+{"errors":{"person_name":["não pode ficar em branco"]}}
+</pre>
+  </div>
+  <div class="tab-pane" id="ruby4">
+    <small>Requisição:</small>
+
+<pre class="ruby">
+@customer = BoletoSimples::Customer.find(1)
+@customer.person_name = ""
+if @customer.save
+  puts "Sucesso :)"
+  puts "Novo nome: #{@customer.person_name}"
+else
+  puts "Erro :("
+  puts @customer.response_errors
+end
+</pre>
+
+    <small>Resposta:</small>
+
+<pre class="ruby">
+Erro :(
+{
+  :person_name => [
+    [0] "não pode ficar em branco"
+  ]
+}
+</pre>
+
+  </div>
+    <div class="tab-pane" id="php4">
+      <small>Requisição:</small>
+
+<pre class="php">
+$customer = BoletoSimples\Customer::find(1);
+$customer->person_name = '';
+if($customer->save()) {
+  echo "Sucesso :)\n";
+  echo "Novo nome: " . $customer->person_name . "\n";;
+} else {
+  echo "Erro :(\n";
+  print_r($customer->response_errors);
+}
+</pre>
+
+      <small>Resposta:</small>
+
+<pre class="php">
+Erro :(
+Array
+(
+    [person_name] => Array
+        (
+            [0] => não pode ficar em branco
+        )
+
+)
+</pre>
+
+    </div>
+</div>
+
+#### Exemplo de requisição válida
+
+<ul class="nav nav-tabs" role="tablist">
+  <li class="active"><a href="#bash5" role="tab" data-toggle="tab">Bash</a></li>
+  <li><a href="#ruby5" role="tab" data-toggle="tab">Ruby</a></li>
+  <li><a href="#php5" role="tab" data-toggle="tab">PHP</a></li>
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="bash5">
+    <small>Requisição:</small>
+
+<pre class="bash">
+curl -i \
+-u $BOLETOSIMPLES_TOKEN:x \
+-d '{"customer":{"person_name":"Nome do Cliente", "cnpj_cpf": "125.812.717-28"}}' \
+-H 'Content-Type: application/json' \
+-H 'User-Agent: MyApp (myapp@example.com)' \
+-X POST 'https://sandbox.boletosimples.com.br/api/v1/customers'
+</pre>
+
+    <small>Resposta:</small>
+
+<pre class="http">
+HTTP/1.1 201 Created
+Date: Fri, 17 Oct 2014 19:30:06 GMT
+Status: 201 Created
+Location: https://sandbox.boletosimples.com.br/api/v1/customers/1
+Content-Type: application/json; charset=utf-8
+...
+
+{
+  "id":1,
+  "city_name":null,
+  "person_name":"Nome do Cliente",
+  "address":null,
+  "address_complement":null,
+  "address_number":null,
+  "mobile_number":null,
+  "cnpj_cpf":"125.812.717-28",
+  "email":null,
+  "neighborhood":null,
+  "person_type":"individual",
+  "phone_number":null,
+  "zipcode":null,
+  "mobile_local_code":null,
+  "state":null
+}
+</pre>
+  </div>
+  <div class="tab-pane" id="ruby5">
+    <small>Requisição:</small>
+
+<pre class="ruby">
+@customer = BoletoSimples::Customer.find(1)
+@customer.person_name = "Nome 1234"
+if @customer.save
+  puts "Sucesso :)"
+  puts "Novo nome: #{@customer.person_name}"
+else
+  puts "Erro :("
+  puts @customer.response_errors
+end
+</pre>
+  <small>Resposta:</small>
+
+<pre class="ruby">
+Sucesso :)
+Novo nome: Nome 1234
+</pre>
+  </div>
+  <div class="tab-pane" id="php5">
+    <small>Requisição:</small>
+
+<pre class="php">
+$customer = BoletoSimples\Customer::find(1);
+echo "Nome antigo: " . $customer->person_name . "\n";;
+$customer->person_name = 'Nome 1234';
+if($customer->save()) {
+  echo "Sucesso :)\n";
+  echo "Novo nome: " . $customer->person_name . "\n";;
+} else {
+  echo "Erro :(\n";
+  print_r($customer->response_errors);
+}
+</pre>
+  <small>Resposta:</small>
+
+<pre class="php">
+Sucesso :)
+Novo nome: Nome 1234
+</pre>
+  </div>
+</div>
+
 ### Listar clientes
 
 `GET /api/v1/customers`
@@ -668,13 +643,13 @@ Array
 #### Exemplo
 
 <ul class="nav nav-tabs" role="tablist">
-  <li class="active"><a href="#bash4" role="tab" data-toggle="tab">Bash</a></li>
-  <li><a href="#ruby4" role="tab" data-toggle="tab">Ruby</a></li>
-  <li><a href="#php4" role="tab" data-toggle="tab">PHP</a></li>
+  <li class="active"><a href="#bash6" role="tab" data-toggle="tab">Bash</a></li>
+  <li><a href="#ruby6" role="tab" data-toggle="tab">Ruby</a></li>
+  <li><a href="#php6" role="tab" data-toggle="tab">PHP</a></li>
 </ul>
 
 <div class="tab-content">
-  <div class="tab-pane active" id="bash4">
+  <div class="tab-pane active" id="bash6">
     <small>Requisição:</small>
 
 <pre class="bash">
@@ -717,7 +692,7 @@ Content-Type: application/json; charset=utf-8
 ]
 </pre>
   </div>
-  <div class="tab-pane" id="ruby4">
+  <div class="tab-pane" id="ruby6">
     <small>Requisição:</small>
 
 <pre class="ruby">
@@ -741,7 +716,7 @@ Próxima Página: https://sandbox.boletosimples.com.br/api/v1/customers?page=2&p
 Última Página: https://sandbox.boletosimples.com.br/api/v1/customers?page=5&per_page=2
 </pre>
   </div>
-  <div class="tab-pane" id="php4">
+  <div class="tab-pane" id="php6">
     <small>Requisição:</small>
 
 <pre class="php">
