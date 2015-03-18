@@ -17,21 +17,22 @@ breadcrumb: Clientes
 
 ### Modelo de Dados
 
-| Parâmetro              | Obr.  | Tipo   | Tamanho | Descrição
-| ---------------------- | ----- | ------ | ------- | ------------------------
-| **person_name**        | Sim   | String | 255     | Nome Completo ou Razão Social
-| **cnpj_cpf**           | Sim   | String | 20      | CNPJ/CPF (formato 999.999.999-99 ou 99.999.999/9999-99)
-| **zipcode**            | Sim   | String | 9       | CEP (formato 99999-999)
-| **address**            | Não   | Text   |         | Endereço
-| **city_name**          | Não   | String | 255     | Cidade
-| **state**              | Não   | String | 2       | Estado (sigla do estado, Ex: RJ)
-| **neighborhood**       | Não   | String | 255     | Bairro
-| **address_number**     | Não   | String | 255     | Número
-| **address_complement** | Não   | String | 255     | Complemento
-| **phone_number**       | Não   | String | 255     | Telefone (formato 9988888888)
-| **email**              | Não   | String | 255     | E-mail
-| **mobile_local_code**  | Não   | String | 4       | DDD do Celular
-| **mobile_number**      | Não   | String | 15      | Celular
+| Parâmetro              | Obr.  | Tipo    | Tamanho | Descrição
+| ---------------------- | ----- | ------- | ------- | ------------------------
+| **id**                 | N/A   | Integer |         | ID do cliente
+| **person_name**        | Sim   | String  | 255     | Nome Completo ou Razão Social
+| **cnpj_cpf**           | Sim   | String  | 20      | CNPJ/CPF (formato 999.999.999-99 ou 99.999.999/9999-99)
+| **zipcode**            | Sim   | String  | 9       | CEP (formato 99999-999)
+| **address**            | Não   | Text    |         | Endereço
+| **city_name**          | Não   | String  | 255     | Cidade
+| **state**              | Não   | String  | 2       | Estado (sigla do estado, Ex: RJ)
+| **neighborhood**       | Não   | String  | 255     | Bairro
+| **address_number**     | Não   | String  | 255     | Número
+| **address_complement** | Não   | String  | 255     | Complemento
+| **phone_number**       | Não   | String  | 255     | Telefone (formato 9988888888)
+| **email**              | Não   | String  | 255     | E-mail
+| **mobile_local_code**  | Não   | String  | 4       | DDD do Celular
+| **mobile_number**      | Não   | String  | 15      | Celular
 
 ### Criar cliente
 

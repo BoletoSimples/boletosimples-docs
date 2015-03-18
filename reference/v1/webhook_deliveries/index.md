@@ -7,24 +7,27 @@ breadcrumb: Webhook Deliveries
 
 ## Webhook Deliveries
 
-<table class='table table-bordered features'>
-  <thead>
-    <tr>
-      <th>Recurso</th>
-      <th>Descrição</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><a href="#informaes-do-webhook-delivery">GET /api/v1/webhook_deliveries/:id</a></td>
-      <td width='60%'>Informações do webhook delivery</td>
-    </tr>
-    <tr>
-      <td><a href="#listar-webhook-deliveries">GET /api/v1/webhook_deliveries</a></td>
-      <td width='60%'>Listar webhook deliveries</td>
-    </tr>
-  </tbody>
-</table>
+| Recurso                  | Descrição
+| ------------------------ | ------------------------
+| [GET /api/v1/webhook_deliveries/:id](#informaes-do-webhook-delivery) | Informações do webhook delivery
+| [GET /api/v1/webhook_deliveries](#listar-webhook-delivery) | Listar webhook deliveries
+
+### Modelo de Dados
+
+| Parâmetro            | Obr.  | Tipo     | Tamanho | Descrição
+| -------------------- | ----- | -------- | ------- | ------------------------
+| **id**               | N/A   | Integer  |         | ID do webhook delivery
+| **uid**              | N/A   | String   | 36      | UID usado no cabeçalho da requisição
+| **url**              | N/A   | String   | 255     | Endereço onde as entrega foi realizada, herdado do webhook
+| **request_payload**  | N/A   | Hash     |         | Payload que será enviado no corpo da mensagem. Ver possíveis valores em [Payloads](/webhooks/payloads)
+| **request_error**    | N/A   | String   | 255     | Mensagem de erro retornada na resquisição
+| **response_headers** | N/A   | Hash     |         | Cabeçalhos da resposta
+| **response_body**    | N/A   | Text     |         | Conteúdo do corpo da resposta
+| **response_code**    | N/A   | Integer  |         | Código HTTP da resposta. [Leia mais](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes)
+| **response_message** | N/A   | String   | 255     | Mensagem relativa ao Código HTTP da resposta [Leia mais](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes)
+| **delivered_at**     | N/A   | DateTime |         | Data e hora que a entrega foi realizada
+| **duration**         | N/A   | Integer  |         | Duração em milesegundos do round trip entre requisição e resposta
+| **event**            | N/A   | Object   |         | Evento relativo à entrega. [Leia mais](/reference/v1/events/#modelo-de-dados)
 
 ### Informações do webhook delivery
 

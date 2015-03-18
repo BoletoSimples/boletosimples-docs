@@ -7,6 +7,41 @@ breadcrumb: Transações
 
 ## Transações
 
+| Recurso                  | Descrição
+| ------------------------ | ------------------------
+| [GET /api/v1/transactions](#listar-transaes) | Listar transações
+
+### Modelo de Dados
+
+| Parâmetro        | Obr.  | Tipo     | Tamanho | Descrição
+| ---------------- | ----- | -------- | ------- | ------------------------
+| **id**           | N/A   | Integer  |         | ID da transação
+| **amount**       | N/A   | Float    |         | Quantia (R$)
+| **description**  | N/A   | Text     |         | Descrição na transação.
+| **kind**         | N/A   | String   | 255     | Tipo da transação.
+| **status**       | N/A   | String   | 20      | Status da transação.
+| **processed_at** | N/A   | Date     |         | Data do processamento.
+| **sent_at**      | N/A   | Date     |         | Data da transferência para os casos de saque (`kind: withdrawal`).
+| **credit_at**    | N/A   | Date     |         | Data de quando a transação entra para o saldo.
+
+### Dicionário de Dados
+
+#### kind
+
+| fee            | Taxa
+| credit         | Crédito
+| withdrawal     | Saque
+| withdrawal_fee | Taxa Saque
+| chargeback     | Estorno
+| chargeback_fee | Taxa Estorno
+| addon_fee      | Addon
+
+#### status
+
+| unprocessed   | Aguardando  |
+| processed     | Processado  |
+| transferred   | Transferido | Somente para os casos de saque (`kind: withdrawal`)
+
 ### Listar transações
 
 `GET /api/v1/transactions`

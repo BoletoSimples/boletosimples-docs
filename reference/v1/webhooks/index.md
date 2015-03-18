@@ -18,17 +18,20 @@ breadcrumb: Webhooks
 | [GET /api/v1/webhooks](#listar-webhooks) | Listar webhooks
 | [DELETE /api/v1/webhooks/:id](#excluir-webhook) | Excluir webhook
 
+### Modelo de Dados
+
+| Parâmetro                    | Obr.  | Tipo    | Tamanho | Descrição
+| ---------------------------- | ----- | ------- | ------- | ------------------------
+| **id**                       | N/A   | Integer |         | ID do webhook
+| **url**                      | Sim   | String  | 255     | Endereço onde as requisições serão realizadas
+| **content_type**             | Não   | String  | 255     | Content-type da requisição que será realizada. Valores válidos `application/json` (valor padrão) ou `application/x-www-form-urlencoded`.
+| **events**                   | Não   | Array   |         | Eventos que devem gerar notificações para o webhook. Ver possíveis valores na [lista de eventos](/webhooks/events). O valor padrão é `*` (que representa todos os eventos atuais e futuros).
+| **active**                   | Não   | Boolean |         | Define se o webhook estará ativo, recebendo notificações. O valor padrão é `true`.
+| **ssl_verification_enabled** | N/A   | Boolean |         | Define se a verificação SSL está habilitada no webhook.
+
 ### Criar webhook
 
 `POST /api/v1/webhooks`
-
-
-| Parâmetro        | 	Obr. | Tipo    | Descrição
-| ---------------- | ----- | ------- | ------------------------
-| **url**          | 	Sim	 | String  | Enderço onde as requisições serão realizadas
-| **content_type** | 	Não	 | String  | Content-type da requisição que será realizada. Valores válidos `application/json` (valor padrão) ou `application/x-www-form-urlencoded`.
-| **events**       | 	Não	 | Array   | Eventos que devem gerar notificações para o webhook. Ver possíveis valores na [lista de eventos](/webhooks/events). O valor padrão é `*` (que representa todos os eventos atuais e futuros).
-| **active**       | 	Não	 | Boolean | Define se o webhook estará ativo, recebendo notificações. O valor padrão é `true`.
 
 #### Exemplo de requisição inválida
 
@@ -391,8 +394,6 @@ Array
 ### Atualizar webhook
 
 `PATCH /api/v1/webhooks/:id` ou `PUT /api/v1/webhooks/:id`
-
-Os mesmos parâmetros da criação de webhook podem ser usados.
 
 #### Exemplo de requisição inválida
 

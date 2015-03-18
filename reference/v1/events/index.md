@@ -7,24 +7,19 @@ breadcrumb: Eventos
 
 ## Eventos
 
-<table class='table table-bordered features'>
-  <thead>
-    <tr>
-      <th>Recurso</th>
-      <th>Descrição</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><a href="#informaes-do-evento">GET /api/v1/events/:id</a></td>
-      <td width='60%'>Informações do evento</td>
-    </tr>
-    <tr>
-      <td><a href="#listar-eventos">GET /api/v1/events</a></td>
-      <td width='60%'>Listar eventos</td>
-    </tr>
-  </tbody>
-</table>
+| Recurso                  | Descrição
+| ------------------------ | ------------------------
+| [GET /api/v1/events/:id](#informaes-do-evento) | Informações do evento
+| [GET /api/v1/events](#listar-eventos) | Listar eventos
+
+### Modelo de Dados
+
+| Parâmetro       | Obr.  | Tipo     | Tamanho | Descrição
+| --------------- | ----- | -------- | ------- | ------------------------
+| **id**          | N/A   | Integer  |         | ID do evento
+| **code**        | N/A   | String   | 255     | Código do evento. Ver possíveis valores na [lista de eventos](/webhooks/events)
+| **data**        | N/A   | Hash     |         | Mais informações relativas ao evento. Ver possíveis valores em [Payloads](/webhooks/payloads)
+| **occurred_at** | N/A   | DateTime |         | Data e hora de quando o evento ocorreu.
 
 ### Informações do evento
 

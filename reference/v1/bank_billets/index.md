@@ -7,301 +7,55 @@ breadcrumb: Boletos
 
 ## Boletos
 
-<table class='table table-bordered features'>
-  <thead>
-    <tr>
-      <th>Recurso</th>
-      <th>Descrição</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><a href="#criar-boleto">POST /api/v1/bank_billets</a></td>
-      <td width='60%'>Criar boleto</td>
-    </tr>
-    <tr>
-      <td><a href="#informaes-do-boleto">GET /api/v1/bank_billets/:id</a></td>
-      <td width='60%'>Informações do boleto</td>
-    </tr>
-    <tr>
-      <td><a href="#listar-boletos">GET /api/v1/bank_billets</a></td>
-      <td width='60%'>Listar boletos</td>
-    </tr>
-    <tr>
-      <td><a href="#cancelar-boleto">PUT /api/v1/bank_billets/:id/cancel</a></td>
-      <td width='60%'>Cancelar boleto</td>
-    </tr>
-  </tbody>
-</table>
+| Recurso                  | Descrição
+| ------------------------ | ------------------------
+| [POST /api/v1/bank_billets](#criar-boleto) | Criar boleto
+| [GET /api/v1/bank_billets/:id](#informaes-do-boleto) | Informações do boleto
+| [GET /api/v1/bank_billets](#listar-boletos) | Listar boletos
+| [PUT /api/v1/bank_billets/:id/cancel](#cancelar-boleto) | Cancelar boleto
+
+### Modelo de Dados
+
+| Parâmetro                       | Obr.  | Tipo    | Tamanho | Descrição
+| ------------------------------- | ----- | ------- | ------- | ------------------------
+| **id**                          | N/A   | Integer |         | ID do boleto
+| **amount**                      | Sim   | Float   |         | Quantia (R$)
+| **expire_at**                   | Sim   | Date    |         | Data de vencimento
+| **description**                 | Sim   | Text    |         | Descrição do produto ou serviço
+| **customer_id**                 | Não   | Number  |         | ID do Cliente Cadastrado. Quando esse ID é passado, os campos `customer_person_name`, `customer_cnpj_cpf` e `customer_zipcode` não são obrigatórios.
+| **customer_person_name**        | Sim   | String  | 255     | Nome ou Razão Social do Pagador
+| **customer_cnpj_cpf**           | Sim   | String  | 20      | CNPJ ou CPF do Pagador
+| **customer_zipcode**            | Sim   | String  | 9       | CEP
+| **customer_email**              | Não   | String  | 255     | E-mail do Pagador
+| **customer_address**            | Não   | Text    |         | Endereço
+| **customer_city_name**          | Não   | String  | 255     | Cidade
+| **customer_state**              | Não   | String  | 2       | Estado
+| **customer_neighborhood**       | Não   | String  | 255     | Bairro
+| **customer_address_number**     | Não   | String  | 255     | Número
+| **customer_address_complement** | Não   | String  | 255     | Complemento
+| **customer_phone_number**       | Não   | String  | 255     | Telefone (com DDD)
+| **meta**                        | Não   | Campo Genérico | | Aceita qualquer formato passado. Pode ser usado para salvar dados que não existam dentro do Boleto Simples. Exemplo: {pedido: 12345}
+| **status**                      | N/A   | Date    |         | Status do boleto [Possíveis Valores](#status)
+| **paid_at**                     | N/A   | Date    |         | Data do pagamento
+| **paid_amount**                 | N/A   | Float   |         | Valor pago
+| **shorten_url**                 | N/A   | String  |         | URL para visualização do boleto
+| **created_via_api**             | N/A   | Boolean |         | Define se o boleto foi criado pela API
+
+### Dicionário de Dados
+
+#### status
+
+| generating | Gerando
+| opened     | Aberto
+| canceled   | Cancelado
+| paid       | Pago
+| overdue    | Vencido
+| blocked    | Bloqueado
+| chargeback | Estornado
 
 ### Criar boleto
 
 `POST /api/v1/bank_billets`
-
-<table class='table table-bordered'>
-  <thead>
-    <tr>
-      <th>Parâmetro</th>
-      <th data-container="body" data-toggle="tooltip" title="Obrigatório">Obr.</th>
-      <th>Tipo</th>
-      <th>Descrição</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>
-        <strong> amount </strong>
-      </td>
-      <td>
-        Sim
-      </td>
-      <td>
-        Float
-      </td>
-      <td>
-        Quantia (R$) - Formato: 1000,50 ou 1000.5
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        <strong> expire_at </strong><br>
-      </td>
-      <td>
-        Sim
-      </td>
-      <td>
-        Date
-      </td>
-      <td>
-        Data de vencimento - Formato: 31/12/2013 ou 2013-12-31
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        <strong> description </strong>
-      </td>
-      <td>
-        Sim
-      </td>
-      <td>
-        String
-      </td>
-      <td>
-        Descrição do produto ou serviço
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        <strong> customer_person_name </strong>
-      </td>
-      <td>
-        Sim
-      </td>
-      <td>
-        String
-      </td>
-      <td>
-        <p>Nome ou Razão Social do Pagador</p>
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        <strong> customer_cnpj_cpf </strong>
-      </td>
-      <td>
-        Sim
-      </td>
-      <td>
-        String
-      </td>
-      <td>
-        CNPJ ou CPF do Pagador
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <strong> customer_zipcode </strong>
-      </td>
-      <td>
-        Sim
-      </td>
-      <td>
-        String
-      </td>
-      <td>
-        CEP
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <strong> customer_id </strong>
-      </td>
-      <td>
-        Não
-      </td>
-      <td>
-        Number
-      </td>
-      <td>
-        ID do Cliente Cadastrado. Quando passado os campos <code>customer_person_name</code> e <code>customer_cnpj_cpf</code> não são obrigatórios.
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <strong> customer_email </strong>
-      </td>
-      <td>
-        Não
-      </td>
-      <td>
-        String
-      </td>
-      <td>
-        E-mail do Pagador
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        <strong> customer_address </strong>
-      </td>
-      <td>
-        Não
-      </td>
-      <td>
-        String
-      </td>
-      <td>
-        Endereço
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        <strong> customer_city_name </strong>
-      </td>
-      <td>
-        Não
-      </td>
-      <td>
-        String
-      </td>
-      <td>
-        Cidade
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        <strong> customer_state </strong>
-      </td>
-      <td>
-        Não
-      </td>
-      <td>
-        String
-      </td>
-      <td>
-        Estado
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        <strong> customer_neighborhood </strong>
-      </td>
-      <td>
-        Não
-      </td>
-      <td>
-        String
-      </td>
-      <td>
-        Bairro
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        <strong> customer_address_number </strong>
-      </td>
-      <td>
-        Não
-      </td>
-      <td>
-        String
-      </td>
-      <td>
-        Número
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        <strong> customer_address_complement </strong>
-      </td>
-      <td>
-        Não
-      </td>
-      <td>
-        String
-      </td>
-      <td>
-        Complemento
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <strong> customer_phone_number </strong>
-      </td>
-      <td>
-        Não
-      </td>
-      <td>
-        String
-      </td>
-      <td>
-        Telefone (com DDD)
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <strong> notification_url </strong><br/>
-        <span style="color: red">DESCONTINUADO</span>
-      </td>
-      <td>
-        Não
-      </td>
-      <td>
-        String
-      </td>
-      <td>
-        Não use mais este campo, este recurso foi substituido pelos <a href="/webhooks">Webhooks</a>.
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <strong> meta </strong>
-      </td>
-      <td>
-        Não
-      </td>
-      <td>
-        &nbsp;
-      </td>
-      <td>
-        Campo Genérico -  Aceita qualquer formato passado. Pode ser usado para salvar dados que não existam dentro do Boleto Simples.
-        <br>
-        Exemplo JSON: {pedido: 12345}<br>
-        Exemplo Array: pedido: 12345
-      </td>
-    </tr>
-  </tbody>
-</table>
 
 #### Exemplo de requisição inválida
 
