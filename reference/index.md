@@ -12,8 +12,16 @@ en: /en/reference
 
 ### [Clientes](/reference/v1/customers)
 
+### [Eventos](/reference/v1/events)
+
 ### [Transações](/reference/v1/transactions)
 
-### [Usuário Autenticado](/reference/v1/users)
+### [Webhooks](/reference/v1/webhooks)
+
+### [Webhooks Deliveries](/reference/v1/webhook_deliveries)
+
+### [Usuários](/reference/v1/users)
+
+### [Usuário Autenticado](/reference/v1/userinfo)
 
 <!-- ### [API de Parceiros](/reference/v1/partner/users) -->
