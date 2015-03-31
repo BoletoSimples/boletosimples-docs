@@ -16,4 +16,4 @@ en: /en/reference
 
 ### [Usuário Autenticado](/reference/v1/users)
 
-### [API de Parceiros](/reference/v1/partner/users)
+<!-- ### [API de Parceiros](/reference/v1/partner/users) -->
