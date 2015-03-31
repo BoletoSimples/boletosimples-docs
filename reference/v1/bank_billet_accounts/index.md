@@ -1,0 +1,745 @@
+---
+layout: pt
+title: Carteiras de Cobrança - API do Boleto Simples
+en: /en/references
+breadcrumb: Carteiras de Cobrança
+---
+
+## Carteiras de Cobrança
+
+<div class="alert alert-warning">Para saber mais sobre as carteiras suportadas, acesse a <a href="/bank_contracts">página de Carteiras de Cobrança</a>.</div>
+
+| Recurso                  | Descrição
+| ------------------------ | ------------------------
+| [POST /api/v1/bank_billet_accounts](#criar-carteira) | Criar carteira
+| [GET /api/v1/bank_billet_accounts/:id](#informaes-do-carteira) | Informações do carteira
+| [PATCH /api/v1/bank_billet_accounts/:id](#atualizar-carteira) | Atualizar carteira
+| [PUT /api/v1/bank_billet_accounts/:id](#atualizar-carteira) | Atualizar carteira
+| [GET /api/v1/bank_billet_accounts](#listar-carteiras) | Listar carteiras
+
+### Modelo de Dados
+
+| Parâmetro              | Obr.  | Tipo    | Tamanho | Descrição
+| ---------------------- | ----- | ------- | ------- | ------------------------
+| **id**                 | N/A   | Integer |         | ID da carteira
+| **bank_contract_slug** | Sim   | String  | 50      | [Slug da Carteira](/bank_contracts)
+| **next_our_number**    | Não   | String  | 40      | Próximo Nosso Número
+| **agency_number**      | Sim   | String  | 20      | Agência
+| **agency_digit**       | *     | String  | 2       | Dígito da Agência
+| **account_number**     | Sim   | String  | 20      | Conta
+| **account_digit**      | Sim   | String  | 2       | Dígito da Conta
+| **extra1**             | *     | String  | 15      | Campo Extra 1
+| **extra1_digit**       | *     | String  | 3       | Dígito do Campo Extra 1
+| **extra2**             | *     | String  | 15      | Campo Extra 2
+| **extra2_digit**       | *     | String  | 3       | Dígito do Campo Extra 2
+
+'*' Depende da carteira escolhida
+
+### Criar carteira
+
+`POST /api/v1/bank_billet_accounts`
+
+#### Exemplo de requisição inválida
+
+<ul class="nav nav-tabs" role="tablist">
+  <li class="active"><a href="#bash" role="tab" data-toggle="tab">Bash</a></li>
+  <!-- <li><a href="#ruby" role="tab" data-toggle="tab">Ruby</a></li> -->
+  <!-- <li><a href="#php" role="tab" data-toggle="tab">PHP</a></li> -->
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="bash">
+    <small>Requisição:</small>
+
+<pre class="bash">
+curl -i \
+-u $BOLETOSIMPLES_TOKEN:x \
+-d '{"bank_billet_account":{}}' \
+-H 'Content-Type: application/json' \
+-H 'User-Agent: MyApp (myapp@example.com)' \
+-X POST 'https://sandbox.boletosimples.com.br/api/v1/bank_billet_accounts'
+</pre>
+
+    <small>Resposta:</small>
+
+<pre class="http">
+HTTP/1.1 422 Unprocessable Entity
+Date: Fri, 17 Oct 2014 18:39:47 GMT
+Status: 422 Unprocessable Entity
+Content-Type: application/json; charset=utf-8
+...
+
+{"errors":{"bank_billet_account":["não pode ficar em branco"]}}
+</pre>
+  </div>
+  <!-- <div class="tab-pane" id="ruby">
+    <small>Requisição:</small>
+
+<pre class="ruby">
+@bank_billet_account = BoletoSimples::bank_billet_account.create({person_name: 'Joao Da Silva'})
+if @bank_billet_account.persisted?
+  puts "Sucesso :)"
+  puts @bank_billet_account.attributes
+else
+  puts "Erro :("
+  puts @bank_billet_account.response_errors
+end
+</pre>
+
+    <small>Resposta:</small>
+
+<pre class="ruby">
+Erro :(
+{
+  :cnpj_cpf => [
+    [0] "não pode ficar em branco"
+  ],
+  :zipcode => [
+    [0] "não pode ficar em branco"
+  ]
+}
+</pre>
+
+  </div> -->
+    <!-- <div class="tab-pane" id="php">
+      <small>Requisição:</small>
+
+<pre class="php">
+$bank_billet_account = BoletoSimples\bank_billet_account::create(['person_name' => 'Joao da Silva']);
+if($bank_billet_account->isPersisted()) {
+  echo "Sucesso :)\n";
+  print_r($bank_billet_account->attributes());
+} else {
+  echo "Erro :(\n";
+  print_r($bank_billet_account->response_errors);
+}
+</pre>
+
+      <small>Resposta:</small>
+
+<pre class="php">
+Erro :(
+Array
+(
+    [cnpj_cpf] => Array
+        (
+            [0] => não pode ficar em branco
+        )
+
+    [zipcode] => Array
+        (
+            [0] => não pode ficar em branco
+        )
+
+)
+</pre>
+
+    </div> -->
+</div>
+
+#### Exemplo de requisição válida
+
+<ul class="nav nav-tabs" role="tablist">
+  <li class="active"><a href="#bash2" role="tab" data-toggle="tab">Bash</a></li>
+  <!-- <li><a href="#ruby2" role="tab" data-toggle="tab">Ruby</a></li> -->
+  <!-- <li><a href="#php2" role="tab" data-toggle="tab">PHP</a></li> -->
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="bash2">
+    <small>Requisição:</small>
+
+<pre class="bash">
+curl -i \
+-u $BOLETOSIMPLES_TOKEN:x \
+-d '{"bank_billet_account":{"bank_contract_slug": "bb-18-019-7", "agency_number": "4042", agency_digit: "8", account_number: "0008873", account_digit: "0", next_our_number: "0000001"}}' \
+-H 'Content-Type: application/json' \
+-H 'User-Agent: MyApp (myapp@example.com)' \
+-X POST 'https://sandbox.boletosimples.com.br/api/v1/bank_billet_accounts'
+</pre>
+
+    <small>Resposta:</small>
+
+<pre class="http">
+HTTP/1.1 201 Created
+Date: Fri, 17 Oct 2014 19:30:06 GMT
+Status: 201 Created
+Location: https://sandbox.boletosimples.com.br/api/v1/bank_billet_accounts/1
+Content-Type: application/json; charset=utf-8
+...
+
+{
+  "id":1,
+  "city_name":null,
+  "person_name":"Nome do carteira",
+  "address":null,
+  "address_complement":null,
+  "address_number":null,
+  "mobile_number":null,
+  "cnpj_cpf":"125.812.717-28",
+  "email":null,
+  "neighborhood":null,
+  "person_type":"individual",
+  "phone_number":null,
+  "zipcode":null,
+  "mobile_local_code":null,
+  "state":null
+}
+</pre>
+  </div>
+  <!-- <div class="tab-pane" id="ruby2">
+    <small>Requisição:</small>
+
+<pre class="ruby">
+@bank_billet_account = BoletoSimples::bank_billet_account.create({
+  person_name: "Joao da Silva",
+  cnpj_cpf: "782.661.177-64",
+  email: "carteira@bom.com",
+  address: "Rua quinhentos",
+  city_name: "Rio de Janeiro",
+  state: "RJ",
+  neighborhood: "bairro",
+  zipcode: "12312-123",
+  address_number: "111",
+  address_complement: "Sala 4",
+  phone_number: "2112123434"
+})
+if @bank_billet_account.persisted?
+  puts "Sucesso :)"
+  puts @bank_billet_account.attributes
+else
+  puts "Erro :("
+  puts @bank_billet_account.response_errors
+end
+</pre>
+  <small>Resposta:</small>
+
+<pre class="ruby">
+Sucesso :)
+{
+           "person_name" => "Joao da Silva",
+              "cnpj_cpf" => "782.661.177-64",
+                 "email" => "carteira@bom.com",
+               "address" => "Rua quinhentos",
+             "city_name" => "Rio de Janeiro",
+                 "state" => "RJ",
+          "neighborhood" => "bairro",
+               "zipcode" => "12312-123",
+        "address_number" => "111",
+    "address_complement" => "Sala 4",
+          "phone_number" => "2112123434",
+                    "id" => 67,
+         "mobile_number" => nil,
+           "person_type" => "individual",
+     "mobile_local_code" => nil,
+       "created_via_api" => true
+}
+</pre>
+  </div>
+  <div class="tab-pane" id="php2">
+    <small>Requisição:</small>
+
+<pre class="php">
+$bank_billet_account = BoletoSimples\bank_billet_account::create([
+  'person_name' => "Joao da Silva",
+  'cnpj_cpf' => "860.196.915-19",
+  'email' => "carteira@example.com",
+  'address' => "Rua quinhentos",
+  'city_name' => "Rio de Janeiro",
+  'state' => "RJ",
+  'neighborhood' => "bairro",
+  'zipcode' => "12312-123",
+  'address_number' => "111",
+  'address_complement' => "Sala 4",
+  'phone_number' => "2112123434"
+]);
+if($bank_billet_account->isPersisted()) {
+  echo "Sucesso :)\n";
+  print_r($bank_billet_account->attributes());
+} else {
+  echo "Erro :(\n";
+  print_r($bank_billet_account->response_errors);
+}
+</pre>
+  <small>Resposta:</small>
+
+<pre class="php">
+Sucesso :)
+Array
+(
+    [id] => 66
+    [city_name] => Rio de Janeiro
+    [person_name] => Joao da Silva
+    [address] => Rua quinhentos
+    [address_complement] => Sala 4
+    [address_number] => 111
+    [mobile_number] =>
+    [cnpj_cpf] => 860.196.915-19
+    [email] => carteira@example.com
+    [neighborhood] => bairro
+    [person_type] => individual
+    [phone_number] => 2112123434
+    [zipcode] => 12312-123
+    [mobile_local_code] =>
+    [state] => RJ
+    [created_via_api] => 1
+)
+</pre>
+  </div> -->
+</div>
+
+### Informações do carteira
+
+`GET /api/v1/bank_billet_accounts/:id`
+
+#### Exemplo
+
+<ul class="nav nav-tabs" role="tablist">
+  <li class="active"><a href="#bash3" role="tab" data-toggle="tab">Bash</a></li>
+  <!-- <li><a href="#ruby3" role="tab" data-toggle="tab">Ruby</a></li> -->
+  <!-- <li><a href="#php3" role="tab" data-toggle="tab">PHP</a></li> -->
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="bash3">
+    <small>Requisição:</small>
+
+<pre class="bash">
+curl -i \
+-u $BOLETOSIMPLES_TOKEN:x \
+-H 'Content-Type: application/json' \
+-H 'User-Agent: MyApp (myapp@example.com)' \
+-X GET 'https://sandbox.boletosimples.com.br/api/v1/bank_billet_accounts/1'
+</pre>
+
+    <small>Resposta:</small>
+
+<pre class="http">
+HTTP/1.1 200 OK
+Date: Fri, 17 Oct 2014 19:46:16 GMT
+Status: 200 OK
+Content-Type: application/json; charset=utf-8
+...
+
+{
+  "id":1,
+  "city_name":null,
+  "person_name":"Nome do carteira",
+  "address":null,
+  "address_complement":null,
+  "address_number":null,
+  "mobile_number":null,
+  "cnpj_cpf":"125.812.717-28",
+  "email":null,
+  "neighborhood":null,
+  "person_type":"individual",
+  "phone_number":null,
+  "zipcode":null,
+  "mobile_local_code":null,
+  "state":null
+}
+</pre>
+  </div>
+  <!-- <div class="tab-pane" id="ruby3">
+    <small>Requisição:</small>
+
+<pre class="ruby">
+@bank_billet_account = BoletoSimples::bank_billet_account.find(67)
+puts @bank_billet_account.attributes
+</pre>
+
+    <small>Resposta:</small>
+
+<pre class="ruby">
+{
+             "city_name" => "Rio de Janeiro",
+           "person_name" => "Joao da Silva",
+               "address" => "Rua quinhentos",
+    "address_complement" => "Sala 4",
+        "address_number" => "111",
+         "mobile_number" => nil,
+              "cnpj_cpf" => "782.661.177-64",
+                 "email" => "carteira@bom.com",
+          "neighborhood" => "bairro",
+           "person_type" => "individual",
+          "phone_number" => "2112123434",
+               "zipcode" => "12312-123",
+     "mobile_local_code" => nil,
+                 "state" => "RJ",
+       "created_via_api" => true,
+                    "id" => 67
+}
+</pre>
+  </div>
+  <div class="tab-pane" id="php3">
+    <small>Requisição:</small>
+
+<pre class="php">
+$bank_billet_account = BoletoSimples\bank_billet_account::find(66);
+print_r($bank_billet_account->attributes());
+</pre>
+
+    <small>Resposta:</small>
+
+<pre class="php">
+Array
+(
+    [id] => 66
+    [city_name] => Rio de Janeiro
+    [person_name] => Joao da Silva
+    [address] => Rua quinhentos
+    [address_complement] => Sala 4
+    [address_number] => 111
+    [mobile_number] =>
+    [cnpj_cpf] => 860.196.915-19
+    [email] => carteira@example.com
+    [neighborhood] => bairro
+    [person_type] => individual
+    [phone_number] => 2112123434
+    [zipcode] => 12312-123
+    [mobile_local_code] =>
+    [state] => RJ
+    [created_via_api] => 1
+)
+</pre>
+  </div> -->
+</div>
+
+### Atualizar carteira
+
+`PATCH /api/v1/bank_billet_accounts/:id` ou `PUT /api/v1/bank_billet_accounts/:id`
+
+#### Exemplo de requisição inválida
+
+<ul class="nav nav-tabs" role="tablist">
+  <li class="active"><a href="#bash4" role="tab" data-toggle="tab">Bash</a></li>
+  <!-- <li><a href="#ruby4" role="tab" data-toggle="tab">Ruby</a></li> -->
+  <!-- <li><a href="#php4" role="tab" data-toggle="tab">PHP</a></li> -->
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="bash4">
+    <small>Requisição:</small>
+
+<pre class="bash">
+curl -i \
+-u $BOLETOSIMPLES_TOKEN:x \
+-d '{"bank_billet_account":{"person_name":""}}' \
+-H 'Content-Type: application/json' \
+-H 'User-Agent: MyApp (myapp@example.com)' \
+-X PATCH 'https://sandbox.boletosimples.com.br/api/v1/bank_billet_accounts/1'
+</pre>
+
+    <small>Resposta:</small>
+
+<pre class="http">
+HTTP/1.1 422 Unprocessable Entity
+Date: Fri, 17 Oct 2014 18:39:47 GMT
+Status: 422 Unprocessable Entity
+Content-Type: application/json; charset=utf-8
+...
+
+{"errors":{"person_name":["não pode ficar em branco"]}}
+</pre>
+  </div>
+  <!-- <div class="tab-pane" id="ruby4">
+    <small>Requisição:</small>
+
+<pre class="ruby">
+@bank_billet_account = BoletoSimples::bank_billet_account.find(1)
+@bank_billet_account.person_name = ""
+if @bank_billet_account.save
+  puts "Sucesso :)"
+  puts "Novo nome: #{@bank_billet_account.person_name}"
+else
+  puts "Erro :("
+  puts @bank_billet_account.response_errors
+end
+</pre>
+
+    <small>Resposta:</small>
+
+<pre class="ruby">
+Erro :(
+{
+  :person_name => [
+    [0] "não pode ficar em branco"
+  ]
+}
+</pre>
+
+  </div>
+    <div class="tab-pane" id="php4">
+      <small>Requisição:</small>
+
+<pre class="php">
+$bank_billet_account = BoletoSimples\bank_billet_account::find(1);
+$bank_billet_account->person_name = '';
+if($bank_billet_account->save()) {
+  echo "Sucesso :)\n";
+  echo "Novo nome: " . $bank_billet_account->person_name . "\n";;
+} else {
+  echo "Erro :(\n";
+  print_r($bank_billet_account->response_errors);
+}
+</pre>
+
+      <small>Resposta:</small>
+
+<pre class="php">
+Erro :(
+Array
+(
+    [person_name] => Array
+        (
+            [0] => não pode ficar em branco
+        )
+
+)
+</pre>
+
+    </div> -->
+</div>
+
+#### Exemplo de requisição válida
+
+<ul class="nav nav-tabs" role="tablist">
+  <li class="active"><a href="#bash5" role="tab" data-toggle="tab">Bash</a></li>
+  <!-- <li><a href="#ruby5" role="tab" data-toggle="tab">Ruby</a></li> -->
+  <!-- <li><a href="#php5" role="tab" data-toggle="tab">PHP</a></li> -->
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="bash5">
+    <small>Requisição:</small>
+
+<pre class="bash">
+curl -i \
+-u $BOLETOSIMPLES_TOKEN:x \
+-d '{"bank_billet_account":{"person_name":"Nome do carteira", "cnpj_cpf": "125.812.717-28"}}' \
+-H 'Content-Type: application/json' \
+-H 'User-Agent: MyApp (myapp@example.com)' \
+-X POST 'https://sandbox.boletosimples.com.br/api/v1/bank_billet_accounts'
+</pre>
+
+    <small>Resposta:</small>
+
+<pre class="http">
+HTTP/1.1 201 Created
+Date: Fri, 17 Oct 2014 19:30:06 GMT
+Status: 201 Created
+Location: https://sandbox.boletosimples.com.br/api/v1/bank_billet_accounts/1
+Content-Type: application/json; charset=utf-8
+...
+
+{
+  "id":1,
+  "city_name":null,
+  "person_name":"Nome do carteira",
+  "address":null,
+  "address_complement":null,
+  "address_number":null,
+  "mobile_number":null,
+  "cnpj_cpf":"125.812.717-28",
+  "email":null,
+  "neighborhood":null,
+  "person_type":"individual",
+  "phone_number":null,
+  "zipcode":null,
+  "mobile_local_code":null,
+  "state":null
+}
+</pre>
+  </div>
+  <!-- <div class="tab-pane" id="ruby5">
+    <small>Requisição:</small>
+
+<pre class="ruby">
+@bank_billet_account = BoletoSimples::bank_billet_account.find(1)
+@bank_billet_account.person_name = "Nome 1234"
+if @bank_billet_account.save
+  puts "Sucesso :)"
+  puts "Novo nome: #{@bank_billet_account.person_name}"
+else
+  puts "Erro :("
+  puts @bank_billet_account.response_errors
+end
+</pre>
+  <small>Resposta:</small>
+
+<pre class="ruby">
+Sucesso :)
+Novo nome: Nome 1234
+</pre>
+  </div>
+  <div class="tab-pane" id="php5">
+    <small>Requisição:</small>
+
+<pre class="php">
+$bank_billet_account = BoletoSimples\bank_billet_account::find(1);
+echo "Nome antigo: " . $bank_billet_account->person_name . "\n";;
+$bank_billet_account->person_name = 'Nome 1234';
+if($bank_billet_account->save()) {
+  echo "Sucesso :)\n";
+  echo "Novo nome: " . $bank_billet_account->person_name . "\n";;
+} else {
+  echo "Erro :(\n";
+  print_r($bank_billet_account->response_errors);
+}
+</pre>
+  <small>Resposta:</small>
+
+<pre class="php">
+Sucesso :)
+Novo nome: Nome 1234
+</pre>
+  </div> -->
+</div>
+
+### Listar carteiras
+
+`GET /api/v1/bank_billet_accounts`
+
+<table class='table table-bordered'>
+  <thead>
+    <tr>
+      <th>Parâmetro</th>
+      <th data-container="body" data-toggle="tooltip" title="Obrigatório">Obr.</th>
+      <th>Tipo</th>
+      <th>Descrição</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <strong>page </strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        Number
+      </td>
+      <td>
+        Número da Página
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <strong>per_page </strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        Number
+      </td>
+      <td>
+        Quantidade de registros por página (Maximo de 250)
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+#### Exemplo
+
+<ul class="nav nav-tabs" role="tablist">
+  <li class="active"><a href="#bash6" role="tab" data-toggle="tab">Bash</a></li>
+  <!-- <li><a href="#ruby6" role="tab" data-toggle="tab">Ruby</a></li> -->
+  <!-- <li><a href="#php6" role="tab" data-toggle="tab">PHP</a></li> -->
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="bash6">
+    <small>Requisição:</small>
+
+<pre class="bash">
+curl -i \
+-u $BOLETOSIMPLES_TOKEN:x \
+-H 'Content-Type: application/json' \
+-H 'User-Agent: MyApp (myapp@example.com)' \
+-X GET "https://sandbox.boletosimples.com.br/api/v1/bank_billet_accounts?page=1&per_page=50"
+</pre>
+
+    <small>Resposta:</small>
+
+<pre class="http">
+HTTP/1.1 200 OK
+Date: Fri, 17 Oct 2014 19:46:16 GMT
+Status: 200 OK
+Link: <https://sandbox.boletosimples.com.br/api/v1/bank_billet_accounts?page=3&per_page=50>; rel="last", <https://sandbox.boletosimples.com.br/api/v1/bank_billet_accounts?page=2&per_page=50>; rel="next"
+Total: 101
+Content-Type: application/json; charset=utf-8
+...
+
+[
+  {
+    "id":1,
+    "city_name":null,
+    "person_name":"Nome do carteira",
+    "address":null,
+    "address_complement":null,
+    "address_number":null,
+    "mobile_number":null,
+    "cnpj_cpf":"125.812.717-28",
+    "email":null,
+    "neighborhood":null,
+    "person_type":"individual",
+    "phone_number":null,
+    "zipcode":null,
+    "mobile_local_code":null,
+    "state":null
+  }
+]
+</pre>
+  </div>
+  <!-- <div class="tab-pane" id="ruby6">
+    <small>Requisição:</small>
+
+<pre class="ruby">
+@bank_billet_accounts = BoletoSimples::bank_billet_account.all(page: 1, per_page: 2)
+puts "carteiras Retornados: #{@bank_billet_accounts.count}"
+puts "Total: #{BoletoSimples.last_request.total}"
+puts "Primeira Página: #{BoletoSimples.last_request.links[:first]}"
+puts "Página Anterior: #{BoletoSimples.last_request.links[:prev]}"
+puts "Próxima Página: #{BoletoSimples.last_request.links[:next]}"
+puts "Última Página: #{BoletoSimples.last_request.links[:last]}"
+</pre>
+
+    <small>Resposta:</small>
+
+<pre class="http">
+carteiras Retornados: 2
+Total: 9
+Primeira Página:
+Página Anterior:
+Próxima Página: https://sandbox.boletosimples.com.br/api/v1/bank_billet_accounts?page=2&per_page=2
+Última Página: https://sandbox.boletosimples.com.br/api/v1/bank_billet_accounts?page=5&per_page=2
+</pre>
+  </div>
+  <div class="tab-pane" id="php6">
+    <small>Requisição:</small>
+
+<pre class="php">
+$bank_billet_accounts = BoletoSimples\bank_billet_account::all(['page' => 1, 'per_page' => 2]);
+echo "carteiras Retornados: " . sizeof($bank_billet_accounts) . "\n";
+echo "Total: " . BoletoSimples::$last_request->total . "\n";
+echo "Primeira Página: " . BoletoSimples::$last_request->links['first'] . "\n";
+echo "Página Anterior: " . BoletoSimples::$last_request->links['prev'] . "\n";
+echo "Próxima Página: " . BoletoSimples::$last_request->links['next'] . "\n";
+echo "Última Página: " . BoletoSimples::$last_request->links['last'] . "\n";
+</pre>
+
+    <small>Resposta:</small>
+
+<pre class="http">
+carteiras Retornados: 2
+Total: 9
+Primeira Página:
+Página Anterior:
+Próxima Página: https://sandbox.boletosimples.com.br/api/v1/bank_billet_accounts?page=2&per_page=2
+Última Página: https://sandbox.boletosimples.com.br/api/v1/bank_billet_accounts?page=5&per_page=2
+</pre>
+  </div> -->
+</div>
