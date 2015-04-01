@@ -177,7 +177,7 @@ Array
     </div>
 </div>
 
-#### Criando boleto
+#### Exemplo de requisição válida
 
 <ul class="nav nav-tabs" role="tablist">
   <li class="active"><a href="#bash2" role="tab" data-toggle="tab">Bash</a></li>
@@ -656,7 +656,7 @@ Próxima Página: https://sandbox.boletosimples.com.br/api/v1/bank_billets?page=
 
 ### Cancelar boleto
 
-`PUT /api/v1/bank_billets/:id/cancel`
+`PUT /api/v1/bank_billets/:id/cancel` ou `PUT /api/v1/bank_billets/:id/cancel`
 
 Você pode cancelar boletos nos status de Aberto(`opened`) ou Vencido(`overdue`)
 
