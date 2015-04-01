@@ -43,7 +43,7 @@ breadcrumb: Carteiras de Cobrança
 
 <ul class="nav nav-tabs" role="tablist">
   <li class="active"><a href="#bash" role="tab" data-toggle="tab">Bash</a></li>
-  <!-- <li><a href="#ruby" role="tab" data-toggle="tab">Ruby</a></li> -->
+  <li><a href="#ruby" role="tab" data-toggle="tab">Ruby</a></li>
   <!-- <li><a href="#php" role="tab" data-toggle="tab">PHP</a></li> -->
 </ul>
 
@@ -64,25 +64,26 @@ curl -i \
 
 <pre class="http">
 HTTP/1.1 422 Unprocessable Entity
-Date: Fri, 17 Oct 2014 18:39:47 GMT
-Status: 422 Unprocessable Entity
+Server: Cowboy
+Connection: keep-alive
+Strict-Transport-Security: max-age=2592000
 Content-Type: application/json; charset=utf-8
 ...
 
 {"errors":{"bank_billet_account":["não pode ficar em branco"]}}
 </pre>
   </div>
-  <!-- <div class="tab-pane" id="ruby">
+  <div class="tab-pane" id="ruby">
     <small>Requisição:</small>
 
 <pre class="ruby">
-@bank_billet_account = BoletoSimples::bank_billet_account.create({person_name: 'Joao Da Silva'})
+@bank_billet_account = BoletoSimples::BankBilletAccount.create({bank_contract_slug: 'sicoob-02'})
 if @bank_billet_account.persisted?
   puts "Sucesso :)"
-  puts @bank_billet_account.attributes
+  ap @bank_billet_account.attributes
 else
   puts "Erro :("
-  puts @bank_billet_account.response_errors
+  ap @bank_billet_account.response_errors
 end
 </pre>
 
@@ -91,16 +92,16 @@ end
 <pre class="ruby">
 Erro :(
 {
-  :cnpj_cpf => [
-    [0] "não pode ficar em branco"
-  ],
-  :zipcode => [
-    [0] "não pode ficar em branco"
-  ]
+     :agency_number => [
+        [0] "não pode ficar em branco"
+    ],
+    :account_number => [
+        [0] "não pode ficar em branco"
+    ]
 }
 </pre>
 
-  </div> -->
+  </div>
     <!-- <div class="tab-pane" id="php">
       <small>Requisição:</small>
 
@@ -141,7 +142,7 @@ Array
 
 <ul class="nav nav-tabs" role="tablist">
   <li class="active"><a href="#bash2" role="tab" data-toggle="tab">Bash</a></li>
-  <!-- <li><a href="#ruby2" role="tab" data-toggle="tab">Ruby</a></li> -->
+  <li><a href="#ruby2" role="tab" data-toggle="tab">Ruby</a></li>
   <!-- <li><a href="#php2" role="tab" data-toggle="tab">PHP</a></li> -->
 </ul>
 
@@ -152,7 +153,7 @@ Array
 <pre class="bash">
 curl -i \
 -u $BOLETOSIMPLES_TOKEN:x \
--d '{"bank_billet_account":{"bank_contract_slug": "bb-18-019-7", "agency_number": "4042", agency_digit: "8", account_number: "0008873", account_digit: "0", next_our_number: "0000001"}}' \
+-d '{"bank_billet_account":{"bank_contract_slug": "sicoob-02", "agency_number": "4327", "agency_digit": "3", "account_number": "3666", "account_digit": "8", "next_our_number": "1", "extra1": "1234567"}}' \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
 -X POST 'https://sandbox.boletosimples.com.br/api/v1/bank_billet_accounts'
@@ -162,54 +163,47 @@ curl -i \
 
 <pre class="http">
 HTTP/1.1 201 Created
-Date: Fri, 17 Oct 2014 19:30:06 GMT
-Status: 201 Created
-Location: https://sandbox.boletosimples.com.br/api/v1/bank_billet_accounts/1
+Server: Cowboy
+Connection: keep-alive
+Strict-Transport-Security: max-age=2592000
+Location: https://sandbox.boletosimples.com.br/api/v1/bank_billet_accounts/3
 Content-Type: application/json; charset=utf-8
 ...
 
 {
-  "id":1,
-  "city_name":null,
-  "person_name":"Nome do carteira",
-  "address":null,
-  "address_complement":null,
-  "address_number":null,
-  "mobile_number":null,
-  "cnpj_cpf":"125.812.717-28",
-  "email":null,
-  "neighborhood":null,
-  "person_type":"individual",
-  "phone_number":null,
-  "zipcode":null,
-  "mobile_local_code":null,
-  "state":null
+  "id":3,
+  "bank_contract_slug":"sicoob-02",
+  "next_our_number":"0000001",
+  "agency_number":"4327",
+  "agency_digit":"3",
+  "account_number":"00003666",
+  "account_digit":"8",
+  "extra1":"1234567",
+  "extra1_digit":null,
+  "extra2":null,
+  "extra2_digit":null
 }
 </pre>
   </div>
-  <!-- <div class="tab-pane" id="ruby2">
+  <div class="tab-pane" id="ruby2">
     <small>Requisição:</small>
 
 <pre class="ruby">
-@bank_billet_account = BoletoSimples::bank_billet_account.create({
-  person_name: "Joao da Silva",
-  cnpj_cpf: "782.661.177-64",
-  email: "carteira@bom.com",
-  address: "Rua quinhentos",
-  city_name: "Rio de Janeiro",
-  state: "RJ",
-  neighborhood: "bairro",
-  zipcode: "12312-123",
-  address_number: "111",
-  address_complement: "Sala 4",
-  phone_number: "2112123434"
+@bank_billet_account = BoletoSimples::BankBilletAccount.create({
+  bank_contract_slug: 'sicoob-02',
+  next_our_number: '1',
+  agency_number: '4327',
+  agency_digit: '3',
+  account_number: '3666',
+  account_digit: '8',
+  extra1: '1234567'
 })
 if @bank_billet_account.persisted?
   puts "Sucesso :)"
-  puts @bank_billet_account.attributes
+  ap @bank_billet_account.attributes
 else
   puts "Erro :("
-  puts @bank_billet_account.response_errors
+  ap @bank_billet_account.response_errors
 end
 </pre>
   <small>Resposta:</small>
@@ -217,26 +211,22 @@ end
 <pre class="ruby">
 Sucesso :)
 {
-           "person_name" => "Joao da Silva",
-              "cnpj_cpf" => "782.661.177-64",
-                 "email" => "carteira@bom.com",
-               "address" => "Rua quinhentos",
-             "city_name" => "Rio de Janeiro",
-                 "state" => "RJ",
-          "neighborhood" => "bairro",
-               "zipcode" => "12312-123",
-        "address_number" => "111",
-    "address_complement" => "Sala 4",
-          "phone_number" => "2112123434",
-                    "id" => 67,
-         "mobile_number" => nil,
-           "person_type" => "individual",
-     "mobile_local_code" => nil,
-       "created_via_api" => true
+    "bank_contract_slug" => "sicoob-02",
+       "next_our_number" => "0000001",
+         "agency_number" => "4327",
+          "agency_digit" => "3",
+        "account_number" => "00003666",
+         "account_digit" => "8",
+         "extra1_length" => "1234567",
+                    "id" => 2,
+                "extra1" => "1234567",
+          "extra1_digit" => nil,
+                "extra2" => nil,
+          "extra2_digit" => nil
 }
 </pre>
   </div>
-  <div class="tab-pane" id="php2">
+  <!-- <div class="tab-pane" id="php2">
     <small>Requisição:</small>
 
 <pre class="php">
@@ -296,7 +286,7 @@ Array
 
 <ul class="nav nav-tabs" role="tablist">
   <li class="active"><a href="#bash3" role="tab" data-toggle="tab">Bash</a></li>
-  <!-- <li><a href="#ruby3" role="tab" data-toggle="tab">Ruby</a></li> -->
+  <li><a href="#ruby3" role="tab" data-toggle="tab">Ruby</a></li>
   <!-- <li><a href="#php3" role="tab" data-toggle="tab">PHP</a></li> -->
 </ul>
 
@@ -309,69 +299,61 @@ curl -i \
 -u $BOLETOSIMPLES_TOKEN:x \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X GET 'https://sandbox.boletosimples.com.br/api/v1/bank_billet_accounts/1'
+-X GET 'https://sandbox.boletosimples.com.br/api/v1/bank_billet_accounts/4'
 </pre>
 
     <small>Resposta:</small>
 
 <pre class="http">
 HTTP/1.1 200 OK
-Date: Fri, 17 Oct 2014 19:46:16 GMT
-Status: 200 OK
+Server: Cowboy
+Connection: keep-alive
+Strict-Transport-Security: max-age=2592000
 Content-Type: application/json; charset=utf-8
 ...
 
 {
-  "id":1,
-  "city_name":null,
-  "person_name":"Nome do carteira",
-  "address":null,
-  "address_complement":null,
-  "address_number":null,
-  "mobile_number":null,
-  "cnpj_cpf":"125.812.717-28",
-  "email":null,
-  "neighborhood":null,
-  "person_type":"individual",
-  "phone_number":null,
-  "zipcode":null,
-  "mobile_local_code":null,
-  "state":null
+  "id":4,
+  "bank_contract_slug":"sicoob-02",
+  "next_our_number":"0000001",
+  "agency_number":"4327",
+  "agency_digit":"3",
+  "account_number":"00003666",
+  "account_digit":"8",
+  "extra1":"1234567",
+  "extra1_digit":null,
+  "extra2":null,
+  "extra2_digit":null
 }
 </pre>
   </div>
-  <!-- <div class="tab-pane" id="ruby3">
+  <div class="tab-pane" id="ruby3">
     <small>Requisição:</small>
 
 <pre class="ruby">
-@bank_billet_account = BoletoSimples::bank_billet_account.find(67)
-puts @bank_billet_account.attributes
+@bank_billet_account = BoletoSimples::BankBilletAccount.find(4)
+ap @bank_billet_account.attributes
 </pre>
 
     <small>Resposta:</small>
 
 <pre class="ruby">
 {
-             "city_name" => "Rio de Janeiro",
-           "person_name" => "Joao da Silva",
-               "address" => "Rua quinhentos",
-    "address_complement" => "Sala 4",
-        "address_number" => "111",
-         "mobile_number" => nil,
-              "cnpj_cpf" => "782.661.177-64",
-                 "email" => "carteira@bom.com",
-          "neighborhood" => "bairro",
-           "person_type" => "individual",
-          "phone_number" => "2112123434",
-               "zipcode" => "12312-123",
-     "mobile_local_code" => nil,
-                 "state" => "RJ",
-       "created_via_api" => true,
-                    "id" => 67
+    "bank_contract_slug" => "sicoob-02",
+       "next_our_number" => "0000001",
+         "agency_number" => "4327",
+          "agency_digit" => "3",
+        "account_number" => "00003666",
+         "account_digit" => "8",
+                "extra1" => "1234567",
+          "extra1_digit" => nil,
+                "extra2" => nil,
+          "extra2_digit" => nil,
+                    "id" => 3
 }
 </pre>
   </div>
-  <div class="tab-pane" id="php3">
+  <!-- <div class="tab-pane" id="php3">
     <small>Requisição:</small>
 
 <pre class="php">
@@ -413,7 +395,7 @@ Array
 
 <ul class="nav nav-tabs" role="tablist">
   <li class="active"><a href="#bash4" role="tab" data-toggle="tab">Bash</a></li>
-  <!-- <li><a href="#ruby4" role="tab" data-toggle="tab">Ruby</a></li> -->
+  <li><a href="#ruby4" role="tab" data-toggle="tab">Ruby</a></li>
   <!-- <li><a href="#php4" role="tab" data-toggle="tab">PHP</a></li> -->
 </ul>
 
@@ -424,7 +406,7 @@ Array
 <pre class="bash">
 curl -i \
 -u $BOLETOSIMPLES_TOKEN:x \
--d '{"bank_billet_account":{"person_name":""}}' \
+-d '{"bank_billet_account":{"agency_number":""}}' \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
 -X PATCH 'https://sandbox.boletosimples.com.br/api/v1/bank_billet_accounts/1'
@@ -434,23 +416,25 @@ curl -i \
 
 <pre class="http">
 HTTP/1.1 422 Unprocessable Entity
-Date: Fri, 17 Oct 2014 18:39:47 GMT
-Status: 422 Unprocessable Entity
+Server: Cowboy
+Connection: keep-alive
+Strict-Transport-Security: max-age=2592000
 Content-Type: application/json; charset=utf-8
 ...
 
-{"errors":{"person_name":["não pode ficar em branco"]}}
+{"errors":{"agency_number":["não pode ficar em branco"]}}
 </pre>
   </div>
-  <!-- <div class="tab-pane" id="ruby4">
+  <div class="tab-pane" id="ruby4">
     <small>Requisição:</small>
 
 <pre class="ruby">
-@bank_billet_account = BoletoSimples::bank_billet_account.find(1)
-@bank_billet_account.person_name = ""
+@bank_billet_account = BoletoSimples::BankBilletAccount.find(3)
+puts "Agência: #{@bank_billet_account.agency_number}"
+@bank_billet_account.agency_number = ""
 if @bank_billet_account.save
   puts "Sucesso :)"
-  puts "Novo nome: #{@bank_billet_account.person_name}"
+  puts "Nova agência: #{@bank_billet_account.agency_number}"
 else
   puts "Erro :("
   puts @bank_billet_account.response_errors
@@ -462,14 +446,14 @@ end
 <pre class="ruby">
 Erro :(
 {
-  :person_name => [
-    [0] "não pode ficar em branco"
-  ]
+    :agency_number => [
+        [0] "não pode ficar em branco"
+    ]
 }
 </pre>
 
   </div>
-    <div class="tab-pane" id="php4">
+    <!-- <div class="tab-pane" id="php4">
       <small>Requisição:</small>
 
 <pre class="php">
@@ -505,7 +489,7 @@ Array
 
 <ul class="nav nav-tabs" role="tablist">
   <li class="active"><a href="#bash5" role="tab" data-toggle="tab">Bash</a></li>
-  <!-- <li><a href="#ruby5" role="tab" data-toggle="tab">Ruby</a></li> -->
+  <li><a href="#ruby5" role="tab" data-toggle="tab">Ruby</a></li>
   <!-- <li><a href="#php5" role="tab" data-toggle="tab">PHP</a></li> -->
 </ul>
 
@@ -516,10 +500,10 @@ Array
 <pre class="bash">
 curl -i \
 -u $BOLETOSIMPLES_TOKEN:x \
--d '{"bank_billet_account":{"person_name":"Nome do carteira", "cnpj_cpf": "125.812.717-28"}}' \
+-d '{"bank_billet_account":{"agency_number":"4567"}}' \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X POST 'https://sandbox.boletosimples.com.br/api/v1/bank_billet_accounts'
+-X PUT 'https://sandbox.boletosimples.com.br/api/v1/bank_billet_accounts/1'
 </pre>
 
     <small>Resposta:</small>
@@ -534,45 +518,42 @@ Content-Type: application/json; charset=utf-8
 
 {
   "id":1,
-  "city_name":null,
-  "person_name":"Nome do carteira",
-  "address":null,
-  "address_complement":null,
-  "address_number":null,
-  "mobile_number":null,
-  "cnpj_cpf":"125.812.717-28",
-  "email":null,
-  "neighborhood":null,
-  "person_type":"individual",
-  "phone_number":null,
-  "zipcode":null,
-  "mobile_local_code":null,
-  "state":null
+  "bank_contract_slug":"sicoob-02",
+  "next_our_number":"0000001",
+  "agency_number":"4567",
+  "agency_digit":"3",
+  "account_number":"00003666",
+  "account_digit":"8",
+  "extra1":"1234567",
+  "extra1_digit":null,
+  "extra2":null,
+  "extra2_digit":null
 }
 </pre>
   </div>
-  <!-- <div class="tab-pane" id="ruby5">
+  <div class="tab-pane" id="ruby5">
     <small>Requisição:</small>
 
 <pre class="ruby">
-@bank_billet_account = BoletoSimples::bank_billet_account.find(1)
-@bank_billet_account.person_name = "Nome 1234"
+@bank_billet_account = BoletoSimples::BankBilletAccount.find(3)
+puts "Agência: #{@bank_billet_account.agency_number}"
+@bank_billet_account.agency_number = "4842"
 if @bank_billet_account.save
   puts "Sucesso :)"
-  puts "Novo nome: #{@bank_billet_account.person_name}"
+  puts "Nova agência: #{@bank_billet_account.agency_number}"
 else
   puts "Erro :("
-  puts @bank_billet_account.response_errors
+  ap @bank_billet_account.response_errors
 end
 </pre>
   <small>Resposta:</small>
 
 <pre class="ruby">
 Sucesso :)
-Novo nome: Nome 1234
+Nova agência: 4842
 </pre>
   </div>
-  <div class="tab-pane" id="php5">
+  <!-- <div class="tab-pane" id="php5">
     <small>Requisição:</small>
 
 <pre class="php">
@@ -646,7 +627,7 @@ Novo nome: Nome 1234
 
 <ul class="nav nav-tabs" role="tablist">
   <li class="active"><a href="#bash6" role="tab" data-toggle="tab">Bash</a></li>
-  <!-- <li><a href="#ruby6" role="tab" data-toggle="tab">Ruby</a></li> -->
+  <li><a href="#ruby6" role="tab" data-toggle="tab">Ruby</a></li>
   <!-- <li><a href="#php6" role="tab" data-toggle="tab">PHP</a></li> -->
 </ul>
 
@@ -666,40 +647,36 @@ curl -i \
 
 <pre class="http">
 HTTP/1.1 200 OK
-Date: Fri, 17 Oct 2014 19:46:16 GMT
-Status: 200 OK
-Link: <https://sandbox.boletosimples.com.br/api/v1/bank_billet_accounts?page=3&per_page=50>; rel="last", <https://sandbox.boletosimples.com.br/api/v1/bank_billet_accounts?page=2&per_page=50>; rel="next"
-Total: 101
+Server: Cowboy
+Connection: keep-alive
+Strict-Transport-Security: max-age=2592000
+Total: 4
 Content-Type: application/json; charset=utf-8
 ...
 
 [
-  {
-    "id":1,
-    "city_name":null,
-    "person_name":"Nome do carteira",
-    "address":null,
-    "address_complement":null,
-    "address_number":null,
-    "mobile_number":null,
-    "cnpj_cpf":"125.812.717-28",
-    "email":null,
-    "neighborhood":null,
-    "person_type":"individual",
-    "phone_number":null,
-    "zipcode":null,
-    "mobile_local_code":null,
-    "state":null
-  }
+ {
+  "id":1,
+  "bank_contract_slug":"sicoob-02",
+  "next_our_number":"0000001",
+  "agency_number":"4567",
+  "agency_digit":"3",
+  "account_number":"00003666",
+  "account_digit":"8",
+  "extra1":"1234567",
+  "extra1_digit":null,
+  "extra2":null,
+  "extra2_digit":null
+ }
 ]
 </pre>
   </div>
-  <!-- <div class="tab-pane" id="ruby6">
+  <div class="tab-pane" id="ruby6">
     <small>Requisição:</small>
 
 <pre class="ruby">
-@bank_billet_accounts = BoletoSimples::bank_billet_account.all(page: 1, per_page: 2)
-puts "carteiras Retornados: #{@bank_billet_accounts.count}"
+@bank_billet_accounts = BoletoSimples::BankBilletAccount.all(page: 1, per_page: 2)
+puts "Carteiras Retornadas: #{@bank_billet_accounts.count}"
 puts "Total: #{BoletoSimples.last_request.total}"
 puts "Primeira Página: #{BoletoSimples.last_request.links[:first]}"
 puts "Página Anterior: #{BoletoSimples.last_request.links[:prev]}"
@@ -710,15 +687,15 @@ puts "Última Página: #{BoletoSimples.last_request.links[:last]}"
     <small>Resposta:</small>
 
 <pre class="http">
-carteiras Retornados: 2
-Total: 9
+Carteiras Retornadas: 3
+Total: 3
 Primeira Página:
 Página Anterior:
 Próxima Página: https://sandbox.boletosimples.com.br/api/v1/bank_billet_accounts?page=2&per_page=2
-Última Página: https://sandbox.boletosimples.com.br/api/v1/bank_billet_accounts?page=5&per_page=2
+Última Página: https://sandbox.boletosimples.com.br/api/v1/bank_billet_accounts?page=2&per_page=2
 </pre>
   </div>
-  <div class="tab-pane" id="php6">
+  <!-- <div class="tab-pane" id="php6">
     <small>Requisição:</small>
 
 <pre class="php">
