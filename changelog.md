@@ -10,7 +10,10 @@ en: /en/changelog
 
 <!-- ### 31/03/2015
 
-* Inclusão de carteiras de cobrança. -->
+* Inclusão de carteiras de cobrança.
+* Correções nos exemplos em Bash do endpoint de Clientes
+* Adicinando opção de usar PUT para cancelar Boletos
+ -->
 
 ### 08/03/2015
 
