@@ -151,7 +151,7 @@ Array
 <pre class="bash">
 curl -i \
 -u $BOLETOSIMPLES_TOKEN:x \
--d '{"customer":{"person_name":"Nome do Cliente", "cnpj_cpf": "125.812.717-28"}}' \
+-d '{"customer":{"person_name":"Nome do Cliente", "cnpj_cpf": "125.812.717-28", "zipcode": "20071-004"}}' \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
 -X POST 'https://sandbox.boletosimples.com.br/api/v1/customers'
@@ -180,7 +180,7 @@ Content-Type: application/json; charset=utf-8
   "neighborhood":null,
   "person_type":"individual",
   "phone_number":null,
-  "zipcode":null,
+  "zipcode":"20071-004",
   "mobile_local_code":null,
   "state":null
 }
@@ -198,7 +198,7 @@ Content-Type: application/json; charset=utf-8
   city_name: "Rio de Janeiro",
   state: "RJ",
   neighborhood: "bairro",
-  zipcode: "12312-123",
+  zipcode: "20071-004",
   address_number: "111",
   address_complement: "Sala 4",
   phone_number: "2112123434"
@@ -223,7 +223,7 @@ Sucesso :)
              "city_name" => "Rio de Janeiro",
                  "state" => "RJ",
           "neighborhood" => "bairro",
-               "zipcode" => "12312-123",
+               "zipcode" => "20071-004",
         "address_number" => "111",
     "address_complement" => "Sala 4",
           "phone_number" => "2112123434",
@@ -247,7 +247,7 @@ $customer = BoletoSimples\Customer::create([
   'city_name' => "Rio de Janeiro",
   'state' => "RJ",
   'neighborhood' => "bairro",
-  'zipcode' => "12312-123",
+  'zipcode' => "20071-004",
   'address_number' => "111",
   'address_complement' => "Sala 4",
   'phone_number' => "2112123434"
@@ -278,7 +278,7 @@ Array
     [neighborhood] => bairro
     [person_type] => individual
     [phone_number] => 2112123434
-    [zipcode] => 12312-123
+    [zipcode] => 20071-004
     [mobile_local_code] =>
     [state] => RJ
     [created_via_api] => 1
@@ -333,7 +333,7 @@ Content-Type: application/json; charset=utf-8
   "neighborhood":null,
   "person_type":"individual",
   "phone_number":null,
-  "zipcode":null,
+  "zipcode":"20071-004",
   "mobile_local_code":null,
   "state":null
 }
@@ -362,7 +362,7 @@ puts @customer.attributes
           "neighborhood" => "bairro",
            "person_type" => "individual",
           "phone_number" => "2112123434",
-               "zipcode" => "12312-123",
+               "zipcode" => "20071-004",
      "mobile_local_code" => nil,
                  "state" => "RJ",
        "created_via_api" => true,
@@ -395,7 +395,7 @@ Array
     [neighborhood] => bairro
     [person_type] => individual
     [phone_number] => 2112123434
-    [zipcode] => 12312-123
+    [zipcode] => 20071-004
     [mobile_local_code] =>
     [state] => RJ
     [created_via_api] => 1
@@ -515,20 +515,21 @@ Array
 <pre class="bash">
 curl -i \
 -u $BOLETOSIMPLES_TOKEN:x \
--d '{"customer":{"person_name":"Nome do Cliente", "cnpj_cpf": "125.812.717-28"}}' \
+-d '{"customer":{"person_name":"Nome do Cliente Atualizado", "cnpj_cpf": "125.812.717-28"}}' \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X POST 'https://sandbox.boletosimples.com.br/api/v1/customers'
+-X PUT 'https://sandbox.boletosimples.com.br/api/v1/customers/1'
 </pre>
 
     <small>Resposta:</small>
 
 <pre class="http">
-HTTP/1.1 201 Created
-Date: Fri, 17 Oct 2014 19:30:06 GMT
-Status: 201 Created
+HTTP/1.1 204 No Content
+Server: Cowboy
+Content-Length: 0
+Connection: keep-alive
+Strict-Transport-Security: max-age=2592000
 Location: https://sandbox.boletosimples.com.br/api/v1/customers/1
-Content-Type: application/json; charset=utf-8
 ...
 
 {
@@ -544,7 +545,7 @@ Content-Type: application/json; charset=utf-8
   "neighborhood":null,
   "person_type":"individual",
   "phone_number":null,
-  "zipcode":null,
+  "zipcode":"20071-004",
   "mobile_local_code":null,
   "state":null
 }
@@ -686,7 +687,7 @@ Content-Type: application/json; charset=utf-8
     "neighborhood":null,
     "person_type":"individual",
     "phone_number":null,
-    "zipcode":null,
+    "zipcode":"20071-004",
     "mobile_local_code":null,
     "state":null
   }
