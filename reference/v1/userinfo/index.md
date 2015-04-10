@@ -47,6 +47,10 @@ Quando acessado através do [Token de Acesso](/authentication/token), todass as 
       <th>business</th>
       <td>[:business_name, :business_cnpj, :business_legal_name]</td>
     </tr>
+    <tr>
+      <th>balance</th>
+      <td>[:balance_cents]</td>
+    </tr>
   </tbody>
 </table>
 
@@ -108,7 +112,8 @@ Content-Type: application/json; charset=utf-8
   "full_name": "Margret Simões Gonçalo",
   "login_url": "https://sandbox.boletosimples.com.br/welcome?email=meuecommerce%40example.com&token=UCefpzbGRrM1UrLEuUDS",
   "mother_name": "Lenadra Simões Gonçalo",
-  "father_name": "José Simões Gonçalo"
+  "father_name": "José Simões Gonçalo",
+  "balance_cents": "0"
 }
 </pre>
   </div>
@@ -147,7 +152,8 @@ puts @userinfo
            :address_state => nil,
            :business_name => nil,
            :business_cnpj => nil,
-     :business_legal_name => nil
+     :business_legal_name => nil,
+           :balance_cents => nil
 }
 </pre>
   </div>
@@ -188,6 +194,7 @@ Array
     [business_name] =>
     [business_cnpj] =>
     [business_legal_name] =>
+    [balance_cents] =>
 )
 </pre>
   </div>

@@ -27,6 +27,8 @@ Aqui está a lista de todos os escopos que você pode solicitar:
   <dd>Visualizar os dados bancários (agência e conta)</dd>
   <dt>business</dt>
   <dd>Visualizar os dados da empresa (razão social e cnpj)</dd>
+  <dt>balance</dt>
+  <dd>Visualizar o saldo na conta do usuário</dd>
   <dt>write</dt>
   <dd>Criar e visualizar boletos bancários e clientes</dd>
   <dt>read</dt>
