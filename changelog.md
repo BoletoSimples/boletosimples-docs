@@ -12,6 +12,7 @@ en: /en/changelog
 
 * Adicionado novo scopo 'balance'
 * Inclusão de account_level na resposta sobre usuários
+* Adicionado API de CNAB (Retorno)
 
 ### 31/03/2015
 

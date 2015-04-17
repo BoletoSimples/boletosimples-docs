@@ -12,6 +12,8 @@ en: /en/reference
 
 ### [Clientes](/reference/v1/customers)
 
+### [CNAB (Retorno)](/reference/v1/retornos)
+
 ### [Eventos](/reference/v1/events)
 
 ### [Transações](/reference/v1/transactions)
