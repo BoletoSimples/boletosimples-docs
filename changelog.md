@@ -13,6 +13,7 @@ en: /en/changelog
 * Adicionado novo scopo 'balance'
 * Inclusão de account_level na resposta sobre usuários
 * Adicionado API de CNAB (Retorno)
+* Adicionado endpoints(novo saque, solicitar saque, informações do saque e listagem de saques) na API de transações
 
 ### 31/03/2015
 
