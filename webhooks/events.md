@@ -51,3 +51,5 @@ Ao configurar o webhook é possível se inscrever nos eventos acima e nos evento
 | bank_billet.*         | Todos os eventos relacionados a boleto bancário, inclusive os novos eventos que sejam implementados após a criação do webhook. |
 | customer.*            | Todos os eventos relacionados a cientes, inclusive os novos eventos que sejam implementados após a criação do webhook. |
 | transaction.*         | Todos os eventos relacionados a transações, inclusive os novos eventos que sejam implementados após a criação do webhook. |
+| withdrawal.*         | Todos os eventos relacionados a saques, inclusive os novos eventos que sejam implementados após a criação do webhook. |
+| user.*         | Todos os eventos relacionados a conta, inclusive os novos eventos que sejam implementados após a criação do webhook. |
