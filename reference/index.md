@@ -8,7 +8,7 @@ en: /en/reference
 
 ### [Boletos](/reference/v1/bank_billets)
 
-<!-- ### [Carteiras de Cobrança](/reference/v1/bank_billet_accounts) -->
+### [Carteiras de Cobrança](/reference/v1/bank_billet_accounts)
 
 ### [Clientes](/reference/v1/customers)
 

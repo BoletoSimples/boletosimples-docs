@@ -8,12 +8,16 @@ en: /en/changelog
 
 #### Log das últimas alterações realizadas na API.
 
-<!-- ### 31/03/2015
+### 17/04/2015
+
+* Adicionado novo scopo 'balance'
+* Inclusão de account_level na resposta sobre usuários
+
+### 31/03/2015
 
 * Inclusão de carteiras de cobrança.
 * Correções nos exemplos em Bash do endpoint de Clientes
-* Adicinando opção de usar PUT para cancelar Boletos
- -->
+* Adicionado opção de usar PUT para cancelar Boletos
 
 ### 08/03/2015
 

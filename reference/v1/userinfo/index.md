@@ -113,7 +113,8 @@ Content-Type: application/json; charset=utf-8
   "login_url": "https://sandbox.boletosimples.com.br/welcome?email=meuecommerce%40example.com&token=UCefpzbGRrM1UrLEuUDS",
   "mother_name": "Lenadra Simões Gonçalo",
   "father_name": "José Simões Gonçalo",
-  "balance_cents": "0"
+  "balance_cents": "0",
+  "account_level": "0"
 }
 </pre>
   </div>
