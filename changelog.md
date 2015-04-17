@@ -14,6 +14,7 @@ en: /en/changelog
 * Inclusão de account_level na resposta sobre usuários
 * Adicionado API de CNAB (Retorno)
 * Adicionado endpoints(novo saque, solicitar saque, informações do saque e listagem de saques) na API de transações
+* Adicionado novos eventos de webhooks
 
 ### 31/03/2015
 

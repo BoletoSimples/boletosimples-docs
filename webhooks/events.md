@@ -13,22 +13,27 @@ Os códigos dos eventos seguem um padrão `resource.event`, onde `resource` é o
 
 Abaixo a listagem de eventos registrados pelo Boleto Simples:
 
-| Código                | Descrição                                          |
-|-----------------------|----------------------------------------------------|
-| bank_billet.created   | Toda vez que um boleto é criado.                   |
-| bank_billet.generated | Toda vez que um boleto é gerado.                   |
-| bank_billet.updated   | Toda vez que um boleto é atualizado.               |
-| bank_billet.canceled  | Toda vez que um boleto é cancelado.                |
-| bank_billet.overdue   | Toda vez que um boleto fica vencido.               |
-| bank_billet.paid      | Toda vez que um boleto é pago.                     |
-| bank_billet.blocked   | Toda vez que o pagamento de um boleto é bloqueado. |
-| customer.created      | Toda vez que um cliente é criado.                  |
-| customer.updated      | Toda vez que um cliente é atualizado.              |
-| customer.deleted      | Toda vez que um cliente é excluído.                |
-| transaction.created   | Toda vez que uma transação é criada.               |
-| transaction.updated   | Toda vez que uma transação é atualizada.           |
-| transaction.processed | Toda vez que uma transação é processada.           |
-| ping                  | Evento especial para testar o webhook.             |
+| Código                            | Descrição                                          |
+|-----------------------------------|----------------------------------------------------|
+| bank_billet.created               | Toda vez que um boleto é criado.                   |
+| bank_billet.generated             | Toda vez que um boleto é gerado.                   |
+| bank_billet.updated               | Toda vez que um boleto é atualizado.               |
+| bank_billet.canceled              | Toda vez que um boleto é cancelado.                |
+| bank_billet.overdue               | Toda vez que um boleto fica vencido.               |
+| bank_billet.paid                  | Toda vez que um boleto é pago.                     |
+| bank_billet.blocked               | Toda vez que o pagamento de um boleto é bloqueado. |
+| customer.created                  | Toda vez que um cliente é criado.                  |
+| customer.updated                  | Toda vez que um cliente é atualizado.              |
+| customer.deleted                  | Toda vez que um cliente é excluído.                |
+| transaction.created               | Toda vez que uma transação é criada.               |
+| transaction.updated               | Toda vez que uma transação é atualizada.           |
+| transaction.processed             | Toda vez que uma transação é processada.           |
+| withdrawal.requested              | Toda vez que um saque é solicitado.                |
+| withdrawal.transferred            | Toda vez que um saque é transferido.               |
+| user.updated                      | Toda vez que a conta é atualizada.                 |
+| user.blocked                      | Toda vez que a conta é bloqueada.                  |
+| user.bank_billet_creation_blocked | Toda vez que a emissão de boletos é bloqueada.     |
+| ping                              | Evento especial para testar o webhook.             |
 
 ### Evento Ping
 
