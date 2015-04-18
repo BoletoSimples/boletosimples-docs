@@ -23,6 +23,7 @@ Note que se você está usando autenticação OAuth2,
 ### Plugins para outros sistemas
 
 *   [boletosimples-woocommerce](https://github.com/BoletoSimples/boletosimples-woocommerce) - Plugin para [WooCommerce](http://www.woothemes.com/woocommerce/), que é um plugin de e-commerce para o Wordpress.
+*   [boletosimples-shopify](http://shopify.boletosimples.com.br) - Integração com o [Shopify](http://pt.shopify.com).
 
 ### Aplicações e códigos de exemplos
 
