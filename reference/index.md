@@ -16,6 +16,8 @@ en: /en/reference
 
 ### [Eventos](/reference/v1/events)
 
+### [Saques](/reference/v1/withdrawals)
+
 ### [Transações](/reference/v1/transactions)
 
 ### [Webhooks](/reference/v1/webhooks)
