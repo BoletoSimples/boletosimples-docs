@@ -6,7 +6,12 @@ en: /en/changelog
 
 ## Changelog
 
-#### Log das últimas alterações realizadas na API.
+#### Últimas alterações realizadas na API.
+
+### 11/06/2015
+
+* Adicionado endpoint 'pay_off' na API de CNAB
+* Correção exemplo de cancelamento de boleto
 
 ### 17/04/2015
 
