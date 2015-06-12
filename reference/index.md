@@ -12,7 +12,7 @@ en: /en/reference
 
 ### [Clientes](/reference/v1/customers)
 
-### [CNAB (Retorno)](/reference/v1/retornos)
+### [CNAB (Retorno)](/reference/v1/discharges)
 
 ### [Eventos](/reference/v1/events)
 
