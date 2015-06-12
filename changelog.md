@@ -10,7 +10,8 @@ en: /en/changelog
 
 ### 12/06/2015
 
-* Renomeado endpoint de CNAB de retorno
+* Renomeado endpoint de CNAB de Retorno
+* Adicionado endpoint de CNAB de Remessa
 
 ### 11/06/2015
 

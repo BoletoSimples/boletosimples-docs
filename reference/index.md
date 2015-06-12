@@ -14,6 +14,8 @@ en: /en/reference
 
 ### [CNAB (Retorno)](/reference/v1/discharges)
 
+### [CNAB (Remessa)](/reference/v1/remittances)
+
 ### [Eventos](/reference/v1/events)
 
 ### [Saques](/reference/v1/withdrawals)
