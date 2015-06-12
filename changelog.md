@@ -8,6 +8,10 @@ en: /en/changelog
 
 #### Últimas alterações realizadas na API.
 
+### 12/06/2015
+
+* Renomeado endpoint de CNAB de retorno
+
 ### 11/06/2015
 
 * Adicionado endpoint 'pay_off' na API de CNAB

@@ -9,10 +9,10 @@ breadcrumb: CNAB (Retorno)
 
 | Recurso                  | Descrição
 | ------------------------ | ------------------------
-| [POST /api/v1/cnabs](#enviar-cnab) | Enviar CNAB
-| [GET /api/v1/cnabs/:id](#informaes-do-cnab) | Informações do CNAB
-| [GET /api/v1/cnabs](#listar-cnabs) | Listar CNABs
-| [PUT /api/v1/cnabs/:id/pay_off](#quitar-boletos) | Quitar boletos
+| [POST /api/v1/discharges](#enviar-cnab) | Enviar CNAB
+| [GET /api/v1/discharges/:id](#informaes-do-cnab) | Informações do CNAB
+| [GET /api/v1/discharges](#listar-cnabs) | Listar CNABs
+| [PUT /api/v1/discharges/:id/pay_off](#quitar-boletos) | Quitar boletos
 
 ### Modelo de Dados
 
@@ -26,7 +26,7 @@ breadcrumb: CNAB (Retorno)
 
 ### Enviar CNAB
 
-`POST /api/v1/cnabs`
+`POST /api/v1/discharges`
 
 #### Exemplo de requisição inválida
 
@@ -45,7 +45,7 @@ curl -i \
 -u $BOLETOSIMPLES_TOKEN:x \
 -H 'Content-Type: multipart/form-data' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X POST 'https://sandbox.boletosimples.com.br/api/v1/cnabs'
+-X POST 'https://sandbox.boletosimples.com.br/api/v1/discharges'
 </pre>
 
     <small>Resposta:</small>
@@ -58,7 +58,7 @@ Strict-Transport-Security: max-age=2592000
 Content-Type: application/json; charset=utf-8
 ...
 
-{"errors":{"cnab":["não pode ficar em branco"]}}
+{"errors":{"discharge":["não pode ficar em branco"]}}
 </pre>
   </div>
   <!-- <div class="tab-pane" id="ruby">
@@ -143,8 +143,8 @@ curl -i \
 -u $BOLETOSIMPLES_TOKEN:x \
 -H 'Content-Type: multipart/form-data' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--F "cnab[file]=@cnab240.ret" \
--X POST 'https://sandbox.boletosimples.com.br/api/v1/cnabs'
+-F "discharge[file]=@cnab240.ret" \
+-X POST 'https://sandbox.boletosimples.com.br/api/v1/discharges'
 </pre>
 
     <small>Resposta:</small>
@@ -154,7 +154,7 @@ HTTP/1.1 201 Created
 Server: Cowboy
 Connection: keep-alive
 Strict-Transport-Security: max-age=2592000
-Location: https://sandbox.boletosimples.com.br/api/v1/cnabs/1
+Location: https://sandbox.boletosimples.com.br/api/v1/discharges/1
 Content-Type: application/json; charset=utf-8
 ...
 
@@ -163,10 +163,10 @@ Content-Type: application/json; charset=utf-8
   "filename":"cnab240.ret",
   "processed_at":"2015-06-11T10:41:41.916-03:00",
   "created_via_api":true,
-  "cnab_transactions":[
-    {"id":243,"cnab_id":1,"agency_number":null,"account_number":null,"credit_at":"2015-06-03","paid_at":"2015-06-02","our_number":"0000000000206243","cnpj_cpf":null,"extra1":null,"extra2":null,"parcel":null,"receiving_bank":"104","receiving_agency":"00369","receiving_agency_digit":"0","bank_rate":765,"iof":0,"value_rebate":0,"discount":16022,"paid_amount":144200,"billet_fine":0,"other_credit":null,"credit_amount":144200,"other_costs":null},
-    {"id":242,"cnab_id":1,"agency_number":null,"account_number":null,"credit_at":"2015-06-03","paid_at":"2015-06-02","our_number":"0000000000205441","cnpj_cpf":null,"extra1":null,"extra2":null,"parcel":null,"receiving_bank":"033","receiving_agency":"04388","receiving_agency_digit":"0","bank_rate":765,"iof":0,"value_rebate":0,"discount":10034,"paid_amount":144850,"billet_fine":0,"other_credit":null,"credit_amount":144850,"other_costs":null},
-    {"id":241,"cnab_id":1,"agency_number":null,"account_number":null,"credit_at":"2015-06-03","paid_at":"2015-06-02","our_number":"0000000000204640","cnpj_cpf":null,"extra1":null,"extra2":null,"parcel":null,"receiving_bank":"104","receiving_agency":"00406","receiving_agency_digit":"0","bank_rate":765,"iof":0,"value_rebate":0,"discount":10396,"paid_amount":135153,"billet_fine":0,"other_credit":null,"credit_amount":135153,"other_costs":null}
+  "discharge_transactions":[
+    {"id":243,"discharge_id":1,"agency_number":null,"account_number":null,"credit_at":"2015-06-03","paid_at":"2015-06-02","our_number":"0000000000206243","cnpj_cpf":null,"extra1":null,"extra2":null,"parcel":null,"receiving_bank":"104","receiving_agency":"00369","receiving_agency_digit":"0","bank_rate":765,"iof":0,"value_rebate":0,"discount":16022,"paid_amount":144200,"billet_fine":0,"other_credit":null,"credit_amount":144200,"other_costs":null},
+    {"id":242,"discharge_id":1,"agency_number":null,"account_number":null,"credit_at":"2015-06-03","paid_at":"2015-06-02","our_number":"0000000000205441","cnpj_cpf":null,"extra1":null,"extra2":null,"parcel":null,"receiving_bank":"033","receiving_agency":"04388","receiving_agency_digit":"0","bank_rate":765,"iof":0,"value_rebate":0,"discount":10034,"paid_amount":144850,"billet_fine":0,"other_credit":null,"credit_amount":144850,"other_costs":null},
+    {"id":241,"discharge_id":1,"agency_number":null,"account_number":null,"credit_at":"2015-06-03","paid_at":"2015-06-02","our_number":"0000000000204640","cnpj_cpf":null,"extra1":null,"extra2":null,"parcel":null,"receiving_bank":"104","receiving_agency":"00406","receiving_agency_digit":"0","bank_rate":765,"iof":0,"value_rebate":0,"discount":10396,"paid_amount":135153,"billet_fine":0,"other_credit":null,"credit_amount":135153,"other_costs":null}
   ]
 }
 </pre>
@@ -266,7 +266,7 @@ Array
 
 ### Informações do CNAB
 
-`GET /api/v1/cnabs/:id`
+`GET /api/v1/discharges/:id`
 
 #### Exemplo
 
@@ -285,7 +285,7 @@ curl -i \
 -u $BOLETOSIMPLES_TOKEN:x \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X GET 'https://sandbox.boletosimples.com.br/api/v1/cnabs/1'
+-X GET 'https://sandbox.boletosimples.com.br/api/v1/discharges/1'
 </pre>
 
     <small>Resposta:</small>
@@ -303,10 +303,10 @@ Content-Type: application/json; charset=utf-8
   "filename":"cnab240.ret",
   "processed_at":"2015-06-11T10:41:41.916-03:00",
   "created_via_api":true,
-  "cnab_transactions":[
-    {"id":243,"cnab_id":1,"agency_number":null,"account_number":null,"credit_at":"2015-06-03","paid_at":"2015-06-02","our_number":"0000000000206243","cnpj_cpf":null,"extra1":null,"extra2":null,"parcel":null,"receiving_bank":"104","receiving_agency":"00369","receiving_agency_digit":"0","bank_rate":765,"iof":0,"value_rebate":0,"discount":16022,"paid_amount":144200,"billet_fine":0,"other_credit":null,"credit_amount":144200,"other_costs":null},
-    {"id":242,"cnab_id":1,"agency_number":null,"account_number":null,"credit_at":"2015-06-03","paid_at":"2015-06-02","our_number":"0000000000205441","cnpj_cpf":null,"extra1":null,"extra2":null,"parcel":null,"receiving_bank":"033","receiving_agency":"04388","receiving_agency_digit":"0","bank_rate":765,"iof":0,"value_rebate":0,"discount":10034,"paid_amount":144850,"billet_fine":0,"other_credit":null,"credit_amount":144850,"other_costs":null},
-    {"id":241,"cnab_id":1,"agency_number":null,"account_number":null,"credit_at":"2015-06-03","paid_at":"2015-06-02","our_number":"0000000000204640","cnpj_cpf":null,"extra1":null,"extra2":null,"parcel":null,"receiving_bank":"104","receiving_agency":"00406","receiving_agency_digit":"0","bank_rate":765,"iof":0,"value_rebate":0,"discount":10396,"paid_amount":135153,"billet_fine":0,"other_credit":null,"credit_amount":135153,"other_costs":null}
+  "discharge_transactions":[
+    {"id":243,"discharge_id":1,"agency_number":null,"account_number":null,"credit_at":"2015-06-03","paid_at":"2015-06-02","our_number":"0000000000206243","cnpj_cpf":null,"extra1":null,"extra2":null,"parcel":null,"receiving_bank":"104","receiving_agency":"00369","receiving_agency_digit":"0","bank_rate":765,"iof":0,"value_rebate":0,"discount":16022,"paid_amount":144200,"billet_fine":0,"other_credit":null,"credit_amount":144200,"other_costs":null},
+    {"id":242,"discharge_id":1,"agency_number":null,"account_number":null,"credit_at":"2015-06-03","paid_at":"2015-06-02","our_number":"0000000000205441","cnpj_cpf":null,"extra1":null,"extra2":null,"parcel":null,"receiving_bank":"033","receiving_agency":"04388","receiving_agency_digit":"0","bank_rate":765,"iof":0,"value_rebate":0,"discount":10034,"paid_amount":144850,"billet_fine":0,"other_credit":null,"credit_amount":144850,"other_costs":null},
+    {"id":241,"discharge_id":1,"agency_number":null,"account_number":null,"credit_at":"2015-06-03","paid_at":"2015-06-02","our_number":"0000000000204640","cnpj_cpf":null,"extra1":null,"extra2":null,"parcel":null,"receiving_bank":"104","receiving_agency":"00406","receiving_agency_digit":"0","bank_rate":765,"iof":0,"value_rebate":0,"discount":10396,"paid_amount":135153,"billet_fine":0,"other_credit":null,"credit_amount":135153,"other_costs":null}
   ]
 }
 </pre>
@@ -373,7 +373,7 @@ Array
 
 ### Listar CNABs
 
-`GET /api/v1/cnabs`
+`GET /api/v1/discharges`
 
 <table class='table table-bordered'>
   <thead>
@@ -434,7 +434,7 @@ curl -i \
 -u $BOLETOSIMPLES_TOKEN:x \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X GET "https://sandbox.boletosimples.com.br/api/v1/cnabs?page=1&per_page=50"
+-X GET "https://sandbox.boletosimples.com.br/api/v1/discharges?page=1&per_page=50"
 </pre>
 
     <small>Resposta:</small>
@@ -454,10 +454,10 @@ Content-Type: application/json; charset=utf-8
     "filename":"cnab240.ret",
     "processed_at":"2015-06-11T10:41:41.916-03:00",
     "created_via_api":true,
-    "cnab_transactions":[
-      {"id":243,"cnab_id":1,"agency_number":null,"account_number":null,"credit_at":"2015-06-03","paid_at":"2015-06-02","our_number":"0000000000206243","cnpj_cpf":null,"extra1":null,"extra2":null,"parcel":null,"receiving_bank":"104","receiving_agency":"00369","receiving_agency_digit":"0","bank_rate":765,"iof":0,"value_rebate":0,"discount":16022,"paid_amount":144200,"billet_fine":0,"other_credit":null,"credit_amount":144200,"other_costs":null},
-      {"id":242,"cnab_id":1,"agency_number":null,"account_number":null,"credit_at":"2015-06-03","paid_at":"2015-06-02","our_number":"0000000000205441","cnpj_cpf":null,"extra1":null,"extra2":null,"parcel":null,"receiving_bank":"033","receiving_agency":"04388","receiving_agency_digit":"0","bank_rate":765,"iof":0,"value_rebate":0,"discount":10034,"paid_amount":144850,"billet_fine":0,"other_credit":null,"credit_amount":144850,"other_costs":null},
-      {"id":241,"cnab_id":1,"agency_number":null,"account_number":null,"credit_at":"2015-06-03","paid_at":"2015-06-02","our_number":"0000000000204640","cnpj_cpf":null,"extra1":null,"extra2":null,"parcel":null,"receiving_bank":"104","receiving_agency":"00406","receiving_agency_digit":"0","bank_rate":765,"iof":0,"value_rebate":0,"discount":10396,"paid_amount":135153,"billet_fine":0,"other_credit":null,"credit_amount":135153,"other_costs":null}
+    "discharge_transactions":[
+      {"id":243,"discharge_id":1,"agency_number":null,"account_number":null,"credit_at":"2015-06-03","paid_at":"2015-06-02","our_number":"0000000000206243","cnpj_cpf":null,"extra1":null,"extra2":null,"parcel":null,"receiving_bank":"104","receiving_agency":"00369","receiving_agency_digit":"0","bank_rate":765,"iof":0,"value_rebate":0,"discount":16022,"paid_amount":144200,"billet_fine":0,"other_credit":null,"credit_amount":144200,"other_costs":null},
+      {"id":242,"discharge_id":1,"agency_number":null,"account_number":null,"credit_at":"2015-06-03","paid_at":"2015-06-02","our_number":"0000000000205441","cnpj_cpf":null,"extra1":null,"extra2":null,"parcel":null,"receiving_bank":"033","receiving_agency":"04388","receiving_agency_digit":"0","bank_rate":765,"iof":0,"value_rebate":0,"discount":10034,"paid_amount":144850,"billet_fine":0,"other_credit":null,"credit_amount":144850,"other_costs":null},
+      {"id":241,"discharge_id":1,"agency_number":null,"account_number":null,"credit_at":"2015-06-03","paid_at":"2015-06-02","our_number":"0000000000204640","cnpj_cpf":null,"extra1":null,"extra2":null,"parcel":null,"receiving_bank":"104","receiving_agency":"00406","receiving_agency_digit":"0","bank_rate":765,"iof":0,"value_rebate":0,"discount":10396,"paid_amount":135153,"billet_fine":0,"other_credit":null,"credit_amount":135153,"other_costs":null}
     ]
   }
 ]
@@ -467,8 +467,8 @@ Content-Type: application/json; charset=utf-8
     <small>Requisição:</small>
 
 <pre class="ruby">
-@cnabs = BoletoSimples::BankBilletAccount.all(page: 1, per_page: 2)
-puts "Carteiras Retornadas: #{@cnabs.count}"
+@discharges = BoletoSimples::BankBilletAccount.all(page: 1, per_page: 2)
+puts "Carteiras Retornadas: #{@discharges.count}"
 puts "Total: #{BoletoSimples.last_request.total}"
 puts "Primeira Página: #{BoletoSimples.last_request.links[:first]}"
 puts "Página Anterior: #{BoletoSimples.last_request.links[:prev]}"
@@ -483,16 +483,16 @@ CNABs Retornadas: 3
 Total: 3
 Primeira Página:
 Página Anterior:
-Próxima Página: https://sandbox.boletosimples.com.br/api/v1/cnabs?page=2&per_page=2
-Última Página: https://sandbox.boletosimples.com.br/api/v1/cnabs?page=2&per_page=2
+Próxima Página: https://sandbox.boletosimples.com.br/api/v1/discharges?page=2&per_page=2
+Última Página: https://sandbox.boletosimples.com.br/api/v1/discharges?page=2&per_page=2
 </pre>
   </div> -->
   <!-- <div class="tab-pane" id="php6">
     <small>Requisição:</small>
 
 <pre class="php">
-$cnabs = BoletoSimples\bank_billet_account::all(['page' => 1, 'per_page' => 2]);
-echo "CNABs Retornados: " . sizeof($cnabs) . "\n";
+$discharges = BoletoSimples\bank_billet_account::all(['page' => 1, 'per_page' => 2]);
+echo "CNABs Retornados: " . sizeof($discharges) . "\n";
 echo "Total: " . BoletoSimples::$last_request->total . "\n";
 echo "Primeira Página: " . BoletoSimples::$last_request->links['first'] . "\n";
 echo "Página Anterior: " . BoletoSimples::$last_request->links['prev'] . "\n";
@@ -507,15 +507,15 @@ CNABs Retornados: 2
 Total: 9
 Primeira Página:
 Página Anterior:
-Próxima Página: https://sandbox.boletosimples.com.br/api/v1/cnabs?page=2&per_page=2
-Última Página: https://sandbox.boletosimples.com.br/api/v1/cnabs?page=5&per_page=2
+Próxima Página: https://sandbox.boletosimples.com.br/api/v1/discharges?page=2&per_page=2
+Última Página: https://sandbox.boletosimples.com.br/api/v1/discharges?page=5&per_page=2
 </pre>
   </div> -->
 </div>
 
 ### Quitar Boletos
 
-`PUT /api/v1/cnabs/:id/pay_off` ou `PATCH /api/v1/cnabs/:id/pay_off`
+`PUT /api/v1/discharges/:id/pay_off` ou `PATCH /api/v1/discharges/:id/pay_off`
 
 É necessário já ter enviado o CNAB.
 Todos os boletos que forem identificados dentro do CNAB serão marcados como PAGO e os <a href="/webhooks">Webhooks</a> serão disparados.
@@ -537,7 +537,7 @@ curl -i \
 -u $BOLETOSIMPLES_TOKEN:x \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X PUT 'https://sandbox.boletosimples.com.br/api/v1/cnabs/1/pay_off'
+-X PUT 'https://sandbox.boletosimples.com.br/api/v1/discharges/1/pay_off'
 </pre>
 
     <small>Resposta:</small>
@@ -555,10 +555,10 @@ Content-Type: application/json; charset=utf-8
   "filename":"cnab240.ret",
   "processed_at":"2015-06-11T10:41:41.916-03:00",
   "created_via_api":true,
-  "cnab_transactions":[
-    {"id":243,"cnab_id":1,"agency_number":null,"account_number":null,"credit_at":"2015-06-03","paid_at":"2015-06-02","our_number":"0000000000206243","cnpj_cpf":null,"extra1":null,"extra2":null,"parcel":null,"receiving_bank":"104","receiving_agency":"00369","receiving_agency_digit":"0","bank_rate":765,"iof":0,"value_rebate":0,"discount":16022,"paid_amount":144200,"billet_fine":0,"other_credit":null,"credit_amount":144200,"other_costs":null},
-    {"id":242,"cnab_id":1,"agency_number":null,"account_number":null,"credit_at":"2015-06-03","paid_at":"2015-06-02","our_number":"0000000000205441","cnpj_cpf":null,"extra1":null,"extra2":null,"parcel":null,"receiving_bank":"033","receiving_agency":"04388","receiving_agency_digit":"0","bank_rate":765,"iof":0,"value_rebate":0,"discount":10034,"paid_amount":144850,"billet_fine":0,"other_credit":null,"credit_amount":144850,"other_costs":null},
-    {"id":241,"cnab_id":1,"agency_number":null,"account_number":null,"credit_at":"2015-06-03","paid_at":"2015-06-02","our_number":"0000000000204640","cnpj_cpf":null,"extra1":null,"extra2":null,"parcel":null,"receiving_bank":"104","receiving_agency":"00406","receiving_agency_digit":"0","bank_rate":765,"iof":0,"value_rebate":0,"discount":10396,"paid_amount":135153,"billet_fine":0,"other_credit":null,"credit_amount":135153,"other_costs":null}
+  "discharge_transactions":[
+    {"id":243,"discharge_id":1,"agency_number":null,"account_number":null,"credit_at":"2015-06-03","paid_at":"2015-06-02","our_number":"0000000000206243","cnpj_cpf":null,"extra1":null,"extra2":null,"parcel":null,"receiving_bank":"104","receiving_agency":"00369","receiving_agency_digit":"0","bank_rate":765,"iof":0,"value_rebate":0,"discount":16022,"paid_amount":144200,"billet_fine":0,"other_credit":null,"credit_amount":144200,"other_costs":null},
+    {"id":242,"discharge_id":1,"agency_number":null,"account_number":null,"credit_at":"2015-06-03","paid_at":"2015-06-02","our_number":"0000000000205441","cnpj_cpf":null,"extra1":null,"extra2":null,"parcel":null,"receiving_bank":"033","receiving_agency":"04388","receiving_agency_digit":"0","bank_rate":765,"iof":0,"value_rebate":0,"discount":10034,"paid_amount":144850,"billet_fine":0,"other_credit":null,"credit_amount":144850,"other_costs":null},
+    {"id":241,"discharge_id":1,"agency_number":null,"account_number":null,"credit_at":"2015-06-03","paid_at":"2015-06-02","our_number":"0000000000204640","cnpj_cpf":null,"extra1":null,"extra2":null,"parcel":null,"receiving_bank":"104","receiving_agency":"00406","receiving_agency_digit":"0","bank_rate":765,"iof":0,"value_rebate":0,"discount":10396,"paid_amount":135153,"billet_fine":0,"other_credit":null,"credit_amount":135153,"other_costs":null}
   ]
 }
 </pre>
