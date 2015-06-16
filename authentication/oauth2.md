@@ -212,6 +212,71 @@ access_token.get('/api/v1/userinfo').body
         </pre>
       </div>
     </div>
+    
+### Cadastrando contas no Boleto Simples com a API de Parceiro
+
+Para parceiros interessados na criação de novas contas no Boleto Simples a partir do seu produto,
+será necessário obter um tipo especial de token de acesso.
+
+Para isso, [cadastre a sua aplicação](https://sandbox.boletosimples.com.br/conta/api/aplicacoes) e obtenha o `client_id` e `client_secret`.
+
+Depois obtenha o token de acesso usando o tipo de permissão `client_credentials`:
+
+<ul class="nav nav-tabs" role="tablist">
+  <li class="active"><a href="#bash4" role="tab" data-toggle="tab">Bash</a></li>
+  <li><a href="#ruby4" role="tab" data-toggle="tab">Ruby</a></li>
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="bash4">
+    <small>Requisição:</small>
+
+<pre class="bash">
+curl https://sandbox.boletosimples.com.br/api/v1/oauth2/token \
+-d 'grant_type=client_credentials&client_id=seu_client_id&client_secret=seu_client_secret'
+</pre>
+
+    <small>Resposta:</small>
+
+<pre class="http">
+{
+  "access_token":"397946a4ad90110b918c111261c184beb6cb515988688d6db9c31d5dabd03459",
+  "token_type":"bearer",
+  "scope":"login",
+  "created_at":1434463054
+}
+</pre>
+  </div>
+  <div class="tab-pane" id="ruby4">
+    <small>Requisição:</small>
+
+<pre class="ruby">
+
+require 'rest-client'
+require 'json'
+
+response = RestClient.post 'https://sandbox.boletosimples.com.br/api/v1/oauth2/token', {
+  grant_type: 'client_credentials',
+  client_id: 'app_id',
+  client_secret:  'app_secret'
+}
+
+app_access_token = JSON.parse(response)["access_token"]
+
+puts "app_access_token: #{app_access_token}"
+</pre>
+
+    <small>Resposta:</small>
+
+<pre class="http">
+app_access_token: 397946a4ad90110b918c111261c184beb6cb515988688d6db9c31d5dabd03459
+</pre>
+  </div>
+  
+</div>
+
+Utilize esse token na api de parceiros para criar novas contas no Boleto Simples.
+
 
 ### Desenvolvendo aplicações para Mobile e Desktop
 
