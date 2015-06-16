@@ -18,9 +18,9 @@ Há bibliotecas OAuth2 para quase todas as linguagens visto que é um protocolo 
 
 ### Registro da Aplicação
 
-Para começar você precisa [solicitar o cadastro da sua aplicação](http://suporte.boletosimples.com.br) em nossos servidores. Nós te enviaremos um `client_id` e `client_secret`.
+Para começar você precisa [cadastrar a sua aplicação](https://sandbox.boletosimples.com.br/conta/api/aplicacoes). Nós te forneceremos um `client_id` e `client_secret`.
 
-Você também deverá nos fornecer uma URL de redirecionamento `redirect_uri` para o seu site. Se você desenvolve para desktop ou mobile, veja na seção a baixo como configurar a `redirect_uri`.
+Você também deverá nos fornecer uma URL de Redirecionamento `redirect_uri` para o seu site. Se você desenvolve para desktop ou mobile, veja na seção a baixo como configurar a `redirect_uri`.
 
 ### Endpoints
 
