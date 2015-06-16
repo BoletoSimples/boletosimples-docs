@@ -251,27 +251,30 @@ curl https://sandbox.boletosimples.com.br/api/v1/oauth2/token \
     <small>Requisição:</small>
 
 <pre class="ruby">
+require 'boletosimples'
 
-require 'rest-client'
-require 'json'
+BoletoSimples.configure do |c|
+  c.environment = :sandbox
+  c.application_id = 'seu_client_id'
+  c.application_secret = 'seu_client_secret'
+end
 
-response = RestClient.post 'https://sandbox.boletosimples.com.br/api/v1/oauth2/token', {
-  grant_type: 'client_credentials',
-  client_id: 'app_id',
-  client_secret:  'app_secret'
-}
+puts BoletoSimples.configuration.client_credentials
 
-app_access_token = JSON.parse(response)["access_token"]
 
-puts "app_access_token: #{app_access_token}"
 </pre>
 
     <small>Resposta:</small>
 
 <pre class="http">
-app_access_token: 397946a4ad90110b918c111261c184beb6cb515988688d6db9c31d5dabd03459
-</pre>
-  </div>
+  {
+    :access_token=>"397946a4ad90110b918c111261c184beb6cb515988688d6db9c31d5dabd03459", 
+    :token_type=>"bearer", 
+    :scope=>"login", 
+    :created_at=>1434492337
+  }
+  </pre>
+</div>
   
 </div>
 
