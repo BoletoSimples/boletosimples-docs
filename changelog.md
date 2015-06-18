@@ -8,6 +8,11 @@ en: /en/changelog
 
 #### Últimas alterações realizadas na API.
 
+### 18/06/2015
+
+* Adicionado ID da carteira a documentação de boletos
+* Adicionado exemplos a API de Parceiros
+
 ### 12/06/2015
 
 * Renomeado endpoint de CNAB de Retorno
