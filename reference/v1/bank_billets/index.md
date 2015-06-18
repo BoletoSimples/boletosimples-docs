@@ -40,6 +40,7 @@ breadcrumb: Boletos
 | **paid_amount**                 | N/A   | Float   |         | Valor pago
 | **shorten_url**                 | N/A   | String  |         | URL para visualização do boleto
 | **created_via_api**             | N/A   | Boolean |         | Define se o boleto foi criado pela API
+| **bank_billet_account_id**      | Não   | Integer |         | [ID da Carteira de Cobrança](/reference/v1/bank_billet_accounts/)
 
 ### Dicionário de Dados
 
