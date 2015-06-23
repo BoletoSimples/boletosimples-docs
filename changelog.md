@@ -8,6 +8,11 @@ en: /en/changelog
 
 #### Últimas alterações realizadas na API.
 
+### 23/06/2015
+
+* Adicionado eventos de remessa
+* Adicionado eventos de retorno
+
 ### 18/06/2015
 
 * Adicionado ID da carteira a documentação de boletos
