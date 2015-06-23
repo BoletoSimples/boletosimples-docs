@@ -21,8 +21,9 @@ breadcrumb: CNAB (Retorno)
 | **id**                 | N/A   | Integer |         | ID do CNAB
 | **file**               | Sim   |         |         | Arquivo
 | **filename**           | Não   | String  | 255     | Nome do arquivo
-| **processed_at**       | Não   | Time    |         | Data de Processamento
-| **created_via_api**    | Não   | Boolean |         | Enviado pela API
+| **status**             | N/A   | String  | 20      | Status
+| **processed_at**       | N/A   | Time    |         | Data de Processamento
+| **created_via_api**    | N/A   | Boolean |         | Enviado pela API
 
 ### Enviar CNAB
 
@@ -163,11 +164,8 @@ Content-Type: application/json; charset=utf-8
   "filename":"cnab240.ret",
   "processed_at":"2015-06-11T10:41:41.916-03:00",
   "created_via_api":true,
-  "discharge_transactions":[
-    {"id":243,"discharge_id":1,"agency_number":null,"account_number":null,"credit_at":"2015-06-03","paid_at":"2015-06-02","our_number":"0000000000206243","cnpj_cpf":null,"extra1":null,"extra2":null,"parcel":null,"receiving_bank":"104","receiving_agency":"00369","receiving_agency_digit":"0","bank_rate":765,"iof":0,"value_rebate":0,"discount":16022,"paid_amount":144200,"billet_fine":0,"other_credit":null,"credit_amount":144200,"other_costs":null},
-    {"id":242,"discharge_id":1,"agency_number":null,"account_number":null,"credit_at":"2015-06-03","paid_at":"2015-06-02","our_number":"0000000000205441","cnpj_cpf":null,"extra1":null,"extra2":null,"parcel":null,"receiving_bank":"033","receiving_agency":"04388","receiving_agency_digit":"0","bank_rate":765,"iof":0,"value_rebate":0,"discount":10034,"paid_amount":144850,"billet_fine":0,"other_credit":null,"credit_amount":144850,"other_costs":null},
-    {"id":241,"discharge_id":1,"agency_number":null,"account_number":null,"credit_at":"2015-06-03","paid_at":"2015-06-02","our_number":"0000000000204640","cnpj_cpf":null,"extra1":null,"extra2":null,"parcel":null,"receiving_bank":"104","receiving_agency":"00406","receiving_agency_digit":"0","bank_rate":765,"iof":0,"value_rebate":0,"discount":10396,"paid_amount":135153,"billet_fine":0,"other_credit":null,"credit_amount":135153,"other_costs":null}
-  ]
+  "status":"unprocessed",
+  "discharge_transactions":[]
 }
 </pre>
   </div>
@@ -303,6 +301,7 @@ Content-Type: application/json; charset=utf-8
   "filename":"cnab240.ret",
   "processed_at":"2015-06-11T10:41:41.916-03:00",
   "created_via_api":true,
+  "status":"processed",
   "discharge_transactions":[
     {"id":243,"discharge_id":1,"agency_number":null,"account_number":null,"credit_at":"2015-06-03","paid_at":"2015-06-02","our_number":"0000000000206243","cnpj_cpf":null,"extra1":null,"extra2":null,"parcel":null,"receiving_bank":"104","receiving_agency":"00369","receiving_agency_digit":"0","bank_rate":765,"iof":0,"value_rebate":0,"discount":16022,"paid_amount":144200,"billet_fine":0,"other_credit":null,"credit_amount":144200,"other_costs":null},
     {"id":242,"discharge_id":1,"agency_number":null,"account_number":null,"credit_at":"2015-06-03","paid_at":"2015-06-02","our_number":"0000000000205441","cnpj_cpf":null,"extra1":null,"extra2":null,"parcel":null,"receiving_bank":"033","receiving_agency":"04388","receiving_agency_digit":"0","bank_rate":765,"iof":0,"value_rebate":0,"discount":10034,"paid_amount":144850,"billet_fine":0,"other_credit":null,"credit_amount":144850,"other_costs":null},
@@ -454,6 +453,7 @@ Content-Type: application/json; charset=utf-8
     "filename":"cnab240.ret",
     "processed_at":"2015-06-11T10:41:41.916-03:00",
     "created_via_api":true,
+    "status":"processed",
     "discharge_transactions":[
       {"id":243,"discharge_id":1,"agency_number":null,"account_number":null,"credit_at":"2015-06-03","paid_at":"2015-06-02","our_number":"0000000000206243","cnpj_cpf":null,"extra1":null,"extra2":null,"parcel":null,"receiving_bank":"104","receiving_agency":"00369","receiving_agency_digit":"0","bank_rate":765,"iof":0,"value_rebate":0,"discount":16022,"paid_amount":144200,"billet_fine":0,"other_credit":null,"credit_amount":144200,"other_costs":null},
       {"id":242,"discharge_id":1,"agency_number":null,"account_number":null,"credit_at":"2015-06-03","paid_at":"2015-06-02","our_number":"0000000000205441","cnpj_cpf":null,"extra1":null,"extra2":null,"parcel":null,"receiving_bank":"033","receiving_agency":"04388","receiving_agency_digit":"0","bank_rate":765,"iof":0,"value_rebate":0,"discount":10034,"paid_amount":144850,"billet_fine":0,"other_credit":null,"credit_amount":144850,"other_costs":null},
@@ -555,6 +555,7 @@ Content-Type: application/json; charset=utf-8
   "filename":"cnab240.ret",
   "processed_at":"2015-06-11T10:41:41.916-03:00",
   "created_via_api":true,
+  "status":"processed",
   "discharge_transactions":[
     {"id":243,"discharge_id":1,"agency_number":null,"account_number":null,"credit_at":"2015-06-03","paid_at":"2015-06-02","our_number":"0000000000206243","cnpj_cpf":null,"extra1":null,"extra2":null,"parcel":null,"receiving_bank":"104","receiving_agency":"00369","receiving_agency_digit":"0","bank_rate":765,"iof":0,"value_rebate":0,"discount":16022,"paid_amount":144200,"billet_fine":0,"other_credit":null,"credit_amount":144200,"other_costs":null},
     {"id":242,"discharge_id":1,"agency_number":null,"account_number":null,"credit_at":"2015-06-03","paid_at":"2015-06-02","our_number":"0000000000205441","cnpj_cpf":null,"extra1":null,"extra2":null,"parcel":null,"receiving_bank":"033","receiving_agency":"04388","receiving_agency_digit":"0","bank_rate":765,"iof":0,"value_rebate":0,"discount":10034,"paid_amount":144850,"billet_fine":0,"other_credit":null,"credit_amount":144850,"other_costs":null},
