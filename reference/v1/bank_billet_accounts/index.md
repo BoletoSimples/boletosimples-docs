@@ -32,8 +32,11 @@ breadcrumb: Carteiras de Cobrança
 | **extra1_digit**       | *     | String  | 3       | Dígito do Campo Extra 1
 | **extra2**             | *     | String  | 15      | Campo Extra 2
 | **extra2_digit**       | *     | String  | 3       | Dígito do Campo Extra 2
+| **extra3**             | **    | String  | 30      | [Código de Remessa](/reference/v1/remittances/)
 
-'*' Depende da carteira escolhida
+'*' Depende da carteira escolhida.
+
+'**' Usado na remessa em bancos.
 
 ### Criar carteira
 

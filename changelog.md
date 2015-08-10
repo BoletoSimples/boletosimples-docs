@@ -8,6 +8,10 @@ en: /en/changelog
 
 #### Últimas alterações realizadas na API.
 
+### 10/08/2015
+
+* Adicionado campo extra3 para uso em remessas
+
 ### 23/06/2015
 
 * Adicionado eventos de remessa
