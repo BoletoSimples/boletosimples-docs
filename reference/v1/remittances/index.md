@@ -24,6 +24,7 @@ breadcrumb: CNAB (Remessa)
 | **created_via_api**           | Não   | Boolean |         | Enviado pela API
 | **status**                    | Não   | String  |         | Situação
 | **created_at**                | Não   | DateTime|         | Data de criação
+| **url**                       | Não   | String  |         | URL do arquivo de remessa
 | **bank_billet_account_id**    | Sim   | Integer |         | ID da [Carteira de Cobrança](/reference/v1/bank_billet_accounts/)
 
 ### Dicionário de Dados
