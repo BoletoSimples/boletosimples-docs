@@ -177,10 +177,10 @@ Content-Type: application/json; charset=utf-8
   "filename":"1206201501.REM",
   "processed_at":null,
   "created_via_api":true,
-  "content":null,
   "status":"unprocessed",
   "created_at":"2015-06-12T10:23:35.642-03:00",
-  "bank_billet_account_id":12
+  "bank_billet_account_id":12,
+  "url":"https://sandbox.boletosimples.com.br/api/v1/remittances/2/raw"
 }
 </pre>
   </div>
@@ -316,10 +316,10 @@ Content-Type: application/json; charset=utf-8
   "filename":"1206201501.REM",
   "processed_at":null,
   "created_via_api":true,
-  "content":null,
   "status":"unprocessed",
   "created_at":"2015-06-12T10:23:35.642-03:00",
-  "bank_billet_account_id":12
+  "bank_billet_account_id":12,
+  "url":"https://sandbox.boletosimples.com.br/api/v1/remittances/2/raw"
 }
 </pre>
   </div>
@@ -466,10 +466,10 @@ Content-Type: application/json; charset=utf-8
     "filename":"1206201501.REM",
     "processed_at":null,
     "created_via_api":true,
-    "content":null,
     "status":"unprocessed",
     "created_at":"2015-06-12T10:23:35.642-03:00",
-    "bank_billet_account_id":12
+    "bank_billet_account_id":12,
+    "url":"https://sandbox.boletosimples.com.br/api/v1/remittances/2/raw"
   }
 ]
 </pre>
