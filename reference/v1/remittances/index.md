@@ -12,6 +12,7 @@ breadcrumb: CNAB (Remessa)
 | [POST /api/v1/remittances](#criar-cnab) | Criar CNAB
 | [GET /api/v1/remittances/:id](#informaes-do-cnab) | Informações do CNAB
 | [GET /api/v1/remittances](#listar-cnabs) | Listar CNABs
+| [DELETE /api/v1/remittances/:id](#apagar-cnab) | Apagar CNAB
 
 ### Modelo de Dados
 
@@ -520,6 +521,107 @@ Primeira Página:
 Página Anterior:
 Próxima Página: https://sandbox.boletosimples.com.br/api/v1/remittances?page=2&per_page=2
 Última Página: https://sandbox.boletosimples.com.br/api/v1/remittances?page=5&per_page=2
+</pre>
+  </div> -->
+</div>
+
+### Apagar CNAB
+
+`DELETE /api/v1/remittances/:id`
+
+#### Exemplo
+
+<ul class="nav nav-tabs" role="tablist">
+  <li class="active"><a href="#bash3" role="tab" data-toggle="tab">Bash</a></li>
+  <!-- <li><a href="#ruby3" role="tab" data-toggle="tab">Ruby</a></li> -->
+  <!-- <li><a href="#php3" role="tab" data-toggle="tab">PHP</a></li> -->
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="bash3">
+    <small>Requisição:</small>
+
+<pre class="bash">
+curl -i \
+-u $BOLETOSIMPLES_TOKEN:x \
+-H 'Content-Type: application/json' \
+-H 'User-Agent: MyApp (myapp@example.com)' \
+-X DELETE 'https://sandbox.boletosimples.com.br/api/v1/remittances/11'
+</pre>
+
+    <small>Resposta:</small>
+
+<pre class="http">
+HTTP/1.1 204 No Content
+Content-Length: 0
+Connection: keep-alive
+Status: 204 No Content
+Cache-Control: no-cache
+X-Ratelimit-Limit: 500
+Date: Thu, 27 Aug 2015 22:59:30 GMT
+Strict-Transport-Security: max-age=2592000
+X-Ratelimit-Remaining: 498
+X-Request-Id: 835c6f5c-06f3-4a8d-9cf0-a354e237cce4
+X-Runtime: 0.076245
+X-Rack-Cache: invalidate, pass
+</pre>
+  </div>
+  <!-- <div class="tab-pane" id="ruby3">
+    <small>Requisição:</small>
+
+<pre class="ruby">
+@bank_billet_account = BoletoSimples::BankBilletAccount.find(4)
+ap @bank_billet_account.attributes
+</pre>
+
+    <small>Resposta:</small>
+
+<pre class="ruby">
+{
+    "bank_contract_slug" => "sicoob-02",
+       "next_our_number" => "0000001",
+         "agency_number" => "4327",
+          "agency_digit" => "3",
+        "account_number" => "00003666",
+         "account_digit" => "8",
+                "extra1" => "1234567",
+          "extra1_digit" => nil,
+                "extra2" => nil,
+          "extra2_digit" => nil,
+                    "id" => 3
+}
+</pre>
+  </div> -->
+  <!-- <div class="tab-pane" id="php3">
+    <small>Requisição:</small>
+
+<pre class="php">
+$bank_billet_account = BoletoSimples\bank_billet_account::find(66);
+print_r($bank_billet_account->attributes());
+</pre>
+
+    <small>Resposta:</small>
+
+<pre class="php">
+Array
+(
+    [id] => 66
+    [city_name] => Rio de Janeiro
+    [person_name] => Joao da Silva
+    [address] => Rua quinhentos
+    [address_complement] => Sala 4
+    [address_number] => 111
+    [mobile_number] =>
+    [cnpj_cpf] => 860.196.915-19
+    [email] => carteira@example.com
+    [neighborhood] => bairro
+    [person_type] => individual
+    [phone_number] => 2112123434
+    [zipcode] => 12312-123
+    [mobile_local_code] =>
+    [state] => RJ
+    [created_via_api] => 1
+)
 </pre>
   </div> -->
 </div>
