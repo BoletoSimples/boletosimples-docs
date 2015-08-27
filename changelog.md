@@ -8,6 +8,10 @@ en: /en/changelog
 
 #### Últimas alterações realizadas na API.
 
+### 27/08/2015
+
+* Adicionado endpoint destroy na remessa
+
 ### 24/08/2015
 
 * Adicionado campo URL do arquivo de remessa
