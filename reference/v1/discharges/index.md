@@ -20,6 +20,7 @@ breadcrumb: CNAB (Retorno)
 | ---------------------- | ----- | ------- | ------- | ------------------------
 | **id**                 | N/A   | Integer |         | ID do CNAB
 | **file**               | Sim   |         |         | Arquivo
+| **content**            | Sim   |         |         | Conteúdo do arquivo
 | **filename**           | Não   | String  | 255     | Nome do arquivo
 | **status**             | N/A   | String  | 20      | Status
 | **processed_at**       | N/A   | Time    |         | Data de Processamento
