@@ -40,6 +40,8 @@ breadcrumb: Boletos
 | **paid_amount**                 | N/A   | Float   |         | Valor pago
 | **shorten_url**                 | N/A   | String  |         | URL para visualização do boleto
 | **created_via_api**             | N/A   | Boolean |         | Define se o boleto foi criado pela API
+| **fine_for_delay**              | N/A   | Float   |         | Multa por Atraso
+| **late_payment_interest**       | N/A   | Float   |         | Juros de Mora
 | **bank_billet_account_id**      | Não   | Integer |         | [ID da Carteira de Cobrança](/reference/v1/bank_billet_accounts/)
 
 ### Dicionário de Dados
