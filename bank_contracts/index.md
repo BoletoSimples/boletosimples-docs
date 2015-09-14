@@ -8,6 +8,8 @@ en: /en/bank_contracts
 
 ### [Banco do Brasil](/bank_contracts/bb)
 
+### [Banestes](/bank_contracts/banestes)
+
 ### [Banrisul](/bank_contracts/banrisul)
 
 ### [Bradesco](/bank_contracts/bradesco)

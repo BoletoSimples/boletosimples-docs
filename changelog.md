@@ -8,6 +8,10 @@ en: /en/changelog
 
 #### Últimas alterações realizadas na API.
 
+### 14/09/2015
+
+* Adicionado carteiras do Banestes
+
 ### 27/08/2015
 
 * Adicionado endpoint destroy na remessa
