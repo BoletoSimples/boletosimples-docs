@@ -8,6 +8,10 @@ en: /en/changelog
 
 #### Últimas alterações realizadas na API.
 
+### 30/09/2015
+
+* Atualiza lista de carteiras da Caixa
+
 ### 14/09/2015
 
 * Adicionado carteiras do Banestes
