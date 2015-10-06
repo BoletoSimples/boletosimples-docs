@@ -8,6 +8,11 @@ en: /en/changelog
 
 #### Últimas alterações realizadas na API.
 
+### 06/10/2015
+
+* Atualiza informações de convênio de remessa
+* Atualiza lista de atributos opcionais do boleto
+
 ### 30/09/2015
 
 * Atualiza lista de carteiras da Caixa
