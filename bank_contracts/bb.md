@@ -30,6 +30,7 @@ en: /en/bank_contracts/bb
 | **extra1_digit_length**   | N/A     | N/A
 | **extra2_length**         | N/A     | N/A
 | **extra2_digit_length**   | N/A     | N/A
+| **extra3_length**         | 7       | Convênio
 
 ### 18-017
 
