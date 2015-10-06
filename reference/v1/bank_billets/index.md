@@ -19,6 +19,8 @@ breadcrumb: Boletos
 | Parâmetro                       | Obr.  | Tipo    | Tamanho | Descrição
 | ------------------------------- | ----- | ------- | ------- | ------------------------
 | **id**                          | N/A   | Integer |         | ID do boleto
+| **bank_billet_account_id**      | Sim   | Integer |         | [ID da Carteira de Cobrança](/reference/v1/bank_billet_accounts/)
+| **our_number**                  | Não   | Float   |         | Nosso Número(Controlado pelo sistema se em branco)
 | **amount**                      | Sim   | Float   |         | Quantia (R$)
 | **expire_at**                   | Sim   | Date    |         | Data de vencimento
 | **description**                 | Sim   | Text    |         | Descrição do produto ou serviço
@@ -27,10 +29,10 @@ breadcrumb: Boletos
 | **customer_cnpj_cpf**           | Sim   | String  | 20      | CNPJ ou CPF do Pagador
 | **customer_zipcode**            | Sim   | String  | 9       | CEP
 | **customer_email**              | Não   | String  | 255     | E-mail do Pagador
-| **customer_address**            | Não   | Text    |         | Endereço
-| **customer_city_name**          | Não   | String  | 255     | Cidade
-| **customer_state**              | Não   | String  | 2       | Estado
-| **customer_neighborhood**       | Não   | String  | 255     | Bairro
+| **customer_address**            | Sim   | Text    |         | Endereço
+| **customer_city_name**          | Sim   | String  | 255     | Cidade
+| **customer_state**              | Sim   | String  | 2       | Estado
+| **customer_neighborhood**       | Sim   | String  | 255     | Bairro
 | **customer_address_number**     | Não   | String  | 255     | Número
 | **customer_address_complement** | Não   | String  | 255     | Complemento
 | **customer_phone_number**       | Não   | String  | 255     | Telefone (com DDD)
@@ -40,9 +42,17 @@ breadcrumb: Boletos
 | **paid_amount**                 | N/A   | Float   |         | Valor pago
 | **shorten_url**                 | N/A   | String  |         | URL para visualização do boleto
 | **created_via_api**             | N/A   | Boolean |         | Define se o boleto foi criado pela API
-| **fine_for_delay**              | N/A   | Float   |         | Multa por Atraso
-| **late_payment_interest**       | N/A   | Float   |         | Juros de Mora
-| **bank_billet_account_id**      | Não   | Integer |         | [ID da Carteira de Cobrança](/reference/v1/bank_billet_accounts/)
+| **fine_for_delay**              | Não   | Float   |         | Multa por Atraso
+| **late_payment_interest**       | Não   | Float   |         | Juros de Mora
+| **guarantor_name**              | Não   | String  |         | Sacador/Avalista
+| **guarantor_cnpj_cpf**          | Não   | Float   |         | CNPJ/CPF do Sacador/Avalista
+| **payment_place**               | Não   | String  |         | Local de Pagamento
+| **instructions**                | Não   | String  |         | Instruções para o Caixa
+| **document_date**               | Não   | Float   |         | Data do Documento
+| **document_type**               | Não   | String  |         | Tipo de Documento
+| **document_number**             | Não   | Number  |         | Número do Documento
+| **document_amount**             | Não   | Float   |         | Valor do Documento
+| **acceptance**                  | Não   | String  |         | Aceite
 
 ### Dicionário de Dados
 
@@ -55,6 +65,11 @@ breadcrumb: Boletos
 | overdue    | Vencido
 | blocked    | Bloqueado
 | chargeback | Estornado
+
+#### acceptance
+
+| S | Sim
+| N | Não
 
 ### Criar boleto
 
