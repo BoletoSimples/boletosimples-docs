@@ -40,3 +40,4 @@ en: /en/bank_contracts/cef
 | **extra1_digit_length**   | N/A     |
 | **extra2_length**         | N/A     |
 | **extra2_digit_length**   | N/A     |
+| **extra3_length**         | 6       | Código do Beneficiário
