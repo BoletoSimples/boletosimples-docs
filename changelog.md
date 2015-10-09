@@ -8,6 +8,11 @@ en: /en/changelog
 
 #### Últimas alterações realizadas na API.
 
+
+### 09/10/2015
+
+* Atualizada lista de carteiras do Santander
+
 ### 06/10/2015
 
 * Atualiza informações de convênio de remessa
