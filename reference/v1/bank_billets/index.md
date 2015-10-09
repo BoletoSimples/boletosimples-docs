@@ -20,7 +20,7 @@ breadcrumb: Boletos
 | ------------------------------- | ----- | ------- | ------- | ------------------------
 | **id**                          | N/A   | Integer |         | ID do boleto
 | **bank_billet_account_id**      | Sim   | Integer |         | [ID da Carteira de Cobrança](/reference/v1/bank_billet_accounts/)
-| **our_number**                  | Não   | Float   |         | Nosso Número(Controlado pelo sistema se em branco)
+| **our_number**                  | Não   | Integer |         | Nosso Número(Controlado pelo sistema se em branco)
 | **amount**                      | Sim   | Float   |         | Quantia (R$)
 | **expire_at**                   | Sim   | Date    |         | Data de vencimento
 | **description**                 | Sim   | Text    |         | Descrição do produto ou serviço
