@@ -44,12 +44,6 @@
       <li {% if page.url == '/reference/v1/events/' %}class="active"{% endif %}>
         <a href="/reference/v1/events/" title="Eventos">Eventos</a>
       </li>
-      <li {% if page.url == '/reference/v1/withdrawals/' %}class="active"{% endif %}>
-        <a href="/reference/v1/withdrawals/" title="Saques">Saques</a>
-      </li>
-      <li {% if page.url == '/reference/v1/transactions/' %}class="active"{% endif %}>
-        <a href="/reference/v1/transactions/" title="Transações">Transações</a>
-      </li>
       <li {% if page.url == '/reference/v1/webhooks/' %}class="active"{% endif %}>
         <a href="/reference/v1/webhooks/" title="Webhooks">Webhooks</a>
       </li>
@@ -84,14 +78,6 @@
       </li>
       <li {% if page.url == '/webhooks/signature/' %}class="active"{% endif %}>
         <a href="/webhooks/signature" title="Segurança do Webhook">Assinatura de Segurança</a>
-      </li>
-    </ul>
-  </li>
-  <li class="submenu {% if page.url == '/notifications/' %}active{% endif %}" style="text-decoration:line-through;">
-    <a href="/notifications" title="Notificações">Notificações</a>
-    <ul class="nav">
-      <li {% if page.url == '/notifications/secret_key/' %}class="active"{% endif %}>
-        <a href="/notifications/secret_key" title="Chave secreta">Chave Secreta</a>
       </li>
     </ul>
   </li>
