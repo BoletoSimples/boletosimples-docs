@@ -34,12 +34,8 @@ O ambiente Sandbox não deve ser usado com o objetivo de gerar boletos bancário
 
 Por esse motivo, este ambiente possui algumas restrições. São elas:
 
-*   A data do vencimento dos boletos criados deve ser no máximo **30 dias no passado**.
-*   O valor do boleto bancário gerado deve ser entre **R$ 5,00 e R$ 10,00**.
-*   O e-mail do boleto é enviado sempre para o usuário do sistema e nunca para o cliente.
 *   A descrição do boleto é substituída por: **"BOLETO DE TESTES"**.
 *   As instruções para o caixa no boleto gerado vão com a mensagem: **"SR(a) CAIXA, NÃO AUTORIZAMOS RECEBER ESTE BOLETO"**.
-*   Nenhum valor é transferido para nenhuma conta bancária caso um boleto bancário gerado pelo ambiente Sandbox seja pago.
 
 ### Pagamento
 
