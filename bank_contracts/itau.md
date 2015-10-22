@@ -9,18 +9,40 @@ en: /en/bank_contracts/itau
 | Modelos                 
 | ------------------------
 | [109](#section)
-| [157](#section-1)
-| [174](#section-2)
-| [175](#section-3)
-| [176](#section-4)
-| [178](#section-5)
-| [179](#section-6)
+| [156](#section-1)
+| [157](#section-2)
+| [158](#section-3)
+| [171](#section-4)
+| [174](#section-5)
+| [175](#section-6)
+| [176](#section-7)
+| [178](#section-8)
+| [179](#section-9)
+| [181](#section-10)
+| [195](#section-11)
+| [196](#section-12)
+| [198](#section-13)
 
 ### 109
 
 | Parâmetro                 | Tamanho | Descrição
 | ------------------------- | ------- | -------------------
-| **itau-109**              | N/A     | Slug da carteira
+| **iitau-bs-109**          | N/A     | Slug da carteira
+| **our_number_length**     | 8       | Nosso Número
+| **agency_number_length**  | 4       | Agência
+| **agency_digit_length**   | N/A     | Dígito da Agência
+| **account_number_length** | 5       | Conta
+| **account_digit_length**  | 1       | Dígito da Conta
+| **extra1_length**         | N/A     | N/A
+| **extra1_digit_length**   | N/A     | N/A
+| **extra2_length**         | N/A     | N/A
+| **extra2_digit_length**   | N/A     | N/A
+
+### 156
+
+| Parâmetro                 | Tamanho | Descrição
+| ------------------------- | ------- | -------------------
+| **itau-bs-156**           | N/A     | Slug da carteira
 | **our_number_length**     | 8       | Nosso Número
 | **agency_number_length**  | 4       | Agência
 | **agency_digit_length**   | N/A     | Dígito da Agência
@@ -35,7 +57,37 @@ en: /en/bank_contracts/itau
 
 | Parâmetro                 | Tamanho | Descrição
 | ------------------------- | ------- | -------------------
-| **itau-157**              | N/A     | Slug da carteira
+| **itau-bs-157**           | N/A     | Slug da carteira
+| **our_number_length**     | 8       | Nosso Número
+| **agency_number_length**  | 4       | Agência
+| **agency_digit_length**   | N/A     | Dígito da Agência
+| **account_number_length** | 5       | Conta
+| **account_digit_length**  | 1       | Dígito da Conta
+| **extra1_length**         | N/A     | N/A
+| **extra1_digit_length**   | N/A     | N/A
+| **extra2_length**         | N/A     | N/A
+| **extra2_digit_length**   | N/A     | N/A
+
+### 158
+
+| Parâmetro                 | Tamanho | Descrição
+| ------------------------- | ------- | -------------------
+| **itau-bs-158**           | N/A     | Slug da carteira
+| **our_number_length**     | 8       | Nosso Número
+| **agency_number_length**  | 4       | Agência
+| **agency_digit_length**   | N/A     | Dígito da Agência
+| **account_number_length** | 5       | Conta
+| **account_digit_length**  | 1       | Dígito da Conta
+| **extra1_length**         | N/A     | N/A
+| **extra1_digit_length**   | N/A     | N/A
+| **extra2_length**         | N/A     | N/A
+| **extra2_digit_length**   | N/A     | N/A
+
+### 171
+
+| Parâmetro                 | Tamanho | Descrição
+| ------------------------- | ------- | -------------------
+| **itau-bs-171**           | N/A     | Slug da carteira
 | **our_number_length**     | 8       | Nosso Número
 | **agency_number_length**  | 4       | Agência
 | **agency_digit_length**   | N/A     | Dígito da Agência
@@ -50,7 +102,7 @@ en: /en/bank_contracts/itau
 
 | Parâmetro                 | Tamanho | Descrição
 | ------------------------- | ------- | -------------------
-| **itau-174**              | N/A     | Slug da carteira
+| **itau-bs-174**           | N/A     | Slug da carteira
 | **our_number_length**     | 8       | Nosso Número
 | **agency_number_length**  | 4       | Agência
 | **agency_digit_length**   | N/A     | Dígito da Agência
@@ -65,7 +117,7 @@ en: /en/bank_contracts/itau
 
 | Parâmetro                 | Tamanho | Descrição
 | ------------------------- | ------- | -------------------
-| **itau-175**              | N/A     | Slug da carteira
+| **itau-bs-175**           | N/A     | Slug da carteira
 | **our_number_length**     | 8       | Nosso Número
 | **agency_number_length**  | 4       | Agência
 | **agency_digit_length**   | N/A     | Dígito da Agência
@@ -81,7 +133,7 @@ en: /en/bank_contracts/itau
 
 | Parâmetro                 | Tamanho | Descrição
 | ------------------------- | ------- | -------------------
-| **itau-176**              | N/A     | Slug da carteira
+| **itau-bs-176**           | N/A     | Slug da carteira
 | **our_number_length**     | 8       | Nosso Número
 | **agency_number_length**  | 4       | Agência
 | **agency_digit_length**   | N/A     | Dígito da Agência
@@ -97,7 +149,7 @@ en: /en/bank_contracts/itau
 
 | Parâmetro                 | Tamanho | Descrição
 | ------------------------- | ------- | -------------------
-| **itau-178**              | N/A     | Slug da carteira
+| **itau-bs-178**           | N/A     | Slug da carteira
 | **our_number_length**     | 8       | Nosso Número
 | **agency_number_length**  | 4       | Agência
 | **agency_digit_length**   | N/A     | Dígito da Agência
@@ -113,7 +165,67 @@ en: /en/bank_contracts/itau
 
 | Parâmetro                 | Tamanho | Descrição
 | ------------------------- | ------- | -------------------
-| **itau-179**              | N/A     | Slug da carteira
+| **itau-bs-179**           | N/A     | Slug da carteira
+| **our_number_length**     | 8       | Nosso Número
+| **agency_number_length**  | 4       | Agência
+| **agency_digit_length**   | N/A     | Dígito da Agência
+| **account_number_length** | 5       | Conta
+| **account_digit_length**  | 1       | Dígito da Conta
+| **extra1_length**         | N/A     | N/A
+| **extra1_digit_length**   | N/A     | N/A
+| **extra2_length**         | N/A     | N/A
+| **extra2_digit_length**   | N/A     | N/A
+
+### 181
+
+| Parâmetro                 | Tamanho | Descrição
+| ------------------------- | ------- | -------------------
+| **itau-bs-181**           | N/A     | Slug da carteira
+| **our_number_length**     | 8       | Nosso Número
+| **agency_number_length**  | 4       | Agência
+| **agency_digit_length**   | N/A     | Dígito da Agência
+| **account_number_length** | 5       | Conta
+| **account_digit_length**  | 1       | Dígito da Conta
+| **extra1_length**         | N/A     | N/A
+| **extra1_digit_length**   | N/A     | N/A
+| **extra2_length**         | N/A     | N/A
+| **extra2_digit_length**   | N/A     | N/A
+
+### 195
+
+| Parâmetro                 | Tamanho | Descrição
+| ------------------------- | ------- | -------------------
+| **itau-bs-195**           | N/A     | Slug da carteira
+| **our_number_length**     | 8       | Nosso Número
+| **agency_number_length**  | 4       | Agência
+| **agency_digit_length**   | N/A     | Dígito da Agência
+| **account_number_length** | 5       | Conta
+| **account_digit_length**  | 1       | Dígito da Conta
+| **extra1_length**         | N/A     | N/A
+| **extra1_digit_length**   | N/A     | N/A
+| **extra2_length**         | N/A     | N/A
+| **extra2_digit_length**   | N/A     | N/A
+
+### 196
+
+| Parâmetro                 | Tamanho | Descrição
+| ------------------------- | ------- | -------------------
+| **itau-bs-196**           | N/A     | Slug da carteira
+| **our_number_length**     | 8       | Nosso Número
+| **agency_number_length**  | 4       | Agência
+| **agency_digit_length**   | N/A     | Dígito da Agência
+| **account_number_length** | 5       | Conta
+| **account_digit_length**  | 1       | Dígito da Conta
+| **extra1_length**         | N/A     | N/A
+| **extra1_digit_length**   | N/A     | N/A
+| **extra2_length**         | N/A     | N/A
+| **extra2_digit_length**   | N/A     | N/A
+
+### 198
+
+| Parâmetro                 | Tamanho | Descrição
+| ------------------------- | ------- | -------------------
+| **itau-bs-198**           | N/A     | Slug da carteira
 | **our_number_length**     | 8       | Nosso Número
 | **agency_number_length**  | 4       | Agência
 | **agency_digit_length**   | N/A     | Dígito da Agência
