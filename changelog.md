@@ -8,6 +8,11 @@ en: /en/changelog
 
 #### Últimas alterações realizadas na API.
 
+### 22/10/2015
+
+* Atualizada lista de carteiras do Itaú
+* Atualizada lista de carteiras do Bradesco
+* Atualizada lista de carteiras do Banco do Brasil
 
 ### 09/10/2015
 
