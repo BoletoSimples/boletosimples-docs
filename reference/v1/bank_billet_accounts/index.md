@@ -19,20 +19,23 @@ breadcrumb: Carteiras de Cobrança
 
 ### Modelo de Dados
 
-| Parâmetro              | Obr.  | Tipo    | Tamanho | Descrição
-| ---------------------- | ----- | ------- | ------- | ------------------------
-| **id**                 | N/A   | Integer |         | ID da carteira
-| **bank_contract_slug** | Sim   | String  | 50      | [Slug da Carteira](/bank_contracts)
-| **next_our_number**    | Não   | String  | 40      | Próximo Nosso Número
-| **agency_number**      | Sim   | String  | 20      | Agência
-| **agency_digit**       | *     | String  | 2       | Dígito da Agência
-| **account_number**     | Sim   | String  | 20      | Conta
-| **account_digit**      | Sim   | String  | 2       | Dígito da Conta
-| **extra1**             | *     | String  | 15      | Campo Extra 1
-| **extra1_digit**       | *     | String  | 3       | Dígito do Campo Extra 1
-| **extra2**             | *     | String  | 15      | Campo Extra 2
-| **extra2_digit**       | *     | String  | 3       | Dígito do Campo Extra 2
-| **extra3**             | **    | String  | 30      | [Código de Remessa](/reference/v1/remittances/)
+| Parâmetro                | Obr.  | Tipo    | Tamanho | Descrição
+| ------------------------ | ----- | ------- | ------- | ------------------------
+| **id**                   | N/A   | Integer |         | ID da carteira
+| **bank_contract_slug**   | Sim   | String  | 50      | [Slug da Carteira](/bank_contracts)
+| **next_our_number**      | Não   | String  | 40      | Próximo Nosso Número
+| **agency_number**        | Sim   | String  | 20      | Agência
+| **agency_digit**         | *     | String  | 2       | Dígito da Agência
+| **account_number**       | Sim   | String  | 20      | Conta
+| **account_digit**        | Sim   | String  | 2       | Dígito da Conta
+| **extra1**               | *     | String  | 15      | Campo Extra 1
+| **extra1_digit**         | *     | String  | 3       | Dígito do Campo Extra 1
+| **extra2**               | *     | String  | 15      | Campo Extra 2
+| **extra2_digit**         | *     | String  | 3       | Dígito do Campo Extra 2
+| **extra3**               | **    | String  | 30      | [Código de Remessa](/reference/v1/remittances/)
+| **beneficiary_name**     | Não   | String  | 255     | Nome do Beneficiário
+| **beneficiary_cnpj_cpf** | Não   | String  | 20      | CPF/CNPJ do Beneficiário
+| **beneficiary_address**  | Não   | String  | 255     | Endereço do Beneficiário
 
 '*' Depende da carteira escolhida.
 
