@@ -8,6 +8,10 @@ en: /en/changelog
 
 #### Últimas alterações realizadas na API.
 
+### 28/10/2015
+
+* Tabela com lista atual de retornos e remessas disponíveis
+
 ### 22/10/2015
 
 * Atualizada lista de carteiras do Itaú

@@ -4,28 +4,19 @@ title: Carteiras de Cobrança - API do Boleto Simples
 en: /en/bank_contracts
 ---
 
-## Bancos
+## Carteiras de Cobrança
 
-### [Banco do Brasil](/bank_contracts/bb)
-
-### [Banestes](/bank_contracts/banestes)
-
-### [Banrisul](/bank_contracts/banrisul)
-
-### [Bradesco](/bank_contracts/bradesco)
-
-### [Caixa Econômica Federal](/bank_contracts/cef)
-
-### [CitiBank](/bank_contracts/citibank)
-
-### [HSBC](/bank_contracts/hsbc)
-
-### [Itaú](/bank_contracts/itau)
-
-### [Safra](/bank_contracts/safra)
-
-### [Santander](/bank_contracts/santander)
-
-### [Sicoob](/bank_contracts/sicoob)
-
-### [Sicredi](/bank_contracts/sicredi)
+| Banco                                  | Retorno | Remessa
+| -------------------------------------- | ------- | -------------------
+| [Banco do Brasil](/bank_contracts/bb)  | Sim     | Sim
+| [Banestes](/bank_contracts/banestes)   | Sim     | Não
+| [Banrisul](/bank_contracts/banrisul)   | Não     | Não
+| [Bradesco](/bank_contracts/bradesco)   | Sim     | Sim
+| [Caixa](/bank_contracts/cef)           | Sim     | Sim
+| [CitiBank](/bank_contracts/citibank)   | Sim     | Sim
+| [HSBC](/bank_contracts/hsbc)           | Sim     | Não
+| [Itaú](/bank_contracts/itau)           | Sim     | Sim
+| [Safra](/bank_contracts/safra)         | Não     | Não
+| [Santander](/bank_contracts/santander) | Sim     | Sim
+| [Sicoob](/bank_contracts/sicoob)       | Sim     | Sim
+| [Sicredi](/bank_contracts/sicredi)     | Sim     | Não
