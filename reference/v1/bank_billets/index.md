@@ -141,6 +141,18 @@ Erro :(
   ],
   :customer_zipcode => [
     [0] "não pode ficar em branco"
+  ],
+  :customer_state => [
+    [0] "não pode ficar em branco"
+  ],
+  :customer_address => [
+    [0] "não pode ficar em branco"
+  ],
+  :customer_neighborhood => [
+    [0] "não pode ficar em branco"
+  ],
+  :customer_city_id => [
+    [0] "não pode ficar em branco"
   ]
 }
 </pre>
@@ -189,6 +201,25 @@ Array
         (
             [0] => não pode ficar em branco
         )
+    [customer_state] => Array
+        (
+            [0] => não pode ficar em branco
+        )
+        
+    [customer_address] => Array
+        (
+            [0] => não pode ficar em branco
+        )
+        
+    [customer_neighborhood] => Array
+        (
+            [0] => não pode ficar em branco
+        )
+        
+    [customer_city_id] => Array
+        (
+            [0] => não pode ficar em branco
+        )
 
 )
 </pre>
@@ -210,7 +241,7 @@ Array
 <pre class="bash">
 curl -i \
 -u $BOLETOSIMPLES_TOKEN:x \
--d '{"bank_billet":{"amount":12.34, "expire_at": "2014-11-15", "description": "Prestação de Serviço", "customer_person_name": "Nome do Cliente", "customer_cnpj_cpf": "125.812.717-28", "customer_zipcode": "12312-123"}}' \
+-d '{"bank_billet":{"amount":12.34, "expire_at": "2014-11-15", "description": "Prestação de Serviço", "customer_person_name": "Nome do Cliente", "customer_cnpj_cpf": "125.812.717-28", "customer_zipcode": "12312-123", "customer_address": "Rua quinhentos", "customer_city_name": "Rio de Janeiro", "customer_state": "RJ", "customer_neighborhood": "bairro"}}' \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
 -X POST 'https://sandbox.boletosimples.com.br/api/v1/bank_billets'
@@ -236,17 +267,17 @@ Content-Type: application/json; charset=utf-8
   "customer_person_type":"individual",
   "customer_person_name":"Nome do Cliente",
   "customer_cnpj_cpf":"125.812.717-28",
-  "customer_address":null,
-  "customer_state":null,
-  "customer_neighborhood":null,
-  "customer_zipcode":null,
+  "customer_address":"Rua quinhentos",
+  "customer_state":"RJ",
+  "customer_neighborhood":"bairro",
+  "customer_zipcode":"12312-123",
   "customer_address_number":null,
   "customer_address_complement":null,
   "customer_phone_number":null,
   "customer_email":null,
   "send_email_on_creation":null,
   "created_via_api":true,
-  "customer_city_name":null,
+  "customer_city_name":"Rio de Janeiro",
   "paid_amount":0.0,
   "amount":12.34
 }
@@ -418,20 +449,21 @@ Content-Type: application/json; charset=utf-8
   "customer_person_type":"individual",
   "customer_person_name":"Nome do Cliente",
   "customer_cnpj_cpf":"125.812.717-28",
-  "customer_address":null,
-  "customer_state":null,
-  "customer_neighborhood":null,
-  "customer_zipcode":null,
+  "customer_address":"Rua quinhentos",
+  "customer_state":"RJ",
+  "customer_neighborhood":"bairro",
+  "customer_zipcode":"12312-123",
   "customer_address_number":null,
   "customer_address_complement":null,
   "customer_phone_number":null,
   "customer_email":null,
   "send_email_on_creation":null,
   "created_via_api":true,
-  "customer_city_name":null,
+  "customer_city_name":"Rio de Janeiro",
   "paid_amount":0.0,
   "amount":12.34
 }
+
 </pre>
   </div>
   <div class="tab-pane" id="ruby3">
@@ -603,17 +635,17 @@ Content-Type: application/json; charset=utf-8
     "customer_person_type":"individual",
     "customer_person_name":"Nome do Cliente",
     "customer_cnpj_cpf":"125.812.717-28",
-    "customer_address":null,
-    "customer_state":null,
-    "customer_neighborhood":null,
-    "customer_zipcode":null,
+    "customer_address":"Rua quinhentos",
+    "customer_state":"RJ",
+    "customer_neighborhood":"bairro",
+    "customer_zipcode":"12312-123",
     "customer_address_number":null,
     "customer_address_complement":null,
     "customer_phone_number":null,
     "customer_email":null,
     "send_email_on_creation":null,
     "created_via_api":true,
-    "customer_city_name":null,
+    "customer_city_name":"Rio de Janeiro",
     "paid_amount":0.0,
     "amount":12.34
   }
@@ -807,22 +839,22 @@ Content-Type: application/json; charset=utf-8
   "expire_at":"2014-11-15",
   "paid_at":null,
   "description":"Prestação de Serviço",
-  "status":"canceled",
+  "status":"opened",
   "shorten_url":"http://bole.to/xxxxxxxx",
   "customer_person_type":"individual",
   "customer_person_name":"Nome do Cliente",
   "customer_cnpj_cpf":"125.812.717-28",
-  "customer_address":null,
-  "customer_state":null,
-  "customer_neighborhood":null,
-  "customer_zipcode":null,
+  "customer_address":"Rua quinhentos",
+  "customer_state":"RJ",
+  "customer_neighborhood":"bairro",
+  "customer_zipcode":"12312-123",
   "customer_address_number":null,
   "customer_address_complement":null,
   "customer_phone_number":null,
   "customer_email":null,
   "send_email_on_creation":null,
   "created_via_api":true,
-  "customer_city_name":null,
+  "customer_city_name":"Rio de Janeiro",
   "paid_amount":0.0,
   "amount":12.34
 }

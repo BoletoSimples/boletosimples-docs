@@ -8,6 +8,12 @@ en: /en/changelog
 
 #### Últimas alterações realizadas na API.
 
+### 09/12/2015
+
+* Atualização dos campos obrigatórios dos boletos
+* Atualização dos campos obrigatórios dos clientes
+* Revisão de todos os códigos de exemplo
+
 ### 28/10/2015
 
 * Tabela com lista atual de retornos e remessas disponíveis

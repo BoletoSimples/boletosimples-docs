@@ -187,7 +187,11 @@ Content-Type: application/json; charset=utf-8
   "extra1":"1234567",
   "extra1_digit":null,
   "extra2":null,
-  "extra2_digit":null
+  "extra2_digit":null,
+  "extra3":null,
+  "beneficiary_name":"Boleto Simples Cobranças Ltda.",
+  "beneficiary_cnpj_cpf":"05.813.794/0001-26",
+  "beneficiary_address":"Av. Presidente Vargas, 633 sala 1716. Rio de Janeiro - RJ"
 }
 </pre>
   </div>
@@ -228,7 +232,11 @@ Sucesso :)
                 "extra1" => "1234567",
           "extra1_digit" => nil,
                 "extra2" => nil,
-          "extra2_digit" => nil
+          "extra2_digit" => nil,
+                "extra3" => nil,
+                "beneficiary_name" => "Boleto Simples Cobranças Ltda.",
+                "beneficiary_cnpj_cpf" => "05.813.794/0001-26",
+                "beneficiary_address" => "Av. Presidente Vargas, 633 sala 1716. Rio de Janeiro - RJ"
 }
 </pre>
   </div>
@@ -305,7 +313,7 @@ curl -i \
 -u $BOLETOSIMPLES_TOKEN:x \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X GET 'https://sandbox.boletosimples.com.br/api/v1/bank_billet_accounts/4'
+-X GET 'https://sandbox.boletosimples.com.br/api/v1/bank_billet_accounts/3'
 </pre>
 
     <small>Resposta:</small>
@@ -319,7 +327,7 @@ Content-Type: application/json; charset=utf-8
 ...
 
 {
-  "id":4,
+  "id":3,
   "bank_contract_slug":"sicoob-02",
   "next_our_number":"0000001",
   "agency_number":"4327",
@@ -329,7 +337,11 @@ Content-Type: application/json; charset=utf-8
   "extra1":"1234567",
   "extra1_digit":null,
   "extra2":null,
-  "extra2_digit":null
+  "extra2_digit":null,
+  "extra3":null,
+  "beneficiary_name":"Boleto Simples Cobranças Ltda.",
+  "beneficiary_cnpj_cpf":"05.813.794/0001-26",
+  "beneficiary_address":"Av. Presidente Vargas, 633 sala 1716. Rio de Janeiro - RJ"
 }
 </pre>
   </div>
@@ -356,6 +368,10 @@ ap @bank_billet_account.attributes
                 "extra2" => nil,
           "extra2_digit" => nil,
                     "id" => 3
+                "extra3" => nil,
+                "beneficiary_name" => "Boleto Simples Cobranças Ltda.",
+                "beneficiary_cnpj_cpf" => "05.813.794/0001-26",
+                "beneficiary_address" => "Av. Presidente Vargas, 633 sala 1716. Rio de Janeiro - RJ"
 }
 </pre>
   </div>
@@ -509,7 +525,7 @@ curl -i \
 -d '{"bank_billet_account":{"agency_number":"4567"}}' \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X PUT 'https://sandbox.boletosimples.com.br/api/v1/bank_billet_accounts/1'
+-X PUT 'https://sandbox.boletosimples.com.br/api/v1/bank_billet_accounts/3'
 </pre>
 
     <small>Resposta:</small>
@@ -518,12 +534,12 @@ curl -i \
 HTTP/1.1 201 Created
 Date: Fri, 17 Oct 2014 19:30:06 GMT
 Status: 201 Created
-Location: https://sandbox.boletosimples.com.br/api/v1/bank_billet_accounts/1
+Location: https://sandbox.boletosimples.com.br/api/v1/bank_billet_accounts/3
 Content-Type: application/json; charset=utf-8
 ...
 
 {
-  "id":1,
+  "id":3,
   "bank_contract_slug":"sicoob-02",
   "next_our_number":"0000001",
   "agency_number":"4567",
@@ -533,7 +549,11 @@ Content-Type: application/json; charset=utf-8
   "extra1":"1234567",
   "extra1_digit":null,
   "extra2":null,
-  "extra2_digit":null
+  "extra2_digit":null,
+  "extra3":null,
+  "beneficiary_name":"Boleto Simples Cobranças Ltda.",
+  "beneficiary_cnpj_cpf":"05.813.794/0001-26",
+  "beneficiary_address":"Av. Presidente Vargas, 633 sala 1716. Rio de Janeiro - RJ"
 }
 </pre>
   </div>
@@ -661,19 +681,23 @@ Content-Type: application/json; charset=utf-8
 ...
 
 [
- {
-  "id":1,
-  "bank_contract_slug":"sicoob-02",
-  "next_our_number":"0000001",
-  "agency_number":"4567",
-  "agency_digit":"3",
-  "account_number":"00003666",
-  "account_digit":"8",
-  "extra1":"1234567",
-  "extra1_digit":null,
-  "extra2":null,
-  "extra2_digit":null
- }
+  {
+    "id":3,
+    "bank_contract_slug":"sicoob-02",
+    "next_our_number":"0000001",
+    "agency_number":"4327",
+    "agency_digit":"3",
+    "account_number":"00003666",
+    "account_digit":"8",
+    "extra1":"1234567",
+    "extra1_digit":null,
+    "extra2":null,
+    "extra2_digit":null,
+    "extra3":null,
+    "beneficiary_name":"Boleto Simples Cobranças Ltda.",
+    "beneficiary_cnpj_cpf":"05.813.794/0001-26",
+    "beneficiary_address":"Av. Presidente Vargas, 633 sala 1716. Rio de Janeiro - RJ"
+  }
 ]
 </pre>
   </div>

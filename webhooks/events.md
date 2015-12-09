@@ -34,12 +34,10 @@ Abaixo a listagem de eventos registrados pelo Boleto Simples:
 | user.blocked                      | Toda vez que a conta é bloqueada.                  |
 | user.bank_billet_creation_blocked | Toda vez que a emissão de boletos é bloqueada.     |
 | remittance.created                | Toda vez que uma remessa é criada.                 |
-| remittance.updated                | Toda vez que uma remessa é atualizada.             |
 | remittance.processed              | Toda vez que uma remessa é processada.             |
 | remittance.downloaded             | Toda vez que uma remessa é baixada.                |
 | remittance.sent                   | Toda vez que uma remessa é enviada.                |
 | discharge.created                 | Toda vez que um retorno é criado.                  |
-| discharge.updated                 | Toda vez que um retorno é atualizado.              |
 | discharge.processed               | Toda vez que um retorno é processado.              |
 | ping                              | Evento especial para testar o webhook.             |
 
