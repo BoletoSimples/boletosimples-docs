@@ -34,6 +34,8 @@ breadcrumb: CNAB (Remessa)
 
 | unprocessed | Pendente
 | processed   | Processado
+| downloaded  | Baixada pelo usuário
+| sent        | Enviada para o banco
 
 ### Criar CNAB
 
