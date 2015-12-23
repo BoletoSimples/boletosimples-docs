@@ -23,7 +23,7 @@ breadcrumb: Carteiras de Cobrança
 | ------------------------ | ----- | ------- | ------- | ------------------------
 | **id**                   | N/A   | Integer |         | ID da carteira
 | **bank_contract_slug**   | Sim   | String  | 50      | [Slug da Carteira](/bank_contracts)
-| **next_our_number**      | Não   | String  | 40      | Próximo Nosso Número
+| **next_our_number**      | Não   | String  | 40      | Próximo Nosso Número. Default: 1
 | **agency_number**        | Sim   | String  | 20      | Agência
 | **agency_digit**         | *     | String  | 2       | Dígito da Agência
 | **account_number**       | Sim   | String  | 20      | Conta
