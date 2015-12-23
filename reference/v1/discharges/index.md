@@ -22,7 +22,7 @@ breadcrumb: CNAB (Retorno)
 | **file**               | Sim   |         |         | Arquivo
 | **content**            | Sim   |         |         | Conteúdo do arquivo
 | **filename**           | Não   | String  | 255     | Nome do arquivo
-| **status**             | N/A   | String  | 20      | Status do arquivo ([possíveis valores](#status))
+| **status**             | N/A   | String  | 20      | Situação do arquivo ([possíveis valores](#status))
 | **processed_at**       | N/A   | Time    |         | Data de Processamento
 | **created_via_api**    | N/A   | Boolean |         | Enviado pela API
 

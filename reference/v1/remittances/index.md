@@ -23,7 +23,7 @@ breadcrumb: CNAB (Remessa)
 | **filename**                  | Não   | String  | 255     | Nome do arquivo
 | **processed_at**              | Não   | Time    |         | Data de Processamento
 | **created_via_api**           | Não   | Boolean |         | Enviado pela API
-| **status**                    | Não   | String  |         | Situação
+| **status**                    | Não   | String  |         | Situação do arquivo ([possíveis valores](#status))
 | **created_at**                | Não   | DateTime|         | Data de criação
 | **url**                       | Não   | String  |         | URL do arquivo de remessa
 | **bank_billet_account_id**    | Sim   | Integer |         | ID da [Carteira de Cobrança](/reference/v1/bank_billet_accounts/)
@@ -32,7 +32,7 @@ breadcrumb: CNAB (Remessa)
 
 #### status
 
-| unprocessed | Aguardando
+| unprocessed | Pendente
 | processed   | Processado
 
 ### Criar CNAB
@@ -40,7 +40,7 @@ breadcrumb: CNAB (Remessa)
 `POST /api/v1/remittances`
 
 Será feita uma solicitação de Remessa.
-Após a criação da Remessa, ela será processada e 
+Após a criação da Remessa, ela será processada e
 ao término do processamento serão emitidas notificações através dos Webhooks.
 
 #### Exemplo de requisição inválida

@@ -37,7 +37,7 @@ breadcrumb: Boletos
 | **customer_address_complement** | Não   | String  | 255     | Complemento
 | **customer_phone_number**       | Não   | String  | 255     | Telefone (com DDD)
 | **meta**                        | Não   | Campo Genérico | | Aceita qualquer formato passado. Pode ser usado para salvar dados que não existam dentro do Boleto Simples. Exemplo: {pedido: 12345}
-| **status**                      | N/A   | Date    |         | Status do boleto ([possíveis valores](#status))
+| **status**                      | N/A   | Date    |         | Situação do boleto ([possíveis valores](#status))
 | **paid_at**                     | N/A   | Date    |         | Data do pagamento
 | **paid_amount**                 | N/A   | Float   |         | Valor pago
 | **shorten_url**                 | N/A   | String  |         | URL para visualização do boleto
