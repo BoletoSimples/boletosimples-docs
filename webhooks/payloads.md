@@ -117,6 +117,92 @@ A regra é que todos os payloads possuem as chaves `event_code`, `webhook`, `obj
 }
 </pre>
 
+### user.*
+
+<pre class="json">
+{
+  "object": {
+    "id": 1,
+    "email": "carteira@example.com",
+    "account_type": "individual",
+    "sex": "male",
+    "cpf": "860.196.915-19",
+    "address_street_name": "Rua quinhentos",
+    "address_state": "RJ",
+    "address_neighborhood": "Bairro Legal",
+    "address_postal_code": "12312-123",
+    "address_number": "111",
+    "address_complement": "222",
+    "phone_number": "2112123434",
+    "withdrawal_period": "biweekly",
+    "first_name": "Joao",
+    "middle_name": "da Silva",
+    "last_name": "Neto",
+    "date_of_birth": "1976-10-09",
+    "business_category": 1000,
+    "business_subcategory": 2000,
+    "business_website": "",
+    "business_name": null,
+    "business_legal_name": "",
+    "business_type": "",
+    "business_cnpj": null,
+    "address_city_name": "Rio de Janeiro",
+    "full_name": "Joao da Silva Neto",
+    "login_url": "https://boletosimples.com.br/welcome?email=carteira%40example.com",
+    "mother_name": "Maria de Almeida",
+    "father_name": "Paulo José da Cunha",
+    "account_level": 1
+  },
+  "event_code": "user.updated",
+  "webhook": {
+    "id": 1,
+    "url": "http://example.ngrok.com/callbacks/boletosimples"
+  }
+}
+</pre>
+
+### remittance.*
+
+<pre class="json">
+{
+  "object": {
+    "id": 1,
+    "filename": "1512242.REM",
+    "created_via_api": true,
+    "status": "processed",
+    "bank_billet_account_id": 17,
+    "created_at": "2015-12-24",
+    "processed_at": "2015-12-24",
+    "url": "https://boletosimples.com.br/api/v1/remittances/1/raw"
+  },
+  "event_code": "remittance.processed",
+  "webhook": {
+    "id": 1,
+    "url": "http://example.ngrok.com/callbacks/boletosimples"
+  }
+}
+</pre>
+
+### discharge.*
+
+<pre class="json">
+{
+  "object": {
+    "id": 1,
+    "filename": "CN02125A.RET",
+    "processed_at": "2015-12-24",
+    "created_via_api": true,
+    "status": "processed"
+  },
+  "event_code": "discharge.processed",
+  "webhook": {
+    "id": 1,
+    "url": "http://example.ngrok.com/callbacks/boletosimples"
+  }
+}
+</pre>
+
+
 ### *.updated
 
 <pre class="json">
