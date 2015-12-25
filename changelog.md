@@ -8,6 +8,13 @@ en: /en/changelog
 
 #### Últimas alterações realizadas na API.
 
+### 24/12/2015
+
+* Atualiza as informações retornadas nas carteiras (BankBilletAccount)
+* Inclui dicionário de dados de CNAB Retorno
+* Atualiza status faltando no dicionário de dados de CNAB Remessa
+* Inclui informações de payload dos webhooks de usuário, CNAB Remessa e CNAB Retorno
+
 ### 09/12/2015
 
 * Atualização dos campos obrigatórios dos boletos
