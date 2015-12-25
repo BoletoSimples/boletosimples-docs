@@ -36,10 +36,14 @@ breadcrumb: Carteiras de Cobrança
 | **beneficiary_name**     | Não   | String  | 255     | Nome do Beneficiário
 | **beneficiary_cnpj_cpf** | Não   | String  | 20      | CPF/CNPJ do Beneficiário
 | **beneficiary_address**  | Não   | String  | 255     | Endereço do Beneficiário
+| **name**                 | Não   | String  |         | Nome da Conta ***
+| **bank_contract**        | Não   | Hash    |         | Dados da Carteira ***
 
 '*' Depende da carteira escolhida.
 
 '**' Usado na remessa em bancos.
+
+'***' Não é recebido na criação e nem na atualização, só é retornado na consulta e listagem.
 
 ### Criar carteira
 
@@ -191,7 +195,20 @@ Content-Type: application/json; charset=utf-8
   "extra3":null,
   "beneficiary_name":"Boleto Simples Cobranças Ltda.",
   "beneficiary_cnpj_cpf":"05.813.794/0001-26",
-  "beneficiary_address":"Av. Presidente Vargas, 633 sala 1716. Rio de Janeiro - RJ"
+  "beneficiary_address":"Av. Presidente Vargas, 633 sala 1716. Rio de Janeiro - RJ",
+  "name":"Bancoob/Sicoob 02 - CC 00003666-8",
+  "bank_contract": {
+    "bank":{
+      "code":"sicoob",
+      "name":"Bancoob/Sicoob",
+      "number":"756"
+    },
+    "slug":"sicoob-02",
+    "code":"02",
+    "sufix":"02",
+    "variation":null,
+    "name":"1/02 - Simples Sem Registro"
+  }
 }
 </pre>
   </div>
@@ -221,22 +238,34 @@ end
 <pre class="ruby">
 Sucesso :)
 {
-    "bank_contract_slug" => "sicoob-02",
-       "next_our_number" => "0000001",
-         "agency_number" => "4327",
-          "agency_digit" => "3",
-        "account_number" => "00003666",
-         "account_digit" => "8",
-         "extra1_length" => "1234567",
-                    "id" => 2,
-                "extra1" => "1234567",
-          "extra1_digit" => nil,
-                "extra2" => nil,
-          "extra2_digit" => nil,
-                "extra3" => nil,
-                "beneficiary_name" => "Boleto Simples Cobranças Ltda.",
-                "beneficiary_cnpj_cpf" => "05.813.794/0001-26",
-                "beneficiary_address" => "Av. Presidente Vargas, 633 sala 1716. Rio de Janeiro - RJ"
+      "bank_contract_slug" => "sicoob-02",
+         "next_our_number" => "0000001",
+           "agency_number" => "4327",
+            "agency_digit" => "3",
+          "account_number" => "00003666",
+           "account_digit" => "8",
+                  "extra1" => "1234567",
+            "extra1_digit" => nil,
+                  "extra2" => nil,
+            "extra2_digit" => nil,
+                  "extra3" => nil,
+        "beneficiary_name" => "Boleto Simples Cobranças Ltda.",
+    "beneficiary_cnpj_cpf" => "05.813.794/0001-26",
+     "beneficiary_address" => "Av. Presidente Vargas, 633 sala 1716. Rio de Janeiro - RJ",
+                    "name" => "Bancoob/Sicoob 02 - CC 00003666-8",
+           "bank_contract" => {
+                                "bank" => {
+                                  "code" => "sicoob",
+                                  "name" => "Bancoob/Sicoob",
+                                  "number" => "756"
+                                },
+                               "slug" => "sicoob-02",
+                               "code" => "02",
+                              "sufix" => "02",
+                          "variation" => nil,
+                               "name" => "1/02 - Simples Sem Registro"
+                              },
+                      "id" => 3
 }
 </pre>
   </div>
@@ -341,7 +370,20 @@ Content-Type: application/json; charset=utf-8
   "extra3":null,
   "beneficiary_name":"Boleto Simples Cobranças Ltda.",
   "beneficiary_cnpj_cpf":"05.813.794/0001-26",
-  "beneficiary_address":"Av. Presidente Vargas, 633 sala 1716. Rio de Janeiro - RJ"
+  "beneficiary_address":"Av. Presidente Vargas, 633 sala 1716. Rio de Janeiro - RJ",
+  "name":"Bancoob/Sicoob 02 - CC 00003666-8",
+  "bank_contract": {
+    "bank":{
+      "code":"sicoob",
+      "name":"Bancoob/Sicoob",
+      "number":"756"
+    },
+    "slug":"sicoob-02",
+    "code":"02",
+    "sufix":"02",
+    "variation":null,
+    "name":"1/02 - Simples Sem Registro"
+  }
 }
 </pre>
   </div>
@@ -357,22 +399,36 @@ ap @bank_billet_account.attributes
 
 <pre class="ruby">
 {
-    "bank_contract_slug" => "sicoob-02",
-       "next_our_number" => "0000001",
-         "agency_number" => "4327",
-          "agency_digit" => "3",
-        "account_number" => "00003666",
-         "account_digit" => "8",
-                "extra1" => "1234567",
-          "extra1_digit" => nil,
-                "extra2" => nil,
-          "extra2_digit" => nil,
-                    "id" => 3
-                "extra3" => nil,
-                "beneficiary_name" => "Boleto Simples Cobranças Ltda.",
-                "beneficiary_cnpj_cpf" => "05.813.794/0001-26",
-                "beneficiary_address" => "Av. Presidente Vargas, 633 sala 1716. Rio de Janeiro - RJ"
+      "bank_contract_slug" => "sicoob-02",
+         "next_our_number" => "0000001",
+           "agency_number" => "4327",
+            "agency_digit" => "3",
+          "account_number" => "00003666",
+           "account_digit" => "8",
+                  "extra1" => "1234567",
+            "extra1_digit" => nil,
+                  "extra2" => nil,
+            "extra2_digit" => nil,
+                  "extra3" => nil,
+        "beneficiary_name" => "Boleto Simples Cobranças Ltda.",
+    "beneficiary_cnpj_cpf" => "05.813.794/0001-26",
+     "beneficiary_address" => "Av. Presidente Vargas, 633 sala 1716. Rio de Janeiro - RJ",
+                    "name" => "Bancoob/Sicoob 02 - CC 00003666-8",
+           "bank_contract" => {
+                                "bank" => {
+                                  "code" => "sicoob",
+                                  "name" => "Bancoob/Sicoob",
+                                  "number" => "756"
+                                },
+                               "slug" => "sicoob-02",
+                               "code" => "02",
+                              "sufix" => "02",
+                          "variation" => nil,
+                               "name" => "1/02 - Simples Sem Registro"
+                              },
+                      "id" => 123
 }
+
 </pre>
   </div>
   <!-- <div class="tab-pane" id="php3">
@@ -553,7 +609,20 @@ Content-Type: application/json; charset=utf-8
   "extra3":null,
   "beneficiary_name":"Boleto Simples Cobranças Ltda.",
   "beneficiary_cnpj_cpf":"05.813.794/0001-26",
-  "beneficiary_address":"Av. Presidente Vargas, 633 sala 1716. Rio de Janeiro - RJ"
+  "beneficiary_address":"Av. Presidente Vargas, 633 sala 1716. Rio de Janeiro - RJ",
+  "name":"Bancoob/Sicoob 02 - CC 00003666-8",
+  "bank_contract": {
+    "bank":{
+      "code":"sicoob",
+      "name":"Bancoob/Sicoob",
+      "number":"756"
+    },
+    "slug":"sicoob-02",
+    "code":"02",
+    "sufix":"02",
+    "variation":null,
+    "name":"1/02 - Simples Sem Registro"
+  }
 }
 </pre>
   </div>
@@ -696,7 +765,20 @@ Content-Type: application/json; charset=utf-8
     "extra3":null,
     "beneficiary_name":"Boleto Simples Cobranças Ltda.",
     "beneficiary_cnpj_cpf":"05.813.794/0001-26",
-    "beneficiary_address":"Av. Presidente Vargas, 633 sala 1716. Rio de Janeiro - RJ"
+    "beneficiary_address":"Av. Presidente Vargas, 633 sala 1716. Rio de Janeiro - RJ",
+    "name":"Bancoob/Sicoob 02 - CC 00003666-8",
+    "bank_contract": {
+      "bank":{
+        "code":"sicoob",
+        "name":"Bancoob/Sicoob",
+        "number":"756"
+      },
+      "slug":"sicoob-02",
+      "code":"02",
+      "sufix":"02",
+      "variation":null,
+      "name":"1/02 - Simples Sem Registro"
+    }
   }
 ]
 </pre>
