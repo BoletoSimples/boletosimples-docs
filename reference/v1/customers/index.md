@@ -22,7 +22,7 @@ breadcrumb: Clientes
 | **id**                 | N/A   | Integer |         | ID do cliente
 | **person_name**        | Sim   | String  | 255     | Nome Completo ou Razão Social
 | **cnpj_cpf**           | Sim   | String  | 20      | CNPJ/CPF (formato 999.999.999-99 ou 99.999.999/9999-99)
-| **zipcode**            | Sim   | String  | 9       | CEP (formato 99999-999)
+| **zipcode**            | Sim   | Integer | 8       | CEP (formato 99999999)
 | **address**            | Sim   | Text    |         | Endereço
 | **city_name**          | Sim   | String  | 255     | Cidade
 | **state**              | Sim   | String  | 2       | Estado (sigla do estado, Ex: RJ)
@@ -151,7 +151,7 @@ Array
 <pre class="bash">
 curl -i \
 -u $BOLETOSIMPLES_TOKEN:x \
--d '{"customer":{"person_name":"Nome do Cliente", "cnpj_cpf": "125.812.717-28", "zipcode": "20071-004", "address": "Rua quinhentos", "city_name": "Rio de Janeiro", "state": "RJ", "neighborhood": "bairro"}}' \
+-d '{"customer":{"person_name":"Nome do Cliente", "cnpj_cpf": "125.812.717-28", "zipcode": "20071004", "address": "Rua quinhentos", "city_name": "Rio de Janeiro", "state": "RJ", "neighborhood": "bairro"}}' \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
 -X POST 'https://sandbox.boletosimples.com.br/api/v1/customers'
@@ -180,7 +180,7 @@ Content-Type: application/json; charset=utf-8
   "neighborhood":"bairro",
   "person_type":"individual",
   "phone_number":null,
-  "zipcode":"20071-004",
+  "zipcode":"20071004",
   "mobile_local_code":null,
   "state":"RJ"
 }
@@ -198,7 +198,7 @@ Content-Type: application/json; charset=utf-8
   city_name: "Rio de Janeiro",
   state: "RJ",
   neighborhood: "bairro",
-  zipcode: "20071-004",
+  zipcode: "20071004",
   address_number: "111",
   address_complement: "Sala 4",
   phone_number: "2112123434"
@@ -223,7 +223,7 @@ Sucesso :)
              "city_name" => "Rio de Janeiro",
                  "state" => "RJ",
           "neighborhood" => "bairro",
-               "zipcode" => "20071-004",
+               "zipcode" => "20071004",
         "address_number" => "111",
     "address_complement" => "Sala 4",
           "phone_number" => "2112123434",
@@ -247,7 +247,7 @@ $customer = BoletoSimples\Customer::create([
   'city_name' => "Rio de Janeiro",
   'state' => "RJ",
   'neighborhood' => "bairro",
-  'zipcode' => "20071-004",
+  'zipcode' => "20071004",
   'address_number' => "111",
   'address_complement' => "Sala 4",
   'phone_number' => "2112123434"
@@ -278,7 +278,7 @@ Array
     [neighborhood] => bairro
     [person_type] => individual
     [phone_number] => 2112123434
-    [zipcode] => 20071-004
+    [zipcode] => 20071004
     [mobile_local_code] =>
     [state] => RJ
     [created_via_api] => 1
@@ -333,7 +333,7 @@ Content-Type: application/json; charset=utf-8
   "neighborhood":"bairro",
   "person_type":"individual",
   "phone_number":null,
-  "zipcode":"20071-004",
+  "zipcode":"20071004",
   "mobile_local_code":null,
   "state":"RJ"
 }
@@ -362,7 +362,7 @@ puts @customer.attributes
           "neighborhood" => "bairro",
            "person_type" => "individual",
           "phone_number" => "2112123434",
-               "zipcode" => "20071-004",
+               "zipcode" => "20071004",
      "mobile_local_code" => nil,
                  "state" => "RJ",
        "created_via_api" => true,
@@ -395,7 +395,7 @@ Array
     [neighborhood] => bairro
     [person_type] => individual
     [phone_number] => 2112123434
-    [zipcode] => 20071-004
+    [zipcode] => 20071004
     [mobile_local_code] =>
     [state] => RJ
     [created_via_api] => 1
@@ -545,7 +545,7 @@ Location: https://sandbox.boletosimples.com.br/api/v1/customers/1
   "neighborhood":"bairro",
   "person_type":"individual",
   "phone_number":null,
-  "zipcode":"20071-004",
+  "zipcode":"20071004",
   "mobile_local_code":null,
   "state":"RJ"
 }
@@ -687,7 +687,7 @@ Content-Type: application/json; charset=utf-8
     "neighborhood":"bairro",
     "person_type":"individual",
     "phone_number":null,
-    "zipcode":"20071-004",
+    "zipcode":"20071004",
     "mobile_local_code":null,
     "state":"RJ"
   }

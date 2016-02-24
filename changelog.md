@@ -8,6 +8,10 @@ en: /en/changelog
 
 #### Últimas alterações realizadas na API.
 
+### 24/02/2016
+
+* Padronizando CEP
+
 ### 24/12/2015
 
 * Atualiza as informações retornadas nas carteiras (BankBilletAccount)

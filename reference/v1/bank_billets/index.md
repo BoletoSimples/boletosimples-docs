@@ -27,7 +27,7 @@ breadcrumb: Boletos
 | **customer_id**                 | Não   | Number  |         | ID do Cliente Cadastrado. Quando esse ID é passado, os campos `customer_person_name`, `customer_cnpj_cpf` e `customer_zipcode` não são obrigatórios.
 | **customer_person_name**        | Sim   | String  | 255     | Nome ou Razão Social do Pagador
 | **customer_cnpj_cpf**           | Sim   | String  | 20      | CNPJ ou CPF do Pagador
-| **customer_zipcode**            | Sim   | String  | 9       | CEP
+| **customer_zipcode**            | Sim   | Integer | 8       | CEP (formato 99999999)
 | **customer_email**              | Não   | String  | 255     | E-mail do Pagador
 | **customer_address**            | Sim   | Text    |         | Endereço
 | **customer_city_name**          | Sim   | String  | 255     | Cidade
@@ -241,7 +241,7 @@ Array
 <pre class="bash">
 curl -i \
 -u $BOLETOSIMPLES_TOKEN:x \
--d '{"bank_billet":{"amount":12.34, "expire_at": "2014-11-15", "description": "Prestação de Serviço", "customer_person_name": "Nome do Cliente", "customer_cnpj_cpf": "125.812.717-28", "customer_zipcode": "12312-123", "customer_address": "Rua quinhentos", "customer_city_name": "Rio de Janeiro", "customer_state": "RJ", "customer_neighborhood": "bairro"}}' \
+-d '{"bank_billet":{"amount":12.34, "expire_at": "2014-11-15", "description": "Prestação de Serviço", "customer_person_name": "Nome do Cliente", "customer_cnpj_cpf": "125.812.717-28", "customer_zipcode": "12312123", "customer_address": "Rua quinhentos", "customer_city_name": "Rio de Janeiro", "customer_state": "RJ", "customer_neighborhood": "bairro"}}' \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
 -X POST 'https://sandbox.boletosimples.com.br/api/v1/bank_billets'
@@ -270,7 +270,7 @@ Content-Type: application/json; charset=utf-8
   "customer_address":"Rua quinhentos",
   "customer_state":"RJ",
   "customer_neighborhood":"bairro",
-  "customer_zipcode":"12312-123",
+  "customer_zipcode":"12312123",
   "customer_address_number":null,
   "customer_address_complement":null,
   "customer_phone_number":null,
@@ -301,7 +301,7 @@ Content-Type: application/json; charset=utf-8
   customer_person_type: 'individual',
   customer_phone_number: '2112123434',
   customer_state: 'RJ',
-  customer_zipcode: '12312-123'
+  customer_zipcode: '12312123'
 })
 if @bank_billet.persisted?
   puts "Sucesso :)"
@@ -331,7 +331,7 @@ Sucesso :)
            "customer_person_type" => "individual",
           "customer_phone_number" => "2112123434",
                  "customer_state" => "RJ",
-               "customer_zipcode" => "12312-123",
+               "customer_zipcode" => "12312123",
                              "id" => 854,
                         "paid_at" => nil,
                          "status" => "generating",
@@ -361,7 +361,7 @@ $bank_billet = BoletoSimples\BankBillet::create(array (
   'customer_person_type' => 'individual',
   'customer_phone_number' => '2112123434',
   'customer_state' => 'RJ',
-  'customer_zipcode' => '12312-123'
+  'customer_zipcode' => '12312123'
 ));
 if($bank_billet->isPersisted()) {
   echo "Sucesso :)\n";
@@ -390,7 +390,7 @@ Array
     [customer_address] => Rua quinhentos
     [customer_state] => RJ
     [customer_neighborhood] => Sao Francisco
-    [customer_zipcode] => 12312-123
+    [customer_zipcode] => 12312123
     [customer_address_number] => 111
     [customer_address_complement] => Sala 4
     [customer_phone_number] => 2112123434
@@ -452,7 +452,7 @@ Content-Type: application/json; charset=utf-8
   "customer_address":"Rua quinhentos",
   "customer_state":"RJ",
   "customer_neighborhood":"bairro",
-  "customer_zipcode":"12312-123",
+  "customer_zipcode":"12312123",
   "customer_address_number":null,
   "customer_address_complement":null,
   "customer_phone_number":null,
@@ -489,7 +489,7 @@ puts @bank_billet.attributes
                "customer_address" => "Rua quinhentos",
                  "customer_state" => "RJ",
           "customer_neighborhood" => "Sao Francisco",
-               "customer_zipcode" => "12312-123",
+               "customer_zipcode" => "12312123",
         "customer_address_number" => "111",
     "customer_address_complement" => "Sala 4",
           "customer_phone_number" => "2112123434",
@@ -530,7 +530,7 @@ Array
     [customer_address] => Rua quinhentos
     [customer_state] => RJ
     [customer_neighborhood] => Sao Francisco
-    [customer_zipcode] => 12312-123
+    [customer_zipcode] => 12312123
     [customer_address_number] => 111
     [customer_address_complement] => Sala 4
     [customer_phone_number] => 2112123434
@@ -638,7 +638,7 @@ Content-Type: application/json; charset=utf-8
     "customer_address":"Rua quinhentos",
     "customer_state":"RJ",
     "customer_neighborhood":"bairro",
-    "customer_zipcode":"12312-123",
+    "customer_zipcode":"12312123",
     "customer_address_number":null,
     "customer_address_complement":null,
     "customer_phone_number":null,
@@ -847,7 +847,7 @@ Content-Type: application/json; charset=utf-8
   "customer_address":"Rua quinhentos",
   "customer_state":"RJ",
   "customer_neighborhood":"bairro",
-  "customer_zipcode":"12312-123",
+  "customer_zipcode":"12312123",
   "customer_address_number":null,
   "customer_address_complement":null,
   "customer_phone_number":null,
