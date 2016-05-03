@@ -37,6 +37,7 @@ breadcrumb: Carteiras de Cobrança
 | **beneficiary_cnpj_cpf** | Não   | String  | 20      | CPF/CNPJ do Beneficiário
 | **beneficiary_address**  | Não   | String  | 255     | Endereço do Beneficiário
 | **name**                 | Não   | String  |         | Nome da Conta ***
+| **status**               | Não   | String  |         | Situação da carteira
 | **bank_contract**        | Não   | Hash    |         | Dados da Carteira ***
 
 '*' Depende da carteira escolhida.
@@ -44,6 +45,15 @@ breadcrumb: Carteiras de Cobrança
 '**' Usado na remessa em bancos.
 
 '***' Não é recebido na criação e nem na atualização, só é retornado na consulta e listagem.
+
+### Dicionário de Dados
+
+#### status
+
+| pending      | Homologação Pendente
+| homologating | Em homologação
+| validating   | Em validação
+| active       | Ativa
 
 ### Criar carteira
 
@@ -197,6 +207,7 @@ Content-Type: application/json; charset=utf-8
   "beneficiary_cnpj_cpf":"05.813.794/0001-26",
   "beneficiary_address":"Av. Presidente Vargas, 633 sala 1716. Rio de Janeiro - RJ",
   "name":"Bancoob/Sicoob 02 - CC 00003666-8",
+  "status":"pending",
   "bank_contract": {
     "bank":{
       "code":"sicoob",
@@ -253,6 +264,7 @@ Sucesso :)
     "beneficiary_cnpj_cpf" => "05.813.794/0001-26",
      "beneficiary_address" => "Av. Presidente Vargas, 633 sala 1716. Rio de Janeiro - RJ",
                     "name" => "Bancoob/Sicoob 02 - CC 00003666-8",
+                  "status" => "pending",
            "bank_contract" => {
                                 "bank" => {
                                   "code" => "sicoob",
@@ -372,6 +384,7 @@ Content-Type: application/json; charset=utf-8
   "beneficiary_cnpj_cpf":"05.813.794/0001-26",
   "beneficiary_address":"Av. Presidente Vargas, 633 sala 1716. Rio de Janeiro - RJ",
   "name":"Bancoob/Sicoob 02 - CC 00003666-8",
+  "status":"pending",
   "bank_contract": {
     "bank":{
       "code":"sicoob",
@@ -414,6 +427,7 @@ ap @bank_billet_account.attributes
     "beneficiary_cnpj_cpf" => "05.813.794/0001-26",
      "beneficiary_address" => "Av. Presidente Vargas, 633 sala 1716. Rio de Janeiro - RJ",
                     "name" => "Bancoob/Sicoob 02 - CC 00003666-8",
+                  "status" => "pending",                    
            "bank_contract" => {
                                 "bank" => {
                                   "code" => "sicoob",
@@ -611,6 +625,7 @@ Content-Type: application/json; charset=utf-8
   "beneficiary_cnpj_cpf":"05.813.794/0001-26",
   "beneficiary_address":"Av. Presidente Vargas, 633 sala 1716. Rio de Janeiro - RJ",
   "name":"Bancoob/Sicoob 02 - CC 00003666-8",
+  "status":"pending",
   "bank_contract": {
     "bank":{
       "code":"sicoob",
@@ -767,6 +782,7 @@ Content-Type: application/json; charset=utf-8
     "beneficiary_cnpj_cpf":"05.813.794/0001-26",
     "beneficiary_address":"Av. Presidente Vargas, 633 sala 1716. Rio de Janeiro - RJ",
     "name":"Bancoob/Sicoob 02 - CC 00003666-8",
+    "status":"pending",
     "bank_contract": {
       "bank":{
         "code":"sicoob",

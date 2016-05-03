@@ -8,6 +8,11 @@ en: /en/changelog
 
 #### Últimas alterações realizadas na API.
 
+### 03/05/2016
+
+* Inclui 'status' nas informações retornadas nas carteiras de cobrança
+* Novo endpoint para homologar carteiras de cobrança
+
 ### 24/02/2016
 
 * Padronizando CEP
