@@ -11,19 +11,19 @@ breadcrumb: Homologação de Carteiras de Cobrança
 
 | Recurso                  | Descrição
 | ------------------------ | ------------------------
-| [GET /api/v1/homologations/:id/ask](#solicitar-homologao-da-carteira) | Solicitar homologação da carteira
-| [PATCH /api/v1/homologations/:id](#validar-carteira) | Validar carteira
-| [PUT /api/v1/homologations/:id](#validar-carteira) | Validar carteira
+| [GET /api/v1/homologations/:id/ask](#solicitar-homologao-da-carteira-de-cobrana) | Solicitar homologação da Carteira de Cobrança
+| [PATCH /api/v1/homologations/:id](#validar-carteira-de-cobrana) | Validar Carteira de Cobrança
+| [PUT /api/v1/homologations/:id](#validar-carteira-de-cobrana) | Validar Carteira de Cobrança
 
 ### Modelo de Dados
 
 | Parâmetro                | Obr.  | Tipo    | Tamanho | Descrição
 | ------------------------ | ----- | ------- | ------- | ------------------------
-| **id**                   | N/A   | Integer |         | ID da carteira
+| **id**                   | Sim   | Integer |         | ID da Carteira de Cobrança
 | **homologation_amount**  | Sim   | String  |         | Valor recebido pelo boleto (R$) Ex.: 1,87
 | **bank_liquidation_tax** | Não   | String  |         | Valor da Taxa cobrada pelo banco (R$) Ex.: 1,87
 
-### Solicitar homologação da carteira
+### Solicitar homologação da Carteira de Cobrança
 
 `GET /api/v1/homologations/:id/ask`
 
@@ -170,7 +170,7 @@ Array
   </div> -->
 </div>
 
-### Validar carteira
+### Validar Carteira de Cobrança
 
 `PATCH /api/v1/homologations/:id` ou `PUT /api/v1/homologations/:id`
 
