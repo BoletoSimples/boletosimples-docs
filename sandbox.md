@@ -47,6 +47,6 @@ Ao realizar login no Ambiente de Sandbox é possível emular o pagamento de um b
 
 Os boletos de teste gerados pelo ambiente Sandbox não são válidos e não devem ser pagos sob nenhuma hipótese.
 
-O uso de boletos bancários gerados no ambiente de produção é considerada fraude. Nenhum boleto bancário gerado neste ambiente pode ser divulgado ou enviado para terceiros.
+O uso de boletos bancários gerados no ambiente de Sandbox é considerado fraude. Nenhum boleto bancário gerado neste ambiente pode ser divulgado ou enviado para terceiros.
 
-É de responsabilidade do usuário evitar que o boleto bancário gerado neste ambiente seja divulgado em qualquer meio.
+É de responsabilidade do cliente evitar que o boleto bancário gerado neste ambiente seja divulgado em qualquer meio.
