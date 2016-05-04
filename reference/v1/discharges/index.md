@@ -551,7 +551,7 @@ curl -i \
     <small>Resposta:</small>
 
 <pre class="http">
-HTTP/1.1 200 OK
+HTTP/1.1 204 OK
 Server: Cowboy
 Connection: keep-alive
 Strict-Transport-Security: max-age=2592000

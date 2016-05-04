@@ -54,6 +54,7 @@ HTTP/1.1 200 OK
 Server: Cowboy
 Connection: keep-alive
 Strict-Transport-Security: max-age=2592000
+Location: https://sandbox.boletosimples.com.br/api/v1/bank_billet_accounts/3
 Content-Type: application/json; charset=utf-8
 ...
 
@@ -294,41 +295,10 @@ curl -i \
 <pre class="http">
 HTTP/1.1 204 No Content
 Date: Fri, 17 Oct 2014 19:30:06 GMT
-Location: https://sandbox.boletosimples.com.br/api/v1/homologations/3
-Content-Type: application/json; charset=utf-8
+Status: 204 No Content
+Location: https://sandbox.boletosimples.com.br/api/v1/bank_billet_accounts/3
 ...
 
-{
-  "id":3,
-  "bank_contract_slug":"sicoob-02",
-  "next_our_number":"0000001",
-  "agency_number":"4567",
-  "agency_digit":"3",
-  "account_number":"00003666",
-  "account_digit":"8",
-  "extra1":"1234567",
-  "extra1_digit":null,
-  "extra2":null,
-  "extra2_digit":null,
-  "extra3":null,
-  "beneficiary_name":"Boleto Simples Cobranças Ltda.",
-  "beneficiary_cnpj_cpf":"05.813.794/0001-26",
-  "beneficiary_address":"Av. Presidente Vargas, 633 sala 1716. Rio de Janeiro - RJ",
-  "name":"Bancoob/Sicoob 02 - CC 00003666-8",
-  "status":"active",
-  "bank_contract": {
-    "bank":{
-      "code":"sicoob",
-      "name":"Bancoob/Sicoob",
-      "number":"756"
-    },
-    "slug":"sicoob-02",
-    "code":"02",
-    "sufix":"02",
-    "variation":null,
-    "name":"1/02 - Simples Sem Registro"
-  }
-}
 </pre>
   </div>
   <!-- 

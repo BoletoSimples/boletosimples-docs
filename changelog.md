@@ -8,6 +8,10 @@ en: /en/changelog
 
 #### Últimas alterações realizadas na API.
 
+### 04/05/2016
+
+* Novo endpoint para gerar segunda via de boletos
+
 ### 03/05/2016
 
 * Inclui 'status' nas informações retornadas nas carteiras de cobrança
