@@ -10,8 +10,6 @@ en: /en/reference
 
 ### [Carteiras de Cobrança](/reference/v1/bank_billet_accounts)
 
-### [Homologação de Carteiras de Cobrança](/reference/v1/homologations)
-
 ### [Clientes](/reference/v1/customers)
 
 ### [CNAB (Retorno)](/reference/v1/discharges)
