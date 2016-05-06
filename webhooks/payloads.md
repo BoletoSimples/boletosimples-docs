@@ -33,29 +33,63 @@ A regra é que todos os payloads possuem as chaves `event_code`, `webhook`, `obj
 <pre class="json">
 {
   "object": {
-    "id": 1,
-    "expire_at": "2014-11-15",
+    "id": 237,
+    "expire_at": "2016-05-11",
     "paid_at": null,
-    "description": "Prestação de Serviço",
+    "description": "Boleto gerado para homologação da carteira de cobrança configurada no sistema Boleto Simples (http://boletosimples.com.br).",
     "status": "generating",
-    "shorten_url": null,
-    "customer_person_type": "individual",
-    "customer_person_name": "Nome do Cliente",
-    "customer_cnpj_cpf": "125.812.717-28",
-    "customer_address": null,
-    "customer_state": null,
-    "customer_neighborhood": null,
-    "customer_zipcode": null,
-    "customer_address_number": null,
-    "customer_address_complement": null,
+    "shorten_url": "http://boleto-staging.herokuapp.com/2/okq",
+    "customer_person_type": "juridical",
+    "customer_person_name": "Boleto Simples Cobranças Ltda.",
+    "customer_cnpj_cpf": "05.813.794/0001-26",
+    "customer_address": "Av. Pres. Vargas",
+    "customer_state": "RJ",
+    "customer_neighborhood": "Centro",
+    "customer_zipcode": "20071004",
+    "customer_address_number": "633",
+    "customer_address_complement": "sala 1716",
     "customer_phone_number": null,
-    "customer_email": null,
-    "notification_url": null,
-    "send_email_on_creation": null,
-    "created_via_api": true,
-    "customer_city_name": null,
+    "customer_email": "suporte@boletosimples.com.br",
+    "created_via_api": false,
+    "customer_city_name": "Rio de Janeiro",
     "paid_amount": 0.0,
-    "amount": 12.34
+    "amount": 1.0,
+    "url": "http://boleto-staging.herokuapp.com/2/okq",
+    "formats": {
+      "png": "http://boleto-staging.herokuapp.com/2/okq.png",
+      "pdf": "http://boleto-staging.herokuapp.com/2/okq.pdf"
+    },
+    "meta": null,
+    "fine_for_delay": null,
+    "late_payment_interest": null,
+    "bank_rate": 0.0,
+    "bank_billet_account_id": 23,
+    "beneficiary_name": "Boleto Simples",
+    "beneficiary_cnpj_cpf": "05.813.794/0001-26",
+    "beneficiary_address": "Av. Pres. Vargas, 633 sl 1716",
+    "beneficiary_assignor_code": null,
+    "guarantor_name": null,
+    "guarantor_cnpj_cpf": null,
+    "payment_place": "Pagável em qualquer banco até a data de vencimento.",
+    "instructions": null,
+    "document_date": null,
+    "document_type": "DM",
+    "document_number": null,
+    "document_amount": 0.0,
+    "acceptance": "N",
+    "processed_our_number": null,
+    "processed_our_number_raw": null,
+    "bank_contract_slug": "bb-bs-18-19-7",
+    "agency_number": "4248",
+    "agency_digit": "0",
+    "account_number": "00012345",
+    "account_digit": "6",
+    "extra1": "1234567",
+    "extra1_digit": null,
+    "extra2": null,
+    "extra2_digit": null,
+    "line": null,
+    "our_number": "0000000001"
   },
   "event_code": "bank_billet.created",
   "webhook": {
@@ -202,6 +236,76 @@ A regra é que todos os payloads possuem as chaves `event_code`, `webhook`, `obj
 }
 </pre>
 
+### plan_subscription.*
+
+<pre class="json">
+{
+  "object": {
+    "id": 8,
+    "subscription_price": 0.16,
+    "subscription_cycle": "monthly",
+    "canceled_at": null,
+    "next_billing": "2016-06-06",
+    "contract": null,
+    "created_at": "2016-05-06",
+    "updated_at": "2016-05-06",
+    "number_of_billets": 0,
+    "exceeded_price": 0.16,
+    "number_of_bank_billet_accounts": 3,
+    "discount": 0,
+    "user_email": "email@example.com",
+    "user_id": 1
+  },
+  "event_code": "plan_subscription.activated",
+  "webhook": {
+    "id": 1,
+    "url": "http://example.ngrok.com/callbacks/boletosimples"
+  }
+}
+</pre>
+
+### bank_billet_account.*
+
+<pre class="json">
+{
+  "object": {
+    "id": 23,
+    "bank_contract_slug": "bb-bs-18-19-7",
+    "next_our_number": "0000000001",
+    "agency_number": "4248",
+    "agency_digit": "0",
+    "account_number": "00012345",
+    "account_digit": "6",
+    "extra1": "1234567",
+    "extra1_digit": null,
+    "extra2": null,
+    "extra2_digit": null,
+    "extra3": null,
+    "beneficiary_name": "Boleto Simples",
+    "beneficiary_cnpj_cpf": "05.813.794/0001-26",
+    "beneficiary_address": "Av. Pres. Vargas, 633 sl 1716",
+    "name": "Banco do Brasil 18 - CC 00012345-6",
+    "status": "pending",
+    "bank_contract": {
+      "bank": {
+        "code": "bb",
+        "name": "Banco do Brasil",
+        "number": "001"
+      },
+      "slug": "bb-bs-18-19-7",
+      "code": "18",
+      "sufix": "bs-18-19-7",
+      "variation": "19",
+      "name": "18-19 (Convênio com 7 dígitos)"
+    }
+  },
+  "event_code": "bank_billet_account.created",
+  "webhook": {
+    "id": 1,
+    "url": "http://example.ngrok.com/callbacks/boletosimples"
+  }
+}
+</pre>
 
 ### *.updated
 

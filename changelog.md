@@ -8,9 +8,13 @@ en: /en/changelog
 
 #### Últimas alterações realizadas na API.
 
+### 06/05/2016
+
+* Atualização de [Eventos](/webhooks/events/) e exemplos de [Payload](/webhooks/payloads/)
+
 ### 04/05/2016
 
-* Novo endpoint para gerar segunda via de boletos
+* Novo endpoint para gerar [segunda via de boletos](/reference/v1/bank_billets/#gerar-segunda-via-do-boleto)
 
 ### 03/05/2016
 

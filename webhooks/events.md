@@ -22,6 +22,7 @@ Abaixo a listagem de eventos registrados pelo Boleto Simples:
 | bank_billet.overdue               | Toda vez que um boleto fica vencido.               |
 | bank_billet.paid                  | Toda vez que um boleto é pago.                     |
 | bank_billet.blocked               | Toda vez que o pagamento de um boleto é bloqueado. |
+| bank_billet.due_date              | Notifica boleto com 15, 7, 3 e 1 dias antes do vencimento. |
 | customer.created                  | Toda vez que um cliente é criado.                  |
 | customer.updated                  | Toda vez que um cliente é atualizado.              |
 | customer.deleted                  | Toda vez que um cliente é excluído.                |
@@ -39,6 +40,15 @@ Abaixo a listagem de eventos registrados pelo Boleto Simples:
 | remittance.sent                   | Toda vez que uma remessa é enviada.                |
 | discharge.created                 | Toda vez que um retorno é criado.                  |
 | discharge.processed               | Toda vez que um retorno é processado.              |
+| plan_subscription.activated       | Toda vez que um plano é ativado.                   |
+| plan_subscription.removed         | Toda vez que um plano é desativado.                |
+| plan_subscription.fee             | Toda vez que um plano é cobrado.                   |
+| bank_billet_account.created       | Toda vez que uma carteira de cobrança é criada.    |
+| bank_billet_account.homologated   | Toda vez que uma carteira de cobrança é enviada para homologação.|
+| bank_billet_account.validated     | Toda vez que uma carteira de cobrança é enviada para validação.  |
+| bank_billet_account.activated     | Toda vez que uma carteira de cobrança é homologada.|
+| bank_billet_account.updated       | Toda vez que uma carteira de cobrança é atualizada.|
+| bank_billet_account.deleted       | Toda vez que uma carteira de cobrança é excluída.  |
 | ping                              | Evento especial para testar o webhook.             |
 
 ### Evento Ping
@@ -57,7 +67,9 @@ Ao configurar o webhook é possível se inscrever nos eventos acima e nos evento
 | bank_billet.*         | Todos os eventos relacionados a boleto bancário, inclusive os novos eventos que sejam implementados após a criação do webhook. |
 | customer.*            | Todos os eventos relacionados a cientes, inclusive os novos eventos que sejam implementados após a criação do webhook. |
 | transaction.*         | Todos os eventos relacionados a transações, inclusive os novos eventos que sejam implementados após a criação do webhook. |
-| withdrawal.*         | Todos os eventos relacionados a saques, inclusive os novos eventos que sejam implementados após a criação do webhook. |
-| user.*         | Todos os eventos relacionados a conta, inclusive os novos eventos que sejam implementados após a criação do webhook. |
-| remittance.*         | Todos os eventos relacionados a remessa, inclusive os novos eventos que sejam implementados após a criação do webhook. |
-| discharge.*         | Todos os eventos relacionados ao retorno , inclusive os novos eventos que sejam implementados após a criação do webhook. |
+| withdrawal.*          | Todos os eventos relacionados a saques, inclusive os novos eventos que sejam implementados após a criação do webhook. |
+| user.*                | Todos os eventos relacionados a conta, inclusive os novos eventos que sejam implementados após a criação do webhook. |
+| remittance.*          | Todos os eventos relacionados a remessas, inclusive os novos eventos que sejam implementados após a criação do webhook. |
+| discharge.*           | Todos os eventos relacionados a retornos, inclusive os novos eventos que sejam implementados após a criação do webhook. |
+| plan_subscription.*   | Todos os eventos relacionados a planos, inclusive os novos eventos que sejam implementados após a criação do webhook. |
+| bank_billet_account.* | Todos os eventos relacionados a carteiras de cobrança, inclusive os novos eventos que sejam implementados após a criação do webhook. |
