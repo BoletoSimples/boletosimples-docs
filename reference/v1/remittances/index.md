@@ -158,7 +158,7 @@ Array
 <pre class="bash">
 curl -i \
 -u $BOLETOSIMPLES_TOKEN:x \
--d '{"remittance":{"bank_billet_account_id": "12"}}' \
+-d '{"remittance":{"bank_billet_account_id": "1"}}' \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
 -X POST 'https://sandbox.boletosimples.com.br/api/v1/remittances'
@@ -171,19 +171,19 @@ HTTP/1.1 201 Created
 Server: Cowboy
 Connection: keep-alive
 Strict-Transport-Security: max-age=2592000
-Location: https://sandbox.boletosimples.com.br/api/v1/remittances/2
+Location: https://sandbox.boletosimples.com.br/api/v1/remittances/1
 Content-Type: application/json; charset=utf-8
 ...
 
 {
-  "id":2,
-  "filename":"1206201501.REM",
-  "processed_at":null,
-  "created_via_api":true,
-  "status":"unprocessed",
-  "created_at":"2015-06-12T10:23:35.642-03:00",
-  "bank_billet_account_id":12,
-  "url":"https://sandbox.boletosimples.com.br/api/v1/remittances/2/raw"
+                  "filename" => "1605061.REM",
+           "created_via_api" => true,
+                    "status" => "processed",
+    "bank_billet_account_id" => 1,
+                "created_at" => "2016-05-06",
+              "processed_at" => "2016-05-06",
+                       "url" => "https://sandbox.boletosimples.com.br/remessas/06tt1bcc3f6132720866b53a57c76de4/download",
+                        "id" => 1
 }
 </pre>
   </div>
@@ -301,7 +301,7 @@ curl -i \
 -u $BOLETOSIMPLES_TOKEN:x \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X GET 'https://sandbox.boletosimples.com.br/api/v1/remittances/2'
+-X GET 'https://sandbox.boletosimples.com.br/api/v1/remittances/1'
 </pre>
 
     <small>Resposta:</small>
@@ -315,14 +315,14 @@ Content-Type: application/json; charset=utf-8
 ...
 
 {
-  "id":2,
-  "filename":"1206201501.REM",
-  "processed_at":null,
-  "created_via_api":true,
-  "status":"unprocessed",
-  "created_at":"2015-06-12T10:23:35.642-03:00",
-  "bank_billet_account_id":12,
-  "url":"https://sandbox.boletosimples.com.br/api/v1/remittances/2/raw"
+                  "filename" => "1605061.REM",
+           "created_via_api" => true,
+                    "status" => "processed",
+    "bank_billet_account_id" => 1,
+                "created_at" => "2016-05-06",
+              "processed_at" => "2016-05-06",
+                       "url" => "https://sandbox.boletosimples.com.br/remessas/06tt1bcc3f6132720866b53a57c76de4/download",
+                        "id" => 1
 }
 </pre>
   </div>
@@ -465,14 +465,14 @@ Content-Type: application/json; charset=utf-8
 
 [
   {
-    "id":2,
-    "filename":"1206201501.REM",
-    "processed_at":null,
-    "created_via_api":true,
-    "status":"unprocessed",
-    "created_at":"2015-06-12T10:23:35.642-03:00",
-    "bank_billet_account_id":12,
-    "url":"https://sandbox.boletosimples.com.br/api/v1/remittances/2/raw"
+                    "filename" => "1605061.REM",
+             "created_via_api" => true,
+                      "status" => "processed",
+      "bank_billet_account_id" => 1,
+                  "created_at" => "2016-05-06",
+                "processed_at" => "2016-05-06",
+                         "url" => "https://boletosimples.com.br/remessas/06tt1bcc3f6132720866b53a57c76de4/download",
+                          "id" => 1
   }
 ]
 </pre>

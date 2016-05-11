@@ -201,13 +201,13 @@ A regra é que todos os payloads possuem as chaves `event_code`, `webhook`, `obj
 {
   "object": {
     "id": 1,
-    "filename": "1512242.REM",
+    "filename": "1605061.REM",
     "created_via_api": true,
     "status": "processed",
-    "bank_billet_account_id": 17,
-    "created_at": "2015-12-24",
-    "processed_at": "2015-12-24",
-    "url": "https://boletosimples.com.br/api/v1/remittances/1/raw"
+    "bank_billet_account_id": 1,
+    "created_at": "2016-05-06",
+    "processed_at": "2016-05-06",
+    "url": "https://boletosimples.com.br/remessas/06tt1bcc3f6132720866b53a57c76de4/download"
   },
   "event_code": "remittance.processed",
   "webhook": {
