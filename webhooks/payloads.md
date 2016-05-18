@@ -23,7 +23,7 @@ A regra é que todos os payloads possuem as chaves `event_code`, `webhook`, `obj
   "event_code": "ping",
   "webhook": {
     "id": 11,
-    "url": "http://requestb.in/15a0nqn1"
+    "url": "https://requestb.in"
   }
 }
 </pre>
@@ -94,7 +94,7 @@ A regra é que todos os payloads possuem as chaves `event_code`, `webhook`, `obj
   "event_code": "bank_billet.created",
   "webhook": {
     "id": 1,
-    "url": "http://example.ngrok.com/callbacks/boletosimples"
+    "url": "https://requestb.in"
   }
 }
 </pre>
@@ -123,7 +123,7 @@ A regra é que todos os payloads possuem as chaves `event_code`, `webhook`, `obj
   "event_code": "customer.created",
   "webhook": {
     "id": 1,
-    "url": "http://example.ngrok.com/callbacks/boletosimples"
+    "url": "https://requestb.in"
   }
 }
 </pre>
@@ -146,7 +146,7 @@ A regra é que todos os payloads possuem as chaves `event_code`, `webhook`, `obj
   "event_code": "transaction.created",
   "webhook": {
     "id": 1,
-    "url": "http://example.ngrok.com/callbacks/boletosimples"
+    "url": "https://requestb.in"
   }
 }
 </pre>
@@ -190,7 +190,7 @@ A regra é que todos os payloads possuem as chaves `event_code`, `webhook`, `obj
   "event_code": "user.updated",
   "webhook": {
     "id": 1,
-    "url": "http://example.ngrok.com/callbacks/boletosimples"
+    "url": "https://requestb.in"
   }
 }
 </pre>
@@ -212,7 +212,7 @@ A regra é que todos os payloads possuem as chaves `event_code`, `webhook`, `obj
   "event_code": "remittance.processed",
   "webhook": {
     "id": 1,
-    "url": "http://example.ngrok.com/callbacks/boletosimples"
+    "url": "https://requestb.in"
   }
 }
 </pre>
@@ -231,7 +231,7 @@ A regra é que todos os payloads possuem as chaves `event_code`, `webhook`, `obj
   "event_code": "discharge.processed",
   "webhook": {
     "id": 1,
-    "url": "http://example.ngrok.com/callbacks/boletosimples"
+    "url": "https://requestb.in"
   }
 }
 </pre>
@@ -259,7 +259,7 @@ A regra é que todos os payloads possuem as chaves `event_code`, `webhook`, `obj
   "event_code": "plan_subscription.activated",
   "webhook": {
     "id": 1,
-    "url": "http://example.ngrok.com/callbacks/boletosimples"
+    "url": "https://requestb.in"
   }
 }
 </pre>
@@ -302,7 +302,34 @@ A regra é que todos os payloads possuem as chaves `event_code`, `webhook`, `obj
   "event_code": "bank_billet_account.created",
   "webhook": {
     "id": 1,
-    "url": "http://example.ngrok.com/callbacks/boletosimples"
+    "url": "https://requestb.in"
+  }
+}
+</pre>
+
+### customer_subscription.*
+
+<pre class="json">
+{
+  "object": {
+    "id": 1,
+    "subscription_price": 12.21,
+    "subscription_cycle": "monthly",
+    "next_billing": "2016-05-31",
+    "end_at": null,
+    "instructions": "",
+    "description": "Serviço de hospedagem.",
+    "created_at": "2016-05-18",
+    "updated_at": "2016-05-18",
+    "created_via_api": false,
+    "customer_id":"1",
+    "bank_billet_account_id":"1",
+    "billing_before_days": "7"
+  },
+  "event_code": "customer_subscription.created",
+  "webhook": {
+    "id": 174,
+    "url": "https://requestb.in"
   }
 }
 </pre>
@@ -323,7 +350,7 @@ A regra é que todos os payloads possuem as chaves `event_code`, `webhook`, `obj
   "event_code": "customer.updated",
   "webhook": {
     "id": 1,
-    "url": "http://example.ngrok.com/callbacks/boletosimples"
+    "url": "https://requestb.in"
   }
 }
 </pre>

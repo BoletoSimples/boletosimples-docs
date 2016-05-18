@@ -26,6 +26,9 @@ Abaixo a listagem de eventos registrados pelo Boleto Simples:
 | customer.created                  | Toda vez que um cliente é criado.                  |
 | customer.updated                  | Toda vez que um cliente é atualizado.              |
 | customer.deleted                  | Toda vez que um cliente é excluído.                |
+| customer_subscription.created     | Toda vez que uma assinatura é criada.              |
+| customer_subscription.updated     | Toda vez que uma assinatura é atualizada.          |
+| customer_subscription.deleted     | Toda vez que uma assinatura é excluída.            |
 | transaction.created               | Toda vez que uma transação é criada.               |
 | transaction.updated               | Toda vez que uma transação é atualizada.           |
 | transaction.processed             | Toda vez que uma transação é processada.           |
@@ -61,15 +64,16 @@ Esse evento não é registrado no log de eventos da conta.
 
 Ao configurar o webhook é possível se inscrever nos eventos acima e nos eventos coringas. Eventos coringas não são eventos que acontecem dentro do Boleto Simples, eles são apenas representações de um conjunto de eventos para determinar que notificações o webhook deve receber.
 
-| Código                | Descrição                                          |
-|-----------------------|----------------------------------------------------|
-| *                     | Todos os eventos. Se o webhook estiver configurado para este evento, não é mais necessário configurar para nenhum outro evento e o seu sistema receberá notificação para todos os eventos que ocorrerem no Boleto Simples. Além disso, o webhook estará configurado para receber todo e qualquer evento que venha ser implementado posteriormente. |
-| bank_billet.*         | Todos os eventos relacionados a boleto bancário, inclusive os novos eventos que sejam implementados após a criação do webhook. |
-| customer.*            | Todos os eventos relacionados a cientes, inclusive os novos eventos que sejam implementados após a criação do webhook. |
-| transaction.*         | Todos os eventos relacionados a transações, inclusive os novos eventos que sejam implementados após a criação do webhook. |
-| withdrawal.*          | Todos os eventos relacionados a saques, inclusive os novos eventos que sejam implementados após a criação do webhook. |
-| user.*                | Todos os eventos relacionados a conta, inclusive os novos eventos que sejam implementados após a criação do webhook. |
-| remittance.*          | Todos os eventos relacionados a remessas, inclusive os novos eventos que sejam implementados após a criação do webhook. |
-| discharge.*           | Todos os eventos relacionados a retornos, inclusive os novos eventos que sejam implementados após a criação do webhook. |
-| plan_subscription.*   | Todos os eventos relacionados a planos, inclusive os novos eventos que sejam implementados após a criação do webhook. |
-| bank_billet_account.* | Todos os eventos relacionados a carteiras de cobrança, inclusive os novos eventos que sejam implementados após a criação do webhook. |
+| Código                  | Descrição                                          |
+|-------------------------|----------------------------------------------------|
+| *                       | Todos os eventos. Se o webhook estiver configurado para este evento, não é mais necessário configurar para nenhum outro evento e o seu sistema receberá notificação para todos os eventos que ocorrerem no Boleto Simples. Além disso, o webhook estará configurado para receber todo e qualquer evento que venha ser implementado posteriormente. |
+| bank_billet.*           | Todos os eventos relacionados a boleto bancário, inclusive os novos eventos que sejam implementados após a criação do webhook. |
+| customer.*              | Todos os eventos relacionados a cientes, inclusive os novos eventos que sejam implementados após a criação do webhook. |
+| customer_subscription.* | Todos os eventos relacionados a assinaturas, inclusive os novos eventos que sejam implementados após a criação do webhook. |
+| transaction.*           | Todos os eventos relacionados a transações, inclusive os novos eventos que sejam implementados após a criação do webhook. |
+| withdrawal.*            | Todos os eventos relacionados a saques, inclusive os novos eventos que sejam implementados após a criação do webhook. |
+| user.*                  | Todos os eventos relacionados a conta, inclusive os novos eventos que sejam implementados após a criação do webhook. |
+| remittance.*            | Todos os eventos relacionados a remessas, inclusive os novos eventos que sejam implementados após a criação do webhook. |
+| discharge.*             | Todos os eventos relacionados a retornos, inclusive os novos eventos que sejam implementados após a criação do webhook. |
+| plan_subscription.*     | Todos os eventos relacionados a planos, inclusive os novos eventos que sejam implementados após a criação do webhook. |
+| bank_billet_account.*   | Todos os eventos relacionados a carteiras de cobrança, inclusive os novos eventos que sejam implementados após a criação do webhook. |

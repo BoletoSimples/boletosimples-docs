@@ -6,6 +6,8 @@ en: /en/reference
 
 ## Referências
 
+### [Assinaturas](/reference/v1/customer_subscriptions)
+
 ### [Boletos](/reference/v1/bank_billets)
 
 ### [Carteiras de Cobrança](/reference/v1/bank_billet_accounts)

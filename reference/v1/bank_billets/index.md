@@ -22,10 +22,10 @@ breadcrumb: Boletos
 | **id**                          | N/A   | Integer |         | ID do boleto
 | **bank_billet_account_id**      | Sim   | Integer |         | [ID da Carteira de Cobrança](/reference/v1/bank_billet_accounts/)
 | **our_number**                  | Não   | Integer |         | Nosso Número(Controlado pelo sistema se em branco)
-| **amount**                      | Sim   | Float   |         | Quantia (R$)
+| **amount**                      | Sim   | String  |         | Quantia (R$) Formato: 1.345,56
 | **expire_at**                   | Sim   | Date    |         | Data de vencimento
 | **description**                 | Sim   | Text    |         | Descrição do produto ou serviço
-| **customer_id**                 | Não   | Number  |         | ID do Cliente Cadastrado. Quando esse ID é passado, os campos `customer_person_name`, `customer_cnpj_cpf` e `customer_zipcode` não são obrigatórios.
+| **customer_id**                 | Não   | Number  |         | ID do Cliente Cadastrado. Quando esse ID é passado, os campos `customer_person_name`, `customer_cnpj_cpf`, `customer_zipcode`, `customer_address`, `customer_city_name`, `customer_state` e `customer_neighborhood` não são obrigatórios.
 | **customer_person_name**        | Sim   | String  | 255     | Nome ou Razão Social do Pagador
 | **customer_cnpj_cpf**           | Sim   | String  | 20      | CNPJ ou CPF do Pagador
 | **customer_zipcode**            | Sim   | Integer | 8       | CEP (formato 99999999)
@@ -38,7 +38,7 @@ breadcrumb: Boletos
 | **customer_address_complement** | Não   | String  | 255     | Complemento
 | **customer_phone_number**       | Não   | String  | 255     | Telefone (com DDD)
 | **meta**                        | Não   | Campo Genérico | | Aceita qualquer formato passado. Pode ser usado para salvar dados que não existam dentro do Boleto Simples. Exemplo: {pedido: 12345}
-| **status**                      | N/A   | Date    |         | Situação do boleto ([possíveis valores](#status))
+| **status**                      | N/A   | String  |         | Situação do boleto ([possíveis valores](#status))
 | **paid_at**                     | N/A   | Date    |         | Data do pagamento
 | **paid_amount**                 | N/A   | Float   |         | Valor pago
 | **shorten_url**                 | N/A   | String  |         | URL para visualização do boleto
@@ -49,10 +49,10 @@ breadcrumb: Boletos
 | **guarantor_cnpj_cpf**          | Não   | Float   |         | CNPJ/CPF do Sacador/Avalista
 | **payment_place**               | Não   | String  |         | Local de Pagamento
 | **instructions**                | Não   | String  |         | Instruções para o Caixa
-| **document_date**               | Não   | Float   |         | Data do Documento
+| **document_date**               | Não   | Date    |         | Data do Documento
 | **document_type**               | Não   | String  |         | Tipo de Documento
 | **document_number**             | Não   | Number  |         | Número do Documento
-| **document_amount**             | Não   | Float   |         | Valor do Documento
+| **document_amount**             | Não   | String  |         | Valor do Documento (R$) Formato: 1.345,56
 | **acceptance**                  | Não   | String  |         | Aceite
 
 ### Dicionário de Dados

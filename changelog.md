@@ -8,6 +8,10 @@ en: /en/changelog
 
 #### Últimas alterações realizadas na API.
 
+### 18/05/2016
+
+* Inclui endpoint de [Assinaturas](/reference/v1/customer_subscriptions)
+
 ### 06/05/2016
 
 * Atualização de [Eventos](/webhooks/events/) e exemplos de [Payload](/webhooks/payloads/)
