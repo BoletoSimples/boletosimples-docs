@@ -14,7 +14,7 @@ breadcrumb: Assinaturas
 | [PATCH /api/v1/customer_subscriptions/:id](#atualizar-assinatura) | Atualizar assinatura
 | [PUT /api/v1/customer_subscriptions/:id](#atualizar-assinatura) | Atualizar assinatura
 | [GET /api/v1/customer_subscriptions](#listar-assinaturas) | Listar assinaturas
-| [GET /api/v1/customer_subscriptions/:id/next_billet](#gerar-prxima-cobrana) | Gerar próxima cobrança
+| [POST /api/v1/customer_subscriptions/:id/next_charge](#gerar-prxima-cobrana) | Gerar próxima cobrança
 | [DELETE /api/v1/customer_subscriptions/:id](#excluir-assinatura) | Excluir assinatura
 
 ### Modelo de Dados
@@ -741,7 +741,7 @@ Próxima Página: https://sandbox.boletosimples.com.br/api/v1/customer_subscript
 
 ### Gerar próxima cobrança
 
-`GET /api/v1/customer_subscriptions/:id/next_billet`
+`POST /api/v1/customer_subscriptions/:id/next_charge`
 
 #### Exemplo
 
@@ -760,7 +760,7 @@ curl -i \
 -u $BOLETOSIMPLES_TOKEN:x \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X GET 'https://sandbox.boletosimples.com.br/api/v1/customer_subscriptions/1/next_billet'
+-X POST 'https://sandbox.boletosimples.com.br/api/v1/customer_subscriptions/1/next_charge'
 </pre>
 
     <small>Resposta:</small>

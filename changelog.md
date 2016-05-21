@@ -8,6 +8,10 @@ en: /en/changelog
 
 #### Últimas alterações realizadas na API.
 
+### 20/05/2016
+
+* Corrige endpoint de [geração da próxima cobrança da assinatura](/reference/v1/customer_subscriptions#gerar-prxima-cobrana)
+
 ### 18/05/2016
 
 * Inclui endpoint de [Assinaturas](/reference/v1/customer_subscriptions)
