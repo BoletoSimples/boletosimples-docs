@@ -766,9 +766,9 @@ curl -i \
     <small>Resposta:</small>
 
 <pre class="http">
-HTTP/1.1 200 OK
+HTTP/1.1 201 OK
 Date: Fri, 17 Oct 2014 19:46:16 GMT
-Status: 200 OK
+Status: 201 OK
 Content-Type: application/json; charset=utf-8
 ...
 
