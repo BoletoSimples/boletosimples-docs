@@ -31,7 +31,7 @@ breadcrumb: Boletos
 | **customer_zipcode**            | Sim   | Integer | 8       | CEP (formato 99999999)
 | **customer_email**              | Não   | String  | 255     | E-mail do Pagador
 | **customer_address**            | Sim   | Text    |         | Endereço
-| **customer_city_name**          | Sim   | String  | 255     | Cidade
+| **customer_city_name**          | Sim   | String  | 255     | Cidade(Nome deve estar correto e completo)
 | **customer_state**              | Sim   | String  | 2       | Estado
 | **customer_neighborhood**       | Sim   | String  | 255     | Bairro
 | **customer_address_number**     | Não   | String  | 255     | Número
