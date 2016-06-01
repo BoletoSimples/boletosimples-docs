@@ -76,6 +76,18 @@ breadcrumb: Boletos
 
 `POST /api/v1/bank_billets`
 
+ATENÇÃO: Apesar de receber a resposta com os dados do boleto, isso, somente, não garante que o boleto esteja pronto para uso. Isso apenas indica que o boleto foi aceito e cadastrado em sua conta.
+
+A partir desse momento o boleto entra em uma fila para ser gerado por completo(código de barras, linha digitável, layout).
+
+Após o boleto ser gerado por completo seu status mudará para `opened`.
+
+Só então você poderá disponibilizar o boleto aos seus clientes.
+
+Para saber se um boleto foi gerado por completo, você deve preparar seu sisema para receber nossos [Webhooks](/webhooks)
+
+Será retornado `404 Not Found` ao tentar acessar a url de um boleto que ainda esteja sendo gerado(`generating`).
+
 #### Exemplo de requisição inválida
 
 <ul class="nav nav-tabs" role="tablist">
