@@ -976,7 +976,6 @@ Array
 | ------------------------ | ----- | ------- | ------- | ------------------------
 | **id**                   | Sim   | Integer |         | ID da Carteira de Cobrança
 | **homologation_amount**  | Sim   | String  |         | Valor recebido pelo boleto (R$) Ex.: 1,87
-| **bank_liquidation_tax** | Não   | String  |         | Valor da Taxa cobrada pelo banco (R$) Ex.: 1,87
 
 #### Exemplo de requisição inválida
 
@@ -1088,7 +1087,7 @@ Array
 <pre class="bash">
 curl -i \
 -u $BOLETOSIMPLES_TOKEN:x \
--d '{"homologation_amount":"1,67", "bank_liquidation_tax":"1,50"}' \
+-d '{"homologation_amount":"1,67"}' \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
 -X PUT 'https://sandbox.boletosimples.com.br/api/v1/bank_billet_accounts/1/validate'
