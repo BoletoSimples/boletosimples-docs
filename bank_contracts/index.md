@@ -6,9 +6,16 @@ en: /en/bank_contracts
 
 ## Carteiras de Cobrança
 
+No Boleto Simples todos os retornos e todas as remessas são em formato CNAB 400.
+
+Peça ao seu banco que os arquivos estejam nesse formato.
+
+Para dúvidas sobre esses arquivos faça suas perguntas em nossa [central de suporte](http://suporte.boletosimples.com.br).
+
+
 | Banco                                          | Retorno | Formato CNAB | Remessa | Formato CNAB
 | ---------------------------------------------- | ------- | ------------ | ------- | ------------
-| [Banco do Brasil](/bank_contracts/bb)          | Sim     | 400          | Sim     | 400
+| [Banco do Brasil](/bank_contracts/bb)          | Sim     | 400 (ou CBR643)         | Sim     | 400 (ou CBR641)
 | [Banestes](/bank_contracts/banestes)           | Sim     | 400          | Não     | -
 | [Banrisul](/bank_contracts/banrisul)           | Não     | 400          | Não     | -
 | [Bradesco](/bank_contracts/bradesco)           | Sim     | 400          | Sim     | 400

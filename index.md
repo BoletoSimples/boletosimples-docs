@@ -9,7 +9,7 @@ en: /en/
 #### Integre pagamentos por boletos bancários em seu site ou aplicação.
 
 
-Boleto Simples fornece uma API simples e poderosa em REST para
+O Boleto Simples fornece uma API simples e poderosa em REST para
 integrar pagamentos por boletos bancários em seu site ou aplicação.
 
 Os benefícios da API são:
