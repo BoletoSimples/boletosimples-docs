@@ -7,21 +7,18 @@
 @import url("header.css");
 @import url("footer.css");
 
-/*resets*/
 
-/* line 20, /Users/rafael/Projects/boletosimples-app/app/assets/stylesheets/home/style.scss */
+/* Main */
+
 .containner {
   width: 960px;
   margin: auto;
-  padding: 0;
 }
 
-/* line 25, /Users/rafael/Projects/boletosimples-app/app/assets/stylesheets/home/style.scss */
 a {
   text-decoration: none !important;
 }
 
-/* line 29, /Users/rafael/Projects/boletosimples-app/app/assets/stylesheets/home/style.scss */
 .half {
   display: inline-block;
   padding-top: 30px;
@@ -30,14 +27,12 @@ a {
   width: calc(100% / 2.1);
 }
 
-/* line 37, /Users/rafael/Projects/boletosimples-app/app/assets/stylesheets/home/style.scss */
 *, *:before, *:after {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-/* line 43, /Users/rafael/Projects/boletosimples-app/app/assets/stylesheets/home/style.scss */
 body {
   background: white;
   -webkit-font-smoothing: antialiased;
@@ -45,11 +40,9 @@ body {
   color: #4d4d4d;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
-  line-height: 1.428571429;
   overflow: hidden;
 }
 
-/* line 56, /Users/rafael/Projects/boletosimples-app/app/assets/stylesheets/home/style.scss */
 h1,
 h2,
 h3,
@@ -59,7 +52,6 @@ h6 {
   font-family: "proxima-nova-soft", Helvetica, Arial, sans-serif;
 }
 
-/* line 62, /Users/rafael/Projects/boletosimples-app/app/assets/stylesheets/home/style.scss */
 .button {
   background: #008de4;
   color: white;
@@ -69,7 +61,7 @@ h6 {
   padding: 15px 40px;
   text-transform: uppercase;
 }
-/* line 70, /Users/rafael/Projects/boletosimples-app/app/assets/stylesheets/home/style.scss */
+
 .button:hover {
   background: rgba(0, 141, 228, 0.8);
   text-decoration: none;
@@ -94,80 +86,12 @@ h6 {
   width: 22px;
 }
 
-/*Main*/
 
-/*sidebar*/
-aside {
-  margin: 30px 0;
-  border-right: solid 1px #ecf0f1;
+/* Content */
+
+article.content {
+  margin: 30px 0 35px 260px;
 }
-
-aside p {
-  color: #2f4255;
-  font-size: 16px;
-  font-weight: 600;
-  text-transform: uppercase;
-}
-
-aside .nav > li { margin: 15px 0; }
-
-aside .nav > li > a {
-  color: #5e5e5e;
-  padding: 5px 7px !important;
-}
-
-.nav > li > a:hover,
-.nav > li.active > a {
-  background-color: #fff !important;
-  border-left: solid 2px #2f4255;
-  color: #2f4255;
-  padding: 5px 5px !important;
-}
-
-.nav > li.active > .nav a { font-weight: normal; }
-
-.nav > li > .nav {
-  display:block;
-  margin: 0 0 0 10px;
-}
-
-/*Off canvas Navigation*/
-.sidebar-offcanvas {
-  background: #f9f9f9;
-  padding: 0;
-}
-
-.sidebar-offcanvas p {
-  color: #2f4255;
-  font-size: 16px;
-  font-weight: 600;
-  margin: 20px 10px 10px;
-  text-transform: uppercase;
-}
-
-.sidebar-offcanvas ul {
-   list-style: none;
-   padding: 0;
-}
-
-.sidebar-offcanvas ul li {
-  border-bottom: solid 1px #ecf0f1;
-  margin: 5px 0;
-  padding: 10px;
-}
-
-.sidebar-offcanvas ul li:last-child { border: none; }
-
-.sidebar-offcanvas ul li a {
-  font-weight: 300;
-  letter-spacing: 0.03em;
-}
-
-.sidebar-offcanvas ul li a:hover,
-.sidebar-offcanvas ul li.active a { padding: 10px 13px !important; }
-
-/*Article*/
-article { margin: 0 0 0 15px; }
 
 article .breadcrumb { margin-top: 30px; }
 
@@ -209,12 +133,69 @@ article small { text-transform: uppercase; }
 
 article pre { padding:0; }
 
-h4 {
+article h4 {
   color: #393939;
   font-family: 'proxima_nova_rgbold';
   font-size: 14px;
-  margin: 0 0 20px 0;
+  margin: 20px 0 10px 0;
 }
+
+article strong,
+article b {
+  font-family: 'proxima_nova_rgbold';
+}
+
+article img {
+  max-width: 100%;
+  border: 1px solid #DDD;
+}
+
+article p,
+article li {
+  line-height: 25px;
+}
+
+
+/* Sidebar */
+
+aside {
+  width: 230px;
+  float: left;
+  margin: 20px 0;
+  border-right: solid 1px #ecf0f1;
+}
+
+aside p {
+  color: #2f4255;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+aside .nav > li { margin: 15px 0; }
+
+aside .nav > li > a {
+  color: #5e5e5e;
+  padding: 5px 7px !important;
+}
+
+.nav > li > a:hover,
+.nav > li.active > a {
+  background-color: #fff !important;
+  border-left: solid 2px #2f4255;
+  color: #2f4255;
+  padding: 5px 5px !important;
+}
+
+.nav > li.active > .nav a { font-weight: normal; }
+
+.nav > li > .nav {
+  display:block;
+  margin: 0 0 0 10px;
+}
+
+
+/* Panel */
 
 .panel { border: solid 1px #cccccc; }
 
@@ -245,14 +226,6 @@ table small {
   text-transform: uppercase;
 }
 
-article strong,
-article b { font-family: 'proxima_nova_rgbold'; }
-
-article img {
-  max-width: 100%;
-  border: 1px solid #DDD;
-}
-
 .nav.nav-tabs > li > a { padding: 10px 15px !important; }
 
 .nav.nav-tabs > li.active > a,
@@ -261,55 +234,24 @@ article img {
 .tab-content { margin: 15px 0 30px 0; }
 
 
-/* line 413, /Users/rafael/Projects/boletosimples-app/app/assets/stylesheets/home/home.scss */
-.first-call {
-  margin-top: 40px;
-}
-/* line 416, /Users/rafael/Projects/boletosimples-app/app/assets/stylesheets/home/home.scss */
-.first-call h2 {
-  text-transform: uppercase;
-  font-family: 'PT Sans Narrow', sans-serif;
-  margin: 0;
-  font-size: 2.4em;
-  text-align: center;
-}
-/* line 425, /Users/rafael/Projects/boletosimples-app/app/assets/stylesheets/home/home.scss */
-.first-call p {
-  margin-top: 10px;
-  font-size: 1.3em;
-  text-align: center;
-}
-/* line 436, /Users/rafael/Projects/boletosimples-app/app/assets/stylesheets/home/home.scss */
+/* Generic call */
+
 .generic-call {
   background: #008de4;
   margin-top: -1px;
   padding: 40px 0;
 }
-/* line 442, /Users/rafael/Projects/boletosimples-app/app/assets/stylesheets/home/home.scss */
+
 .generic-call .containner {
   position: relative;
 }
-/* line 446, /Users/rafael/Projects/boletosimples-app/app/assets/stylesheets/home/home.scss */
+
 .generic-call h2 {
   color: #fff;
   text-align: left;
-}
-
-/* line 452, /Users/rafael/Projects/boletosimples-app/app/assets/stylesheets/home/home.scss */
-.generic-entry {
-  padding: 40px 0;
-}
-/* line 455, /Users/rafael/Projects/boletosimples-app/app/assets/stylesheets/home/home.scss */
-.generic-entry p {
-  font-size: 1em;
-  line-height: 1.6em;
-  acolor: #777777;
-}
-/* line 461, /Users/rafael/Projects/boletosimples-app/app/assets/stylesheets/home/home.scss */
-.generic-entry ol {
-  margin: 20px 0;
-}
-/* line 465, /Users/rafael/Projects/boletosimples-app/app/assets/stylesheets/home/home.scss */
-.generic-entry li {
-  margin-top: 5px;
+  text-transform: uppercase;
+  font-family: 'PT Sans Narrow', sans-serif;
+  margin: 0;
+  font-size: 2.4em;
+  text-align: left;
 }
