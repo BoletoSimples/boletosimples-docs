@@ -1,39 +1,22 @@
-  {% include header.html %}
-  <section class='generic-entry'>
-    <div class='containner'>
-      <div class="row row-offcanvas row-offcanvas-right">
-        <!--Sidebar visibe only in mobile devices-->
-        <div class="hidden-lg col-xs-6 col-sm-6 col-md-6 sidebar-offcanvas" id="sidebar" role="navigation">
-          <nav class="main-menu">
-            <ul>
-              <li>
-                <a href="https://boletosimples.com.br" title="Ir para o site">Início</a>
-              </li>
-              <li>
-                <a href="https://boletosimples.com.br/preco" title="Preço">Preço</a>
-              </li>
-              <li>
-                <a href="https://boletosimples.com.br/users/sign_in" title="Logar">Login</a>
-              </li>
-            </ul>
-          </nav>
-          {% include sidemenu.html %}
-        </div>
-        <!--Sidebar visibe only in mobile devices-->
-        <!--Side menu-->
-        <aside class="col-lg-3 visible-lg">
-          {% include sidemenu.html %}
-        </aside>
-        <!--Side menu-->
-        <!--Main Content-->
-        <div class="content col-lg-9 col-md-12 col-sm-12 col-xs-12">
-          <article>
-            {% if page.breadcrumb %}{% include breadcrumb.html %}{% endif %}
-            {{ content }}
-          </article>
-        </div>
-        <!--Main Content-->
-      </div>
-    </div>
-  </section>
-  {% include footer.html %}
+{% include header.html %}
+
+<section class="generic-entry">
+  <div class='containner'>
+
+    <div class="row-offcanvas row-offcanvas-right">
+
+      <aside class="visible-lg">
+        {% include sidemenu.html %}
+      </aside>
+
+      <article class="content">
+        {% if page.breadcrumb %}{% include breadcrumb.html %}{% endif %}
+        {{ content }}
+      </article>
+
+    </div> <!-- /row-offcanvas -->
+
+  </div>
+</section>
+
+{% include footer.html %}
