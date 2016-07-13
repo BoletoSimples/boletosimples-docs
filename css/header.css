@@ -1,11 +1,9 @@
 /* line 8, /Users/rafael/Projects/boletosimples-app/app/assets/stylesheets/home/header.scss */
 #main-header {
   border-top: 5px solid #008de4;
-  width: 100%;
   margin: 0;
   height: 69px;
   background: #fff;
-  overflow: hidden;
   border-bottom: 1px solid #ecf0f1;
 }
 /* line 17, /Users/rafael/Projects/boletosimples-app/app/assets/stylesheets/home/header.scss */
@@ -35,11 +33,6 @@
   z-index: 200;
 }
 
-/* line 59, /Users/rafael/Projects/boletosimples-app/app/assets/stylesheets/home/header.scss */
-.home-generic #main-header ul {
-  padding-right: 95px;
-}
-
 /* line 64, /Users/rafael/Projects/boletosimples-app/app/assets/stylesheets/home/header.scss */
 #menu-trigger {
   display: none;
@@ -49,7 +42,8 @@
 #main-header nav ul {
   float: right;
   list-style: none;
-  margin-top: 22px;
+  margin-top: 20px;
+  margin-right: 100px;
 }
 /* line 76, /Users/rafael/Projects/boletosimples-app/app/assets/stylesheets/home/header.scss */
 #main-header nav li {

@@ -3,18 +3,14 @@
 <section class="generic-entry">
   <div class='containner'>
 
-    <div class="row-offcanvas row-offcanvas-right">
+    <aside>
+      {% include sidemenu.html %}
+    </aside>
 
-      <aside class="visible-lg">
-        {% include sidemenu.html %}
-      </aside>
-
-      <article class="content">
-        {% if page.breadcrumb %}{% include breadcrumb.html %}{% endif %}
-        {{ content }}
-      </article>
-
-    </div> <!-- /row-offcanvas -->
+    <article class="content">
+      {% if page.breadcrumb %}{% include breadcrumb.html %}{% endif %}
+      {{ content }}
+    </article>
 
   </div>
 </section>

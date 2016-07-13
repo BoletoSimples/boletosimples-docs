@@ -1,9 +1,6 @@
+@import url("normalize.css");
 @import url("bootstrap.min.css");
-@import url("bootstrap-theme.min.css");
-@import url("offcanvas.css");
 @import url("fontface.css");
-@import url("mobile.css");
-
 @import url("header.css");
 @import url("footer.css");
 
@@ -40,7 +37,6 @@ body {
   color: #4d4d4d;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
-  overflow: hidden;
 }
 
 h1,
@@ -90,7 +86,7 @@ h6 {
 /* Content */
 
 article.content {
-  margin: 30px 0 35px 260px;
+  margin: 40px 0 40px 260px;
 }
 
 article .breadcrumb { margin-top: 30px; }
@@ -254,4 +250,192 @@ table small {
   margin: 0;
   font-size: 2.4em;
   text-align: left;
+}
+
+
+/*
+Max Width, 960px
+Media Queries for Tablets.
+------------------------------------------------------------------------------*/
+
+@media (max-width: 960px) {
+
+  .containner {
+    width: 700px !important;
+  }
+
+  #main-header .logo {
+    margin-top: 21px;
+  }
+
+  #main-header .logo img {
+    width: 120px;
+  }
+
+  #main-header nav li {
+    margin-left: 15px;
+  }
+
+  .sitemap .column {
+    width: 170px;
+    margin-bottom: 40px;
+    float: left;
+  }
+
+  .more-infos li {
+    margin-right: 0;
+    margin-bottom: 8px;
+    margin-top: 0;
+    display: block;
+  }
+}
+
+
+/*
+Max Width, 686px
+Media Queries for Smartphones.
+------------------------------------------------------------------------------*/
+
+@media only screen and (max-width: 686px) {
+
+  .containner {
+    width: 94% !important;
+  }
+
+  .generic-call h2 {
+    font-size: 1.4em;
+  }
+
+  article.content {
+    margin: 30px 0 35px 0;
+  }
+
+  aside {
+    width: 100%;
+    float: none;
+    border-right: none;
+  }
+
+  #main-header {
+    height: auto;
+    min-height: 69px;
+  }
+
+  #menu-trigger {
+    border-radius: 4px;
+    width: 34px;
+    height: 34px;
+    line-height: 34px;
+    background: #008de4;
+    display: inline-block;
+    text-align: center;
+    outline: none;
+    position: absolute;
+    font-weight: bold;
+    font-size: 1.4em;
+    top: 14px;
+    color: #fff;
+    right: 0;
+  }
+
+  .login-trigger,
+  .new-account-link {
+    right: 44px;
+  }
+
+  #login-dropdown {
+    width: 100%;
+    display: none;
+    position: inherit;
+    padding-bottom: 12px;
+    right: none;
+    top: none;
+    float: left;
+  }
+
+  #login-dropdown form {
+    height: auto;
+    padding-right: 0;
+    text-align: left;
+    padding-bottom: 0;
+  }
+
+  #login-dropdown input[type="email"],
+  #login-dropdown input[type="password"] {
+    width: 100%;
+    padding: 0 2%;
+  }
+
+  #login-dropdown input[type="password"] {
+    margin-top: 5px;
+  }
+
+  #login-dropdown input[type="submit"] {
+    right: 5%;
+  }
+
+  #main-header nav ul {
+    width: 100%;
+    padding: 0;
+    margin: 12px 0;
+    display: none;
+  }
+
+  #main-header nav li {
+    margin-left: 0;
+    width: 100%;
+    display: block;
+    height: 34px;
+    line-height: 34px;
+    padding: 0 7px;
+  }
+
+  #main-header nav li a {
+    right: 80px;
+    display: block;
+    padding: 0 7px;
+    margin: -1px -10px 0 -10px;
+    height: 34px;
+    line-height: 34px;
+    border: 1px solid $gray;
+    background: #f8f8f8;
+  }
+
+  #main-header nav .button {
+    right: 70px;
+  }
+
+  .sitemap {
+    padding: 10px 0 40px 0;
+  }
+
+  .sitemap h4 {
+    margin: 30px 0 15px 0;
+  }
+
+  .sitemap li {
+    border-top: 1px solid #eee;
+    margin-top: 12px;
+    padding-top: 12px;
+  }
+
+  .sitemap li:first-child {
+    padding-top: 0;
+    border-top: none;
+  }
+
+  .sitemap .column {
+    width: 100%;
+    margin-bottom: 0;
+    float: none;
+  }
+
+  .more-infos p {
+    line-height: 21px;
+  }
+
+}
+
+@media only screen and (min-width: 687px) {
+  #main-header nav ul { display: block !important; }
 }
