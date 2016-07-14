@@ -49,6 +49,11 @@ h6 {
   font-family: "proxima-nova-soft", Helvetica, Arial, sans-serif;
 }
 
+h4 {
+  line-height: 20px;
+  text-transform: uppercase;
+}
+
 .button {
   background: #008de4;
   color: white;
@@ -93,11 +98,9 @@ article.content {
 article .breadcrumb { margin-top: 30px; }
 
 article h2 {
-  border-bottom: solid 1px #8a949f;
   color: #62a4cf;
   font-size: 30px;
   font-weight: 600;
-  padding: 0 0 5px 0;
 }
 
 article h3 {
@@ -158,7 +161,7 @@ article li {
 aside {
   width: 230px;
   float: left;
-  margin: 20px 0;
+  margin: 10px 0 40px 0;
   border-right: solid 1px #ecf0f1;
 }
 
@@ -243,7 +246,7 @@ table small {
   position: relative;
 }
 
-.generic-call h2 {
+.generic-call h1 {
   color: #fff;
   text-align: left;
   text-transform: uppercase;
@@ -316,16 +319,13 @@ Media Queries for Smartphones.
     color: #fff;
   }
 
-  .generic-call h2 {
+  .generic-call h1 {
     margin-left: 50px;
+    font-size: 1.2em;
   }
 
   tr {
     font-size: 12px;
-  }
-
-  .generic-call h2 {
-    font-size: 1.2em;
   }
 
   article.content {
@@ -430,6 +430,20 @@ Media Queries for Smartphones.
 
   .content table {
     width: 100% !important;
+  }
+
+  article h2 {
+    font-size: 20px;
+  }
+
+  article p,
+  article li {
+    font-size: 15px;
+    line-height: 21px;
+  }
+
+  article li {
+    margin-bottom: 15px;
   }
 
   .sitemap {
