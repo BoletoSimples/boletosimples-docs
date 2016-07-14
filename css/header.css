@@ -6,6 +6,16 @@
   background: #fff;
   border-bottom: 1px solid #ecf0f1;
 }
+
+#main-header:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+
 /* line 17, /Users/rafael/Projects/boletosimples-app/app/assets/stylesheets/home/header.scss */
 #main-header .containner {
   position: relative;
