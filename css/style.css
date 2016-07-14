@@ -310,7 +310,7 @@ Media Queries for Smartphones.
   #simple-menu {
     display: inline-block;
     left: 0;
-    top: -18px;
+    top: -20px;
     position: absolute;
     font-size: 40px;
     color: #fff;
@@ -325,7 +325,7 @@ Media Queries for Smartphones.
   }
 
   .generic-call h2 {
-    font-size: 1.4em;
+    font-size: 1.2em;
   }
 
   article.content {
