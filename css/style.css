@@ -252,6 +252,10 @@ table small {
   text-align: left;
 }
 
+#simple-menu {
+  display: none;
+}
+
 
 /*
 Max Width, 960px
@@ -302,6 +306,19 @@ Media Queries for Smartphones.
     width: 94% !important;
   }
 
+  #simple-menu {
+    display: inline-block;
+    left: 0;
+    top: -18px;
+    position: absolute;
+    font-size: 40px;
+    color: #fff;
+  }
+
+  .generic-call h2 {
+    margin-left: 50px;
+  }
+
   tr {
     font-size: 12px;
   }
@@ -318,6 +335,7 @@ Media Queries for Smartphones.
     width: 100%;
     float: none;
     border-right: none;
+    display: none;
   }
 
   #main-header {
