@@ -302,6 +302,10 @@ Media Queries for Smartphones.
     width: 94% !important;
   }
 
+  tr {
+    font-size: 12px;
+  }
+
   .generic-call h2 {
     font-size: 1.4em;
   }
@@ -403,6 +407,10 @@ Media Queries for Smartphones.
 
   #main-header nav .button {
     right: 70px;
+  }
+
+  .content table {
+    width: 100% !important;
   }
 
   .sitemap {
