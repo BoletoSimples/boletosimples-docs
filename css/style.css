@@ -328,6 +328,15 @@ Media Queries for Smartphones.
     font-size: 12px;
   }
 
+  tr th {
+    font-size: 10px;
+    text-transform: uppercase;
+  }
+
+  tr code {
+    font-size: 8px;
+  }
+
   article.content {
     margin: 30px 0 35px 0;
   }
@@ -443,7 +452,7 @@ Media Queries for Smartphones.
   }
 
   article li {
-    margin-bottom: 15px;
+    margin-bottom: 5px;
   }
 
   .sitemap {
