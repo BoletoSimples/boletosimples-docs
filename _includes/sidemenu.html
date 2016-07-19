@@ -23,6 +23,17 @@
       </li>
     </ul>
   </li>
+  <li {% if page.url == '/integrations/' %}class="active"{% endif %}>
+    <a href="/integrations" title="Integrações">Integrações</a>
+    <ul class="nav">
+      <li {% if page.url == '/integrations/zapier/' %}class="active"{% endif %}>
+        <a href="/integrations/zapier" title="Zapier">Zapier</a>
+      </li>
+      <li {% if page.url == '/integrations/pluga/' %}class="active"{% endif %}>
+        <a href="/integrations/pluga" title="Pluga">Pluga</a>
+      </li>
+    </ul>
+  </li>
   <li {% if page.url == '/reference/' %}class="active"{% endif %}>
     <a href="/reference" title="Referências">Referências</a>
     <ul class="nav">
