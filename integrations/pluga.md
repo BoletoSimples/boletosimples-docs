@@ -8,7 +8,9 @@ en: /en/integrations/zapier
 
 ### O que é a Pluga?
 
-A [Pluga](http://pluga.io) é uma empresa brasileira que viabiliza automatizações entre sistemas. O Boleto Simples está na Pluga e isso quer dizer que você pode integrar com os serviços suportados pela Pluga.
+A [Pluga](http://pluga.io) integra as ferramentas web que a sua empresa mais usa, criando uma comunicação inteligente entre elas. E o melhor: sem precisar escrever uma única linha de código.
+
+Com a Pluga você conecta a sua conta do Boleto Simples com as principais ferramentas do Brasil e do mundo, automatizando processos operacionais (e chatos) da sua empresa!
 
 ### Boleto Simples na Pluga
 
@@ -20,7 +22,7 @@ Para ver todas as possibilidades de integração do Boleto Simples pelo Zapier, 
 Para criar uma conta na Pluga, siga os passos:
 
 * Acesse [https://manage.pluga.co/#/signup](https://manage.pluga.co/#/signup)
-* Preencha seu os dados solicitados
+* Preencha com os dados solicitados
 * Marque a caixa "Aceito os termos de uso"
 * Clique em "Cadastrar"
 
