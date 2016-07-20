@@ -138,9 +138,8 @@
   color: #333;
   background: #fff;
 }
-.active {
+
+.sidr li,
+.sidr ul {
   margin: 0;
-}
-.active a {
-  background: #008de4 !important;
 }
