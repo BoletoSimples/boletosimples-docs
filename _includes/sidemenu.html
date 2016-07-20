@@ -1,17 +1,16 @@
-<p>Documentação</p>
 <ul class="nav">
   <li {% if page.url == '/' %}class="active"{% endif %}>
-    <a href="/" title="Introdução">Introdução</a>
+    <a class="main-link" href="/" title="Introdução">Introdução</a>
   </li>
   <li {% if page.url == '/libraries/' %}class="active"{% endif %}>
-    <a href="/libraries" title="Bibliotecas">Bibliotecas</a>
+    <a class="main-link" href="/libraries" title="Bibliotecas">Bibliotecas</a>
   </li>
   <li {% if page.url == '/sandbox/' %}class="active"{% endif %}>
-    <a href="/sandbox" title="Sandbox">Ambiente Sandbox</a>
+    <a class="main-link" href="/sandbox" title="Sandbox">Ambiente Sandbox</a>
   </li>
-  <li class="submenu {% if page.url == '/authentication/' %}active{% endif %}">
-    <a href="/authentication" title="Autenticação">Autenticação</a>
-    <ul class="nav">
+  <li class="{% if page.url == '/authentication/' %}active{% endif %}">
+    <a class="main-link" href="/authentication" title="Autenticação">Autenticação</a>
+    <ul class="subnav">
       <li {% if page.url == '/authentication/token/' %}class="active"{% endif %}>
         <a href="/authentication/token" title="Token de Acesso">Token de Acesso</a>
       </li>
@@ -24,8 +23,8 @@
     </ul>
   </li>
   <li {% if page.url == '/integrations/' %}class="active"{% endif %}>
-    <a href="/integrations" title="Integrações">Integrações</a>
-    <ul class="nav">
+    <a class="main-link" href="/integrations" title="Integrações">Integrações</a>
+    <ul class="subnav">
       <li {% if page.url == '/integrations/zapier/' %}class="active"{% endif %}>
         <a href="/integrations/zapier" title="Zapier">Zapier</a>
       </li>
@@ -35,8 +34,8 @@
     </ul>
   </li>
   <li {% if page.url == '/reference/' %}class="active"{% endif %}>
-    <a href="/reference" title="Referências">Referências</a>
-    <ul class="nav">
+    <a class="main-link" href="/reference" title="Referências">Referências</a>
+    <ul class="subnav">
       <li {% if page.url == '/reference/v1/customer_subscriptions/' %}class="active"{% endif %}>
       <a href="/reference/v1/customer_subscriptions/" title="Assinaturas">Assinaturas</a>
       </li>
@@ -75,9 +74,9 @@
       </li-->
     </ul>
   </li>
-  <li class="submenu {% if page.url == '/webhooks/' %}active{% endif %}">
-    <a href="/webhooks" title="Webhooks">Webhooks</a>
-    <ul class="nav">
+  <li class=" {% if page.url == '/webhooks/' %}active{% endif %}">
+    <a class="main-link" href="/webhooks" title="Webhooks">Webhooks</a>
+    <ul class="subnav">
       <li {% if page.url == '/webhooks/events/' %}class="active"{% endif %}>
         <a href="/webhooks/events" title="Eventos">Eventos</a>
       </li>
@@ -95,9 +94,9 @@
       </li>
     </ul>
   </li>
-  <li class="submenu {% if page.url == '/bank_contracts/' %}active{% endif %}">
-    <a href="/bank_contracts" title="Carteiras de Cobrança">Carteiras de Cobrança</a>
-    <ul class="nav">
+  <li class="{% if page.url == '/bank_contracts/' %}active{% endif %}">
+    <a class="main-link" href="/bank_contracts" title="Carteiras de Cobrança">Carteiras de Cobrança</a>
+    <ul class="subnav">
       <li {% if page.url == '/bank_contracts/bb/' %}class="active"{% endif %}>
         <a href="/bank_contracts/bb" title="Banco do Brasil">Banco do Brasil</a>
       </li>
@@ -136,7 +135,7 @@
       </li>
     </ul>
   </li>
-  <li class="submenu {% if page.url == '/changelog/' %}active{% endif %}">
-    <a href="/changelog" title="Changelog">Changelog</a>
+  <li class="{% if page.url == '/changelog/' %}active{% endif %}">
+    <a class="main-link" href="/changelog" title="Changelog">Changelog</a>
   </li>
 </ul>
