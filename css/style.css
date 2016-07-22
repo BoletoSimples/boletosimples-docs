@@ -299,12 +299,20 @@ Media Queries for Tablets.
 }
 
 
+#sidr {
+  display: none;
+}
+
 /*
 Max Width, 686px
 Media Queries for Smartphones.
 ------------------------------------------------------------------------------*/
 
 @media only screen and (max-width: 686px) {
+
+  #sidr {
+    display: block;
+  }
 
   .containner {
     width: 94% !important;
