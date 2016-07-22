@@ -1,9 +1,9 @@
 @import url("normalize.css");
 @import url("bootstrap.min.css");
+@import url("sidr.css");
 @import url("fontface.css");
 @import url("header.css");
 @import url("footer.css");
-@import url("sidr.css");
 
 
 /* Main */
@@ -49,10 +49,6 @@ h6 {
   font-family: "proxima-nova-soft", Helvetica, Arial, sans-serif;
 }
 
-h3 {
-  margin: 20px 0 -5px 0;
-}
-
 h4 {
   line-height: 20px;
   text-transform: uppercase;
@@ -96,7 +92,7 @@ h4 {
 /* Content */
 
 article.content {
-  margin: 40px 0 40px 260px;
+  margin: 40px 0 40px 240px;
 }
 
 article .breadcrumb { margin-top: 30px; }
@@ -167,20 +163,18 @@ article a {
 /* Sidebar */
 
 aside {
-  width: 230px;
+  width: 210px;
   float: left;
   margin: 10px 0 40px 0;
   border-right: solid 1px #ecf0f1;
 }
 
-aside ul,
-#sidr ul {
+aside ul {
   padding: 0;
   margin: 0;
 }
 
-aside li,
-#sidr li {
+aside li {
   list-style-type: none;
   margin-bottom: 8px;
 }
@@ -202,7 +196,6 @@ aside a,
 .subnav {
   padding-left: 15px !important;
   margin-bottom: 15px !important;
-  margin-top: 8px !important;
 }
 
 
