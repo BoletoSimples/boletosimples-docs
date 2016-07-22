@@ -169,6 +169,10 @@ aside {
   border-right: solid 1px #ecf0f1;
 }
 
+#sidr {
+  display: none;
+}
+
 aside ul,
 .sidr ul {
   padding: 0;
@@ -199,7 +203,6 @@ aside a,
   padding-left: 15px !important;
   margin-bottom: 15px !important;
 }
-
 
 
 /* Panel */
