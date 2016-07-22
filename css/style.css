@@ -169,12 +169,14 @@ aside {
   border-right: solid 1px #ecf0f1;
 }
 
-aside ul {
+aside ul,
+.sidr ul {
   padding: 0;
   margin: 0;
 }
 
-aside li {
+aside li,
+.sidr li {
   list-style-type: none;
   margin-bottom: 8px;
 }
@@ -298,10 +300,6 @@ Media Queries for Tablets.
   }
 }
 
-
-#sidr {
-  display: none;
-}
 
 /*
 Max Width, 686px
