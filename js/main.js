@@ -14,11 +14,6 @@ Main = {
       $(".header-form").hide();
     });
 
-
-    /* mobile sidebar */
-
-    $('#simple-menu').sidr();
-
   }
 }
 

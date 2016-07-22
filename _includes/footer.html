@@ -64,11 +64,14 @@
 </footer>
 <script src="/js/jquery.min.js"></script>
 <script src="/js/bootstrap.min.js"></script>
-<script src="/js/highlight.pack.js"></script>
 <script src="//cdn.jsdelivr.net/jquery.sidr/2.2.1/jquery.sidr.min.js"></script>
+<script src="/js/highlight.pack.js"></script>
 <script src="/js/main.js"></script>
 <script>
   $(document).ready(function () {
+
+    $('#simple-menu').sidr();
+
     $('[data-toggle="offcanvas"]').click(function () {
       $('.row-offcanvas').toggleClass('active')
     });

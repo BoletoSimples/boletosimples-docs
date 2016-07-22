@@ -1,6 +1,6 @@
 @import url("normalize.css");
-@import url("bootstrap.min.css");
 @import url("sidr.css");
+@import url("bootstrap.min.css");
 @import url("fontface.css");
 @import url("header.css");
 @import url("footer.css");
@@ -156,7 +156,7 @@ article li {
 }
 
 article a {
-  color: #008de4;
+  color: #4f8db5;
 }
 
 
