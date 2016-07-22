@@ -165,7 +165,7 @@ article a {
 aside {
   width: 210px;
   float: left;
-  margin: 10px 0 40px 0;
+  margin: 0 0 40px 0;
   border-right: solid 1px #ecf0f1;
 }
 
