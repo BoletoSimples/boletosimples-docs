@@ -1,7 +1,7 @@
 ---
 layout: pt
 title: Integrações com a Pluga - API do Boleto Simples
-en: /en/integrations/zapier
+en: /en/integrations/pluga
 ---
 
 ## Integrações com a Pluga
@@ -14,7 +14,7 @@ Com a Pluga você conecta a sua conta do Boleto Simples com as principais ferram
 
 ### Boleto Simples na Pluga
 
-Para ver todas as possibilidades de integração do Boleto Simples pelo Zapier, acesse:
+Para ver todas as possibilidades de integração do Boleto Simples na Pluga, acesse:
 [https://pluga.co/ferramentas/boleto_simples/](https://pluga.co/ferramentas/boleto_simples/)
 
 ### Começando a usar a Pluga
