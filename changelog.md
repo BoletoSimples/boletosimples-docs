@@ -8,6 +8,10 @@ en: /en/changelog
 
 #### Últimas alterações realizadas na API.
 
+### 10/08/2016
+
+* Corrige campos 'amount', 'cycle' e 'days_in_advance' da [assinatura](/reference/v1/customer_subscriptions)
+
 ### 20/05/2016
 
 * Corrige endpoint de [geração da próxima cobrança da assinatura](/reference/v1/customer_subscriptions#gerar-prxima-cobrana)

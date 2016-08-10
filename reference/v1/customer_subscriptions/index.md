@@ -24,17 +24,17 @@ breadcrumb: Assinaturas
 | **id**                      | N/A   | Integer |         | ID da assinatura
 | **customer_id**             | Sim   | Integer |         | [ID do Cliente Cadastrado](/reference/v1/customers/)
 | **bank_billet_account_id**  | Sim   | Integer |         | [ID da carteira de Cobrança Cadastrada](/reference/v1/bank_billet_accounts/)
-| **subscription_price**      | Sim   | String  |         | Preço da Assinatura (R$) Formato: 1.234,34
-| **subscription_cycle**      | Sim   | String  | 20      | Ciclo da Assinatura ([possíveis valores](#subscriptioncycle))
+| **amount**                  | Sim   | String  |         | Preço da Assinatura (R$) Formato: 1.234,34
+| **cycle**                   | Sim   | String  | 20      | Ciclo da Assinatura ([possíveis valores](#subscriptioncycle))
 | **next_billing**            | Não   | Date    |         | Data da Primeira ou Próxima cobrança. Caso não seja enviado uma data, esse campo será calculado para ter o valor do dia da criação da assinatura mais o ciclo escolhido. Ex.: Mensal(Hoje + 30 dias)
 | **end_at**                  | Não   | Date    |         | Data em que deseja parar as cobranças. Caso em branco, as cobranças serão geradas automaticamente até que se informe uma data ou se exclua a assinatura.
 | **description**             | Sim   | Text    |         | Descrição do produto vendido ou serviço prestado.
 | **instructions**            | Não   | Text    |         | Instruções para o caixa
-| **billing_before_days**     | Não   | Integer |         | Com quantos dias de antecedência à data de vencimento a cobrança será gerada. Default: 7.
+| **days_in_advance**         | Não   | Integer |         | Com quantos dias de antecedência à data de vencimento a cobrança será gerada. Default: 7.
 
 ### Dicionário de Dados
 
-#### subscription_cycle
+#### cycle
 
 | biweekly   | Quinzenal
 | bimonthly  | Bimestral
@@ -161,7 +161,7 @@ Array
 <pre class="bash">
 curl -i \
 -u $BOLETOSIMPLES_TOKEN:x \
--d '{"customer_subscription":{"customer_id":"1", "bank_billet_account_id": "1", "subscription_price": "1.120,4", "subscription_cycle": "monthly", "description": "Hospedagem"}}' \
+-d '{"customer_subscription":{"customer_id":"1", "bank_billet_account_id": "1", "amount": "1.120,4", "cycle": "monthly", "description": "Hospedagem"}}' \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
 -X POST 'https://sandbox.boletosimples.com.br/api/v1/customer_subscriptions'
@@ -179,8 +179,8 @@ Content-Type: application/json; charset=utf-8
 
 {
  "id":1,
- "subscription_price":1120.4,
- "subscription_cycle":"monthly",
+ "amount":1120.4,
+ "cycle":"monthly",
  "next_billing":"2016-06-18",
  "end_at":null,
  "instructions":null,
@@ -190,7 +190,7 @@ Content-Type: application/json; charset=utf-8
  "created_via_api":true,
  "customer_id":"1",
  "bank_billet_account_id":"1",
- "billing_before_days": "7"
+ "days_in_advance": "7"
 }
 </pre>
   </div>
@@ -331,8 +331,8 @@ Content-Type: application/json; charset=utf-8
 
 {
  "id":1,
- "subscription_price":1120.4,
- "subscription_cycle":"monthly",
+ "amount":1120.4,
+ "cycle":"monthly",
  "next_billing":"2016-06-18",
  "end_at":null,
  "instructions":null,
@@ -342,7 +342,7 @@ Content-Type: application/json; charset=utf-8
  "created_via_api":true,
  "customer_id":"1",
  "bank_billet_account_id":"1",
- "billing_before_days": "7"
+ "days_in_advance": "7"
 }
 </pre>
   </div>
@@ -432,7 +432,7 @@ Array
 <pre class="bash">
 curl -i \
 -u $BOLETOSIMPLES_TOKEN:x \
--d '{"customer_subscription":{"subscription_price":""}}' \
+-d '{"customer_subscription":{"amount":""}}' \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
 -X PATCH 'https://sandbox.boletosimples.com.br/api/v1/customer_subscriptions/1'
@@ -447,7 +447,7 @@ Status: 422 Unprocessable Entity
 Content-Type: application/json; charset=utf-8
 ...
 
-{"errors":{"subscription_price":["não pode ficar em branco"]}}
+{"errors":{"amount":["não pode ficar em branco"]}}
 </pre>
   </div>
   <!--
@@ -526,7 +526,7 @@ Array
 <pre class="bash">
 curl -i \
 -u $BOLETOSIMPLES_TOKEN:x \
--d '{"customer_subscription":{"subscription_price":"120,40"}}' \
+-d '{"customer_subscription":{"amount":"120,40"}}' \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
 -X PUT 'https://sandbox.boletosimples.com.br/api/v1/customer_subscriptions/1'
@@ -671,8 +671,8 @@ Content-Type: application/json; charset=utf-8
 [
   {
    "id":1,
-   "subscription_price":1120.4,
-   "subscription_cycle":"monthly",
+   "amount":1120.4,
+   "cycle":"monthly",
    "next_billing":"2016-06-18",
    "end_at":null,
    "instructions":null,
@@ -682,7 +682,7 @@ Content-Type: application/json; charset=utf-8
    "created_via_api":true,
    "customer_id":"1",
    "bank_billet_account_id":"1",
-   "billing_before_days": "7"
+   "days_in_advance": "7"
   }
 ]
 </pre>
@@ -774,8 +774,8 @@ Content-Type: application/json; charset=utf-8
 
 {
  "id":1,
- "subscription_price":1120.4,
- "subscription_cycle":"monthly",
+ "amount":1120.4,
+ "cycle":"monthly",
  "next_billing":"2016-07-18",
  "end_at":null,
  "instructions":null,
@@ -785,7 +785,7 @@ Content-Type: application/json; charset=utf-8
  "created_via_api":true,
  "customer_id":"1",
  "bank_billet_account_id":"1",
- "billing_before_days": "7"
+ "days_in_advance": "7"
 }
 </pre>
   </div>
