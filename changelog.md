@@ -8,6 +8,10 @@ en: /en/changelog
 
 #### Últimas alterações realizadas na API.
 
+### 15/08/2016
+
+* Inclui endpoint de [Carnês](/reference/v1/installments)
+
 ### 10/08/2016
 
 * Corrige campos 'amount', 'cycle' e 'days_in_advance' da [assinatura](/reference/v1/customer_subscriptions)
