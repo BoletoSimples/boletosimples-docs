@@ -25,7 +25,7 @@ breadcrumb: Assinaturas
 | **customer_id**             | Sim   | Integer |         | [ID do Cliente Cadastrado](/reference/v1/customers/)
 | **bank_billet_account_id**  | Sim   | Integer |         | [ID da carteira de Cobrança Cadastrada](/reference/v1/bank_billet_accounts/)
 | **amount**                  | Sim   | String  |         | Preço da Assinatura (R$) Formato: 1.234,34
-| **cycle**                   | Sim   | String  | 20      | Ciclo da Assinatura ([possíveis valores](#subscriptioncycle))
+| **cycle**                   | Sim   | String  | 20      | Ciclo da Assinatura ([possíveis valores](#cycle))
 | **next_billing**            | Não   | Date    |         | Data da Primeira ou Próxima cobrança. Caso não seja enviado uma data, esse campo será calculado para ter o valor do dia da criação da assinatura mais o ciclo escolhido. Ex.: Mensal(Hoje + 30 dias)
 | **end_at**                  | Não   | Date    |         | Data em que deseja parar as cobranças. Caso em branco, as cobranças serão geradas automaticamente até que se informe uma data ou se exclua a assinatura.
 | **description**             | Sim   | Text    |         | Descrição do produto vendido ou serviço prestado.

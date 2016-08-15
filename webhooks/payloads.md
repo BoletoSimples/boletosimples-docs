@@ -128,25 +128,67 @@ A regra é que todos os payloads possuem as chaves `event_code`, `webhook`, `obj
 }
 </pre>
 
-### trasaction.*
+### customer_subscription.*
+
+<pre class="json">
+{
+  "object": {
+    "id": 3,
+    "amount": 1120.4,
+    "cycle": "monthly",
+    "next_billing": "2016-09-15",
+    "end_at": null,
+    "instructions": null,
+    "customer_id": 11,
+    "description": "Hospedagem",
+    "created_at": "2016-08-15",
+    "updated_at": "2016-08-15",
+    "created_via_api": true,
+    "days_in_advance": 7,
+    "bank_billet_account_id": 12
+  },
+  "event_code": "customer_subscription.created",
+  "webhook": {
+    "id": 53,
+    "url": "http://requestb.in/1gsu9nc1"
+  }
+}
+</pre>
+
+### installment.*
 
 <pre class="json">
 {
   "object": {
     "id": 1,
-    "amount": 300.0,
-    "created_at": "2015-02-19",
-    "description": "Boleto Bancário 22",
-    "kind": "credit",
-    "processed_at": null,
-    "sent_at": null,
-    "status": "unprocessed",
-    "credit_at": "2015-02-24"
+    "amount": 1120.4,
+    "cycle": "monthly",
+    "start_at": "2016-09-15",
+    "end_at": "2016-11-16",
+    "instructions": null,
+    "customer_id": 11,
+    "description": "Hospedagem",
+    "created_at": "2016-08-15",
+    "updated_at": "2016-08-15",
+    "created_via_api": true,
+    "total": 3,
+    "bank_billet_account_id": 12,
+    "status": "processed"
   },
-  "event_code": "transaction.created",
+  "changes": {
+    "status": [
+      "created",
+      "processed"
+    ],
+    "updated_at": [
+      "2016-08-15 15:19:36 -0300",
+      "2016-08-15 15:19:41 -0300"
+    ]
+  },
+  "event_code": "installment.processed",
   "webhook": {
-    "id": 1,
-    "url": "https://requestb.in"
+    "id": 53,
+    "url": "http://requestb.in"
   }
 }
 </pre>
@@ -302,33 +344,6 @@ A regra é que todos os payloads possuem as chaves `event_code`, `webhook`, `obj
   "event_code": "bank_billet_account.created",
   "webhook": {
     "id": 1,
-    "url": "https://requestb.in"
-  }
-}
-</pre>
-
-### customer_subscription.*
-
-<pre class="json">
-{
-  "object": {
-    "id": 1,
-    "subscription_price": 12.21,
-    "subscription_cycle": "monthly",
-    "next_billing": "2016-05-31",
-    "end_at": null,
-    "instructions": "",
-    "description": "Serviço de hospedagem.",
-    "created_at": "2016-05-18",
-    "updated_at": "2016-05-18",
-    "created_via_api": false,
-    "customer_id":"1",
-    "bank_billet_account_id":"1",
-    "billing_before_days": "7"
-  },
-  "event_code": "customer_subscription.created",
-  "webhook": {
-    "id": 174,
     "url": "https://requestb.in"
   }
 }
