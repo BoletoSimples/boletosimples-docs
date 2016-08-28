@@ -53,10 +53,25 @@ breadcrumb: Carteiras de Cobrança
 
 #### status
 
-| pending      | Homologação Pendente
-| homologating | Em homologação
-| validating   | Em validação
-| active       | Ativa
+Quando a carteira acaba de ser cadastrada, ela ganha o status **pending**.
+
+Nesse momento o usuário deve aceitar os termos e iniciar a homologação.
+
+Ao clicar em "Prosseguir com a Homologação", o status passa para **homologating**.
+
+Um boleto bancário é gerado e pago pela equipe do Boleto Simples.
+
+Após a equipe do Boleto Simples efetuar o pagamento do boleto, o status para para **validating**.
+
+A partir desse momento o usuário precisa informar o valor do boleto que foi pago.
+
+Quando o valor é informado corretamente, o status passa para **active**.
+
+| pending      | Homologação não iniciada
+| homologating | Em homologação, aguardand pagamento do boleto
+| validating   | Boleto pago, aguardando validação
+| active       | Ativa e pronta para uso
+
 
 ### Criar carteira
 
@@ -430,7 +445,7 @@ ap @bank_billet_account.attributes
     "beneficiary_cnpj_cpf" => "05.813.794/0001-26",
      "beneficiary_address" => "Av. Presidente Vargas, 633 sala 1716. Rio de Janeiro - RJ",
                     "name" => "Bancoob/Sicoob 02 - CC 00003666-8",
-                  "status" => "pending",                    
+                  "status" => "pending",
            "bank_contract" => {
                                 "bank" => {
                                   "code" => "sicoob",
@@ -887,7 +902,7 @@ Content-Type: application/json; charset=utf-8
 }
 </pre>
   </div>
-  <!-- 
+  <!--
   <div class="tab-pane" id="ruby3">
     <small>Requisição:</small>
 
@@ -1011,7 +1026,7 @@ Content-Type: application/json; charset=utf-8
 {"errors":{"homologation_amount":["não pode ficar em branco"]}}
 </pre>
   </div>
- <!-- 
+ <!--
   <div class="tab-pane" id="ruby4">
     <small>Requisição:</small>
 
@@ -1104,7 +1119,7 @@ Location: https://sandbox.boletosimples.com.br/api/v1/bank_billet_accounts/1
 
 </pre>
   </div>
-  <!-- 
+  <!--
   <div class="tab-pane" id="ruby5">
     <small>Requisição:</small>
 

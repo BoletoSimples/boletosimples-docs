@@ -47,8 +47,8 @@ Abaixo a listagem de eventos registrados pelo Boleto Simples:
 | plan_subscription.removed         | Toda vez que um plano é desativado.                |
 | plan_subscription.fee             | Toda vez que um plano é cobrado.                   |
 | bank_billet_account.created       | Toda vez que uma carteira de cobrança é criada.    |
-| bank_billet_account.homologated   | Toda vez que uma carteira de cobrança é enviada para homologação.|
-| bank_billet_account.validated     | Toda vez que uma carteira de cobrança é enviada para validação.  |
+| bank_billet_account.homologated   | Toda vez que uma carteira de cobrança é enviada para homologação.<br/><br/> **Atenção!** O código deste evento será alterado para **bank_billet_account.homologation_started** em breve. Faça um código que aceite ambos os códigos. |
+| bank_billet_account.validated     | Toda vez que uma carteira de cobrança é enviada para validação.<br/><br/> **Atenção!** O código deste evento será alterado para **bank_billet_account.validation_released** em breve. Faça um código que aceite ambos os códigos.  |
 | bank_billet_account.activated     | Toda vez que uma carteira de cobrança é homologada.|
 | bank_billet_account.updated       | Toda vez que uma carteira de cobrança é atualizada.|
 | bank_billet_account.deleted       | Toda vez que uma carteira de cobrança é excluída.  |

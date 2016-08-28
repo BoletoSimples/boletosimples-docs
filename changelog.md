@@ -8,6 +8,11 @@ en: /en/changelog
 
 #### Últimas alterações realizadas na API.
 
+### 29/09/2016
+
+* Melhora a explicação sobre [status da carteira de cobrança](http://localhost:4000/reference/v1/bank_billet_accounts/#status).
+* Inclui aviso na página de [eventos dos webhooks](/webhooks/events/) de que os eventos **bank_billet_account.homologated** e **bank_billet_account.validated** serão renomeados em breve para **bank_billet_account.homologation_started** e **bank_billet_account.validation_released** respectivamente.
+
 ### 15/08/2016
 
 * Inclui endpoint de [Carnês](/reference/v1/installments)
