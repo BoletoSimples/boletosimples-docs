@@ -18,9 +18,9 @@ breadcrumb: Carnês
 
 | Parâmetro                   | Obr.  | Tipo    | Tamanho | Descrição
 | --------------------------- | ----- | ------- | ------- | ------------------------
-| **id**                      | N/A   | Integer |         | ID da carnê
-| **customer_id**             | Sim   | Integer |         | [ID do Cliente Cadastrado](/reference/v1/customers/)
-| **bank_billet_account_id**  | Sim   | Integer |         | [ID da carteira de Cobrança Cadastrada](/reference/v1/bank_billet_accounts/)
+| **id**                      | N/A   | Integer |         | ID do carnê
+| **customer_id**             | Sim   | Integer |         | ID do [Cliente](/reference/v1/customers/)
+| **bank_billet_account_id**  | Não   | Integer |         | ID da [Carteira de Cobrança](/reference/v1/bank_billet_accounts/). Se não informado, usará a carteira padrão.
 | **amount**                  | Sim   | String  |         | Preço da carnê (R$) Formato: 1.234,34
 | **cycle**                   | Sim   | String  | 20      | Ciclo da carnê ([possíveis valores](#cycle))
 | **start_at**                | Sim   | Date    |         | Data da Primeira cobrança.

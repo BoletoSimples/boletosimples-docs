@@ -8,10 +8,14 @@ en: /en/changelog
 
 #### Últimas alterações realizadas na API.
 
-### 29/09/2016
+### 14/09/2016
+
+* Retira a obrigatoriedade do campo `bank_billet_account_id` e documenta a existência da carteira de cobrança padrão.
+
+### 29/08/2016
 
 * Melhora a explicação sobre [status da carteira de cobrança](http://localhost:4000/reference/v1/bank_billet_accounts/#status).
-* Inclui aviso na página de [eventos dos webhooks](/webhooks/events/) de que os eventos **bank_billet_account.homologated** e **bank_billet_account.validated** serão renomeados em breve para **bank_billet_account.homologation_started** e **bank_billet_account.validation_released** respectivamente.
+* Inclui aviso na página de [eventos dos webhooks](/webhooks/events/) de que os eventos `bank_billet_account.homologated` e `bank_billet_account.validated` serão renomeados em breve para `bank_billet_account.homologation_started` e `bank_billet_account.validation_released` respectivamente.
 
 ### 15/08/2016
 
@@ -19,7 +23,7 @@ en: /en/changelog
 
 ### 10/08/2016
 
-* Corrige campos 'amount', 'cycle' e 'days_in_advance' da [assinatura](/reference/v1/customer_subscriptions)
+* Corrige campos `amount`,  `cycle` e `days_in_advance` da [assinatura](/reference/v1/customer_subscriptions)
 
 ### 20/05/2016
 
@@ -48,7 +52,7 @@ en: /en/changelog
 
 ### 24/12/2015
 
-* Atualiza as informações retornadas nas carteiras (BankBilletAccount)
+* Atualiza as informações retornadas nas carteiras (`BankBilletAccount`)
 * Inclui dicionário de dados de CNAB Retorno
 * Atualiza status faltando no dicionário de dados de CNAB Remessa
 * Inclui informações de payload dos webhooks de usuário, CNAB Remessa e CNAB Retorno
@@ -115,12 +119,12 @@ en: /en/changelog
 
 ### 11/06/2015
 
-* Adicionado endpoint 'pay_off' na API de CNAB
+* Adicionado endpoint `pay_off` na API de CNAB
 * Correção exemplo de cancelamento de boleto
 
 ### 17/04/2015
 
-* Adicionado novo scopo 'balance'
+* Adicionado novo scopo `balance`
 * Inclusão de account_level na resposta sobre usuários
 * Adicionado API de CNAB (Retorno)
 * Adicionado endpoints(novo saque, solicitar saque, informações do saque e listagem de saques) na API de transações

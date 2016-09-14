@@ -20,12 +20,12 @@ breadcrumb: Boletos
 | Parâmetro                       | Obr.  | Tipo    | Tamanho | Descrição
 | ------------------------------- | ----- | ------- | ------- | ------------------------
 | **id**                          | N/A   | Integer |         | ID do boleto
-| **bank_billet_account_id**      | Sim   | Integer |         | [ID da Carteira de Cobrança](/reference/v1/bank_billet_accounts/)
-| **our_number**                  | Não   | Integer |         | Nosso Número(Controlado pelo sistema se em branco)
+| **bank_billet_account_id**      | Não   | Integer |         | ID da [Carteira de Cobrança](/reference/v1/bank_billet_accounts/). Se não informado, usará a carteira padrão.
+| **our_number**                  | Não   | Integer |         | Nosso Número. Se não informado, usará o Próximo Nosso Número da Carteira de Cobrança.
 | **amount**                      | Sim   | String  |         | Quantia (R$) Formato: 1.345,56
 | **expire_at**                   | Sim   | Date    |         | Data de vencimento
 | **description**                 | Sim   | Text    |         | Descrição do produto ou serviço
-| **customer_id**                 | Não   | Number  |         | ID do Cliente Cadastrado. Quando esse ID é passado, os campos `customer_person_name`, `customer_cnpj_cpf`, `customer_zipcode`, `customer_address`, `customer_city_name`, `customer_state` e `customer_neighborhood` não são obrigatórios.
+| **customer_id**                 | Não   | Number  |         | ID do [Cliente](/reference/v1/customers/). Quando esse ID é passado, os campos `customer_person_name`, `customer_cnpj_cpf`, `customer_zipcode`, `customer_address`, `customer_city_name`, `customer_state` e `customer_neighborhood` não são obrigatórios.
 | **customer_person_name**        | Sim   | String  | 255     | Nome ou Razão Social do Pagador
 | **customer_cnpj_cpf**           | Sim   | String  | 20      | CNPJ ou CPF do Pagador
 | **customer_zipcode**            | Sim   | Integer | 8       | CEP (formato 99999999)
