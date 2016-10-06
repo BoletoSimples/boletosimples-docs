@@ -26,4 +26,4 @@ Para dúvidas sobre esses arquivos faça suas perguntas em nossa [central de sup
 | [Safra](/bank_contracts/safra)                 | Não     | 400          | Não     | -
 | [Santander](/bank_contracts/santander)         | Sim     | 400          | Sim     | 400
 | [Sicoob](/bank_contracts/sicoob)               | Sim     | 400          | Sim     | 400
-| [Sicredi](/bank_contracts/sicredi)             | Sim     | 400          | Sim     | Sim
+| [Sicredi](/bank_contracts/sicredi)             | Sim     | 400          | Sim     | 400
