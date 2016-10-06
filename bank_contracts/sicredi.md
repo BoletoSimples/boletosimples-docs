@@ -8,4 +8,5 @@ en: /en/bank_contracts/sicredi
 
 | Carteiras                | Slug
 | ------------------------ | ------------
-| A (Simples)              | sicredi-a
+| A (Simples) Com Registro | sicredi-bs-a1
+| A (Simples) Sem Registro | sicredi-bs-a3
