@@ -180,54 +180,66 @@ Nós temos uma página que informa o status dos servidores do Boleto Simples em
 
 ### Limite de Requisições
 
-Existem dois tipos de limite de requisições. Em ambos os casos a
-contagem é feita para cada usuário.
+Existem dois tipos de limite de requisições. O limite por segundo e por hora.
 
-#### Intervalo
+Em ambos os casos a contagem é feita para o **Token de Acesso** usado na autenticação e para o **IP** do cliente.
 
-Cada usuário pode realizar uma requisição a cada 1 segundo. Caso
-o usuário realize duas requisições simultâneas, o servidor
-retorna o status HTTP 429 Too Many Requests. Neste caso, o
-servidor envia o header `Retry-After` com o número de
+#### Intervalo entre requisições
+
+Cada token ou cada IP podem realizar 5 requisições a cada 1 segundo. Caso
+um token ou um IP realize mais de 5 requisições no mesmo segundo, o servidor
+retorna o status `HTTP 429 Too Many Requests`. Neste caso, o
+servidor envia o cabeçalho `Retry-After` com o número de
 segundos que você deve esperar até realizar a próxima requisição.
 
-#### Requisições por Hora
+<small>Exemplo de Resposta em caso de bloqueio:</small>
 
-Cada usuário pode realizar no máximo 500 requisições por hora.
+<pre class="http">
+HTTP/1.1 429 Too Many Requests
+Date: Fri, 05 Nov 2010 12:00:00 GMT
+Content-Type: application/json; charset=utf-8
+X-RateLimit-Limit: 5
+X-RateLimit-Remaining: 0
+Retry-After: 1
+...
+
+{error: "Limite de requisições por segundo execedido para esse usuário."}
+</pre>
+
+#### Requisições por hora
+
+Cada token ou cada IP podem realizar no máximo 500 requisições por hora.
 O número de requisições feitas pelo usuário é
 zerada no primeiro minuto de cada hora.
 
-A cada requisição realizada, o servidor retorna os headers
-`X-RateLimit-Limit` e
-
-`X-RateLimit-Remaining` com o
+A cada requisição realizada, o servidor retorna os cabeçalhos
+`X-RateLimit-Limit` e `X-RateLimit-Remaining` com o
 número de requisições permitidas e o número de requisições
-restantes para aquela hora. Exemplo:
+restantes para aquela hora.
 
-#### Exemplo
-
-<small>Requisição:</small>
-
-<pre class="bash">
-curl -i \
--u $BOLETOSIMPLES_TOKEN:x \
--H 'Content-Type: application/json' \
--H 'User-Agent: MyApp (myapp@example.com)' \
--X GET 'https://sandbox.boletosimples.com.br/api/v1/userinfo'
-</pre>
-
-<small>Resposta:</small>
+<small>Exemplo de Resposta em caso de sucesso</small>
 
 <pre class="http">
 HTTP/1.1 200 OK
 Date: Fri, 05 Nov 2010 12:00:00 GMT
-Content-Type: application/xml; charset=utf-8
+Content-Type: application/json; charset=utf-8
 X-RateLimit-Limit: 500
 X-RateLimit-Remaining: 486
 </pre>
 
-Caso atinja o número máximo de requisições dentro de uma hora,
-o servidor retorna o status
-`HTTP 429 Too Many Requests`.
-Neste caso, você deve esperar até o primeiro minuto da hora
-seguinte para realizar a próxima requisição.
+Caso atinja o número máximo de requisições dentro de uma hora, o servidor retorna o status<br/>
+`HTTP 429 Too Many Requests`. Neste caso, você deve esperar o número de segundos retornado no header `Retry-After` antes de realizar a próxima requisição.
+
+<small>Exemplo de Resposta em caso de bloqueio:</small>
+
+<pre class="http">
+HTTP/1.1 429 Too Many Requests
+Date: Fri, 05 Nov 2010 12:00:00 GMT
+Content-Type: application/json; charset=utf-8
+X-RateLimit-Limit: 500
+X-RateLimit-Remaining: 0
+Retry-After: 3600
+...
+
+{error: "Limite de requisições por hora execedido para esse usuário."}
+</pre>

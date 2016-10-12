@@ -8,13 +8,17 @@ en: /en/changelog
 
 #### Últimas alterações realizadas na API.
 
+### 12/10/2016
+
+* Melhora a explicação de como o [limite de requisições](/#limite-de-requisies) é calculado e aumenta o limite por segundo de 1 para 5 requisições.
+
 ### 14/09/2016
 
 * Retira a obrigatoriedade do campo `bank_billet_account_id` e documenta a existência da carteira de cobrança padrão.
 
 ### 29/08/2016
 
-* Melhora a explicação sobre [status da carteira de cobrança](http://localhost:4000/reference/v1/bank_billet_accounts/#status).
+* Melhora a explicação sobre [status da carteira de cobrança](/reference/v1/bank_billet_accounts/#status).
 * Inclui aviso na página de [eventos dos webhooks](/webhooks/events/) de que os eventos `bank_billet_account.homologated` e `bank_billet_account.validated` serão renomeados em breve para `bank_billet_account.homologation_started` e `bank_billet_account.validation_released` respectivamente.
 
 ### 15/08/2016
