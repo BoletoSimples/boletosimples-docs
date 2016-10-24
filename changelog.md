@@ -8,6 +8,10 @@ en: /en/changelog
 
 #### Últimas alterações realizadas na API.
 
+### 24/10/2016
+
+* Adiciona `bank_billet_ids` a [Remessa](/reference/v1/remittances).
+
 ### 12/10/2016
 
 * Melhora a explicação de como o [limite de requisições](/#limite-de-requisies) é calculado e aumenta o limite por segundo de 1 para 5 requisições.

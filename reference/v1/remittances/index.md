@@ -27,6 +27,7 @@ breadcrumb: CNAB (Remessa)
 | **created_at**                | Não   | DateTime|         | Data de criação
 | **url**                       | Não   | String  |         | URL do arquivo de remessa
 | **bank_billet_account_id**    | Sim   | Integer |         | ID da [Carteira de Cobrança](/reference/v1/bank_billet_accounts/)
+| **bank_billet_ids**           | Não   | Array    |         | IDs de boletos vinculados a remessa
 
 ### Dicionário de Dados
 
@@ -183,7 +184,8 @@ Content-Type: application/json; charset=utf-8
                 "created_at" => "2016-05-06",
               "processed_at" => "2016-05-06",
                        "url" => "https://sandbox.boletosimples.com.br/remessas/06tt1bcc3f6132720866b53a57c76de4/download",
-                        "id" => 1
+                        "id" => 1,
+           "bank_billet_ids" => [1]
 }
 </pre>
   </div>
@@ -322,7 +324,8 @@ Content-Type: application/json; charset=utf-8
                 "created_at" => "2016-05-06",
               "processed_at" => "2016-05-06",
                        "url" => "https://sandbox.boletosimples.com.br/remessas/06tt1bcc3f6132720866b53a57c76de4/download",
-                        "id" => 1
+                        "id" => 1,
+           "bank_billet_ids" => [1]
 }
 </pre>
   </div>
@@ -472,7 +475,8 @@ Content-Type: application/json; charset=utf-8
                   "created_at" => "2016-05-06",
                 "processed_at" => "2016-05-06",
                          "url" => "https://boletosimples.com.br/remessas/06tt1bcc3f6132720866b53a57c76de4/download",
-                          "id" => 1
+                          "id" => 1,
+             "bank_billet_ids" => [1]
   }
 ]
 </pre>
