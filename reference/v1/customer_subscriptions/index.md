@@ -31,6 +31,8 @@ breadcrumb: Assinaturas
 | **description**             | Sim   | Text    |         | Descrição do produto vendido ou serviço prestado.
 | **instructions**            | Não   | Text    |         | Instruções para o caixa
 | **days_in_advance**         | Não   | Integer |         | Com quantos dias de antecedência à data de vencimento a cobrança será gerada. Default: 7.
+| **fine_for_delay**              | Não   | Float   |         | Multa por Atraso
+| **late_payment_interest**       | Não   | Float   |         | Juros de Mora
 
 ### Dicionário de Dados
 
@@ -190,7 +192,9 @@ Content-Type: application/json; charset=utf-8
  "created_via_api":true,
  "customer_id":"1",
  "bank_billet_account_id":"1",
- "days_in_advance": "7"
+ "days_in_advance": "7",
+ "fine_for_delay": 0.0,
+ "late_payment_interest": 0.0
 }
 </pre>
   </div>
@@ -342,7 +346,9 @@ Content-Type: application/json; charset=utf-8
  "created_via_api":true,
  "customer_id":"1",
  "bank_billet_account_id":"1",
- "days_in_advance": "7"
+ "days_in_advance": "7",
+ "fine_for_delay": 0.0,
+ "late_payment_interest": 0.0
 }
 </pre>
   </div>
@@ -682,7 +688,9 @@ Content-Type: application/json; charset=utf-8
    "created_via_api":true,
    "customer_id":"1",
    "bank_billet_account_id":"1",
-   "days_in_advance": "7"
+   "days_in_advance": "7",
+   "fine_for_delay": 0.0,
+   "late_payment_interest": 0.0
   }
 ]
 </pre>
@@ -785,7 +793,9 @@ Content-Type: application/json; charset=utf-8
  "created_via_api":true,
  "customer_id":"1",
  "bank_billet_account_id":"1",
- "days_in_advance": "7"
+ "days_in_advance": "7",
+ "fine_for_delay": 0.0,
+ "late_payment_interest": 0.0
 }
 </pre>
   </div>

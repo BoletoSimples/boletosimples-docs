@@ -29,6 +29,8 @@ breadcrumb: Carnês
 | **description**             | Sim   | Text    |         | Descrição do produto vendido ou serviço prestado.
 | **instructions**            | Não   | Text    |         | Instruções para o caixa
 | **status**                  | Sim   | String  |         | Situação do carnê ([possíveis valores](#status))
+| **fine_for_delay**              | Não   | Float   |         | Multa por Atraso
+| **late_payment_interest**       | Não   | Float   |         | Juros de Mora
 
 ### Dicionário de Dados
 
@@ -195,7 +197,9 @@ Content-Type: application/json; charset=utf-8
   "created_via_api":true,
   "total":3,
   "bank_billet_account_id":12,
-  "status":"created"
+  "status":"created",
+  "fine_for_delay": 0.0,
+  "late_payment_interest": 0.0
 }
 </pre>
   </div>
@@ -348,7 +352,9 @@ Content-Type: application/json; charset=utf-8
   "created_via_api":true,
   "total":3,
   "bank_billet_account_id":12,
-  "status":"created"
+  "status":"created",
+  "fine_for_delay": 0.0,
+  "late_payment_interest": 0.0
 }
 </pre>
   </div>
@@ -511,7 +517,9 @@ Content-Type: application/json; charset=utf-8
     "created_via_api":true,
     "total":3,
     "bank_billet_account_id":12,
-    "status":"created"
+    "status":"created",
+    "fine_for_delay": 0.0,
+    "late_payment_interest": 0.0
   }
 ]
 </pre>

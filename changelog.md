@@ -8,6 +8,11 @@ en: /en/changelog
 
 #### Últimas alterações realizadas na API.
 
+### 28/10/2016
+
+* Adiciona `fine_for_delay` e `late_payment_interest` aos [Carnês](/reference/v1/installments)
+* Adiciona `fine_for_delay` e `late_payment_interest` às [Assinaturas](/reference/v1/customer_subscriptions)
+
 ### 24/10/2016
 
 * Adiciona `bank_billet_ids` a [Remessa](/reference/v1/remittances).

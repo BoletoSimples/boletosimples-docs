@@ -145,7 +145,9 @@ A regra é que todos os payloads possuem as chaves `event_code`, `webhook`, `obj
     "updated_at": "2016-08-15",
     "created_via_api": true,
     "days_in_advance": 7,
-    "bank_billet_account_id": 12
+    "bank_billet_account_id": 12,
+    "fine_for_delay": 0.0,
+    "late_payment_interest": 0.0
   },
   "event_code": "customer_subscription.created",
   "webhook": {
@@ -173,7 +175,9 @@ A regra é que todos os payloads possuem as chaves `event_code`, `webhook`, `obj
     "created_via_api": true,
     "total": 3,
     "bank_billet_account_id": 12,
-    "status": "processed"
+    "status": "processed",
+    "fine_for_delay": 0.0,
+    "late_payment_interest": 0.0
   },
   "changes": {
     "status": [
