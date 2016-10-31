@@ -8,6 +8,10 @@ en: /en/changelog
 
 #### Últimas alterações realizadas na API.
 
+### 31/10/2016
+
+* Adiciona `bank_billet_layout_id` aos [Boletos](/reference/v1/bank_billets)
+
 ### 28/10/2016
 
 * Adiciona `fine_for_delay` e `late_payment_interest` aos [Carnês](/reference/v1/installments)
