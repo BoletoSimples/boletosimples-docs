@@ -8,6 +8,11 @@ en: /en/changelog
 
 #### Últimas alterações realizadas na API.
 
+### 19/11/2016
+
+* Inclui endpoint de busca por [CPF ou CNPJ](/reference/v1/customers/#buscar-por-cpf-ou-cnpj) nos clientes
+* Inclui endpoint de busca por [E-mail](/reference/v1/customers/#buscar-por-e-mail) nos clientes
+
 ### 31/10/2016
 
 * Adiciona `bank_billet_layout_id` aos [Boletos](/reference/v1/bank_billets)
