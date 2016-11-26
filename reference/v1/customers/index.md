@@ -14,8 +14,8 @@ breadcrumb: Clientes
 | [PATCH /api/v1/customers/:id](#atualizar-cliente) | Atualizar cliente
 | [PUT /api/v1/customers/:id](#atualizar-cliente) | Atualizar cliente
 | [GET /api/v1/customers](#listar-clientes) | Listar clientes
-| [PATCH /api/v1/customers/cnpj_cpf](#buscar-por-cpf-ou-cnpj) | Buscar por CPF ou CNPJ
-| [PATCH /api/v1/customers/email](#buscar-por-e-mail) | Buscar por e-mail
+| [GET /api/v1/customers/cnpj_cpf](#buscar-por-cpf-ou-cnpj) | Buscar por CPF ou CNPJ
+| [GET /api/v1/customers/email](#buscar-por-e-mail) | Buscar por e-mail
 
 ### Modelo de Dados
 
