@@ -31,8 +31,9 @@ breadcrumb: Assinaturas
 | **description**             | Sim   | Text    |         | Descrição do produto vendido ou serviço prestado.
 | **instructions**            | Não   | Text    |         | Instruções para o caixa
 | **days_in_advance**         | Não   | Integer |         | Com quantos dias de antecedência à data de vencimento a cobrança será gerada. Default: 7.
-| **fine_for_delay**              | Não   | Float   |         | Multa por Atraso
-| **late_payment_interest**       | Não   | Float   |         | Juros de Mora
+| **fine_for_delay**          | Não   | Float   |         | Multa por Atraso
+| **late_payment_interest**   | Não   | Float   |         | Juros de Mora
+| **bank_billet_layout_id**   | Não   | Integer |         | ID do Modelo de Boleto
 
 ### Dicionário de Dados
 

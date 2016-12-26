@@ -28,6 +28,7 @@ breadcrumb: Webhook Deliveries
 | **delivered_at**     | N/A   | DateTime |         | Data e hora que a entrega foi realizada
 | **duration**         | N/A   | Integer  |         | Duração em milesegundos do round trip entre requisição e resposta
 | **event**            | N/A   | Object   |         | Evento relativo à entrega. [Leia mais](/reference/v1/events/#modelo-de-dados)
+| **webhook**          | N/A   | Object   |         | [Webhook](/reference/v1/webhooks/#modelo-de-dados)
 
 ### Informações do webhook delivery
 

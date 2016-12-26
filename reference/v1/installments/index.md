@@ -29,8 +29,9 @@ breadcrumb: Carnês
 | **description**             | Sim   | Text    |         | Descrição do produto vendido ou serviço prestado.
 | **instructions**            | Não   | Text    |         | Instruções para o caixa
 | **status**                  | Sim   | String  |         | Situação do carnê ([possíveis valores](#status))
-| **fine_for_delay**              | Não   | Float   |         | Multa por Atraso
-| **late_payment_interest**       | Não   | Float   |         | Juros de Mora
+| **fine_for_delay**          | Não   | Float   |         | Multa por Atraso
+| **late_payment_interest**   | Não   | Float   |         | Juros de Mora
+| **bank_billet_layout_id**   | Não   | Integer |         | ID do Modelo de Boleto
 
 ### Dicionário de Dados
 

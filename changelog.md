@@ -8,6 +8,11 @@ en: /en/changelog
 
 #### Últimas alterações realizadas na API.
 
+### 26/12/2016
+
+* Revisão e atualização dos modelos de dados dos endpoints da API
+* Revisão das [Carteiras](/bank_contracts)
+
 ### 19/11/2016
 
 * Inclui endpoint de busca por [CPF ou CNPJ](/reference/v1/customers/#buscar-por-cpf-ou-cnpj) nos clientes

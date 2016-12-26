@@ -55,6 +55,8 @@ breadcrumb: Boletos
 | **document_amount**             | Não   | String  |         | Valor do Documento (R$) Formato: 1.345,56
 | **acceptance**                  | Não   | String  |         | Aceite
 | **bank_billet_layout_id**       | Não   | Integer |         | ID do Modelo de Boleto
+| **remittance_id**               | Não   | Integer |         | ID da [Remessa](/reference/v1/remittances/)
+| **notes**                       | Não   | Text    |         | Anotações
 
 ### Dicionário de Dados
 

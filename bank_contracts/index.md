@@ -16,8 +16,9 @@ Para dúvidas sobre esses arquivos faça suas perguntas em nossa [central de sup
 | Banco                                          | Retorno | Formato CNAB | Remessa | Formato CNAB
 | ---------------------------------------------- | ------- | ------------ | ------- | ------------
 | [Banco do Brasil](/bank_contracts/bb)          | Sim     | 400 (ou CBR643)         | Sim     | 400 (ou CBR641)
+| [Banco do Nordeste](/bank_contracts/bnb)       | Não     |              | Não     | 
 | [Banestes](/bank_contracts/banestes)           | Sim     | 400          | Sim     | 400
-| [Banrisul](/bank_contracts/banrisul)           | Não     | 400          | Não     | -
+| [Banrisul](/bank_contracts/banrisul)           | Sim     | 400          | Sim     | 400
 | [Bradesco](/bank_contracts/bradesco)           | Sim     | 400          | Sim     | 400
 | [Caixa Econômica Federal](/bank_contracts/cef) | Sim     | 400          | Sim     | 400
 | [Citibank](/bank_contracts/citibank)           | Sim     | 400          | Sim     | 400

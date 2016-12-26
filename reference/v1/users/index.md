@@ -14,9 +14,13 @@ breadcrumb: Usuários
 | **id**                   | N/A  | Integer |         | ID do usuário
 | **email**                | Sim  | String  |         | E-mail
 | **account_type**         | Não  | String  |         | Tipo de Conta
+| **account_level**        | Não  | Integer |         | Nível da Conta
 | **first_name**           | Não  | String  |         | Primeiro Nome
 | **middle_name**          | Não  | String  |         | Nome do Meio
 | **last_name**            | Não  | String  |         | Último Nome
+| **full_name**            | Não  | String  |         | Nome completo
+| **sex**                  | Não  | String  |         | Sexo
+| **login_url**            | Não  | String  |         | URL primeiro login
 | **cpf**                  | Não  | String  |         | CPF
 | **address_street_name**  | Não  | String  |         | Endereço
 | **address_state**        | Não  | String  |         | Estado
@@ -34,9 +38,10 @@ breadcrumb: Usuários
 | **business_legal_name**  | Não  | String  |         | Razão Social
 | **business_type**        | Não  | String  |         | Tipo da Empresa
 | **business_cnpj**        | Não  | String  |         | CNPJ da Empresa
-| **withdrawal_automatic** | Não  | Boolean |         | Saque Automático
 | **mother_name**          | Não  | String  |         | Nome da Mãe
 | **father_name**          | Não  | String  |         | Nome do Pai
+| **billing_email**        | Não  | String  |         | Email de cobrança
+| **configuration**        | Não  | JSON    |         | Configuração de dados padrões para boleto
 
 ### Dicionário de Dados
 

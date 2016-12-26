@@ -27,7 +27,9 @@ breadcrumb: CNAB (Remessa)
 | **created_at**                | Não   | DateTime|         | Data de criação
 | **url**                       | Não   | String  |         | URL do arquivo de remessa
 | **bank_billet_account_id**    | Sim   | Integer |         | ID da [Carteira de Cobrança](/reference/v1/bank_billet_accounts/)
-| **bank_billet_ids**           | Não   | Array    |         | IDs de boletos vinculados a remessa
+| **bank_billet_ids**           | Não   | Array   |         | IDs de boletos vinculados a remessa
+| **remittance_number**         | Não   | Integer |         | Número da remessa
+| **sent_via_integration**      | Não   | Date    |         | Data de envio automático para o banco
 
 ### Dicionário de Dados
 

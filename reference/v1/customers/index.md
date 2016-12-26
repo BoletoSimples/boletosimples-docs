@@ -23,6 +23,7 @@ breadcrumb: Clientes
 | ---------------------- | ----- | ------- | ------- | ------------------------
 | **id**                 | N/A   | Integer |         | ID do cliente
 | **person_name**        | Sim   | String  | 255     | Nome Completo ou Razão Social
+| **person_type**        | Não   | String  |         | Tipo de Cliente
 | **cnpj_cpf**           | Sim   | String  | 20      | CNPJ/CPF (formato 999.999.999-99 ou 99.999.999/9999-99)
 | **zipcode**            | Sim   | Integer | 8       | CEP (formato 99999999)
 | **address**            | Sim   | Text    |         | Endereço
@@ -35,6 +36,9 @@ breadcrumb: Clientes
 | **email**              | Não   | String  | 255     | E-mail
 | **mobile_local_code**  | Não   | String  | 4       | DDD do Celular
 | **mobile_number**      | Não   | String  | 15      | Celular
+| **notes**              | Não   | Text    |         | Anotações
+| **email_cc**           | Não   | String  | 255     | E-mail alternativo
+| **created_via_api**    | Não   | Boolean |         | Enviado pela API
 
 ### Criar cliente
 
