@@ -57,6 +57,10 @@ breadcrumb: Boletos
 | **bank_billet_layout_id**       | Não   | Integer |         | ID do Modelo de Boleto
 | **remittance_id**               | Não   | Integer |         | ID da [Remessa](/reference/v1/remittances/)
 | **notes**                       | Não   | Text    |         | Anotações
+| **created_at**                  | Não   | Date    |         | Data de criação do boleto
+| **updated_at**                  | Não   | Date    |         | Data de atualização do boleto
+| **paid_bank**                   | Não   | String  |         | Banco de Pagamento
+| **paid_agency**                 | Não   | String  |         | Agência de Pagamento
 
 ### Dicionário de Dados
 
@@ -936,8 +940,9 @@ Status Final: canceled
 | ------------------------------- | ----- | ------- | ------- | ------------------------
 | **id**                          | Sim   | Integer |         | ID do boleto
 | **expire_at_in_days**           | Não   | Integer |         | Nº de dias para vencimento a partir da data de hoje (Default: 7)
-| **cancel**                      | Não   | Boolean |         | Cancelar o boleto que está sendo  duplicado(Default: true)
-
+| **cancel**                      | Não   | Boolean |         | Cancelar o boleto que está sendo duplicado(Default: true)
+| **amount**                      | Não   | String  |         | Valor do novo boleto. Formato: 1.345,56
+| **with_fines**                  | Não   | Boolean |         | Atualizar o valor do novo boleto com juros e multa (Default: false)
 
 No momento não há cálculo de juros automáticos que atualizem o valor do boleto.
 

@@ -8,6 +8,12 @@ en: /en/changelog
 
 #### Últimas alterações realizadas na API.
 
+### 13/01/2017
+
+* Atualizando modelo de dados dos [Boletos](/reference/v1/bank_billets)
+
+* Adicionado opções `amount` e `with_fines` ao [Boletos](/reference/v1/bank_billets/#gerar-segunda-via-do-boleto)
+
 ### 26/12/2016
 
 * Revisão e atualização dos modelos de dados dos endpoints da API
