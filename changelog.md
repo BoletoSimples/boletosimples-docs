@@ -8,6 +8,10 @@ en: /en/changelog
 
 #### Últimas alterações realizadas na API.
 
+### 19/01/2017
+
+* Adicionando novos endpoints aos [Boletos](/reference/v1/bank_billets)
+
 ### 13/01/2017
 
 * Atualizando modelo de dados dos [Boletos](/reference/v1/bank_billets)

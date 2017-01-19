@@ -14,6 +14,9 @@ breadcrumb: Boletos
 | [GET /api/v1/bank_billets](#listar-boletos) | Listar boletos
 | [PUT /api/v1/bank_billets/:id/cancel](#cancelar-boleto) | Cancelar boleto
 | [POST /api/v1/bank_billets/:id/duplicate](#gerar-segunda-via-do-boleto) | Gerar segunda via do boleto
+| [GET /api/v1/bank_billets/cnpj_cpf](#buscar-por-cpf-ou-cnpj) | Buscar por CPF ou CNPJ
+| [GET /api/v1/bank_billets/our_number](#buscar-por-nosso-nmero) | Buscar por nosso número
+| [GET /api/v1/bank_billets/status](#buscar-por-situao-do-boleto) | Buscar por Situação do boleto ([possíveis valores](#status))
 
 ### Modelo de Dados
 
@@ -42,6 +45,9 @@ breadcrumb: Boletos
 | **paid_at**                     | N/A   | Date    |         | Data do pagamento
 | **paid_amount**                 | N/A   | Float   |         | Valor pago
 | **shorten_url**                 | N/A   | String  |         | URL para visualização do boleto
+| **url**                         | N/A   | String  |         | URL para visualização do boleto
+| **carne_url**                   | N/A   | String  |         | URL para visualização do carnê(Quando for parcela)
+| **formats**                     | N/A   | String  |         | URLs com formatos PDF e Imagem visualização do boleto
 | **created_via_api**             | N/A   | Boolean |         | Define se o boleto foi criado pela API
 | **fine_for_delay**              | Não   | Float   |         | Multa por Atraso
 | **late_payment_interest**       | Não   | Float   |         | Juros de Mora
@@ -1124,4 +1130,442 @@ Array
 )
 </pre>
     </div> -->
+</div>
+
+### Buscar por CPF ou CNPJ
+
+`GET /api/v1/bank_billets/cnpj_cpf`
+
+<table class='table table-bordered'>
+  <thead>
+    <tr>
+      <th>Parâmetro</th>
+      <th data-container="body" data-toggle="tooltip" title="Obrigatório">Obr.</th>
+      <th>Tipo</th>
+      <th>Descrição</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <strong>q</strong>
+      </td>
+      <td>
+        Sim
+      </td>
+      <td>
+        String
+      </td>
+      <td>
+        CPF ou CNPJ formatado
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+#### Exemplo
+
+<ul class="nav nav-tabs" role="tablist">
+  <li class="active"><a href="#bash3" role="tab" data-toggle="tab">Bash</a></li>
+  <!-- <li><a href="#ruby3" role="tab" data-toggle="tab">Ruby</a></li>
+  <li><a href="#php3" role="tab" data-toggle="tab">PHP</a></li> -->
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="bash3">
+    <small>Requisição:</small>
+
+<pre class="bash">
+curl -i \
+-u $BOLETOSIMPLES_TOKEN:x \
+-H 'Content-Type: application/json' \
+-H 'User-Agent: MyApp (myapp@example.com)' \
+-X GET 'https://sandbox.boletosimples.com.br/api/v1/bank_billets/cnpj_cpf?q=125.812.717-28'
+</pre>
+
+    <small>Resposta:</small>
+
+<pre class="http">
+HTTP/1.1 200 OK
+Date: Fri, 17 Oct 2014 19:46:16 GMT
+Status: 200 OK
+Content-Type: application/json; charset=utf-8
+...
+
+[
+  {
+    "id":1,
+    "city_name":"Rio de Janeiro",
+    "person_name":"Nome do Cliente",
+    "address":"Rua quinhentos",
+    "address_complement":null,
+    "address_number":null,
+    "mobile_number":null,
+    "cnpj_cpf":"125.812.717-28",
+    "email":null,
+    "neighborhood":"bairro",
+    "person_type":"individual",
+    "phone_number":null,
+    "zipcode":"20071004",
+    "mobile_local_code":null,
+    "state":"RJ"
+  }
+]
+</pre>
+  </div>
+ <!--  <div class="tab-pane" id="ruby3">
+    <small>Requisição:</small>
+
+<pre class="ruby">
+@customer = BoletoSimples::Customer.find(67)
+puts @customer.attributes
+</pre>
+
+    <small>Resposta:</small>
+
+<pre class="ruby">
+{
+             "city_name" => "Rio de Janeiro",
+           "person_name" => "Joao da Silva",
+               "address" => "Rua quinhentos",
+    "address_complement" => "Sala 4",
+        "address_number" => "111",
+         "mobile_number" => nil,
+              "cnpj_cpf" => "782.661.177-64",
+                 "email" => "cliente@bom.com",
+          "neighborhood" => "bairro",
+           "person_type" => "individual",
+          "phone_number" => "2112123434",
+               "zipcode" => "20071004",
+     "mobile_local_code" => nil,
+                 "state" => "RJ",
+       "created_via_api" => true,
+                    "id" => 67
+}
+</pre>
+  </div>
+  <div class="tab-pane" id="php3">
+    <small>Requisição:</small>
+
+<pre class="php">
+$customer = BoletoSimples\Customer::find(66);
+print_r($customer->attributes());
+</pre>
+
+    <small>Resposta:</small>
+
+<pre class="php">
+Array
+(
+    [id] => 66
+    [city_name] => Rio de Janeiro
+    [person_name] => Joao da Silva
+    [address] => Rua quinhentos
+    [address_complement] => Sala 4
+    [address_number] => 111
+    [mobile_number] =>
+    [cnpj_cpf] => 860.196.915-19
+    [email] => cliente@example.com
+    [neighborhood] => bairro
+    [person_type] => individual
+    [phone_number] => 2112123434
+    [zipcode] => 20071004
+    [mobile_local_code] =>
+    [state] => RJ
+    [created_via_api] => 1
+)
+</pre>
+  </div> -->
+</div>
+
+### Buscar por nosso número
+
+`GET /api/v1/bank_billets/our_number`
+
+<table class='table table-bordered'>
+  <thead>
+    <tr>
+      <th>Parâmetro</th>
+      <th data-container="body" data-toggle="tooltip" title="Obrigatório">Obr.</th>
+      <th>Tipo</th>
+      <th>Descrição</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <strong>q</strong>
+      </td>
+      <td>
+        Sim
+      </td>
+      <td>
+        String
+      </td>
+      <td>
+        Nosso número
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+#### Exemplo
+
+<ul class="nav nav-tabs" role="tablist">
+  <li class="active"><a href="#bash3" role="tab" data-toggle="tab">Bash</a></li>
+  <!-- <li><a href="#ruby3" role="tab" data-toggle="tab">Ruby</a></li>
+  <li><a href="#php3" role="tab" data-toggle="tab">PHP</a></li> -->
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="bash3">
+    <small>Requisição:</small>
+
+<pre class="bash">
+curl -i \
+-u $BOLETOSIMPLES_TOKEN:x \
+-H 'Content-Type: application/json' \
+-H 'User-Agent: MyApp (myapp@example.com)' \
+-X GET 'https://sandbox.boletosimples.com.br/api/v1/bank_billets/our_number?q=00000000441'
+</pre>
+
+    <small>Resposta:</small>
+
+<pre class="http">
+HTTP/1.1 200 OK
+Date: Fri, 17 Oct 2014 19:46:16 GMT
+Status: 200 OK
+Content-Type: application/json; charset=utf-8
+...
+
+
+  {
+    "id":1,
+    "city_name":"Rio de Janeiro",
+    "person_name":"Nome do Cliente",
+    "address":"Rua quinhentos",
+    "address_complement":null,
+    "address_number":null,
+    "mobile_number":null,
+    "cnpj_cpf":"125.812.717-28",
+    "email":null,
+    "neighborhood":"bairro",
+    "person_type":"individual",
+    "phone_number":null,
+    "zipcode":"20071004",
+    "mobile_local_code":null,
+    "state":"RJ"
+  }
+
+</pre>
+  </div>
+ <!--  <div class="tab-pane" id="ruby3">
+    <small>Requisição:</small>
+
+<pre class="ruby">
+@customer = BoletoSimples::Customer.find(67)
+puts @customer.attributes
+</pre>
+
+    <small>Resposta:</small>
+
+<pre class="ruby">
+{
+             "city_name" => "Rio de Janeiro",
+           "person_name" => "Joao da Silva",
+               "address" => "Rua quinhentos",
+    "address_complement" => "Sala 4",
+        "address_number" => "111",
+         "mobile_number" => nil,
+              "cnpj_cpf" => "782.661.177-64",
+                 "email" => "cliente@bom.com",
+          "neighborhood" => "bairro",
+           "person_type" => "individual",
+          "phone_number" => "2112123434",
+               "zipcode" => "20071004",
+     "mobile_local_code" => nil,
+                 "state" => "RJ",
+       "created_via_api" => true,
+                    "id" => 67
+}
+</pre>
+  </div>
+  <div class="tab-pane" id="php3">
+    <small>Requisição:</small>
+
+<pre class="php">
+$customer = BoletoSimples\Customer::find(66);
+print_r($customer->attributes());
+</pre>
+
+    <small>Resposta:</small>
+
+<pre class="php">
+Array
+(
+    [id] => 66
+    [city_name] => Rio de Janeiro
+    [person_name] => Joao da Silva
+    [address] => Rua quinhentos
+    [address_complement] => Sala 4
+    [address_number] => 111
+    [mobile_number] =>
+    [cnpj_cpf] => 860.196.915-19
+    [email] => cliente@example.com
+    [neighborhood] => bairro
+    [person_type] => individual
+    [phone_number] => 2112123434
+    [zipcode] => 20071004
+    [mobile_local_code] =>
+    [state] => RJ
+    [created_via_api] => 1
+)
+</pre>
+  </div> -->
+</div>
+
+### Buscar por situação do boleto
+
+`GET /api/v1/bank_billets/status`
+
+<table class='table table-bordered'>
+  <thead>
+    <tr>
+      <th>Parâmetro</th>
+      <th data-container="body" data-toggle="tooltip" title="Obrigatório">Obr.</th>
+      <th>Tipo</th>
+      <th>Descrição</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <strong>q</strong>
+      </td>
+      <td>
+        Sim
+      </td>
+      <td>
+        String
+      </td>
+      <td>
+        Situação do boleto
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+#### Exemplo
+
+<ul class="nav nav-tabs" role="tablist">
+  <li class="active"><a href="#bash3" role="tab" data-toggle="tab">Bash</a></li>
+  <!-- <li><a href="#ruby3" role="tab" data-toggle="tab">Ruby</a></li>
+  <li><a href="#php3" role="tab" data-toggle="tab">PHP</a></li> -->
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="bash3">
+    <small>Requisição:</small>
+
+<pre class="bash">
+curl -i \
+-u $BOLETOSIMPLES_TOKEN:x \
+-H 'Content-Type: application/json' \
+-H 'User-Agent: MyApp (myapp@example.com)' \
+-X GET 'https://sandbox.boletosimples.com.br/api/v1/bank_billets/status?q=opened'
+</pre>
+
+    <small>Resposta:</small>
+
+<pre class="http">
+HTTP/1.1 200 OK
+Date: Fri, 17 Oct 2014 19:46:16 GMT
+Status: 200 OK
+Content-Type: application/json; charset=utf-8
+...
+
+[
+  {
+    "id":1,
+    "city_name":"Rio de Janeiro",
+    "person_name":"Nome do Cliente",
+    "address":"Rua quinhentos",
+    "address_complement":null,
+    "address_number":null,
+    "mobile_number":null,
+    "cnpj_cpf":"125.812.717-28",
+    "email":null,
+    "neighborhood":"bairro",
+    "person_type":"individual",
+    "phone_number":null,
+    "zipcode":"20071004",
+    "mobile_local_code":null,
+    "state":"RJ"
+  }
+]
+</pre>
+  </div>
+ <!--  <div class="tab-pane" id="ruby3">
+    <small>Requisição:</small>
+
+<pre class="ruby">
+@customer = BoletoSimples::Customer.find(67)
+puts @customer.attributes
+</pre>
+
+    <small>Resposta:</small>
+
+<pre class="ruby">
+{
+             "city_name" => "Rio de Janeiro",
+           "person_name" => "Joao da Silva",
+               "address" => "Rua quinhentos",
+    "address_complement" => "Sala 4",
+        "address_number" => "111",
+         "mobile_number" => nil,
+              "cnpj_cpf" => "782.661.177-64",
+                 "email" => "cliente@bom.com",
+          "neighborhood" => "bairro",
+           "person_type" => "individual",
+          "phone_number" => "2112123434",
+               "zipcode" => "20071004",
+     "mobile_local_code" => nil,
+                 "state" => "RJ",
+       "created_via_api" => true,
+                    "id" => 67
+}
+</pre>
+  </div>
+  <div class="tab-pane" id="php3">
+    <small>Requisição:</small>
+
+<pre class="php">
+$customer = BoletoSimples\Customer::find(66);
+print_r($customer->attributes());
+</pre>
+
+    <small>Resposta:</small>
+
+<pre class="php">
+Array
+(
+    [id] => 66
+    [city_name] => Rio de Janeiro
+    [person_name] => Joao da Silva
+    [address] => Rua quinhentos
+    [address_complement] => Sala 4
+    [address_number] => 111
+    [mobile_number] =>
+    [cnpj_cpf] => 860.196.915-19
+    [email] => cliente@example.com
+    [neighborhood] => bairro
+    [person_type] => individual
+    [phone_number] => 2112123434
+    [zipcode] => 20071004
+    [mobile_local_code] =>
+    [state] => RJ
+    [created_via_api] => 1
+)
+</pre>
+  </div> -->
 </div>

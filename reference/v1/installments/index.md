@@ -32,6 +32,8 @@ breadcrumb: Carnês
 | **fine_for_delay**          | Não   | Float   |         | Multa por Atraso
 | **late_payment_interest**   | Não   | Float   |         | Juros de Mora
 | **bank_billet_layout_id**   | Não   | Integer |         | ID do Modelo de Boleto
+| **url**                     | N/A   | String  |         | URL para visualização do carnê
+| **bank_billet_ids**         | Não   | Array   |         | IDs de boletos vinculados ao carnê
 
 ### Dicionário de Dados
 
