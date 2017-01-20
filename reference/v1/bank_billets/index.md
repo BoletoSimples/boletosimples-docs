@@ -1160,6 +1160,35 @@ Array
         CPF ou CNPJ formatado
       </td>
     </tr>
+    <tr>
+      <td>
+        <strong>page</strong>
+        <br/>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        Number
+      </td>
+      <td>
+        Número da Página
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>per_page</strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        Number
+      </td>
+      <td>
+        Quantidade de registros por página (Maximo de 250)
+      </td>
+    </tr>
   </tbody>
 </table>
 
@@ -1306,6 +1335,35 @@ Array
         Nosso número
       </td>
     </tr>
+    <tr>
+      <td>
+        <strong>page</strong>
+        <br/>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        Number
+      </td>
+      <td>
+        Número da Página
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>per_page</strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        Number
+      </td>
+      <td>
+        Quantidade de registros por página (Maximo de 250)
+      </td>
+    </tr>
   </tbody>
 </table>
 
@@ -1338,7 +1396,7 @@ Status: 200 OK
 Content-Type: application/json; charset=utf-8
 ...
 
-
+[
   {
     "id":1,
     "city_name":"Rio de Janeiro",
@@ -1356,7 +1414,7 @@ Content-Type: application/json; charset=utf-8
     "mobile_local_code":null,
     "state":"RJ"
   }
-
+]
 </pre>
   </div>
  <!--  <div class="tab-pane" id="ruby3">
@@ -1450,6 +1508,35 @@ Array
       </td>
       <td>
         Situação do boleto
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>page</strong>
+        <br/>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        Number
+      </td>
+      <td>
+        Número da Página
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>per_page</strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        Number
+      </td>
+      <td>
+        Quantidade de registros por página (Maximo de 250)
       </td>
     </tr>
   </tbody>
