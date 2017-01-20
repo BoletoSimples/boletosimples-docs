@@ -6,6 +6,19 @@ en: /en/changelog
 
 ## Changelog
 
+#### Código fonte da documentação
+
+A documentação da API é um [projeto público no Github](https://github.com/BoletoSimples/boletosimples-api). Você pode acompanhar as mudanças na documentação na [página dos commits](https://github.com/BoletoSimples/boletosimples-api/commits/gh-pages).
+
+#### Receba as atualizações por e-mail
+
+Você também pode se inscrever para receber as notificações de alterações da API por e-mail.
+
+<form action="https://www.getdrip.com/forms/93702557/submissions" method="post" data-drip-embedded-form="93702557">
+  <input type="email" name="fields[email]" value="" required="required" placeholder="Seu e-mail" />
+  <input type="submit" name="submit" value="Inscrever" data-drip-attribute="sign-up-button" />
+</form>
+
 #### Últimas alterações realizadas na API.
 
 ### 19/01/2017
@@ -180,7 +193,3 @@ en: /en/changelog
 ### 16/02/2015
 
 * O código do status (`BankBillet#status`) de um boleto vencido mudou de `due` para `overdue`.
-
-### Código fonte da documentação
-
-A documentação da API é um [projeto público no Github](https://github.com/BoletoSimples/boletosimples-api). Você pode acompanhar as mudanças na documentação na [página dos commits](https://github.com/BoletoSimples/boletosimples-api/commits/gh-pages).
