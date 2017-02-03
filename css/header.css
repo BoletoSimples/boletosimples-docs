@@ -49,11 +49,18 @@
 }
 
 /* line 70, /Users/rafael/Projects/boletosimples-app/app/assets/stylesheets/home/header.scss */
+/* line 53, /Users/rafael/Projects/boletosimples-app/app/assets/stylesheets/home/header.scss */
+#main-header nav.login ul {
+  padding-right: 95px;
+}
+/* line 59, /Users/rafael/Projects/boletosimples-app/app/assets/stylesheets/home/header.scss */
+#main-header nav.signup ul {
+  padding-right: 185px;
+}
 #main-header nav ul {
   float: right;
   list-style: none;
   margin-top: 20px;
-  margin-right: 100px;
 }
 /* line 76, /Users/rafael/Projects/boletosimples-app/app/assets/stylesheets/home/header.scss */
 #main-header nav li {
@@ -117,7 +124,7 @@
 /* line 132, /Users/rafael/Projects/boletosimples-app/app/assets/stylesheets/home/header.scss */
 #signup-form input[type="submit"],
 .signup-trigger {
-  width: 110px;
+  width: 160px;
 }
 
 /* line 136, /Users/rafael/Projects/boletosimples-app/app/assets/stylesheets/home/header.scss */
@@ -126,6 +133,10 @@
 }
 
 /* line 140, /Users/rafael/Projects/boletosimples-app/app/assets/stylesheets/home/header.scss */
+#signup-form input[type="email"] {
+  width: 250px;
+}
+
 .header-form {
   width: 520px;
   display: none;
@@ -195,6 +206,8 @@
 .header-form .password-field .help-link:hover {
   background: #008de4;
   color: white;
+.header-form input[type="email"] {
+  margin-right: 10px;
 }
 /* line 208, /Users/rafael/Projects/boletosimples-app/app/assets/stylesheets/home/header.scss */
 .header-form .back-arrow {
@@ -224,5 +237,5 @@
 
 /* line 237, /Users/rafael/Projects/boletosimples-app/app/assets/stylesheets/home/header.scss */
 #signup-form form {
-  padding-right: 120px;
+  padding-right: 170px;
 }
