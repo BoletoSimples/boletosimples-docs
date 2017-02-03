@@ -274,7 +274,7 @@ Media Queries for Tablets.
 @media (max-width: 960px) {
 
   .containner {
-    width: 700px !important;
+    width: 94% !important;
   }
 
   #main-header .logo {
@@ -286,7 +286,7 @@ Media Queries for Tablets.
   }
 
   #main-header nav li {
-    margin-left: 15px;
+    margin-left: 10px;
   }
 
   .sitemap .column {
@@ -309,7 +309,8 @@ Max Width, 686px
 Media Queries for Smartphones.
 ------------------------------------------------------------------------------*/
 
-@media only screen and (max-width: 686px) {
+/* Changed from 686px to 810px because that size the menu doesn't fit in screen */
+@media only screen and (max-width: 810px) {
 
   #sidr {
     display: block;
@@ -380,6 +381,7 @@ Media Queries for Smartphones.
   }
 
   .login-trigger,
+  .signup-trigger,
   .new-account-link {
     right: 44px;
   }
@@ -413,6 +415,10 @@ Media Queries for Smartphones.
 
   #login-dropdown input[type="submit"] {
     right: 5%;
+  }
+
+  #main-header nav.signup ul {
+    padding: 0;
   }
 
   #main-header nav ul {
@@ -495,6 +501,6 @@ Media Queries for Smartphones.
 
 }
 
-@media only screen and (min-width: 687px) {
+@media only screen and (min-width: 811px) {
   #main-header nav ul { display: block !important; }
 }
