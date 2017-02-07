@@ -21,6 +21,10 @@ Você também pode se inscrever para receber as notificações de alterações d
 
 #### Últimas alterações realizadas na API.
 
+### 06/02/2017
+
+* Incluída informação sobre a [limpeza do ambiente de sandbox](/sandbox/#limpeza-do-ambiente)
+
 ### 19/01/2017
 
 * Adicionando novos endpoints aos [Boletos](/reference/v1/bank_billets)

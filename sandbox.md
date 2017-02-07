@@ -37,6 +37,12 @@ Por esse motivo, este ambiente possui algumas restrições. São elas:
 *   A descrição do boleto é substituída por: **"BOLETO DE TESTES"**.
 *   As instruções para o caixa no boleto gerado vão com a mensagem: **"SR(a) CAIXA, NÃO AUTORIZAMOS RECEBER ESTE BOLETO"**.
 
+### Limpeza do ambiente
+
+Por motivos de segurança, todos os boletos são excluídos automaticamente no ambiente de Sandbox todo dia à meia-noite.
+
+Essa medida de segurança foi implementada para ser executada pela primeira vez em 15 de fevereiro de 2017.
+
 ### Pagamento
 
 Não pague um boleto gerado pelo ambiente Sandbox sob nenhuma hipótese.
