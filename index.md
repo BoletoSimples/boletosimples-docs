@@ -129,9 +129,9 @@ requisição realizada na API estará fora do protocolo seguro.
 
 Todas as requisições realizadas nos servidore do Boleto Simples serão criptografadas.
 
-### Identificando sua aplicação
+### Header User-Agent
 
-Você deve incluir o header User-Agent com o nome da sua aplicação
+Você deve incluir o header User-Agent com o nome da sua aplicação.
 e um endereço de e-mail válido, para que possamos entrar em contato caso:
 
 1.  Você esteja fazendo algo errado, e possamos avisá-lo antecipadamente antes de você ser bloqueado;
@@ -159,7 +159,7 @@ evitar de te enviar os dados que você já tem.
 [Mais informações sobre Cache HTTP (em inglês)](http://www.mnot.net/cache_docs/)
 
 
-### Tratamento de erros
+### Tratamento de Erros
 
 Se os nossos servidores estiverem com problema, sua requisição receberá um retorno de erro com status 5xx.
 
