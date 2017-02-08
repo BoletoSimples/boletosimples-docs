@@ -35,6 +35,8 @@ Aqui está a lista de todos os escopos que você pode solicitar:
   <dd>Visualizar boletos bancários, clientes e extrato de transações</dd>
   <dt>webhook</dt>
   <dd>Receber notificações a cada mudança de status dos boletos</dd>
+  <dt>checkout</dt>
+  <dd>Visualizar a URL de checkout para pagamentos</dd>
 </dl>
 
 ### OAuth2

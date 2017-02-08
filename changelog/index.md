@@ -24,6 +24,7 @@ Você também pode se inscrever para receber as notificações de alterações d
 ### 08/02/2017
 
 * Documenta o campo `default` em [Carteira de Cobrança](/reference/v1/bank_billet_accounts/#default)
+* Adicionado novo scope para retornar url de [checkout](/authentication/permissions/)
 
 ### 06/02/2017
 
