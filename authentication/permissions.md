@@ -37,6 +37,8 @@ Aqui está a lista de todos os escopos que você pode solicitar:
   <dd>Receber notificações a cada mudança de status dos boletos</dd>
   <dt>checkout</dt>
   <dd>Visualizar a URL de checkout para pagamentos</dd>
+  <dt>subscription</dt>
+  <dd>Visualizar o plano contratado</dd>
 </dl>
 
 ### OAuth2

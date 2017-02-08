@@ -25,6 +25,7 @@ Você também pode se inscrever para receber as notificações de alterações d
 
 * Documenta o campo `default` em [Carteira de Cobrança](/reference/v1/bank_billet_accounts/#default)
 * Adicionado novo scope para retornar url de [checkout](/authentication/permissions/)
+* Adicionado novo scope para [subscription](/authentication/permissions/)
 
 ### 06/02/2017
 
