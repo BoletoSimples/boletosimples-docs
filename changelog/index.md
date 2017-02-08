@@ -21,6 +21,10 @@ Você também pode se inscrever para receber as notificações de alterações d
 
 #### Últimas alterações realizadas na API.
 
+### 08/02/2017
+
+* Documenta o campo `default` em [Carteira de Cobrança](/reference/v1/bank_billet_accounts/#default)
+
 ### 06/02/2017
 
 * Incluída informação sobre a [limpeza do ambiente de sandbox](/sandbox/#limpeza-do-ambiente)

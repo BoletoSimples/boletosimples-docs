@@ -40,10 +40,10 @@ breadcrumb: Carteiras de Cobrança
 | **beneficiary_cnpj_cpf** | Não   | String  | 20      | CPF/CNPJ do Beneficiário
 | **beneficiary_address**  | Não   | String  | 255     | Endereço do Beneficiário
 | **name**                 | Não   | String  |         | Nome da Conta ***
-| **status**               | Não   | String  |         | Situação da carteira
+| [**status**](#status)    | Não   | String  |         | Situação da carteira
 | **homologated_at**       | Não   | Date    |         | Data de homologação
 | **next_remittance_number**| Não  | String  |         | Próximo Número da Remessa. Default: 1
-| **default**              | Não   | Boolean |         | Padrão
+| [**default**](#default)  | Não   | Boolean |         | Padrão
 | **configuration**        | Não   | JSON    |         | Configuração de dados padrões para boleto
 | **bank_contract**        | Não   | Hash    |         | Dados da Carteira ***
 
@@ -57,24 +57,30 @@ breadcrumb: Carteiras de Cobrança
 
 #### status
 
-Quando a carteira acaba de ser cadastrada, ela ganha o status **pending**.
+Quando a carteira acaba de ser cadastrada, ela ganha o status `pending`.
 
 Nesse momento o usuário deve aceitar os termos e iniciar a homologação.
 
-Ao clicar em "Prosseguir com a Homologação", o status passa para **homologating**.
+Ao clicar em "Prosseguir com a Homologação", o status passa para `homologating`.
 
 Um boleto bancário é gerado e pago pela equipe do Boleto Simples.
 
-Após a equipe do Boleto Simples efetuar o pagamento do boleto, o status para para **validating**.
+Após a equipe do Boleto Simples efetuar o pagamento do boleto, o status para para `validating`.
 
 A partir desse momento o usuário precisa informar o valor do boleto que foi pago.
 
-Quando o valor é informado corretamente, o status passa para **active**.
+Quando o valor é informado corretamente, o status passa para `active`.
 
 | pending      | Homologação não iniciada
 | homologating | Em homologação, aguardand pagamento do boleto
 | validating   | Boleto pago, aguardando validação
 | active       | Ativa e pronta para uso
+
+#### default
+
+O campo `default` determina a carteira de cobrança que será usada na criação do boleto quando nenhuma carteira for informada.
+
+No momento que a primeira carteira é homologada (para para o `status` = `active`), ela recebe o valor `default` = true
 
 
 ### Criar carteira
