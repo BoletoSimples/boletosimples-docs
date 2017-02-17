@@ -24,6 +24,7 @@ Você também pode se inscrever para receber as notificações de alterações d
 ### 17/02/2017
 
 * Documenta eventos de [carnês](/webhooks/events/)
+* Inclusão de valor padrão para o campo `cycle` em [Assinaturas](/reference/v1/customer_subscriptions) e [Carnês](/reference/v1/installments)
 
 ### 08/02/2017
 
