@@ -81,3 +81,4 @@ Ao configurar o webhook é possível se inscrever nos eventos acima e nos evento
 | discharge.*             | Todos os eventos relacionados a retornos, inclusive os novos eventos que sejam implementados após a criação do webhook. |
 | plan_subscription.*     | Todos os eventos relacionados a planos, inclusive os novos eventos que sejam implementados após a criação do webhook. |
 | bank_billet_account.*   | Todos os eventos relacionados a carteiras de cobrança, inclusive os novos eventos que sejam implementados após a criação do webhook. |
+| installment.*   | Todos os eventos relacionados a carnês, inclusive os novos eventos que sejam implementados após a criação do webhook. |
