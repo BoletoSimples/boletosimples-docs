@@ -52,6 +52,10 @@ Abaixo a listagem de eventos registrados pelo Boleto Simples:
 | bank_billet_account.activated     | Toda vez que uma carteira de cobrança é homologada.|
 | bank_billet_account.updated       | Toda vez que uma carteira de cobrança é atualizada.|
 | bank_billet_account.deleted       | Toda vez que uma carteira de cobrança é excluída.  |
+| installment.created               | Toda vez que um carnê é criado.                 |
+| installment.processed             | Toda vez que as parcelas de um carnê são todas geradas.  |
+| installment.finished              | Toda vez que as parcelas de um carnê são todas pagas.       |
+| installment.deleted               | Toda vez que um carnê é apagado.             |
 | ping                              | Evento especial para testar o webhook.             |
 
 ### Evento Ping

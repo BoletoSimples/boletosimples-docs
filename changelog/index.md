@@ -21,6 +21,10 @@ Você também pode se inscrever para receber as notificações de alterações d
 
 #### Últimas alterações realizadas na API.
 
+### 17/02/2017
+
+* Documenta eventos de [carnês](/webhooks/events/)
+
 ### 08/02/2017
 
 * Documenta o campo `default` em [Carteira de Cobrança](/reference/v1/bank_billet_accounts/#default)
