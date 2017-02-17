@@ -23,40 +23,40 @@ Abaixo a listagem de eventos registrados pelo Boleto Simples:
 | bank_billet.paid                  | Toda vez que um boleto é pago.                     |
 | bank_billet.blocked               | Toda vez que o pagamento de um boleto é bloqueado. |
 | bank_billet.due_date              | Notifica boleto com 15, 7, 3 e 1 dias antes do vencimento. |
-| customer.created                  | Toda vez que um cliente é criado.                  |
-| customer.updated                  | Toda vez que um cliente é atualizado.              |
-| customer.deleted                  | Toda vez que um cliente é excluído.                |
-| customer_subscription.created     | Toda vez que uma assinatura é criada.              |
-| customer_subscription.updated     | Toda vez que uma assinatura é atualizada.          |
-| customer_subscription.deleted     | Toda vez que uma assinatura é excluída.            |
-| transaction.created               | Toda vez que uma transação é criada.               |
-| transaction.updated               | Toda vez que uma transação é atualizada.           |
-| transaction.processed             | Toda vez que uma transação é processada.           |
-| withdrawal.requested              | Toda vez que um saque é solicitado.                |
-| withdrawal.transferred            | Toda vez que um saque é transferido.               |
-| user.updated                      | Toda vez que a conta é atualizada.                 |
-| user.blocked                      | Toda vez que a conta é bloqueada.                  |
-| user.bank_billet_creation_blocked | Toda vez que a emissão de boletos é bloqueada.     |
-| remittance.created                | Toda vez que uma remessa é criada.                 |
-| remittance.processed              | Toda vez que uma remessa é processada.             |
-| remittance.downloaded             | Toda vez que uma remessa é baixada.                |
-| remittance.sent                   | Toda vez que uma remessa é enviada.                |
-| discharge.created                 | Toda vez que um retorno é criado.                  |
-| discharge.processed               | Toda vez que um retorno é processado.              |
-| plan_subscription.activated       | Toda vez que um plano é ativado.                   |
-| plan_subscription.removed         | Toda vez que um plano é desativado.                |
-| plan_subscription.fee             | Toda vez que um plano é cobrado.                   |
 | bank_billet_account.created       | Toda vez que uma carteira de cobrança é criada.    |
 | bank_billet_account.homologated   | Toda vez que uma carteira de cobrança é enviada para homologação.<br/><br/> **Atenção!** O código deste evento será alterado para **bank_billet_account.homologation_started** em breve. Faça um código que aceite ambos os códigos. |
 | bank_billet_account.validated     | Toda vez que uma carteira de cobrança é enviada para validação.<br/><br/> **Atenção!** O código deste evento será alterado para **bank_billet_account.validation_released** em breve. Faça um código que aceite ambos os códigos.  |
 | bank_billet_account.activated     | Toda vez que uma carteira de cobrança é homologada.|
 | bank_billet_account.updated       | Toda vez que uma carteira de cobrança é atualizada.|
 | bank_billet_account.deleted       | Toda vez que uma carteira de cobrança é excluída.  |
+| customer.created                  | Toda vez que um cliente é criado.                  |
+| customer.updated                  | Toda vez que um cliente é atualizado.              |
+| customer.deleted                  | Toda vez que um cliente é excluído.                |
+| customer_subscription.created     | Toda vez que uma assinatura é criada.              |
+| customer_subscription.updated     | Toda vez que uma assinatura é atualizada.          |
+| customer_subscription.deleted     | Toda vez que uma assinatura é excluída.            |
+| discharge.created                 | Toda vez que um retorno é criado.                  |
+| discharge.processed               | Toda vez que um retorno é processado.              |
 | installment.created               | Toda vez que um carnê é criado.                 |
 | installment.processed             | Toda vez que as parcelas de um carnê são todas geradas.  |
 | installment.finished              | Toda vez que as parcelas de um carnê são todas pagas.       |
 | installment.deleted               | Toda vez que um carnê é apagado.             |
+| plan_subscription.activated       | Toda vez que um plano é ativado.                   |
+| plan_subscription.removed         | Toda vez que um plano é desativado.                |
+| plan_subscription.fee             | Toda vez que um plano é cobrado.                   |
 | ping                              | Evento especial para testar o webhook.             |
+| remittance.created                | Toda vez que uma remessa é criada.                 |
+| remittance.processed              | Toda vez que uma remessa é processada.             |
+| remittance.downloaded             | Toda vez que uma remessa é baixada.                |
+| remittance.sent                   | Toda vez que uma remessa é enviada.                |
+| transaction.created               | Toda vez que uma transação é criada.               |
+| transaction.updated               | Toda vez que uma transação é atualizada.           |
+| transaction.processed             | Toda vez que uma transação é processada.           |
+| user.updated                      | Toda vez que a conta é atualizada.                 |
+| user.blocked                      | Toda vez que a conta é bloqueada.                  |
+| user.bank_billet_creation_blocked | Toda vez que a emissão de boletos é bloqueada.     |
+| withdrawal.requested              | Toda vez que um saque é solicitado.                |
+| withdrawal.transferred            | Toda vez que um saque é transferido.               |
 
 ### Evento Ping
 
