@@ -38,7 +38,8 @@ Abaixo a listagem de eventos registrados pelo Boleto Simples:
 | discharge.created                 | Toda vez que um retorno é criado.                  |
 | discharge.processed               | Toda vez que um retorno é processado.              |
 | installment.created               | Toda vez que um carnê é criado.                 |
-| installment.processed             | Toda vez que todas as parcelas de um carnê são geradas.  |
+| installment.processed             | Toda vez que todas as parcelas de um carnê são criadas.  |
+| installment.generated             | Toda vez que todas as parcelas de um carnê são geradas.  |
 | installment.deleted               | Toda vez que um carnê é apagado.             |
 | plan_subscription.activated       | Toda vez que um plano é ativado.                   |
 | plan_subscription.removed         | Toda vez que um plano é desativado.                |
