@@ -35,11 +35,7 @@ breadcrumb: Webhooks
 
 #### Exemplo de requisição inválida
 
-<ul class="nav nav-tabs" role="tablist">
-  <li class="active"><a href="#bash" role="tab" data-toggle="tab">Bash</a></li>
-  <!--li><a href="#ruby" role="tab" data-toggle="tab">Ruby</a></li>
-  <li><a href="#php" role="tab" data-toggle="tab">PHP</a></li-->
-</ul>
+##### Bash
 
 <div class="tab-content">
   <div class="tab-pane active" id="bash">
@@ -139,11 +135,7 @@ Array
 
 #### Exemplo de requisição válida
 
-<ul class="nav nav-tabs" role="tablist">
-  <li class="active"><a href="#bash2" role="tab" data-toggle="tab">Bash</a></li>
-  <!--li><a href="#ruby2" role="tab" data-toggle="tab">Ruby</a></li>
-  <li><a href="#php2" role="tab" data-toggle="tab">PHP</a></li-->
-</ul>
+##### Bash
 
 <div class="tab-content">
   <div class="tab-pane active" id="bash2">
@@ -287,11 +279,7 @@ Array
 
 #### Exemplo
 
-<ul class="nav nav-tabs" role="tablist">
-  <li class="active"><a href="#bash3" role="tab" data-toggle="tab">Bash</a></li>
-  <!--li><a href="#ruby3" role="tab" data-toggle="tab">Ruby</a></li>
-  <li><a href="#php3" role="tab" data-toggle="tab">PHP</a></li-->
-</ul>
+##### Bash
 
 <div class="tab-content">
   <div class="tab-pane active" id="bash3">
@@ -397,11 +385,7 @@ Array
 
 #### Exemplo de requisição inválida
 
-<ul class="nav nav-tabs" role="tablist">
-  <li class="active"><a href="#bash" role="tab" data-toggle="tab">Bash</a></li>
-  <!--li><a href="#ruby" role="tab" data-toggle="tab">Ruby</a></li>
-  <li><a href="#php" role="tab" data-toggle="tab">PHP</a></li-->
-</ul>
+##### Bash
 
 <div class="tab-content">
   <div class="tab-pane active" id="bash">
@@ -502,11 +486,7 @@ Array
 
 #### Exemplo de requisição válida
 
-<ul class="nav nav-tabs" role="tablist">
-  <li class="active"><a href="#bash2" role="tab" data-toggle="tab">Bash</a></li>
-  <!--li><a href="#ruby2" role="tab" data-toggle="tab">Ruby</a></li>
-  <li><a href="#php2" role="tab" data-toggle="tab">PHP</a></li-->
-</ul>
+##### Bash
 
 <div class="tab-content">
   <div class="tab-pane active" id="bash2">
@@ -682,11 +662,7 @@ Array
 
 #### Exemplo
 
-<ul class="nav nav-tabs" role="tablist">
-  <li class="active"><a href="#bash4" role="tab" data-toggle="tab">Bash</a></li>
-  <!--li><a href="#ruby4" role="tab" data-toggle="tab">Ruby</a></li>
-  <li><a href="#php4" role="tab" data-toggle="tab">PHP</a></li-->
-</ul>
+##### Bash
 
 <div class="tab-content">
   <div class="tab-pane active" id="bash4">
@@ -782,11 +758,7 @@ Próxima Página: https://sandbox.boletosimples.com.br/api/v1/transactions?page=
 
 #### Exemplo
 
-<ul class="nav nav-tabs" role="tablist">
-  <li class="active"><a href="#bash2" role="tab" data-toggle="tab">Bash</a></li>
-  <!--li><a href="#ruby2" role="tab" data-toggle="tab">Ruby</a></li>
-  <li><a href="#php2" role="tab" data-toggle="tab">PHP</a></li-->
-</ul>
+##### Bash
 
 <div class="tab-content">
   <div class="tab-pane active" id="bash2">
