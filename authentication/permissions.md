@@ -12,34 +12,57 @@ Quando autenticar o usuário com OAuth2, você pode especificar quais dados o to
 
 Aqui está a lista de todos os escopos que você pode solicitar:
 
-<dl class="dl-horizontal">
-  <dt>login</dt>
-  <dd>Autenticar com o usuário</dd>
-  <dt>email</dt>
-  <dd>Visualizar o endereço de e-mail</dd>
-  <dt>profile</dt>
-  <dd>Visualizar os dados da conta (nome completo, data de nascimento, cpf, nome dos pais, nível da conta)</dd>
-  <dt>address</dt>
-  <dd>Visualizar o endereço completo</dd>
-  <dt>phone</dt>
-  <dd>Visualizar o telefone utilizado no cadastro</dd>
-  <dt>banking</dt>
-  <dd>Visualizar os dados bancários (agência e conta)</dd>
-  <dt>business</dt>
-  <dd>Visualizar os dados da empresa (razão social e cnpj)</dd>
-  <dt>balance</dt>
-  <dd>Visualizar o saldo na conta do usuário</dd>
-  <dt>write</dt>
-  <dd>Criar e visualizar boletos bancários e clientes</dd>
-  <dt>read</dt>
-  <dd>Visualizar boletos bancários, clientes e extrato de transações</dd>
-  <dt>webhook</dt>
-  <dd>Receber notificações a cada mudança de status dos boletos</dd>
-  <dt>checkout</dt>
-  <dd>Visualizar a URL de checkout para pagamentos</dd>
-  <dt>subscription</dt>
-  <dd>Visualizar o plano contratado</dd>
-</dl>
+<table>
+  <tr>
+    <td>login</td>
+    <td>Autenticar com o usuário</td>
+  </tr>
+  <tr>
+    <td>email</td>
+    <td>Visualizar o endereço de e-mail</td>
+  </tr>
+  <tr>
+    <td>profile</td>
+    <td>Visualizar os dados da conta (nome completo, data de nascimento, cpf, nome dos pais, nível da conta)</td>
+  </tr>
+  <tr>
+    <td>address</td>
+    <td>Visualizar o endereço completo</td>
+  </tr>
+  <tr>
+    <td>phone</td>
+    <td>Visualizar o telefone utilizado no cadastro</td>
+  </tr>
+  <tr>
+    <td>banking</td>
+    <td>Visualizar os dados bancários (agência e conta)</td>
+  </tr>
+  <tr>
+    <td>business</td>
+    <td>Visualizar os dados da empresa (razão social e cnpj)</td>
+  </tr>
+  <tr>
+    <td>balance</td>
+    <td>Visualizar o saldo na conta do usuário</td>
+  </tr>
+  <tr>
+    <td>write</td>
+    <td>Criar e visualizar boletos bancários e clientes</td>
+  </tr>
+  <tr>
+    <td>read</td>
+    <td>Visualizar boletos bancários, clientes e extrato de transações</td>
+  </tr>
+  <tr>
+    <td>checkout</td>
+    <td>Visualizar a URL de checkout para pagamentos</td>
+  </tr>
+  <tr>
+    <td>subscription</td>
+    <td>Visualizar o plano contratado</td>
+  </tr>
+
+</table>
 
 ### OAuth2
 
