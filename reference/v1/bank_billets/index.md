@@ -77,8 +77,6 @@ breadcrumb: Boletos
 | canceled   | Cancelado
 | paid       | Pago
 | overdue    | Vencido
-| blocked    | Bloqueado
-| chargeback | Estornado
 
 #### acceptance
 
