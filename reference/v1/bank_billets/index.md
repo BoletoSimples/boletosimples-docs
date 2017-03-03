@@ -63,10 +63,10 @@ breadcrumb: Boletos
 | **bank_billet_layout_id**       | Não   | Integer |         | ID do Modelo de Boleto
 | **remittance_id**               | Não   | Integer |         | ID da [Remessa](/reference/v1/remittances/)
 | **notes**                       | Não   | Text    |         | Anotações
-| **created_at**                  | Não   | Date    |         | Data de criação do boleto
-| **updated_at**                  | Não   | Date    |         | Data de atualização do boleto
-| **paid_bank**                   | Não   | String  |         | Banco de Pagamento
-| **paid_agency**                 | Não   | String  |         | Agência de Pagamento
+| **created_at**                  | N/A   | Date    |         | Data de criação do boleto
+| **updated_at**                  | N/A   | Date    |         | Data de atualização do boleto
+| **paid_bank**                   | N/A   | String  |         | Banco de Pagamento
+| **paid_agency**                 | N/A   | String  |         | Agência de Pagamento
 
 ### Dicionário de Dados
 
