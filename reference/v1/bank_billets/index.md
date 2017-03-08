@@ -28,7 +28,7 @@ breadcrumb: Boletos
 | **amount**                      | Sim   | String  |         | Quantia (R$) Formato: 1.345,56
 | **expire_at**                   | Sim   | Date    |         | Data de vencimento
 | **description**                 | Sim   | Text    |         | Descrição do produto ou serviço
-| **customer_id**                 | Não   | Number  |         | ID do [Cliente](/reference/v1/customers/). Quando esse ID é passado, os campos `customer_person_name`, `customer_cnpj_cpf`, `customer_zipcode`, `customer_address`, `customer_city_name`, `customer_state` e `customer_neighborhood` não são obrigatórios.
+| **customer_id**                 | Não   | Integer |         | ID do [Cliente](/reference/v1/customers/). Quando esse ID é passado, os campos `customer_person_name`, `customer_cnpj_cpf`, `customer_zipcode`, `customer_address`, `customer_city_name`, `customer_state` e `customer_neighborhood` não são obrigatórios.
 | **customer_person_name**        | Sim   | String  | 255     | Nome ou Razão Social do Pagador
 | **customer_cnpj_cpf**           | Sim   | String  | 20      | CNPJ ou CPF do Pagador
 | **customer_zipcode**            | Sim   | Integer | 8       | CEP (formato 99999999)
@@ -40,6 +40,7 @@ breadcrumb: Boletos
 | **customer_address_number**     | Não   | String  | 255     | Número
 | **customer_address_complement** | Não   | String  | 255     | Complemento
 | **customer_phone_number**       | Não   | String  | 255     | Telefone (com DDD)
+| **customer_person_type**        | N/A   | String  | 255     | Tipo de pagador ([possíveis valores](#customer_person_type))
 | **meta**                        | Não   | Campo Genérico | | Aceita qualquer formato passado. Pode ser usado para salvar dados que não existam dentro do Boleto Simples. Exemplo: {pedido: 12345}
 | **status**                      | N/A   | String  |         | Situação do boleto ([possíveis valores](#status))
 | **paid_at**                     | N/A   | Date    |         | Data do pagamento
@@ -52,12 +53,12 @@ breadcrumb: Boletos
 | **fine_for_delay**              | Não   | Float   |         | Multa por Atraso
 | **late_payment_interest**       | Não   | Float   |         | Juros de Mora
 | **guarantor_name**              | Não   | String  |         | Sacador/Avalista
-| **guarantor_cnpj_cpf**          | Não   | Float   |         | CNPJ/CPF do Sacador/Avalista
+| **guarantor_cnpj_cpf**          | Não   | String  |         | CNPJ/CPF do Sacador/Avalista
 | **payment_place**               | Não   | String  |         | Local de Pagamento
 | **instructions**                | Não   | String  |         | Instruções para o Caixa
 | **document_date**               | Não   | Date    |         | Data do Documento
 | **document_type**               | Não   | String  |         | Tipo de Documento
-| **document_number**             | Não   | Number  |         | Número do Documento
+| **document_number**             | Não   | Integer |         | Número do Documento
 | **document_amount**             | Não   | String  |         | Valor do Documento (R$) Formato: 1.345,56
 | **acceptance**                  | Não   | String  |         | Aceite
 | **bank_billet_layout_id**       | Não   | Integer |         | ID do Modelo de Boleto
@@ -67,6 +68,26 @@ breadcrumb: Boletos
 | **updated_at**                  | N/A   | Date    |         | Data de atualização do boleto
 | **paid_bank**                   | N/A   | String  |         | Banco de Pagamento
 | **paid_agency**                 | N/A   | String  |         | Agência de Pagamento
+| **line**                        | N/A   | String  |         | Linha Digitável
+| **bank_rate**                   | N/A   | Float   |         | Taxa bancária
+| **beneficiary_name**            | N/A   | String  |         | Nome do Beneficiário
+| **beneficiary_cnpj_cpf**        | N/A   | String  |         | CNPJ/CPF do Beneficiário
+| **beneficiary_address**         | N/A   | String  |         | Endereço do Beneficiário
+| **beneficiary_assignor_code**   | N/A   | String  |         | Agência/Código do Beneficiário
+| **processed_our_number**        | N/A   | String  |         | Nosso Número com DV (formatado) 
+| **processed_our_number_raw**    | N/A   | String  |         | Nosso Número com DV (limpo)
+| **bank_contract_slug**          | N/A   | String  |         | [Slug da Carteira](/bank_contracts)
+| **agency_number**               | N/A   | String  |         | Agência
+| **agency_digit**                | N/A   | String  |         | Dígito da Agência
+| **account_number**              | N/A   | String  |         | Conta
+| **account_digit**               | N/A   | String  |         | Dígito da Conta
+| **extra1**                      | N/A   | String  |         | Campo extra 1
+| **extra1_digit**                | N/A   | String  |         | Digito do Campo extra 1
+| **extra2**                      | N/A   | String  |         | Campo extra 2
+| **extra2_digit**                | N/A   | String  |         | Dígito do Campo extra 2
+| **customer_subscription_id**    | N/A   | Integer |         | ID da [Assinatura](/reference/v1/customer_subscriptions/)
+| **installment_number**          | N/A   | Integer |         | Número da parcela do carnê
+| **installment_id**              | N/A   | Integer |         | ID do [Carnê](/reference/v1/installments/)
 
 ### Dicionário de Dados
 
@@ -82,6 +103,11 @@ breadcrumb: Boletos
 
 | S | Sim
 | N | Não
+
+#### customer_person_type
+
+| individual | Pessoa Física
+| juridical  | Pessoa Jurídica
 
 ### Criar boleto
 
