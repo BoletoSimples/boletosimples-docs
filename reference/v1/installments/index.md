@@ -20,7 +20,7 @@ breadcrumb: Carnês
 | --------------------------- | ----- | ------- | ------- | ------------------------
 | **id**                      | N/A   | Integer |         | ID do carnê
 | **customer_id**             | Sim   | Integer |         | ID do [Cliente](/reference/v1/customers/)
-| **bank_billet_account_id**  | Não   | Integer |         | ID da [Carteira de Cobrança](/reference/v1/bank_billet_accounts/). Se não informado, usará a carteira padrão.
+| **bank_billet_account_id**  | Sim   | Integer |         | ID da [Carteira de Cobrança](/reference/v1/bank_billet_accounts/). Se não informado, usará a carteira padrão.
 | **amount**                  | Sim   | String  |         | Preço da carnê (R$) Formato: 1.234,34
 | **cycle**                   | Não   | String  | 20      | Ciclo da carnê ([possíveis valores](#cycle)). Default: monthly
 | **start_at**                | Sim   | Date    |         | Data da Primeira cobrança.
@@ -28,12 +28,12 @@ breadcrumb: Carnês
 | **total**                   | Sim   | Integer |         | Quantidade de parcelas.
 | **description**             | Sim   | Text    |         | Descrição do produto vendido ou serviço prestado.
 | **instructions**            | Não   | Text    |         | Instruções para o caixa
-| **status**                  | Sim   | String  |         | Situação do carnê ([possíveis valores](#status))
+| **status**                  | N/A   | String  |         | Situação do carnê ([possíveis valores](#status))
 | **fine_for_delay**          | Não   | Float   |         | Multa por Atraso
 | **late_payment_interest**   | Não   | Float   |         | Juros de Mora
 | **bank_billet_layout_id**   | Não   | Integer |         | ID do Modelo de Boleto
 | **url**                     | N/A   | String  |         | URL para visualização do carnê
-| **bank_billet_ids**         | Não   | Array   |         | IDs de boletos vinculados ao carnê
+| **bank_billet_ids**         | N/A   | Array   |         | IDs de boletos vinculados ao carnê
 
 ### Dicionário de Dados
 
