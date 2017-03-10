@@ -50,8 +50,8 @@ breadcrumb: Boletos
 | **carne_url**                   | N/A   | String  |         | URL para visualização do carnê(Quando for parcela)
 | **formats**                     | N/A   | String  |         | URLs com formatos PDF e Imagem visualização do boleto
 | **created_via_api**             | N/A   | Boolean |         | Define se o boleto foi criado pela API
-| **fine_for_delay**              | Não   | Float   |         | Multa por Atraso
-| **late_payment_interest**       | Não   | Float   |         | Juros de Mora
+| **fine_for_delay**              | Não   | Float   |         | Multa por Atraso Ex: 2% x R$ 250,00 = R$ 5,00
+| **late_payment_interest**       | Não   | Float   |         | Juros de Mora Mensal (O valor será dividido por 30. Ex 3% = 0,1% ao dia.)
 | **guarantor_name**              | Não   | String  |         | Sacador/Avalista
 | **guarantor_cnpj_cpf**          | Não   | String  |         | CNPJ/CPF do Sacador/Avalista
 | **payment_place**               | Não   | String  |         | Local de Pagamento
