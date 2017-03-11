@@ -29,6 +29,17 @@
       </li>
     </ul>
   </li>
+  <li {% if page.url == '/integrations/' %}class="active"{% endif %}>
+    <a class="main-link" href="/integrations" title="Integrações">Integrações</a>
+    <ul class="subnav">
+      <li {% if page.url == '/integrations/zapier/' %}class="active"{% endif %}>
+        <a href="/integrations/zapier" title="Zapier">Zapier</a>
+      </li>
+      <li {% if page.url == '/integrations/pluga/' %}class="active"{% endif %}>
+        <a href="/integrations/pluga" title="Pluga">Pluga</a>
+      </li>
+    </ul>
+  </li>
   <li {% if page.url == '/sandbox/' %}class="active"{% endif %}>
     <a class="main-link" href="/sandbox" title="Sandbox">Ambiente Sandbox</a>
   </li>
@@ -46,17 +57,6 @@
       </li>
       <li {% if page.url == '/authentication/permissions/' %}class="active"{% endif %}>
         <a href="/authentication/permissions" title="Permissões">Permissões</a>
-      </li>
-    </ul>
-  </li>
-  <li {% if page.url == '/integrations/' %}class="active"{% endif %}>
-    <a class="main-link" href="/integrations" title="Integrações">Integrações</a>
-    <ul class="subnav">
-      <li {% if page.url == '/integrations/zapier/' %}class="active"{% endif %}>
-        <a href="/integrations/zapier" title="Zapier">Zapier</a>
-      </li>
-      <li {% if page.url == '/integrations/pluga/' %}class="active"{% endif %}>
-        <a href="/integrations/pluga" title="Pluga">Pluga</a>
       </li>
     </ul>
   </li>
