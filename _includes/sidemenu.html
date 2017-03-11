@@ -15,6 +15,20 @@
   <li {% if page.url == '/libraries/' %}class="active"{% endif %}>
     <a class="main-link" href="/libraries" title="Bibliotecas">Bibliotecas</a>
   </li>
+  <li class="{% if page.url == '/modules/' %}active{% endif %}">
+    <a class="main-link" href="/modules" title="Módulos">Módulos</a>
+    <ul class="subnav">
+      <li {% if page.url == '/modules/' %}class="active"{% endif %}>
+        <a href="/modules" title="Visão Geral">Visão Geral</a>
+      </li>
+      <li {% if page.url == '/modules/woocomerce' %}class="active"{% endif %}>
+        <a href="/modules/shopify" title="Shopify">Shopify</a>
+      </li>
+      <li {% if page.url == '/modules/woocomerce' %}class="active"{% endif %}>
+        <a href="/modules/woocommerce" title="Visão Geral">Wordpress/Woocommerce</a>
+      </li>
+    </ul>
+  </li>
   <li {% if page.url == '/sandbox/' %}class="active"{% endif %}>
     <a class="main-link" href="/sandbox" title="Sandbox">Ambiente Sandbox</a>
   </li>
