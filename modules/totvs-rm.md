@@ -14,10 +14,6 @@ A integração realiza a geração dso boletos a partir dos títulos cadastrados
 
 O código fonte deste módulo não é disponibilizado.
 
-### Informações Técnicas
-
-**Licença:** [GPLv2 ou superior](http://www.gnu.org/licenses/gpl-2.0.html)
-
 ### Requisitos
 
 * RM xx.x ou superior
