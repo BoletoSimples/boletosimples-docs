@@ -21,7 +21,7 @@ Nós disponibilizamos todas as nossas bibliotecas e plugins em [https://github.c
 *   [boletosimples-csharp](https://github.com/BoletoSimples/boletosimples-csharp) - Biblioteca C#
 *   [omniauth-boletosimples](https://github.com/BoletoSimples/omniauth-boletosimples) - Boleto Simples strategy for OmniAuth (Ruby).
 
-### Códigos de exemplos
+### Códigos de exemplo
 
 *   [login-with-boletosimples-demo-rails](https://github.com/BoletoSimples/login-with-boletosimples-demo-rails) - Exemplo utilizando a gem omniauth-boletosimples para auntenticar por OAuth2
 *   [boletosimples-webhook-test](https://github.com/BoletoSimples/boletosimples-webhook-test) - Exemplo de código para receber requisições do Webhook do Boleto Simples
