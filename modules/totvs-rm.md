@@ -1,14 +1,14 @@
 ---
 layout: pt
 title: Módulo TOTVS RM - API do Boleto Simples
-en: /en/modules/woocommerce
+en: /en/modules/totvs-rm
 ---
 
 ## Módulo Oficial TOTVS RM
 
 [TOTVS](https://www.totvs.com) é a empresa líder do mercado brasileiro de ERP. Ela possui alguns sistemas de gestão, dentre eles o RM.
 
-A integração realiza a geração dso boletos a partir dos títulos cadastrados no contas a receber e permite baixa automática pelo agendamento de processos.
+A integração realiza a geração dos boletos a partir dos títulos cadastrados no contas a receber e permite baixa automática pelo agendamento de processos.
 
 ### Código Fonte
 
