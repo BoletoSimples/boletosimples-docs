@@ -16,8 +16,9 @@ Nós disponibilizamos todas as nossas bibliotecas e plugins em [https://github.c
 
 ### Bibliotecas Oficiais
 
-*   [boletosimples-ruby](https://github.com/BoletoSimples/boletosimples-ruby) - Biblioteca Ruby.
-*   [boletosimples-php](https://github.com/BoletoSimples/boletosimples-php) - Biblioteca PHP.
+*   [boletosimples-ruby](https://github.com/BoletoSimples/boletosimples-ruby) - Biblioteca Ruby
+*   [boletosimples-php](https://github.com/BoletoSimples/boletosimples-php) - Biblioteca PHP
+*   [boletosimples-csharp](https://github.com/BoletoSimples/boletosimples-csharp) - Biblioteca C#
 *   [omniauth-boletosimples](https://github.com/BoletoSimples/omniauth-boletosimples) - Boleto Simples strategy for OmniAuth (Ruby).
 
 ### Códigos de exemplos
