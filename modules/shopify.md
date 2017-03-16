@@ -32,9 +32,9 @@ Este módulo não requer instalação.
 
 #### Configuração do Boleto Simples
 
-2. Gere um Token em [Boleto Simples - API](https://boletosimples.com.br/conta/api/tokens);
-3. Crie um [Novo WebHook](https://boletosimples.com.br/conta/api/webhooks) e em **Endereço para o Payload (URL)** preencha com `http://seusite.com.br/?wc-api=WC_BoletoSimples_Gateway` onde seusite.com.br deve ser trocado para o site da sua loja. Nos eventos deixe marcado apenas **Todos os eventos de boleto (atuais e futuros).**;
-4. Pronto, conta configurada.
+1. Gere um Token em [Boleto Simples - API](https://boletosimples.com.br/conta/api/tokens);
+2. Crie uma [Notificação Automática](https://boletosimples.com.br/conta/notificacoes_por_email) na sua conta do Boleto Simples para envio de e-mails;
+3. Pronto, conta configurada.
 
 #### Configuração do Shopify
 
