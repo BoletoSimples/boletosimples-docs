@@ -36,6 +36,8 @@ Para pegar a chave secreta do webhook vá até a página dos webhooks [Minha Con
 
 ### Exemplo de código
 
+#### Ruby
+
 O exemplo abaixo está usando o framework minimalista em Ruby, chamado [Sinatra](http://www.sinatrarb.com/).
 
 <pre class="ruby">
@@ -81,3 +83,22 @@ Algumas observações são importantes:
 
 Para fins de testes e debug você pode baixar esse código para rodar em sua máquina em:
 [https://github.com/BoletoSimples/boletosimples-webhook-test](https://github.com/BoletoSimples/boletosimples-webhook-test)
+
+#### PHP
+
+<pre class="ruby">
+
+define('WEBHOOK_SECRET_KEY', 'my_shared_secret');
+
+function verify_webhook($data, $hmac_header)
+{
+  $calculated_hmac = hash_hmac('sha1', $data, WEBHOOK_SECRET_KEY, true);
+  return ($hmac_header == $calculated_hmac);
+}
+
+$hmac_header = $_SERVER['HTTP_X_HUB_SIGNATURE'];
+$data = file_get_contents('php://input');
+$verified = verify_webhook($data, $hmac_header);
+error_log('Webhook verified: '.var_export($verified, true)); //check error.log to see the result
+
+</pre>
