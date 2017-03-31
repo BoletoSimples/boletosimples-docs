@@ -18,6 +18,10 @@ O código fonte deste módulo não é disponibilizado.
 
 * RM 12.1 ou superior
 
+### Download
+
+* [BoletoSimples-TOTVS-RM.zip (46KB)](/downloads/BoletoSimples-TOTVS-RM.zip)
+
 ### Instalação
 
 *	Fazer o upload das DLLs da customização para a pasta Custom onde foi instalado a biblioteca RM. Exemplo: `C:\TOTVS\RM.Net\Custom`.
