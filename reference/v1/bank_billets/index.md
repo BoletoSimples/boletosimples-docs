@@ -88,6 +88,7 @@ breadcrumb: Boletos
 | **customer_subscription_id**    | N/A   | Integer |         | ID da [Assinatura](/reference/v1/customer_subscriptions/)
 | **installment_number**          | N/A   | Integer |         | Número da parcela do carnê
 | **installment_id**              | N/A   | Integer |         | ID do [Carnê](/reference/v1/installments/)
+| **bank_billet_discharges**      | N/A   | Array   |         | Retornos bancários
 
 ### Dicionário de Dados
 

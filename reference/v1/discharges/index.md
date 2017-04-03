@@ -27,6 +27,7 @@ breadcrumb: CNAB (Retorno)
 | **created_via_api**    | N/A   | Boolean |         | Enviado pela API
 | **bank_billet_account_id**    | Não   | Integer |         | ID da [Carteira de Cobrança](/reference/v1/bank_billet_accounts/)
 | **created_via_integration**      | Não   | Date    |         | Data de recebimento automático do banco
+| **bank_billet_discharges**       | N/A   | Array   |         | Retornos bancários
 
 ### Dicionário de Dados
 
