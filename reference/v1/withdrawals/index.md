@@ -11,7 +11,7 @@ breadcrumb: Saques
 | ------------------------ | ------------------------
 | [GET /api/v1/withdrawals/new](#novo-saque)           | Novo saque
 | [POST /api/v1/withdrawals](#solicitar-saque)         | Solicitar saque
-| [GET /api/v1/withdrawals/:id](#informaes-do-saque)   | Informações do saque
+| [GET /api/v1/withdrawals/:id](#informações-do-saque)   | Informações do saque
 | [GET /api/v1/withdrawals](#listar-saques)            | Listar saques
 
 ### Modelo de Dados

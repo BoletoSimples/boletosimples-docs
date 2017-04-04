@@ -10,11 +10,11 @@ breadcrumb: Assinaturas
 | Recurso                  | Descrição
 | ------------------------ | ------------------------
 | [POST /api/v1/customer_subscriptions](#criar-assinatura) | Criar assinatura
-| [GET /api/v1/customer_subscriptions/:id](#informaes-do-assinatura) | Informações da assinatura
+| [GET /api/v1/customer_subscriptions/:id](#informações-do-assinatura) | Informações da assinatura
 | [PATCH /api/v1/customer_subscriptions/:id](#atualizar-assinatura) | Atualizar assinatura
 | [PUT /api/v1/customer_subscriptions/:id](#atualizar-assinatura) | Atualizar assinatura
 | [GET /api/v1/customer_subscriptions](#listar-assinaturas) | Listar assinaturas
-| [POST /api/v1/customer_subscriptions/:id/next_charge](#gerar-prxima-cobrana) | Gerar próxima cobrança
+| [POST /api/v1/customer_subscriptions/:id/next_charge](#gerar-próxima-cobrança) | Gerar próxima cobrança
 | [DELETE /api/v1/customer_subscriptions/:id](#excluir-assinatura) | Excluir assinatura
 
 ### Modelo de Dados

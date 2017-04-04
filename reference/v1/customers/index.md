@@ -10,7 +10,7 @@ breadcrumb: Clientes
 | Recurso                  | Descrição
 | ------------------------ | ------------------------
 | [POST /api/v1/customers](#criar-cliente) | Criar cliente
-| [GET /api/v1/customers/:id](#informaes-do-cliente) | Informações do cliente
+| [GET /api/v1/customers/:id](#informações-do-cliente) | Informações do cliente
 | [PATCH /api/v1/customers/:id](#atualizar-cliente) | Atualizar cliente
 | [PUT /api/v1/customers/:id](#atualizar-cliente) | Atualizar cliente
 | [GET /api/v1/customers](#listar-clientes) | Listar clientes

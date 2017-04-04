@@ -10,7 +10,7 @@ breadcrumb: CNAB (Remessa)
 | Recurso                  | Descrição
 | ------------------------ | ------------------------
 | [POST /api/v1/remittances](#criar-cnab) | Criar CNAB
-| [GET /api/v1/remittances/:id](#informaes-do-cnab) | Informações do CNAB
+| [GET /api/v1/remittances/:id](#informações-do-cnab) | Informações do CNAB
 | [GET /api/v1/remittances](#listar-cnabs) | Listar CNABs
 | [DELETE /api/v1/remittances/:id](#apagar-cnab) | Apagar CNAB
 

@@ -10,7 +10,7 @@ breadcrumb: CNAB (Retorno)
 | Recurso                  | Descrição
 | ------------------------ | ------------------------
 | [POST /api/v1/discharges](#enviar-cnab) | Enviar CNAB
-| [GET /api/v1/discharges/:id](#informaes-do-cnab) | Informações do CNAB
+| [GET /api/v1/discharges/:id](#informações-do-cnab) | Informações do CNAB
 | [GET /api/v1/discharges](#listar-cnabs) | Listar CNABs
 | [PUT /api/v1/discharges/:id/pay_off](#quitar-boletos) | Quitar boletos
 

@@ -9,7 +9,7 @@ breadcrumb: Webhook Deliveries
 
 | Recurso                  | Descrição
 | ------------------------ | ------------------------
-| [GET /api/v1/webhook_deliveries/:id](#informaes-do-webhook-delivery) | Informações do webhook delivery
+| [GET /api/v1/webhook_deliveries/:id](#informações-do-webhook-delivery) | Informações do webhook delivery
 | [GET /api/v1/webhook_deliveries](#listar-webhook-delivery) | Listar webhook deliveries
 
 ### Modelo de Dados

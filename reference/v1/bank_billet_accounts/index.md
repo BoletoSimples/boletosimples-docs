@@ -12,13 +12,13 @@ breadcrumb: Carteiras de Cobrança
 | Recurso                  | Descrição
 | ------------------------ | ------------------------
 | [POST /api/v1/bank_billet_accounts](#criar-carteira) | Criar carteira
-| [GET /api/v1/bank_billet_accounts/:id](#informaes-do-carteira) | Informações do carteira
+| [GET /api/v1/bank_billet_accounts/:id](#informações-do-carteira) | Informações do carteira
 | [PATCH /api/v1/bank_billet_accounts/:id](#atualizar-carteira) | Atualizar carteira
 | [PUT /api/v1/bank_billet_accounts/:id](#atualizar-carteira) | Atualizar carteira
 | [GET /api/v1/bank_billet_accounts](#listar-carteiras) | Listar carteiras
-| [GET /api/v1/bank_billet_accounts/:id/ask](#solicitar-homologao-da-carteira-de-cobrana) | Solicitar homologação da Carteira de Cobrança
-| [PATCH /api/v1/bank_billet_accounts/:id/validate](#validar-carteira-de-cobrana) | Validar Carteira de Cobrança
-| [PUT /api/v1/bank_billet_accounts/:id/validate](#validar-carteira-de-cobrana) | Validar Carteira de Cobrança
+| [GET /api/v1/bank_billet_accounts/:id/ask](#solicitar-homologação-da-carteira-de-cobrança) | Solicitar homologação da Carteira de Cobrança
+| [PATCH /api/v1/bank_billet_accounts/:id/validate](#validar-carteira-de-cobrança) | Validar Carteira de Cobrança
+| [PUT /api/v1/bank_billet_accounts/:id/validate](#validar-carteira-de-cobrança) | Validar Carteira de Cobrança
 
 ### Modelo de Dados
 

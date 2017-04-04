@@ -9,7 +9,7 @@ breadcrumb: Eventos
 
 | Recurso                  | Descrição
 | ------------------------ | ------------------------
-| [GET /api/v1/events/:id](#informaes-do-evento) | Informações do evento
+| [GET /api/v1/events/:id](#informações-do-evento) | Informações do evento
 | [GET /api/v1/events](#listar-eventos) | Listar eventos
 
 ### Modelo de Dados

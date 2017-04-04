@@ -9,10 +9,10 @@ breadcrumb: Carnês
 
 | Recurso                  | Descrição
 | ------------------------ | ------------------------
-| [POST /api/v1/installments](#criar-carn) | Criar carnê
-| [GET /api/v1/installments/:id](#informaes-do-carn) | Informações da carnê
-| [GET /api/v1/installments](#listar-carns) | Listar Carnês
-| [DELETE /api/v1/installments/:id](#excluir-carn) | Excluir carnê
+| [POST /api/v1/installments](#criar-carnê) | Criar carnê
+| [GET /api/v1/installments/:id](#informações-do-carnê) | Informações da carnê
+| [GET /api/v1/installments](#listar-carnês) | Listar Carnês
+| [DELETE /api/v1/installments/:id](#excluir-carnê) | Excluir carnê
 
 ### Modelo de Dados
 

@@ -9,7 +9,7 @@ breadcrumb: Transações
 
 | Recurso                  | Descrição
 | ------------------------ | ------------------------
-| [GET /api/v1/transactions/:id](#informaes-da-transao) | Informações da transação
+| [GET /api/v1/transactions/:id](#informações-da-transao) | Informações da transação
 | [GET /api/v1/transactions](#listar-transaes)          | Listar transações
 
 ### Modelo de Dados

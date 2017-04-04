@@ -107,7 +107,7 @@ A API retorna os códigos de resposta HTTP. Estas são as informações mais rel
     </tr>
     <tr>
       <th>429 Too Many Requests</th>
-      <td>O usuário atingiu o <a href="#limite-de-requisies">limite de requisições</a>.</td>
+      <td>O usuário atingiu o <a href="#limite-de-requisições">limite de requisições</a>.</td>
     </tr>
     <tr>
       <th>500 Internal Server Error</th>

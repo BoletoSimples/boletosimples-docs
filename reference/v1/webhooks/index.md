@@ -12,7 +12,7 @@ breadcrumb: Webhooks
 | Recurso                  | Descrição
 | ------------------------ | ------------------------
 | [POST /api/v1/webhooks](#criar-webhook) | Criar webhook
-| [GET /api/v1/webhooks/:id](#informaes-do-webhook) | Informações do webhook
+| [GET /api/v1/webhooks/:id](#informações-do-webhook) | Informações do webhook
 | [PATCH /api/v1/webhooks/:id](#atualizar-webhook) | Atualizar webhook
 | [PUT /api/v1/webhooks/:id](#atualizar-webhook) | Atualizar webhook
 | [GET /api/v1/webhooks](#listar-webhooks) | Listar webhooks

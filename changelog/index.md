@@ -71,7 +71,7 @@ Você também pode se inscrever para receber as notificações de alterações d
 
 ### 12/10/2016
 
-* Melhora a explicação de como o [limite de requisições](/#limite-de-requisies) é calculado e aumenta o limite por segundo de 1 para 5 requisições.
+* Melhora a explicação de como o [limite de requisições](/#limite-de-requisições) é calculado e aumenta o limite por segundo de 1 para 5 requisições.
 
 ### 14/09/2016
 
@@ -92,7 +92,7 @@ Você também pode se inscrever para receber as notificações de alterações d
 
 ### 20/05/2016
 
-* Corrige endpoint de [geração da próxima cobrança da assinatura](/reference/v1/customer_subscriptions#gerar-prxima-cobrana)
+* Corrige endpoint de [geração da próxima cobrança da assinatura](/reference/v1/customer_subscriptions#gerar-próxima-cobrança)
 
 ### 18/05/2016
 

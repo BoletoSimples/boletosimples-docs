@@ -10,13 +10,13 @@ breadcrumb: Boletos
 | Recurso                  | Descrição
 | ------------------------ | ------------------------
 | [POST /api/v1/bank_billets](#criar-boleto) | Criar boleto
-| [GET /api/v1/bank_billets/:id](#informaes-do-boleto) | Informações do boleto
+| [GET /api/v1/bank_billets/:id](#informações-do-boleto) | Informações do boleto
 | [GET /api/v1/bank_billets](#listar-boletos) | Listar boletos
 | [PUT /api/v1/bank_billets/:id/cancel](#cancelar-boleto) | Cancelar boleto
 | [POST /api/v1/bank_billets/:id/duplicate](#gerar-segunda-via-do-boleto) | Gerar segunda via do boleto
 | [GET /api/v1/bank_billets/cnpj_cpf](#buscar-por-cpf-ou-cnpj) | Buscar por CPF ou CNPJ
-| [GET /api/v1/bank_billets/our_number](#buscar-por-nosso-nmero) | Buscar por nosso número
-| [GET /api/v1/bank_billets/status](#buscar-por-situao-do-boleto) | Buscar por Situação do boleto ([possíveis valores](#status))
+| [GET /api/v1/bank_billets/our_number](#buscar-por-nosso-número) | Buscar por nosso número
+| [GET /api/v1/bank_billets/status](#buscar-por-situação-do-boleto) | Buscar por Situação do boleto ([possíveis valores](#status))
 
 ### Modelo de Dados
 
