@@ -24,6 +24,7 @@ Você também pode se inscrever para receber as notificações de alterações d
 ### 17/04/2017
 
 * Documenta informações sobre retentativas de entrega de [Webhooks](/webhooks/)
+* Documenta o campo `bank_billets_with_transactions` em [Retornos](/reference/v1/discharges)
 
 ### 17/02/2017
 
