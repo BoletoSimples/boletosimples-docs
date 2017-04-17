@@ -60,4 +60,6 @@ O servidor espera uma resposta positiva, ou seja, com o `Status Code` `2xx`. Cas
 
 Todas as outras informações retornadas no cabeçalho ou no conteúdo da resposta são ignoradas, porém são armazenadas. Nós guardamos os cabeçalhos e o conteúdo da resposta. Por esse motivo é importante que nenhuma informação sigilosa seja retornada nas requisições de notificação dos webhooks.
 
-O Boleto Simples **não tem implementado ainda** a retentativa de entrega caso o seu servidor retorne um erro. A requisição de notificação é enviada somente uma única vez. Mesmo que o seu servidor retorne algum erro, a requisição não é feita novamente.
+#### Falhas
+
+O Boleto Simples faz a retentativa de entrega caso o seu servidor retorne um erro, ou seja, com o `Status Code` **diferente de** `2xx`. Serão feitas 5 tentativas de entrega da notificação. As tentativas são feitas de hora em hora.

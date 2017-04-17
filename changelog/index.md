@@ -21,6 +21,10 @@ Você também pode se inscrever para receber as notificações de alterações d
 
 #### Últimas alterações realizadas na API.
 
+### 17/04/2017
+
+* Documenta informações sobre retentativas de entrega de [Webhooks](/webhooks/)
+
 ### 17/02/2017
 
 * Documenta eventos de [carnês](/webhooks/events/)
