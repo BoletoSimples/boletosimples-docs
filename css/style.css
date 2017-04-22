@@ -97,6 +97,12 @@ h5 {
   width: 22px;
 }
 
+.nav-tabs {
+  width: 100%;
+  float: left;
+  margin-bottom: 20px;
+}
+
 
 /* Content */
 
