@@ -29,6 +29,12 @@ Abaixo a listagem de eventos registrados pelo Boleto Simples:
 | bank_billet_account.activated     | Toda vez que uma carteira de cobrança é homologada.|
 | bank_billet_account.updated       | Toda vez que uma carteira de cobrança é atualizada.|
 | bank_billet_account.deleted       | Toda vez que uma carteira de cobrança é excluída.  |
+| bank_billet_discharge.created     | Toda vez que um registro de retorno é criado.      |
+| bank_billet_discharge.updated     | Toda vez que um registro de retorno é atualizado.  |
+| bank_billet_discharge.deleted     | Toda vez que um registro de retorno é excluído.    |
+| bank_billet_remittance.created    | Toda vez que um registro de remessa é criado.      |
+| bank_billet_remittance.updated    | Toda vez que um registro de remessa é atualizado.  |
+| bank_billet_remittance.deleted    | Toda vez que um registro de remessa é excluído.    |
 | customer.created                  | Toda vez que um cliente é criado.                  |
 | customer.updated                  | Toda vez que um cliente é atualizado.              |
 | customer.deleted                  | Toda vez que um cliente é excluído.                |
@@ -72,6 +78,8 @@ Ao configurar o webhook é possível se inscrever nos eventos acima e nos evento
 |-------------------------|----------------------------------------------------|
 | *                       | Todos os eventos. Se o webhook estiver configurado para este evento, não é mais necessário configurar para nenhum outro evento e o seu sistema receberá notificação para todos os eventos que ocorrerem no Boleto Simples. Além disso, o webhook estará configurado para receber todo e qualquer evento que venha ser implementado posteriormente. |
 | bank_billet.*           | Todos os eventos relacionados a boleto bancário, inclusive os novos eventos que sejam implementados após a criação do webhook. |
+| bank_billet_discharge.*              | Todos os eventos relacionados a registros de retornos, inclusive os novos eventos que sejam implementados após a criação do webhook. |
+| bank_billet_remittance.*              | Todos os eventos relacionados a registros de remessa, inclusive os novos eventos que sejam implementados após a criação do webhook. |
 | customer.*              | Todos os eventos relacionados a cientes, inclusive os novos eventos que sejam implementados após a criação do webhook. |
 | customer_subscription.* | Todos os eventos relacionados a assinaturas, inclusive os novos eventos que sejam implementados após a criação do webhook. |
 | transaction.*           | Todos os eventos relacionados a transações, inclusive os novos eventos que sejam implementados após a criação do webhook. |

@@ -630,6 +630,31 @@ A regra é que todos os payloads possuem as chaves `event_code`, `webhook`, `obj
 }
 </pre>
 
+### bank_billet_discharges.*
+
+<pre class="json">
+{
+  "object": {
+    "id": 1,
+    "line": "1020817949600011400014542047                                  0000295728          44                       1061704170000295728                    1704170000000021760237012000100000000000000000000000000             0000000000000000000000000000000000000000000000021760000000000000000000000000000                         04                                                        025869000000000000000010",
+    "occurrence": "06",
+    "discharge_id": 1,
+    "processed_at": "2017-04-18",
+    "bank_billet_id": 1,
+    "occurrence_error": "04",
+    "occurrence_detail": "Liquidação",
+    "date_of_occurrence": "2017-04-17",
+    "occurrence_error_detail": "Compensação Eletrônica"
+  },
+  "event_code": "bank_billet_discharge.created",
+  "webhook": {
+    "id": 1,
+    "url": "http://hooks.boletosimples.com.br",
+    "first_try": "2017-04-18 10:00:59 -0300"
+  }
+}
+</pre>
+
 ### *.updated
 
 <pre class="json">
