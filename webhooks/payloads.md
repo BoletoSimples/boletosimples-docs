@@ -655,6 +655,29 @@ A regra é que todos os payloads possuem as chaves `event_code`, `webhook`, `obj
 }
 </pre>
 
+### bank_billet_remittance.*
+
+<pre class="json">
+{
+  "object": {
+    "id": 1, 
+    "created_at": "2017-05-19", 
+    "occurrence": "01", 
+    "processed_at": nil, 
+    "remittance_id": nil, 
+    "bank_billet_id": 1, 
+    "occurrence_detail": "Entrada de Títulos", 
+    "bank_billet_account_id": 1
+  },
+  "event_code": "bank_billet_remittance.created",
+  "webhook": {
+    "id": 1,
+    "url": "http://hooks.boletosimples.com.br",
+    "first_try": "2017-04-18 10:00:59 -0300"
+  }
+}
+</pre>
+
 ### *.updated
 
 <pre class="json">
