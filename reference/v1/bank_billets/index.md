@@ -17,6 +17,7 @@ breadcrumb: Boletos
 | [GET /api/v1/bank_billets/cnpj_cpf](#buscar-por-cpf-ou-cnpj) | Buscar por CPF ou CNPJ
 | [GET /api/v1/bank_billets/our_number](#buscar-por-nosso-número) | Buscar por nosso número
 | [GET /api/v1/bank_billets/status](#buscar-por-situação-do-boleto) | Buscar por Situação do boleto ([possíveis valores](#status))
+| [PUT /api/v1/bank_billets/:id/pay](#marcar-boleto-como-pago) | Marcar boleto como pago
 
 ### Modelo de Dados
 
@@ -1680,4 +1681,197 @@ Array
 )
 </pre>
   </div> -->
+</div>
+
+### Marcar boleto como pago
+
+`PUT /api/v1/bank_billets/:id/pay`
+
+### Modelo de Dados
+
+| Parâmetro                       | Obr.  | Tipo    | Tamanho | Descrição
+| ------------------------------- | ----- | ------- | ------- | ------------------------
+| **id**                          | Sim   | Integer |         | ID do boleto
+| **paid_at**                     | Sim   | Date    |         | Data de pagamento
+| **paid_amount**                 | Sim   | String  |         | Valor pago. Formato: 1.345,56
+| **bank_rate**                   | Não   | String  |         | Valor da taxa bancária. Formato: 1.345,56
+
+#### Exemplo de requisição válida
+
+<ul class="nav nav-tabs" role="tablist">
+  <li class="active"><a href="#bash2" role="tab" data-toggle="tab">Bash</a></li>
+  <!-- <li><a href="#ruby2" role="tab" data-toggle="tab">Ruby</a></li>
+  <li><a href="#php2" role="tab" data-toggle="tab">PHP</a></li> -->
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="bash2">
+    <small>Requisição:</small>
+
+<pre class="bash">
+curl -i \
+-u $BOLETOSIMPLES_TOKEN:x \
+-d '{"bank_billet":{"paid_amount":120.34, "paid_at": "2014-11-15"}}' \
+-H 'Content-Type: application/json' \
+-H 'User-Agent: MyApp (myapp@example.com)' \
+-X PUT 'https://sandbox.boletosimples.com.br/api/v1/bank_billets/1/pay'
+</pre>
+
+    <small>Resposta:</small>
+
+<pre class="http">
+HTTP/1.1 204 No Content
+Date: Fri, 17 Oct 2014 19:30:06 GMT
+Status: 204 
+Location: https://sandbox.boletosimples.com.br/api/v1/bank_billets/1
+Content-Type: application/json; charset=utf-8
+...
+
+{
+  "id":2,
+  "expire_at":"2014-11-20",
+  "paid_at":"2014-11-15",
+  "description":"Prestação de Serviço",
+  "status":"paid",
+  "shorten_url":null,
+  "customer_person_type":"individual",
+  "customer_person_name":"Nome do Cliente",
+  "customer_cnpj_cpf":"125.812.717-28",
+  "customer_address":"Rua quinhentos",
+  "customer_state":"RJ",
+  "customer_neighborhood":"bairro",
+  "customer_zipcode":"12312123",
+  "customer_address_number":null,
+  "customer_address_complement":null,
+  "customer_phone_number":null,
+  "customer_email":null,
+  "send_email_on_creation":null,
+  "created_via_api":true,
+  "customer_city_name":"Rio de Janeiro",
+  "paid_amount":120.34,
+  "amount":12.34
+}
+</pre>
+  </div>
+  <!-- <div class="tab-pane" id="ruby2">
+    <small>Requisição:</small>
+<pre class="ruby">
+@bank_billet = BoletoSimples::BankBillet.create({
+  amount: 9.01,
+  description: 'Despesas do contrato 0012',
+  expire_at: '2014-01-01',
+  customer_address: 'Rua quinhentos',
+  customer_address_complement: 'Sala 4',
+  customer_address_number: '111',
+  customer_city_name: 'Rio de Janeiro',
+  customer_cnpj_cpf: '012.345.678-90',
+  customer_email: 'cliente@example.com',
+  customer_neighborhood: 'Sao Francisco',
+  customer_person_name: 'Joao da Silva',
+  customer_person_type: 'individual',
+  customer_phone_number: '2112123434',
+  customer_state: 'RJ',
+  customer_zipcode: '12312123'
+})
+if @bank_billet.persisted?
+  puts "Sucesso :)"
+  puts @bank_billet.attributes
+else
+  puts "Erro :("
+  puts @bank_billet.response_errors
+end
+</pre>
+
+  <small>Resposta:</small>
+
+<pre class="ruby">
+Sucesso :)
+{
+                         "amount" => 9.01,
+                    "description" => "Despesas do contrato 0012",
+                      "expire_at" => "2014-01-01",
+               "customer_address" => "Rua quinhentos",
+    "customer_address_complement" => "Sala 4",
+        "customer_address_number" => "111",
+             "customer_city_name" => "Rio de Janeiro",
+              "customer_cnpj_cpf" => "012.345.678-90",
+                 "customer_email" => "cliente@example.com",
+          "customer_neighborhood" => "Sao Francisco",
+           "customer_person_name" => "Joao da Silva",
+           "customer_person_type" => "individual",
+          "customer_phone_number" => "2112123434",
+                 "customer_state" => "RJ",
+               "customer_zipcode" => "12312123",
+                             "id" => 854,
+                        "paid_at" => nil,
+                         "status" => "generating",
+                    "shorten_url" => nil,
+               "notification_url" => nil,
+         "send_email_on_creation" => nil,
+                "created_via_api" => true,
+                    "paid_amount" => 0.0
+}
+</pre>
+  </div>
+    <div class="tab-pane" id="php2">
+      <small>Requisição:</small>
+<pre class="php">
+$bank_billet = BoletoSimples\BankBillet::create(array (
+  'amount' => 9.01,
+  'description' => 'Despesas do contrato 0012',
+  'expire_at' => '2014-01-01',
+  'customer_address' => 'Rua quinhentos',
+  'customer_address_complement' => 'Sala 4',
+  'customer_address_number' => '111',
+  'customer_city_name' => 'Rio de Janeiro',
+  'customer_cnpj_cpf' => '012.345.678-90',
+  'customer_email' => 'cliente@example.com',
+  'customer_neighborhood' => 'Sao Francisco',
+  'customer_person_name' => 'Joao da Silva',
+  'customer_person_type' => 'individual',
+  'customer_phone_number' => '2112123434',
+  'customer_state' => 'RJ',
+  'customer_zipcode' => '12312123'
+));
+if($bank_billet->isPersisted()) {
+  echo "Sucesso :)\n";
+  print_r($bank_billet->attributes());
+} else {
+  echo "Erro :(\n";
+  print_r($bank_billet->response_errors);
+}
+</pre>
+
+    <small>Resposta:</small>
+
+<pre class="php">
+Sucesso :)
+Array
+(
+    [id] => 857
+    [expire_at] => 2014-01-01
+    [paid_at] =>
+    [description] => Despesas do contrato 0012
+    [status] => generating
+    [shorten_url] =>
+    [customer_person_type] => individual
+    [customer_person_name] => Joao da Silva
+    [customer_cnpj_cpf] => 012.345.678-90
+    [customer_address] => Rua quinhentos
+    [customer_state] => RJ
+    [customer_neighborhood] => Sao Francisco
+    [customer_zipcode] => 12312123
+    [customer_address_number] => 111
+    [customer_address_complement] => Sala 4
+    [customer_phone_number] => 2112123434
+    [customer_email] => cliente@example.com
+    [notification_url] =>
+    [send_email_on_creation] =>
+    [created_via_api] => 1
+    [customer_city_name] => Rio de Janeiro
+    [paid_amount] => 0
+    [amount] => 9.01
+)
+</pre>
+    </div> -->
 </div>
