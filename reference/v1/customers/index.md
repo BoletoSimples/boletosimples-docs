@@ -22,7 +22,8 @@ breadcrumb: Clientes
 | Parâmetro              | Obr.  | Tipo    | Tamanho | Descrição
 | ---------------------- | ----- | ------- | ------- | ------------------------
 | **id**                 | N/A   | Integer |         | ID do cliente
-| **person_name**        | Sim   | String  | 255     | Nome Completo ou Razão Social
+| **person_name**        | Sim   | String  | 120     | Nome Completo ou Razão Social
+| **nickname**           | Não   | String  | 255     | Apelido ou Nome Fantasia
 | **person_type**        | N/A   | String  |         | Tipo de Cliente
 | **cnpj_cpf**           | Sim   | String  | 20      | CNPJ/CPF (formato 999.999.999-99 ou 99.999.999/9999-99)
 | **zipcode**            | Sim   | Integer | 8       | CEP (formato 99999999)
@@ -177,6 +178,7 @@ Content-Type: application/json; charset=utf-8
   "id":1,
   "city_name":"Rio de Janeiro",
   "person_name":"Nome do Cliente",
+  "nikcname":null,
   "address":"Rua quinhentos",
   "address_complement":null,
   "address_number":null,
@@ -330,6 +332,7 @@ Content-Type: application/json; charset=utf-8
   "id":1,
   "city_name":"Rio de Janeiro",
   "person_name":"Nome do Cliente",
+  "nikcname":null,
   "address":"Rua quinhentos",
   "address_complement":null,
   "address_number":null,
@@ -542,6 +545,7 @@ Location: https://sandbox.boletosimples.com.br/api/v1/customers/1
   "id":1,
   "city_name":"Rio de Janeiro",
   "person_name":"Nome do Cliente Atualizado",
+  "nikcname":null,
   "address":"Rua quinhentos",
   "address_complement":null,
   "address_number":null,

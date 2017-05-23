@@ -21,6 +21,10 @@ Você também pode se inscrever para receber as notificações de alterações d
 
 #### Últimas alterações realizadas na API.
 
+### 23/05/2017
+
+* Inclui `nickname` nos [Clientes](/reference/v1/customers/)
+
 ### 22/05/2017
 
 * Adicionado endpoint de pagamento aos [Boletos](/reference/v1/bank_billets/#marcar-boleto-como-pago)
