@@ -21,6 +21,10 @@ Você também pode se inscrever para receber as notificações de alterações d
 
 #### Últimas alterações realizadas na API.
 
+### 24/05/2017
+
+* Documentando endpoint para RAW da [Remessa](/reference/v1/remittances/#rawtextplain-do-cnab)
+
 ### 23/05/2017
 
 * Inclui `nickname` nos [Clientes](/reference/v1/customers/)
