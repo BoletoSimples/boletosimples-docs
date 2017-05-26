@@ -60,7 +60,6 @@ breadcrumb: Boletos
 | **document_date**               | Não   | Date    |         | Data do Documento
 | **document_type**               | Não   | String  |         | Tipo de Documento
 | **document_number**             | Não   | Integer |         | Número do Documento
-| **document_amount**             | Não   | String  |         | Valor do Documento (R$) Formato: 1.345,56
 | **acceptance**                  | Não   | String  |         | Aceite
 | **bank_billet_layout_id**       | Não   | Integer |         | ID do Modelo de Boleto
 | **remittance_id**               | Não   | Integer |         | ID da [Remessa](/reference/v1/remittances/)
