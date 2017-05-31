@@ -21,6 +21,11 @@ Você também pode se inscrever para receber as notificações de alterações d
 
 #### Últimas alterações realizadas na API.
 
+### 31/05/2017
+
+* Inclui `notes` nos [Carnês](/reference/v1/installments/)
+* Inclui `notes` nas [Assinaturas](/reference/v1/customer_subscriptions/)
+
 ### 24/05/2017
 
 * Documentando endpoint para RAW da [Remessa](/reference/v1/remittances/#rawtextplain-do-cnab)

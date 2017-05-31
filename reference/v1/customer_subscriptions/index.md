@@ -35,6 +35,7 @@ breadcrumb: Assinaturas
 | **late_payment_interest**   | Não   | Float   |         | Juros de Mora Mensal (O valor será dividido por 30. Ex 3% = 0,1% ao dia.)
 | **bank_billet_layout_id**   | Não   | Integer |         | ID do Modelo de Boleto
 | **bank_billet_ids**         | Não   | Array   |         | IDs de boletos vinculados a assinatura
+| **notes**                   | Não   | Text    |         | Anotações
 
 ### Dicionário de Dados
 

@@ -34,6 +34,7 @@ breadcrumb: Carnês
 | **bank_billet_layout_id**   | Não   | Integer |         | ID do Modelo de Boleto
 | **url**                     | N/A   | String  |         | URL para visualização do carnê
 | **bank_billet_ids**         | N/A   | Array   |         | IDs de boletos vinculados ao carnê
+| **notes**                   | Não   | Text    |         | Anotações
 
 ### Dicionário de Dados
 
