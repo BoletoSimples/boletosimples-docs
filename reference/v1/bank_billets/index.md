@@ -13,7 +13,8 @@ breadcrumb: Boletos
 | [GET /api/v1/bank_billets/:id](#informações-do-boleto) | Informações do boleto
 | [GET /api/v1/bank_billets](#listar-boletos) | Listar boletos
 | [PUT /api/v1/bank_billets/:id/cancel](#cancelar-boleto) | Cancelar boleto
-| [POST /api/v1/bank_billets/:id/duplicate](#gerar-segunda-via-do-boleto) | Gerar segunda via do boleto
+| [PUT /api/v1/bank_billets/:id](#alterar-boleto) | Alterar boleto
+| [POST /api/v1/bank_billets/:id/duplicate](#duplicar-boleto) | Duplicar boleto
 | [GET /api/v1/bank_billets/cnpj_cpf](#buscar-por-cpf-ou-cnpj) | Buscar por CPF ou CNPJ
 | [GET /api/v1/bank_billets/our_number](#buscar-por-nosso-número) | Buscar por nosso número
 | [GET /api/v1/bank_billets/status](#buscar-por-situação-do-boleto) | Buscar por Situação do boleto ([possíveis valores](#status))
@@ -961,7 +962,247 @@ Status Final: canceled
     </div>
 </div>
 
-### Gerar segunda via do boleto
+### Alterar boleto
+
+`PUT /api/v1/bank_billets/:id` ou `PATCH /api/v1/bank_billets/:id`
+
+Você pode alterar boletos no status de Aberto(`opened`)
+
+Você receberá webhooks `generating` e `opened` para o boleto alterado.
+
+Em carteiras registradas, a alteração irá entrar na remessa e pode ser cobrada taxa bancária.
+
+<table class='table table-bordered'>
+  <thead>
+    <tr>
+      <th>Parâmetro</th>
+      <th data-container="body" data-toggle="tooltip" title="Obrigatório">Obr.</th>
+      <th>Tipo</th>
+      <th>Descrição</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <strong>expire_at</strong>
+      </td>
+      <td>
+        Sim
+      </td>
+      <td>
+        Date
+      </td>
+      <td>
+        Data de vencimento
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+#### Exemplo de requisição inválida
+
+<ul class="nav nav-tabs" role="tablist">
+  <li class="active"><a href="#bash5" role="tab" data-toggle="tab">Bash</a></li>
+  <!-- <li><a href="#ruby5" role="tab" data-toggle="tab">Ruby</a></li>
+  <li><a href="#php5" role="tab" data-toggle="tab">PHP</a></li> -->
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="bash5">
+    <small>Requisição:</small>
+
+<pre class="bash">
+curl -i \
+-u $BOLETOSIMPLES_TOKEN:x \
+-d '{"expire_at":"2017-11-15"}' \
+-H 'Content-Type: application/json' \
+-H 'User-Agent: MyApp (myapp@example.com)' \
+-X PUT https://sandbox.boletosimples.com.br/api/v1/bank_billets/1
+</pre>
+
+    <small>Resposta:</small>
+
+<pre class="http">
+HTTP/1.1 200 OK
+Date: Fri, 17 Oct 2014 19:46:16 GMT
+Status: 200 OK
+Content-Type: application/json; charset=utf-8
+...
+
+{
+  "errors": {
+    "status": ["cannot transition via cancel"]
+  }
+}
+</pre>
+  </div>
+  <!-- <div class="tab-pane" id="ruby5">
+    <small>Requisição</small>
+
+<pre class="ruby">
+@bank_billet = BoletoSimples::BankBillet.find(863)
+puts "Status Anterior: #{@bank_billet.status}"
+if @bank_billet.cancel
+  puts "Cancelado :)"
+else
+  puts "Erro :)"
+  puts @bank_billet.response_errors
+end
+puts "Status Final: #{@bank_billet.status}"
+</pre>
+
+    <small>Resposta:</small>
+
+<pre class="ruby">
+Status Anterior: paid
+Erro :)
+{:status=>["cannot transition via cancel"]}
+Status Final: paid
+</pre>
+
+  </div>
+    <div class="tab-pane" id="php5">
+      <small>Requisição</small>
+
+<pre class="php">
+$bank_billet = BoletoSimples\BankBillet::find(863);
+echo "Status Anterior: " . $bank_billet->status . "\n";
+if($bank_billet->cancel()) {
+  echo "Cancelado :)\n";
+} else {
+  echo "Erro :)\n";
+  print_r($bank_billet->response_errors);
+}
+echo "Status Final: " . $bank_billet->status . "\n";
+</pre>
+
+      <small>Resposta:</small>
+
+<pre class="php">
+Status Anterior: paid
+Erro :)
+Array
+(
+    [status] => Array
+        (
+            [0] => cannot transition via cancel
+        )
+
+)
+Status Final: paid
+</pre>
+
+    </div> -->
+</div>
+
+#### Exemplo de requisição válida
+
+<ul class="nav nav-tabs" role="tablist">
+  <li class="active"><a href="#bash6" role="tab" data-toggle="tab">Bash</a></li>
+  <!-- <li><a href="#ruby6" role="tab" data-toggle="tab">Ruby</a></li>
+  <li><a href="#php6" role="tab" data-toggle="tab">PHP</a></li> -->
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="bash6">
+    <small>Requisição:</small>
+
+<pre class="bash">
+curl -i \
+-u $BOLETOSIMPLES_TOKEN:x \
+-d '{"expire_at":"2017-11-15"}' \
+-H 'Content-Type: application/json' \
+-H 'User-Agent: MyApp (myapp@example.com)' \
+-X PUT https://sandbox.boletosimples.com.br/api/v1/bank_billets/1
+</pre>
+
+    <small>Resposta:</small>
+
+<pre class="http">
+HTTP/1.1 204 OK
+Date: Fri, 17 Oct 2014 19:46:16 GMT
+Status: 204 OK
+Content-Type: application/json; charset=utf-8
+...
+
+{
+  "id":1,
+  "expire_at":"2017-11-15",
+  "paid_at":null,
+  "description":"Prestação de Serviço",
+  "status":"opened",
+  "shorten_url":"http://bole.to/xxxxxxxx",
+  "customer_person_type":"individual",
+  "customer_person_name":"Nome do Cliente",
+  "customer_cnpj_cpf":"125.812.717-28",
+  "customer_address":"Rua quinhentos",
+  "customer_state":"RJ",
+  "customer_neighborhood":"bairro",
+  "customer_zipcode":"12312123",
+  "customer_address_number":null,
+  "customer_address_complement":null,
+  "customer_phone_number":null,
+  "customer_email":null,
+  "send_email_on_creation":null,
+  "created_via_api":true,
+  "customer_city_name":"Rio de Janeiro",
+  "paid_amount":0.0,
+  "amount":12.34
+}
+</pre>
+  </div>
+  <!-- <div class="tab-pane" id="ruby6">
+    <small>Requisição</small>
+
+<pre class="ruby">
+@bank_billet = BoletoSimples::BankBillet.find(862)
+puts "Status Anterior: #{@bank_billet.status}"
+if @bank_billet.cancel
+  puts "Cancelado :)"
+else
+  puts "Erro :)"
+  puts @bank_billet.response_errors
+end
+puts "Status Final: #{@bank_billet.status}"
+</pre>
+
+    <small>Resposta:</small>
+
+<pre class="http">
+Status Anterior: opened
+Cancelado :)
+Status Final: canceled
+</pre>
+
+  </div>
+    <div class="tab-pane" id="php6">
+      <small>Requisição</small>
+
+<pre class="php">
+$bank_billet = BoletoSimples\BankBillet::find(860);
+echo "Status Anterior: " . $bank_billet->status . "\n";
+if($bank_billet->cancel()) {
+  echo "Cancelado :)\n";
+} else {
+  echo "Erro :)\n";
+  print_r($bank_billet->response_errors);
+}
+echo "Status Final: " . $bank_billet->status . "\n";
+</pre>
+
+      <small>Resposta:</small>
+
+<pre class="http">
+Status Anterior: opened
+Cancelado :)
+Status Final: canceled
+</pre>
+
+    </div> -->
+</div>
+
+
+### Duplicar boleto
 
 `POST /api/v1/bank_billets/:id/duplicate`
 
@@ -974,8 +1215,6 @@ Status Final: canceled
 | **cancel**                      | Não   | Boolean |         | Cancelar o boleto que está sendo duplicado(Default: true)
 | **amount**                      | Não   | String  |         | Valor do novo boleto. Formato: 1.345,56
 | **with_fines**                  | Não   | Boolean |         | Atualizar o valor do novo boleto com juros e multa (Default: false)
-
-No momento não há cálculo de juros automáticos que atualizem o valor do boleto.
 
 #### Exemplo de requisição válida
 

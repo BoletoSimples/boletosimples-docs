@@ -21,6 +21,10 @@ Você também pode se inscrever para receber as notificações de alterações d
 
 #### Últimas alterações realizadas na API.
 
+### 09/08/2017
+
+* Adicionado endpoint de alteração de [Boletos](/reference/v1/bank_billets/#alterar-boleto)
+
 ### 31/05/2017
 
 * Inclui `notes` nos [Carnês](/reference/v1/installments/)
