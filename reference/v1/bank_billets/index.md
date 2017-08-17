@@ -65,6 +65,7 @@ breadcrumb: Boletos
 | **bank_billet_layout_id**       | Não   | Integer |         | ID do Modelo de Boleto
 | **remittance_id**               | Não   | Integer |         | ID da [Remessa](/reference/v1/remittances/)
 | **notes**                       | Não   | Text    |         | Anotações
+| **tags**                        | Não   | Array   |         | Tags associadas ao boleto
 | **created_at**                  | N/A   | Date    |         | Data de criação do boleto
 | **updated_at**                  | N/A   | Date    |         | Data de atualização do boleto
 | **paid_bank**                   | N/A   | String  |         | Banco de Pagamento
