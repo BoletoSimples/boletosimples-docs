@@ -967,7 +967,7 @@ Status Final: canceled
 
 `PUT /api/v1/bank_billets/:id` ou `PATCH /api/v1/bank_billets/:id`
 
-Você pode alterar boletos no status de Aberto(`opened`)
+Você pode alterar boletos no status de Aberto(`opened`) ou Vencido(`overdue`)
 
 Você receberá webhooks `generating` e `opened` para o boleto alterado.
 
@@ -995,6 +995,20 @@ Em carteiras registradas, a alteração irá entrar na remessa e pode ser cobrad
       </td>
       <td>
         Data de vencimento
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>tags</strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        Array
+      </td>
+      <td>
+        Tags associadas ao boleto
       </td>
     </tr>
   </tbody>
