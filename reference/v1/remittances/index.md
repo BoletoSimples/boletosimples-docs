@@ -285,6 +285,66 @@ Array
   </div> -->
 </div>
 
+
+### Criar CNABs em lote
+
+`POST /api/v1/remittances/bulk`
+
+Serão feitas solicitações de Remessa de acordo com IDs das ocorrências.
+Será criada uma solicitação de Remessa para cada carteira associada às ocorrências.
+Após a criação das Remessas, elas serão processadas e
+ao término do processamento serão emitidas notificações através dos Webhooks.
+
+#### Exemplo
+
+<ul class="nav nav-tabs" role="tablist">
+  <li class="active"><a href="#bash3" role="tab" data-toggle="tab">Bash</a></li>
+  <!-- <li><a href="#ruby3" role="tab" data-toggle="tab">Ruby</a></li> -->
+  <!-- <li><a href="#php3" role="tab" data-toggle="tab">PHP</a></li> -->
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="bash3">
+    <small>Requisição:</small>
+
+<pre class="bash">
+curl -i \
+-u $BOLETOSIMPLES_TOKEN:x \
+-d '{"remittances":{"bank_billet_remittance_ids":["1","2"]}}' \
+-H 'Content-Type: application/json' \
+-H 'User-Agent: MyApp (myapp@example.com)' \
+-X POST 'https://sandbox.boletosimples.com.br/api/v1/remittances/bulk'
+</pre>
+
+
+    <small>Resposta:</small>
+
+<pre class="http">
+HTTP/1.1 200 OK
+Server: Cowboy
+Connection: keep-alive
+Strict-Transport-Security: max-age=2592000
+Content-Type: application/json; charset=utf-8
+...
+
+[
+  {
+                    "filename" => "1605061.REM",
+             "created_via_api" => true,
+                      "status" => "processed",
+      "bank_billet_account_id" => 1,
+                  "created_at" => "2016-05-06",
+                "processed_at" => "2016-05-06",
+                         "url" => "https://sandbox.boletosimples.com.br/remessas/06tt1bcc3f6132720866b53a57c76de4/download",
+                          "id" => 1,
+             "bank_billet_ids" => [1]
+  }
+]
+</pre>
+</div>
+</div>
+
+
 ### Informações do CNAB
 
 `GET /api/v1/remittances/:id`
