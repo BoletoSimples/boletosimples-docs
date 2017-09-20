@@ -21,6 +21,10 @@ Você também pode se inscrever para receber as notificações de alterações d
 
 #### Últimas alterações realizadas na API.
 
+### 20/09/2017
+
+* Adicionado novos parâmetros ao endpoint de alteração de [Boletos](/reference/v1/bank_billets/#alterar-boleto)
+
 ### 09/08/2017
 
 * Adicionado endpoint de alteração de [Boletos](/reference/v1/bank_billets/#alterar-boleto)

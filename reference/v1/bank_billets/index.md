@@ -57,7 +57,7 @@ breadcrumb: Boletos
 | **guarantor_name**              | Não   | String  |         | Sacador/Avalista
 | **guarantor_cnpj_cpf**          | Não   | String  |         | CNPJ/CPF do Sacador/Avalista
 | **payment_place**               | Não   | String  |         | Local de Pagamento
-| **instructions**                | Não   | String  |         | Instruções para o Caixa
+| **instructions**                | Não   | Text    |         | Instruções para o Caixa
 | **document_date**               | Não   | Date    |         | Data do Documento
 | **document_type**               | Não   | String  |         | Tipo de Documento
 | **document_number**             | Não   | Integer |         | Número do Documento
@@ -989,7 +989,7 @@ Em carteiras registradas, a alteração irá entrar na remessa e pode ser cobrad
         <strong>expire_at</strong>
       </td>
       <td>
-        Sim
+        Não
       </td>
       <td>
         Date
@@ -1010,6 +1010,77 @@ Em carteiras registradas, a alteração irá entrar na remessa e pode ser cobrad
       </td>
       <td>
         Tags associadas ao boleto
+      </td>
+    </tr>
+    
+    <tr>
+      <td>
+        <strong>notes</strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        Text
+      </td>
+      <td>
+        Anotações
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>days_for_sue</strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        Integer
+      </td>
+      <td>
+        Dias corridos para Protesto/Negativação
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>instructions</strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        Text
+      </td>
+      <td>
+        Instruções para o Caixa
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>description</strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        Text
+      </td>
+      <td>
+        Descrição do produto ou serviço
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>amount</strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        String
+      </td>
+      <td>
+        Quantia (R$) Formato: 1.345,56 Obs.: Disponível apenas para alguns bancos.
       </td>
     </tr>
   </tbody>
