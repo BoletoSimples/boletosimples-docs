@@ -54,6 +54,10 @@ breadcrumb: Boletos
 | **created_via_api**             | N/A   | Boolean |         | Define se o boleto foi criado pela API
 | **fine_for_delay**              | Não   | Float   |         | Multa por Atraso Ex: 2% x R$ 250,00 = R$ 5,00
 | **late_payment_interest**       | Não   | Float   |         | Juros de Mora Mensal (O valor será dividido por 30. Ex 3% = 0,1% ao dia.)
+| **discount_type**               | Não   | Integer |         | Define o tipo de disconto: 0 para inexistente, 1 para valor fixo e 2 para percentual do valor do boleto. O valor default é 0
+| **discount_limit_date**         | Não   | Date    |         | Data limite para o desconto. Obrigatória se discount_type é diferente de zero
+| **discount_value**              | Não   | String  |         | Valor do desconto. Obrigatório se discount_type é igual a 1
+| **discount_percentage**         | Não   | Float   |         | Percentual do valor do boleto equivalente ao desconto. Obrigatório se discount_type é igual a 2
 | **guarantor_name**              | Não   | String  |         | Sacador/Avalista
 | **guarantor_cnpj_cpf**          | Não   | String  |         | CNPJ/CPF do Sacador/Avalista
 | **payment_place**               | Não   | String  |         | Local de Pagamento
@@ -77,7 +81,7 @@ breadcrumb: Boletos
 | **beneficiary_cnpj_cpf**        | N/A   | String  |         | CNPJ/CPF do Beneficiário
 | **beneficiary_address**         | N/A   | String  |         | Endereço do Beneficiário
 | **beneficiary_assignor_code**   | N/A   | String  |         | Agência/Código do Beneficiário
-| **processed_our_number**        | N/A   | String  |         | Nosso Número com DV (formatado) 
+| **processed_our_number**        | N/A   | String  |         | Nosso Número com DV (formatado)
 | **processed_our_number_raw**    | N/A   | String  |         | Nosso Número com DV (limpo)
 | **bank_contract_slug**          | N/A   | String  |         | [Slug da Carteira](/bank_contracts)
 | **agency_number**               | N/A   | String  |         | Agência
@@ -1012,7 +1016,7 @@ Em carteiras registradas, a alteração irá entrar na remessa e pode ser cobrad
         Tags associadas ao boleto
       </td>
     </tr>
-    
+
     <tr>
       <td>
         <strong>notes</strong>
@@ -2047,7 +2051,7 @@ curl -i \
 <pre class="http">
 HTTP/1.1 204 No Content
 Date: Fri, 17 Oct 2014 19:30:06 GMT
-Status: 204 
+Status: 204
 Location: https://sandbox.boletosimples.com.br/api/v1/bank_billets/1
 Content-Type: application/json; charset=utf-8
 ...
