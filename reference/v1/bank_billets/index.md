@@ -1101,7 +1101,7 @@ Em carteiras registradas, a alteração irá entrar na remessa e pode ser cobrad
 <pre class="bash">
 curl -i \
 -u $BOLETOSIMPLES_TOKEN:x \
--d '{"expire_at":"2017-11-15"}' \
+-d '{"bank_billet":{}}' \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
 -X PUT https://sandbox.boletosimples.com.br/api/v1/bank_billets/1
@@ -1116,11 +1116,8 @@ Status: 200 OK
 Content-Type: application/json; charset=utf-8
 ...
 
-{
-  "errors": {
-    "status": ["cannot transition via cancel"]
-  }
-}
+{"errors":{"bank_billet":["não pode ficar em branco"]}}
+
 </pre>
   </div>
   <!-- <div class="tab-pane" id="ruby5">
@@ -1197,7 +1194,7 @@ Status Final: paid
 <pre class="bash">
 curl -i \
 -u $BOLETOSIMPLES_TOKEN:x \
--d '{"expire_at":"2017-11-15"}' \
+-d '{"bank_billet":{"expire_at":"2017-11-15"}}' \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
 -X PUT https://sandbox.boletosimples.com.br/api/v1/bank_billets/1
