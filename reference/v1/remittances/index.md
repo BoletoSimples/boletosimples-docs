@@ -14,6 +14,7 @@ breadcrumb: CNAB (Remessa)
 | [GET /api/v1/remittances](#listar-cnabs) | Listar CNABs
 | [DELETE /api/v1/remittances/:id](#apagar-cnab) | Apagar CNAB
 | [GET /api/v1/remittances/:id/raw](#rawtextplain-do-cnab) | Raw(text/plain) do CNAB
+| [POST /api/v1/remittances/bulk](#criar-cnabs-em-lote) | Criar CNABs em lote
 
 ### Modelo de Dados
 
@@ -295,6 +296,34 @@ Será criada uma solicitação de Remessa para cada carteira associada às ocorr
 Após a criação das Remessas, elas serão processadas e
 ao término do processamento serão emitidas notificações através dos Webhooks.
 
+<table class='table table-bordered'>
+  <thead>
+    <tr>
+      <th>Parâmetro</th>
+      <th data-container="body" data-toggle="tooltip" title="Obrigatório">Obr.</th>
+      <th>Tipo</th>
+      <th>Descrição</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <strong>bank_billet_remittance_ids</strong>
+      </td>
+      <td>
+        Sim
+      </td>
+      <td>
+        Number
+      </td>
+      <td>
+        IDs das Ocorrências pendentes
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
 #### Exemplo
 
 <ul class="nav nav-tabs" role="tablist">
@@ -310,7 +339,7 @@ ao término do processamento serão emitidas notificações através dos Webhook
 <pre class="bash">
 curl -i \
 -u $BOLETOSIMPLES_TOKEN:x \
--d '{"remittances":{"bank_billet_remittance_ids":["1","2"]}}' \
+-d '{"remittance":{"bank_billet_remittance_ids":["1","2"]}}' \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
 -X POST 'https://sandbox.boletosimples.com.br/api/v1/remittances/bulk'
