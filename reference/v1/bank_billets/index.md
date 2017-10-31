@@ -52,9 +52,16 @@ breadcrumb: Boletos
 | **carne_url**                   | N/A   | String  |         | URL para visualização do carnê(Quando for parcela)
 | **formats**                     | N/A   | String  |         | URLs com formatos PDF e Imagem visualização do boleto
 | **created_via_api**             | N/A   | Boolean |         | Define se o boleto foi criado pela API
-| **fine_for_delay**              | Não   | Float   |         | Multa por Atraso Ex: 2% x R$ 250,00 = R$ 5,00
-| **late_payment_interest**       | Não   | Float   |         | Juros de Mora Mensal (O valor será dividido por 30. Ex 3% = 0,1% ao dia.)
-| **discount_type**               | Não   | Integer |         | Define o tipo de disconto: 0 para inexistente, 1 para valor fixo e 2 para percentual do valor do boleto. O valor default é 0
+| **fine_type**                   | Não   | Integer |         | Define o tipo de multa: 0 pra inexistente, 1 para percentual do valor do boleto e 2 para valor fixo. O valor default é 0
+| **fine_percentage**             | Não   | Float   |         | Porcentagem de Multa por Atraso Ex: 2% x R$ 250,00 = R$ 5,00. Obrigatória se `fine_type` é igual a 1
+| **fine_value**                  | Não   | Float   |         | Valor da multa. Obrigatório se `fine_type` é igual a 2
+| **fine_for_delay**              | Não   | Float   |         | Alias para `fine_percentage`
+| **interest_type**               | Não   | Integer |         | Define o tipo de juro: 0 para inexistente, 1 para porcentagem diária após um dia corrido, 2 para valor diário após um dia corrido, 3 para porcentagem diária após um dia útil, 4 para valor diário após um dia útil, 5 para porcentagem mensal após um dia corrido e 6 para valor mensal após um dia útil.
+| **interest_daily_percentage**   | Não   | Float   |         | Porcentagem diária de juros. Obrigatório se `interest_type` é igual a 1 ou 3
+| **interest_daily_value**        | Não   | Float   |         | Valor diário de juros. Obrigatório se `interest_type` é igual a 2 ou 4
+| **interest_monthly_percentage** | Não   | Float   |         | Juros de mora mensal (O valor será dividido por 30. Ex 3% = 0,1% ao dia.) Obrigatório se `interest_type` é igual a 5 ou 6
+| **late_payment_interest**       | Não   | Float   |         | Alias para `interest_monthly_percentage`
+| **discount_type**               | Não   | Integer |         | Define o tipo de desconto: 0 para inexistente, 1 para valor fixo e 2 para percentual do valor do boleto. O valor default é 0
 | **discount_limit_date**         | Não   | Date    |         | Data limite para o desconto. Obrigatória se discount_type é diferente de zero
 | **discount_value**              | Não   | String  |         | Valor do desconto. Obrigatório se discount_type é igual a 1
 | **discount_percentage**         | Não   | Float   |         | Percentual do valor do boleto equivalente ao desconto. Obrigatório se discount_type é igual a 2
