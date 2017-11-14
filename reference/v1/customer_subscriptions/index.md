@@ -35,7 +35,7 @@ breadcrumb: Assinaturas
 | **fine_percentage**             | Não   | Float   |         | Porcentagem de Multa por Atraso Ex: 2% x R$ 250,00 = R$ 5,00. Obrigatória se `fine_type` é igual a 1
 | **fine_value**                  | Não   | Float   |         | Valor da multa. Obrigatório se `fine_type` é igual a 2
 | **fine_for_delay**              | Não   | Float   |         | Alias para `fine_percentage`
-| **interest_type**               | Não   | Integer |         | Define o tipo de juro: 0 para inexistente, 1 para porcentagem diária após um dia corrido, 2 para valor diário após um dia corrido, 3 para porcentagem diária após um dia útil, 4 para valor diário após um dia útil, 5 para porcentagem mensal após um dia corrido e 6 para valor mensal após um dia útil.
+| **interest_type**               | Não   | Integer |         | Define o tipo de juro: 0 para inexistente, 1 para porcentagem diária após um dia corrido, 2 para valor diário após um dia corrido, 3 para porcentagem diária após um dia útil, 4 para valor diário após um dia útil, 5 para porcentagem mensal após um dia corrido e 6 para porcentagem mensal após um dia útil.
 | **interest_daily_percentage**   | Não   | Float   |         | Porcentagem diária de juros. Obrigatório se `interest_type` é igual a 1 ou 3
 | **interest_daily_value**        | Não   | Float   |         | Valor diário de juros. Obrigatório se `interest_type` é igual a 2 ou 4
 | **interest_monthly_percentage** | Não   | Float   |         | Juros de mora mensal (O valor será dividido por 30. Ex 3% = 0,1% ao dia.) Obrigatório se `interest_type` é igual a 5 ou 6
