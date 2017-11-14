@@ -23,7 +23,7 @@ Você também pode se inscrever para receber as notificações de alterações d
 
 ### 14/11/2017
 
-* Adicionado novos parâmetros ao endpoint de criação de Assinaturas:
+* Adicionado novos parâmetros ao endpoint de criação e alteração de Assinaturas:
 - Novos campos para multa
 - Novos campos para juros
 
