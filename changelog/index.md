@@ -21,6 +21,18 @@ Você também pode se inscrever para receber as notificações de alterações d
 
 #### Últimas alterações realizadas na API.
 
+### 14/11/2017
+
+* Adicionado novos parâmetros ao endpoint de criação de Assinaturas:
+- Novos campos para multa
+- Novos campos para juros
+
+### 07/11/2017
+
+* Adicionado novos parâmetros ao endpoint de criação de Carnes:
+- Novos campos para multa
+- Novos campos para juros
+
 ### 20/09/2017
 
 * Adicionado novos parâmetros ao endpoint de alteração de [Boletos](/reference/v1/bank_billets/#alterar-boleto)
