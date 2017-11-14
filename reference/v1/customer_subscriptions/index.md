@@ -31,11 +31,11 @@ breadcrumb: Assinaturas
 | **description**                 | Sim   | Text    |         | Descrição do produto vendido ou serviço prestado.
 | **instructions**                | Não   | Text    |         | Instruções para o caixa
 | **days_in_advance**             | Não   | Integer |         | Com quantos dias de antecedência à data de vencimento a cobrança será gerada. Default: 7.
-| **fine_type**                   | Não   | Integer |         | Define o tipo de multa: 0 pra inexistente, 1 para percentual do valor do boleto e 2 para valor fixo. O valor default é 0
+| **fine_type**                   | Não   | Integer |         | Tipo de multa ([possíveis valores](#fine_type))
 | **fine_percentage**             | Não   | Float   |         | Porcentagem de Multa por Atraso Ex: 2% x R$ 250,00 = R$ 5,00. Obrigatória se `fine_type` é igual a 1
 | **fine_value**                  | Não   | Float   |         | Valor da multa. Obrigatório se `fine_type` é igual a 2
 | **fine_for_delay**              | Não   | Float   |         | Alias para `fine_percentage`
-| **interest_type**               | Não   | Integer |         | Define o tipo de juro: 0 para inexistente, 1 para porcentagem diária após um dia corrido, 2 para valor diário após um dia corrido, 3 para porcentagem diária após um dia útil, 4 para valor diário após um dia útil, 5 para porcentagem mensal após um dia corrido e 6 para porcentagem mensal após um dia útil.
+| **interest_type**               | Não   | Integer |         | Tipo de juros ([possíveis valores](#interest_type))
 | **interest_daily_percentage**   | Não   | Float   |         | Porcentagem diária de juros. Obrigatório se `interest_type` é igual a 1 ou 3
 | **interest_daily_value**        | Não   | Float   |         | Valor diário de juros. Obrigatório se `interest_type` é igual a 2 ou 4
 | **interest_monthly_percentage** | Não   | Float   |         | Juros de mora mensal (O valor será dividido por 30. Ex 3% = 0,1% ao dia.) Obrigatório se `interest_type` é igual a 5 ou 6
@@ -54,6 +54,22 @@ breadcrumb: Assinaturas
 | quarterly  | Trimestral
 | semiannual | Semestral
 | annual     | Anual
+
+#### fine_type
+
+| 0 | Inexistente
+| 1 | Para percentual do valor do boleto
+| 2 | Para valor fixo
+
+#### interest_type
+
+| 0 | Inexistente
+| 1 | Para porcentagem diária após um dia corrido
+| 2 | Para valor diário após um dia corrido
+| 3 | Para porcentagem diária após um dia útil
+| 4 | Para valor diário após um dia útil
+| 5 | Para porcentagem mensal após um dia corrido 
+| 6 | Para porcentagem mensal após um dia útil
 
 ### Criar assinatura
 
