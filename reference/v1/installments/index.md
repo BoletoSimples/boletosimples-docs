@@ -31,11 +31,11 @@ breadcrumb: Carnês
 | **status**                      | N/A   | String  |         | Situação do carnê ([possíveis valores](#status))
 | **fine_type**                   | Não   | Integer |         | Tipo de multa ([possíveis valores](#fine_type))
 | **fine_percentage**             | Não   | Float   |         | Porcentagem de Multa por Atraso Ex: 2% x R$ 250,00 = R$ 5,00. Obrigatória se `fine_type` é igual a 1
-| **fine_value**                  | Não   | Float   |         | Valor da multa. Obrigatório se `fine_type` é igual a 2
+| **fine_value**                  | Não   | String  |         | Valor da multa. Obrigatório se `fine_type` é igual a 2. (R$) Formato: 1.234,34
 | **fine_for_delay**              | Não   | Float   |         | Alias para `fine_percentage`
 | **interest_type**               | Não   | Integer |         | Tipo de juros ([possíveis valores](#interest_type))
 | **interest_daily_percentage**   | Não   | Float   |         | Porcentagem diária de juros. Obrigatório se `interest_type` é igual a 1 ou 3
-| **interest_daily_value**        | Não   | Float   |         | Valor diário de juros. Obrigatório se `interest_type` é igual a 2 ou 4
+| **interest_daily_value**        | Não   | String  |         | Valor diário de juros. Obrigatório se `interest_type` é igual a 2 ou 4. (R$) Formato: 1.234,34
 | **interest_monthly_percentage** | Não   | Float   |         | Juros de mora mensal (O valor será dividido por 30. Ex 3% = 0,1% ao dia.) Obrigatório se `interest_type` é igual a 5 ou 6
 | **late_payment_interest**       | Não   | Float   |         | Alias para `interest_monthly_percentage`ao dia.)
 | **bank_billet_layout_id**       | Não   | Integer |         | ID do Modelo de Boleto
