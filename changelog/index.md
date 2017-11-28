@@ -23,15 +23,15 @@ Você também pode se inscrever para receber as notificações de alterações d
 
 ### 14/11/2017
 
-* Adicionado novos parâmetros ao endpoint de criação e alteração de Assinaturas:
-- Novos campos para multa
-- Novos campos para juros
+* Adicionado novos parâmetros ao endpoint de criação e alteração de [Assinaturas](/reference/v1/customer_subscriptions/):
+- Novos campos para [Multa](/reference/v1/customer_subscriptions/#fine_type)
+- Novos campos para [Juros](/reference/v1/customer_subscriptions/#interest_type)
 
 ### 07/11/2017
 
-* Adicionado novos parâmetros ao endpoint de criação de Carnes:
-- Novos campos para multa
-- Novos campos para juros
+* Adicionado novos parâmetros ao endpoint de criação de [Carnes](/reference/v1/installments/):
+- Novos campos para [Multa](/reference/v1/installments/#fine_type)
+- Novos campos para [Juros](/reference/v1/installments/#interest_type)
 
 ### 20/09/2017
 
