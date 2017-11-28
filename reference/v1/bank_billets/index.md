@@ -116,13 +116,13 @@ breadcrumb: Boletos
 
 #### fine_type
 
-| 0 | Inexistente
+| 0 | Inexistente (Padrão)
 | 1 | Para percentual do valor do boleto
 | 2 | Para valor fixo
 
 #### interest_type
 
-| 0 | Inexistente
+| 0 | Inexistente (Padrão)
 | 1 | Para porcentagem diária após um dia corrido
 | 2 | Para valor diário após um dia corrido
 | 3 | Para porcentagem diária após um dia útil
@@ -132,7 +132,7 @@ breadcrumb: Boletos
 
 #### discount_type
 
-| 0 | Inexistente
+| 0 | Inexistente (Padrão)
 | 1 | Para valor fixo
 | 2 | Para percentual do valor do boleto
 
