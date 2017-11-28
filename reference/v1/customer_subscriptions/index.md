@@ -40,6 +40,10 @@ breadcrumb: Assinaturas
 | **interest_daily_value**        | Não   | String  |         | Valor diário de juros. Obrigatório se `interest_type` é igual a 2 ou 4. (R$) Formato: 1.234,34
 | **interest_monthly_percentage** | Não   | Float   |         | Juros de mora mensal (O valor será dividido por 30. Ex 3% = 0,1% ao dia.) Obrigatório se `interest_type` é igual a 5 ou 6
 | **late_payment_interest**       | Não   | Float   |         | Alias para `interest_monthly_percentage`ao dia.)
+| **discount_type**               | Não   | Integer |         | Tipo de desconto ([possíveis valores](#discount_type))
+| **discount_limit_date**         | Não   | Date    |         | Data limite para o desconto. Obrigatória se `discount_type` é diferente de zero
+| **discount_value**              | Não   | String  |         | Valor do desconto. Obrigatório se `discount_type` é igual a 1. (R$) Formato: 1.234,34
+| **discount_percentage**         | Não   | Float   |         | Percentual do valor do boleto equivalente ao desconto. Obrigatório se `discount_type` é igual a 2
 | **bank_billet_layout_id**       | Não   | Integer |         | ID do Modelo de Boleto
 | **notes**                       | Não   | Text    |         | Anotações
 | **bank_billet_ids**             | N/A   | Array   |         | IDs de boletos vinculados a assinatura
@@ -70,6 +74,12 @@ breadcrumb: Assinaturas
 | 4 | Para valor diário após um dia útil
 | 5 | Para porcentagem mensal após um dia corrido 
 | 6 | Para porcentagem mensal após um dia útil
+
+#### discount_type
+
+| 0 | Inexistente (Padrão)
+| 1 | Para valor fixo
+| 2 | Para percentual do valor do boleto
 
 ### Criar assinatura
 

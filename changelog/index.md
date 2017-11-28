@@ -21,6 +21,14 @@ Você também pode se inscrever para receber as notificações de alterações d
 
 #### Últimas alterações realizadas na API.
 
+### 24/11/2017
+
+* Adicionado novos parâmetros ao endpoint de criação de [Carnês](/reference/v1/installments/):
+- Novos campos para [Desconto](/reference/v1/installments/#discount_type)
+
+* Adicionado novos parâmetros ao endpoint de criação e alteração de [Assinaturas](/reference/v1/customer_subscriptions/):
+- Novos campos para [Desconto](/reference/v1/customer_subscriptions/#discount_type)
+
 ### 14/11/2017
 
 * Adicionado novos parâmetros ao endpoint de criação e alteração de [Assinaturas](/reference/v1/customer_subscriptions/):
