@@ -19,23 +19,30 @@ breadcrumb: Assinaturas
 
 ### Modelo de Dados
 
-| Parâmetro                   | Obr.  | Tipo    | Tamanho | Descrição
-| --------------------------- | ----- | ------- | ------- | ------------------------
-| **id**                      | N/A   | Integer |         | ID da assinatura
-| **customer_id**             | Sim   | Integer |         | ID do [Cliente](/reference/v1/customers/)
-| **bank_billet_account_id**  | Não   | Integer |         | ID da [Carteira de Cobrança](/reference/v1/bank_billet_accounts/). Se não informado, usará a carteira padrão.
-| **amount**                  | Sim   | String  |         | Preço da Assinatura (R$) Formato: 1.234,34
-| **cycle**                   | Não   | String  | 20      | Ciclo da carnê ([possíveis valores](#cycle)). Default: monthly
-| **next_billing**            | Não   | Date    |         | Data da Primeira ou Próxima cobrança. Caso não seja enviado uma data, esse campo será calculado para ter o valor do dia da criação da assinatura mais o ciclo escolhido. Ex.: Mensal(Hoje + 30 dias)
-| **end_at**                  | Não   | Date    |         | Data em que deseja parar as cobranças. Caso em branco, as cobranças serão geradas automaticamente até que se informe uma data ou se exclua a assinatura.
-| **description**             | Sim   | Text    |         | Descrição do produto vendido ou serviço prestado.
-| **instructions**            | Não   | Text    |         | Instruções para o caixa
-| **days_in_advance**         | Não   | Integer |         | Com quantos dias de antecedência à data de vencimento a cobrança será gerada. Default: 7.
-| **fine_for_delay**          | Não   | Float   |         | Multa por Atraso Ex: 2% x R$ 250,00 = R$ 5,00
-| **late_payment_interest**   | Não   | Float   |         | Juros de Mora Mensal (O valor será dividido por 30. Ex 3% = 0,1% ao dia.)
-| **bank_billet_layout_id**   | Não   | Integer |         | ID do Modelo de Boleto
-| **notes**                   | Não   | Text    |         | Anotações
-| **bank_billet_ids**         | N/A   | Array   |         | IDs de boletos vinculados a assinatura
+| Parâmetro                       | Obr.  | Tipo    | Tamanho | Descrição
+| ---------------------------     | ----- | ------- | ------- | ------------------------
+| **id**                          | N/A   | Integer |         | ID da assinatura
+| **customer_id**                 | Sim   | Integer |         | ID do [Cliente](/reference/v1/customers/)
+| **bank_billet_account_id**      | Não   | Integer |         | ID da [Carteira de Cobrança](/reference/v1/bank_billet_accounts/). Se não informado, usará a carteira padrão.
+| **amount**                      | Sim   | String  |         | Preço da Assinatura (R$) Formato: 1.234,34
+| **cycle**                       | Não   | String  | 20      | Ciclo da carnê ([possíveis valores](#cycle)). Default: monthly
+| **next_billing**                | Não   | Date    |         | Data da Primeira ou Próxima cobrança. Caso não seja enviado uma data, esse campo será calculado para ter o valor do dia da criação da assinatura mais o ciclo escolhido. Ex.: Mensal(Hoje + 30 dias)
+| **end_at**                      | Não   | Date    |         | Data em que deseja parar as cobranças. Caso em branco, as cobranças serão geradas automaticamente até que se informe uma data ou se exclua a assinatura.
+| **description**                 | Sim   | Text    |         | Descrição do produto vendido ou serviço prestado.
+| **instructions**                | Não   | Text    |         | Instruções para o caixa
+| **days_in_advance**             | Não   | Integer |         | Com quantos dias de antecedência à data de vencimento a cobrança será gerada. Default: 7.
+| **fine_type**                   | Não   | Integer |         | Tipo de multa ([possíveis valores](#fine_type))
+| **fine_percentage**             | Não   | Float   |         | Porcentagem de Multa por Atraso Ex: 2% x R$ 250,00 = R$ 5,00. Obrigatória se `fine_type` é igual a 1
+| **fine_value**                  | Não   | String  |         | Valor da multa. Obrigatório se `fine_type` é igual a 2. (R$) Formato: 1.234,34
+| **fine_for_delay**              | Não   | Float   |         | Alias para `fine_percentage`
+| **interest_type**               | Não   | Integer |         | Tipo de juros ([possíveis valores](#interest_type))
+| **interest_daily_percentage**   | Não   | Float   |         | Porcentagem diária de juros. Obrigatório se `interest_type` é igual a 1 ou 3
+| **interest_daily_value**        | Não   | String  |         | Valor diário de juros. Obrigatório se `interest_type` é igual a 2 ou 4. (R$) Formato: 1.234,34
+| **interest_monthly_percentage** | Não   | Float   |         | Juros de mora mensal (O valor será dividido por 30. Ex 3% = 0,1% ao dia.) Obrigatório se `interest_type` é igual a 5 ou 6
+| **late_payment_interest**       | Não   | Float   |         | Alias para `interest_monthly_percentage`ao dia.)
+| **bank_billet_layout_id**       | Não   | Integer |         | ID do Modelo de Boleto
+| **notes**                       | Não   | Text    |         | Anotações
+| **bank_billet_ids**             | N/A   | Array   |         | IDs de boletos vinculados a assinatura
 
 ### Dicionário de Dados
 
@@ -47,6 +54,22 @@ breadcrumb: Assinaturas
 | quarterly  | Trimestral
 | semiannual | Semestral
 | annual     | Anual
+
+#### fine_type
+
+| 0 | Inexistente (Padrão)
+| 1 | Para percentual do valor do boleto
+| 2 | Para valor fixo
+
+#### interest_type
+
+| 0 | Inexistente (Padrão)
+| 1 | Para porcentagem diária após um dia corrido
+| 2 | Para valor diário após um dia corrido
+| 3 | Para porcentagem diária após um dia útil
+| 4 | Para valor diário após um dia útil
+| 5 | Para porcentagem mensal após um dia corrido 
+| 6 | Para porcentagem mensal após um dia útil
 
 ### Criar assinatura
 

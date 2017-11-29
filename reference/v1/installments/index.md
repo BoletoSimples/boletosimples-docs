@@ -16,25 +16,32 @@ breadcrumb: Carnês
 
 ### Modelo de Dados
 
-| Parâmetro                   | Obr.  | Tipo    | Tamanho | Descrição
-| --------------------------- | ----- | ------- | ------- | ------------------------
-| **id**                      | N/A   | Integer |         | ID do carnê
-| **customer_id**             | Sim   | Integer |         | ID do [Cliente](/reference/v1/customers/)
-| **bank_billet_account_id**  | Sim   | Integer |         | ID da [Carteira de Cobrança](/reference/v1/bank_billet_accounts/). Se não informado, usará a carteira padrão.
-| **amount**                  | Sim   | String  |         | Preço da carnê (R$) Formato: 1.234,34
-| **cycle**                   | Não   | String  | 20      | Ciclo da carnê ([possíveis valores](#cycle)). Default: monthly
-| **start_at**                | Sim   | Date    |         | Data da Primeira cobrança.
-| **end_at**                  | Não   | Date    |         | Data da última cobrança.
-| **total**                   | Sim   | Integer |         | Quantidade de parcelas.
-| **description**             | Sim   | Text    |         | Descrição do produto vendido ou serviço prestado.
-| **instructions**            | Não   | Text    |         | Instruções para o caixa
-| **status**                  | N/A   | String  |         | Situação do carnê ([possíveis valores](#status))
-| **fine_for_delay**          | Não   | Float   |         | Multa por Atraso Ex: 2% x R$ 250,00 = R$ 5,00
-| **late_payment_interest**   | Não   | Float   |         | Juros de Mora Mensal (O valor será dividido por 30. Ex 3% = 0,1% ao dia.)
-| **bank_billet_layout_id**   | Não   | Integer |         | ID do Modelo de Boleto
-| **url**                     | N/A   | String  |         | URL para visualização do carnê
-| **bank_billet_ids**         | N/A   | Array   |         | IDs de boletos vinculados ao carnê
-| **notes**                   | Não   | Text    |         | Anotações
+| Parâmetro                       | Obr.  | Tipo    | Tamanho | Descrição
+| ------------------------------- | ----- | ------- | ------- | ------------------------
+| **id**                          | N/A   | Integer |         | ID do carnê
+| **customer_id**                 | Sim   | Integer |         | ID do [Cliente](/reference/v1/customers/)
+| **bank_billet_account_id**      | Sim   | Integer |         | ID da [Carteira de Cobrança](/reference/v1/bank_billet_accounts/). Se não informado, usará a carteira padrão.
+| **amount**                      | Sim   | String  |         | Preço da carnê (R$) Formato: 1.234,34
+| **cycle**                       | Não   | String  | 20      | Ciclo da carnê ([possíveis valores](#cycle)). Default: monthly
+| **start_at**                    | Sim   | Date    |         | Data da Primeira cobrança.
+| **end_at**                      | Não   | Date    |         | Data da última cobrança.
+| **total**                       | Sim   | Integer |         | Quantidade de parcelas.
+| **description**                 | Sim   | Text    |         | Descrição do produto vendido ou serviço prestado.
+| **instructions**                | Não   | Text    |         | Instruções para o caixa
+| **status**                      | N/A   | String  |         | Situação do carnê ([possíveis valores](#status))
+| **fine_type**                   | Não   | Integer |         | Tipo de multa ([possíveis valores](#fine_type))
+| **fine_percentage**             | Não   | Float   |         | Porcentagem de Multa por Atraso Ex: 2% x R$ 250,00 = R$ 5,00. Obrigatória se `fine_type` é igual a 1
+| **fine_value**                  | Não   | String  |         | Valor da multa. Obrigatório se `fine_type` é igual a 2. (R$) Formato: 1.234,34
+| **fine_for_delay**              | Não   | Float   |         | Alias para `fine_percentage`
+| **interest_type**               | Não   | Integer |         | Tipo de juros ([possíveis valores](#interest_type))
+| **interest_daily_percentage**   | Não   | Float   |         | Porcentagem diária de juros. Obrigatório se `interest_type` é igual a 1 ou 3
+| **interest_daily_value**        | Não   | String  |         | Valor diário de juros. Obrigatório se `interest_type` é igual a 2 ou 4. (R$) Formato: 1.234,34
+| **interest_monthly_percentage** | Não   | Float   |         | Juros de mora mensal (O valor será dividido por 30. Ex 3% = 0,1% ao dia.) Obrigatório se `interest_type` é igual a 5 ou 6
+| **late_payment_interest**       | Não   | Float   |         | Alias para `interest_monthly_percentage`ao dia.)
+| **bank_billet_layout_id**       | Não   | Integer |         | ID do Modelo de Boleto
+| **url**                         | N/A   | String  |         | URL para visualização do carnê
+| **bank_billet_ids**             | N/A   | Array   |         | IDs de boletos vinculados ao carnê
+| **notes**                       | Não   | Text    |         | Anotações
 
 ### Dicionário de Dados
 
@@ -52,6 +59,23 @@ breadcrumb: Carnês
 | created    | Gerando
 | processed  | Aberto
 | finished   | Finalizado
+
+#### fine_type
+
+| 0 | Inexistente (Padrão)
+| 1 | Para percentual do valor do boleto
+| 2 | Para valor fixo
+
+#### interest_type
+
+| 0 | Inexistente (Padrão)
+| 1 | Para porcentagem diária após um dia corrido
+| 2 | Para valor diário após um dia corrido
+| 3 | Para porcentagem diária após um dia útil
+| 4 | Para valor diário após um dia útil
+| 5 | Para porcentagem mensal após um dia corrido 
+| 6 | Para porcentagem mensal após um dia útil
+
 
 ### Criar carnê
 
