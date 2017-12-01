@@ -23,7 +23,7 @@ Você também pode se inscrever para receber as notificações de alterações d
 
 ### 29/11/2017
 
-* Adicionado endpoint de alteração de [Carteiras de cobrança](/reference/v1/bank_billet_accounts/#configurar-carteira-de-cobrança-padrão) Padrão
+* Adicionado endpoint de alteração de [Carteiras de cobrança](/reference/v1/bank_billet_accounts/#alterar-carteira-de-cobrança-padrão) para padrão ou deixar de ser padrão
 
 
 ### 14/11/2017

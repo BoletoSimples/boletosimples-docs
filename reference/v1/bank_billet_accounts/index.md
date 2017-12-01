@@ -19,8 +19,8 @@ breadcrumb: Carteiras de Cobrança
 | [GET /api/v1/bank_billet_accounts/:id/ask](#solicitar-homologação-da-carteira-de-cobrança) | Solicitar homologação da Carteira de Cobrança
 | [PATCH /api/v1/bank_billet_accounts/:id/validate](#validar-carteira-de-cobrança) | Validar Carteira de Cobrança
 | [PUT /api/v1/bank_billet_accounts/:id/validate](#validar-carteira-de-cobrança) | Validar Carteira de Cobrança
-| [PATCH /api/v1/bank_billet_accounts/:id/set_default](#configurar-carteira-de-cobrança-padrão) | Configurar Carteira de Cobrança padrão
-| [PUT /api/v1/bank_billet_accounts/:id/set_default](#configurar-carteira-de-cobrança-padrão) | Configurar Carteira de Cobrança padrão
+| [PATCH /api/v1/bank_billet_accounts/:id/set_default](#alterar-carteira-de-cobrança-padrão) | Alterar Carteira de Cobrança padrão
+| [PUT /api/v1/bank_billet_accounts/:id/set_default](#alterar-carteira-de-cobrança-padrão) | Alterar Carteira de Cobrança padrão
 
 ### Modelo de Dados
 
@@ -1178,7 +1178,7 @@ Novo nome: Nome 1234
   </div> -->
 </div>
 
-### Configurar Carteira de Cobrança padrão
+### Alterar Carteira de Cobrança padrão
 
 `PATCH /api/v1/bank_billet_accounts/:id/set_default` ou `PUT /api/v1/bank_billet_accounts/:id/set_default`
 
