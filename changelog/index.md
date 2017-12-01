@@ -25,6 +25,13 @@ Você também pode se inscrever para receber as notificações de alterações d
 
 * Adicionado endpoint de alteração de [Carteiras de cobrança](/reference/v1/bank_billet_accounts/#alterar-carteira-de-cobrança-padrão) para padrão ou deixar de ser padrão
 
+### 24/11/2017
+
+* Adicionado novos parâmetros ao endpoint de criação de [Carnês](/reference/v1/installments/):
+- Novos campos para [Desconto](/reference/v1/installments/#discount_type)
+
+* Adicionado novos parâmetros ao endpoint de criação e alteração de [Assinaturas](/reference/v1/customer_subscriptions/):
+- Novos campos para [Desconto](/reference/v1/customer_subscriptions/#discount_type)
 
 ### 14/11/2017
 
