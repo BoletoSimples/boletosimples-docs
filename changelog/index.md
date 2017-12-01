@@ -21,6 +21,10 @@ Você também pode se inscrever para receber as notificações de alterações d
 
 #### Últimas alterações realizadas na API.
 
+### 29/11/2017
+
+* Adicionado endpoint de alteração de [Carteiras de cobrança](/reference/v1/bank_billet_accounts/#alterar-carteira-de-cobrança-padrão) para padrão ou deixar de ser padrão
+
 ### 24/11/2017
 
 * Adicionado novos parâmetros ao endpoint de criação de [Carnês](/reference/v1/installments/):
