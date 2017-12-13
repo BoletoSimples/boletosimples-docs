@@ -21,10 +21,9 @@ Você também pode se inscrever para receber as notificações de alterações d
 
 #### Últimas alterações realizadas na API.
 
-### 07/12/2017
+### 11/12/2017
 
-* Adicionado novos parâmetros ao endpoint de filtro de [Boletos](/reference/v1/installments/):
-- Filtro por data de expiração
+* Adicionado novos parâmetros ao endpoint de filtro de [Boletos](/reference/v1/bank_billets/#buscar-por-situação-do-boleto) por `status`: Filtro por período de vencimento a partir de `expire_from` e até data de vencimento `expire_to`
 
 * Adicionado novo endpoint de cancelamento coletivo de [Boletos](/reference/v1/customer_subscriptions/):
 - Parâmetros necessários para cancelar multiplos [Boletos](/reference/v1/customer_subscriptions/#discount_type)

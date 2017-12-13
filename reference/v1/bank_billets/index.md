@@ -1920,6 +1920,34 @@ Array
         Quantidade de registros por página (Maximo de 250)
       </td>
     </tr>
+    <tr>
+      <td>
+        <strong>expire_from</strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        Date
+      </td>
+      <td>
+        Pesquisa a partir de Data de vencimento. Obrigatório o parâmetro <code class="highlighter-rouge">expire_to</code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>expire_to</strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        Date
+      </td>
+      <td>
+        Pesquisa até a Data de vencimento. Obrigatório o parâmetro <code class="highlighter-rouge">expire_from</code>
+      </td>
+    </tr>
   </tbody>
 </table>
 
