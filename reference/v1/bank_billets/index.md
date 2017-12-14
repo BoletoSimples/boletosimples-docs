@@ -2424,7 +2424,7 @@ curl -i \
 -u $BOLETOSIMPLES_TOKEN:x \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X GET 'https://sandbox.boletosimples.com.br/api/v1/bank_billets/cancel_all?q=opened&expire_from=20-04-2017&expire_to=20-10-2017&bank_billet_ids=[345,456,788]&cnpj_cpf=125.812.717-28'
+-X POST 'https://sandbox.boletosimples.com.br/api/v1/bank_billets/cancel_all?q=opened&expire_from=20-04-2017&expire_to=20-10-2017&bank_billet_ids=[345,456,788]&cnpj_cpf=125.812.717-28'
 </pre>
 
     <small>Resposta:</small>
