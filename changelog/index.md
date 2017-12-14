@@ -25,9 +25,9 @@ Você também pode se inscrever para receber as notificações de alterações d
 
 * Adicionado novos parâmetros ao endpoint de filtro de [Boletos](/reference/v1/bank_billets/#buscar-por-situação-do-boleto) por `status`: Filtro por período de vencimento a partir de `expire_from` e até data de vencimento `expire_to`
 
-* Adicionado novo endpoint de cancelamento coletivo de [Boletos](/reference/v1/customer_subscriptions/):
-- Parâmetros necessários para cancelar multiplos [Boletos](/reference/v1/customer_subscriptions/#discount_type)
+* Adicionado novos parâmetros ao endpoint de filtro de [Boletos](/reference/v1/bank_billets/#buscar-por-cpf-ou-cnpj) por `cnpj_cpf`: Filtro por período de vencimento a partir de `expire_from` e até data de vencimento `expire_to`
 
+* Adicionado novo endpoint de cancelamento coletivo de [Boletos](/reference/v1/bank_billets/#cancelar-boletos):
 
 ### 24/11/2017
 
