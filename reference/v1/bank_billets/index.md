@@ -2386,7 +2386,7 @@ Array
 <pre class="bash">
 curl -i \
 -u $BOLETOSIMPLES_TOKEN:x \
--d '{"bank_billet":{}}' \
+-d '{"status":""}' \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
 -X POST 'https://sandbox.boletosimples.com.br/api/v1/bank_billets/cancel_all'
@@ -2422,12 +2422,13 @@ Content-Type: application/json; charset=utf-8
 <pre class="bash">
 curl -i \
 -u $BOLETOSIMPLES_TOKEN:x \
+-d '{"status":"opened", "expire_from":"20-04-2017", "expire_to"="20-10-2017", "bank_billet_ids":"[345,456,788]", "cnpj_cpf": "125.812.717-28"}' \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X POST 'https://sandbox.boletosimples.com.br/api/v1/bank_billets/cancel_all?q=opened&expire_from=20-04-2017&expire_to=20-10-2017&bank_billet_ids=[345,456,788]&cnpj_cpf=125.812.717-28'
+-X POST 'https://sandbox.boletosimples.com.br/api/v1/bank_billets/cancel_all'
 </pre>
 
-    <small>Resposta:</small>
+<small>Resposta:</small>
 
 <pre class="http">
 HTTP/1.1 200 OK
