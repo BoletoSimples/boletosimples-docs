@@ -20,6 +20,8 @@ en: /en/reference
 
 ### [CNAB (Remessa)](/reference/v1/remittances)
 
+### [Registro de Remessa](/reference/v1/bank_billet_remittances)
+
 ### [Eventos](/reference/v1/events)
 
 ### [Saques](/reference/v1/withdrawals)
