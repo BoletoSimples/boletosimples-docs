@@ -1570,6 +1570,34 @@ Array
         Quantidade de registros por página (Maximo de 250)
       </td>
     </tr>
+    <tr>
+      <td>
+        <strong>expire_from</strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        Date
+      </td>
+      <td>
+        Pesquisa a partir de Data de vencimento. Obrigatório o parâmetro <code class="highlighter-rouge">expire_to</code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>expire_to</strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        Date
+      </td>
+      <td>
+        Pesquisa até a Data de vencimento. Obrigatório o parâmetro <code class="highlighter-rouge">expire_from</code>
+      </td>
+    </tr>
   </tbody>
 </table>
 
@@ -1920,6 +1948,34 @@ Array
         Quantidade de registros por página (Maximo de 250)
       </td>
     </tr>
+    <tr>
+      <td>
+        <strong>expire_from</strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        Date
+      </td>
+      <td>
+        Pesquisa a partir de Data de vencimento. Obrigatório o parâmetro <code class="highlighter-rouge">expire_to</code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>expire_to</strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        Date
+      </td>
+      <td>
+        Pesquisa até a Data de vencimento. Obrigatório o parâmetro <code class="highlighter-rouge">expire_from</code>
+      </td>
+    </tr>
   </tbody>
 </table>
 
@@ -2229,4 +2285,160 @@ Array
 )
 </pre>
     </div> -->
+</div>
+
+### Cancelar boletos
+
+`POST /api/v1/bank_billets/cancel_all`
+
+<table class='table table-bordered'>
+  <thead>
+    <tr>
+      <th>Parâmetro</th>
+      <th data-container="body" data-toggle="tooltip" title="Obrigatório">Obr.</th>
+      <th>Tipo</th>
+      <th>Descrição</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <strong>status</strong>
+      </td>
+      <td>
+        Sim
+      </td>
+      <td>
+        String
+      </td>
+      <td>
+        Situação do boleto
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>expire_from</strong>
+      </td>
+      <td>
+        Sim
+      </td>
+      <td>
+        Date
+      </td>
+      <td>
+        A partir de Data de vencimento
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>expire_to</strong>
+      </td>
+      <td>
+        Sim
+      </td>
+      <td>
+        Date
+      </td>
+      <td>
+        Até a Data de vencimento
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>bank_billet_ids</strong>
+      </td>
+      <td>
+        Sim
+      </td>
+      <td>
+        Array
+      </td>
+      <td>
+        Ids dos boletos
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>cnpj_cpf</strong>
+      </td>
+      <td>
+        Sim
+      </td>
+      <td>
+        String
+      </td>
+      <td>
+        CNPJ ou CPF do Pagador
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+#### Exemplo de requisição inválida
+
+<ul class="nav nav-tabs" role="tablist">
+  <li class="active"><a href="#bash" role="tab" data-toggle="tab">Bash</a></li>
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="bash">
+    <small>Requisição:</small>
+<pre class="bash">
+curl -i \
+-u $BOLETOSIMPLES_TOKEN:x \
+-d '{"status":""}' \
+-H 'Content-Type: application/json' \
+-H 'User-Agent: MyApp (myapp@example.com)' \
+-X POST 'https://sandbox.boletosimples.com.br/api/v1/bank_billets/cancel_all'
+</pre>
+
+    <small>Resposta:</small>
+
+<pre class="http">
+HTTP/1.1 422 Unprocessable Entity
+Date: Fri, 17 Oct 2014 18:39:47 GMT
+Status: 422 Unprocessable Entity
+Content-Type: application/json; charset=utf-8
+...
+
+{ "errors":"Parâmetros não encontrados" }
+</pre>
+</div>
+</div>
+
+
+#### Exemplo
+
+<ul class="nav nav-tabs" role="tablist">
+  <li class="active"><a href="#bash3" role="tab" data-toggle="tab">Bash</a></li>
+  <!-- <li><a href="#ruby3" role="tab" data-toggle="tab">Ruby</a></li>
+  <li><a href="#php3" role="tab" data-toggle="tab">PHP</a></li> -->
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="bash3">
+    <small>Requisição:</small>
+
+<pre class="bash">
+curl -i \
+-u $BOLETOSIMPLES_TOKEN:x \
+-d '{"status":"opened", "expire_from":"20-04-2017", "expire_to"="20-10-2017", "bank_billet_ids":"[345,456,788]", "cnpj_cpf": "125.812.717-28"}' \
+-H 'Content-Type: application/json' \
+-H 'User-Agent: MyApp (myapp@example.com)' \
+-X POST 'https://sandbox.boletosimples.com.br/api/v1/bank_billets/cancel_all'
+</pre>
+
+<small>Resposta:</small>
+
+<pre class="http">
+HTTP/1.1 200 OK
+Date: Fri, 17 Oct 2014 19:46:16 GMT
+Status: 200 OK
+Content-Type: application/json; charset=utf-8
+...
+
+{ message: 'Solicitação de cancelamento enviada para processamento' }
+
+</pre>
+</div>
 </div>
