@@ -19,6 +19,8 @@ breadcrumb: Carteiras de Cobrança
 | [GET /api/v1/bank_billet_accounts/:id/ask](#solicitar-homologação-da-carteira-de-cobrança) | Solicitar homologação da Carteira de Cobrança
 | [PATCH /api/v1/bank_billet_accounts/:id/validate](#validar-carteira-de-cobrança) | Validar Carteira de Cobrança
 | [PUT /api/v1/bank_billet_accounts/:id/validate](#validar-carteira-de-cobrança) | Validar Carteira de Cobrança
+| [PATCH /api/v1/bank_billet_accounts/:id/set_default](#alterar-carteira-de-cobrança-padrão) | Alterar Carteira de Cobrança padrão
+| [PUT /api/v1/bank_billet_accounts/:id/set_default](#alterar-carteira-de-cobrança-padrão) | Alterar Carteira de Cobrança padrão
 
 ### Modelo de Dados
 
@@ -1116,6 +1118,191 @@ curl -i \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
 -X PUT 'https://sandbox.boletosimples.com.br/api/v1/bank_billet_accounts/1/validate'
+</pre>
+
+    <small>Resposta:</small>
+
+<pre class="http">
+HTTP/1.1 204 No Content
+Date: Fri, 17 Oct 2014 19:30:06 GMT
+Status: 204 No Content
+Location: https://sandbox.boletosimples.com.br/api/v1/bank_billet_accounts/1
+...
+
+</pre>
+  </div>
+  <!--
+  <div class="tab-pane" id="ruby5">
+    <small>Requisição:</small>
+
+<pre class="ruby">
+@bank_billet_account = BoletoSimples::BankBilletAccount.find(3)
+puts "Agência: #{@bank_billet_account.agency_number}"
+@bank_billet_account.agency_number = "4842"
+if @bank_billet_account.save
+  puts "Sucesso :)"
+  puts "Nova agência: #{@bank_billet_account.agency_number}"
+else
+  puts "Erro :("
+  ap @bank_billet_account.response_errors
+end
+</pre>
+  <small>Resposta:</small>
+
+<pre class="ruby">
+Sucesso :)
+Nova agência: 4842
+</pre>
+  </div>
+<div class="tab-pane" id="php5">
+    <small>Requisição:</small>
+
+<pre class="php">
+$bank_billet_account = BoletoSimples\bank_billet_account::find(1);
+echo "Nome antigo: " . $bank_billet_account->person_name . "\n";;
+$bank_billet_account->person_name = 'Nome 1234';
+if($bank_billet_account->save()) {
+  echo "Sucesso :)\n";
+  echo "Novo nome: " . $bank_billet_account->person_name . "\n";;
+} else {
+  echo "Erro :(\n";
+  print_r($bank_billet_account->response_errors);
+}
+</pre>
+  <small>Resposta:</small>
+
+<pre class="php">
+Sucesso :)
+Novo nome: Nome 1234
+</pre>
+  </div> -->
+</div>
+
+### Alterar Carteira de Cobrança padrão
+
+`PATCH /api/v1/bank_billet_accounts/:id/set_default` ou `PUT /api/v1/bank_billet_accounts/:id/set_default`
+
+### Modelo de Dados
+
+| Parâmetro                | Obr.  | Tipo    | Tamanho | Descrição
+| ------------------------ | ----- | ------- | ------- | ------------------------
+| **id**                   | Sim   | Integer |         | ID da Carteira de Cobrança
+| **default**              | Sim   | Boolean  |         | Define a Carteira  padrão(Default: true) ou deixar de ser padrão(Default: false)
+
+#### Exemplo de requisição inválida
+
+<ul class="nav nav-tabs" role="tablist">
+  <li class="active"><a href="#bash4" role="tab" data-toggle="tab">Bash</a></li>
+  <!-- <li><a href="#ruby4" role="tab" data-toggle="tab">Ruby</a></li>
+  <li><a href="#php4" role="tab" data-toggle="tab">PHP</a></li> -->
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="bash4">
+    <small>Requisição:</small>
+
+<pre class="bash">
+curl -i \
+-u $BOLETOSIMPLES_TOKEN:x \
+-d '{"default":""}' \
+-H 'Content-Type: application/json' \
+-H 'User-Agent: MyApp (myapp@example.com)' \
+-X PATCH 'https://sandbox.boletosimples.com.br/api/v1/bank_billet_accounts/1/set_default'
+</pre>
+
+    <small>Resposta:</small>
+
+<pre class="http">
+HTTP/1.1 422 Unprocessable Entity
+Server: Cowboy
+Connection: keep-alive
+Strict-Transport-Security: max-age=2592000
+Content-Type: application/json; charset=utf-8
+...
+
+{"errors":{"default":["não pode ficar em branco"]}}
+</pre>
+  </div>
+ <!--
+  <div class="tab-pane" id="ruby4">
+    <small>Requisição:</small>
+
+<pre class="ruby">
+@bank_billet_account = BoletoSimples::BankBilletAccount.find(3)
+puts "Agência: #{@bank_billet_account.agency_number}"
+@bank_billet_account.agency_number = ""
+if @bank_billet_account.save
+  puts "Sucesso :)"
+  puts "Nova agência: #{@bank_billet_account.agency_number}"
+else
+  puts "Erro :("
+  puts @bank_billet_account.response_errors
+end
+</pre>
+
+    <small>Resposta:</small>
+
+<pre class="ruby">
+Erro :(
+{
+    :agency_number => [
+        [0] "não pode ficar em branco"
+    ]
+}
+</pre>
+
+  </div>
+    <div class="tab-pane" id="php4">
+      <small>Requisição:</small>
+
+<pre class="php">
+$bank_billet_account = BoletoSimples\bank_billet_account::find(1);
+$bank_billet_account->person_name = '';
+if($bank_billet_account->save()) {
+  echo "Sucesso :)\n";
+  echo "Novo nome: " . $bank_billet_account->person_name . "\n";;
+} else {
+  echo "Erro :(\n";
+  print_r($bank_billet_account->response_errors);
+}
+</pre>
+
+      <small>Resposta:</small>
+
+<pre class="php">
+Erro :(
+Array
+(
+    [person_name] => Array
+        (
+            [0] => não pode ficar em branco
+        )
+
+)
+</pre>
+
+    </div> -->
+</div>
+
+#### Exemplo de requisição válida
+
+<ul class="nav nav-tabs" role="tablist">
+  <li class="active"><a href="#bash5" role="tab" data-toggle="tab">Bash</a></li>
+  <!-- <li><a href="#ruby5" role="tab" data-toggle="tab">Ruby</a></li>
+  <li><a href="#php5" role="tab" data-toggle="tab">PHP</a></li> -->
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="bash5">
+    <small>Requisição:</small>
+
+<pre class="bash">
+curl -i \
+-u $BOLETOSIMPLES_TOKEN:x \
+-d '{"default":"true"}' \
+-H 'Content-Type: application/json' \
+-H 'User-Agent: MyApp (myapp@example.com)' \
+-X PUT 'https://sandbox.boletosimples.com.br/api/v1/bank_billet_accounts/1/set_default'
 </pre>
 
     <small>Resposta:</small>

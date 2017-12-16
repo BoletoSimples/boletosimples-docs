@@ -21,13 +21,15 @@ Você também pode se inscrever para receber as notificações de alterações d
 
 #### Últimas alterações realizadas na API.
 
-### 11/12/2017
-
 * Adicionado novos parâmetros ao endpoint de filtro de [Boletos](/reference/v1/bank_billets/#buscar-por-situação-do-boleto) por `status`: Filtro por período de vencimento a partir de `expire_from` e até data de vencimento `expire_to`
 
 * Adicionado novos parâmetros ao endpoint de filtro de [Boletos](/reference/v1/bank_billets/#buscar-por-cpf-ou-cnpj) por `cnpj_cpf`: Filtro por período de vencimento a partir de `expire_from` e até data de vencimento `expire_to`
 
 * Adicionado novo endpoint de cancelamento coletivo de [Boletos](/reference/v1/bank_billets/#cancelar-boletos):
+
+### 29/11/2017
+
+* Adicionado endpoint de alteração de [Carteiras de cobrança](/reference/v1/bank_billet_accounts/#alterar-carteira-de-cobrança-padrão) para padrão ou deixar de ser padrão
 
 ### 24/11/2017
 
