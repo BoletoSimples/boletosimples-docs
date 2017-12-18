@@ -10,8 +10,8 @@ breadcrumb: Registro de Remessa
 | Recurso                                                                                 | Descrição                                       |
 | --------------------------------------------------------------------------------------- | ----------------------------------------------- |
 | [GET /api/v1/bank_billet_remittances](#listar-registros-de-remessa)                     | Listar Registros de Remessa                     |
-| [POST /api/v1/bank_billet_remittances/:id/occurrence/:code](#criar-registro-de-remessa) | Adicionar Boleto na lista de envio para o banco |
 | [GET /api/v1/bank_billet_remittances/pending](#listar-pendentes)                        | Listar Registros de Remessa pendentes           |
+| [POST /api/v1/bank_billet_remittances/:id/occurrence/:code](#criar-registro-de-remessa) | Adicionar Boleto na lista de envio para o banco |
 
 ### Modelo de Dados
 
@@ -30,6 +30,48 @@ breadcrumb: Registro de Remessa
 
 `GET /api/v1/bank_billet_remittances`
 
+<table class='table table-bordered'>
+  <thead>
+    <tr>
+      <th>Parâmetro</th>
+      <th data-container="body" data-toggle="tooltip" title="Obrigatório">Obr.</th>
+      <th>Tipo</th>
+      <th>Descrição</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <strong>page </strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        Number
+      </td>
+      <td>
+        Número da Página
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <strong>per_page </strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        Number
+      </td>
+      <td>
+        Quantidade de registros por página (Maximo de 250)
+      </td>
+    </tr>
+  </tbody>
+</table>
+
 #### Exemplo de requisição válida
 
 <ul class="nav nav-tabs" role="tablist">
@@ -47,38 +89,41 @@ breadcrumb: Registro de Remessa
   -u $BOLETOSIMPLES_TOKEN:x \
   -H 'Content-Type: application/json' \
   -H 'User-Agent: MyApp (myapp@example.com)' \
-  -X GET 'https://sandbox.boletosimples.com.br/api/v1/bank_billet_remittances'
+  -X GET 'https://sandbox.boletosimples.com.br/api/v1/bank_billet_remittances?page=1&per_page=50'
 </pre>
 
     <small>Resposta:</small>
 
 <pre class="http">
-HTTP/1.1 201 Created
-Date: Fri, 17 Oct 2014 19:30:06 GMT
-Status: 201 Created
-Location: https://sandbox.boletosimples.com.br/api/v1/bank_billet_remittances
+Server: Cowboy
+Connection: keep-alive
+Strict-Transport-Security: max-age=2592000
+Total: 1
+Location: https://sandbox.boletosimples.com.br/api/v1/bank_billet_remittances?page=1&per_page=50
 Content-Type: application/json; charset=utf-8
 ...
 
-{
-  "id":47,
-  "our_code": "1001",
-  "occurrence": "01",
-  "remittance_id":null,
-  "bank_billet_id":46,
-  "bank_billet_account_id":2,
-  "processed_at":null,
-  "occurrence_detail": "Entrada de Título",
-  "created_at": "2017-11-21",
-  "bank_billet":{
-    "id":46,
-    "expire_at": "2017-12-26",
-    "paid_at":null,
-    "description": "teste",
-    "status": "opened",
-    ...
+[
+  {
+    "id":47,
+    "our_code": "1001",
+    "occurrence": "01",
+    "remittance_id":null,
+    "bank_billet_id":46,
+    "bank_billet_account_id":2,
+    "processed_at":null,
+    "occurrence_detail": "Entrada de Título",
+    "created_at": "2017-11-21",
+    "bank_billet":{
+      "id":46,
+      "expire_at": "2017-12-26",
+      "paid_at":null,
+      "description": "teste",
+      "status": "opened",
+      ...
+    }
   }
-}
+]
 </pre>
 
   </div>
