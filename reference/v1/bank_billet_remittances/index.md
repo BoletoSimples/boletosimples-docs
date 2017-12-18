@@ -9,6 +9,6 @@ breadcrumb: Registro de Remessa
 
 | Recurso                          | Descrição
 | -------------------------------- | ------------------------
-| [GET /api/v1/bank_billet_remittances](#criar-cnab)                      | Listar Registros de Remessa
-| [POST /api/v1/bank_billet_remittances/:id/occurrence/:code](#informações-do-cnab)      | Adicionar Boleto na lista de envio para o banco
-| [GET /api/v1/bank_billet_remittances/pending](#listar-cnabs)            | Listar Registros de Remessa pendentes
+| [GET /api/v1/bank_billet_remittances](#listar-registros)   | Listar Registros de Remessa
+| [POST /api/v1/bank_billet_remittances/:id/occurrence/:code](#criar-registro-de-remessa)    | Adicionar Boleto na lista de envio para o banco
+| [GET /api/v1/bank_billet_remittances/pending](#listar-pendentes)   | Listar Registros de Remessa pendentes
