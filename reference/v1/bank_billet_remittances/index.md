@@ -99,7 +99,6 @@ Server: Cowboy
 Connection: keep-alive
 Strict-Transport-Security: max-age=2592000
 Total: 1
-Location: https://sandbox.boletosimples.com.br/api/v1/bank_billet_remittances?page=1&per_page=50
 Content-Type: application/json; charset=utf-8
 ...
 
