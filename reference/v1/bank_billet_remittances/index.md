@@ -107,7 +107,7 @@ breadcrumb: Registro de Remessa
         String
       </td>
       <td>
-        Código de operação de registro no banco <a href="/reference/v1/bank_billet_remittances/#our_code">(Possíveis valores)</a>
+        Código de operação de registro no banco <a href="/reference/v1/bank_billet_remittances/#our_code">(Possíveis valores)</a>. Obrigatório os parâmetros <code class="highlighter-rouge">expire_from, expire_to, bank_billet_account_id</code>
       </td>
     </tr>
     <tr>
@@ -121,7 +121,7 @@ breadcrumb: Registro de Remessa
         Number
       </td>
       <td>
-        ID da Carteira
+        ID da Carteira. Obrigatório os parâmetros <code class="highlighter-rouge">expire_from, expire_to, code</code>
       </td>
     </tr>
     <tr>
@@ -135,7 +135,7 @@ breadcrumb: Registro de Remessa
         Date
       </td>
       <td>
-        Pesquisa a partir de Data de vencimento. Obrigatório os parâmetros <code class="highlighter-rouge">expire_to, code, bank_billet_account_id</code>
+        A partir de Data de vencimento. Obrigatório os parâmetros <code class="highlighter-rouge">expire_to, code, bank_billet_account_id</code>
       </td>
     </tr>
     <tr>
@@ -149,7 +149,7 @@ breadcrumb: Registro de Remessa
         Date
       </td>
       <td>
-        Pesquisa até Data de vencimento. Obrigatório os parâmetros <code class="highlighter-rouge">expire_from, code, bank_billet_account_id</code>
+        Até Data de vencimento. Obrigatório os parâmetros <code class="highlighter-rouge">expire_from, code, bank_billet_account_id</code>
       </td>
     </tr>
   </tbody>
