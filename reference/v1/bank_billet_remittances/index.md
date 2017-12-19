@@ -11,14 +11,14 @@ breadcrumb: Registro de Remessa
 | --------------------------------------------------------------------------------------- | ----------------------------------------------- |
 | [GET /api/v1/bank_billet_remittances](#listar-registros-de-remessa)                     | Listar Registros de Remessa                     |
 | [GET /api/v1/bank_billet_remittances/pending](#listar-registros-de-remessa-pendentes)   | Listar Registros de Remessa pendentes           |
-| [POST /api/v1/bank_billet_remittances/:id/occurrence/:code](#criar-registro-de-remessa) | Adicionar Boleto na lista de envio para o banco |
+| [POST /api/v1/bank_billet_remittances/:id/occurrence/:code](#criar-pendências) | Criar pendências |
 
 ### Modelo de Dados
 
 | Parâmetro                  | Obr. | Tipo    | Tamanho | Descrição                      |
 | -------------------------- | ---- | ------- | ------- | ------------------------------ |
 | **id**                     | N/A  | Integer |         | ID da carteira                 |
-| **our_code**               | Sim  | String  | 6       | Código de registro do banco    |
+| **our_code**               | Sim  | String  | 6       | Código de operação de registro no banco    |
 | **occurrence**             | Não  | String  | 3       | Ocorrência                     |
 | **remittance_id**          | Sim  | Integer |         | ID da Remessa                  |
 | **bank_billet_id**         | Sim  | Integer |         | ID do Boleto                   |
@@ -79,7 +79,7 @@ breadcrumb: Registro de Remessa
         String
       </td>
       <td>
-        Código de registro do banco
+        Código de operação de registro no banco
       </td>
     </tr>
     <tr>
@@ -269,4 +269,122 @@ Content-Type: application/json; charset=utf-8
 </pre>
 
   </div>
+</div>
+
+
+### Criar pendências
+
+`POST /api/v1/bank_billet_remittances/:id/occurrence/:code`
+
+<table class='table table-bordered'>
+  <thead>
+    <tr>
+      <th>Parâmetro</th>
+      <th data-container="body" data-toggle="tooltip" title="Obrigatório">Obr.</th>
+      <th>Tipo</th>
+      <th>Descrição</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <strong>id </strong>
+      </td>
+      <td>
+        Sim
+      </td>
+      <td>
+        Number
+      </td>
+      <td>
+        ID do boleto
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>code </strong>
+      </td>
+      <td>
+        Sim
+      </td>
+      <td>
+        Number
+      </td>
+      <td>
+        Código de operação de registro no banco
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+#### Exemplo de requisição inválida
+
+<ul class="nav nav-tabs" role="tablist">
+  <li class="active"><a href="#bash" role="tab" data-toggle="tab">Bash</a></li>
+  <!-- <li><a href="#ruby" role="tab" data-toggle="tab">Ruby</a></li> -->
+  <!-- <li><a href="#php" role="tab" data-toggle="tab">PHP</a></li> -->
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="bash">
+    <small>Requisição:</small>
+
+<pre class="bash">
+curl -i \
+-u $BOLETOSIMPLES_TOKEN:x \
+-H 'Content-Type: application/json' \
+-H 'User-Agent: MyApp (myapp@example.com)' \
+-X POST 'https://sandbox.boletosimples.com.br/api/v1/bank_billet_remittances/2/occurrence/9989x'
+</pre>
+
+    <small>Resposta:</small>
+
+<pre class="http">
+HTTP/1.1 422 Unprocessable Entity
+Server: Cowboy
+Connection: keep-alive
+Strict-Transport-Security: max-age=2592000
+Content-Type: application/json; charset=utf-8
+...
+
+{"errors": "Operação não disponível para este banco."}
+</pre>
+  </div>
+
+</div>
+
+#### Exemplo de requisição válida
+
+<ul class="nav nav-tabs" role="tablist">
+  <li class="active"><a href="#bash2" role="tab" data-toggle="tab">Bash</a></li>
+  <!-- <li><a href="#ruby2" role="tab" data-toggle="tab">Ruby</a></li> -->
+  <!-- <li><a href="#php2" role="tab" data-toggle="tab">PHP</a></li> -->
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="bash2">
+    <small>Requisição:</small>
+
+<pre class="bash">
+curl -i \
+-u $BOLETOSIMPLES_TOKEN:x \
+-H 'Content-Type: application/json' \
+-H 'User-Agent: MyApp (myapp@example.com)' \
+-X POST 'https://sandbox.boletosimples.com.br/api/v1/bank_billet_remittances/2/occurrence/1034'
+</pre>
+
+    <small>Resposta:</small>
+
+<pre class="http">
+HTTP/1.1 201 Created
+Server: Cowboy
+Connection: keep-alive
+Strict-Transport-Security: max-age=2592000
+Content-Type: application/json; charset=utf-8
+...
+
+{ message: "Boleto 2 - Operação( Pago diretamente ao beneficiário ) colocado(a) na lista de envio para o banco." }
+</pre>
+  </div>
+
 </div>

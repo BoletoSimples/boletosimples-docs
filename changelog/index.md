@@ -23,11 +23,11 @@ Você também pode se inscrever para receber as notificações de alterações d
 
 ### 15/12/2017
 
-* Adicionado endpoint de listar [Registro de Remessas](/reference/v1/bank_billet_remittances/#filtrar-ocorrência) pendentes ou não pendentes
+* Adicionado endpoint de listar [Registro de Remessas](/reference/v1/bank_billet_remittances/#listar-registros-de-remessa) pendentes ou não pendentes
 
-* Adicionado endpoint de listar apenas [Registro de Remessas](/reference/v1/bank_billet_remittances/#filtrar-ocorrência) pendentes
+* Adicionado endpoint de listar apenas [Registro de Remessas](/reference/v1/bank_billet_remittances/#listar-registros-de-remessa-pendentes) pendentes
 
-* Adicionado endpoint para criar [Registro de Remessas](/reference/v1/bank_billet_remittances/#filtrar-ocorrência) a partir do código do banco
+* Adicionado endpoint para criar [Registro de Remessas](/reference/v1/bank_billet_remittances/#criar-pendências) a partir do código de operação banco
 
 ### 12/12/2017
 
