@@ -21,6 +21,16 @@ Você também pode se inscrever para receber as notificações de alterações d
 
 #### Últimas alterações realizadas na API.
 
+### 15/12/2017
+
+* Adicionado endpoint de listar [Registro de Remessas](/reference/v1/bank_billet_remittances/#listar-registros-de-remessa) pendentes ou não pendentes
+
+* Adicionado endpoint de listar apenas [Registro de Remessas](/reference/v1/bank_billet_remittances/#listar-registros-de-remessa-pendentes) pendentes
+
+* Adicionado endpoint para criar [Registro de Remessas](/reference/v1/bank_billet_remittances/#criar-pendências) a partir do código de operação banco
+
+### 12/12/2017
+
 * Adicionado novos parâmetros ao endpoint de filtro de [Boletos](/reference/v1/bank_billets/#buscar-por-situação-do-boleto) por `status`: Filtro por período de vencimento a partir de `expire_from` e até data de vencimento `expire_to`
 
 * Adicionado novos parâmetros ao endpoint de filtro de [Boletos](/reference/v1/bank_billets/#buscar-por-cpf-ou-cnpj) por `cnpj_cpf`: Filtro por período de vencimento a partir de `expire_from` e até data de vencimento `expire_to`
