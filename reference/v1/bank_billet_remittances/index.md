@@ -18,13 +18,41 @@ breadcrumb: Registro de Remessa
 | Parâmetro                  | Obr. | Tipo    | Tamanho | Descrição                      |
 | -------------------------- | ---- | ------- | ------- | ------------------------------ |
 | **id**                     | N/A  | Integer |         | ID da carteira                 |
-| **our_code**               | Sim  | String  | 6       | Código de operação de registro no banco    |
+| **our_code**               | Sim  | String  | 6       | Código de operação de registro no banco ([Possíveis valores](/reference/v1/bank_billet_remittances/#our_code))   |
 | **occurrence**             | Não  | String  | 3       | Ocorrência                     |
 | **remittance_id**          | Sim  | Integer |         | ID da Remessa                  |
 | **bank_billet_id**         | Sim  | Integer |         | ID do Boleto                   |
 | **bank_billet_account_id** | Sim  | Integer |         | ID da Carteira                 |
 | **processed_at**           | Não  | Date    |         | Quando foi processado          |
 | **occurrence_detail**      | Não  | String  |         | Descrição do evento na Remessa |
+
+### Dicionário de Dados
+
+#### our_code
+
+| 1001 |  Entrada de Título
+| 1002 |  Pedido de Baixa
+| 1003 |  Alteração do Vencimento
+| 1004 |  Concessão de Abatimento
+| 1009 |  Protestar
+| 1010 |  Não Protestar
+| 1011 |  Protesto para fins falimentares
+| 1012 |  Alterar Nome do Pagador
+| 1013 |  Alteração de endereço do pagador
+| 1014 |  Alterar Cidade do pagador
+| 1015 |  Alterar UF do pagador
+| 1018 |  Sustar o protesto
+| 1020 |  Alterar CPF/CNPJ do pagador
+| 1028 |  Alterar Valor
+| 1031 |  Alteração de outros dados
+| 1034 |  Pago diretamente ao beneficiário
+| 1038 |  Alterar CEP do pagador
+| 1047 |  Não cobrar juros
+| 1066 |  Solicitar negativação expressa
+| 1067 |  Não negativar
+| 1068 |  Excluir negativação expressa
+| 1069 |  Cancelar negativação expressa
+
 
 ### Listar Registros de Remessa
 
@@ -79,7 +107,7 @@ breadcrumb: Registro de Remessa
         String
       </td>
       <td>
-        Código de operação de registro no banco
+        Código de operação de registro no banco <a href="/reference/v1/bank_billet_remittances/#our_code">(Possíveis valores)</a>
       </td>
     </tr>
     <tr>
@@ -311,7 +339,7 @@ Content-Type: application/json; charset=utf-8
         Number
       </td>
       <td>
-        Código de operação de registro no banco
+        Código de operação de registro no banco <a href="/reference/v1/bank_billet_remittances/#our_code">(Possíveis valores)</a>
       </td>
     </tr>
   </tbody>
