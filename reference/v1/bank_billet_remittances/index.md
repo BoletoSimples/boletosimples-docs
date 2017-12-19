@@ -32,21 +32,11 @@ breadcrumb: Registro de Remessa
 
 | 1001 |  Entrada de Título
 | 1002 |  Pedido de Baixa
-| 1003 |  Alteração do Vencimento
-| 1004 |  Concessão de Abatimento
 | 1009 |  Protestar
 | 1010 |  Não Protestar
 | 1011 |  Protesto para fins falimentares
-| 1012 |  Alterar Nome do Pagador
-| 1013 |  Alteração de endereço do pagador
-| 1014 |  Alterar Cidade do pagador
-| 1015 |  Alterar UF do pagador
 | 1018 |  Sustar o protesto
-| 1020 |  Alterar CPF/CNPJ do pagador
-| 1028 |  Alterar Valor
-| 1031 |  Alteração de outros dados
 | 1034 |  Pago diretamente ao beneficiário
-| 1038 |  Alterar CEP do pagador
 | 1047 |  Não cobrar juros
 | 1066 |  Solicitar negativação expressa
 | 1067 |  Não negativar
