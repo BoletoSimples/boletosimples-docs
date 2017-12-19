@@ -18,7 +18,7 @@ breadcrumb: Registro de Remessa
 | Parâmetro                  | Obr. | Tipo    | Tamanho | Descrição                      |
 | -------------------------- | ---- | ------- | ------- | ------------------------------ |
 | **id**                     | N/A  | Integer |         | ID da carteira                 |
-| **our_code**               | Sim  | String  | 6       | Código                         |
+| **our_code**               | Sim  | String  | 6       | Código de registro do banco    |
 | **occurrence**             | Não  | String  | 3       | Ocorrência                     |
 | **remittance_id**          | Sim  | Integer |         | ID da Remessa                  |
 | **bank_billet_id**         | Sim  | Integer |         | ID do Boleto                   |
@@ -54,7 +54,6 @@ breadcrumb: Registro de Remessa
         Número da Página
       </td>
     </tr>
-
     <tr>
       <td>
         <strong>per_page </strong>
@@ -67,6 +66,62 @@ breadcrumb: Registro de Remessa
       </td>
       <td>
         Quantidade de registros por página (Maximo de 250)
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>code </strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        String
+      </td>
+      <td>
+        Código de registro do banco
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>bank_billet_account_id </strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        Number
+      </td>
+      <td>
+        ID da Carteira
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>expire_from </strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        Date
+      </td>
+      <td>
+        Pesquisa a partir de Data de vencimento. Obrigatório os parâmetros <code class="highlighter-rouge">expire_to, code, bank_billet_account_id</code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>expire_to </strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        Date
+      </td>
+      <td>
+        Pesquisa até Data de vencimento. Obrigatório os parâmetros <code class="highlighter-rouge">expire_from, code, bank_billet_account_id</code>
       </td>
     </tr>
   </tbody>
