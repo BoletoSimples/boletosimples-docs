@@ -27,6 +27,10 @@ Você também pode se inscrever para receber as notificações de alterações d
 
 * Adicionado novo parâmetro ao endpoint para criação de [Assinaturas](/reference/v1/customer_subscriptions): tags.
 
+### 02/01/2017
+
+* Adicionado modelo de dados para [Tipos de documentos](/reference/v1/bank_billets/#document_type)
+
 ### 15/12/2017
 
 * Adicionado endpoint de listar [Registro de Remessas](/reference/v1/bank_billet_remittances/#listar-registros-de-remessa) pendentes ou não pendentes

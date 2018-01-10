@@ -70,7 +70,7 @@ breadcrumb: Boletos
 | **payment_place**               | Não   | String  |         | Local de Pagamento
 | **instructions**                | Não   | Text    |         | Instruções para o Caixa
 | **document_date**               | Não   | Date    |         | Data do Documento
-| **document_type**               | Não   | String  |         | Tipo de Documento
+| **document_type**               | Não   | String  |         | Tipo de Documento ([possíveis valores](#document_type))
 | **document_number**             | Não   | Integer |         | Número do Documento
 | **acceptance**                  | Não   | String  |         | Aceite
 | **bank_billet_layout_id**       | Não   | Integer |         | ID do Modelo de Boleto
@@ -145,6 +145,45 @@ breadcrumb: Boletos
 
 | individual | Pessoa Física
 | juridical  | Pessoa Jurídica
+
+#### document_type
+
+| Código | Sigla    | Descrição
+| 01     | CH       | Cheque
+| 02     | DM       | Duplicata Mercantil
+| 03     | DMI      | Duplicata Mercantil p/ Indicação
+| 04     | DS       | Duplicata de Serviço
+| 05     | DSI      |  Duplicata de Serviço p/ Indicação
+| 06     | DR       | Duplicata Rural
+| 07     | LC       | Letra de Câmbio
+| 08     | NCC      | Nota de Crédito Comercial
+| 09     | NCE      | Nota de Crédito a Exportação
+| 10     | NCI      | Nota de Crédito Industrial
+| 11     | NCR      | Nota de Crédito Rural
+| 12     | NP       | Nota Promissória
+| 13     | NPR      | Nota Promissória Rural
+| 14     | TM       | Triplicata Mercantil
+| 15     | TS       | Triplicata de Serviço
+| 16     | NS       | Nota de Seguro
+| 17     | RC       | Recibo
+| 18     | FAT      | Fatura
+| 19     | ND       | Nota de Débito
+| 20     | AP       | Apólice de Seguro
+| 21     | ME       | Mensalidade Escolar
+| 22     | PC       | Parcela de Consórcio
+| 23     | NF       | Nota Fiscal
+| 24     | DD       | Documento de Dívida
+| 25     | CPR      | Cédula de Produto Rural
+| 26     | CTR      | Contrato
+| 27     | CSG      | Cosseguros
+| 28     | EC       | Encargos Condominiais
+| 29     | CPS      | Conta de Prestação de Serviços
+| 30     | WR       | Warrant
+| 31     | DP       | Duplicata Prestação
+| 32     | CSR      | Cobrança Seriada
+| 33     | CAR      | Carnê
+| 34     | ARE      | Apólice Ramos Elementares
+| 99     | Outros   | Outros
 
 ### Criar boleto
 
