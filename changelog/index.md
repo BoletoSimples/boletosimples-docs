@@ -21,6 +21,12 @@ Você também pode se inscrever para receber as notificações de alterações d
 
 #### Últimas alterações realizadas na API.
 
+### 10/01/2018
+
+* Adicionado novo parâmetro ao endpoint para criação de [Carnês](/reference/v1/installments): tags.
+
+* Adicionado novo parâmetro ao endpoint para criação de [Assinaturas](/reference/v1/customer_subscriptions): tags.
+
 ### 02/01/2017
 
 * Adicionado modelo de dados para [Tipos de documentos](/reference/v1/bank_billets/#document_type)

@@ -46,6 +46,7 @@ breadcrumb: Carnês
 | **url**                         | N/A   | String  |         | URL para visualização do carnê
 | **bank_billet_ids**             | N/A   | Array   |         | IDs de boletos vinculados ao carnê
 | **notes**                       | Não   | Text    |         | Anotações
+| **tags**                        | Não   | Array   |         | Tags associadas
 
 ### Dicionário de Dados
 
