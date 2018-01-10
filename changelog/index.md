@@ -21,6 +21,12 @@ Você também pode se inscrever para receber as notificações de alterações d
 
 #### Últimas alterações realizadas na API.
 
+### 10/01/2018
+
+* Adicionado novo parâmetro ao endpoint para criação de [Carnês](/reference/v1/installments): tags.
+
+* Adicionado novo parâmetro ao endpoint para criação de [Assinaturas](/reference/v1/customer_subscriptions): tags.
+
 ### 15/12/2017
 
 * Adicionado endpoint de listar [Registro de Remessas](/reference/v1/bank_billet_remittances/#listar-registros-de-remessa) pendentes ou não pendentes

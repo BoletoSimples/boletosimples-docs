@@ -46,6 +46,7 @@ breadcrumb: Assinaturas
 | **days_for_discount**           | Não   | Integer |         | Dias para desconto. Obrigatório se `discount_type` é diferente de zero
 | **bank_billet_layout_id**       | Não   | Integer |         | ID do Modelo de Boleto
 | **notes**                       | Não   | Text    |         | Anotações
+| **tags**                        | Não   | Array   |         | Tags associadas
 | **bank_billet_ids**             | N/A   | Array   |         | IDs de boletos vinculados a assinatura
 
 ### Dicionário de Dados
