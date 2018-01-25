@@ -21,6 +21,10 @@ Você também pode se inscrever para receber as notificações de alterações d
 
 #### Últimas alterações realizadas na API.
 
+### 22/01/2018
+
+* Adicionado novos parâmetros ao endpoint para filtrar [Boletos](/reference/v1/bank_billets/#listar-boletos).
+
 ### 10/01/2018
 
 * Adicionado novo parâmetro ao endpoint para criação de [Carnês](/reference/v1/installments): tags.
