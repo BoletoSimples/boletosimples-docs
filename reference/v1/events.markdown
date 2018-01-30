@@ -1,6 +1,6 @@
 ---
 title: Eventos
-position: 9
+position: 7
 layout: pt
 en: "/en/events"
 breadcrumb: Eventos
