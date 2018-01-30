@@ -1,9 +1,10 @@
 ---
 title: Parceiros
+published: false
 position: 8
-layout: pt
 en: "/en/reference"
 breadcrumb: Parceiros
+layout: pt
 ---
 
 ## API de Parceiros
