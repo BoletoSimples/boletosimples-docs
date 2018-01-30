@@ -1,5 +1,6 @@
 ---
 title: Bradesco
+position: 1
 layout: pt
 en: "/en/bank_contracts/bradesco"
 ---
