@@ -1,5 +1,5 @@
 ---
-title: Safra - API do Boleto Simples
+title: Safra
 layout: pt
 en: "/en/bank_contracts/safra"
 ---

@@ -1,5 +1,5 @@
 ---
-title: Zapier - API do Boleto Simples
+title: Zapier
 layout: pt
 en: "/en/integrations/zapier"
 ---

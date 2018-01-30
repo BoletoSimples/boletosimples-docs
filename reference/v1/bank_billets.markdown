@@ -1,5 +1,6 @@
 ---
-title: Boletos - API do Boleto Simples
+title: Boletos
+position: 2
 layout: pt
 en: "/en/reference"
 breadcrumb: Boletos

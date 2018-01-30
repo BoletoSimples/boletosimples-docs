@@ -1,5 +1,6 @@
 ---
-title: Bibliotecas - API do Boleto Simples
+title: Bibliotecas
+position: 1
 layout: pt
 en: "/en/libraries"
 ---

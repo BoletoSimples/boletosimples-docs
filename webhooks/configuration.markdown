@@ -1,5 +1,6 @@
 ---
-title: Configurando Webhooks - API do Boleto Simples
+title: Configurando Webhooks
+position: 0
 layout: pt
 en: "/en/webhooks/configuration"
 ---

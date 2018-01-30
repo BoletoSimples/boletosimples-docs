@@ -1,5 +1,6 @@
 ---
-title: Usuário Autenticado - API do Boleto Simples
+title: Usuário Autenticado
+position: 12
 layout: pt
 en: "/en/references"
 breadcrumb: Usuário Autenticado

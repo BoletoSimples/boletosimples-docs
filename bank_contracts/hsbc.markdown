@@ -1,5 +1,6 @@
 ---
-title: HSBC - API do Boleto Simples
+title: HSBC
+position: 8
 layout: pt
 en: "/en/bank_contracts/hsbc"
 ---

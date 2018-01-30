@@ -1,5 +1,6 @@
 ---
-title: Módulos - API do Boleto Simples
+title: Módulos
+position: 2
 layout: pt
 en: "/en/modules"
 ---

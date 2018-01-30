@@ -1,37 +1,35 @@
 ---
-title: CNAB (Remessa) - API do Boleto Simples
+title: CNAB (Retorno)
+position: 7
 layout: pt
 en: "/en/references"
-breadcrumb: CNAB (Remessa)
+breadcrumb: CNAB (Retorno)
 ---
 
-## CNAB (Remessa)
+## CNAB (Retorno)
 
 | Recurso                  | Descrição
 | ------------------------ | ------------------------
-| [POST /api/v1/remittances](#criar-cnab) | Criar CNAB
-| [GET /api/v1/remittances/:id](#informações-do-cnab) | Informações do CNAB
-| [GET /api/v1/remittances](#listar-cnabs) | Listar CNABs
-| [DELETE /api/v1/remittances/:id](#apagar-cnab) | Apagar CNAB
-| [GET /api/v1/remittances/:id/raw](#rawtextplain-do-cnab) | Raw(text/plain) do CNAB
-| [POST /api/v1/remittances/bulk](#criar-cnabs-em-lote) | Criar CNABs em lote
+| [POST /api/v1/discharges](#enviar-cnab) | Enviar CNAB
+| [GET /api/v1/discharges/:id](#informações-do-cnab) | Informações do CNAB
+| [GET /api/v1/discharges](#listar-cnabs) | Listar CNABs
+| [PUT /api/v1/discharges/:id/pay_off](#quitar-boletos) | Quitar boletos
 
 ### Modelo de Dados
 
-| Parâmetro                     | Obr.  | Tipo    | Tamanho | Descrição
-| ------------------------------| ----- | ------- | ------- | ------------------------
-| **id**                        | N/A   | Integer |         | ID do CNAB
-| **content**                   | Não   | Text    |         | Conteúdo da remessa
-| **filename**                  | Não   | String  | 255     | Nome do arquivo
-| **processed_at**              | Não   | Time    |         | Data de Processamento
-| **created_via_api**           | Não   | Boolean |         | Enviado pela API
-| **status**                    | Não   | String  |         | Situação do arquivo ([possíveis valores](#status))
-| **created_at**                | Não   | DateTime|         | Data de criação
-| **url**                       | Não   | String  |         | URL do arquivo de remessa
-| **bank_billet_account_id**    | Sim   | Integer |         | ID da [Carteira de Cobrança](/reference/v1/bank_billet_accounts/)
-| **bank_billet_ids**           | Não   | Array   |         | IDs de boletos vinculados a remessa
-| **remittance_number**         | Não   | Integer |         | Número da remessa
-| **sent_via_integration**      | Não   | Date    |         | Data de envio automático para o banco
+| Parâmetro              | Obr.  | Tipo    | Tamanho | Descrição
+| ---------------------- | ----- | ------- | ------- | ------------------------
+| **id**                 | N/A   | Integer |         | ID do CNAB
+| **file**               | Sim   |         |         | Arquivo
+| **content**            | Sim   |         |         | Conteúdo do arquivo
+| **filename**           | Não   | String  | 255     | Nome do arquivo
+| **status**             | N/A   | String  | 20      | Situação do arquivo ([possíveis valores](#status))
+| **processed_at**       | N/A   | Time    |         | Data de Processamento
+| **created_via_api**    | N/A   | Boolean |         | Enviado pela API
+| **bank_billet_account_id**    | Não   | Integer |         | ID da [Carteira de Cobrança](/reference/v1/bank_billet_accounts/)
+| **created_via_integration**        | Não   | Date    |         | Data de recebimento automático do banco
+| **bank_billet_discharges**         | N/A   | Array   |         | Retornos bancários
+| **bank_billets_with_transactions** | N/A   | Array   |         | IDs de boletos com informações detalhadas do retorno
 
 ### Dicionário de Dados
 
@@ -39,16 +37,10 @@ breadcrumb: CNAB (Remessa)
 
 | unprocessed | Pendente
 | processed   | Processado
-| downloaded  | Baixada pelo usuário
-| sent        | Enviada para o banco
 
-### Criar CNAB
+### Enviar CNAB
 
-`POST /api/v1/remittances`
-
-Será feita uma solicitação de Remessa.
-Após a criação da Remessa, ela será processada e
-ao término do processamento serão emitidas notificações através dos Webhooks.
+`POST /api/v1/discharges`
 
 #### Exemplo de requisição inválida
 
@@ -67,7 +59,7 @@ curl -i \
 -u $BOLETOSIMPLES_TOKEN:x \
 -H 'Content-Type: multipart/form-data' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X POST 'https://sandbox.boletosimples.com.br/api/v1/remittances'
+-X POST 'https://sandbox.boletosimples.com.br/api/v1/discharges'
 </pre>
 
     <small>Resposta:</small>
@@ -80,7 +72,7 @@ Strict-Transport-Security: max-age=2592000
 Content-Type: application/json; charset=utf-8
 ...
 
-{"errors":{"remittance":["não pode ficar em branco"]}}
+{"errors":{"discharge":["não pode ficar em branco"]}}
 </pre>
   </div>
   <!-- <div class="tab-pane" id="ruby">
@@ -163,10 +155,10 @@ Array
 <pre class="bash">
 curl -i \
 -u $BOLETOSIMPLES_TOKEN:x \
--d '{"remittance":{"bank_billet_account_id": "1"}}' \
--H 'Content-Type: application/json' \
+-H 'Content-Type: multipart/form-data' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X POST 'https://sandbox.boletosimples.com.br/api/v1/remittances'
+-F "discharge[file]=@cnab240.ret" \
+-X POST 'https://sandbox.boletosimples.com.br/api/v1/discharges'
 </pre>
 
     <small>Resposta:</small>
@@ -176,20 +168,16 @@ HTTP/1.1 201 Created
 Server: Cowboy
 Connection: keep-alive
 Strict-Transport-Security: max-age=2592000
-Location: https://sandbox.boletosimples.com.br/api/v1/remittances/1
+Location: https://sandbox.boletosimples.com.br/api/v1/discharges/1
 Content-Type: application/json; charset=utf-8
 ...
 
 {
-                  "filename" => "1605061.REM",
-           "created_via_api" => true,
-                    "status" => "processed",
-    "bank_billet_account_id" => 1,
-                "created_at" => "2016-05-06",
-              "processed_at" => "2016-05-06",
-                       "url" => "https://sandbox.boletosimples.com.br/remessas/06tt1bcc3f6132720866b53a57c76de4/download",
-                        "id" => 1,
-           "bank_billet_ids" => [1]
+  "id":1,
+  "filename":"cnab240.ret",
+  "processed_at":"2015-06-11T10:41:41.916-03:00",
+  "created_via_api":true,
+  "status":"unprocessed"
 }
 </pre>
   </div>
@@ -286,97 +274,9 @@ Array
   </div> -->
 </div>
 
-
-### Criar CNABs em lote
-
-`POST /api/v1/remittances/bulk`
-
-Serão feitas solicitações de Remessa de acordo com IDs das ocorrências.
-Será criada uma solicitação de Remessa para cada carteira associada às ocorrências.
-Após a criação das Remessas, elas serão processadas e
-ao término do processamento serão emitidas notificações através dos Webhooks.
-
-<table class='table table-bordered'>
-  <thead>
-    <tr>
-      <th>Parâmetro</th>
-      <th data-container="body" data-toggle="tooltip" title="Obrigatório">Obr.</th>
-      <th>Tipo</th>
-      <th>Descrição</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>
-        <strong>bank_billet_remittance_ids</strong>
-      </td>
-      <td>
-        Sim
-      </td>
-      <td>
-        Number
-      </td>
-      <td>
-        IDs das Ocorrências pendentes
-      </td>
-    </tr>
-  </tbody>
-</table>
-
-
-#### Exemplo
-
-<ul class="nav nav-tabs" role="tablist">
-  <li class="active"><a href="#bash3" role="tab" data-toggle="tab">Bash</a></li>
-  <!-- <li><a href="#ruby3" role="tab" data-toggle="tab">Ruby</a></li> -->
-  <!-- <li><a href="#php3" role="tab" data-toggle="tab">PHP</a></li> -->
-</ul>
-
-<div class="tab-content">
-  <div class="tab-pane active" id="bash3">
-    <small>Requisição:</small>
-
-<pre class="bash">
-curl -i \
--u $BOLETOSIMPLES_TOKEN:x \
--d '{"remittance":{"bank_billet_remittance_ids":["1","2"]}}' \
--H 'Content-Type: application/json' \
--H 'User-Agent: MyApp (myapp@example.com)' \
--X POST 'https://sandbox.boletosimples.com.br/api/v1/remittances/bulk'
-</pre>
-
-
-    <small>Resposta:</small>
-
-<pre class="http">
-HTTP/1.1 200 OK
-Server: Cowboy
-Connection: keep-alive
-Strict-Transport-Security: max-age=2592000
-Content-Type: application/json; charset=utf-8
-...
-
-[
-  {
-                    "filename" => "1605061.REM",
-             "created_via_api" => true,
-                      "status" => "processed",
-      "bank_billet_account_id" => 1,
-                  "created_at" => "2016-05-06",
-                "processed_at" => "2016-05-06",
-                         "url" => "https://sandbox.boletosimples.com.br/remessas/06tt1bcc3f6132720866b53a57c76de4/download",
-                          "id" => 1,
-             "bank_billet_ids" => [1]
-  }
-]
-</pre>
-</div>
-</div>
-
-
 ### Informações do CNAB
 
-`GET /api/v1/remittances/:id`
+`GET /api/v1/discharges/:id`
 
 #### Exemplo
 
@@ -395,7 +295,7 @@ curl -i \
 -u $BOLETOSIMPLES_TOKEN:x \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X GET 'https://sandbox.boletosimples.com.br/api/v1/remittances/1'
+-X GET 'https://sandbox.boletosimples.com.br/api/v1/discharges/1'
 </pre>
 
     <small>Resposta:</small>
@@ -409,15 +309,11 @@ Content-Type: application/json; charset=utf-8
 ...
 
 {
-                  "filename" => "1605061.REM",
-           "created_via_api" => true,
-                    "status" => "processed",
-    "bank_billet_account_id" => 1,
-                "created_at" => "2016-05-06",
-              "processed_at" => "2016-05-06",
-                       "url" => "https://sandbox.boletosimples.com.br/remessas/06tt1bcc3f6132720866b53a57c76de4/download",
-                        "id" => 1,
-           "bank_billet_ids" => [1]
+  "id":1,
+  "filename":"cnab240.ret",
+  "processed_at":"2015-06-11T10:41:41.916-03:00",
+  "created_via_api":true,
+  "status":"processed"
 }
 </pre>
   </div>
@@ -483,7 +379,7 @@ Array
 
 ### Listar CNABs
 
-`GET /api/v1/remittances`
+`GET /api/v1/discharges`
 
 <table class='table table-bordered'>
   <thead>
@@ -524,52 +420,6 @@ Array
         Quantidade de registros por página (Maximo de 250)
       </td>
     </tr>
-
-    <tr>
-      <td>
-        <strong>expire_at </strong>
-      </td>
-      <td>
-        Não
-      </td>
-      <td>
-        Array[2]
-      </td>
-      <td>
-        Filtro por faixa de datas de vencimento do boleto. Se qualquer um dos dois itens
-        for deixado em branco, a data (inicial ou final) ficará em aberto.
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        <strong>our_code </strong>
-      </td>
-      <td>
-        Não
-      </td>
-      <td>
-        String
-      </td>
-      <td>
-        Filtro por Nosso número.
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        <strong>bank_billet_account_id </strong>
-      </td>
-      <td>
-        Não
-      </td>
-      <td>
-        Number
-      </td>
-      <td>
-        Filtro por ID da Carteira.
-      </td>
-    </tr>
   </tbody>
 </table>
 
@@ -590,7 +440,7 @@ curl -i \
 -u $BOLETOSIMPLES_TOKEN:x \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X GET "https://sandbox.boletosimples.com.br/api/v1/remittances?page=1&per_page=50"
+-X GET "https://sandbox.boletosimples.com.br/api/v1/discharges?page=1&per_page=50"
 </pre>
 
     <small>Resposta:</small>
@@ -606,15 +456,11 @@ Content-Type: application/json; charset=utf-8
 
 [
   {
-                    "filename" => "1605061.REM",
-             "created_via_api" => true,
-                      "status" => "processed",
-      "bank_billet_account_id" => 1,
-                  "created_at" => "2016-05-06",
-                "processed_at" => "2016-05-06",
-                         "url" => "https://boletosimples.com.br/remessas/06tt1bcc3f6132720866b53a57c76de4/download",
-                          "id" => 1,
-             "bank_billet_ids" => [1]
+    "id":1,
+    "filename":"cnab240.ret",
+    "processed_at":"2015-06-11T10:41:41.916-03:00",
+    "created_via_api":true,
+    "status":"processed"
   }
 ]
 </pre>
@@ -623,8 +469,8 @@ Content-Type: application/json; charset=utf-8
     <small>Requisição:</small>
 
 <pre class="ruby">
-@remittances = BoletoSimples::BankBilletAccount.all(page: 1, per_page: 2)
-puts "Carteiras Retornadas: #{@remittances.count}"
+@discharges = BoletoSimples::BankBilletAccount.all(page: 1, per_page: 2)
+puts "Carteiras Retornadas: #{@discharges.count}"
 puts "Total: #{BoletoSimples.last_request.total}"
 puts "Primeira Página: #{BoletoSimples.last_request.links[:first]}"
 puts "Página Anterior: #{BoletoSimples.last_request.links[:prev]}"
@@ -639,16 +485,16 @@ CNABs Retornadas: 3
 Total: 3
 Primeira Página:
 Página Anterior:
-Próxima Página: https://sandbox.boletosimples.com.br/api/v1/remittances?page=2&per_page=2
-Última Página: https://sandbox.boletosimples.com.br/api/v1/remittances?page=2&per_page=2
+Próxima Página: https://sandbox.boletosimples.com.br/api/v1/discharges?page=2&per_page=2
+Última Página: https://sandbox.boletosimples.com.br/api/v1/discharges?page=2&per_page=2
 </pre>
   </div> -->
   <!-- <div class="tab-pane" id="php6">
     <small>Requisição:</small>
 
 <pre class="php">
-$remittances = BoletoSimples\bank_billet_account::all(['page' => 1, 'per_page' => 2]);
-echo "CNABs Retornados: " . sizeof($remittances) . "\n";
+$discharges = BoletoSimples\bank_billet_account::all(['page' => 1, 'per_page' => 2]);
+echo "CNABs Retornados: " . sizeof($discharges) . "\n";
 echo "Total: " . BoletoSimples::$last_request->total . "\n";
 echo "Primeira Página: " . BoletoSimples::$last_request->links['first'] . "\n";
 echo "Página Anterior: " . BoletoSimples::$last_request->links['prev'] . "\n";
@@ -663,15 +509,18 @@ CNABs Retornados: 2
 Total: 9
 Primeira Página:
 Página Anterior:
-Próxima Página: https://sandbox.boletosimples.com.br/api/v1/remittances?page=2&per_page=2
-Última Página: https://sandbox.boletosimples.com.br/api/v1/remittances?page=5&per_page=2
+Próxima Página: https://sandbox.boletosimples.com.br/api/v1/discharges?page=2&per_page=2
+Última Página: https://sandbox.boletosimples.com.br/api/v1/discharges?page=5&per_page=2
 </pre>
   </div> -->
 </div>
 
-### Apagar CNAB
+### Quitar Boletos
 
-`DELETE /api/v1/remittances/:id`
+`PUT /api/v1/discharges/:id/pay_off` ou `PATCH /api/v1/discharges/:id/pay_off`
+
+É necessário já ter enviado o CNAB.
+Todos os boletos que forem identificados dentro do CNAB serão marcados como PAGO e os <a href="/webhooks">Webhooks</a> serão disparados.
 
 #### Exemplo
 
@@ -690,123 +539,26 @@ curl -i \
 -u $BOLETOSIMPLES_TOKEN:x \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X DELETE 'https://sandbox.boletosimples.com.br/api/v1/remittances/11'
+-X PUT 'https://sandbox.boletosimples.com.br/api/v1/discharges/1/pay_off'
 </pre>
 
     <small>Resposta:</small>
 
 <pre class="http">
-HTTP/1.1 204 No Content
-Content-Length: 0
-Connection: keep-alive
-Status: 204 No Content
-Cache-Control: no-cache
-X-Ratelimit-Limit: 500
-Date: Thu, 27 Aug 2015 22:59:30 GMT
-Strict-Transport-Security: max-age=2592000
-X-Ratelimit-Remaining: 498
-X-Request-Id: 835c6f5c-06f3-4a8d-9cf0-a354e237cce4
-X-Runtime: 0.076245
-X-Rack-Cache: invalidate, pass
-</pre>
-  </div>
-  <!-- <div class="tab-pane" id="ruby3">
-    <small>Requisição:</small>
-
-<pre class="ruby">
-@bank_billet_account = BoletoSimples::BankBilletAccount.find(4)
-ap @bank_billet_account.attributes
-</pre>
-
-    <small>Resposta:</small>
-
-<pre class="ruby">
-{
-    "bank_contract_slug" => "sicoob-02",
-       "next_our_number" => "0000001",
-         "agency_number" => "4327",
-          "agency_digit" => "3",
-        "account_number" => "00003666",
-         "account_digit" => "8",
-                "extra1" => "1234567",
-          "extra1_digit" => nil,
-                "extra2" => nil,
-          "extra2_digit" => nil,
-                    "id" => 3
-}
-</pre>
-  </div> -->
-  <!-- <div class="tab-pane" id="php3">
-    <small>Requisição:</small>
-
-<pre class="php">
-$bank_billet_account = BoletoSimples\bank_billet_account::find(66);
-print_r($bank_billet_account->attributes());
-</pre>
-
-    <small>Resposta:</small>
-
-<pre class="php">
-Array
-(
-    [id] => 66
-    [city_name] => Rio de Janeiro
-    [person_name] => Joao da Silva
-    [address] => Rua quinhentos
-    [address_complement] => Sala 4
-    [address_number] => 111
-    [mobile_number] =>
-    [cnpj_cpf] => 860.196.915-19
-    [email] => carteira@example.com
-    [neighborhood] => bairro
-    [person_type] => individual
-    [phone_number] => 2112123434
-    [zipcode] => 12312-123
-    [mobile_local_code] =>
-    [state] => RJ
-    [created_via_api] => 1
-)
-</pre>
-  </div> -->
-</div>
-
-### Raw(text/plain) do CNAB
-
-`GET /api/v1/remittances/:id/raw`
-
-#### Exemplo
-
-<ul class="nav nav-tabs" role="tablist">
-  <li class="active"><a href="#bash3" role="tab" data-toggle="tab">Bash</a></li>
-  <!-- <li><a href="#ruby3" role="tab" data-toggle="tab">Ruby</a></li> -->
-  <!-- <li><a href="#php3" role="tab" data-toggle="tab">PHP</a></li> -->
-</ul>
-
-<div class="tab-content">
-  <div class="tab-pane active" id="bash3">
-    <small>Requisição:</small>
-
-<pre class="bash">
-curl -i \
--u $BOLETOSIMPLES_TOKEN:x \
--H 'Content-Type: text/plain' \
--H 'User-Agent: MyApp (myapp@example.com)' \
--X GET 'https://sandbox.boletosimples.com.br/api/v1/remittances/1/raw'
-</pre>
-
-    <small>Resposta:</small>
-
-<pre class="http">
-HTTP/1.1 200 OK
+HTTP/1.1 204 OK
 Server: Cowboy
 Connection: keep-alive
 Strict-Transport-Security: max-age=2592000
 Content-Type: application/json; charset=utf-8
 ...
 
-01REMESSA01COBRANCA       2342567888          NOME EMPRESA       104C ECON FEDERAL 240517
-
-...
+{
+  "id":1,
+  "filename":"cnab240.ret",
+  "processed_at":"2015-06-11T10:41:41.916-03:00",
+  "created_via_api":true,
+  "status":"processed"
+}
 </pre>
   </div>
   <!-- <div class="tab-pane" id="ruby3">

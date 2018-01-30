@@ -1,34 +1,37 @@
 ---
-title: Carnês - API do Boleto Simples
+title: Assinaturas
+position: 1
 layout: pt
 en: "/en/references"
-breadcrumb: Carnês
+breadcrumb: Assinaturas
 ---
 
-## Carnês
+## Assinaturas
 
 | Recurso                  | Descrição
 | ------------------------ | ------------------------
-| [POST /api/v1/installments](#criar-carnê) | Criar carnê
-| [GET /api/v1/installments/:id](#informações-do-carnê) | Informações da carnê
-| [GET /api/v1/installments](#listar-carnês) | Listar Carnês
-| [DELETE /api/v1/installments/:id](#excluir-carnê) | Excluir carnê
+| [POST /api/v1/customer_subscriptions](#criar-assinatura) | Criar assinatura
+| [GET /api/v1/customer_subscriptions/:id](#informações-do-assinatura) | Informações da assinatura
+| [PATCH /api/v1/customer_subscriptions/:id](#atualizar-assinatura) | Atualizar assinatura
+| [PUT /api/v1/customer_subscriptions/:id](#atualizar-assinatura) | Atualizar assinatura
+| [GET /api/v1/customer_subscriptions](#listar-assinaturas) | Listar assinaturas
+| [POST /api/v1/customer_subscriptions/:id/next_charge](#gerar-próxima-cobrança) | Gerar próxima cobrança
+| [DELETE /api/v1/customer_subscriptions/:id](#excluir-assinatura) | Excluir assinatura
 
 ### Modelo de Dados
 
 | Parâmetro                       | Obr.  | Tipo    | Tamanho | Descrição
-| ------------------------------- | ----- | ------- | ------- | ------------------------
-| **id**                          | N/A   | Integer |         | ID do carnê
+| ---------------------------     | ----- | ------- | ------- | ------------------------
+| **id**                          | N/A   | Integer |         | ID da assinatura
 | **customer_id**                 | Sim   | Integer |         | ID do [Cliente](/reference/v1/customers/)
-| **bank_billet_account_id**      | Sim   | Integer |         | ID da [Carteira de Cobrança](/reference/v1/bank_billet_accounts/). Se não informado, usará a carteira padrão.
-| **amount**                      | Sim   | String  |         | Preço da carnê (R$) Formato: 1.234,34
+| **bank_billet_account_id**      | Não   | Integer |         | ID da [Carteira de Cobrança](/reference/v1/bank_billet_accounts/). Se não informado, usará a carteira padrão.
+| **amount**                      | Sim   | String  |         | Preço da Assinatura (R$) Formato: 1.234,34
 | **cycle**                       | Não   | String  | 20      | Ciclo da carnê ([possíveis valores](#cycle)). Default: monthly
-| **start_at**                    | Sim   | Date    |         | Data da Primeira cobrança.
-| **end_at**                      | Não   | Date    |         | Data da última cobrança.
-| **total**                       | Sim   | Integer |         | Quantidade de parcelas.
+| **next_billing**                | Não   | Date    |         | Data da Primeira ou Próxima cobrança. Caso não seja enviado uma data, esse campo será calculado para ter o valor do dia da criação da assinatura mais o ciclo escolhido. Ex.: Mensal(Hoje + 30 dias)
+| **end_at**                      | Não   | Date    |         | Data em que deseja parar as cobranças. Caso em branco, as cobranças serão geradas automaticamente até que se informe uma data ou se exclua a assinatura.
 | **description**                 | Sim   | Text    |         | Descrição do produto vendido ou serviço prestado.
 | **instructions**                | Não   | Text    |         | Instruções para o caixa
-| **status**                      | N/A   | String  |         | Situação do carnê ([possíveis valores](#status))
+| **days_in_advance**             | Não   | Integer |         | Com quantos dias de antecedência à data de vencimento a cobrança será gerada. Default: 7.
 | **fine_type**                   | Não   | Integer |         | Tipo de multa ([possíveis valores](#fine_type))
 | **fine_percentage**             | Não   | Float   |         | Porcentagem de Multa por Atraso Ex: 2% x R$ 250,00 = R$ 5,00. Obrigatória se `fine_type` é igual a 1
 | **fine_value**                  | Não   | String  |         | Valor da multa. Obrigatório se `fine_type` é igual a 2. (R$) Formato: 1.234,34
@@ -43,10 +46,9 @@ breadcrumb: Carnês
 | **discount_percentage**         | Não   | Float   |         | Percentual do valor do boleto equivalente ao desconto. Obrigatório se `discount_type` é igual a 2
 | **days_for_discount**           | Não   | Integer |         | Dias para desconto. Obrigatório se `discount_type` é diferente de zero
 | **bank_billet_layout_id**       | Não   | Integer |         | ID do Modelo de Boleto
-| **url**                         | N/A   | String  |         | URL para visualização do carnê
-| **bank_billet_ids**             | N/A   | Array   |         | IDs de boletos vinculados ao carnê
 | **notes**                       | Não   | Text    |         | Anotações
 | **tags**                        | Não   | Array   |         | Tags associadas
+| **bank_billet_ids**             | N/A   | Array   |         | IDs de boletos vinculados a assinatura
 
 ### Dicionário de Dados
 
@@ -58,12 +60,6 @@ breadcrumb: Carnês
 | quarterly  | Trimestral
 | semiannual | Semestral
 | annual     | Anual
-
-#### status
-
-| created    | Gerando
-| processed  | Aberto
-| finished   | Finalizado
 
 #### fine_type
 
@@ -87,9 +83,9 @@ breadcrumb: Carnês
 | 1 | Para valor fixo
 | 2 | Para percentual do valor do boleto
 
-### Criar carnê
+### Criar assinatura
 
-`POST /api/v1/installments`
+`POST /api/v1/customer_subscriptions`
 
 #### Exemplo de requisição inválida
 
@@ -106,10 +102,10 @@ breadcrumb: Carnês
 <pre class="bash">
 curl -i \
 -u $BOLETOSIMPLES_TOKEN:x \
--d '{"installment":{}}' \
+-d '{"customer_subscription":{}}' \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X POST 'https://sandbox.boletosimples.com.br/api/v1/installments'
+-X POST 'https://sandbox.boletosimples.com.br/api/v1/customer_subscriptions'
 </pre>
 
     <small>Resposta:</small>
@@ -121,7 +117,7 @@ Status: 422 Unprocessable Entity
 Content-Type: application/json; charset=utf-8
 ...
 
-{"errors":{"installment":["não pode ficar em branco"]}}
+{"errors":{"customer_subscription":["não pode ficar em branco"]}}
 </pre>
   </div>
   <!--
@@ -129,13 +125,13 @@ Content-Type: application/json; charset=utf-8
     <small>Requisição:</small>
 
 <pre class="ruby">
-@installment = BoletoSimples::Customer.create({person_name: 'Joao Da Silva'})
-if @installment.persisted?
+@customer_subscription = BoletoSimples::Customer.create({person_name: 'Joao Da Silva'})
+if @customer_subscription.persisted?
   puts "Sucesso :)"
-  puts @installment.attributes
+  puts @customer_subscription.attributes
 else
   puts "Erro :("
-  puts @installment.response_errors
+  puts @customer_subscription.response_errors
 end
 </pre>
 
@@ -158,13 +154,13 @@ Erro :(
       <small>Requisição:</small>
 
 <pre class="php">
-$installment = BoletoSimples\Customer::create(['person_name' => 'Joao da Silva']);
-if($installment->isPersisted()) {
+$customer_subscription = BoletoSimples\Customer::create(['person_name' => 'Joao da Silva']);
+if($customer_subscription->isPersisted()) {
   echo "Sucesso :)\n";
-  print_r($installment->attributes());
+  print_r($customer_subscription->attributes());
 } else {
   echo "Erro :(\n";
-  print_r($installment->response_errors);
+  print_r($customer_subscription->response_errors);
 }
 </pre>
 
@@ -203,12 +199,12 @@ Array
     <small>Requisição:</small>
 
 <pre class="bash">
-  curl -i \
-  -u $BOLETOSIMPLES_TOKEN:x \
-  -d '{"installment":{"customer_id":"1", "bank_billet_account_id": "1", "amount": "1.120,4", "cycle": "monthly", "start_at": "2016-09-15", "total": "3", "description": "Hospedagem"}}' \
-  -H 'Content-Type: application/json' \
-  -H 'User-Agent: MyApp (myapp@example.com)' \
-  -X POST 'https://sandbox.boletosimples.com.br/api/v1/installments'
+curl -i \
+-u $BOLETOSIMPLES_TOKEN:x \
+-d '{"customer_subscription":{"customer_id":"1", "bank_billet_account_id": "1", "amount": "1.120,4", "cycle": "monthly", "description": "Hospedagem"}}' \
+-H 'Content-Type: application/json' \
+-H 'User-Agent: MyApp (myapp@example.com)' \
+-X POST 'https://sandbox.boletosimples.com.br/api/v1/customer_subscriptions'
 </pre>
 
     <small>Resposta:</small>
@@ -217,27 +213,26 @@ Array
 HTTP/1.1 201 Created
 Date: Fri, 17 Oct 2014 19:30:06 GMT
 Status: 201 Created
-Location: https://sandbox.boletosimples.com.br/api/v1/installments/1
+Location: https://sandbox.boletosimples.com.br/api/v1/customer_subscriptions/1
 Content-Type: application/json; charset=utf-8
 ...
 
 {
-  "id":1,
-  "amount":1120.4,
-  "cycle":"monthly",
-  "start_at":"2016-09-15",
-  "end_at":"2016-11-16",
-  "instructions":null,
-  "customer_id":11,
-  "description":"Hospedagem",
-  "created_at":"2016-08-15",
-  "updated_at":"2016-08-15",
-  "created_via_api":true,
-  "total":3,
-  "bank_billet_account_id":12,
-  "status":"created",
-  "fine_for_delay": 0.0,
-  "late_payment_interest": 0.0
+ "id":1,
+ "amount":1120.4,
+ "cycle":"monthly",
+ "next_billing":"2016-06-18",
+ "end_at":null,
+ "instructions":null,
+ "description":"Hospedagem",
+ "created_at":"2016-05-18",
+ "updated_at":"2016-05-18",
+ "created_via_api":true,
+ "customer_id":"1",
+ "bank_billet_account_id":"1",
+ "days_in_advance": "7",
+ "fine_for_delay": 0.0,
+ "late_payment_interest": 0.0
 }
 </pre>
   </div>
@@ -246,10 +241,10 @@ Content-Type: application/json; charset=utf-8
     <small>Requisição:</small>
 
 <pre class="ruby">
-@installment = BoletoSimples::Customer.create({
+@customer_subscription = BoletoSimples::Customer.create({
   person_name: "Joao da Silva",
   cnpj_cpf: "782.661.177-64",
-  email: "carnê@bom.com",
+  email: "assinatura@bom.com",
   address: "Rua quinhentos",
   city_name: "Rio de Janeiro",
   state: "RJ",
@@ -259,12 +254,12 @@ Content-Type: application/json; charset=utf-8
   address_complement: "Sala 4",
   phone_number: "2112123434"
 })
-if @installment.persisted?
+if @customer_subscription.persisted?
   puts "Sucesso :)"
-  puts @installment.attributes
+  puts @customer_subscription.attributes
 else
   puts "Erro :("
-  puts @installment.response_errors
+  puts @customer_subscription.response_errors
 end
 </pre>
   <small>Resposta:</small>
@@ -274,7 +269,7 @@ Sucesso :)
 {
            "person_name" => "Joao da Silva",
               "cnpj_cpf" => "782.661.177-64",
-                 "email" => "carnê@bom.com",
+                 "email" => "assinatura@bom.com",
                "address" => "Rua quinhentos",
              "city_name" => "Rio de Janeiro",
                  "state" => "RJ",
@@ -295,10 +290,10 @@ Sucesso :)
     <small>Requisição:</small>
 
 <pre class="php">
-$installment = BoletoSimples\Customer::create([
+$customer_subscription = BoletoSimples\Customer::create([
   'person_name' => "Joao da Silva",
   'cnpj_cpf' => "860.196.915-19",
-  'email' => "carnê@example.com",
+  'email' => "assinatura@example.com",
   'address' => "Rua quinhentos",
   'city_name' => "Rio de Janeiro",
   'state' => "RJ",
@@ -308,12 +303,12 @@ $installment = BoletoSimples\Customer::create([
   'address_complement' => "Sala 4",
   'phone_number' => "2112123434"
 ]);
-if($installment->isPersisted()) {
+if($customer_subscription->isPersisted()) {
   echo "Sucesso :)\n";
-  print_r($installment->attributes());
+  print_r($customer_subscription->attributes());
 } else {
   echo "Erro :(\n";
-  print_r($installment->response_errors);
+  print_r($customer_subscription->response_errors);
 }
 </pre>
   <small>Resposta:</small>
@@ -330,7 +325,7 @@ Array
     [address_number] => 111
     [mobile_number] =>
     [cnpj_cpf] => 860.196.915-19
-    [email] => carnê@example.com
+    [email] => assinatura@example.com
     [neighborhood] => bairro
     [person_type] => individual
     [phone_number] => 2112123434
@@ -343,9 +338,9 @@ Array
   </div> -->
 </div>
 
-### Informações do carnê
+### Informações do assinatura
 
-`GET /api/v1/installments/:id`
+`GET /api/v1/customer_subscriptions/:id`
 
 #### Exemplo
 
@@ -364,7 +359,7 @@ curl -i \
 -u $BOLETOSIMPLES_TOKEN:x \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X GET 'https://sandbox.boletosimples.com.br/api/v1/installments/1'
+-X GET 'https://sandbox.boletosimples.com.br/api/v1/customer_subscriptions/1'
 </pre>
 
     <small>Resposta:</small>
@@ -377,22 +372,21 @@ Content-Type: application/json; charset=utf-8
 ...
 
 {
-  "id":1,
-  "amount":1120.4,
-  "cycle":"monthly",
-  "start_at":"2016-09-15",
-  "end_at":"2016-11-16",
-  "instructions":null,
-  "customer_id":11,
-  "description":"Hospedagem",
-  "created_at":"2016-08-15",
-  "updated_at":"2016-08-15",
-  "created_via_api":true,
-  "total":3,
-  "bank_billet_account_id":12,
-  "status":"created",
-  "fine_for_delay": 0.0,
-  "late_payment_interest": 0.0
+ "id":1,
+ "amount":1120.4,
+ "cycle":"monthly",
+ "next_billing":"2016-06-18",
+ "end_at":null,
+ "instructions":null,
+ "description":"Hospedagem",
+ "created_at":"2016-05-18",
+ "updated_at":"2016-05-18",
+ "created_via_api":true,
+ "customer_id":"1",
+ "bank_billet_account_id":"1",
+ "days_in_advance": "7",
+ "fine_for_delay": 0.0,
+ "late_payment_interest": 0.0
 }
 </pre>
   </div>
@@ -401,8 +395,8 @@ Content-Type: application/json; charset=utf-8
     <small>Requisição:</small>
 
 <pre class="ruby">
-@installment = BoletoSimples::Customer.find(67)
-puts @installment.attributes
+@customer_subscription = BoletoSimples::Customer.find(67)
+puts @customer_subscription.attributes
 </pre>
 
     <small>Resposta:</small>
@@ -416,7 +410,7 @@ puts @installment.attributes
         "address_number" => "111",
          "mobile_number" => nil,
               "cnpj_cpf" => "782.661.177-64",
-                 "email" => "carnê@bom.com",
+                 "email" => "assinatura@bom.com",
           "neighborhood" => "bairro",
            "person_type" => "individual",
           "phone_number" => "2112123434",
@@ -432,8 +426,8 @@ puts @installment.attributes
     <small>Requisição:</small>
 
 <pre class="php">
-$installment = BoletoSimples\Customer::find(66);
-print_r($installment->attributes());
+$customer_subscription = BoletoSimples\Customer::find(66);
+print_r($customer_subscription->attributes());
 </pre>
 
     <small>Resposta:</small>
@@ -449,7 +443,7 @@ Array
     [address_number] => 111
     [mobile_number] =>
     [cnpj_cpf] => 860.196.915-19
-    [email] => carnê@example.com
+    [email] => assinatura@example.com
     [neighborhood] => bairro
     [person_type] => individual
     [phone_number] => 2112123434
@@ -463,9 +457,187 @@ Array
   -->
 </div>
 
-### Listar Carnês
+### Atualizar assinatura
 
-`GET /api/v1/installments`
+`PATCH /api/v1/customer_subscriptions/:id` ou `PUT /api/v1/customer_subscriptions/:id`
+
+#### Exemplo de requisição inválida
+
+<ul class="nav nav-tabs" role="tablist">
+  <li class="active"><a href="#bash4" role="tab" data-toggle="tab">Bash</a></li>
+  <!--<li><a href="#ruby4" role="tab" data-toggle="tab">Ruby</a></li>
+  <li><a href="#php4" role="tab" data-toggle="tab">PHP</a></li>-->
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="bash4">
+    <small>Requisição:</small>
+
+<pre class="bash">
+curl -i \
+-u $BOLETOSIMPLES_TOKEN:x \
+-d '{"customer_subscription":{"amount":""}}' \
+-H 'Content-Type: application/json' \
+-H 'User-Agent: MyApp (myapp@example.com)' \
+-X PATCH 'https://sandbox.boletosimples.com.br/api/v1/customer_subscriptions/1'
+</pre>
+
+    <small>Resposta:</small>
+
+<pre class="http">
+HTTP/1.1 422 Unprocessable Entity
+Date: Fri, 17 Oct 2014 18:39:47 GMT
+Status: 422 Unprocessable Entity
+Content-Type: application/json; charset=utf-8
+...
+
+{"errors":{"amount":["não pode ficar em branco"]}}
+</pre>
+  </div>
+  <!--
+  <div class="tab-pane" id="ruby4">
+    <small>Requisição:</small>
+
+<pre class="ruby">
+@customer_subscription = BoletoSimples::Customer.find(1)
+@customer_subscription.person_name = ""
+if @customer_subscription.save
+  puts "Sucesso :)"
+  puts "Novo nome: #{@customer_subscription.person_name}"
+else
+  puts "Erro :("
+  puts @customer_subscription.response_errors
+end
+</pre>
+
+    <small>Resposta:</small>
+
+<pre class="ruby">
+Erro :(
+{
+  :person_name => [
+    [0] "não pode ficar em branco"
+  ]
+}
+</pre>
+
+  </div>
+    <div class="tab-pane" id="php4">
+      <small>Requisição:</small>
+
+<pre class="php">
+$customer_subscription = BoletoSimples\Customer::find(1);
+$customer_subscription->person_name = '';
+if($customer_subscription->save()) {
+  echo "Sucesso :)\n";
+  echo "Novo nome: " . $customer_subscription->person_name . "\n";;
+} else {
+  echo "Erro :(\n";
+  print_r($customer_subscription->response_errors);
+}
+</pre>
+
+      <small>Resposta:</small>
+
+<pre class="php">
+Erro :(
+Array
+(
+    [person_name] => Array
+        (
+            [0] => não pode ficar em branco
+        )
+
+)
+</pre>
+
+    </div>
+    -->
+</div>
+
+#### Exemplo de requisição válida
+
+<ul class="nav nav-tabs" role="tablist">
+  <li class="active"><a href="#bash5" role="tab" data-toggle="tab">Bash</a></li>
+ <!-- <li><a href="#ruby5" role="tab" data-toggle="tab">Ruby</a></li>
+  <li><a href="#php5" role="tab" data-toggle="tab">PHP</a></li>-->
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="bash5">
+    <small>Requisição:</small>
+
+<pre class="bash">
+curl -i \
+-u $BOLETOSIMPLES_TOKEN:x \
+-d '{"customer_subscription":{"amount":"120,40"}}' \
+-H 'Content-Type: application/json' \
+-H 'User-Agent: MyApp (myapp@example.com)' \
+-X PUT 'https://sandbox.boletosimples.com.br/api/v1/customer_subscriptions/1'
+</pre>
+
+    <small>Resposta:</small>
+
+<pre class="http">
+HTTP/1.1 204 No Content
+Content-Length: 0
+Connection: keep-alive
+Status: 204 No Content
+Cache-Control: no-cache
+X-Ratelimit-Limit: 500
+Location: https://sandbox.boletosimples.com.br/api/v1/customer_subscriptions/1
+</pre>
+  </div>
+ <!--
+  <div class="tab-pane" id="ruby5">
+    <small>Requisição:</small>
+
+<pre class="ruby">
+@customer_subscription = BoletoSimples::Customer.find(1)
+@customer_subscription.person_name = "Nome 1234"
+if @customer_subscription.save
+  puts "Sucesso :)"
+  puts "Novo nome: #{@customer_subscription.person_name}"
+else
+  puts "Erro :("
+  puts @customer_subscription.response_errors
+end
+</pre>
+  <small>Resposta:</small>
+
+<pre class="ruby">
+Sucesso :)
+Novo nome: Nome 1234
+</pre>
+  </div>
+  <div class="tab-pane" id="php5">
+    <small>Requisição:</small>
+
+<pre class="php">
+$customer_subscription = BoletoSimples\Customer::find(1);
+echo "Nome antigo: " . $customer_subscription->person_name . "\n";;
+$customer_subscription->person_name = 'Nome 1234';
+if($customer_subscription->save()) {
+  echo "Sucesso :)\n";
+  echo "Novo nome: " . $customer_subscription->person_name . "\n";;
+} else {
+  echo "Erro :(\n";
+  print_r($customer_subscription->response_errors);
+}
+</pre>
+  <small>Resposta:</small>
+
+<pre class="php">
+Sucesso :)
+Novo nome: Nome 1234
+</pre>
+  </div>
+  -->
+</div>
+
+### Listar assinaturas
+
+`GET /api/v1/customer_subscriptions`
 
 <table class='table table-bordered'>
   <thead>
@@ -526,7 +698,7 @@ curl -i \
 -u $BOLETOSIMPLES_TOKEN:x \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X GET "https://sandbox.boletosimples.com.br/api/v1/installments?page=1&per_page=50"
+-X GET "https://sandbox.boletosimples.com.br/api/v1/customer_subscriptions?page=1&per_page=50"
 </pre>
 
     <small>Resposta:</small>
@@ -535,29 +707,28 @@ curl -i \
 HTTP/1.1 200 OK
 Date: Fri, 17 Oct 2014 19:46:16 GMT
 Status: 200 OK
-Link: <https://sandbox.boletosimples.com.br/api/v1/installments?page=3&per_page=50>; rel="last", <https://sandbox.boletosimples.com.br/api/v1/installments?page=2&per_page=50>; rel="next"
+Link: <https://sandbox.boletosimples.com.br/api/v1/customer_subscriptions?page=3&per_page=50>; rel="last", <https://sandbox.boletosimples.com.br/api/v1/customer_subscriptions?page=2&per_page=50>; rel="next"
 Total: 101
 Content-Type: application/json; charset=utf-8
 ...
 
 [
   {
-    "id":1,
-    "amount":1120.4,
-    "cycle":"monthly",
-    "start_at":"2016-09-15",
-    "end_at":"2016-11-16",
-    "instructions":null,
-    "customer_id":11,
-    "description":"Hospedagem",
-    "created_at":"2016-08-15",
-    "updated_at":"2016-08-15",
-    "created_via_api":true,
-    "total":3,
-    "bank_billet_account_id":12,
-    "status":"created",
-    "fine_for_delay": 0.0,
-    "late_payment_interest": 0.0
+   "id":1,
+   "amount":1120.4,
+   "cycle":"monthly",
+   "next_billing":"2016-06-18",
+   "end_at":null,
+   "instructions":null,
+   "description":"Hospedagem",
+   "created_at":"2016-05-18",
+   "updated_at":"2016-05-18",
+   "created_via_api":true,
+   "customer_id":"1",
+   "bank_billet_account_id":"1",
+   "days_in_advance": "7",
+   "fine_for_delay": 0.0,
+   "late_payment_interest": 0.0
   }
 ]
 </pre>
@@ -567,8 +738,8 @@ Content-Type: application/json; charset=utf-8
     <small>Requisição:</small>
 
 <pre class="ruby">
-@installments = BoletoSimples::Customer.all(page: 1, per_page: 2)
-puts "Carnês Retornados: #{@installments.count}"
+@customer_subscriptions = BoletoSimples::Customer.all(page: 1, per_page: 2)
+puts "Assinaturas Retornados: #{@customer_subscriptions.count}"
 puts "Total: #{BoletoSimples.last_request.total}"
 puts "Primeira Página: #{BoletoSimples.last_request.links[:first]}"
 puts "Página Anterior: #{BoletoSimples.last_request.links[:prev]}"
@@ -579,20 +750,20 @@ puts "Última Página: #{BoletoSimples.last_request.links[:last]}"
     <small>Resposta:</small>
 
 <pre class="http">
-Carnês Retornados: 2
+Assinaturas Retornados: 2
 Total: 9
 Primeira Página:
 Página Anterior:
-Próxima Página: https://sandbox.boletosimples.com.br/api/v1/installments?page=2&per_page=2
-Última Página: https://sandbox.boletosimples.com.br/api/v1/installments?page=5&per_page=2
+Próxima Página: https://sandbox.boletosimples.com.br/api/v1/customer_subscriptions?page=2&per_page=2
+Última Página: https://sandbox.boletosimples.com.br/api/v1/customer_subscriptions?page=5&per_page=2
 </pre>
   </div>
   <div class="tab-pane" id="php6">
     <small>Requisição:</small>
 
 <pre class="php">
-$installments = BoletoSimples\Customer::all(['page' => 1, 'per_page' => 2]);
-echo "Carnês Retornados: " . sizeof($installments) . "\n";
+$customer_subscriptions = BoletoSimples\Customer::all(['page' => 1, 'per_page' => 2]);
+echo "Assinaturas Retornados: " . sizeof($customer_subscriptions) . "\n";
 echo "Total: " . BoletoSimples::$last_request->total . "\n";
 echo "Primeira Página: " . BoletoSimples::$last_request->links['first'] . "\n";
 echo "Página Anterior: " . BoletoSimples::$last_request->links['prev'] . "\n";
@@ -603,22 +774,141 @@ echo "Última Página: " . BoletoSimples::$last_request->links['last'] . "\n";
     <small>Resposta:</small>
 
 <pre class="http">
-Carnês Retornados: 2
+Assinaturas Retornados: 2
 Total: 9
 Primeira Página:
 Página Anterior:
-Próxima Página: https://sandbox.boletosimples.com.br/api/v1/installments?page=2&per_page=2
-Última Página: https://sandbox.boletosimples.com.br/api/v1/installments?page=5&per_page=2
+Próxima Página: https://sandbox.boletosimples.com.br/api/v1/customer_subscriptions?page=2&per_page=2
+Última Página: https://sandbox.boletosimples.com.br/api/v1/customer_subscriptions?page=5&per_page=2
 </pre>
   </div>
   -->
 </div>
 
-### Excluir carnê
+### Gerar próxima cobrança
 
-`DELETE /api/v1/installments/:id`
+`POST /api/v1/customer_subscriptions/:id/next_charge`
 
-Nenhum boleto gerado pela carnê será excluído.
+#### Exemplo
+
+<ul class="nav nav-tabs" role="tablist">
+  <li class="active"><a href="#bash3" role="tab" data-toggle="tab">Bash</a></li>
+  <!--<li><a href="#ruby3" role="tab" data-toggle="tab">Ruby</a></li>
+  <li><a href="#php3" role="tab" data-toggle="tab">PHP</a></li>-->
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="bash3">
+    <small>Requisição:</small>
+
+<pre class="bash">
+curl -i \
+-u $BOLETOSIMPLES_TOKEN:x \
+-H 'Content-Type: application/json' \
+-H 'User-Agent: MyApp (myapp@example.com)' \
+-X POST 'https://sandbox.boletosimples.com.br/api/v1/customer_subscriptions/1/next_charge'
+</pre>
+
+    <small>Resposta:</small>
+
+<pre class="http">
+HTTP/1.1 201 OK
+Date: Fri, 17 Oct 2014 19:46:16 GMT
+Status: 201 OK
+Content-Type: application/json; charset=utf-8
+...
+
+{
+ "id":1,
+ "amount":1120.4,
+ "cycle":"monthly",
+ "next_billing":"2016-07-18",
+ "end_at":null,
+ "instructions":null,
+ "description":"Hospedagem",
+ "created_at":"2016-05-18",
+ "updated_at":"2016-05-18",
+ "created_via_api":true,
+ "customer_id":"1",
+ "bank_billet_account_id":"1",
+ "days_in_advance": "7",
+ "fine_for_delay": 0.0,
+ "late_payment_interest": 0.0
+}
+</pre>
+  </div>
+  <!--
+  <div class="tab-pane" id="ruby3">
+    <small>Requisição:</small>
+
+<pre class="ruby">
+@customer_subscription = BoletoSimples::Customer.find(67)
+puts @customer_subscription.attributes
+</pre>
+
+    <small>Resposta:</small>
+
+<pre class="ruby">
+{
+             "city_name" => "Rio de Janeiro",
+           "person_name" => "Joao da Silva",
+               "address" => "Rua quinhentos",
+    "address_complement" => "Sala 4",
+        "address_number" => "111",
+         "mobile_number" => nil,
+              "cnpj_cpf" => "782.661.177-64",
+                 "email" => "assinatura@bom.com",
+          "neighborhood" => "bairro",
+           "person_type" => "individual",
+          "phone_number" => "2112123434",
+               "zipcode" => "20071004",
+     "mobile_local_code" => nil,
+                 "state" => "RJ",
+       "created_via_api" => true,
+                    "id" => 67
+}
+</pre>
+  </div>
+  <div class="tab-pane" id="php3">
+    <small>Requisição:</small>
+
+<pre class="php">
+$customer_subscription = BoletoSimples\Customer::find(66);
+print_r($customer_subscription->attributes());
+</pre>
+
+    <small>Resposta:</small>
+
+<pre class="php">
+Array
+(
+    [id] => 66
+    [city_name] => Rio de Janeiro
+    [person_name] => Joao da Silva
+    [address] => Rua quinhentos
+    [address_complement] => Sala 4
+    [address_number] => 111
+    [mobile_number] =>
+    [cnpj_cpf] => 860.196.915-19
+    [email] => assinatura@example.com
+    [neighborhood] => bairro
+    [person_type] => individual
+    [phone_number] => 2112123434
+    [zipcode] => 20071004
+    [mobile_local_code] =>
+    [state] => RJ
+    [created_via_api] => 1
+)
+</pre>
+  </div>
+  -->
+</div>
+
+### Excluir assinatura
+
+`DELETE /api/v1/customer_subscriptions/:id`
+
+Nenhum boleto gerado pela assinatura será excluído.
 
 #### Exemplo
 
@@ -636,7 +926,7 @@ Nenhum boleto gerado pela carnê será excluído.
 curl -i \
 -u $BOLETOSIMPLES_TOKEN:x \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X DELETE 'https://sandbox.boletosimples.com.br/api/v1/installments/1'
+-X DELETE 'https://sandbox.boletosimples.com.br/api/v1/customer_subscriptions/1'
 </pre>
 
     <small>Resposta:</small>

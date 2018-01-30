@@ -1,7 +1,9 @@
 ---
-title: Notificações - API do Boleto Simples
-layout: pt
+title: Notificações
+published: false
+position: 11
 en: "/en/notifications"
+layout: pt
 ---
 
 ## Notificações (Deprecated)

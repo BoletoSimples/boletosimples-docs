@@ -1,5 +1,6 @@
 ---
-title: Integrações - API do Boleto Simples
+title: Integrações
+position: 3
 layout: pt
 en: "/en/integrations"
 ---

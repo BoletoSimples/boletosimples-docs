@@ -1,50 +1,48 @@
 ---
-title: Parceiros - API do Boleto Simples
+title: Usuários
+position: 11
 layout: pt
-en: "/en/reference"
-breadcrumb: Parceiros
+en: "/en/references"
+breadcrumb: Usuários
 ---
 
-## API de Parceiros
-
-### Criar usuário
-
-`POST /api/v1/partner/users`
-
+## Usuários
 
 ### Modelo de Dados
 
-| Parâmetro                       | Obr. | Tipo    | Tamanho | Descrição
-| ------------------------------- | ---- | ------- | ------- | ------------------------
-| **id**                          | N/A  | Integer |         | ID do usuário
-| **email**                       | Sim  | String  |         | E-mail
-| **account_type**                | Não  | String  |         | Tipo de Conta
-| **account_level**               | Não  | Integer |         | Nível da Conta
-| **first_name**                  | Não  | String  |         | Primeiro Nome
-| **middle_name**                 | Não  | String  |         | Nome do Meio
-| **last_name**                   | Não  | String  |         | Último Nome
-| **cpf**                         | Não  | String  |         | CPF
-| **address_street_name**         | Não  | String  |         | Endereço
-| **address_state**               | Não  | String  |         | Estado
-| **address_neighborhood**        | Não  | String  |         | Bairro
-| **address_postal_code**         | Não  | String  |         | CEP
-| **address_number**              | Não  | String  |         | Número
-| **address_complement**          | Não  | String  |         | Complemento
-| **address_city_name**           | Não  | String  |         | Cidade
-| **phone_number**                | Não  | String  |         | Telefone
-| **date_of_birth**               | Não  | Date    |         | Data de Nascimento
-| **business_category**           | Não  | List    |         | Categoria
-| **business_subcategory**        | Não  | List    |         | Subcategoria
-| **business_website**            | Não  | String  |         | Website
-| **business_name**               | Não  | String  |         | Nome Fantasia
-| **business_legal_name**         | Não  | String  |         | Razão Social
-| **business_type**               | Não  | String  |         | Tipo da Empresa
-| **business_cnpj**               | Não  | String  |         | CNPJ da Empresa
-| **withdrawal_automatic**        | Não  | Boolean |         | Saque Automático
-| **mother_name**                 | Não  | String  |         | Nome da Mãe
-| **father_name**                 | Não  | String  |         | Nome do Pai
-| **login_url**                   | Não  | String  |         | URL de primeiro login
-| **application_access_token**    | Não  | String  |         | Token de acesso ao usuário
+| Parâmetro                | Obr. | Tipo    | Tamanho | Descrição
+| ------------------------ | ---- | ------- | ------- | ------------------------
+| **id**                   | N/A  | Integer |         | ID do usuário
+| **email**                | Sim  | String  |         | E-mail
+| **account_type**         | Não  | String  |         | Tipo de Conta
+| **account_level**        | Não  | Integer |         | Nível da Conta
+| **first_name**           | Não  | String  |         | Primeiro Nome
+| **middle_name**          | Não  | String  |         | Nome do Meio
+| **last_name**            | Não  | String  |         | Último Nome
+| **full_name**            | Não  | String  |         | Nome completo
+| **sex**                  | Não  | String  |         | Sexo
+| **login_url**            | Não  | String  |         | URL primeiro login
+| **cpf**                  | Não  | String  |         | CPF
+| **address_street_name**  | Não  | String  |         | Endereço
+| **address_state**        | Não  | String  |         | Estado
+| **address_neighborhood** | Não  | String  |         | Bairro
+| **address_postal_code**  | Não  | String  |         | CEP
+| **address_number**       | Não  | String  |         | Número
+| **address_complement**   | Não  | String  |         | Complemento
+| **address_city_name**    | Não  | String  |         | Cidade
+| **phone_number**         | Não  | String  |         | Telefone
+| **date_of_birth**        | Não  | Date    |         | Data de Nascimento
+| **business_category**    | Não  | List    |         | Categoria
+| **business_subcategory** | Não  | List    |         | Subcategoria
+| **business_website**     | Não  | String  |         | Website
+| **business_name**        | Não  | String  |         | Nome Fantasia
+| **business_legal_name**  | Não  | String  |         | Razão Social
+| **business_type**        | Não  | String  |         | Tipo da Empresa
+| **business_cnpj**        | Não  | String  |         | CNPJ da Empresa
+| **mother_name**          | Não  | String  |         | Nome da Mãe
+| **father_name**          | Não  | String  |         | Nome do Pai
+| **billing_email**        | Não  | String  |         | Email de cobrança
+| **configuration**        | Não  | JSON    |         | Configuração de dados padrões para boleto
 
 ### Dicionário de Dados
 
@@ -52,12 +50,6 @@ breadcrumb: Parceiros
 
 | individual | Pessoa Física
 | juridical  | Pessoa Jurídica
-
-#### account_level
-
-| 0  | Não pode criar boletos e não pode efetuar saques
-| 1  | Pode criar boletos e não pode efetuar saques
-| 2  | Pode criar boletos e pode efetuar saques
 
 #### business_type
 
@@ -400,230 +392,3 @@ breadcrumb: Parceiros
 | 1023 | 2273 | Serviços de transporte - outros
 | 1023 | 2269 | Táxis e limusines
 | 1023 | 2271 | Viagens
-
-
-#### Exemplo de requisição inválida
-
-<ul class="nav nav-tabs" role="tablist">
-  <li class="active"><a href="#bash" role="tab" data-toggle="tab">Bash</a></li>
-  <li><a href="#ruby" role="tab" data-toggle="tab">Ruby</a></li>
-  <!-- <li><a href="#php" role="tab" data-toggle="tab">PHP</a></li> -->
-</ul>
-
-<div class="tab-content">
-  <div class="tab-pane active" id="bash">
-    <small>Requisição:</small>
-
-<pre class="bash">
-curl -i \
--u $BOLETOSIMPLES_TOKEN:x \
--H 'Content-Type: multipart/form-data' \
--H 'User-Agent: MyApp (myapp@example.com)' \
--X POST 'https://sandbox.boletosimples.com.br/api/v1/partner/users'
-</pre>
-
-    <small>Resposta:</small>
-
-<pre class="http">
-HTTP/1.1 422 Unprocessable Entity
-Server: Cowboy
-Connection: keep-alive
-Strict-Transport-Security: max-age=2592000
-Content-Type: application/json; charset=utf-8
-...
-
-{"errors":{"user":["não pode ficar em branco"]}}
-</pre>
-  </div>
-  <div class="tab-pane" id="ruby">
-    <small>Requisição:</small>
-
-<pre class="ruby">
-@user = BoletoSimples::Partner::User.create(email: '')
-if @user.persisted?
-  puts "Sucesso :)"
-  ap @user.attributes
-else
-  puts "Erro :("
-  ap @user.response_errors
-end
-</pre>
-
-    <small>Resposta:</small>
-
-<pre class="ruby">
-Erro :(
-{
-     :email => [
-        [0] "não pode ficar em branco"
-    ]
-}
-</pre>
-
-  </div>
-    <!-- <div class="tab-pane" id="php">
-      <small>Requisição:</small>
-
-<pre class="php">
-$bank_billet_account = BoletoSimples\bank_billet_account::create(['person_name' => 'Joao da Silva']);
-if($bank_billet_account->isPersisted()) {
-  echo "Sucesso :)\n";
-  print_r($bank_billet_account->attributes());
-} else {
-  echo "Erro :(\n";
-  print_r($bank_billet_account->response_errors);
-}
-</pre>
-
-      <small>Resposta:</small>
-
-<pre class="php">
-Erro :(
-Array
-(
-    [cnpj_cpf] => Array
-        (
-            [0] => não pode ficar em branco
-        )
-
-    [zipcode] => Array
-        (
-            [0] => não pode ficar em branco
-        )
-
-)
-</pre>
-
-    </div> -->
-</div>
-
-#### Exemplo de requisição válida
-
-<ul class="nav nav-tabs" role="tablist">
-  <li class="active"><a href="#bash2" role="tab" data-toggle="tab">Bash</a></li>
-  <li><a href="#ruby2" role="tab" data-toggle="tab">Ruby</a></li>
-  <!-- <li><a href="#php2" role="tab" data-toggle="tab">PHP</a></li> -->
-</ul>
-
-<div class="tab-content">
-  <div class="tab-pane active" id="bash2">
-    <small>Requisição:</small>
-
-<pre class="bash">
-curl -i \
--u $BOLETOSIMPLES_TOKEN:x \
--d '{"user":{"email": "customer@example.com"}}' \
--H 'Content-Type: application/json' \
--H 'User-Agent: MyApp (myapp@example.com)' \
--X POST 'https://sandbox.boletosimples.com.br/api/v1/partner/users'
-</pre>
-
-    <small>Resposta:</small>
-
-<pre class="http">
-HTTP/1.1 201 Created
-Server: Cowboy
-Connection: keep-alive
-Strict-Transport-Security: max-age=2592000
-Location: https://sandbox.boletosimples.com.br/api/v1/partner/users/2
-Content-Type: application/json; charset=utf-8
-...
-
-{
-  "email"=>"customer@example.com", 
-  "id"=>2, "account_type"=>nil, "sex"=>nil, "cpf"=>nil, "address_street_name"=>nil, 
-  "address_state"=>nil, "address_neighborhood"=>nil, "address_postal_code"=>nil, 
-  "address_number"=>nil, "address_complement"=>nil, "phone_number"=>nil, 
-  "withdrawal_period"=>"biweekly", "notification_url"=>nil, 
-  "first_name"=>nil, "middle_name"=>nil, "last_name"=>nil, "date_of_birth"=>nil, 
-  "business_category"=>nil, "business_subcategory"=>nil, "business_website"=>nil, 
-  "business_name"=>nil, "business_legal_name"=>nil, "business_type"=>nil, 
-  "business_cnpj"=>nil, "address_city_name"=>nil, "full_name"=>nil, 
-  "login_url"=>"https://sandbox.boletosimples.com.br/welcome?email=kivanio%2Bsand10%40boletosimples.com.br&token=25m48-FeVVqpzrUtMvXZ", 
-  "mother_name"=>nil, "father_name"=>nil, "account_level"=>2,
-  "application_access_token"=>"3cfa8aa4a9a3ee1e4cab4e1839c8c4fa279e1411b5f22587713f7b705685c4e8"
-}
-</pre>
-  </div>
-  <div class="tab-pane" id="ruby2">
-    <small>Requisição:</small>
-
-<pre class="ruby">
-@user = BoletoSimples::Partner::User.create(email: 'customer@example.com')
-if @user.persisted?
-  puts "Sucesso :)"
-  ap @user.attributes
-else
-  puts "Erro :("
-  ap @user.response_errors
-end
-</pre>
-  <small>Resposta:</small>
-
-<pre class="ruby">
-Sucesso :)
-{
-  "email"=>"customer@example.com", 
-  "id"=>2, "account_type"=>nil, "sex"=>nil, "cpf"=>nil, "address_street_name"=>nil, 
-  "address_state"=>nil, "address_neighborhood"=>nil, "address_postal_code"=>nil, 
-  "address_number"=>nil, "address_complement"=>nil, "phone_number"=>nil, 
-  "withdrawal_period"=>"biweekly", "notification_url"=>nil, 
-  "first_name"=>nil, "middle_name"=>nil, "last_name"=>nil, "date_of_birth"=>nil, 
-  "business_category"=>nil, "business_subcategory"=>nil, "business_website"=>nil, 
-  "business_name"=>nil, "business_legal_name"=>nil, "business_type"=>nil, "business_cnpj"=>nil, "address_city_name"=>nil, "full_name"=>nil, "login_url"=>"https://sandbox.boletosimples.com.br/welcome?email=kivanio%2Bsand10%40boletosimples.com.br&token=25m48-FeVVqpzrUtMvXZ", 
-  "mother_name"=>nil, "father_name"=>nil, "account_level"=>2,
-  "application_access_token"=>"3cfa8aa4a9a3ee1e4cab4e1839c8c4fa279e1411b5f22587713f7b705685c4e8"
-}
-</pre>
-  </div>
-  <!-- <div class="tab-pane" id="php2">
-    <small>Requisição:</small>
-
-<pre class="php">
-$bank_billet_account = BoletoSimples\bank_billet_account::create([
-  'person_name' => "Joao da Silva",
-  'cnpj_cpf' => "860.196.915-19",
-  'email' => "carteira@example.com",
-  'address' => "Rua quinhentos",
-  'city_name' => "Rio de Janeiro",
-  'state' => "RJ",
-  'neighborhood' => "bairro",
-  'zipcode' => "12312-123",
-  'address_number' => "111",
-  'address_complement' => "Sala 4",
-  'phone_number' => "2112123434"
-]);
-if($bank_billet_account->isPersisted()) {
-  echo "Sucesso :)\n";
-  print_r($bank_billet_account->attributes());
-} else {
-  echo "Erro :(\n";
-  print_r($bank_billet_account->response_errors);
-}
-</pre>
-  <small>Resposta:</small>
-
-<pre class="php">
-Sucesso :)
-Array
-(
-    [id] => 66
-    [city_name] => Rio de Janeiro
-    [person_name] => Joao da Silva
-    [address] => Rua quinhentos
-    [address_complement] => Sala 4
-    [address_number] => 111
-    [mobile_number] =>
-    [cnpj_cpf] => 860.196.915-19
-    [email] => carteira@example.com
-    [neighborhood] => bairro
-    [person_type] => individual
-    [phone_number] => 2112123434
-    [zipcode] => 12312-123
-    [mobile_local_code] =>
-    [state] => RJ
-    [created_via_api] => 1
-)
-</pre>
-  </div> -->
-</div>

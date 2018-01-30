@@ -1,5 +1,5 @@
 ---
-title: Módulo Magento V1 - API do Boleto Simples
+title: Módulo Magento V1
 layout: pt
 en: "/en/modules/magento-v1"
 ---

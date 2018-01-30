@@ -1,5 +1,5 @@
 ---
-title: Módulo Woocommerce - API do Boleto Simples
+title: Módulo Woocommerce
 layout: pt
 en: "/en/modules/woocommerce"
 ---

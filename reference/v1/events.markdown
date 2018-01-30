@@ -1,5 +1,6 @@
 ---
-title: Eventos - API do Boleto Simples
+title: Eventos
+position: 7
 layout: pt
 en: "/en/events"
 breadcrumb: Eventos

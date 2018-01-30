@@ -1,5 +1,5 @@
 ---
-title: Integrações com a Pluga - API do Boleto Simples
+title: Integrações com a Pluga
 layout: pt
 en: "/en/integrations/pluga"
 ---
