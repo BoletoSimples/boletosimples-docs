@@ -1,6 +1,6 @@
 ---
 title: OAuth2
-position: 0
+position: 1
 layout: pt
 en: "/en/authentication"
 ---

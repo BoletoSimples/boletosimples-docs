@@ -1,6 +1,6 @@
 ---
 title: Token de Acesso
-position: 2
+position: 0
 layout: pt
 en: "/en/authentication"
 ---
