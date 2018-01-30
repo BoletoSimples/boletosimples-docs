@@ -1,6 +1,6 @@
 ---
 title: Assinatura de Segurança
-position: 2
+position: 3
 layout: pt
 en: "/en/webhooks/signature"
 ---
