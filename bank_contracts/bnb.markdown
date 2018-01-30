@@ -1,7 +1,7 @@
 ---
-layout: pt
 title: Banco do Nordeste - API do Boleto Simples
-en: /en/bank_contracts/bnb
+layout: pt
+en: "/en/bank_contracts/bnb"
 ---
 
 ## Banco do Nordeste

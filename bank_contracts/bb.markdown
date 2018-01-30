@@ -1,7 +1,7 @@
 ---
-layout: pt
 title: Banco do Brasil - API do Boleto Simples
-en: /en/bank_contracts/bb
+layout: pt
+en: "/en/bank_contracts/bb"
 ---
 
 ## Banco do Brasil

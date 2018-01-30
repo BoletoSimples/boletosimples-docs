@@ -1,7 +1,7 @@
 ---
-layout: pt
 title: Zapier - API do Boleto Simples
-en: /en/integrations/zapier
+layout: pt
+en: "/en/integrations/zapier"
 ---
 
 ## Integrações com o Zapier

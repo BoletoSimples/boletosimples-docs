@@ -1,7 +1,7 @@
 ---
-layout: pt
 title: Sandbox - API do Boleto Simples
-en: /en/sandbox
+layout: pt
+en: "/en/sandbox"
 ---
 
 ## Ambiente Sandbox

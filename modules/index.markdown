@@ -1,7 +1,7 @@
 ---
-layout: pt
 title: Módulos - API do Boleto Simples
-en: /en/modules
+layout: pt
+en: "/en/modules"
 ---
 
 ## Módulos, Plugins e Extensões

@@ -1,7 +1,7 @@
 ---
-layout: pt
 title: Itaú - API do Boleto Simples
-en: /en/bank_contracts/itau
+layout: pt
+en: "/en/bank_contracts/itau"
 ---
 
 ## Itaú

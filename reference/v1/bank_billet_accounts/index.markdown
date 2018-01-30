@@ -1,7 +1,7 @@
 ---
-layout: pt
 title: Carteiras de Cobrança - API do Boleto Simples
-en: /en/references
+layout: pt
+en: "/en/references"
 breadcrumb: Carteiras de Cobrança
 ---
 

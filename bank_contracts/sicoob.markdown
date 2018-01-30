@@ -1,7 +1,7 @@
 ---
-layout: pt
 title: Sicoob - API do Boleto Simples
-en: /en/bank_contracts/sicoob
+layout: pt
+en: "/en/bank_contracts/sicoob"
 ---
 
 ## Sicoob

@@ -1,7 +1,7 @@
 ---
-layout: pt
 title: Banestes - API do Boleto Simples
-en: /en/bank_contracts/sicoob
+layout: pt
+en: "/en/bank_contracts/sicoob"
 ---
 
 ## Banestes

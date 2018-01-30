@@ -1,7 +1,7 @@
 ---
-layout: pt
 title: Eventos - API do Boleto Simples
-en: /en/webhooks/events
+layout: pt
+en: "/en/webhooks/events"
 ---
 
 ## Eventos

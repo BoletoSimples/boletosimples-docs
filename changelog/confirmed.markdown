@@ -1,7 +1,7 @@
 ---
-layout: pt
 title: Changelog - API do Boleto Simples
-en: /en/changelog
+layout: pt
+en: "/en/changelog"
 ---
 
 ## Changelog

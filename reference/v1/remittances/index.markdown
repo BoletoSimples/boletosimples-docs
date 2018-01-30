@@ -1,7 +1,7 @@
 ---
-layout: pt
 title: CNAB (Remessa) - API do Boleto Simples
-en: /en/references
+layout: pt
+en: "/en/references"
 breadcrumb: CNAB (Remessa)
 ---
 

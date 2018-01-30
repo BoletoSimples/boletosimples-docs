@@ -1,7 +1,7 @@
 ---
-layout: pt
 title: Notificações do Webhook - API do Boleto Simples
-en: /en/webhooks/deliveries
+layout: pt
+en: "/en/webhooks/deliveries"
 ---
 
 ## Notificações do Webhook

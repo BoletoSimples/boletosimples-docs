@@ -1,7 +1,7 @@
 ---
-layout: pt
 title: Bradesco - API do Boleto Simples
-en: /en/bank_contracts/bradesco
+layout: pt
+en: "/en/bank_contracts/bradesco"
 ---
 
 ## Bradesco

@@ -1,7 +1,7 @@
 ---
-layout: pt
 title: Módulo Woocommerce - API do Boleto Simples
-en: /en/modules/woocommerce
+layout: pt
+en: "/en/modules/woocommerce"
 ---
 
 ## Módulo Oficial Wordpress/WooCommerce

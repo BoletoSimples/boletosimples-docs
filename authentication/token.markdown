@@ -1,7 +1,7 @@
 ---
-layout: pt
 title: Token de Acesso - API do Boleto Simples
-en: /en/authentication
+layout: pt
+en: "/en/authentication"
 ---
 
 ## Token de Acesso

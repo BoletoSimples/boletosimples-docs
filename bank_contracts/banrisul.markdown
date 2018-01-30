@@ -1,7 +1,7 @@
 ---
-layout: pt
 title: Banrisul - API do Boleto Simples
-en: /en/bank_contracts/banrisul
+layout: pt
+en: "/en/bank_contracts/banrisul"
 ---
 
 ## Banrisul

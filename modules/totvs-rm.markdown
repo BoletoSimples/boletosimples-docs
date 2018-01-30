@@ -1,7 +1,7 @@
 ---
-layout: pt
 title: Módulo TOTVS RM - API do Boleto Simples
-en: /en/modules/totvs-rm
+layout: pt
+en: "/en/modules/totvs-rm"
 ---
 
 ## Módulo Oficial TOTVS RM

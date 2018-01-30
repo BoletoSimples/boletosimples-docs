@@ -1,7 +1,7 @@
 ---
-layout: pt
 title: Assinatura de Segurança - API do Boleto Simples
-en: /en/webhooks/signature
+layout: pt
+en: "/en/webhooks/signature"
 ---
 
 ## Assinatura de Segurança

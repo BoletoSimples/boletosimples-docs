@@ -1,7 +1,7 @@
 ---
-layout: pt
 title: Payloads - API do Boleto Simples
-en: /en/webhooks/payloads
+layout: pt
+en: "/en/webhooks/payloads"
 ---
 
 ## Payloads

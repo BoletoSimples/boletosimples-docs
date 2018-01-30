@@ -1,7 +1,7 @@
 ---
-layout: pt
 title: Sicredi - API do Boleto Simples
-en: /en/bank_contracts/sicredi
+layout: pt
+en: "/en/bank_contracts/sicredi"
 ---
 
 ## Sicredi

@@ -1,7 +1,7 @@
 ---
-layout: pt
 title: Módulo Shopify - API do Boleto Simples
-en: /en/modules/shopify
+layout: pt
+en: "/en/modules/shopify"
 ---
 
 ## Módulo Oficial Shopify

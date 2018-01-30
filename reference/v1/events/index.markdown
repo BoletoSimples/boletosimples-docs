@@ -1,7 +1,7 @@
 ---
-layout: pt
 title: Eventos - API do Boleto Simples
-en: /en/events
+layout: pt
+en: "/en/events"
 breadcrumb: Eventos
 ---
 
