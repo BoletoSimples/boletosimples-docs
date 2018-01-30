@@ -1,5 +1,5 @@
 ---
-title: Webhooks - API do Boleto Simples
+title: Webhooks
 layout: pt
 en: "/en/webhooks"
 ---

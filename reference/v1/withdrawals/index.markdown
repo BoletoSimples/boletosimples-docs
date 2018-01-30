@@ -1,5 +1,5 @@
 ---
-title: Saques - API do Boleto Simples
+title: Saques
 layout: pt
 en: "/en/references"
 breadcrumb: Saques

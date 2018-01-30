@@ -1,5 +1,5 @@
 ---
-title: Autenticação - API do Boleto Simples
+title: Autenticação
 layout: pt
 en: "/en/authentication"
 ---

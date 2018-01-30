@@ -1,5 +1,5 @@
 ---
-title: CitiBank - API do Boleto Simples
+title: CitiBank
 layout: pt
 en: "/en/bank_contracts/citibank"
 ---

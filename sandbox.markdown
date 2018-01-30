@@ -1,5 +1,5 @@
 ---
-title: Sandbox - API do Boleto Simples
+title: Sandbox
 layout: pt
 en: "/en/sandbox"
 ---

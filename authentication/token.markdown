@@ -1,5 +1,5 @@
 ---
-title: Token de Acesso - API do Boleto Simples
+title: Token de Acesso
 layout: pt
 en: "/en/authentication"
 ---

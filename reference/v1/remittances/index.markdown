@@ -1,5 +1,5 @@
 ---
-title: CNAB (Remessa) - API do Boleto Simples
+title: CNAB (Remessa)
 layout: pt
 en: "/en/references"
 breadcrumb: CNAB (Remessa)

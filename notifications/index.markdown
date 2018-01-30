@@ -1,5 +1,5 @@
 ---
-title: Notificações - API do Boleto Simples
+title: Notificações
 layout: pt
 en: "/en/notifications"
 ---

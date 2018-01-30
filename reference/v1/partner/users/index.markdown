@@ -1,5 +1,5 @@
 ---
-title: Parceiros - API do Boleto Simples
+title: Parceiros
 layout: pt
 en: "/en/reference"
 breadcrumb: Parceiros

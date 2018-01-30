@@ -1,5 +1,5 @@
 ---
-title: Registro de Remessa - API do Boleto Simples
+title: Registro de Remessa
 layout: pt
 en: "/en/references"
 breadcrumb: Registro de Remessa

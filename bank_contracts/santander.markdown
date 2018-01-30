@@ -1,5 +1,5 @@
 ---
-title: Santander - API do Boleto Simples
+title: Santander
 layout: pt
 en: "/en/bank_contracts/santander"
 ---

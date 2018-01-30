@@ -1,5 +1,5 @@
 ---
-title: Carteiras de Cobrança - API do Boleto Simples
+title: Carteiras de Cobrança
 layout: pt
 en: "/en/bank_contracts"
 ---

@@ -1,5 +1,5 @@
 ---
-title: Assinaturas - API do Boleto Simples
+title: Assinaturas
 layout: pt
 en: "/en/references"
 breadcrumb: Assinaturas

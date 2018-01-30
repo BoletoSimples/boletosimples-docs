@@ -1,5 +1,5 @@
 ---
-title: CNAB (Retorno) - API do Boleto Simples
+title: CNAB (Retorno)
 layout: pt
 en: "/en/references"
 breadcrumb: CNAB (Retorno)

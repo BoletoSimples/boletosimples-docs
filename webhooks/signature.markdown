@@ -1,5 +1,5 @@
 ---
-title: Assinatura de Segurança - API do Boleto Simples
+title: Assinatura de Segurança
 layout: pt
 en: "/en/webhooks/signature"
 ---

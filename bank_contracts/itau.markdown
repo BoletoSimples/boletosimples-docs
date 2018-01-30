@@ -1,5 +1,5 @@
 ---
-title: Itaú - API do Boleto Simples
+title: Itaú
 layout: pt
 en: "/en/bank_contracts/itau"
 ---

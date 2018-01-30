@@ -1,5 +1,5 @@
 ---
-title: Webhook Deliveries - API do Boleto Simples
+title: Webhook Deliveries
 layout: pt
 en: "/en/webhook_deliveries"
 breadcrumb: Webhook Deliveries

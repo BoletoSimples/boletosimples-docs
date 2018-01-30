@@ -1,5 +1,5 @@
 ---
-title: Banco do Brasil - API do Boleto Simples
+title: Banco do Brasil
 position: 12
 layout: pt
 en: "/en/bank_contracts/bb"

@@ -1,5 +1,5 @@
 ---
-title: Usuários - API do Boleto Simples
+title: Usuários
 layout: pt
 en: "/en/references"
 breadcrumb: Usuários

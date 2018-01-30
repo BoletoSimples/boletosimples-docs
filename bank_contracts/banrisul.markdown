@@ -1,5 +1,5 @@
 ---
-title: Banrisul - API do Boleto Simples
+title: Banrisul
 position: 11
 layout: pt
 en: "/en/bank_contracts/banrisul"

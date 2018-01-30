@@ -1,5 +1,5 @@
 ---
-title: Sicoob - API do Boleto Simples
+title: Sicoob
 layout: pt
 en: "/en/bank_contracts/sicoob"
 ---

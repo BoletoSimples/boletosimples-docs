@@ -1,5 +1,5 @@
 ---
-title: Caixa Econômica Federal - API do Boleto Simples
+title: Caixa Econômica Federal
 layout: pt
 en: "/en/bank_contracts/cef"
 ---

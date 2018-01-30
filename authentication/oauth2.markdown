@@ -1,5 +1,5 @@
 ---
-title: OAuth2 - API do Boleto Simples
+title: OAuth2
 layout: pt
 en: "/en/authentication"
 ---

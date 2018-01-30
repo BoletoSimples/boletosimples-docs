@@ -1,5 +1,5 @@
 ---
-title: Transações - API do Boleto Simples
+title: Transações
 layout: pt
 en: "/en/references"
 breadcrumb: Transações

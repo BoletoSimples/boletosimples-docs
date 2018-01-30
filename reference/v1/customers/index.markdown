@@ -1,5 +1,5 @@
 ---
-title: Clientes - API do Boleto Simples
+title: Clientes
 layout: pt
 en: "/en/references"
 breadcrumb: Clientes

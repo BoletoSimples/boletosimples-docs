@@ -1,5 +1,5 @@
 ---
-title: Permissões - API do Boleto Simples
+title: Permissões
 layout: pt
 en: "/en/authentication/permissions"
 ---

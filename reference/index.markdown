@@ -1,5 +1,5 @@
 ---
-title: Referências - API do Boleto Simples
+title: Referências
 layout: pt
 en: "/en/reference"
 ---

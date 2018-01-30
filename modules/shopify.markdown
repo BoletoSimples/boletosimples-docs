@@ -1,5 +1,5 @@
 ---
-title: Módulo Shopify - API do Boleto Simples
+title: Módulo Shopify
 layout: pt
 en: "/en/modules/shopify"
 ---

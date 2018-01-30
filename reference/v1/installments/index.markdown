@@ -1,5 +1,5 @@
 ---
-title: Carnês - API do Boleto Simples
+title: Carnês
 layout: pt
 en: "/en/references"
 breadcrumb: Carnês
