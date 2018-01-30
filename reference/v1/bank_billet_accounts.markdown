@@ -1,6 +1,6 @@
 ---
 title: Carteiras de Cobrança
-position: 9
+position: 3
 layout: pt
 en: "/en/references"
 breadcrumb: Carteiras de Cobrança
