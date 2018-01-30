@@ -1,6 +1,6 @@
 ---
 title: Assinaturas
-position: 11
+position: 12
 layout: pt
 en: "/en/references"
 breadcrumb: Assinaturas
