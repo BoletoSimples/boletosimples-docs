@@ -1,5 +1,6 @@
 ---
 title: Permissões
+position: 1
 layout: pt
 en: "/en/authentication/permissions"
 ---
