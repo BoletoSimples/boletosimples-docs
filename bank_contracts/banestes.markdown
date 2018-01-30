@@ -1,5 +1,6 @@
 ---
 title: Banestes - API do Boleto Simples
+position: 10
 layout: pt
 en: "/en/bank_contracts/sicoob"
 ---
