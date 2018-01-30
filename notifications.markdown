@@ -1,8 +1,9 @@
 ---
 title: Notificações
+published: false
 position: 9
-layout: pt
 en: "/en/notifications"
+layout: pt
 ---
 
 ## Notificações (Deprecated)
