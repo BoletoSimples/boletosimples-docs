@@ -1,6 +1,6 @@
 ---
 title: Changelog
-position: 8
+position: 10
 layout: pt
 en: "/en/changelog"
 ---
