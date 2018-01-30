@@ -1,6 +1,6 @@
 ---
 title: Referências
-position: 6
+position: 9
 layout: pt
 en: "/en/reference"
 ---
