@@ -1,6 +1,6 @@
 ---
 title: Registro de Remessa
-position: 11
+position: 12
 layout: pt
 en: "/en/references"
 breadcrumb: Registro de Remessa
