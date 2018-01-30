@@ -1,6 +1,6 @@
 ---
 title: Parceiros
-position: 7
+position: 8
 layout: pt
 en: "/en/reference"
 breadcrumb: Parceiros

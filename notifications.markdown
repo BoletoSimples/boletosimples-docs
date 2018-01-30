@@ -1,6 +1,6 @@
 ---
 title: Notificações
-position: 10
+position: 11
 layout: pt
 en: "/en/notifications"
 ---
