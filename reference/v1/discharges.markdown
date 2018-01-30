@@ -1,6 +1,6 @@
 ---
 title: CNAB (Retorno)
-position: 8
+position: 5
 layout: pt
 en: "/en/references"
 breadcrumb: CNAB (Retorno)
