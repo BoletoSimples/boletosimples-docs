@@ -1,5 +1,6 @@
 ---
 title: Usuário Autenticado
+position: 16
 layout: pt
 en: "/en/references"
 breadcrumb: Usuário Autenticado

@@ -1,5 +1,6 @@
 ---
 title: Boletos
+position: 6
 layout: pt
 en: "/en/reference"
 breadcrumb: Boletos

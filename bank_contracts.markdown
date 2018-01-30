@@ -1,5 +1,6 @@
 ---
 title: Carteiras de Cobrança
+position: 23
 layout: pt
 en: "/en/bank_contracts"
 ---
