@@ -1,6 +1,6 @@
 ---
 title: CNAB (Remessa)
-position: 5
+position: 6
 layout: pt
 en: "/en/references"
 breadcrumb: CNAB (Remessa)
