@@ -1,11 +1,11 @@
 ---
-title: Últimas mudanças na API
+title: Changelog
 position: 10
 en: "/en/changelog"
 layout: pt
 ---
 
-## Changelog
+## Últimas mudanças na API
 
 #### Código fonte da documentação
 
@@ -16,8 +16,8 @@ A documentação da API é um [projeto público no Github](https://github.com/Bo
 Você também pode se inscrever para receber as notificações de alterações da API por e-mail.
 
 <form action="https://www.getdrip.com/forms/93702557/submissions" method="post" data-drip-embedded-form="93702557">
-  <input type="email" name="fields[email]" value="" required="required" placeholder="Seu e-mail" />
-  <input type="submit" name="submit" value="Inscrever" data-drip-attribute="sign-up-button" />
+<input type="email" name="fields\[email\]" value="" required="required" placeholder="Seu e-mail" />
+<input type="submit" name="submit" value="Inscrever" data-drip-attribute="sign-up-button" />
 </form>
 
 #### Últimas alterações realizadas na API.
@@ -42,11 +42,11 @@ Você também pode se inscrever para receber as notificações de alterações d
 
 * Adicionado endpoint de listar apenas [Registro de Remessas](/reference/v1/bank_billet_remittances/#listar-registros-de-remessa-pendentes) pendentes
 
-* Adicionado endpoint para criar [Registro de Remessas](/reference/v1/bank_billet_remittances/#criar-pendências) a partir do código de operação banco
+* Adicionado endpoint para criar [Registro de Remessas](/reference/v1/bank_billet_remittances/#criar-pend%C3%AAncias) a partir do código de operação banco
 
 ### 12/12/2017
 
-* Adicionado novos parâmetros ao endpoint de filtro de [Boletos](/reference/v1/bank_billets/#buscar-por-situação-do-boleto) por `status`: Filtro por período de vencimento a partir de `expire_from` e até data de vencimento `expire_to`
+* Adicionado novos parâmetros ao endpoint de filtro de [Boletos](/reference/v1/bank_billets/#buscar-por-situa%C3%A7%C3%A3o-do-boleto) por `status`: Filtro por período de vencimento a partir de `expire_from` e até data de vencimento `expire_to`
 
 * Adicionado novos parâmetros ao endpoint de filtro de [Boletos](/reference/v1/bank_billets/#buscar-por-cpf-ou-cnpj) por `cnpj_cpf`: Filtro por período de vencimento a partir de `expire_from` e até data de vencimento `expire_to`
 
@@ -54,27 +54,38 @@ Você também pode se inscrever para receber as notificações de alterações d
 
 ### 29/11/2017
 
-* Adicionado endpoint de alteração de [Carteiras de cobrança](/reference/v1/bank_billet_accounts/#alterar-carteira-de-cobrança-padrão) para padrão ou deixar de ser padrão
+* Adicionado endpoint de alteração de [Carteiras de cobrança](/reference/v1/bank_billet_accounts/#alterar-carteira-de-cobran%C3%A7a-padr%C3%A3o) para padrão ou deixar de ser padrão
 
 ### 24/11/2017
 
 * Adicionado novos parâmetros ao endpoint de criação de [Carnês](/reference/v1/installments/):
-- Novos campos para [Desconto](/reference/v1/installments/#discount_type)
+
+
+* Novos campos para [Desconto](/reference/v1/installments/#discount_type)
+
 
 * Adicionado novos parâmetros ao endpoint de criação e alteração de [Assinaturas](/reference/v1/customer_subscriptions/):
-- Novos campos para [Desconto](/reference/v1/customer_subscriptions/#discount_type)
+
+
+* Novos campos para [Desconto](/reference/v1/customer_subscriptions/#discount_type)
 
 ### 14/11/2017
 
 * Adicionado novos parâmetros ao endpoint de criação e alteração de [Assinaturas](/reference/v1/customer_subscriptions/):
-- Novos campos para [Multa](/reference/v1/customer_subscriptions/#fine_type)
-- Novos campos para [Juros](/reference/v1/customer_subscriptions/#interest_type)
+
+
+* Novos campos para [Multa](/reference/v1/customer_subscriptions/#fine_type)
+
+* Novos campos para [Juros](/reference/v1/customer_subscriptions/#interest_type)
 
 ### 07/11/2017
 
 * Adicionado novos parâmetros ao endpoint de criação de [Carnes](/reference/v1/installments/):
-- Novos campos para [Multa](/reference/v1/installments/#fine_type)
-- Novos campos para [Juros](/reference/v1/installments/#interest_type)
+
+
+* Novos campos para [Multa](/reference/v1/installments/#fine_type)
+
+* Novos campos para [Juros](/reference/v1/installments/#interest_type)
 
 ### 20/09/2017
 
@@ -87,6 +98,7 @@ Você também pode se inscrever para receber as notificações de alterações d
 ### 31/05/2017
 
 * Inclui `notes` nos [Carnês](/reference/v1/installments/)
+
 * Inclui `notes` nas [Assinaturas](/reference/v1/customer_subscriptions/)
 
 ### 24/05/2017
@@ -108,17 +120,21 @@ Você também pode se inscrever para receber as notificações de alterações d
 ### 17/04/2017
 
 * Documenta informações sobre retentativas de entrega de [Webhooks](/webhooks/)
+
 * Documenta o campo `bank_billets_with_transactions` em [Retornos](/reference/v1/discharges)
 
 ### 17/02/2017
 
 * Documenta eventos de [carnês](/webhooks/events/)
+
 * Inclusão de valor padrão para o campo `cycle` em [Assinaturas](/reference/v1/customer_subscriptions) e [Carnês](/reference/v1/installments)
 
 ### 08/02/2017
 
 * Documenta o campo `default` em [Carteira de Cobrança](/reference/v1/bank_billet_accounts/#default)
+
 * Adicionado novo scope para retornar url de [checkout](/authentication/permissions/)
+
 * Adicionado novo scope para [subscription](/authentication/permissions/)
 
 ### 06/02/2017
@@ -138,11 +154,13 @@ Você também pode se inscrever para receber as notificações de alterações d
 ### 26/12/2016
 
 * Revisão e atualização dos modelos de dados dos endpoints da API
+
 * Revisão das [Carteiras](/bank_contracts)
 
 ### 19/11/2016
 
 * Inclui endpoint de busca por [CPF ou CNPJ](/reference/v1/customers/#buscar-por-cpf-ou-cnpj) nos clientes
+
 * Inclui endpoint de busca por [E-mail](/reference/v1/customers/#buscar-por-e-mail) nos clientes
 
 ### 31/10/2016
@@ -152,6 +170,7 @@ Você também pode se inscrever para receber as notificações de alterações d
 ### 28/10/2016
 
 * Adiciona `fine_for_delay` e `late_payment_interest` aos [Carnês](/reference/v1/installments)
+
 * Adiciona `fine_for_delay` e `late_payment_interest` às [Assinaturas](/reference/v1/customer_subscriptions)
 
 ### 24/10/2016
@@ -160,7 +179,7 @@ Você também pode se inscrever para receber as notificações de alterações d
 
 ### 12/10/2016
 
-* Melhora a explicação de como o [limite de requisições](/#limite-de-requisições) é calculado e aumenta o limite por segundo de 1 para 5 requisições.
+* Melhora a explicação de como o [limite de requisições](/#limite-de-requisi%C3%A7%C3%B5es) é calculado e aumenta o limite por segundo de 1 para 5 requisições.
 
 ### 14/09/2016
 
@@ -169,6 +188,7 @@ Você também pode se inscrever para receber as notificações de alterações d
 ### 29/08/2016
 
 * Melhora a explicação sobre [status da carteira de cobrança](/reference/v1/bank_billet_accounts/#status).
+
 * Inclui aviso na página de [eventos dos webhooks](/webhooks/events/) de que os eventos `bank_billet_account.homologated` e `bank_billet_account.validated` serão renomeados em breve para `bank_billet_account.homologation_started` e `bank_billet_account.validation_released` respectivamente.
 
 ### 15/08/2016
@@ -181,7 +201,7 @@ Você também pode se inscrever para receber as notificações de alterações d
 
 ### 20/05/2016
 
-* Corrige endpoint de [geração da próxima cobrança da assinatura](/reference/v1/customer_subscriptions#gerar-próxima-cobrança)
+* Corrige endpoint de [geração da próxima cobrança da assinatura](/reference/v1/customer_subscriptions#gerar-pr%C3%B3xima-cobran%C3%A7a)
 
 ### 18/05/2016
 
@@ -198,6 +218,7 @@ Você também pode se inscrever para receber as notificações de alterações d
 ### 03/05/2016
 
 * Inclui 'status' nas informações retornadas nas carteiras de cobrança
+
 * Novo endpoint para homologar carteiras de cobrança
 
 ### 24/02/2016
@@ -207,14 +228,19 @@ Você também pode se inscrever para receber as notificações de alterações d
 ### 24/12/2015
 
 * Atualiza as informações retornadas nas carteiras (`BankBilletAccount`)
+
 * Inclui dicionário de dados de CNAB Retorno
+
 * Atualiza status faltando no dicionário de dados de CNAB Remessa
+
 * Inclui informações de payload dos webhooks de usuário, CNAB Remessa e CNAB Retorno
 
 ### 09/12/2015
 
 * Atualização dos campos obrigatórios dos boletos
+
 * Atualização dos campos obrigatórios dos clientes
+
 * Revisão de todos os códigos de exemplo
 
 ### 28/10/2015
@@ -224,7 +250,9 @@ Você também pode se inscrever para receber as notificações de alterações d
 ### 22/10/2015
 
 * Atualizada lista de carteiras do Itaú
+
 * Atualizada lista de carteiras do Bradesco
+
 * Atualizada lista de carteiras do Banco do Brasil
 
 ### 09/10/2015
@@ -234,6 +262,7 @@ Você também pode se inscrever para receber as notificações de alterações d
 ### 06/10/2015
 
 * Atualiza informações de convênio de remessa
+
 * Atualiza lista de atributos opcionais do boleto
 
 ### 30/09/2015
@@ -259,35 +288,45 @@ Você também pode se inscrever para receber as notificações de alterações d
 ### 23/06/2015
 
 * Adicionado eventos de remessa
+
 * Adicionado eventos de retorno
 
 ### 18/06/2015
 
 * Adicionado ID da carteira a documentação de boletos
+
 * Adicionado exemplos a API de Parceiros
 
 ### 12/06/2015
 
 * Renomeado endpoint de CNAB de Retorno
+
 * Adicionado endpoint de CNAB de Remessa
 
 ### 11/06/2015
 
 * Adicionado endpoint `pay_off` na API de CNAB
+
 * Correção exemplo de cancelamento de boleto
 
 ### 17/04/2015
 
 * Adicionado novo scopo `balance`
+
 * Inclusão de account_level na resposta sobre usuários
+
 * Adicionado API de CNAB (Retorno)
+
 * Adicionado endpoints(novo saque, solicitar saque, informações do saque e listagem de saques) na API de transações
+
 * Adicionado novos eventos de webhooks
 
 ### 31/03/2015
 
 * Inclusão de carteiras de cobrança.
+
 * Correções nos exemplos em Bash do endpoint de Clientes
+
 * Adicionado opção de usar PUT para cancelar Boletos
 
 ### 08/03/2015
