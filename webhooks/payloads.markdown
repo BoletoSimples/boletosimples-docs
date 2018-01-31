@@ -114,49 +114,7 @@ A regra é que todos os payloads possuem as chaves `event_code`, `webhook`, `obj
     "customer_subscription_id": null,
     "processed_our_number_raw": "0000295728",
     "beneficiary_assignor_code": "1234/1234567",
-    "customer_address_complement": null,
-    "addons": {
-      "enotas": {
-        "nfe": {
-          "rps": {
-            "dataCompetencia": "01/11/2017"
-          },
-          "prefeitura": {
-            "numero": "201700000000002",
-            "linkImpressao": "http://api.enotasgw.com.br/file/04ef3bb1-b40c-1b3a-2574-4e1cb13b1ff6/8e7afc0a-cba3-b830-c462-d2a5790c8911/9e870758-d180-c657-3f7d-f010767e19b2/pdf",
-            "linkXml": "http://api.enotasgw.com.br/file/e5ce6ccd-a531-55f7-327d-43ccc0d949be/ca44c914-1421-aa61-58eb-a44438708f7f/b49bb4ce-b6f1-5cf1-ee27-53160e88ac3e/xml",
-            "dataEmissao": "01/11/2017",
-            "codigoVerificacao": "5A2F02559"
-          },
-          "observacoes": null,
-          "discriminacao": "Produto de Teste",
-          "municipioPrestacao": {
-            "codigoIbge": 2919207,
-            "nome": "Lauro de Freitas"
-          },
-          "valorIss": 0.03,
-          "issRetidoFonte": false,
-          "valorTotal": 1.00,
-          "aliquotaIss": 3.00,
-          "valorLiquido": 1.00,
-          "deducoes": null,
-          "descontos": null,
-          "baseCalculo": 1.00,
-          "impostosFederais": {
-            "valorCofins": null,
-            "valorCsll": null,
-            "valorInss": null,
-            "valorIr": null,
-            "valorPis": null,
-            "porcentagemCofins": null,
-            "porcentagemCsll": null,
-            "porcentagemInss": null,
-            "porcentagemIr": null,
-            "porcentagemPis": null
-          }
-        }
-      }
-    }
+    "customer_address_complement": null
   },
   "changes": {
     "status": [
