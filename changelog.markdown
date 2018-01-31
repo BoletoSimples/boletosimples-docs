@@ -1,8 +1,8 @@
 ---
-title: Changelog
+title: Últimas mudanças na API
 position: 10
-layout: pt
 en: "/en/changelog"
+layout: pt
 ---
 
 ## Changelog
