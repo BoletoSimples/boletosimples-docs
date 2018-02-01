@@ -43,11 +43,13 @@ en: "/en/bank_contracts/itau"
 | 1013     | Alteração de endereço do pagador                    | Não           | N/A                    |
 | 1014     | Alterar Cidade do pagador                           | Não           | N/A                    |
 | 1015     | Alterar UF do pagador                               | Não           | N/A                    |
-| 1016     | Alterar CEP do pagador                              | Não           | N/A                    |
 | 1017     | Alteração do número de dias para protesto           | Não           | N/A                    |
 | 1018     | Sustar o protesto                                   | Sim           | Sim                    |
+| 1020     | Alterar CPF/CNPJ do pagador                         | Não           | N/A                    |
+| 1028     | Alterar Valor                                       | Não           | N/A                    |
 | 1031     | Alteração de outros dados                           | Sim           | Sim                    |
 | 1034     | Pago diretamente ao beneficiário                    | Sim           | Sim                    |
+| 1038     | Alterar CEP do pagador                              | Não           | N/A                    |
 | 1047     | Não cobrar juros                                    | Sim           | Sim                    |
 | 1066     | Solicitar negativação expressa                      | Sim           | Sim                    |
 | 1067     | Não negativar                                       | Sim           | Sim                    |
