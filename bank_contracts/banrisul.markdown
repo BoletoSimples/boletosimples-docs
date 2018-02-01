@@ -29,11 +29,13 @@ en: "/en/bank_contracts/banrisul"
 | 1013     | Alteração de endereço do pagador                    | Sim           | Não                    |
 | 1014     | Alterar Cidade do pagador                           | Sim           | Não                    |
 | 1015     | Alterar UF do pagador                               | Não           | N/A                    |
-| 1016     | Alterar CEP do pagador                              | Sim           | Não                    |
 | 1017     | Alteração do número de dias para protesto           | Sim           | Não                    |
 | 1018     | Sustar o protesto                                   | Não           | N/A                    |
+| 1020     | Alterar CPF/CNPJ do pagador                         | Não           | N/A                    |
+| 1028     | Alterar Valor                                       | Não           | N/A                    |
 | 1031     | Alteração de outros dados                           | Não           | N/A                    |
 | 1034     | Pago diretamente ao beneficiário                    | Não           | N/A                    |
+| 1038     | Alterar CEP do pagador                              | Sim           | Não                    |
 | 1047     | Não cobrar juros                                    | Sim           | Não                    |
 | 1066     | Solicitar negativação expressa                      | Não           | N/A                    |
 | 1067     | Não negativar                                       | Não           | N/A                    |
