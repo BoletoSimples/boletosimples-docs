@@ -72,7 +72,7 @@ breadcrumb: Registro de Remessa
     </tr>
     <tr>
       <td>
-        <strong>code </strong>
+        <strong>our_code </strong>
       </td>
       <td>
         Não
@@ -82,6 +82,20 @@ breadcrumb: Registro de Remessa
       </td>
       <td>
         Código de operação de registro. Consulte os possíveis valores <a href="/bank_contracts">para cada banco</a>. Obrigatório os parâmetros <code class="highlighter-rouge">expire_from, expire_to, bank_billet_account_id</code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>code </strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        String
+      </td>
+      <td>
+        <div class="alert alert-danger"><strong>ATENÇÃO</strong> Este atributo está descontinuado e será removido do sistema em breve. Utilize <code class="highlighter-rouge">our_code</code>.</div>
       </td>
     </tr>
     <tr>
@@ -276,7 +290,7 @@ Content-Type: application/json; charset=utf-8
 
 ### Criar pendências
 
-`POST /api/v1/bank_billet_remittances/:id/occurrence/:code`
+`POST /api/v1/bank_billet_remittances/:id/occurrence/:our_code`
 
 <table class='table table-bordered'>
   <thead>
@@ -304,13 +318,13 @@ Content-Type: application/json; charset=utf-8
     </tr>
     <tr>
       <td>
-        <strong>code </strong>
+        <strong>our_code </strong>
       </td>
       <td>
-        Sim
+        Não
       </td>
       <td>
-        Number
+        String
       </td>
       <td>
         Código de operação de registro. Consulte os possíveis valores <a href="/bank_contracts">para cada banco</a>.
