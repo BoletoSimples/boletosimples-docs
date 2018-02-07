@@ -5,14 +5,9 @@ layout: pt
 en: "/en/bank_contracts"
 ---
 
-## Carteiras de Cobrança
+## Suporte aos Bancos
 
-No Boleto Simples todos os retornos e todas as remessas são em formato CNAB 400.
-
-Peça ao seu banco que os arquivos estejam nesse formato.
-
-Para dúvidas sobre esses arquivos faça suas perguntas em nossa [central de suporte](http://suporte.boletosimples.com.br).
-
+Entre em cada banco para visualizar as carteiras suportadas e os comandos implementados.
 
 | Banco                                          | Retorno | Formato CNAB | Remessa | Formato CNAB
 | ---------------------------------------------- | ------- | ------------ | ------- | ------------
