@@ -2,7 +2,7 @@
 title: Santander
 date: 2018-02-06 21:56:00 Z
 published: false
-position: 2
+position: 3
 ---
 
 Para a conexão direta com o Banco Santander para o registro de boletos é necessário:
