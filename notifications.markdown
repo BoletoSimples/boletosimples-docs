@@ -1,7 +1,7 @@
 ---
 title: Notificações
 published: false
-position: 11
+position: 13
 en: "/en/notifications"
 layout: pt
 ---

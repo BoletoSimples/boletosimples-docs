@@ -1,6 +1,6 @@
 ---
 title: Módulos
-position: 2
+position: 3
 layout: pt
 en: "/en/modules"
 ---

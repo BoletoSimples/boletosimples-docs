@@ -1,6 +1,6 @@
 ---
 title: Sandbox
-position: 4
+position: 5
 layout: pt
 en: "/en/sandbox"
 ---
@@ -40,13 +40,9 @@ Por esse motivo, este ambiente possui algumas restrições. São elas:
 
 ### Limpeza do ambiente
 
-Por motivos de segurança, todos os boletos são excluídos automaticamente no ambiente de Sandbox às segundas-feiras, quartas-feiras e sextas-feiras.
+Por motivos de segurança, todos os boletos são excluídos automaticamente no ambiente de Sandbox todo dia à meia-noite.
 
 Essa medida de segurança foi implementada para ser executada pela primeira vez em 15 de fevereiro de 2017.
-
-### Eventos
-
-Você pode simular os eventos `paid` e `overdue` dos boletos usando os menus de Informar Pagamento e Marcar como Vencido, que somente são apresentados no ambiente Sandbox, na tela do boleto.
 
 ### Pagamento
 
