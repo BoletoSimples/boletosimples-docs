@@ -2,6 +2,7 @@
 title: Itaú
 date: 2018-02-07 21:04:00 Z
 published: false
+position: 2
 ---
 
 Para a conexão direta com o Banco Itaú para o registro de boletos é necessário:
