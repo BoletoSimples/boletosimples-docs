@@ -2,7 +2,7 @@
 title: Caixa Econômica Federal
 date: 2018-02-07 21:08:00 Z
 published: false
-position: 6
+position: 2
 ---
 
 Para a conexão direta com a Caixa Econômica Federal para o registro de boletos é necessário:
