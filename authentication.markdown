@@ -1,6 +1,6 @@
 ---
 title: Autenticação
-position: 7
+position: 6
 layout: pt
 en: "/en/authentication"
 ---
