@@ -1,7 +1,6 @@
 ---
 title: Bradesco
 date: 2018-02-07 21:05:00 Z
-published: false
 position: 1
 ---
 
