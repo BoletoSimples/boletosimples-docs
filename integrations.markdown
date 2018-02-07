@@ -1,6 +1,6 @@
 ---
 title: Integrações
-position: 3
+position: 5
 layout: pt
 en: "/en/integrations"
 ---

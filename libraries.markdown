@@ -1,6 +1,6 @@
 ---
 title: Bibliotecas
-position: 1
+position: 3
 layout: pt
 en: "/en/libraries"
 ---
