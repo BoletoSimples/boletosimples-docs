@@ -5,6 +5,5 @@ position: 4
 ---
 
 Para a conexão direta com o Banco Santander para o registro de boletos é necessário:
-* Chave privada do Certificado Digital tipo A1 registrado no banco
-* Número do convênio
-* Código da estação (cod_station) | caractere de 4 dígitos
+* Certificado digital de 2048 bits tipo “certificado client", registrado e validado junto ao banco
+* Código da estação (cod_station) | código de 4 dígitos
