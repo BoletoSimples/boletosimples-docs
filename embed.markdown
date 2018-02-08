@@ -9,21 +9,15 @@ en: "/en/embed"
 
 Você pode incorporar o boleto na sua página logo após a geração pela API.
 
-1. Crie um `div` com o `id` igual a **boleto-embed**
+Para isso basta usar o formato `.js` na URL do Boleto
 
-2. Inclua o javascript de acordo com o layout desejado.
+### Exemplos de Código
 
-    Para isso basta usar o formato `.js` na URL do Boleto
-
-Exemplo:
+Boleto no layout padrão:
 
 <pre class="html">
-  &lt;div id=&quot;boleto-embed&quot;&gt;&lt;/div&gt;
   &lt;script src=&quot;https://bole.to/2/zp.js&quot;&gt;&lt;/script&gt;
 </pre>
-
-
-### Exemplos de outros layouts
 
 Carnê:
 
@@ -56,17 +50,6 @@ Os seguintes parâmetros podem ser usados:
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>
-        <strong>target</strong>
-      </td>
-      <td>
-        String
-      </td>
-      <td>
-        ID do elemento que será substituido pelo iframe com o boleto caso deseje mudar o id padrão ou colocar dois boletos na mesma página.
-      </td>
-    </tr>
     <tr>
       <td>
         <strong>width</strong>
@@ -107,6 +90,5 @@ Os seguintes parâmetros podem ser usados:
 Exemplo de uso com os parâmetros:
 
 <pre class="html">
-  &lt;div id=&quot;boleto&quot;&gt;&lt;/div&gt;
-  &lt;script src=&quot;https://bole.to/2/zp.js?target=boleto&amp;width=600&amp;height=700&amp;className=boleto_iframe&quot;&gt;&lt;/script&gt;
+  &lt;script src=&quot;https://bole.to/2/zp.js?width=600&amp;height=700&amp;className=boleto_iframe&quot;&gt;&lt;/script&gt;
 </pre>
