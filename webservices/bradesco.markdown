@@ -5,5 +5,4 @@ position: 1
 ---
 
 Para a conexão direta com o Banco Bradesco para o registro de boletos é necessário:
-* Possuir contrato de cobrança Bradesco ativo
 * Estar habilitado ao uso do Bradesco Net Empresas
