@@ -2,6 +2,7 @@
 title: Webservices
 date: 2018-02-06 21:52:00 Z
 position: 7
+layout: pt
 ---
 
-Conexão direta via API com o seu banco para o registro de boletos.
+Webservice é uma conexão direta ao sistema do banco para registro imediato do boleto.
