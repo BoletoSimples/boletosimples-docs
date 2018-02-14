@@ -19,30 +19,13 @@ breadcrumb: Registro de Remessa
 | Parâmetro                  | Obr. | Tipo    | Tamanho | Descrição                      |
 | -------------------------- | ---- | ------- | ------- | ------------------------------ |
 | **id**                     | N/A  | Integer |         | ID da carteira                 |
-| **our_code**               | Sim  | String  | 6       | Código de operação de registro no banco ([Possíveis valores](/reference/v1/bank_billet_remittances/#our_code))   |
+| **our_code**               | Sim  | String  | 6       | Código de operação de registro. Consulte os possíveis valores <a href="/bank_contracts">para cada banco</a>.          |
 | **occurrence**             | Não  | String  | 3       | Ocorrência                     |
 | **remittance_id**          | Sim  | Integer |         | ID da Remessa                  |
 | **bank_billet_id**         | Sim  | Integer |         | ID do Boleto                   |
 | **bank_billet_account_id** | Sim  | Integer |         | ID da Carteira                 |
 | **processed_at**           | Não  | Date    |         | Quando foi processado          |
 | **occurrence_detail**      | Não  | String  |         | Descrição do evento na Remessa |
-
-### Dicionário de Dados
-
-#### our_code
-
-| 1001 |  Entrada de Título
-| 1002 |  Pedido de Baixa
-| 1009 |  Protestar
-| 1010 |  Não Protestar
-| 1011 |  Protesto para fins falimentares
-| 1018 |  Sustar o protesto
-| 1034 |  Pago diretamente ao beneficiário
-| 1047 |  Não cobrar juros
-| 1066 |  Solicitar negativação expressa
-| 1067 |  Não negativar
-| 1068 |  Excluir negativação expressa
-| 1069 |  Cancelar negativação expressa
 
 
 ### Listar Registros de Remessa
@@ -89,6 +72,20 @@ breadcrumb: Registro de Remessa
     </tr>
     <tr>
       <td>
+        <strong>our_code </strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        String
+      </td>
+      <td>
+        Código de operação de registro. Consulte os possíveis valores <a href="/bank_contracts">para cada banco</a>. Obrigatório os parâmetros <code class="highlighter-rouge">expire_from, expire_to, bank_billet_account_id</code>
+      </td>
+    </tr>
+    <tr>
+      <td>
         <strong>code </strong>
       </td>
       <td>
@@ -98,7 +95,7 @@ breadcrumb: Registro de Remessa
         String
       </td>
       <td>
-        Código de operação de registro no banco <a href="/reference/v1/bank_billet_remittances/#our_code">(Possíveis valores)</a>. Obrigatório os parâmetros <code class="highlighter-rouge">expire_from, expire_to, bank_billet_account_id</code>
+        <div class="alert alert-danger"><strong>ATENÇÃO</strong> Este atributo está descontinuado e será removido do sistema em breve. Utilize <code class="highlighter-rouge">our_code</code>.</div>
       </td>
     </tr>
     <tr>
@@ -293,7 +290,7 @@ Content-Type: application/json; charset=utf-8
 
 ### Criar pendências
 
-`POST /api/v1/bank_billet_remittances/:id/occurrence/:code`
+`POST /api/v1/bank_billet_remittances/:id/occurrence/:our_code`
 
 <table class='table table-bordered'>
   <thead>
@@ -321,16 +318,16 @@ Content-Type: application/json; charset=utf-8
     </tr>
     <tr>
       <td>
-        <strong>code </strong>
+        <strong>our_code </strong>
       </td>
       <td>
-        Sim
+        Não
       </td>
       <td>
-        Number
+        String
       </td>
       <td>
-        Código de operação de registro no banco <a href="/reference/v1/bank_billet_remittances/#our_code">(Possíveis valores)</a>
+        Código de operação de registro. Consulte os possíveis valores <a href="/bank_contracts">para cada banco</a>.
       </td>
     </tr>
   </tbody>
