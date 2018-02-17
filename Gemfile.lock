@@ -215,6 +215,7 @@ GEM
 
 PLATFORMS
   ruby
+  x86_64-darwin-15
   x86_64-darwin-16
 
 DEPENDENCIES
@@ -225,4 +226,4 @@ RUBY VERSION
    ruby 2.4.2p198
 
 BUNDLED WITH
-   1.15.4
+   1.16.1
