@@ -1,15 +1,16 @@
 ---
-title: CECRED
+title: Banco de Brasília
 position: 13
 layout: pt
-en: "/en/bank_contracts/cecred"
+en: "/en/bank_contracts/brb"
 ---
 
-## CECRED
+## Banco de Brasília
 
 | Carteiras          | Slug
 | ------------------ | ------------
-| Carteira 1        | cecred-bs-1
+| Sen Registro       | brb-bs-1
+| Com Registro       | brb-bs-2
 
 ### Ocorrências
 
@@ -19,31 +20,30 @@ en: "/en/bank_contracts/cecred"
 | 1002     | Pedido de baixa                                     | Sim           | Sim                    |
 | 1003     | Alteração de vencimento                             | Sim           | Sim                    |
 | 1004     | Concessão de abatimento                             | Sim           | Não                    |
-| 1005     | Cancelamento de abatimento                          | Sim           | Não                    |
-| 1007     | Alteração do "uso da empresa"                       | Sim           | Não                    |
-| 1008     | Alteração do "seu número"                           | Sim           | Não                    |
-| 1009     | Protestar                                           | Sim           | Sim                    |
-| 1010     | Não protestar                                       | Sim           | Sim                    |
-| 1011     | Protesto para fins falimentares                     | Sim           | Sim                    |
-| 1012     | Alterar nome do pagador                             | Não           | N/A                    |
+| 1005     | Cancelamento de abatimento                          | Não           | N/A                    |
+| 1007     | Alteração do "uso da empresa"                       | Não           | N/A                    |
+| 1008     | Alteração do "seu número"                           | Não           | N/A                    |
+| 1009     | Protestar                                           | Não           | N/A                    |
+| 1010     | Não protestar                                       | Não           | N/A                    |
+| 1011     | Protesto para fins falimentares                     | Não           | N/A                    |
+| 1012     | Alterar nome do pagador                             | Sim           | Não                    |
 | 1013     | Alteração de endereço do pagador                    | Sim           | Não                    |
-| 1014     | Alterar Cidade do pagador                           | Não           | N/A                    |
-| 1015     | Alterar UF do pagador                               | Não           | N/A                    |
+| 1014     | Alterar Cidade do pagador                           | Sim           | Não                    |
+| 1015     | Alterar UF do pagador                               | Sim           | Não                    |
 | 1017     | Alteração do número de dias para protesto           | Não           | N/A                    |
 | 1018     | Sustar o protesto                                   | Não           | N/A                    |
-| 1020     | Alterar CPF/CNPJ do pagador                         | Não           | N/A                    |
-| 1028     | Alterar Valor                                       | Não           | N/A                    |
+| 1020     | Alterar CPF/CNPJ do pagador                         | Sim           | Não                    |
+| 1028     | Alterar Valor                                       | Sim           | Sim                    |
 | 1031     | Alteração de outros dados                           | Sim           | Não                    |
 | 1034     | Pago diretamente ao beneficiário                    | Não           | N/A                    |
-| 1038     | Alterar CEP do pagador                              | Não           | N/A                    |
-| 1041     | Cancelar instrução automática de protesto           | Sim           | Sim                    |
+| 1038     | Alterar CEP do pagador                              | Sim           | Não                    |
 | 1047     | Não cobrar juros                                    | Não           | N/A                    |
-| 1066     | Solicitar negativação expressa                      | Sim           | Sim                    |
-| 1067     | Não negativar                                       | Sim           | Sim                    |
+| 1066     | Solicitar negativação expressa                      | Não           | N/A                    |
+| 1067     | Não negativar                                       | Não           | N/A                    |
 | 1068     | Excluir negativação expressa                        | Não           | N/A                    |
 | 1069     | Cancelar negativação expressa                       | Não           | N/A                    |
-| 1071     | Concessão de desconto                               | Sim           | N/A                    |
-| 1072     | Cancelamento de desconto                            | Sim           | N/A                    |
+| 1071     | Concessão de desconto                               | Não           | N/A                    |
+| 1072     | Cancelamento de desconto                            | Não           | N/A                    |
 | 1073     | Alteração do valor do desconto                      | Não           | N/A                    |
 | 1074     | Alteração do valor ou percentual de multa           | Não           | N/A                    |
 | 1075     | Não cobrar multa                                    | Não           | N/A                    |
@@ -86,6 +86,3 @@ en: "/en/bank_contracts/cecred"
 | 1112     | Beneficiário não concorda com a alegação do pagador | Não           | N/A                    |
 | 1113     | Alteração de dados extras (registro de multa)       | Não           | N/A                    |
 | 1114     | Descontar títulos encaminhados no dia               | Não           | N/A                    |
-| 1115     | Alterar tipo de emissão - Cooperativa/EE            | Sim           | Não                    |
-| 1116     | Envio de SMS ao pagador                             | Sim           | Não                    |
-| 1117     | Cancelamento Instrução de SMS                       | Sim           | Não                    |

@@ -1,66 +1,65 @@
 ---
-title: CECRED
-position: 13
+title: Credisis
 layout: pt
-en: "/en/bank_contracts/cecred"
+en: "/en/bank_contracts/credisis"
 ---
 
-## CECRED
+## Credisis
 
-| Carteiras          | Slug
-| ------------------ | ------------
-| Carteira 1        | cecred-bs-1
+| Carteiras  | Slug
+| ---------- | ------------
+| 18         | credisis-bs-18
+
 
 ### Ocorrências
 
-| Our code | Descrição                                           | Suporte Banco | Suporte Boleto Simples |
+| Our code | Descrição                                           | Suporte Banco | Suporte Boleto Nãoples |
 |:---------|:----------------------------------------------------|:--------------|:-----------------------|
-| 1001     | Entrada de título                                   | Sim           | Sim                    |
-| 1002     | Pedido de baixa                                     | Sim           | Sim                    |
-| 1003     | Alteração de vencimento                             | Sim           | Sim                    |
-| 1004     | Concessão de abatimento                             | Sim           | Não                    |
-| 1005     | Cancelamento de abatimento                          | Sim           | Não                    |
-| 1007     | Alteração do "uso da empresa"                       | Sim           | Não                    |
-| 1008     | Alteração do "seu número"                           | Sim           | Não                    |
-| 1009     | Protestar                                           | Sim           | Sim                    |
-| 1010     | Não protestar                                       | Sim           | Sim                    |
-| 1011     | Protesto para fins falimentares                     | Sim           | Sim                    |
+| 1001     | Entrada de título                                   | Não           | Não                    |
+| 1002     | Pedido de baixa                                     | Não           | Não                    |
+| 1003     | Alteração de vencimento                             | Não           | Não                    |
+| 1004     | Concessão de abatimento                             | Não           | Não                    |
+| 1005     | Cancelamento de abatimento                          | Não           | Não                    |
+| 1007     | Alteração do "uso da empresa"                       | Não           | N/A                    |
+| 1008     | Alteração do "seu número"                           | Não           | N/A                    |
+| 1009     | Protestar                                           | Não           | Não                    |
+| 1010     | Não protestar                                       | Não           | N/A                    |
+| 1011     | Protesto para fins falimentares                     | Não           | N/A                    |
 | 1012     | Alterar nome do pagador                             | Não           | N/A                    |
-| 1013     | Alteração de endereço do pagador                    | Sim           | Não                    |
+| 1013     | Alteração de endereço do pagador                    | Não           | N/A                    |
 | 1014     | Alterar Cidade do pagador                           | Não           | N/A                    |
 | 1015     | Alterar UF do pagador                               | Não           | N/A                    |
 | 1017     | Alteração do número de dias para protesto           | Não           | N/A                    |
 | 1018     | Sustar o protesto                                   | Não           | N/A                    |
 | 1020     | Alterar CPF/CNPJ do pagador                         | Não           | N/A                    |
 | 1028     | Alterar Valor                                       | Não           | N/A                    |
-| 1031     | Alteração de outros dados                           | Sim           | Não                    |
+| 1031     | Alteração de outros dados                           | Não           | N/A                    |
 | 1034     | Pago diretamente ao beneficiário                    | Não           | N/A                    |
 | 1038     | Alterar CEP do pagador                              | Não           | N/A                    |
-| 1041     | Cancelar instrução automática de protesto           | Sim           | Sim                    |
 | 1047     | Não cobrar juros                                    | Não           | N/A                    |
-| 1066     | Solicitar negativação expressa                      | Sim           | Sim                    |
-| 1067     | Não negativar                                       | Sim           | Sim                    |
+| 1066     | Solicitar negativação expressa                      | Não           | N/A                    |
+| 1067     | Não negativar                                       | Não           | N/A                    |
 | 1068     | Excluir negativação expressa                        | Não           | N/A                    |
 | 1069     | Cancelar negativação expressa                       | Não           | N/A                    |
-| 1071     | Concessão de desconto                               | Sim           | N/A                    |
-| 1072     | Cancelamento de desconto                            | Sim           | N/A                    |
+| 1071     | Concessão de desconto                               | Não           | N/A                    |
+| 1072     | Cancelamento de desconto                            | Não           | N/A                    |
 | 1073     | Alteração do valor do desconto                      | Não           | N/A                    |
 | 1074     | Alteração do valor ou percentual de multa           | Não           | N/A                    |
 | 1075     | Não cobrar multa                                    | Não           | N/A                    |
 | 1076     | Alteração de juros de mora                          | Não           | N/A                    |
 | 1077     | Alteração do valor de abatimento                    | Não           | N/A                    |
-| 1078     | Sustar protesto e baixar título                     | Não           | N/A                    |
+| 1078     | Sustar protesto e baixar título                     | Não           | Não                    |
 | 1079     | Alterar dados do sacado                             | Não           | N/A                    |
 | 1080     | Alterar dados do sacador avalista                   | Não           | N/A                    |
 | 1081     | Reembolso e transferência Desconto e Vendor         | Não           | N/A                    |
 | 1082     | Reembolso e devolução Desconto e Vendor             | Não           | N/A                    |
-| 1083     | Inclusão de ocorrência                              | Sim           | Não                    |
-| 1084     | Exclusão de ocorrência                              | Sim           | Não                    |
-| 1085     | Pedido de devolução                                 | Sim           | Não                    |
-| 1086     | Pedido de devolução (entregue ao sacado)            | Sim           | Não                    |
-| 1087     | Pedido dos títulos em aberto                        | Sim           | Não                    |
+| 1083     | Inclusão de ocorrência                              | Não           | N/A                    |
+| 1084     | Exclusão de ocorrência                              | Não           | N/A                    |
+| 1085     | Pedido de devolução                                 | Não           | N/A                    |
+| 1086     | Pedido de devolução (entregue ao sacado)            | Não           | N/A                    |
+| 1087     | Pedido dos títulos em aberto                        | Não           | N/A                    |
 | 1088     | Alteração do controle do participante               | Não           | N/A                    |
-| 1089     | Sustar protesto e manter em carteira                | Não           | N/A                    |
+| 1089     | Sustar protesto e manter em carteira                | Não           | Não                    |
 | 1090     | Transferência cessão crédito ID. Prod. 10           | Não           | N/A                    |
 | 1091     | Transferência entre carteiras                       | Não           | N/A                    |
 | 1092     | Dev. transferências entre carteiras                 | Não           | N/A                    |
@@ -86,6 +85,3 @@ en: "/en/bank_contracts/cecred"
 | 1112     | Beneficiário não concorda com a alegação do pagador | Não           | N/A                    |
 | 1113     | Alteração de dados extras (registro de multa)       | Não           | N/A                    |
 | 1114     | Descontar títulos encaminhados no dia               | Não           | N/A                    |
-| 1115     | Alterar tipo de emissão - Cooperativa/EE            | Sim           | Não                    |
-| 1116     | Envio de SMS ao pagador                             | Sim           | Não                    |
-| 1117     | Cancelamento Instrução de SMS                       | Sim           | Não                    |
