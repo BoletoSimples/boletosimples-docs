@@ -1,7 +1,7 @@
 ---
 title: Chave secreta
-layout: pt
 en: "/en/notifications/secret_key"
+layout: pt
 ---
 
 ## Chave Secreta (Deprecated)
