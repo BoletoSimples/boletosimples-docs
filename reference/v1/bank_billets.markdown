@@ -42,7 +42,7 @@ breadcrumb: Boletos
 | **customer_neighborhood**       | Sim   | String  | 255     | Bairro
 | **customer_address_number**     | Não   | String  | 255     | Número
 | **customer_address_complement** | Não   | String  | 255     | Complemento
-| **customer_phone_number**       | Não   | String  | 255     | Telefone (com DDD)
+| **customer_phone_number**       | Não   | String  | 11      | Telefone (com DDD)
 | **customer_person_type**        | N/A   | String  | 255     | Tipo de pagador ([possíveis valores](#customer_person_type))
 | **meta**                        | Não   | Campo Genérico | | Aceita qualquer formato passado. Pode ser usado para salvar dados que não existam dentro do Boleto Simples. Exemplo: {pedido: 12345}
 | **status**                      | N/A   | String  |         | Situação do boleto ([possíveis valores](#status))
@@ -128,7 +128,7 @@ breadcrumb: Boletos
 | 2 | Para valor diário após um dia corrido
 | 3 | Para porcentagem diária após um dia útil
 | 4 | Para valor diário após um dia útil
-| 5 | Para porcentagem mensal após um dia corrido 
+| 5 | Para porcentagem mensal após um dia corrido
 | 6 | Para porcentagem mensal após um dia útil
 
 #### discount_type

@@ -34,7 +34,7 @@ breadcrumb: Clientes
 | **neighborhood**       | Sim   | String  | 255     | Bairro
 | **address_number**     | Não   | String  | 255     | Número
 | **address_complement** | Não   | String  | 255     | Complemento
-| **phone_number**       | Não   | String  | 255     | Telefone (formato 9988888888)
+| **phone_number**       | Não   | String  | 11      | Telefone (formato 9988888888)
 | **email**              | Não   | String  | 255     | E-mail
 | **mobile_local_code**  | Não   | String  | 4       | DDD do Celular
 | **mobile_number**      | Não   | String  | 15      | Celular
