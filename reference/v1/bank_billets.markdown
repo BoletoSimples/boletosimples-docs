@@ -1,9 +1,9 @@
 ---
 title: Boletos
 position: 2
-layout: pt
 en: "/en/reference"
 breadcrumb: Boletos
+layout: pt
 ---
 
 ## Boletos
@@ -757,6 +757,20 @@ Array
       </td>
       <td>
         Filtro por Nosso número.
+      </td>
+    </tr>
+<tr>
+      <td>
+        <strong> processed_our_number_raw </strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        String
+      </td>
+      <td>
+        Filtro por Nosso Número com DV (limpo).
       </td>
     </tr>
     <tr>
