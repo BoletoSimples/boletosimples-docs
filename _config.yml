@@ -1,6 +1,6 @@
 ---
 title: Boleto Simples API
-timezone: UTC
+timezone: America/Sao_Paulo
 collections:
   posts:
     title: Posts
