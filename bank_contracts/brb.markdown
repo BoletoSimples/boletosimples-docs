@@ -1,15 +1,15 @@
 ---
 title: Banco de Brasília
 position: 13
-layout: pt
 en: "/en/bank_contracts/brb"
+layout: pt
 ---
 
 ## Banco de Brasília
 
 | Carteiras          | Slug
 | ------------------ | ------------
-| Sen Registro       | brb-bs-1
+| Sem Registro       | brb-bs-1
 | Com Registro       | brb-bs-2
 
 ### Ocorrências
