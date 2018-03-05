@@ -1,0 +1,68 @@
+#!/usr/bin/env ruby
+
+
+require 'open-uri'
+
+class Util
+  def self.log(params = {})
+    return if ENV['QUIET']
+    @complete_log ||= []
+    params = {message: params} if params.is_a? String
+    puts ('*' * 120).white if params[:divider]
+    @complete_log << "#{('*' * 120)}\n" if params[:divider]
+    puts params[:message] if params[:message]
+    @complete_log << "#{params[:message]}\n".gsub(/\[1;3[0-9]?m/,"").gsub("\[0m","") if params[:message]
+    # if(params[:push] and params[:message])
+    #   Pushover.notification(message: params[:message], title: 'Script Ampliar')
+    # end
+  end
+
+  def self.confirm(params = {})
+    return true if ENV['CONFIRM']
+    print "\n#{params[:message]} [Yn] "
+    return STDIN.gets.chomp.downcase != 'n'
+  end
+end
+
+class Runner
+  class << self
+
+    def run
+      if ::Util.confirm(message: "Update from #{base_url}?")
+        update('header')
+        update('footer')
+        update_css
+        update_js
+      end
+    end
+
+    def update(part)
+      output = open("#{base_url}/#{part}").read
+      output = output.gsub('http://localhost:4567','https://www.boletosimples.com.br')
+      output = output.gsub('https://www.boletosimples.com.br/images/','/img/')
+      open("_includes/#{part}.html", 'w') do |file|
+        file << output
+      end
+    end
+
+    def update_css
+      open('css/header-footer.css', 'w') do |file|
+        file << open("#{base_url}/stylesheets/header-footer.css").read
+      end
+    end
+
+    def update_js
+      open('js/header-footer.js', 'w') do |file|
+        file << open("#{base_url}/javascripts/header-footer.js").read
+      end
+    end
+
+    def base_url
+      @base_url ||= (ENV['LOCAL'] ? 'http://localhost:4567' : 'https://www.boletosimples.com.br')
+    end
+
+  end
+
+end
+
+Runner.run

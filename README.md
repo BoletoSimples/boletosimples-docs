@@ -26,3 +26,9 @@ Se você deseja ter acesso a documentação offline, siga os seguintes passos:
 1. Acesse pelo navegador
 
 	[http://localhost:4000](http://localhost:4000)
+
+1. Para atualizar o Header e Footer
+
+	```sh
+	CONFIRM=true LOCAL=true ./update-header-footer && foreman start
+	```

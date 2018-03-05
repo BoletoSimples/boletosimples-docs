@@ -2,14 +2,12 @@
 @import url("sidr.css");
 @import url("bootstrap.min.css");
 @import url("fontface.css");
-@import url("header.css");
-@import url("footer.css");
-
 
 /* Main */
 
 .containner {
-  width: 960px;
+  width: 100%;
+  max-width: 1100px;
   margin: auto;
 }
 
@@ -258,7 +256,7 @@ table small {
 
 .generic-call {
   background: #008de4;
-  margin-top: -1px;
+  margin-top: 69px;
   padding: 40px 0;
 }
 
@@ -514,8 +512,4 @@ Media Queries for Smartphones.
     line-height: 21px;
   }
 
-}
-
-@media only screen and (min-width: 811px) {
-  #main-header nav ul { display: block !important; }
 }
