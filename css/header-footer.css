@@ -122,12 +122,17 @@ header#main-header {
   -webkit-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out; }
   header#main-header .containner {
+    width: 100%;
+    max-width: 1100px;
+    margin: auto;
     position: relative; }
   header#main-header .logo {
     margin-top: 16px;
     float: left; }
     header#main-header .logo img {
       width: 180px; }
+  header#main-header a {
+    text-decoration: none; }
   header#main-header a:hover img {
     opacity: .8; }
   header#main-header #menu-trigger {
@@ -167,7 +172,7 @@ header#main-header {
     display: inline-block;
     border-radius: 3px;
     text-transform: uppercase;
-    font-size: .8em;
+    font-size: 12px;
     letter-spacing: 0;
     border: none;
     font-weight: bold;
@@ -399,14 +404,16 @@ Media Queries for Tablets.
       height: auto; }
       header#main-header .dropdown-trigger .header-dropdown {
         display: none;
+        padding: 0;
         position: relative;
         float: none;
         right: 0;
         top: 0;
-        top: -13px;
         border: 0; }
         header#main-header .dropdown-trigger .header-dropdown li a {
-          font-weight: 300; }
+          font-weight: 300;
+          border-radius: 0;
+          padding: .3em 1em; }
     header#main-header .header-form {
       width: 100% !important; }
     header#main-header #login-form,
@@ -487,6 +494,10 @@ footer#main-footer {
   line-height: 1.5;
   position: relative;
   clear: both; }
+  footer#main-footer .containner {
+    width: 100%;
+    max-width: 1100px;
+    margin: auto; }
   footer#main-footer .sitemap h4 {
     font-size: 16px;
     margin: 90px 0 30px 0;
@@ -552,14 +563,15 @@ Max Width, 960px
 Media Queries for Tablets.
 ------------------------------------------------------------------------------*/
 @media (max-width: 810px) {
-  footer#main-footer .sitemap {
-    padding: 0 0 60px 0; }
-    footer#main-footer .sitemap h4 {
-      margin-top: 40px;
-      margin-bottom: 20px; }
-    footer#main-footer .sitemap .column {
-      width: 100%;
-      margin-bottom: 0;
-      float: none; }
+  footer#main-footer .sitemap h4 {
+    margin-top: 40px;
+    margin-bottom: 20px; }
+  footer#main-footer .sitemap .column {
+    width: 100%;
+    margin-bottom: 4em;
+    text-align: center;
+    float: none; }
   footer#main-footer .more-infos {
-    line-height: 30px; } }
+    line-height: 30px;
+    overflow: inherit;
+    padding: 0; } }
