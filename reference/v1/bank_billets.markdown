@@ -20,6 +20,7 @@ layout: pt
 | [GET /api/v1/bank_billets/our_number](#buscar-por-nosso-número) | Buscar por nosso número
 | [GET /api/v1/bank_billets/status](#buscar-por-situação-do-boleto) | Buscar por Situação do boleto ([possíveis valores](#status))
 | [PUT /api/v1/bank_billets/:id/pay](#marcar-boleto-como-pago) | Marcar boleto como pago
+| [POST /api/v1/bank_billets/bulk](#criar-boletos-em-lote) | Criar boletos em lote
 
 ### Modelo de Dados
 
@@ -192,7 +193,7 @@ layout: pt
 
 `POST /api/v1/bank_billets`
 
-ATENÇÃO: Apesar de receber a resposta com os dados do boleto, isso, somente, não garante que o boleto esteja pronto para uso. Isso apenas indica que o boleto foi aceito e cadastrado em sua conta.
+ <div class="alert alert-danger"><strong>ATENÇÃO</strong> Apesar de receber a resposta com os dados do boleto, isso, somente, não garante que o boleto esteja pronto para uso. Isso apenas indica que o boleto foi aceito e cadastrado em sua conta.</div>
 
 A partir desse momento o boleto entra em uma fila para ser gerado por completo(código de barras, linha digitável, layout).
 
@@ -2567,4 +2568,203 @@ Content-Type: application/json; charset=utf-8
 
 </pre>
 </div>
+</div>
+
+### Criar boletos em lote
+
+`POST /api/v1/bank_billets/bulk`
+
+ <div class="alert alert-danger"><strong>ATENÇÃO</strong> Apesar de receber a resposta com os dados do boleto, isso, somente, não garante que o boleto esteja pronto para uso. Isso apenas indica que o boleto foi aceito e cadastrado em sua conta.</div>
+
+A partir desse momento o boleto entra em uma fila para ser gerado por completo(código de barras, linha digitável, layout).
+
+Após o boleto ser gerado por completo seu status mudará para `opened`.
+
+Só então você poderá disponibilizar o boleto aos seus clientes.
+
+Para saber se um boleto foi gerado por completo, você deve preparar seu sisema para receber nossos [Webhooks](/webhooks)
+
+Será retornado `404 Not Found` ao tentar acessar a url de um boleto que ainda esteja sendo gerado(`generating`)
+
+
+<table class='table table-bordered'>
+  <thead>
+    <tr>
+      <th>Parâmetro</th>
+      <th data-container="body" data-toggle="tooltip" title="Obrigatório">Obr.</th>
+      <th>Tipo</th>
+      <th>Descrição</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <strong>bank_billets</strong>
+      </td>
+      <td>
+        Sim
+      </td>
+      <td>
+        Array
+      </td>
+      <td>
+        Array de boletos. Cada item do array deve conter os mesmo parâmetros do  Modelo de Dados de <a href="/reference/v1/bank_billets/#criar-boleto">criação de boleto único</a>.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="alert alert-info"><strong>ATENÇÃO</strong> Máximo de 50 boletos por chamada.</div>
+
+#### Exemplo de requisição inválida
+
+<ul class="nav nav-tabs" role="tablist">
+  <li class="active"><a href="#bash" role="tab" data-toggle="tab">Bash</a></li>
+  <!-- <li><a href="#ruby" role="tab" data-toggle="tab">Ruby</a></li>
+  <li><a href="#php" role="tab" data-toggle="tab">PHP</a></li> -->
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="bash">
+    <small>Requisição:</small>
+<pre class="bash">
+curl -i \
+-u $BOLETOSIMPLES_TOKEN:x \
+-d '{"bank_billets":{}}' \
+-H 'Content-Type: application/json' \
+-H 'User-Agent: MyApp (myapp@example.com)' \
+-X POST 'https://sandbox.boletosimples.com.br/api/v1/bank_billets/bulk'
+</pre>
+
+    <small>Resposta:</small>
+
+<pre class="http">
+HTTP/1.1 422 Unprocessable Entity
+Date: Fri, 17 Oct 2014 18:39:47 GMT
+Status: 422 Unprocessable Entity
+Content-Type: application/json; charset=utf-8
+...
+
+{"errors":{"bank_billets":["não pode ficar em branco"]}}
+</pre>
+  </div>
+
+  <!-- <div class="tab-pane" id="ruby">
+    <small>Requisição:</small>
+<pre class="ruby">
+
+</pre>
+
+    <small>Resposta:</small>
+
+<pre class="ruby">
+
+</pre>
+  </div>
+    <div class="tab-pane" id="php">
+      <small>Requisição:</small>
+<pre class="php">
+
+</pre>
+
+      <small>Resposta:</small>
+
+<pre class="php">
+
+</pre>
+    </div> -->
+</div>
+
+#### Exemplo de requisição válida
+
+<ul class="nav nav-tabs" role="tablist">
+  <li class="active"><a href="#bash2" role="tab" data-toggle="tab">Bash</a></li>
+  <!-- <li><a href="#ruby2" role="tab" data-toggle="tab">Ruby</a></li>
+  <li><a href="#php2" role="tab" data-toggle="tab">PHP</a></li> -->
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="bash2">
+    <small>Requisição:</small>
+
+<pre class="bash">
+curl -i \
+-u $BOLETOSIMPLES_TOKEN:x \
+-d '{"bank_billets":[{"amount":12.34, "expire_at": "2018-11-15", "description": "Prestação de Serviço", "customer_person_name": "Nome do Cliente", "customer_cnpj_cpf": "125.812.717-28", "customer_zipcode": "12312123", "customer_address": "Rua quinhentos", "customer_city_name": "Rio de Janeiro", "customer_state": "RJ", "customer_neighborhood": "bairro"},{"amount":12.34, "expire_at": "2018-11-15", "description": "Prestação de Serviço", "customer_person_name": "Nome do Cliente", "customer_cnpj_cpf": "125.812.717-28", "customer_zipcode": "12312123", "customer_address": "Rua quinhentos", "customer_city_name": "Rio de Janeiro", "customer_state": "RJ", "customer_neighborhood": "bairro"},{"amount":12.34, "expire_at": "", "description": "Prestação de Serviço", "customer_person_name": "Nome do Cliente", "customer_cnpj_cpf": "", "customer_zipcode": "12312123", "customer_address": "Rua quinhentos", "customer_city_name": "Rio de Janeiro", "customer_state": "RJ", "customer_neighborhood": "bairro"}]}' \
+-H 'Content-Type: application/json' \
+-H 'User-Agent: MyApp (myapp@example.com)' \
+-X POST 'https://sandbox.boletosimples.com.br/api/v1/bank_billets/bulk'
+</pre>
+
+    <small>Resposta:</small>
+
+<pre class="http">
+HTTP/1.1 201 Created
+Connection: keep-alive
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Status: 201 Created
+...
+[
+{
+  "item":0,
+  "status":"success",
+  "bank_billet":{
+    "id":63883,
+    "expire_at":"2018-11-16",
+    "paid_at":null,"
+    description":"Prestação de Serviço",
+    "status":"generating"
+    ...
+  }
+},
+{
+  "item":1,
+  "status":"success",
+  "bank_billet":{
+    "id":63884,
+    "expire_at":"2018-11-16",
+    "paid_at":null,
+    "description":"Prestação de Serviço",
+    "status":"generating"
+    ...
+  }
+},
+{
+  "item":2,
+  "status":"error",
+  "errors":
+  {
+    "customer_id":["não pode ficar em branco"],
+    "expire_at":["não pode ficar em branco","não é uma data válida"],
+    "customer_cnpj_cpf":["não pode ficar em branco"]
+  }
+}
+]
+</pre>
+  </div>
+  <!-- <div class="tab-pane" id="ruby2">
+    <small>Requisição:</small>
+<pre class="ruby">
+
+</pre>
+
+  <small>Resposta:</small>
+
+<pre class="ruby">
+
+</pre>
+  </div>
+    <div class="tab-pane" id="php2">
+      <small>Requisição:</small>
+<pre class="php">
+
+</pre>
+
+    <small>Resposta:</small>
+
+<pre class="php">
+
+</pre>
+    </div> -->
 </div>
