@@ -105,9 +105,10 @@ layout: pt
 | **installment_number**          | N/A   | Integer |         | Número da parcela do carnê
 | **installment_id**              | N/A   | Integer |         | ID do [Carnê](/reference/v1/installments/)
 | **bank_billet_discharges**      | N/A   | Array   |         | Retornos bancários
-| **first_instruction**                | Não   | String  |    2     | Primeira Instrução. Consulte os possíveis valores <a href="/bank_contracts">para cada banco</a>.
-| **second_instruction**                | Não   | String  |     2    | Segunda Instrução. Consulte os possíveis valores <a href="/bank_contracts">para cada banco</a>.
-
+| **first_instruction**                | Não   | String  |    2     | Primeira Instrução(CNAB 400). Consulte os possíveis valores <a href="/bank_contracts">para cada banco</a>.
+| **second_instruction**                | Não   | String  |     2    | Segunda Instrução(CNAB 400). Consulte os possíveis valores <a href="/bank_contracts">para cada banco</a>.
+| **sue_code**                | Não   | String  |     1    | Código de Protesto(CNAB 240). Consulte os possíveis valores <a href="/bank_contracts">para cada banco</a>.
+| **revoke_code**                | Não   | String  |     1    | Código de Baixa(CNAB 240). Consulte os possíveis valores <a href="/bank_contracts">para cada banco</a>.
 ### Dicionário de Dados
 
 #### status
