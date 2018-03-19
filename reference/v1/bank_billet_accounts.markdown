@@ -25,7 +25,7 @@ breadcrumb: Carteiras de Cobrança
 
 ### Modelo de Dados
 
-| Parâmetro                | Obr.  | Tipo    | Tamanho | Descrição
+| Parâmetro                | Obrigatório  | Tipo    | Tamanho | Descrição
 | ------------------------ | ----- | ------- | ------- | ------------------------
 | **id**                   | N/A   | Integer |         | ID da carteira
 | **bank_contract_slug**   | Sim   | String  | 50      | [Slug da Carteira](/bank_contracts)
@@ -693,7 +693,7 @@ Novo nome: Nome 1234
   <thead>
     <tr>
       <th>Parâmetro</th>
-      <th data-container="body" data-toggle="tooltip" title="Obrigatório">Obr.</th>
+      <th data-container="body" data-toggle="tooltip" title="Obrigatório">Obrigatório</th>
       <th>Tipo</th>
       <th>Descrição</th>
     </tr>
@@ -1000,7 +1000,7 @@ Array
 
 ### Modelo de Dados
 
-| Parâmetro                | Obr.  | Tipo    | Tamanho | Descrição
+| Parâmetro                | Obrigatório  | Tipo    | Tamanho | Descrição
 | ------------------------ | ----- | ------- | ------- | ------------------------
 | **id**                   | Sim   | Integer |         | ID da Carteira de Cobrança
 | **homologation_amount**  | Sim   | String  |         | Valor recebido pelo boleto (R$) Ex.: 1,87
@@ -1185,7 +1185,7 @@ Novo nome: Nome 1234
 
 ### Modelo de Dados
 
-| Parâmetro                | Obr.  | Tipo    | Tamanho | Descrição
+| Parâmetro                | Obrigatório  | Tipo    | Tamanho | Descrição
 | ------------------------ | ----- | ------- | ------- | ------------------------
 | **id**                   | Sim   | Integer |         | ID da Carteira de Cobrança
 | **default**              | Sim   | Boolean  |         | Define a Carteira  padrão(Default: true) ou deixar de ser padrão(Default: false)

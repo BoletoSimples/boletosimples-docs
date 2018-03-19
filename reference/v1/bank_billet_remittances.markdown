@@ -16,7 +16,7 @@ breadcrumb: Registro de Remessa
 
 ### Modelo de Dados
 
-| Parâmetro                  | Obr. | Tipo    | Tamanho | Descrição                      |
+| Parâmetro                  | Obrigatório | Tipo    | Tamanho | Descrição                      |
 | -------------------------- | ---- | ------- | ------- | ------------------------------ |
 | **id**                     | N/A  | Integer |         | ID da carteira                 |
 | **our_code**               | Sim  | String  | 6       | Código de operação de registro. Consulte os possíveis valores <a href="/bank_contracts">para cada banco</a>.          |
@@ -36,7 +36,7 @@ breadcrumb: Registro de Remessa
   <thead>
     <tr>
       <th>Parâmetro</th>
-      <th data-container="body" data-toggle="tooltip" title="Obrigatório">Obr.</th>
+      <th data-container="body" data-toggle="tooltip" title="Obrigatório">Obrigatório</th>
       <th>Tipo</th>
       <th>Descrição</th>
     </tr>
@@ -208,7 +208,7 @@ Content-Type: application/json; charset=utf-8
   <thead>
     <tr>
       <th>Parâmetro</th>
-      <th data-container="body" data-toggle="tooltip" title="Obrigatório">Obr.</th>
+      <th data-container="body" data-toggle="tooltip" title="Obrigatório">Obrigatório</th>
       <th>Tipo</th>
       <th>Descrição</th>
     </tr>
@@ -296,7 +296,7 @@ Content-Type: application/json; charset=utf-8
   <thead>
     <tr>
       <th>Parâmetro</th>
-      <th data-container="body" data-toggle="tooltip" title="Obrigatório">Obr.</th>
+      <th data-container="body" data-toggle="tooltip" title="Obrigatório">Obrigatório</th>
       <th>Tipo</th>
       <th>Descrição</th>
     </tr>
