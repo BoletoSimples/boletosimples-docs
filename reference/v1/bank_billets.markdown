@@ -25,7 +25,7 @@ layout: pt
 ### Modelo de Dados
 
 | Parâmetro                       | Obr.  | Tipo    | Tamanho | Descrição
-| ------------------------------- | ----- | ------- | ------- | ------------------------
+| ------------------------------- | ----- | ------- | ------- | ------------------------|
 | **id**                          | N/A   | Integer |         | ID do boleto
 | **bank_billet_account_id**      | Sim   | Integer |         | ID da [Carteira de Cobrança](/reference/v1/bank_billet_accounts/). Se não informado, usará a carteira padrão.
 | **our_number**                  | Não   | Integer |         | Nosso Número. Se não informado, usará o Próximo Nosso Número da Carteira de Cobrança.
