@@ -27,7 +27,7 @@ Você também pode se inscrever para receber as notificações de alterações d
 * Adicionado novo endpoint para [Criar boletos em lote](/reference/v1/bank_billets/#criar-boletos-em-lote).
 * Adicionado tabela de [Ocorrências](/reference/v1/bank_billet_remittances/#criar-pendências) disponíveis em cada [banco](/bank_contracts/).
 * Adicionado tabela com código de instruções de cobrança para [Itaú](/bank_contracts/itau/#códigos-de-instrução-de-cobrança)
-* Inclui `first_instruction` e `second_instruction` nos [Boletos](/reference/v1/bank_billets/)
+* Inclui `first_instruction`, `second_instruction`, `sue_code` e `revoke_code` nos [Boletos](/reference/v1/bank_billets/)
 
 ### 22/01/2018
 
