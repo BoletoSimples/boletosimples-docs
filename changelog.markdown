@@ -22,6 +22,12 @@ Você também pode se inscrever para receber as notificações de alterações d
 
 #### Últimas alterações realizadas na API.
 
+### 19/02/2018
+
+* Adicionado novo endpoint para [Criar boletos em lote](/reference/v1/bank_billets/#criar-boletos-em-lote).
+* Adicionado tabela de [Ocorrências](/reference/v1/bank_billet_remittances/#criar-pendências) disponíveis em cada [banco](/bank_contracts/).
+* Adicionado tabela com código de instruções de cobrança para [Itaú](/bank_contracts/itau/#códigos-de-instrução-de-cobrança)
+
 ### 22/01/2018
 
 * Adicionado novos parâmetros ao endpoint para filtrar [Boletos](/reference/v1/bank_billets/#listar-boletos).
