@@ -1,7 +1,7 @@
 ---
 title: Itaú
-layout: pt
 en: "/en/bank_contracts/itau"
+layout: pt
 ---
 
 ## Itaú
@@ -28,7 +28,7 @@ en: "/en/bank_contracts/itau"
 ### Ocorrências
 
 | Our code | Descrição                                           | Suporte Banco | Suporte Boleto Simples |
-|:---------|:----------------------------------------------------|:--------------|:-----------------------|
+|---------|---------------------------------------------------|--------------|-----------------------|
 | 1001     | Entrada de título                                   | Sim           | Sim                    |
 | 1002     | Pedido de baixa                                     | Sim           | Sim                    |
 | 1003     | Alteração de vencimento                             | Sim           | Sim                    |
@@ -99,3 +99,79 @@ en: "/en/bank_contracts/itau"
 | 1112     | Beneficiário não concorda com a alegação do pagador | Sim           | Não                    |
 | 1113     | Alteração de dados extras (registro de multa)       | Sim           | Não                    |
 | 1114     | Descontar títulos encaminhados no dia               | Sim           | Não                    |
+
+
+### Códigos de Instrução de Cobrança
+
+| Código     | Descrição |
+|----------|---------------------------------------------------|
+|    02    | DEVOLVER APÓS 05 DIAS DO VENCIMENTO  |
+|    03    | DEVOLVER APÓS 30 DIAS DO VENCIMENTO|
+|    05    | RECEBER CONFORME INSTRUÇÕES NO PRÓPRIO TÍTULO|
+|    06    | DEVOLVER APÓS 10 DIAS DO VENCIMENTO|
+|    07    | DEVOLVER APÓS 15 DIAS DO VENCIMENTO|
+|    08    | DEVOLVER APÓS 20 DIAS DO VENCIMENTO|
+|    09    | PROTESTAR (emite aviso ao sacado após XX dias do vencimento, e envia ao cartório após 5 dias úteis)|
+|    10    | NÃO PROTESTAR (inibe protesto, quando houver instrução permanente na conta corrente)|
+|    11    | DEVOLVER APÓS 25 DIAS DO VENCIMENTO|
+|    12    | DEVOLVER APÓS 35 DIAS DO VENCIMENTO|
+|    13    | DEVOLVER APÓS 40 DIAS DO VENCIMENTO|
+|    14    | DEVOLVER APÓS 45 DIAS DO VENCIMENTO|
+|    15    | DEVOLVER APÓS 50 DIAS DO VENCIMENTO|
+|    16    | DEVOLVER APÓS 55 DIAS DO VENCIMENTO|
+|    17    | DEVOLVER APÓS 60 DIAS DO VENCIMENTO |
+|    18    | DEVOLVER APÓS 90 DIAS DO VENCIMENTO|
+|    19    | NÃO RECEBER APÓS 05 DIAS DO VENCIMENTO |
+|    20    | NÃO RECEBER APÓS 10 DIAS DO VENCIMENTO |
+|    21    | NÃO RECEBER APÓS 15 DIAS DO VENCIMENTO |
+|    22    | NÃO RECEBER APÓS 20 DIAS DO VENCIMENTO |
+|    23    | NÃO RECEBER APÓS 25 DIAS DO VENCIMENTO |
+|    24    | NÃO RECEBER APÓS 30 DIAS DO VENCIMENTO |
+|    25    | NÃO RECEBER APÓS 35 DIAS DO VENCIMENTO |
+|    26    | NÃO RECEBER APÓS 40 DIAS DO VENCIMENTO |
+|    27    | NÃO RECEBER APÓS 45 DIAS DO VENCIMENTO |
+|    28    | NÃO RECEBER APÓS 50 DIAS DO VENCIMENTO |
+|    29    | NÃO RECEBER APÓS 55 DIAS DO VENCIMENTO |
+|    30    | IMPORTÂNCIA DE DESCONTO POR DIA|
+|    31    | NÃO RECEBER APÓS 60 DIAS DO VENCIMENTO|
+|    32    | NÃO RECEBER APÓS 90 DIAS DO VENCIMENTO|
+|    33    | CONCEDER ABATIMENTO REF. À PIS-PASEP/COFIN/CSSL, MESMO APÓS VENCIMENTO |
+|    34    | PROTESTAR APÓS XX DIAS CORRIDOS DO VENCIMENTO (SEM AVISO AO SACADO) |
+|    35    | PROTESTAR APÓS XX DIAS ÚTEIS DO VENCIMENTO (SEM AVISO AO SACADO)|
+|    37    | RECEBER ATÉ O ÚLTIMO DIA DO MÊS DE VENCIMENTO|
+|    38    | CONCEDER DESCONTO MESMO APÓS VENCIMENTO|
+|    39    | NÃO RECEBER APÓS O VENCIMENTO|
+|    40    | CONCEDER DESCONTO CONFORME NOTA DE CRÉDITO|
+|    42    | PROTESTO PARA FINS FALIMENTARES|
+|    43    | SUJEITO A PROTESTO SE NÃO FOR PAGO NO VENCIMENTO|
+|    44    | IMPORTÂNCIA POR DIA DE ATRASO A PARTIR DE DDMMAA|
+|    45    | TEM DIA DA GRAÇA|
+|    46    | USO DO BANCO|
+|    47    | DISPENSAR JUROS/COMISSÃO DE PERMANÊNCIA|
+|    51    | RECEBER SOMENTE COM A PARCELA ANTERIOR QUITADA|
+|    52    | EFETUAR O PAGAMENTO SOMENTE ATRAVÉS DESTE BOLETO E NA REDE BANCÁRIA |
+|    53    | USO DO BANCO|
+|    54    | APÓS VENCIMENTO PAGÁVEL SOMENTE NA EMPRESA|
+|    55    | USO DO BANCO|
+|    57    | SOMAR VALOR DO TÍTULO AO VALOR DO CAMPO MORA/MULTA CASO EXISTA |
+|    58    | DEVOLVER APÓS 365 DIAS DE VENCIDO|
+|    59    | COBRANÇA NEGOCIADA. PAGÁVEL SOMENTE POR ESTE BOLETO NA REDE BANCÁRIA |
+|    61    | TÍTULO ENTREGUE EM PENHOR EM FAVOR DO CEDENTE ACIMA|
+|    62    | TÍTULO TRANSFERIDO A FAVOR DO CEDENTE|
+|    70 à 75    |  USO DO BANCO|
+|    78    | VALOR DA IDA ENGLOBA MULTA DE 10% PRO RATA|
+|    79    | COBRAR JUROS APÓS 15 DIAS DA EMISSÃO (para títulos com vencimento à vista) |
+|    80    | PAGAMENTO EM CHEQUE: SOMENTE RECEBER COM CHEQUE DE EMISSÃO DO SACADO |
+|    83    | OPERAÇÃO REF A VENDOR|
+|    84    | APÓS VENCIMENTO CONSULTAR A AGÊNCIA CEDENTE|
+|    86    | ANTES DO VENCIMENTO OU APÓS 15 DIAS, PAGÁVEL SOMENTE EM NOSSA SEDE|
+|    87    | USO DO BANCO|
+|    88    | NÃO RECEBER ANTES DO VENCIMENTO|
+|    89    | USO DO BANCO|
+|    90    | NO VENCIMENTO PAGÁVEL EM QUALQUER AGÊNCIA BANCÁRIA|
+|    91    | NÃO RECEBER APÓS XX DIAS DO VENCIMENTO|
+|    92    | DEVOLVER APÓS XX DIAS DO VENCIMENTO|
+|    93    | MENSAGENS NOS BOLETOS COM 30 POSIÇÕES|
+|    94    | MENSAGENS NOS BOLETOS COM 40 POSIÇÕES|
+|    95  à 97   | USO DO BANCO|
+|    98    | DUPLICATA / FATURA Nº|
