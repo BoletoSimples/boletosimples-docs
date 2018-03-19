@@ -11,7 +11,7 @@ Entre em cada banco para visualizar as carteiras suportadas e os comandos implem
 
 | Banco                                          | Retorno | Formato CNAB | Remessa | Formato CNAB
 | ---------------------------------------------- | ------- | ------------ | ------- | ------------
-| [Banco do Brasil](/bank_contracts/bb)          | Sim     | 400 (ou CBR643)         | Sim     | 400 (ou CBR641)
+| [Banco do Brasil](/bank_contracts/bb)          | Sim     | 400 (ou CBR643) ou 240         | Sim     | 400 (ou CBR641) ou 240
 | [Banco do Nordeste](/bank_contracts/bnb)       | Sim     | 400          | Sim     | 400
 | [Banco de Brasília](/bank_contracts/brb)       | Sim     | 400          | Sim     | 400
 | [Banestes](/bank_contracts/banestes)           | Sim     | 400          | Sim     | 400
