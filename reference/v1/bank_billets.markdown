@@ -104,6 +104,8 @@ layout: pt
 | **installment_number**          | N/A   | Integer |         | Número da parcela do carnê
 | **installment_id**              | N/A   | Integer |         | ID do [Carnê](/reference/v1/installments/)
 | **bank_billet_discharges**      | N/A   | Array   |         | Retornos bancários
+| **first_instruction**                | Não   | String  |    2     | Primeira Instrução. Consulte os possíveis valores <a href="/bank_contracts">para cada banco</a>.
+| **second_instruction**                | Não   | String  |     2    | Segunda Instrução. Consulte os possíveis valores <a href="/bank_contracts">para cada banco</a>.
 
 ### Dicionário de Dados
 
