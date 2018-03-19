@@ -20,7 +20,7 @@ breadcrumb: Clientes
 
 ### Modelo de Dados
 
-| Parâmetro              | Obr.  | Tipo    | Tamanho | Descrição
+| Parâmetro              | Obrigatório  | Tipo    | Tamanho | Descrição
 | ---------------------- | ----- | ------- | ------- | ------------------------
 | **id**                 | N/A   | Integer |         | ID do cliente
 | **person_name**        | Sim   | String  | 120     | Nome Completo ou Razão Social
@@ -615,7 +615,7 @@ Novo nome: Nome 1234
   <thead>
     <tr>
       <th>Parâmetro</th>
-      <th data-container="body" data-toggle="tooltip" title="Obrigatório">Obr.</th>
+      <th data-container="body" data-toggle="tooltip" title="Obrigatório">Obrigatório</th>
       <th>Tipo</th>
       <th>Descrição</th>
     </tr>
@@ -763,7 +763,7 @@ Próxima Página: https://sandbox.boletosimples.com.br/api/v1/customers?page=2&p
   <thead>
     <tr>
       <th>Parâmetro</th>
-      <th data-container="body" data-toggle="tooltip" title="Obrigatório">Obr.</th>
+      <th data-container="body" data-toggle="tooltip" title="Obrigatório">Obrigatório</th>
       <th>Tipo</th>
       <th>Descrição</th>
     </tr>
@@ -908,7 +908,7 @@ Array
   <thead>
     <tr>
       <th>Parâmetro</th>
-      <th data-container="body" data-toggle="tooltip" title="Obrigatório">Obr.</th>
+      <th data-container="body" data-toggle="tooltip" title="Obrigatório">Obrigatório</th>
       <th>Tipo</th>
       <th>Descrição</th>
     </tr>

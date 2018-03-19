@@ -10,7 +10,7 @@ breadcrumb: Usuários
 
 ### Modelo de Dados
 
-| Parâmetro                | Obr. | Tipo    | Tamanho | Descrição
+| Parâmetro                | Obrigatório | Tipo    | Tamanho | Descrição
 | ------------------------ | ---- | ------- | ------- | ------------------------
 | **id**                   | N/A  | Integer |         | ID do usuário
 | **email**                | Sim  | String  |         | E-mail

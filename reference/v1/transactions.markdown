@@ -15,7 +15,7 @@ breadcrumb: Transações
 
 ### Modelo de Dados
 
-| Parâmetro        | Obr.  | Tipo     | Tamanho | Descrição
+| Parâmetro        | Obrigatório  | Tipo     | Tamanho | Descrição
 | ---------------- | ----- | -------- | ------- | ------------------------
 | **id**           | N/A   | Integer  |         | ID da transação
 | **amount**       | N/A   | Float    |         | Quantia (R$)
@@ -163,7 +163,7 @@ Array
   <thead>
     <tr>
       <th>Parâmetro</th>
-      <th data-container="body" data-toggle="tooltip" title="Obrigatório">Obr.</th>
+      <th data-container="body" data-toggle="tooltip" title="Obrigatório">Obrigatório</th>
       <th>Tipo</th>
       <th>Descrição</th>
     </tr>

@@ -9,7 +9,6 @@ layout: pt
 ## Boletos
 
 | Recurso                  | Descrição
-| ------------------------ | ------------------------
 | [POST /api/v1/bank_billets](#criar-boleto) | Criar boleto
 | [GET /api/v1/bank_billets/:id](#informações-do-boleto) | Informações do boleto
 | [GET /api/v1/bank_billets](#listar-boletos) | Listar boletos
@@ -24,8 +23,7 @@ layout: pt
 
 ### Modelo de Dados
 
-| Parâmetro                       | Obr.  | Tipo    | Tamanho | Descrição
-| ------------------------------- | ----- | ------- | ------- | ------------------------|
+| **Parâmetro**                       | **Obrigatório**  | **Tipo**    | **Tamanho** | **Descrição**
 | **id**                          | N/A   | Integer |         | ID do boleto
 | **bank_billet_account_id**      | Sim   | Integer |         | ID da [Carteira de Cobrança](/reference/v1/bank_billet_accounts/). Se não informado, usará a carteira padrão.
 | **our_number**                  | Não   | Integer |         | Nosso Número. Se não informado, usará o Próximo Nosso Número da Carteira de Cobrança.
@@ -105,10 +103,12 @@ layout: pt
 | **installment_number**          | N/A   | Integer |         | Número da parcela do carnê
 | **installment_id**              | N/A   | Integer |         | ID do [Carnê](/reference/v1/installments/)
 | **bank_billet_discharges**      | N/A   | Array   |         | Retornos bancários
-| **first_instruction**                | Não   | String  |    2     | Primeira Instrução(CNAB 400). Consulte os possíveis valores <a href="/bank_contracts">para cada banco</a>.
-| **second_instruction**                | Não   | String  |     2    | Segunda Instrução(CNAB 400). Consulte os possíveis valores <a href="/bank_contracts">para cada banco</a>.
-| **sue_code**                | Não   | String  |     1    | Código de Protesto(CNAB 240). Consulte os possíveis valores <a href="/bank_contracts">para cada banco</a>.
-| **revoke_code**                | Não   | String  |     1    | Código de Baixa(CNAB 240). Consulte os possíveis valores <a href="/bank_contracts">para cada banco</a>.
+| **first_instruction**           | Não   | String  | 2     | Primeira Instrução(CNAB 400). Consulte os possíveis valores <a href="/bank_contracts">para cada banco</a>.
+| **second_instruction**          | Não   | String  | 2    | Segunda Instrução(CNAB 400). Consulte os possíveis valores <a href="/bank_contracts">para cada banco</a>.
+| **sue_code**                    | Não   | String  | 1    | Código de Protesto(CNAB 240). Consulte os possíveis valores <a href="/bank_contracts">para cada banco</a>.
+| **revoke_code**                 | Não   | String  | 1    | Código de Baixa(CNAB 240). Consulte os possíveis valores <a href="/bank_contracts">para cada banco</a>.
+
+
 ### Dicionário de Dados
 
 #### status
@@ -153,12 +153,12 @@ layout: pt
 
 #### document_type
 
-| Código | Sigla    | Descrição
+| **Código** | **Sigla**    | **Descrição**
 | 01     | CH       | Cheque
 | 02     | DM       | Duplicata Mercantil
 | 03     | DMI      | Duplicata Mercantil p/ Indicação
 | 04     | DS       | Duplicata de Serviço
-| 05     | DSI      |  Duplicata de Serviço p/ Indicação
+| 05     | DSI      | Duplicata de Serviço p/ Indicação
 | 06     | DR       | Duplicata Rural
 | 07     | LC       | Letra de Câmbio
 | 08     | NCC      | Nota de Crédito Comercial
@@ -686,7 +686,7 @@ Array
   <thead>
     <tr>
       <th>Parâmetro</th>
-      <th data-container="body" data-toggle="tooltip" title="Obrigatório">Obr.</th>
+      <th data-container="body" data-toggle="tooltip" title="Obrigatório">Obrigatório</th>
       <th>Tipo</th>
       <th>Descrição</th>
     </tr>
@@ -1139,7 +1139,7 @@ Em carteiras registradas, a alteração irá entrar na remessa e pode ser cobrad
   <thead>
     <tr>
       <th>Parâmetro</th>
-      <th data-container="body" data-toggle="tooltip" title="Obrigatório">Obr.</th>
+      <th data-container="body" data-toggle="tooltip" title="Obrigatório">Obrigatório</th>
       <th>Tipo</th>
       <th>Descrição</th>
     </tr>
@@ -1453,7 +1453,7 @@ Status Final: canceled
 
 ### Modelo de Dados
 
-| Parâmetro                       | Obr.  | Tipo    | Tamanho | Descrição
+| **Parâmetro**                       | **Obrigatório**  | **Tipo**    | **Tamanho** | **Descrição**
 | ------------------------------- | ----- | ------- | ------- | ------------------------
 | **id**                          | Sim   | Integer |         | ID do boleto
 | **expire_at_in_days**           | Não   | Integer |         | Nº de dias para vencimento a partir da data de hoje (Default: 7)
@@ -1649,7 +1649,7 @@ Array
   <thead>
     <tr>
       <th>Parâmetro</th>
-      <th data-container="body" data-toggle="tooltip" title="Obrigatório">Obr.</th>
+      <th data-container="body" data-toggle="tooltip" title="Obrigatório">Obrigatório</th>
       <th>Tipo</th>
       <th>Descrição</th>
     </tr>
@@ -1852,7 +1852,7 @@ Array
   <thead>
     <tr>
       <th>Parâmetro</th>
-      <th data-container="body" data-toggle="tooltip" title="Obrigatório">Obr.</th>
+      <th data-container="body" data-toggle="tooltip" title="Obrigatório">Obrigatório</th>
       <th>Tipo</th>
       <th>Descrição</th>
     </tr>
@@ -2027,7 +2027,7 @@ Array
   <thead>
     <tr>
       <th>Parâmetro</th>
-      <th data-container="body" data-toggle="tooltip" title="Obrigatório">Obr.</th>
+      <th data-container="body" data-toggle="tooltip" title="Obrigatório">Obrigatório</th>
       <th>Tipo</th>
       <th>Descrição</th>
     </tr>
@@ -2228,7 +2228,7 @@ Array
 
 ### Modelo de Dados
 
-| Parâmetro                       | Obr.  | Tipo    | Tamanho | Descrição
+| Parâmetro                       | Obrigatório  | Tipo    | Tamanho | Descrição
 | ------------------------------- | ----- | ------- | ------- | ------------------------
 | **id**                          | Sim   | Integer |         | ID do boleto
 | **paid_at**                     | Sim   | Date    |         | Data de pagamento
@@ -2423,7 +2423,7 @@ Array
   <thead>
     <tr>
       <th>Parâmetro</th>
-      <th data-container="body" data-toggle="tooltip" title="Obrigatório">Obr.</th>
+      <th data-container="body" data-toggle="tooltip" title="Obrigatório">Obrigatório</th>
       <th>Tipo</th>
       <th>Descrição</th>
     </tr>
@@ -2592,7 +2592,7 @@ Será retornado `404 Not Found` ao tentar acessar a url de um boleto que ainda e
   <thead>
     <tr>
       <th>Parâmetro</th>
-      <th data-container="body" data-toggle="tooltip" title="Obrigatório">Obr.</th>
+      <th data-container="body" data-toggle="tooltip" title="Obrigatório">Obrigatório</th>
       <th>Tipo</th>
       <th>Descrição</th>
     </tr>
