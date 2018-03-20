@@ -38,9 +38,9 @@ layout: pt
 | **customer_address**            | Sim   | Text    |         | Endereço
 | **customer_city_name**          | Sim   | String  | 255     | Cidade(Nome deve estar correto e completo)
 | **customer_state**              | Sim   | String  | 2       | Estado
-| **customer_neighborhood**       | Sim   | String  | 255     | Bairro
-| **customer_address_number**     | Não   | String  | 255     | Número
-| **customer_address_complement** | Não   | String  | 255     | Complemento
+| **customer_neighborhood**       | Sim   | String  | 80     | Bairro
+| **customer_address_number**     | Não   | String  | 10     | Número
+| **customer_address_complement** | Não   | String  | 60     | Complemento
 | **customer_phone_number**       | Não   | String  | 11      | Telefone (com DDD)
 | **customer_person_type**        | N/A   | String  | 255     | Tipo de pagador ([possíveis valores](#customer_person_type))
 | **meta**                        | Não   | Campo Genérico | | Aceita qualquer formato passado. Pode ser usado para salvar dados que não existam dentro do Boleto Simples. Exemplo: {pedido: 12345}
@@ -111,9 +111,9 @@ layout: pt
 | **guarantor_address**            | Sim   | Text    |         | Endereço do Sacador/Avalista
 | **guarantor_city_name**          | Sim   | String  | 255     | Cidade(Nome deve estar correto e completo) do Sacador/Avalista
 | **guarantor_state**              | Sim   | String  | 2       | Estado do Sacador/Avalista
-| **guarantor_neighborhood**       | Sim   | String  | 255     | Bairro do Sacador/Avalista
-| **guarantor_address_number**     | Não   | String  | 255     | Número do Sacador/Avalista
-| **guarantor_address_complement** | Não   | String  | 255     | Complemento do Sacador/Avalista
+| **guarantor_neighborhood**       | Sim   | String  | 80     | Bairro do Sacador/Avalista
+| **guarantor_address_number**     | Não   | String  | 10     | Número do Sacador/Avalista
+| **guarantor_address_complement** | Não   | String  | 60     | Complemento do Sacador/Avalista
 | **guarantor_phone_number**       | Não   | String  | 11      | Telefone (com DDD) do Sacador/Avalista
 
 ### Dicionário de Dados
