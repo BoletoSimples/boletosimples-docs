@@ -1468,6 +1468,9 @@ Status Final: canceled
 | **amount**                      | Não   | String  |         | Valor do novo boleto. Formato: 1.345,56
 | **with_fines**                  | Não   | Boolean |         | Atualizar o valor do novo boleto com juros e multa (Default: false)
 
+É permitido o envio de qualquer outro parâmetro do [boleto](/reference/v1/bank_billets/#modelo-de-dados).
+
+
 #### Exemplo de requisição válida
 
 <ul class="nav nav-tabs" role="tablist">
