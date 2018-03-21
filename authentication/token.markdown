@@ -9,7 +9,9 @@ layout: pt
 
 #### Nós recomendamos essa opção se você precisar acessar apenas os dados da sua conta.
 
-Para poder usar a autenticação via **Token de Acesso**, você precisa pegar o seu `Token` na [página de API (Sandbox)](https://sandbox.boletosimples.com.br/conta/api) da sua conta. Acessar -> Ajustes da Conta -> API
+Para poder usar a autenticação via **Token de Acesso**, você precisa pegar o seu `Token` na [página de API (Sandbox)](https://sandbox.boletosimples.com.br/conta/api) da sua conta. 
+
+Acessar -> Ajustes da Conta -> API
 
 ![tokenapisandbox.PNG](/uploads/tokenapisandbox.PNG)
 
