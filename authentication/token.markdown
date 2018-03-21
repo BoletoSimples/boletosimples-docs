@@ -9,9 +9,13 @@ layout: pt
 
 #### Nós recomendamos essa opção se você precisar acessar apenas os dados da sua conta.
 
-Para poder usar a autenticação via **Token de Acesso**, você precisa pegar o seu `Token` na [página de API (Sandbox)](https://sandbox.boletosimples.com.br/conta/api) da sua conta.
+Para poder usar a autenticação via **Token de Acesso**, você precisa pegar o seu `Token` na [página de API (Sandbox)](https://sandbox.boletosimples.com.br/conta/api) da sua conta. Acessar -> Ajustes da Conta -> API
 
 ![tokenapisandbox.PNG](/uploads/tokenapisandbox.PNG)
+
+<div class="alert alert-info"><strong>ATENÇÃO</strong> O Token é diferente entre Sandbox e sua conta real.</div>
+
+Quando for começar a gerar os boletos em sua conta verdadeira, você deve repetir o procedimento acima e pegar o Token da sua conta real.
 
 A autenticação usando o `Token de Acesso` é feita via `HTTP Basic`, porém ao invés de passar o login e senha do usuário, como é tradicional, deve-se fornecer o `Token de Acesso` do usuário no campo ‘login’ e nada no campo ‘password’. Alguns clientes HTTP podem reclamar do fato do campo ‘password’ estar vazio, nesse caso pode-se informar ‘X’ como senha, que o sistema irá ignorar.
 
