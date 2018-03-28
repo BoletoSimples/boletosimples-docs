@@ -1,7 +1,8 @@
 ---
 title: Módulo TOTVS RM
-layout: pt
+published: false
 en: "/en/modules/totvs-rm"
+layout: pt
 ---
 
 ## Módulo Oficial TOTVS RM
@@ -16,43 +17,74 @@ O código fonte deste módulo não é disponibilizado.
 
 ### Requisitos
 
-* RM 12.1 ou superior
+* RM 12.1.18.180 ou superior
 
 ### Download
 
-* [BoletoSimples-TOTVS-RM.zip (46KB)](/downloads/BoletoSimples-TOTVS-RM.zip)
+* ![BoletoSimples-TOTVSRM.zip](/uploads/BoletoSimples-TOTVSRM.zip)
 
 ### Instalação
 
-*	Fazer o upload das DLLs da customização para a pasta Custom onde foi instalado a biblioteca RM. Exemplo: `C:\TOTVS\RM.Net\Custom`.
-*	Executar o script, que será gerando na aquisição da customização, na base de dados para carregar as tabelas com dos dados da customização.
+\
+⦁	Acesse o menu Serviços Globais | Metadados | Projeto, onde devem ser importados os projetos de metadados disponibilizados no arquivo:
+\
+“BoletoSimples-TOTVSRM.TotvsMD”.
+\
 
-*Atenção:* Após atualização das DLLs deve ser apagado o arquivo `_broker.dat` e reiniciado o `RM.Host.Service.exe` ou o `RM.Host.exe`.
+\
 
-### Configuração
+![1.png](/uploads/1.png)\
+ 
+\
 
-•	Acesse o menu `Customização | Parâmetros Integração Boleto Simples`, onde devem ser definidos os seguintes campos:
+\
+Após importação, deve ser executado o processo “Gerar Projeto de Metadados” para cada um dos 
+\
+projetos importados.
+\
 
-*Status da Integração:* define se a integração está ativa ou inativa.
+\
+![2.png](/uploads/2.png) 
+\
 
-*Ambiente:* define o ambiente que está sendo integrado com o Boleto Simples.
+\
+⦁	Acesse o menu Gestão Financeira | Customização | Parâmetros Boleto Simples, onde devem ser definidos os seguintes campos:
+\
+Status: define se a integração está ativa ou inativa.
+\
+Ambiente: define o ambiente que está sendo integrado com o Boleto Simples.
+\
+Token de Acesso: deve ser informado o token de acesso do ambiente do Boleto Simples.
+\
+Usa Conta Caixa associada ao convênio do boleto: define se será usado a conta caixa associada ao convênio do boleto no momento da baixa realizado pelo processo ‘Consulta de Status Boleto Simples’.
+\
+Conta Caixa: define a conta caixa que será usada no momento da baixa do boleto, se o parâmetro acima estiver desmarcado.
+\
+Meio de Pagamento: define o meio de pagamento que será usado na baixa realizada pelo processo ‘Consulta de Status Boleto Simples’.
+\
 
-*Token de Acesso:* deve ser informado o token de acesso do ambiente do Boleto Simples.
+\
+ 
+![3.png](/uploads/3.png)\
 
-*Usa Conta Caixa associada ao convênio do boleto:* define se será usado a conta caixa associada ao convênio do boleto no momento da baixa realizado pelo processo `Consulta de Status Boleto Simples`.
+\
+⦁	Acesse o menu Gestão | Fórmula Visual | Fórmula Visual onde devem ser importadas as fórmulas visuais responsáveis pela integração com o Boleto Simples, disponibilizadas no arquivo: 
+\
+“BoletoSimples-TOTVSRM.TotvsWF”
+\
 
-*Conta Caixa:* define a conta caixa que será usada no momento da baixa do boleto, se o parâmetro acima estiver desmarcado.
 
-*Meio de Pagamento:* define o meio de pagamento que será usado na baixa realizada pelo processo `Consulta de Status Boleto Simples`.
+![4.png](/uploads/4.png)\
+ 
+\
 
-### Screenshots
+\
+**Utilização:
+**\
+⦁	Após salvar o registro no cadastro de convênio do TOTVS Gestão Financeira, será feita a integração incluindo uma carteira no Boleto Simples. Se o convênio já tiver sido integrado com o Boleto Simples as informações alteradas no convênio serão alteradas no Boleto Simples.
+\
+⦁	Após execução do processo de inclusão de boleto no TOTVS Gestão Financeira será feita a integração incluindo o boleto no Boletos Simples, caso o convenio associado ao boleto esteja integrado. O status da remessa do boleto no TOTVS Gestão Financeira será alterado para Remetido.
+\
+⦁	Para atualizar o status do boleto no TOTVS Gestão Financeira deve ser executada a fórmula visual “Consulta Status do Boleto”, menu Gestão | Fórmula Visual | Executar, onde será consultado o status do boleto no Boleto Simples. Caso o boleto estiver com status de “Pago” ou “Cancelado” no Boleto Simples será realizado a baixa ou cancelamento do boleto no TOTVS Gestão Financeira respectivamente. Essa fórmula visual pode ser agendada.
 
-![](/img/modules/totvs-rm/screenshot-1.png)
-
-![](/img/modules/totvs-rm/screenshot-2.png)
-
-![](/img/modules/totvs-rm/screenshot-3.png)
-
-![](/img/modules/totvs-rm/screenshot-4.png)
-
-![](/img/modules/totvs-rm/screenshot-5.png)
+!\[\]
