@@ -1,7 +1,7 @@
 ---
 title: Módulo Shopify
-layout: pt
 en: "/en/modules/shopify"
+layout: pt
 ---
 
 ## Módulo Oficial Shopify
@@ -10,4 +10,4 @@ en: "/en/modules/shopify"
 
 A integração é feita por meio de um middleware de integração e não é necessário usar código de programação.
 
-[Veja como emitir boletos no Shopify](https://boletosimples.zendesk.com/hc/pt-br/articles/115001120854)
+[Veja como emitir boletos no Shopify](https://suporte.boletosimples.com.br/article/z1k2stf3yt-como-gerar-boleto-registrado-na-shopify-usando-o-boleto-simples)
