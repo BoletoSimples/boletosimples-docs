@@ -1,7 +1,7 @@
 ---
 title: Módulo TOTVS RM
-layout: pt
 en: "/en/modules/totvs-rm"
+layout: pt
 ---
 
 ## Módulo Oficial TOTVS RM
@@ -20,18 +20,19 @@ O código fonte deste módulo não é disponibilizado.
 
 ### Download
 
-* [BoletoSimples-TOTVS-RM.zip (46KB)](/downloads/BoletoSimples-TOTVS-RM.zip)
+* ![BoletoSimples-TOTVSRM.zip](/uploads/BoletoSimples-TOTVSRM.zip)
 
 ### Instalação
 
-*	Fazer o upload das DLLs da customização para a pasta Custom onde foi instalado a biblioteca RM. Exemplo: `C:\TOTVS\RM.Net\Custom`.
-*	Executar o script, que será gerando na aquisição da customização, na base de dados para carregar as tabelas com dos dados da customização.
+* Fazer o upload das DLLs da customização para a pasta Custom onde foi instalado a biblioteca RM. Exemplo: `C:\TOTVS\RM.Net\Custom`.
+
+* Executar o script, que será gerando na aquisição da customização, na base de dados para carregar as tabelas com dos dados da customização.
 
 *Atenção:* Após atualização das DLLs deve ser apagado o arquivo `_broker.dat` e reiniciado o `RM.Host.Service.exe` ou o `RM.Host.exe`.
 
 ### Configuração
 
-•	Acesse o menu `Customização | Parâmetros Integração Boleto Simples`, onde devem ser definidos os seguintes campos:
+•   Acesse o menu `Customização | Parâmetros Integração Boleto Simples`, onde devem ser definidos os seguintes campos:
 
 *Status da Integração:* define se a integração está ativa ou inativa.
 
@@ -55,4 +56,4 @@ O código fonte deste módulo não é disponibilizado.
 
 ![](/img/modules/totvs-rm/screenshot-4.png)
 
-![](/img/modules/totvs-rm/screenshot-5.png)
+!\[\]
