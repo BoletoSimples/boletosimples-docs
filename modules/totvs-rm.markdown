@@ -20,7 +20,7 @@ O código fonte deste módulo não é disponibilizado.
 
 ### Download
 
-* /uploads/BoletoSimples-TOTVSRM.zip 
+* /uploads/BoletoSimples-TOTVSRM.zip
 
 ### Instalação
 
@@ -39,8 +39,8 @@ Após importação, deve ser executado o processo “Gerar Projeto de Metadados�
 
 \
 ⦁   Acesse o menu Gestão Financeira | Customização | Parâmetros Boleto Simples, onde devem ser definidos os seguintes campos:
-**\
-Status: **define se a integração está ativa ou inativa.
+\
+**Status:**  define se a integração está ativa ou inativa.
 \
 **Ambiente:** define o ambiente que está sendo integrado com o Boleto Simples.
 \
@@ -51,7 +51,6 @@ Usa Conta Caixa associada ao convênio do boleto: define se será usado a conta 
 Conta Caixa: define a conta caixa que será usada no momento da baixa do boleto, se o parâmetro acima estiver desmarcado.
 \
 Meio de Pagamento: define o meio de pagamento que será usado na baixa realizada pelo processo ‘Consulta de Status Boleto Simples’.
- 
 
 ![3.png](/uploads/3.png)
 
