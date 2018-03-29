@@ -28,13 +28,19 @@ O código fonte deste módulo não é disponibilizado.
 
 “BoletoSimples-TOTVSRM.TotvsMD”.
 
+
 ![1.png](/uploads/1.png)
+
+
 
 Após importação, deve ser executado o processo “Gerar Projeto de Metadados” para cada um dos projetos importados.
 
+
 ![2.png](/uploads/2.png)
 
-⦁   Acesse o menu Gestão Financeira | Customização | Parâmetros Boleto Simples, onde devem ser definidos os seguintes campos:
+
+
+⦁   Acesse o menu Gestão Financeira - Customização - Parâmetros Boleto Simples, onde devem ser definidos os seguintes campos:
 
 **Status:**  define se a integração está ativa ou inativa.
 
@@ -48,13 +54,18 @@ Conta Caixa: define a conta caixa que será usada no momento da baixa do boleto,
 
 Meio de Pagamento: define o meio de pagamento que será usado na baixa realizada pelo processo ‘Consulta de Status Boleto Simples’.
 
+
 ![3.png](/uploads/3.png)
+
+
 
 ⦁   Acesse o menu Gestão - Fórmula Visual - Fórmula Visual onde devem ser importadas as fórmulas visuais responsáveis pela integração com o Boleto Simples, disponibilizadas no arquivo:
 
 “BoletoSimples-TOTVSRM.TotvsWF”
 
+
 ![4.png](/uploads/4.png)
+
 
 
 **Utilização:**
