@@ -24,46 +24,46 @@ O código fonte deste módulo não é disponibilizado.
 
 ### Instalação
 
-\
+
 ⦁   Acesse o menu Serviços Globais | Metadados | Projeto, onde devem ser importados os projetos de metadados disponibilizados no arquivo:
-\
+
 “BoletoSimples-TOTVSRM.TotvsMD”.
 
 ![1.png](/uploads/1.png)
 
-\
+
 Após importação, deve ser executado o processo “Gerar Projeto de Metadados” para cada um dos projetos importados.
 
-\
+
 ![2.png](/uploads/2.png)
 
-\
+
 ⦁   Acesse o menu Gestão Financeira | Customização | Parâmetros Boleto Simples, onde devem ser definidos os seguintes campos:
-\
+
 **Status:**  define se a integração está ativa ou inativa.
-\
+
 **Ambiente:** define o ambiente que está sendo integrado com o Boleto Simples.
-\
+
 **Token de Acesso:** deve ser informado o token de acesso do ambiente do Boleto Simples.
-\
+
 Usa Conta Caixa associada ao convênio do boleto: define se será usado a conta caixa associada ao convênio do boleto no momento da baixa realizado pelo processo ‘Consulta de Status Boleto Simples’.
-\
+
 Conta Caixa: define a conta caixa que será usada no momento da baixa do boleto, se o parâmetro acima estiver desmarcado.
-\
+
 Meio de Pagamento: define o meio de pagamento que será usado na baixa realizada pelo processo ‘Consulta de Status Boleto Simples’.
 
 ![3.png](/uploads/3.png)
 
-\
+
 ⦁   Acesse o menu Gestão | Fórmula Visual | Fórmula Visual onde devem ser importadas as fórmulas visuais responsáveis pela integração com o Boleto Simples, disponibilizadas no arquivo:
-\
+
 “BoletoSimples-TOTVSRM.TotvsWF”
 
 ![4.png](/uploads/4.png)
 
-**\
+**
 Utilização:**
-\
+
 ⦁   Após salvar o registro no cadastro de convênio do TOTVS Gestão Financeira, será feita a integração incluindo uma carteira no Boleto Simples. Se o convênio já tiver sido integrado com o Boleto Simples as informações alteradas no convênio serão alteradas no Boleto Simples.
 
 ⦁   Após execução do processo de inclusão de boleto no TOTVS Gestão Financeira será feita a integração incluindo o boleto no Boletos Simples, caso o convenio associado ao boleto esteja integrado. O status da remessa do boleto no TOTVS Gestão Financeira será alterado para Remetido.
