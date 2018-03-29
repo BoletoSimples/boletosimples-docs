@@ -20,7 +20,7 @@ O código fonte deste módulo não é disponibilizado.
 
 ### Download
 
-* /uploads/BoletoSimples-TOTVSRM.zip
+* ![BoletoSimples-TOTVSRM.zip](/uploads/BoletoSimples-TOTVSRM.zip)
 
 ### Instalação
 
