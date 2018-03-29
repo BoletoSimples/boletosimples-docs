@@ -42,7 +42,7 @@ Após importação, deve ser executado o processo “Gerar Projeto de Metadados�
 
 **Token de Acesso:** deve ser informado o token de acesso do ambiente do Boleto Simples.
 
-Usa Conta Caixa associada ao convênio do boleto: define se será usado a conta caixa associada ao convênio do boleto no momento da baixa realizado pelo processo ‘Consulta de Status Boleto Simples’.
+Usar Conta Caixa associada ao convênio do boleto: define se será usado a conta caixa associada ao convênio do boleto no momento da baixa realizado pelo processo ‘Consulta de Status Boleto Simples’.
 
 Conta Caixa: define a conta caixa que será usada no momento da baixa do boleto, se o parâmetro acima estiver desmarcado.
 
@@ -56,8 +56,8 @@ Meio de Pagamento: define o meio de pagamento que será usado na baixa realizada
 
 ![4.png](/uploads/4.png)
 
-**
-Utilização:**
+
+**Utilização:**
 
 ⦁   Após salvar o registro no cadastro de convênio do TOTVS Gestão Financeira, será feita a integração incluindo uma carteira no Boleto Simples. Se o convênio já tiver sido integrado com o Boleto Simples as informações alteradas no convênio serão alteradas no Boleto Simples.
 
