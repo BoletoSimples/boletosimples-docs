@@ -50,7 +50,7 @@ Meio de Pagamento: define o meio de pagamento que será usado na baixa realizada
 
 ![3.png](/uploads/3.png)
 
-⦁   Acesse o menu Gestão | Fórmula Visual | Fórmula Visual onde devem ser importadas as fórmulas visuais responsáveis pela integração com o Boleto Simples, disponibilizadas no arquivo:
+⦁   Acesse o menu Gestão - Fórmula Visual - Fórmula Visual onde devem ser importadas as fórmulas visuais responsáveis pela integração com o Boleto Simples, disponibilizadas no arquivo:
 
 “BoletoSimples-TOTVSRM.TotvsWF”
 
