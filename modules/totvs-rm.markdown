@@ -34,7 +34,7 @@ Após importação, deve ser executado o processo “Gerar Projeto de Metadados�
 
 ![2.png](/uploads/2.png)
 
-⦁   Acesse o menu Gestão Financeira | Customização | Parâmetros Boleto Simples, onde devem ser definidos os seguintes campos:
+⦁   Acesse o menu Gestão Financeira - Customização - Parâmetros Boleto Simples, onde devem ser definidos os seguintes campos:
 
 **Status:**  define se a integração está ativa ou inativa.
 
