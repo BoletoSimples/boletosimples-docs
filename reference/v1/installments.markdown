@@ -38,7 +38,7 @@ breadcrumb: Carnês
 | **interest_daily_percentage**   | Não   | Float   |         | Porcentagem diária de juros. Obrigatório se `interest_type` é igual a 1 ou 3
 | **interest_daily_value**        | Não   | String  |         | Valor diário de juros. Obrigatório se `interest_type` é igual a 2 ou 4. (R$) Formato: 1.234,34
 | **interest_monthly_percentage** | Não   | Float   |         | Juros de mora mensal (O valor será dividido por 30. Ex 3% = 0,1% ao dia.) Obrigatório se `interest_type` é igual a 5 ou 6
-| **late_payment_interest**       | Não   | Float   |         | Alias para `interest_monthly_percentage`ao dia.)
+| **late_payment_interest**       | Não   | Float   |         | Alias para `interest_monthly_percentage`
 | **discount_type**               | Não   | Integer |         | Tipo de desconto ([possíveis valores](#discount_type))
 | **discount_value**              | Não   | String  |         | Valor do desconto. Obrigatório se `discount_type` é igual a 1. (R$) Formato: 1.234,34
 | **discount_percentage**         | Não   | Float   |         | Percentual do valor do boleto equivalente ao desconto. Obrigatório se `discount_type` é igual a 2
@@ -79,7 +79,7 @@ breadcrumb: Carnês
 | 2 | Para valor diário após um dia corrido
 | 3 | Para porcentagem diária após um dia útil
 | 4 | Para valor diário após um dia útil
-| 5 | Para porcentagem mensal após um dia corrido 
+| 5 | Para porcentagem mensal após um dia corrido
 | 6 | Para porcentagem mensal após um dia útil
 
 #### discount_type
