@@ -109,7 +109,10 @@
         <a href="/reference/v1/userinfo/" title="Usuário Autenticado">Usuário Autenticado</a>
       </li>
       <li {% if page.url == '/reference/v1/imports/' %}class="active"{% endif %}>
-        <a href="/reference/v1/imports/" title="Importações">Importações</a>
+        <a href="/reference/v1/imports/" title="Importações (Boletos)">Importações (Boletos)</a>
+      </li>
+      <li {% if page.url == '/reference/v1/imports_installments/' %}class="active"{% endif %}>
+        <a href="/reference/v1/imports_installments/" title="Importações (Carnês)">Importações (Carnês)</a>
       </li>
       <!--li {% if page.url == '/reference/v1/partner/users/' %}class="active"{% endif %}>
         <a href="/reference/v1/partner/users" title="Parceiros e Usuários">API de Parceiros</a>
