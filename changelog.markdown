@@ -26,6 +26,7 @@ Você também pode se inscrever para receber as notificações de alterações d
 
 * Documenta o campo `bank_billet_discharges` em [Retornos](/reference/v1/discharges)
 * Remove o campo `bank_billets_with_transactions` em [Retornos](/reference/v1/discharges)
+* Adicionado novo endpoint para [Reprocessar CNAB de Retorno](/reference/v1/discharges/#reprocessar-cnab).
 
 ### 19/02/2018
 
