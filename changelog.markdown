@@ -22,6 +22,12 @@ Você também pode se inscrever para receber as notificações de alterações d
 
 #### Últimas alterações realizadas na API.
 
+### 19/04/2018
+
+* Documenta o campo `bank_billet_discharges` em [Retornos](/reference/v1/discharges)
+* Remove o campo `bank_billets_with_transactions` em [Retornos](/reference/v1/discharges)
+* Adicionado novo endpoint para [Reprocessar CNAB de Retorno](/reference/v1/discharges/#reprocessar-cnab).
+
 ### 19/02/2018
 
 * Adicionado novo endpoint para [Criar boletos em lote](/reference/v1/bank_billets/#criar-boletos-em-lote).
@@ -127,8 +133,6 @@ Você também pode se inscrever para receber as notificações de alterações d
 ### 17/04/2017
 
 * Documenta informações sobre retentativas de entrega de [Webhooks](/webhooks/)
-
-* Documenta o campo `bank_billets_with_transactions` em [Retornos](/reference/v1/discharges)
 
 ### 17/02/2017
 
