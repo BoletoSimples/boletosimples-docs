@@ -431,25 +431,31 @@ A regra é que todos os payloads possuem as chaves `event_code`, `webhook`, `obj
 {
   "object": {
     "id": 1,
-    "url": "https://sandbox.boletosimples.com.br/remessas/60353767cf6e6992ab97f7448acfb66e/download",
-    "status": "processed",
-    "filename": "1704181.REM",
-    "created_at": "2017-04-18",
-    "processed_at": "2017-04-18",
+    "filename": "1804193.REM",
+    "created_via_api": false,
+    "status": "sent",
+    "bank_billet_account_id": 1976,
+    "created_at": "2018-04-19",
+    "processed_at": "2018-04-19",
+    "url": null,
     "bank_billet_ids": [
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      8
+      1
     ],
-    "created_via_api": true,
     "remittance_number": 1,
-    "sent_via_integration": null,
-    "bank_billet_account_id": 1
+    "sent_via_integration": "2018-04-19",
+    "bank_billet_remittances": [
+      {
+        "id": 1,
+        "our_code": "1001",
+        "occurrence": "01",
+        "remittance_id": 1,
+        "bank_billet_id": 1,
+        "bank_billet_account_id": 1,
+        "processed_at": "2018-04-19",
+        "occurrence_detail": "Entrada de Título",
+        "created_at": "2018-04-19"
+      }
+    ]
   },
   "changes": {
     "status": [
@@ -476,37 +482,148 @@ A regra é que todos os payloads possuem as chaves `event_code`, `webhook`, `obj
 {
   "object": {
     "id": 1,
+    "filename": "1804191.RET",
+    "processed_at": "2018-04-19",
+    "created_via_api": false,
     "status": "processed",
-    "filename": "87668-2.RET",
-    "processed_at": "2017-04-18",
-    "created_via_api": true,
     "bank_billet_account_id": 1,
+    "created_via_integration": "2018-04-19T03:03:06-03:00",
     "bank_billet_discharges": [
-
-    ],
-    "created_via_integration": null,
-    "bank_billets_with_transactions": [
       {
-        "transaction": {
+        "id": 1,
+        "occurrence": "06",
+        "date_of_occurrence": "2018-04-18",
+        "discharge_id": 1,
+        "bank_billet_id": 1,
+        "occurrence_error": "0000000004",
+        "line_parsed": {
           "iof": "0",
-          "paid_at": "2017-04-11",
+          "line_t": "7560001300007T 0604327000000000366680000070439401014     100000000007043920042018000000000014000341056140                         091000010759039984                    00000000000000000000002200000000004                 ",
+          "line_u": "7560001300008U 060000000000000000000000000000000000000000000000000000000000000000000000140000000000000140000000000000000000000000000000001804201819042018    00000000000000000000000                              75600000000000000000000       ",
+          "paid_at": "2018-04-18",
           "discount": "0",
-          "line_raw": "1020239897600019000000090750908766827                         000000000000000008520000000000000000000000000917110417          00000000000000000852000000000000050396703300162  000000000000000000000000000000000000000000000000000000000000000000000000000000000000050396700000000000000000000000000   120417                 0000000000                                                                  000002",
-          "sue_rate": "0",
-          "bank_rate": "0",
-          "credit_at": null,
-          "error_code": "0000000000",
-          "event_type": "17",
-          "our_number": "09000000000852",
+          "bank_rate": "220",
+          "credit_at": "2018-04-19",
+          "error_code": "0000000004",
+          "event_type": "06",
+          "our_number": "00704394",
           "billet_fine": "0",
-          "paid_amount": "503967",
+          "other_fines": "0",
+          "paid_amount": "14000",
+          "other_credit": "0",
           "value_rebate": "0",
-          "agency_number": "9999",
-          "account_number": "9999999",
-          "banco_recebedor": "033",
-          "agencia_recebedora": "0016"
+          "agency_number": "4327",
+          "credit_amount": "14000",
+          "account_number": "00003666",
+          "banco_recebedor": "341",
+          "agencia_recebedora": "05614",
+          "processed_our_number_raw": "00704394"
         },
-        "bank_billet_id": 1
+        "processed_at": "2018-04-19",
+        "occurrence_detail": "Liquidação Normal",
+        "occurrence_error_detail": "756 - 06 - 0000000004 - Não Reconhecido"
+      },
+      {
+        "id": 2,
+        "occurrence": "06",
+        "date_of_occurrence": "2018-04-18",
+        "discharge_id": 1,
+        "bank_billet_id": 2,
+        "occurrence_error": "0000000004",
+        "line_parsed": {
+          "iof": "0",
+          "line_t": "7560001300005T 0604327000000000366680000070424401014     100000000007042419042018000000000005000341032120                         092027613530000161                            00000000000000000000002200000000004                 ",
+          "line_u": "7560001300006U 060000000000000000000000000000000000000000000000000000000000000000000000050000000000000050000000000000000000000000000000001804201819042018    00000000000000000000000                              75600000000000000000000       ",
+          "paid_at": "2018-04-18",
+          "discount": "0",
+          "bank_rate": "220",
+          "credit_at": "2018-04-19",
+          "error_code": "0000000004",
+          "event_type": "06",
+          "our_number": "00704244",
+          "billet_fine": "0",
+          "other_fines": "0",
+          "paid_amount": "5000",
+          "other_credit": "0",
+          "value_rebate": "0",
+          "agency_number": "4327",
+          "credit_amount": "5000",
+          "account_number": "00003666",
+          "banco_recebedor": "341",
+          "agencia_recebedora": "03212",
+          "processed_our_number_raw": "00704244"
+        },
+        "processed_at": "2018-04-19",
+        "occurrence_detail": "Liquidação Normal",
+        "occurrence_error_detail": "756 - 06 - 0000000004 - Não Reconhecido"
+      },
+      {
+        "id": 3,
+        "occurrence": "06",
+        "date_of_occurrence": "2018-04-18",
+        "discharge_id": 1,
+        "bank_billet_id": 3,
+        "occurrence_error": "0000000004",
+        "line_parsed": {
+          "iof": "0",
+          "line_t": "7560001300003T 0604327000000000366680000070417201014     100000000007041718042018000000000041233001037960                         091000022126830225                  00000000000000000000002200000000004                 ",
+          "line_u": "7560001300004U 060000000000000000000000000000000000000000000000000000000000000000000000412330000000000412330000000000000000000000000000001804201819042018    00000000000000000000000                              75600000000000000000000       ",
+          "paid_at": "2018-04-18",
+          "discount": "0",
+          "bank_rate": "220",
+          "credit_at": "2018-04-19",
+          "error_code": "0000000004",
+          "event_type": "06",
+          "our_number": "00704172",
+          "billet_fine": "0",
+          "other_fines": "0",
+          "paid_amount": "41233",
+          "other_credit": "0",
+          "value_rebate": "0",
+          "agency_number": "4327",
+          "credit_amount": "41233",
+          "account_number": "00003666",
+          "banco_recebedor": "001",
+          "agencia_recebedora": "03796",
+          "processed_our_number_raw": "00704172"
+        },
+        "processed_at": "2018-04-19",
+        "occurrence_detail": "Liquidação Normal",
+        "occurrence_error_detail": "756 - 06 - 0000000004 - Não Reconhecido"
+      },
+      {
+        "id": 4,
+        "occurrence": "02",
+        "date_of_occurrence": "2018-04-18",
+        "discharge_id": 1,
+        "bank_billet_id": 4,
+        "occurrence_error": "",
+        "line_parsed": {
+          "iof": "0",
+          "line_t": "7560001300001T 0204327000000000366680000070439401014     100000000007043920042018000000000014000756043270                         091000010759039984                    0000000000000000000000020                           ",
+          "line_u": "7560001300002U 020000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001804201800000000    00000000000000000000000                              75600000000000000000000       ",
+          "paid_at": "2018-04-18",
+          "discount": "0",
+          "bank_rate": "20",
+          "credit_at": null,
+          "error_code": "",
+          "event_type": "02",
+          "our_number": "00704394",
+          "billet_fine": "0",
+          "other_fines": "0",
+          "paid_amount": "0",
+          "other_credit": "0",
+          "value_rebate": "0",
+          "agency_number": "4327",
+          "credit_amount": "0",
+          "account_number": "00003666",
+          "banco_recebedor": "756",
+          "agencia_recebedora": "04327",
+          "processed_our_number_raw": "00704394"
+        },
+        "processed_at": "2018-04-19",
+        "occurrence_detail": "Confirmação Entrada Título",
+        "occurrence_error_detail": null
       }
     ]
   },
@@ -631,19 +748,43 @@ A regra é que todos os payloads possuem as chaves `event_code`, `webhook`, `obj
 
 ### bank_billet_discharges.*
 
+Contéudo do `line_parsed` depende das informações que seu banco disponibiliza e do tipo de CNAB(400 ou 240).
+
 <pre class="json">
 {
   "object": {
-    "id": 1,
-    "line": "1020817949600011400014542047                                  0000295728          44                       1061704170000295728                    1704170000000021760237012000100000000000000000000000000             0000000000000000000000000000000000000000000000021760000000000000000000000000000                         04                                                        025869000000000000000010",
-    "occurrence": "06",
+    "id": 4,
+    "occurrence": "02",
+    "date_of_occurrence": "2018-04-18",
     "discharge_id": 1,
-    "processed_at": "2017-04-18",
-    "bank_billet_id": 1,
-    "occurrence_error": "04",
-    "occurrence_detail": "Liquidação",
-    "date_of_occurrence": "2017-04-17",
-    "occurrence_error_detail": "Compensação Eletrônica"
+    "bank_billet_id": 4,
+    "occurrence_error": "",
+    "line_parsed": {
+      "iof": "0",
+      "line_t": "7560001300001T 0204327000000000366680000070439401014     100000000007043920042018000000000014000756043270                         091000010759039984                    0000000000000000000000020                           ",
+      "line_u": "7560001300002U 020000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001804201800000000    00000000000000000000000                              75600000000000000000000       ",
+      "paid_at": "2018-04-18",
+      "discount": "0",
+      "bank_rate": "20",
+      "credit_at": null,
+      "error_code": "",
+      "event_type": "02",
+      "our_number": "00704394",
+      "billet_fine": "0",
+      "other_fines": "0",
+      "paid_amount": "0",
+      "other_credit": "0",
+      "value_rebate": "0",
+      "agency_number": "4327",
+      "credit_amount": "0",
+      "account_number": "00003666",
+      "banco_recebedor": "756",
+      "agencia_recebedora": "04327",
+      "processed_our_number_raw": "00704394"
+    },
+    "processed_at": "2018-04-19",
+    "occurrence_detail": "Confirmação Entrada Título",
+    "occurrence_error_detail": null
   },
   "event_code": "bank_billet_discharge.created",
   "webhook": {
@@ -659,14 +800,15 @@ A regra é que todos os payloads possuem as chaves `event_code`, `webhook`, `obj
 <pre class="json">
 {
   "object": {
-    "id": 1, 
-    "created_at": "2017-05-19", 
-    "occurrence": "01", 
-    "processed_at": nil, 
-    "remittance_id": nil, 
-    "bank_billet_id": 1, 
-    "occurrence_detail": "Entrada de Títulos", 
-    "bank_billet_account_id": 1
+     "id": 1,
+     "our_code": "1001",
+     "occurrence": "01",
+     "remittance_id": 1,
+     "bank_billet_id": 1,
+     "bank_billet_account_id": 1,
+     "processed_at": "2018-04-19",
+     "occurrence_detail": "Entrada de Título",
+     "created_at": "2018-04-19"
   },
   "event_code": "bank_billet_remittance.created",
   "webhook": {

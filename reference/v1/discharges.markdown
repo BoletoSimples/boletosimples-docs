@@ -27,9 +27,8 @@ breadcrumb: CNAB (Retorno)
 | **processed_at**       | N/A   | Time    |         | Data de Processamento
 | **created_via_api**    | N/A   | Boolean |         | Enviado pela API
 | **bank_billet_account_id**    | Não   | Integer |         | ID da [Carteira de Cobrança](/reference/v1/bank_billet_accounts/)
-| **created_via_integration**        | Não   | Date    |         | Data de recebimento automático do banco
+| **created_via_integration**        | Não   | DateTime    |         | Data de recebimento automático do banco
 | **bank_billet_discharges**         | N/A   | Array   |         | Retornos bancários
-| **bank_billets_with_transactions** | N/A   | Array   |         | IDs de boletos com informações detalhadas do retorno
 
 ### Dicionário de Dados
 
@@ -282,7 +281,7 @@ Array
 
 <ul class="nav nav-tabs" role="tablist">
   <li class="active"><a href="#bash3" role="tab" data-toggle="tab">Bash</a></li>
-  <!-- <li><a href="#ruby3" role="tab" data-toggle="tab">Ruby</a></li> -->
+  <li><a href="#ruby3" role="tab" data-toggle="tab">Ruby</a></li>
   <!-- <li><a href="#php3" role="tab" data-toggle="tab">PHP</a></li> -->
 </ul>
 
@@ -309,40 +308,314 @@ Content-Type: application/json; charset=utf-8
 ...
 
 {
-  "id":1,
-  "filename":"cnab240.ret",
-  "processed_at":"2015-06-11T10:41:41.916-03:00",
-  "created_via_api":true,
-  "status":"processed"
+  "id": 1,
+  "filename": "1804191.RET",
+  "processed_at": "2018-04-19",
+  "created_via_api": false,
+  "status": "processed",
+  "bank_billet_account_id": 1,
+  "created_via_integration": "2018-04-19T03:03:06-03:00",
+  "bank_billet_discharges": [
+    {
+      "id": 1,
+      "occurrence": "06",
+      "date_of_occurrence": "2018-04-18",
+      "discharge_id": 1,
+      "bank_billet_id": 1,
+      "occurrence_error": "0000000004",
+      "line_parsed": {
+        "iof": "0",
+        "line_t": "7560001300007T 0604327000000000366680000070439401014     100000000007043920042018000000000014000341056140                         091000010759039984                    00000000000000000000002200000000004                 ",
+        "line_u": "7560001300008U 060000000000000000000000000000000000000000000000000000000000000000000000140000000000000140000000000000000000000000000000001804201819042018    00000000000000000000000                              75600000000000000000000       ",
+        "paid_at": "2018-04-18",
+        "discount": "0",
+        "bank_rate": "220",
+        "credit_at": "2018-04-19",
+        "error_code": "0000000004",
+        "event_type": "06",
+        "our_number": "00704394",
+        "billet_fine": "0",
+        "other_fines": "0",
+        "paid_amount": "14000",
+        "other_credit": "0",
+        "value_rebate": "0",
+        "agency_number": "4327",
+        "credit_amount": "14000",
+        "account_number": "00003666",
+        "banco_recebedor": "341",
+        "agencia_recebedora": "05614",
+        "processed_our_number_raw": "00704394"
+      },
+      "processed_at": "2018-04-19",
+      "occurrence_detail": "Liquidação Normal",
+      "occurrence_error_detail": "756 - 06 - 0000000004 - Não Reconhecido"
+    },
+    {
+      "id": 2,
+      "occurrence": "06",
+      "date_of_occurrence": "2018-04-18",
+      "discharge_id": 1,
+      "bank_billet_id": 2,
+      "occurrence_error": "0000000004",
+      "line_parsed": {
+        "iof": "0",
+        "line_t": "7560001300005T 0604327000000000366680000070424401014     100000000007042419042018000000000005000341032120                         092027613530000161                            00000000000000000000002200000000004                 ",
+        "line_u": "7560001300006U 060000000000000000000000000000000000000000000000000000000000000000000000050000000000000050000000000000000000000000000000001804201819042018    00000000000000000000000                              75600000000000000000000       ",
+        "paid_at": "2018-04-18",
+        "discount": "0",
+        "bank_rate": "220",
+        "credit_at": "2018-04-19",
+        "error_code": "0000000004",
+        "event_type": "06",
+        "our_number": "00704244",
+        "billet_fine": "0",
+        "other_fines": "0",
+        "paid_amount": "5000",
+        "other_credit": "0",
+        "value_rebate": "0",
+        "agency_number": "4327",
+        "credit_amount": "5000",
+        "account_number": "00003666",
+        "banco_recebedor": "341",
+        "agencia_recebedora": "03212",
+        "processed_our_number_raw": "00704244"
+      },
+      "processed_at": "2018-04-19",
+      "occurrence_detail": "Liquidação Normal",
+      "occurrence_error_detail": "756 - 06 - 0000000004 - Não Reconhecido"
+    },
+    {
+      "id": 3,
+      "occurrence": "06",
+      "date_of_occurrence": "2018-04-18",
+      "discharge_id": 1,
+      "bank_billet_id": 3,
+      "occurrence_error": "0000000004",
+      "line_parsed": {
+        "iof": "0",
+        "line_t": "7560001300003T 0604327000000000366680000070417201014     100000000007041718042018000000000041233001037960                         091000022126830225                  00000000000000000000002200000000004                 ",
+        "line_u": "7560001300004U 060000000000000000000000000000000000000000000000000000000000000000000000412330000000000412330000000000000000000000000000001804201819042018    00000000000000000000000                              75600000000000000000000       ",
+        "paid_at": "2018-04-18",
+        "discount": "0",
+        "bank_rate": "220",
+        "credit_at": "2018-04-19",
+        "error_code": "0000000004",
+        "event_type": "06",
+        "our_number": "00704172",
+        "billet_fine": "0",
+        "other_fines": "0",
+        "paid_amount": "41233",
+        "other_credit": "0",
+        "value_rebate": "0",
+        "agency_number": "4327",
+        "credit_amount": "41233",
+        "account_number": "00003666",
+        "banco_recebedor": "001",
+        "agencia_recebedora": "03796",
+        "processed_our_number_raw": "00704172"
+      },
+      "processed_at": "2018-04-19",
+      "occurrence_detail": "Liquidação Normal",
+      "occurrence_error_detail": "756 - 06 - 0000000004 - Não Reconhecido"
+    },
+    {
+      "id": 4,
+      "occurrence": "02",
+      "date_of_occurrence": "2018-04-18",
+      "discharge_id": 1,
+      "bank_billet_id": 4,
+      "occurrence_error": "",
+      "line_parsed": {
+        "iof": "0",
+        "line_t": "7560001300001T 0204327000000000366680000070439401014     100000000007043920042018000000000014000756043270                         091000010759039984                    0000000000000000000000020                           ",
+        "line_u": "7560001300002U 020000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001804201800000000    00000000000000000000000                              75600000000000000000000       ",
+        "paid_at": "2018-04-18",
+        "discount": "0",
+        "bank_rate": "20",
+        "credit_at": null,
+        "error_code": "",
+        "event_type": "02",
+        "our_number": "00704394",
+        "billet_fine": "0",
+        "other_fines": "0",
+        "paid_amount": "0",
+        "other_credit": "0",
+        "value_rebate": "0",
+        "agency_number": "4327",
+        "credit_amount": "0",
+        "account_number": "00003666",
+        "banco_recebedor": "756",
+        "agencia_recebedora": "04327",
+        "processed_our_number_raw": "00704394"
+      },
+      "processed_at": "2018-04-19",
+      "occurrence_detail": "Confirmação Entrada Título",
+      "occurrence_error_detail": null
+    }
+  ]
 }
 </pre>
   </div>
-  <!-- <div class="tab-pane" id="ruby3">
+  <div class="tab-pane" id="ruby3">
     <small>Requisição:</small>
 
 <pre class="ruby">
-@bank_billet_account = BoletoSimples::BankBilletAccount.find(4)
-ap @bank_billet_account.attributes
+@discharge = BoletoSimples::Discharge.find(1)
+ap @discharge.attributes
 </pre>
 
     <small>Resposta:</small>
 
 <pre class="ruby">
 {
-    "bank_contract_slug" => "sicoob-02",
-       "next_our_number" => "0000001",
-         "agency_number" => "4327",
-          "agency_digit" => "3",
-        "account_number" => "00003666",
-         "account_digit" => "8",
-                "extra1" => "1234567",
-          "extra1_digit" => nil,
-                "extra2" => nil,
-          "extra2_digit" => nil,
-                    "id" => 3
+            "id" => 1
+            "filename" => "1804191.RET",
+            "processed_at" => "2018-04-19",
+            "created_via_api" => false,
+            "status" => "processed",
+            "bank_billet_account_id" => 1,
+           "created_via_integration" => "2018-04-19T03:03:06-03:00",
+            "bank_billet_discharges" => [
+            {
+                                 "id" => 1,
+                         "occurrence" => "06",
+                 "date_of_occurrence" => "2018-04-18",
+                       "discharge_id" => 1,
+                     "bank_billet_id" => 1,
+                   "occurrence_error" => "0000000004",
+                        "line_parsed" => {
+                                     "iof" => "0",
+                                  "line_t" => "7560001300007T 0604327000000000366680000070439401014     100000000007043920042018000000000014000341056140                         091000010759039984                    00000000000000000000002200000000004                 ",
+                                  "line_u" => "7560001300008U 060000000000000000000000000000000000000000000000000000000000000000000000140000000000000140000000000000000000000000000000001804201819042018    00000000000000000000000                              75600000000000000000000       ",
+                                 "paid_at" => "2018-04-18",
+                                "discount" => "0",
+                               "bank_rate" => "220",
+                               "credit_at" => "2018-04-19",
+                              "error_code" => "0000000004",
+                              "event_type" => "06",
+                              "our_number" => "00704394",
+                             "billet_fine" => "0",
+                             "other_fines" => "0",
+                             "paid_amount" => "14000",
+                            "other_credit" => "0",
+                            "value_rebate" => "0",
+                           "agency_number" => "4327",
+                           "credit_amount" => "14000",
+                          "account_number" => "00003666",
+                         "banco_recebedor" => "341",
+                      "agencia_recebedora" => "05614",
+                "processed_our_number_raw" => "00704394"
+            },
+                       "processed_at" => "2018-04-19",
+                  "occurrence_detail" => "Liquidação Normal",
+            "occurrence_error_detail" => "756 - 06 - 0000000004 - Não Reconhecido"
+        },
+         {
+                                 "id" => 2,
+                         "occurrence" => "06",
+                 "date_of_occurrence" => "2018-04-18",
+                       "discharge_id" => 1,
+                     "bank_billet_id" => 2,
+                   "occurrence_error" => "0000000004",
+                        "line_parsed" => {
+                                     "iof" => "0",
+                                  "line_t" => "7560001300005T 0604327000000000366680000070424401014     100000000007042419042018000000000005000341032120                         092027613530000161                            00000000000000000000002200000000004                 ",
+                                  "line_u" => "7560001300006U 060000000000000000000000000000000000000000000000000000000000000000000000050000000000000050000000000000000000000000000000001804201819042018    00000000000000000000000                              75600000000000000000000       ",
+                                 "paid_at" => "2018-04-18",
+                                "discount" => "0",
+                               "bank_rate" => "220",
+                               "credit_at" => "2018-04-19",
+                              "error_code" => "0000000004",
+                              "event_type" => "06",
+                              "our_number" => "00704244",
+                             "billet_fine" => "0",
+                             "other_fines" => "0",
+                             "paid_amount" => "5000",
+                            "other_credit" => "0",
+                            "value_rebate" => "0",
+                           "agency_number" => "4327",
+                           "credit_amount" => "5000",
+                          "account_number" => "00003666",
+                         "banco_recebedor" => "341",
+                      "agencia_recebedora" => "03212",
+                "processed_our_number_raw" => "00704244"
+            },
+                       "processed_at" => "2018-04-19",
+                  "occurrence_detail" => "Liquidação Normal",
+            "occurrence_error_detail" => "756 - 06 - 0000000004 - Não Reconhecido"
+        },
+        {
+                                 "id" => 3,
+                         "occurrence" => "06",
+                 "date_of_occurrence" => "2018-04-18",
+                       "discharge_id" => 1,
+                     "bank_billet_id" => 3,
+                   "occurrence_error" => "0000000004",
+                        "line_parsed" => {
+                                     "iof" => "0",
+                                  "line_t" => "7560001300003T 0604327000000000366680000070417201014     100000000007041718042018000000000041233001037960                         091000022126830225                  00000000000000000000002200000000004                 ",
+                                  "line_u" => "7560001300004U 060000000000000000000000000000000000000000000000000000000000000000000000412330000000000412330000000000000000000000000000001804201819042018    00000000000000000000000                              75600000000000000000000       ",
+                                 "paid_at" => "2018-04-18",
+                                "discount" => "0",
+                               "bank_rate" => "220",
+                               "credit_at" => "2018-04-19",
+                              "error_code" => "0000000004",
+                              "event_type" => "06",
+                              "our_number" => "00704172",
+                             "billet_fine" => "0",
+                             "other_fines" => "0",
+                             "paid_amount" => "41233",
+                            "other_credit" => "0",
+                            "value_rebate" => "0",
+                           "agency_number" => "4327",
+                           "credit_amount" => "41233",
+                          "account_number" => "00003666",
+                         "banco_recebedor" => "001",
+                      "agencia_recebedora" => "03796",
+                "processed_our_number_raw" => "00704172"
+            },
+                       "processed_at" => "2018-04-19",
+                  "occurrence_detail" => "Liquidação Normal",
+            "occurrence_error_detail" => "756 - 06 - 0000000004 - Não Reconhecido"
+        },
+        {
+                                 "id" => 4,
+                         "occurrence" => "02",
+                 "date_of_occurrence" => "2018-04-18",
+                       "discharge_id" => 1,
+                     "bank_billet_id" => 4,
+                   "occurrence_error" => "",
+                        "line_parsed" => {
+                                     "iof" => "0",
+                                  "line_t" => "7560001300001T 0204327000000000366680000070439401014     100000000007043920042018000000000014000756043270                         091000010759039984                    0000000000000000000000020                           ",
+                                  "line_u" => "7560001300002U 020000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001804201800000000    00000000000000000000000                              75600000000000000000000       ",
+                                 "paid_at" => "2018-04-18",
+                                "discount" => "0",
+                               "bank_rate" => "20",
+                               "credit_at" => nil,
+                              "error_code" => "",
+                              "event_type" => "02",
+                              "our_number" => "00704394",
+                             "billet_fine" => "0",
+                             "other_fines" => "0",
+                             "paid_amount" => "0",
+                            "other_credit" => "0",
+                            "value_rebate" => "0",
+                           "agency_number" => "4327",
+                           "credit_amount" => "0",
+                          "account_number" => "00003666",
+                         "banco_recebedor" => "756",
+                      "agencia_recebedora" => "04327",
+                "processed_our_number_raw" => "00704394"
+            },
+                       "processed_at" => "2018-04-19",
+                  "occurrence_detail" => "Confirmação Entrada Título",
+            "occurrence_error_detail" => nil
+        }
+    ],
 }
 </pre>
-  </div> -->
+  </div>
   <!-- <div class="tab-pane" id="php3">
     <small>Requisição:</small>
 
