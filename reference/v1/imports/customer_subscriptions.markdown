@@ -2,11 +2,11 @@
 title: Importações
 position: 7
 en: "/en/imports"
-breadcrumb: Importações (Assinaturas)
+breadcrumb: Importações de Assinaturas
 layout: pt
 ---
 
-## Importações (Assinaturas)
+## Importações de Assinaturas
 
 | Recurso                 | Descrição |
 |------------------------ |------------------------|

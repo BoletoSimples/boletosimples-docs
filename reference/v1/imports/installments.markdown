@@ -2,11 +2,11 @@
 title: Importações
 position: 7
 en: "/en/imports"
-breadcrumb: Importações (Carnês)
+breadcrumb: Importações de Carnês
 layout: pt
 ---
 
-## Importações (Carnês)
+## Importações de Carnês
 
 | Recurso                 | Descrição |
 |------------------------ |------------------------|

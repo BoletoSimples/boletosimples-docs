@@ -2,11 +2,11 @@
 title: Importações
 position: 7
 en: "/en/imports"
-breadcrumb: Importações (Boletos)
+breadcrumb: Importações de Boletos
 layout: pt
 ---
 
-## Importações (Boletos)
+## Importações de Boletos
 
 | Recurso                 | Descrição |
 |------------------------ |------------------------|

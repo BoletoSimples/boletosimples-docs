@@ -2,11 +2,11 @@
 title: Importações
 position: 7
 en: "/en/imports"
-breadcrumb: Importações (Clientes)
+breadcrumb: Importações de Clientes
 layout: pt
 ---
 
-## Importações (Clientes)
+## Importações de Clientes
 
 | Recurso                 | Descrição |
 |------------------------ |------------------------|
