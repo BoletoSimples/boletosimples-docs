@@ -22,7 +22,7 @@ breadcrumb: Carnês
 | **id**                          | N/A   | Integer |         | ID do carnê
 | **customer_id**                 | Sim   | Integer |         | ID do [Cliente](/reference/v1/customers/)
 | **bank_billet_account_id**      | Sim   | Integer |         | ID da [Carteira de Cobrança](/reference/v1/bank_billet_accounts/). Se não informado, usará a carteira padrão.
-| **amount**                      | Sim   | String  |         | Preço do carnê (R$) Formato: 1.234,34
+| **amount**                      | Sim   | String  |         | Valor do carnê (R$) Formato: 1.234,34
 | **cycle**                       | Não   | String  | 20      | Ciclo do carnê ([possíveis valores](#cycle)). Default: monthly
 | **start_at**                    | Sim   | Date    |         | Data da Primeira cobrança.
 | **end_at**                      | Não   | Date    |         | Data da última cobrança.
