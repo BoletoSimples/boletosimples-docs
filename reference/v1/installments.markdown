@@ -11,7 +11,7 @@ breadcrumb: Carnês
 | Recurso                  | Descrição
 | ------------------------ | ------------------------
 | [POST /api/v1/installments](#criar-carnê) | Criar carnê
-| [GET /api/v1/installments/:id](#informações-do-carnê) | Informações da carnê
+| [GET /api/v1/installments/:id](#informações-do-carnê) | Informações do carnê
 | [GET /api/v1/installments](#listar-carnês) | Listar Carnês
 | [DELETE /api/v1/installments/:id](#excluir-carnê) | Excluir carnê
 
@@ -22,8 +22,8 @@ breadcrumb: Carnês
 | **id**                          | N/A   | Integer |         | ID do carnê
 | **customer_id**                 | Sim   | Integer |         | ID do [Cliente](/reference/v1/customers/)
 | **bank_billet_account_id**      | Sim   | Integer |         | ID da [Carteira de Cobrança](/reference/v1/bank_billet_accounts/). Se não informado, usará a carteira padrão.
-| **amount**                      | Sim   | String  |         | Preço da carnê (R$) Formato: 1.234,34
-| **cycle**                       | Não   | String  | 20      | Ciclo da carnê ([possíveis valores](#cycle)). Default: monthly
+| **amount**                      | Sim   | String  |         | Valor do carnê (R$) Formato: 1.234,34
+| **cycle**                       | Não   | String  | 20      | Ciclo do carnê ([possíveis valores](#cycle)). Default: monthly
 | **start_at**                    | Sim   | Date    |         | Data da Primeira cobrança.
 | **end_at**                      | Não   | Date    |         | Data da última cobrança.
 | **total**                       | Sim   | Integer |         | Quantidade de parcelas.

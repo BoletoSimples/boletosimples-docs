@@ -204,15 +204,15 @@ aside a,
   color: #666;
 }
 
-.main-link {
+.main-link, .main-link-subnav {
   font-weight: bold;
 }
 
-.active .main-link {
+.active .main-link, .active .main-link-subnav {
   color: #62a4cf;
 }
 
-.subnav {
+.subnav, .subnav-subnav {
   padding-left: 15px !important;
   margin-bottom: 15px !important;
 }

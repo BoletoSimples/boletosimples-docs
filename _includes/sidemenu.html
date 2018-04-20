@@ -109,8 +109,21 @@
         <a href="/reference/v1/userinfo/" title="Usuário Autenticado">Usuário Autenticado</a>
       </li>
       <li {% if page.url == '/reference/v1/imports/' %}class="active"{% endif %}>
-        <a href="/reference/v1/imports/" title="Importações">Importações</a>
-      </li>
+        <a class="main-link-subnav" href="/reference/v1/imports/" title="Importações">Importações</a>
+        <ul class="subnav-subnav">
+          <li {% if page.url == '/reference/v1/imports/customer_subscriptions/' %}class="active"{% endif %}>
+            <a href="/reference/v1/imports/customer_subscriptions/" title="Assinaturas">Assinaturas</a>
+          </li>
+          <li {% if page.url == '/reference/v1/imports/bank_billets/' %}class="active"{% endif %}>
+            <a href="/reference/v1/imports/bank_billets/" title="Boletos">Boletos</a>
+          </li>
+          <li {% if page.url == '/reference/v1/imports/installments/' %}class="active"{% endif %}>
+            <a href="/reference/v1/imports/installments/" title="Carnês">Carnês</a>
+          </li>
+          <li {% if page.url == '/reference/v1/imports/customers/' %}class="active"{% endif %}>
+            <a href="/reference/v1/imports/customers/" title="Clientes">Clientes</a>
+          </li>
+        </ul>
       <!--li {% if page.url == '/reference/v1/partner/users/' %}class="active"{% endif %}>
         <a href="/reference/v1/partner/users" title="Parceiros e Usuários">API de Parceiros</a>
       </li-->
