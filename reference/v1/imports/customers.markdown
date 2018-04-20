@@ -2,17 +2,18 @@
 title: Importações
 position: 7
 en: "/en/imports"
-breadcrumb: Importações
+breadcrumb: Importações (Clientes)
 layout: pt
 ---
 
-## Importações
+
+## Importações (Clientes)
 
 | Recurso                 | Descrição |
 |------------------------ |------------------------|
-| [POST /api/v1/imports/bank_billets](#importar) | Importar boletos |
-| [GET /api/v1/imports/bank_billets/:id](#informações-da-importação) | Informações da importação |
-| [GET /api/v1/imports/bank_billets](#listar-importações) | Listar importações |
+| [POST /api/v1/imports/customers](#importar) | Importar clientes |
+| [GET /api/v1/imports/customers/:id](#informações-da-importação) | Informações da importação |
+| [GET /api/v1/imports/customers](#listar-importações) | Listar importações |
 
 ### Modelo de Dados
 
@@ -21,9 +22,9 @@ layout: pt
 | **id**                 | N/A   | Integer |         | ID da importação|
 | **source**             | Sim   |         |         | Arquivo
 | **source_type**        | Não   | String  |         | Tipo do arquivo ([possíveis valores](#source_type))
-| **processed_rows**     | N/A   |  Integer       |         | Número de boletos processados
-| **created_rows**       | N/A   |  Integer       |         | Número de boletos criados
-| **updated_rows**       | N/A   |  Integer       |         | Número de boletos alterados
+| **processed_rows**     | N/A   |  Integer       |         | Número de clientes processados
+| **created_rows**       | N/A   |  Integer       |         | Número de clientes criados
+| **updated_rows**       | N/A   |  Integer       |         | Número de clientes alterados
 | **enqueued_at**        | N/A   | Time    |         | Data/hora de enfileiramento
 | **started_at**         | N/A   | Time    |         | Data/hora do início do processo de importação
 | **finished_at**        | N/A   | Time    |         | Data/hora do término do processo de importação
@@ -35,20 +36,15 @@ layout: pt
 
 ### Dicionário de Dados
 
-#### source_type
-
-| csv | CSV (default)
-| rem | Remessa
-
 #### status
 
 | enqueued | Aguardando processamento
 | aborted  | Processamento não realizado devido a erro
 | done     | Processamento concluído
 
-### Importar boleto
+### Importar carnê
 
-`POST /api/v1/imports/bank_billets`
+`POST /api/v1/imports/customers`
 
 #### Exemplo de requisição inválida
 
@@ -67,7 +63,7 @@ curl -i \
 -u $BOLETOSIMPLES_TOKEN:x \
 -H 'Content-Type: multipart/form-data' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X POST 'https://sandbox.boletosimples.com.br/api/v1/imports/bank_billets'
+-X POST 'https://sandbox.boletosimples.com.br/api/v1/imports/customers'
 </pre>
 
     <small>Resposta:</small>
@@ -80,7 +76,7 @@ Strict-Transport-Security: max-age=2592000
 Content-Type: application/json; charset=utf-8
 ...
 
-{"errors":{"bank_billet_import":["não pode ficar em branco"]}}
+{"errors":{"customer_import":["não pode clientes em branco"]}}
 </pre>
 </div>
 </div>
@@ -102,8 +98,8 @@ curl -i \
 -u $BOLETOSIMPLES_TOKEN:x \
 -H 'Content-Type: multipart/form-data' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--F "bank_billet_import[source]=@boletos.csv" \
--X POST 'https://sandbox.boletosimples.com.br/api/v1/imports/bank_billets'
+-F "customer_import[source]=@clientes.csv" \
+-X POST 'https://sandbox.boletosimples.com.br/api/v1/imports/customers'
 </pre>
 
     <small>Resposta:</small>
@@ -113,7 +109,7 @@ HTTP/1.1 201 Created
 Server: Cowboy
 Connection: keep-alive
 Strict-Transport-Security: max-age=2592000
-Location: https://sandbox.boletosimples.com.br/api/v1/discharges/1
+Location: https://sandbox.boletosimples.com.br/api/v1/imports/customers
 Content-Type: application/json; charset=utf-8
 ...
 
@@ -130,7 +126,7 @@ Content-Type: application/json; charset=utf-8
   "finished_at":"2018-03-19T15:23:16-03:00",
   "import_errors":[],
   "source_content_type":"text/plain",
-  "source_file_name":"boletos.csv",
+  "source_file_name":"clientes.csv",
   "source_file_size":10401,
   "created_via_api":true,
   "status":"enqueued"
@@ -141,7 +137,7 @@ Content-Type: application/json; charset=utf-8
 
 ### Informações da importação
 
-`GET /api/v1/imports/bank_billets/:id`
+`GET /api/v1/imports/customers/:id`
 
 #### Exemplo
 
@@ -160,7 +156,7 @@ curl -i \
 -u $BOLETOSIMPLES_TOKEN:x \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X GET 'https://sandbox.boletosimples.com.br/api/v1/imports/bank_billets/1'
+-X GET 'https://sandbox.boletosimples.com.br/api/v1/imports/customers/1'
 </pre>
 
     <small>Resposta:</small>
@@ -186,7 +182,7 @@ Content-Type: application/json; charset=utf-8
   "finished_at":"2018-03-19T15:23:16-03:00",
   "import_errors":[],
   "source_content_type":"text/plain",
-  "source_file_name":"boletos.csv",
+  "source_file_name":"clientes.csv",
   "source_file_size":10401,
   "created_via_api":true,
   "status":"done"
@@ -197,7 +193,7 @@ Content-Type: application/json; charset=utf-8
 
 ### Listar importações
 
-`GET /api/v1/imports/bank_billets`
+`GET /api/v1/imports/customers`
 
 <table class='table table-bordered'>
   <thead>
@@ -258,7 +254,7 @@ curl -i \
 -u $BOLETOSIMPLES_TOKEN:x \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X GET "https://sandbox.boletosimples.com.br/api/v1/imports/bank_billets?page=1&per_page=50"
+-X GET "https://sandbox.boletosimples.com.br/api/v1/imports/customers?page=1&per_page=50"
 </pre>
 
     <small>Resposta:</small>
@@ -286,7 +282,7 @@ Content-Type: application/json; charset=utf-8
     "finished_at":"2018-03-19T15:23:16-03:00",
     "import_errors":[],
     "source_content_type":"text/plain",
-    "source_file_name":"boletos.csv",
+    "source_file_name":"clientes.csv",
     "source_file_size":10401,
     "created_via_api":true,
     "status":"done"
