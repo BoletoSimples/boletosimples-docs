@@ -1,8 +1,8 @@
 ---
 title: Bradesco
 position: 1
-layout: pt
 en: "/en/bank_contracts/bradesco"
+layout: pt
 ---
 
 ## Bradesco
@@ -30,29 +30,34 @@ en: "/en/bank_contracts/bradesco"
 | 1001     | Entrada de título                                   | Sim           | Sim                    |
 | 1002     | Pedido de baixa                                     | Sim           | Sim                    |
 | 1003     | Alteração de vencimento                             | Sim           | Sim                    |
-| 1004     | Concessão de abatimento                             | Sim           | Não                    |
-| 1005     | Cancelamento de abatimento                          | Sim           | Não                    |
-| 1007     | Alteração do "uso da empresa"                       | Sim           | Não                    |
-| 1008     | Alteração do "seu número"                           | Sim           | Não                    |
-| 1009     | Protestar                                           | Sim           | Não                    |
-| 1010     | Não protestar                                       | Não           | Não                    |
-| 1011     | Protesto para fins falimentares                     | Sim           | Não                    |
+| 1004     | Concessão de abatimento                             | Sim           | Sim                    |
+| 1005     | Cancelamento de abatimento                          | Sim           | Sim                    |
+| 1007     | Alteração do "uso da empresa"                       | Sim           | Sim                    |
+| 1008     | Alteração do "seu número"                           | Sim           | Sim                    |
+| 1009     | Protestar                                           | Sim           | Sim                    |
+| 1010     | Não protestar                                       | Sim           | Sim                    |
+| 1011     | Protesto para fins falimentares                     | Sim           | Sim                    |
 | 1012     | Alterar nome do pagador                             | Não           | Não                    |
 | 1013     | Alteração de endereço do pagador                    | Não           | Não                    |
 | 1014     | Alterar Cidade do pagador                           | Não           | Não                    |
 | 1015     | Alterar UF do pagador                               | Não           | Não                    |
 | 1017     | Alteração do número de dias para protesto           | Não           | Não                    |
-| 1018     | Sustar o protesto                                   | Não           | Não                    |
+| 1018     | Sustar o protesto                                   | Sim           | Sim                    |
+| 1019     | Sustar protesto e manter em carteira                                   | Sim           | Sim            |
 | 1020     | Alterar CPF/CNPJ do pagador                         | Não           | Não                    |
-| 1028     | Alterar Valor                                       | Não           | Não                    |
-| 1031     | Alteração de outros dados                           | Sim           | Em validação           |
+| 1021     | Alteração de valor com emissão de Boleto (quando a emissão é pelo Banco)                         | Sim           | Não                    |
+| 1022     | Transferência cessão crédito ID. Prod. 10           | Sim           | Não                    |
+| 1023     | Transferência entre carteiras                       | Sim           | Não                    |
+| 1024     | Dev. transferências entre carteiras                 | Sim           | Não                    |
+| 1028     | Alterar Valor                                       | Sim           | Sim                    |
+| 1031     | Alteração de outros dados                           | Sim           | Sim           |
 | 1034     | Pago diretamente ao beneficiário                    | Não           | Não                    |
 | 1038     | Alterar CEP do pagador                              | Não           | Não                    |
 | 1047     | Não cobrar juros                                    | Não           | Não                    |
-| 1066     | Solicitar negativação expressa                      | Não           | Não                    |
+| 1066     | Solicitar negativação expressa                      | Sim           | Sim                    |
 | 1067     | Não negativar                                       | Não           | Não                    |
-| 1068     | Excluir negativação expressa                        | Não           | Não                    |
-| 1069     | Cancelar negativação expressa                       | Não           | Não                    |
+| 1068     | Excluir negativação expressa                        | Sim           | Sim                    |
+| 1069     | Cancelar negativação expressa                       | Sim           | Sim                    |
 | 1071     | Concessão de desconto                               | Não           | Não                    |
 | 1072     | Cancelamento de desconto                            | Não           | Não                    |
 | 1073     | Alteração do valor do desconto                      | Não           | Não                    |
@@ -60,7 +65,6 @@ en: "/en/bank_contracts/bradesco"
 | 1075     | Não cobrar multa                                    | Não           | Não                    |
 | 1076     | Alteração de juros de mora                          | Não           | Não                    |
 | 1077     | Alteração do valor de abatimento                    | Não           | Não                    |
-| 1078     | Sustar protesto e baixar título                     | Sim           | Não                    |
 | 1079     | Alterar dados do sacado                             | Não           | Não                    |
 | 1080     | Alterar dados do sacador avalista                   | Não           | Não                    |
 | 1081     | Reembolso e transferência Desconto e Vendor         | Não           | Não                    |
@@ -70,11 +74,6 @@ en: "/en/bank_contracts/bradesco"
 | 1085     | Pedido de devolução                                 | Não           | Não                    |
 | 1086     | Pedido de devolução (entregue ao sacado)            | Não           | Não                    |
 | 1087     | Pedido dos títulos em aberto                        | Não           | Não                    |
-| 1088     | Alteração do controle do participante               | Não           | Não                    |
-| 1089     | Sustar protesto e manter em carteira                | Sim           | Não                    |
-| 1090     | Transferência cessão crédito ID. Prod. 10           | Sim           | Não                    |
-| 1091     | Transferência entre carteiras                       | Não           | Não                    |
-| 1092     | Dev. transferências entre carteiras                 | Não           | Não                    |
 | 1093     | Acerto nos dados do rateio de crédito               | Sim           | Não                    |
 | 1094     | Cancelamento do rateio de crédito                   | Sim           | Não                    |
 | 1095     | Alteração do prazo de devolução                     | Não           | Não                    |

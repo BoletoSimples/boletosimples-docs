@@ -69,7 +69,7 @@ layout: pt
 | **instructions**                | Não   | Text    |         | Instruções para o Caixa
 | **document_date**               | Não   | Date    |         | Data do Documento
 | **document_type**               | Não   | String  |         | Tipo de Documento ([possíveis valores](#document_type))
-| **document_number**             | Não   | Integer |         | Número do Documento
+| **document_number**             | Não   | String |         | Número do Documento
 | **acceptance**                  | Não   | String  |         | Aceite
 | **bank_billet_layout_id**       | Não   | Integer |         | ID do Modelo de Boleto
 | **remittance_id**               | Não   | Integer |         | ID da [Remessa](/reference/v1/remittances/)
