@@ -1,8 +1,8 @@
 ---
 title: Bradesco
 position: 1
-layout: pt
 en: "/en/bank_contracts/bradesco"
+layout: pt
 ---
 
 ## Bradesco
@@ -44,7 +44,7 @@ en: "/en/bank_contracts/bradesco"
 | 1017     | Alteração do número de dias para protesto           | Não           | Não                    |
 | 1018     | Sustar o protesto                                   | Não           | Não                    |
 | 1020     | Alterar CPF/CNPJ do pagador                         | Não           | Não                    |
-| 1028     | Alterar Valor                                       | Não           | Não                    |
+| 1028     | Alterar Valor                                       | Sim           | Sim                    |
 | 1031     | Alteração de outros dados                           | Sim           | Em validação           |
 | 1034     | Pago diretamente ao beneficiário                    | Não           | Não                    |
 | 1038     | Alterar CEP do pagador                              | Não           | Não                    |
