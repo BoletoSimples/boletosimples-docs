@@ -34,7 +34,12 @@ en: "/en/bank_contracts/bnb"
 | 1015     | Alterar UF do pagador                               | Não           | Não                    |
 | 1017     | Alteração do número de dias para protesto           | Não           | Não                    |
 | 1018     | Sustar o protesto                                   | Não           | Não                    |
+| 1019     | Sustar protesto e manter em carteira                                   | Não           | Não            |
 | 1020     | Alterar CPF/CNPJ do pagador                         | Não           | Não                    |
+| 1021     | Alteração de valor com emissão de Boleto (quando a emissão é pelo Banco)                         | Não           | Não                    |
+| 1022     | Transferência cessão crédito ID. Prod. 10           | Não           | Não                    |
+| 1023     | Transferência entre carteiras                       | Não           | Não                    |
+| 1024     | Dev. transferências entre carteiras                 | Não           | Não                    |
 | 1028     | Alterar Valor                                       | Não           | Não                    |
 | 1031     | Alteração de outros dados                           | Sim           | Não                    |
 | 1034     | Pago diretamente ao beneficiário                    | Não           | Não                    |
@@ -51,7 +56,6 @@ en: "/en/bank_contracts/bnb"
 | 1075     | Não cobrar multa                                    | Não           | Não                    |
 | 1076     | Alteração de juros de mora                          | Não           | Não                    |
 | 1077     | Alteração do valor de abatimento                    | Não           | Não                    |
-| 1078     | Sustar protesto e baixar título                     | Não           | Não                    |
 | 1079     | Alterar dados do sacado                             | Não           | Não                    |
 | 1080     | Alterar dados do sacador avalista                   | Não           | Não                    |
 | 1081     | Reembolso e transferência Desconto e Vendor         | Não           | Não                    |
@@ -61,11 +65,6 @@ en: "/en/bank_contracts/bnb"
 | 1085     | Pedido de devolução                                 | Sim           | Não                    |
 | 1086     | Pedido de devolução (entregue ao sacado)            | Sim           | Não                    |
 | 1087     | Pedido dos títulos em aberto                        | Sim           | Não                    |
-| 1088     | Alteração do controle do participante               | Não           | Não                    |
-| 1089     | Sustar protesto e manter em carteira                | Não           | Não                    |
-| 1090     | Transferência cessão crédito ID. Prod. 10           | Não           | Não                    |
-| 1091     | Transferência entre carteiras                       | Não           | Não                    |
-| 1092     | Dev. transferências entre carteiras                 | Não           | Não                    |
 | 1093     | Acerto nos dados do rateio de crédito               | Não           | Não                    |
 | 1094     | Cancelamento do rateio de crédito                   | Não           | Não                    |
 | 1095     | Alteração do prazo de devolução                     | Não           | Não                    |
