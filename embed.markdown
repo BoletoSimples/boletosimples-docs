@@ -1,8 +1,8 @@
 ---
 title: Mostrando o Boleto no seu Site
 position: 0
-layout: pt
 en: "/en/embed"
+layout: pt
 ---
 
 ## Incorporar o boleto no seu site
