@@ -29,7 +29,7 @@ layout: pt
 | **cnpj_cpf**           | Sim   | String  | 20      | CNPJ/CPF (formato 999.999.999-99 ou 99.999.999/9999-99)
 | **zipcode**            | Sim   | Integer | 8       | CEP (formato 99999999)
 | **address**            | Sim   | String  | 255         | Endereço
-| **city_name**          | Sim   | String  | 120     | Cidade
+| **city_name**          | Sim   | String  | 60     | Cidade
 | **state**              | Sim   | String  | 2       | Estado (sigla do estado, Ex: RJ)
 | **neighborhood**       | Sim   | String  | 80     | Bairro
 | **address_number**     | Não   | String  | 10     | Número
