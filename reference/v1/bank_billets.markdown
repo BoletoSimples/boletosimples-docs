@@ -65,7 +65,7 @@ layout: pt
 | **discount_limit_date**         | Não   | Date    |         | Data limite para o desconto. Obrigatória se `discount_type` é diferente de zero
 | **discount_value**              | Não   | String  |         | Valor do desconto. Obrigatório se `discount_type` é igual a 1. (R$) Formato: 1.234,34
 | **discount_percentage**         | Não   | Float   |         | Percentual do valor do boleto equivalente ao desconto. Obrigatório se `discount_type` é igual a 2
-| **payment_place**               | Não   | String  |         | Local de Pagamento
+| **payment_place**               | Não   | String  | 100     | Local de Pagamento
 | **instructions**                | Não   | Text    |         | Instruções para o Caixa
 | **document_date**               | Não   | Date    |         | Data do Documento
 | **document_type**               | Não   | String  |         | Tipo de Documento ([possíveis valores](#document_type))
