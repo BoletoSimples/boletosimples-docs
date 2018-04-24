@@ -42,7 +42,7 @@ layout: pt
 | **customer_address_number**     | Não   | String  | 10     | Número
 | **customer_address_complement** | Não   | String  | 60     | Complemento
 | **customer_phone_number**       | Não   | String  | 11      | Telefone (com DDD)
-| **customer_person_type**        | N/A   | String  | 255     | Tipo de pagador ([possíveis valores](#customer_person_type))
+| **customer_person_type**        | N/A   | String  | 10     | Tipo de pagador ([possíveis valores](#customer_person_type))
 | **meta**                        | Não   | Campo Genérico | | Aceita qualquer formato passado. Pode ser usado para salvar dados que não existam dentro do Boleto Simples. Exemplo: {pedido: 12345}
 | **status**                      | N/A   | String  |         | Situação do boleto ([possíveis valores](#status))
 | **paid_at**                     | N/A   | Date    |         | Data do pagamento
