@@ -36,7 +36,7 @@ layout: pt
 | **customer_zipcode**            | Sim   | Integer | 8       | CEP (formato 99999999)
 | **customer_email**              | Não   | String  | 80     | E-mail do Pagador
 | **customer_address**            | Sim   | String    | 255        | Endereço
-| **customer_city_name**          | Sim   | String  | 255     | Cidade(Nome deve estar correto e completo)
+| **customer_city_name**          | Sim   | String  | 60     | Cidade(Nome deve estar correto e completo)
 | **customer_state**              | Sim   | String  | 2       | Estado
 | **customer_neighborhood**       | Sim   | String  | 80     | Bairro
 | **customer_address_number**     | Não   | String  | 10     | Número
