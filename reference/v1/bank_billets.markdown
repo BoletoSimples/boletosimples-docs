@@ -34,8 +34,8 @@ layout: pt
 | **customer_person_name**        | Sim   | String  | 120     | Nome ou Razão Social do Pagador
 | **customer_cnpj_cpf**           | Sim   | String  | 20      | CNPJ ou CPF do Pagador
 | **customer_zipcode**            | Sim   | Integer | 8       | CEP (formato 99999999)
-| **customer_email**              | Não   | String  | 255     | E-mail do Pagador
-| **customer_address**            | Sim   | Text    |         | Endereço
+| **customer_email**              | Não   | String  | 80     | E-mail do Pagador
+| **customer_address**            | Sim   | String    | 255        | Endereço
 | **customer_city_name**          | Sim   | String  | 255     | Cidade(Nome deve estar correto e completo)
 | **customer_state**              | Sim   | String  | 2       | Estado
 | **customer_neighborhood**       | Sim   | String  | 80     | Bairro
