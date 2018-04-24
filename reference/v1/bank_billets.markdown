@@ -31,7 +31,7 @@ layout: pt
 | **expire_at**                   | Sim   | Date    |         | Data de vencimento
 | **description**                 | Sim   | Text    |         | Descrição do produto ou serviço
 | **customer_id**                 | Não   | Integer |         | ID do [Cliente](/reference/v1/customers/). Quando esse ID é passado, os campos `customer_person_name`, `customer_cnpj_cpf`, `customer_zipcode`, `customer_address`, `customer_city_name`, `customer_state` e `customer_neighborhood` não são obrigatórios.
-| **customer_person_name**        | Sim   | String  | 255     | Nome ou Razão Social do Pagador
+| **customer_person_name**        | Sim   | String  | 120     | Nome ou Razão Social do Pagador
 | **customer_cnpj_cpf**           | Sim   | String  | 20      | CNPJ ou CPF do Pagador
 | **customer_zipcode**            | Sim   | Integer | 8       | CEP (formato 99999999)
 | **customer_email**              | Não   | String  | 255     | E-mail do Pagador
