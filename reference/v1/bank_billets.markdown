@@ -82,7 +82,7 @@ layout: pt
 | **paid_agency**                 | N/A   | String  |         | Agência de Pagamento
 | **line**                        | N/A   | String  |         | Linha Digitável
 | **bank_rate**                   | N/A   | Float   |         | Taxa bancária
-| **beneficiary_name**            | N/A   | String  |         | Nome do Beneficiário
+| **beneficiary_name**            | N/A   | String  | 100     | Nome do Beneficiário
 | **beneficiary_cnpj_cpf**        | N/A   | String  |         | CNPJ/CPF do Beneficiário
 | **beneficiary_address**         | N/A   | String  |         | Endereço do Beneficiário
 | **beneficiary_assignor_code**   | N/A   | String  |         | Agência/Código do Beneficiário
