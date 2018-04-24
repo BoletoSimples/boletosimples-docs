@@ -1,9 +1,9 @@
 ---
 title: Clientes
 position: 5
-layout: pt
 en: "/en/references"
 breadcrumb: Clientes
+layout: pt
 ---
 
 ## Clientes
@@ -28,18 +28,18 @@ breadcrumb: Clientes
 | **person_type**        | N/A   | String  |         | Tipo de Cliente
 | **cnpj_cpf**           | Sim   | String  | 20      | CNPJ/CPF (formato 999.999.999-99 ou 99.999.999/9999-99)
 | **zipcode**            | Sim   | Integer | 8       | CEP (formato 99999999)
-| **address**            | Sim   | Text    |         | Endereço
-| **city_name**          | Sim   | String  | 255     | Cidade
+| **address**            | Sim   | String  | 255         | Endereço
+| **city_name**          | Sim   | String  | 60     | Cidade
 | **state**              | Sim   | String  | 2       | Estado (sigla do estado, Ex: RJ)
-| **neighborhood**       | Sim   | String  | 255     | Bairro
-| **address_number**     | Não   | String  | 255     | Número
-| **address_complement** | Não   | String  | 255     | Complemento
+| **neighborhood**       | Sim   | String  | 80     | Bairro
+| **address_number**     | Não   | String  | 10     | Número
+| **address_complement** | Não   | String  | 60     | Complemento
 | **phone_number**       | Não   | String  | 11      | Telefone (formato 9988888888)
-| **email**              | Não   | String  | 255     | E-mail
-| **mobile_local_code**  | Não   | String  | 4       | DDD do Celular
-| **mobile_number**      | Não   | String  | 15      | Celular
+| **email**              | Não   | String  | 80     | E-mail
+| **mobile_local_code**  | Não   | String  | 2       | DDD do Celular
+| **mobile_number**      | Não   | String  | 9      | Celular
 | **notes**              | Não   | Text    |         | Anotações
-| **email_cc**           | Não   | String  | 255     | E-mail alternativo
+| **email_cc**           | Não   | String  | 80     | E-mail alternativo
 | **created_via_api**    | N/A   | Boolean |         | Enviado pela API
 
 ### Criar cliente

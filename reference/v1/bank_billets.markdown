@@ -31,18 +31,18 @@ layout: pt
 | **expire_at**                   | Sim   | Date    |         | Data de vencimento
 | **description**                 | Sim   | Text    |         | Descrição do produto ou serviço
 | **customer_id**                 | Não   | Integer |         | ID do [Cliente](/reference/v1/customers/). Quando esse ID é passado, os campos `customer_person_name`, `customer_cnpj_cpf`, `customer_zipcode`, `customer_address`, `customer_city_name`, `customer_state` e `customer_neighborhood` não são obrigatórios.
-| **customer_person_name**        | Sim   | String  | 255     | Nome ou Razão Social do Pagador
+| **customer_person_name**        | Sim   | String  | 120     | Nome ou Razão Social do Pagador
 | **customer_cnpj_cpf**           | Sim   | String  | 20      | CNPJ ou CPF do Pagador
 | **customer_zipcode**            | Sim   | Integer | 8       | CEP (formato 99999999)
-| **customer_email**              | Não   | String  | 255     | E-mail do Pagador
-| **customer_address**            | Sim   | Text    |         | Endereço
-| **customer_city_name**          | Sim   | String  | 255     | Cidade(Nome deve estar correto e completo)
+| **customer_email**              | Não   | String  | 80     | E-mail do Pagador
+| **customer_address**            | Sim   | String    | 255        | Endereço
+| **customer_city_name**          | Sim   | String  | 60     | Cidade(Nome deve estar correto e completo)
 | **customer_state**              | Sim   | String  | 2       | Estado
 | **customer_neighborhood**       | Sim   | String  | 80     | Bairro
 | **customer_address_number**     | Não   | String  | 10     | Número
 | **customer_address_complement** | Não   | String  | 60     | Complemento
 | **customer_phone_number**       | Não   | String  | 11      | Telefone (com DDD)
-| **customer_person_type**        | N/A   | String  | 255     | Tipo de pagador ([possíveis valores](#customer_person_type))
+| **customer_person_type**        | N/A   | String  | 10     | Tipo de pagador ([possíveis valores](#customer_person_type))
 | **meta**                        | Não   | Campo Genérico | | Aceita qualquer formato passado. Pode ser usado para salvar dados que não existam dentro do Boleto Simples. Exemplo: {pedido: 12345}
 | **status**                      | N/A   | String  |         | Situação do boleto ([possíveis valores](#status))
 | **paid_at**                     | N/A   | Date    |         | Data do pagamento
@@ -82,7 +82,7 @@ layout: pt
 | **paid_agency**                 | N/A   | String  |         | Agência de Pagamento
 | **line**                        | N/A   | String  |         | Linha Digitável
 | **bank_rate**                   | N/A   | Float   |         | Taxa bancária
-| **beneficiary_name**            | N/A   | String  |         | Nome do Beneficiário
+| **beneficiary_name**            | N/A   | String  | 100     | Nome do Beneficiário
 | **beneficiary_cnpj_cpf**        | N/A   | String  |         | CNPJ/CPF do Beneficiário
 | **beneficiary_address**         | N/A   | String  |         | Endereço do Beneficiário
 | **beneficiary_assignor_code**   | N/A   | String  |         | Agência/Código do Beneficiário
@@ -105,11 +105,11 @@ layout: pt
 | **second_instruction**          | Não   | String  | 2    | Segunda Instrução(CNAB 400). Consulte os possíveis valores <a href="/bank_contracts">para cada banco</a>.
 | **sue_code**                    | Não   | String  | 1    | Código de Protesto(CNAB 240). Consulte os possíveis valores <a href="/bank_contracts">para cada banco</a>.
 | **revoke_code**                 | Não   | String  | 1    | Código de Baixa(CNAB 240). Consulte os possíveis valores <a href="/bank_contracts">para cada banco</a>.
-| **guarantor_name**              | Não   | String  |         | Nome do Sacador/Avalista
-| **guarantor_cnpj_cpf**          | Não   | String  |         | CNPJ/CPF do Sacador/Avalista
+| **guarantor_name**              | Não   | String  |   100      | Nome do Sacador/Avalista
+| **guarantor_cnpj_cpf**          | Não   | String  |   20      | CNPJ/CPF do Sacador/Avalista
 | **guarantor_zipcode**            | Não   | Integer | 8       | CEP (formato 99999999) do Sacador/Avalista
-| **guarantor_address**            | Não   | Text    |         | Endereço do Sacador/Avalista
-| **guarantor_city_name**          | Não   | String  | 255     | Cidade(Nome deve estar correto e completo) do Sacador/Avalista
+| **guarantor_address**            | Não   | String    |  255       | Endereço do Sacador/Avalista
+| **guarantor_city_name**          | Não   | String  | 60     | Cidade(Nome deve estar correto e completo) do Sacador/Avalista
 | **guarantor_state**              | Não   | String  | 2       | Estado do Sacador/Avalista
 | **guarantor_neighborhood**       | Não   | String  | 80     | Bairro do Sacador/Avalista
 | **guarantor_address_number**     | Não   | String  | 10     | Número do Sacador/Avalista
