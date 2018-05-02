@@ -1,9 +1,9 @@
 ---
 title: CNAB (Remessa)
 position: 6
-layout: pt
 en: "/en/references"
 breadcrumb: CNAB (Remessa)
+layout: pt
 ---
 
 ## CNAB (Remessa)
@@ -30,9 +30,10 @@ breadcrumb: CNAB (Remessa)
 | **created_at**                | Não   | DateTime|         | Data de criação
 | **url**                       | Não   | String  |         | URL do arquivo de remessa
 | **bank_billet_account_id**    | Sim   | Integer |         | ID da [Carteira de Cobrança](/reference/v1/bank_billet_accounts/)
-| **bank_billet_ids**           | Não   | Array   |         | IDs de boletos vinculados a remessa
+| **bank_billet_ids**           | Não   | Array   |         | IDs de boletos
 | **remittance_number**         | Não   | Integer |         | Número da remessa
 | **sent_via_integration**      | Não   | Date    |         | Data de envio automático para o banco
+| **bank_billet_remittance_ids**           | Não   | Array   |         | IDs de [Registros de Remessa] (/reference/v1/bank_billet_remittances/)
 
 ### Dicionário de Dados
 
