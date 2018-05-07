@@ -19,7 +19,6 @@ Entre em cada banco para visualizar as carteiras suportadas e os comandos implem
 | [Bradesco](/bank_contracts/bradesco)           | Sim     | 400          | Sim     | 400
 | [Caixa Econômica Federal](/bank_contracts/cef) | Sim     | 400 ou 240   | Sim     | 400 ou 240
 | [Citibank](/bank_contracts/citibank)           | Sim     | 400          | Sim     | 400
-| [HSBC](/bank_contracts/hsbc)                   | Sim     | 400          | Não     | -
 | [Itaú](/bank_contracts/itau)                   | Sim     | 400          | Sim     | 400
 | [Safra](/bank_contracts/safra)                 | Não     | -            | Não     | -
 | [Santander](/bank_contracts/santander)         | Sim     | 400          | Sim     | 400
