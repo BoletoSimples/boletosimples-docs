@@ -8,7 +8,11 @@ layout: pt
 
 | Carteiras                | Slug
 | ------------------------ | ------------
+| 104                      | itau-bs-104
+| 108                      | itau-bs-108
 | 109                      | itau-bs-109
+| 112                      | itau-bs-112
+| 138                      | itau-bs-138
 | 156                      | itau-bs-156
 | 157                      | itau-bs-157
 | 158                      | itau-bs-158

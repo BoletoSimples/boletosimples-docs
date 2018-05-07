@@ -22,6 +22,11 @@ Você também pode se inscrever para receber as notificações de alterações d
 
 #### Últimas alterações realizadas na API.
 
+### 07/05/2018
+
+* Atualiza lista de carteiras do [Banco do Brasil](/bank_contracts/bb/)
+* Atualiza lista de carteiras do [Itaú](/bank_contracts/itau/)
+
 ### 20/04/2018
 
 * Documenta  [Importações](/reference/v1/imports)
