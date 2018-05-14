@@ -20,7 +20,19 @@ breadcrumb: Carnês
 | Parâmetro                       | Obrigatório  | Tipo    | Tamanho | Descrição
 | ------------------------------- | ----- | ------- | ------- | ------------------------
 | **id**                          | N/A   | Integer |         | ID do carnê
-| **customer_id**                 | Sim   | Integer |         | ID do [Cliente](/reference/v1/customers/)
+| **customer_id**                 | Não   | Integer |         | ID do [Cliente](/reference/v1/customers/). Quando esse ID é passado, os campos `customer_person_name`, `customer_cnpj_cpf`, `customer_zipcode`, `customer_address`, `customer_city_name`, `customer_state` e `customer_neighborhood` não são obrigatórios.
+| **customer_person_name**        | Sim   | String  | 120     | Nome ou Razão Social do Pagador
+| **customer_cnpj_cpf**           | Sim   | String  | 20      | CNPJ ou CPF do Pagador
+| **customer_zipcode**            | Sim   | Integer | 8       | CEP (formato 99999999)
+| **customer_email**              | Não   | String  | 80     | E-mail do Pagador
+| **customer_address**            | Sim   | String    | 255        | Endereço
+| **customer_city_name**          | Sim   | String  | 60     | Cidade(Nome deve estar correto e completo)
+| **customer_state**              | Sim   | String  | 2       | Estado
+| **customer_neighborhood**       | Sim   | String  | 80     | Bairro
+| **customer_address_number**     | Não   | String  | 10     | Número
+| **customer_address_complement** | Não   | String  | 60     | Complemento
+| **customer_phone_number**       | Não   | String  | 11      | Telefone (com DDD)
+| **customer_person_type**        | N/A   | String  | 10     | Tipo de pagador ([possíveis valores](#customer_person_type))
 | **bank_billet_account_id**      | Sim   | Integer |         | ID da [Carteira de Cobrança](/reference/v1/bank_billet_accounts/). Se não informado, usará a carteira padrão.
 | **amount**                      | Sim   | String  |         | Valor do carnê (R$) Formato: 1.234,34
 | **cycle**                       | Não   | String  | 20      | Ciclo do carnê ([possíveis valores](#cycle)). Default: monthly
@@ -65,6 +77,11 @@ breadcrumb: Carnês
 | created    | Gerando
 | processed  | Aberto
 | finished   | Finalizado
+
+#### customer_person_type
+
+| individual | Pessoa Física
+| juridical  | Pessoa Jurídica
 
 #### fine_type
 
@@ -230,6 +247,17 @@ Content-Type: application/json; charset=utf-8
   "end_at":"2016-11-16",
   "instructions":null,
   "customer_id":11,
+  "customer_person_type":"individual",
+  "customer_person_name":"Nome do Cliente",
+  "customer_cnpj_cpf":"125.812.717-28",
+  "customer_address":"Rua quinhentos",
+  "customer_state":"RJ",
+  "customer_neighborhood":"bairro",
+  "customer_zipcode":"12312123",
+  "customer_address_number":null,
+  "customer_address_complement":null,
+  "customer_phone_number":null,
+  "customer_email":null,
   "description":"Hospedagem",
   "created_at":"2016-08-15",
   "updated_at":"2016-08-15",
@@ -385,6 +413,17 @@ Content-Type: application/json; charset=utf-8
   "end_at":"2016-11-16",
   "instructions":null,
   "customer_id":11,
+  "customer_person_type":"individual",
+  "customer_person_name":"Nome do Cliente",
+  "customer_cnpj_cpf":"125.812.717-28",
+  "customer_address":"Rua quinhentos",
+  "customer_state":"RJ",
+  "customer_neighborhood":"bairro",
+  "customer_zipcode":"12312123",
+  "customer_address_number":null,
+  "customer_address_complement":null,
+  "customer_phone_number":null,
+  "customer_email":null,
   "description":"Hospedagem",
   "created_at":"2016-08-15",
   "updated_at":"2016-08-15",
@@ -550,6 +589,17 @@ Content-Type: application/json; charset=utf-8
     "end_at":"2016-11-16",
     "instructions":null,
     "customer_id":11,
+    "customer_person_type":"individual",
+    "customer_person_name":"Nome do Cliente",
+    "customer_cnpj_cpf":"125.812.717-28",
+    "customer_address":"Rua quinhentos",
+    "customer_state":"RJ",
+    "customer_neighborhood":"bairro",
+    "customer_zipcode":"12312123",
+    "customer_address_number":null,
+    "customer_address_complement":null,
+    "customer_phone_number":null,
+    "customer_email":null,
     "description":"Hospedagem",
     "created_at":"2016-08-15",
     "updated_at":"2016-08-15",
