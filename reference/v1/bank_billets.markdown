@@ -76,6 +76,7 @@ layout: pt
 | **notes**                       | Não   | Text    |         | Anotações
 | **tags**                        | Não   | Array   |         | Tags associadas ao boleto
 | **days_for_sue**                | Não   | Integer |         | Dias corridos para Protesto/Negativação
+| **days_for_revoke**             | Não   | Integer |         | Dias corridos para Baixa/Devolução
 | **created_at**                  | N/A   | Date    |         | Data de criação do boleto
 | **updated_at**                  | N/A   | Date    |         | Data de atualização do boleto
 | **paid_bank**                   | N/A   | String  |         | Banco de Pagamento
