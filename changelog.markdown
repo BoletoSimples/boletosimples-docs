@@ -22,6 +22,10 @@ Você também pode se inscrever para receber as notificações de alterações d
 
 #### Últimas alterações realizadas na API.
 
+### 21/05/2018
+
+* Documenta [Cancelar boletos em lote](/reference/v1/bank_billets/#cancelar-boletos-em-lote).
+
 ### 07/05/2018
 
 * Atualiza lista de carteiras do [Banco do Brasil](/bank_contracts/bb/)

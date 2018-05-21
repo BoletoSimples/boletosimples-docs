@@ -19,6 +19,7 @@ layout: pt
 | [GET /api/v1/bank_billets/our_number](#buscar-por-nosso-número) | Buscar por nosso número
 | [GET /api/v1/bank_billets/status](#buscar-por-situação-do-boleto) | Buscar por Situação do boleto ([possíveis valores](#status))
 | [PUT /api/v1/bank_billets/:id/pay](#marcar-boleto-como-pago) | Marcar boleto como pago
+| [POST /api/v1/bank_billets/cancel_all](#cancelar-boletos-em-lote) | Cancelar boletos em lote
 | [POST /api/v1/bank_billets/bulk](#criar-boletos-em-lote) | Criar boletos em lote
 
 ### Modelo de Dados
@@ -2426,7 +2427,7 @@ Array
     </div> -->
 </div>
 
-### Cancelar boletos
+### Cancelar boletos em lote
 
 `POST /api/v1/bank_billets/cancel_all`
 
