@@ -16,12 +16,12 @@ Entre em cada banco para visualizar as carteiras suportadas e os comandos implem
 | [Banco de Brasília](/bank_contracts/brb)       | Sim     | 400          | Sim     | 400
 | [Banestes](/bank_contracts/banestes)           | Sim     | 400          | Sim     | 400
 | [Banrisul](/bank_contracts/banrisul)           | Sim     | 400          | Sim     | 400
-| [Bradesco](/bank_contracts/bradesco)           | Sim     | 400          | Sim     | 400
+| [Bradesco](/bank_contracts/bradesco)           | Sim     | 400 ou 240          | Sim     | 400
 | [Caixa Econômica Federal](/bank_contracts/cef) | Sim     | 400 ou 240   | Sim     | 400 ou 240
 | [Citibank](/bank_contracts/citibank)           | Sim     | 400          | Sim     | 400
-| [Itaú](/bank_contracts/itau)                   | Sim     | 400          | Sim     | 400
+| [Itaú](/bank_contracts/itau)                   | Sim     | 400 ou 240         | Sim     | 400 ou 240
 | [Safra](/bank_contracts/safra)                 | Sim     | 400            | Sim     | 400
-| [Santander](/bank_contracts/santander)         | Sim     | 400          | Sim     | 400
+| [Santander](/bank_contracts/santander)         | Sim     | 400 ou 240         | Sim     | 400 ou 240
 | [Sicoob](/bank_contracts/sicoob)               | Sim     | 400 ou 240   | Sim     | 400 ou 240
 | [Sicredi](/bank_contracts/sicredi)             | Sim     | 400          | Sim     | 400
 | [CECRED](/bank_contracts/cecred)               | Sim     | 240          | Sim     | 240
