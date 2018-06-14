@@ -19,7 +19,7 @@ breadcrumb: Webhook Deliveries
 | -------------------- | ----- | -------- | ------- | ------------------------
 | **id**               | N/A   | Integer  |         | ID do webhook delivery
 | **uid**              | N/A   | String   | 36      | UID usado no cabeçalho da requisição
-| **url**              | N/A   | String   | 255     | Endereço onde as entrega foi realizada, herdado do webhook
+| **url**              | N/A   | String   | 255     | Endereço onde a entrega foi realizada, herdado do webhook
 | **request_payload**  | N/A   | Hash     |         | Payload que será enviado no corpo da mensagem. Ver possíveis valores em [Payloads](/webhooks/payloads)
 | **request_error**    | N/A   | String   | 255     | Mensagem de erro retornada na resquisição
 | **response_headers** | N/A   | Hash     |         | Cabeçalhos da resposta
