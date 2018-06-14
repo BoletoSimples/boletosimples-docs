@@ -20,7 +20,7 @@ Entre em cada banco para visualizar as carteiras suportadas e os comandos implem
 | [Caixa Econômica Federal](/bank_contracts/cef) | Sim     | 400 ou 240   | Sim     | 400 ou 240
 | [Citibank](/bank_contracts/citibank)           | Sim     | 400          | Sim     | 400
 | [Itaú](/bank_contracts/itau)                   | Sim     | 400          | Sim     | 400
-| [Safra](/bank_contracts/safra)                 | Não     | -            | Não     | -
+| [Safra](/bank_contracts/safra)                 | Sim     | 400            | Sim     | 400
 | [Santander](/bank_contracts/santander)         | Sim     | 400          | Sim     | 400
 | [Sicoob](/bank_contracts/sicoob)               | Sim     | 400 ou 240   | Sim     | 400 ou 240
 | [Sicredi](/bank_contracts/sicredi)             | Sim     | 400          | Sim     | 400

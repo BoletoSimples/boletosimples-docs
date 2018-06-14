@@ -1,39 +1,46 @@
 ---
-title: Webhook Deliveries
+title: E-mails enviados
 position: 14
 layout: pt
-en: "/en/webhook_deliveries"
-breadcrumb: Webhook Deliveries
+en: "/en/email_deliveries"
+breadcrumb: E-mails enviados
 ---
 
-## Webhook Deliveries
+## E-mails enviados
 
 | Recurso                  | Descrição
 | ------------------------ | ------------------------
-| [GET /api/v1/webhook_deliveries/:id](#informações-do-webhook-delivery) | Informações do webhook delivery
-| [GET /api/v1/webhook_deliveries](#listar-webhook-delivery) | Listar webhook deliveries
+| [GET /api/v1/email_deliveries/:id](#informações-do-e-mail-enviado) | Informações do e-mail enviado
+| [GET /api/v1/email_deliveries](#listar-e-mails-enviados) | Listar e-mails enviados
+| [PUT /api/v1/email_deliveries/:id/resend](#reenviar-e-mail-enviado) | Reenviar e-mail enviado
 
 ### Modelo de Dados
 
 | Parâmetro            | Obrigatório  | Tipo     | Tamanho | Descrição
 | -------------------- | ----- | -------- | ------- | ------------------------
-| **id**               | N/A   | Integer  |         | ID do webhook delivery
+| **id**               | N/A   | Integer  |         | ID do e-mail enviado
 | **uid**              | N/A   | String   | 36      | UID usado no cabeçalho da requisição
-| **url**              | N/A   | String   | 255     | Endereço onde a entrega foi realizada, herdado do webhook
-| **request_payload**  | N/A   | Hash     |         | Payload que será enviado no corpo da mensagem. Ver possíveis valores em [Payloads](/webhooks/payloads)
-| **request_error**    | N/A   | String   | 255     | Mensagem de erro retornada na resquisição
-| **response_headers** | N/A   | Hash     |         | Cabeçalhos da resposta
-| **response_body**    | N/A   | Text     |         | Conteúdo do corpo da resposta
-| **response_code**    | N/A   | Integer  |         | Código HTTP da resposta. [Leia mais](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes)
-| **response_message** | N/A   | String   | 255     | Mensagem relativa ao Código HTTP da resposta [Leia mais](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes)
 | **delivered_at**     | N/A   | DateTime |         | Data e hora que a entrega foi realizada
-| **duration**         | N/A   | Integer  |         | Duração em milesegundos do round trip entre requisição e resposta
+| **failed_at**        | N/A   | DateTime |         | Data e hora que a entrega falhou
 | **event**            | N/A   | Object   |         | Evento relativo à entrega. [Leia mais](/reference/v1/events/#modelo-de-dados)
-| **webhook**          | N/A   | Object   |         | [Webhook](/reference/v1/webhooks/#modelo-de-dados)
+| **event_code**       | N/A   | String   | 255     | Código do evento. Ver possíveis valores na [lista de eventos](/webhooks/events)
+| **content**          | N/A   | Text     |         | Conteúdo do email
+| **sent_error**       | N/A   | String   | 255     | Erro ocorrido no envio
+| **bank_billet_id**   | N/A   | Integer  |         | ID do Boleto
 
-### Informações do webhook delivery
 
-`GET /api/v1/webhook_deliveries/:id`
+### Dicionário de Dados
+
+#### status
+
+| 0 | Pendente
+| 1 | Enviado
+| 2 | Com falha
+
+
+### Informações do e-mail enviado
+
+`GET /api/v1/email_deliveries/:id`
 
 #### Exemplo
 
@@ -52,7 +59,7 @@ curl -i \
 -u $BOLETOSIMPLES_TOKEN:x \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X GET 'https://sandbox.boletosimples.com.br/api/v1/webhook_deliveries/1'
+-X GET 'https://sandbox.boletosimples.com.br/api/v1/email_deliveries/1'
 </pre>
 
     <small>Resposta:</small>
@@ -65,89 +72,10 @@ Content-Type: application/json; charset=utf-8
 ...
 
 {
-  "id": 1,
-  "uid": "2397f7fb-cb15-4bfc-8296-0a973e93e551",
-  "url": "https://example.com/callbacks/boletosimplest/",
-  "duration": 119,
-  "request_headers": {
-    "X-BoletoSimples-Event": "bank_billet.generated",
-    "X-Hub-Signature": "sha1=7be1e99e7ff2c2cd83222161e08593636e5bfe9a",
-    "X-BoletoSimples-Delivery-Id": "2397f7fb-cb15-4bfc-8296-0a973e93e551",
-    "X-BoletoSimples-Environment": "sandbox",
-    "User-Agent": "BoletoSimples-Robot (sandbox)",
-    "Content-Type": "application\/json"
-  },
-  "request_payload": {
-    "object": {
-      "id":1,
-      "expire_at":"2014-11-15",
-      "paid_at":null,
-      "description":"Prestação de Serviço",
-      "status":"opened",
-      "shorten_url":"http://bole.to/xxxxxxxx",
-      "customer_person_type":"individual",
-      "customer_person_name":"Nome do Cliente",
-      "customer_cnpj_cpf":"125.812.717-28",
-      "customer_address":"Rua quinhentos",
-      "customer_state":"RJ",
-      "customer_neighborhood":"bairro",
-      "customer_zipcode":"12312-123",
-      "customer_address_number":null,
-      "customer_address_complement":null,
-      "customer_phone_number":null,
-      "customer_email":null,
-      "send_email_on_creation":null,
-      "created_via_api":true,
-      "customer_city_name":null,
-      "paid_amount":0.0,
-      "amount":12.34
-    },
-    "event_code": "bank_billet.generated",
-    "webhook": {
-      "id": 5,
-      "url": "https://example.com/callbacks/boletosimplest/"
-    }
-  },
-  "request_error": null,
-  "response_body": "OK",
-  "response_code": 200,
-  "response_headers": {
-    "access-control-allow-origin": [
-      "*"
-    ],
-    "content-type": [
-      "application\/json"
-    ],
-    "date": [
-      "Tue, 17 Mar 2015 01:56:05 GMT"
-    ],
-    "p3p": [
-      "CP=\"IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT\""
-    ],
-    "server": [
-      "nginx"
-    ],
-    "strict-transport-security": [
-      "max-age=31536000; includeSubDomains; preload"
-    ],
-    "x-content-type-options": [
-      "nosniff"
-    ],
-    "x-frame-options": [
-      "SAMEORIGIN"
-    ],
-    "x-xss-protection": [
-      "1; mode=block"
-    ],
-    "content-length": [
-      "152"
-    ],
-    "connection": [
-      "Close"
-    ]
-  },
-  "response_message": "OK",
-  "delivered_at": "2015-03-16T22:56:05.426-03:00",
+  "id":1,
+  "bank_billet_id":bank_billet1.id,
+  "content":"{}",
+  "delivered_at":'2015-03-17T03:36:08-03:00',
   "event": {
     "id": 212,
     "code": "bank_billet.generated",
@@ -179,6 +107,10 @@ Content-Type: application/json; charset=utf-8
     },
     "occurred_at": "2015-03-16T22:56:05.000-03:00"
   }
+  "event_code":'bank_billet.generated',
+  "failed_at":nil,
+  "sent_error":nil,
+  "uid": "2397f7fb-cb15-4bfc-8296-0a973e93e551"
 }
 </pre>
   </div>
@@ -247,52 +179,18 @@ Array
   </div-->
 </div>
 
-### Listar webhook deliveries
+### Listar e-mails enviados
 
-`GET /api/v1/webhook_deliveries`
+`GET /api/v1/email_deliveries`
 
-<table class='table table-bordered'>
-  <thead>
-    <tr>
-      <th>Parâmetro</th>
-      <th data-container="body" data-toggle="tooltip" title="Obrigatório">Obrigatório</th>
-      <th>Tipo</th>
-      <th>Descrição</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>
-        <strong>page </strong>
-      </td>
-      <td>
-        Não
-      </td>
-      <td>
-        Number
-      </td>
-      <td>
-        Número da Página
-      </td>
-    </tr>
+| Parâmetro            | Obrigatório  | Tipo     | Descrição
+| -------------------- | ----- | -------- | -----------------------
+| **page**             | Não   | Integer  | Número da Página
+| **per_page**         | Não   | Integer  | Quantidade de registros por página
+| **bank_billet_id**   | Não   | Integer  | ID do Boleto
+| **event_code**       | Não   | String   | Código do evento. Ver possíveis valores na [lista de eventos](/webhooks/events)
+| **status**           | Não   | Integer  | Status do e-mail enviado ([possíveis valores](#status))
 
-    <tr>
-      <td>
-        <strong>per_page </strong>
-      </td>
-      <td>
-        Não
-      </td>
-      <td>
-        Number
-      </td>
-      <td>
-        Quantidade de registros por página
-      </td>
-    </tr>
-
-  </tbody>
-</table>
 
 #### Exemplo
 
@@ -311,7 +209,7 @@ curl -i \
 -u $BOLETOSIMPLES_TOKEN:x \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X GET "https://sandbox.boletosimples.com.br/api/v1/webhook_deliveries?page=1&per_page=2"
+-X GET "https://sandbox.boletosimples.com.br/api/v1/email_deliveries?page=1&per_page=2"
 </pre>
 
     <small>Resposta:</small>
@@ -320,96 +218,17 @@ curl -i \
 HTTP/1.1 200 OK
 Date: Fri, 17 Oct 2014 19:46:16 GMT
 Status: 200 OK
-Link: <https://sandbox.boletosimples.com.br/api/v1/webhook_deliveries?page=2&per_page=2>; rel="last", <https://sandbox.boletosimples.com.br/api/v1/webhook_deliveries?page=2&per_page=2>; rel="next"
+Link: <https://sandbox.boletosimples.com.br/api/v1/email_deliveries?page=2&per_page=2>; rel="last", <https://sandbox.boletosimples.com.br/api/v1/email_deliveries?page=2&per_page=2>; rel="next"
 Total: 4
 Content-Type: application/json; charset=utf-8
 ...
 
 [
   {
-    "id": 197,
-    "uid": "2397f7fb-cb15-4bfc-8296-0a973e93e551",
-    "url": "https://example.com/callbacks/boletosimplest/",
-    "duration": 119,
-    "request_headers": {
-      "X-BoletoSimples-Event": "bank_billet.generated",
-      "X-Hub-Signature": "sha1=7be1e99e7ff2c2cd83222161e08593636e5bfe9a",
-      "X-BoletoSimples-Delivery-Id": "2397f7fb-cb15-4bfc-8296-0a973e93e551",
-      "X-BoletoSimples-Environment": "sandbox",
-      "User-Agent": "BoletoSimples-Robot (sandbox)",
-      "Content-Type": "application\/json"
-    },
-    "request_payload": {
-      "object": {
-        "id":1,
-        "expire_at":"2014-11-15",
-        "paid_at":null,
-        "description":"Prestação de Serviço",
-        "status":"opened",
-        "shorten_url":"http://bole.to/xxxxxxxx",
-        "customer_person_type":"individual",
-        "customer_person_name":"Nome do Cliente",
-        "customer_cnpj_cpf":"125.812.717-28",
-        "customer_address":"Rua quinhentos",
-        "customer_state":"RJ",
-        "customer_neighborhood":"bairro",
-        "customer_zipcode":"12312-123",
-        "customer_address_number":null,
-        "customer_address_complement":null,
-        "customer_phone_number":null,
-        "customer_email":null,
-        "send_email_on_creation":null,
-        "created_via_api":true,
-        "customer_city_name":null,
-        "paid_amount":0.0,
-        "amount":12.34
-      },
-      "event_code": "bank_billet.generated",
-      "webhook": {
-        "id": 5,
-        "url": "https://example.com/callbacks/boletosimplest/"
-      }
-    },
-    "request_error": null,
-    "response_body": "OK",
-    "response_code": 200,
-    "response_headers": {
-      "access-control-allow-origin": [
-        "*"
-      ],
-      "content-type": [
-        "application\/json"
-      ],
-      "date": [
-        "Tue, 17 Mar 2015 01:56:05 GMT"
-      ],
-      "p3p": [
-        "CP=\"IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT\""
-      ],
-      "server": [
-        "nginx"
-      ],
-      "strict-transport-security": [
-        "max-age=31536000; includeSubDomains; preload"
-      ],
-      "x-content-type-options": [
-        "nosniff"
-      ],
-      "x-frame-options": [
-        "SAMEORIGIN"
-      ],
-      "x-xss-protection": [
-        "1; mode=block"
-      ],
-      "content-length": [
-        "152"
-      ],
-      "connection": [
-        "Close"
-      ]
-    },
-    "response_message": "OK",
-    "delivered_at": "2015-03-16T22:56:05.426-03:00",
+    "id":1,
+    "bank_billet_id":bank_billet1.id,
+    "content":"{}",
+    "delivered_at":'2015-03-17T03:36:08-03:00',
     "event": {
       "id": 212,
       "code": "bank_billet.generated",
@@ -441,6 +260,10 @@ Content-Type: application/json; charset=utf-8
       },
       "occurred_at": "2015-03-16T22:56:05.000-03:00"
     }
+    "event_code":'bank_billet.generated',
+    "failed_at":nil,
+    "sent_error":nil,
+    "uid": "2397f7fb-cb15-4bfc-8296-0a973e93e551"
   }
 ]
 </pre>
@@ -494,3 +317,42 @@ Próxima Página: https://sandbox.boletosimples.com.br/api/v1/transactions?page=
 </pre>
   </div-->
 </div>
+
+
+### Reenviar e-mail enviado
+
+`PUT /api/v1/email_deliveries/:id/resend` ou `PATCH /api/v1/email_deliveries/:id/resend`
+
+Você pode reenviar e-mails enviados.
+
+#### Exemplo
+
+<ul class="nav nav-tabs" role="tablist">
+  <li class="active"><a href="#bash4" role="tab" data-toggle="tab">Bash</a></li>
+  <!--li><a href="#ruby4" role="tab" data-toggle="tab">Ruby</a></li>
+  <li><a href="#php4" role="tab" data-toggle="tab">PHP</a></li-->
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="bash4">
+    <small>Requisição:</small>
+
+<pre class="bash">
+curl -i \
+-u $BOLETOSIMPLES_TOKEN:x \
+-H 'Content-Type: application/json' \
+-H 'User-Agent: MyApp (myapp@example.com)' \
+-X GET "https://sandbox.boletosimples.com.br/api/v1/email_deliveries/1/resend"
+</pre>
+
+    <small>Resposta:</small>
+
+<pre class="http">
+HTTP/1.1 204 No Content
+Date: Fri, 17 Oct 2014 19:30:06 GMT
+Status: 204 No Content
+Location: https://sandbox.boletosimples.com.br/api/v1/email_deliveries/1
+...
+
+</pre>
+  </div>
