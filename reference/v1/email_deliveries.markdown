@@ -1,24 +1,24 @@
 ---
-title: Email Deliveries
+title: E-mails enviados
 position: 14
 layout: pt
 en: "/en/email_deliveries"
-breadcrumb: Email Deliveries
+breadcrumb: E-mails enviados
 ---
 
-## Email Deliveries
+## E-mails enviados
 
 | Recurso                  | Descrição
 | ------------------------ | ------------------------
-| [GET /api/v1/email_deliveries/:id](#informações-do-email-delivery) | Informações do email delivery
-| [GET /api/v1/email_deliveries](#listar-email-delivery) | Listar email deliveries
-| [PUT /api/v1/email_deliveries/:id/resend](#reenviar-email-delivery) | Reenviar email delivery
+| [GET /api/v1/email_deliveries/:id](#informações-do-e-mail-enviado) | Informações do e-mail enviado
+| [GET /api/v1/email_deliveries](#listar-e-mails-enviados) | Listar e-mails enviados
+| [PUT /api/v1/email_deliveries/:id/resend](#reenviar-e-mail-enviado) | Reenviar e-mail enviado
 
 ### Modelo de Dados
 
 | Parâmetro            | Obrigatório  | Tipo     | Tamanho | Descrição
 | -------------------- | ----- | -------- | ------- | ------------------------
-| **id**               | N/A   | Integer  |         | ID do email delivery
+| **id**               | N/A   | Integer  |         | ID do e-mail enviado
 | **uid**              | N/A   | String   | 36      | UID usado no cabeçalho da requisição
 | **delivered_at**     | N/A   | DateTime |         | Data e hora que a entrega foi realizada
 | **failed_at**        | N/A   | DateTime |         | Data e hora que a entrega falhou
@@ -38,7 +38,7 @@ breadcrumb: Email Deliveries
 | 2 | Com falha
 
 
-### Informações do email delivery
+### Informações do e-mail enviado
 
 `GET /api/v1/email_deliveries/:id`
 
@@ -179,7 +179,7 @@ Array
   </div-->
 </div>
 
-### Listar email deliveries
+### Listar e-mails enviados
 
 `GET /api/v1/email_deliveries`
 
@@ -189,7 +189,7 @@ Array
 | **per_page**         | Não   | Integer  | Quantidade de registros por página
 | **bank_billet_id**   | Não   | Integer  | ID do Boleto
 | **event_code**       | Não   | String   | Código do evento. Ver possíveis valores na [lista de eventos](/webhooks/events)
-| **status**           | Não   | Integer  | Status do email delivery ([possíveis valores](#status))
+| **status**           | Não   | Integer  | Status do e-mail enviado ([possíveis valores](#status))
 
 
 #### Exemplo
@@ -319,11 +319,11 @@ Próxima Página: https://sandbox.boletosimples.com.br/api/v1/transactions?page=
 </div>
 
 
-### Reenviar email delivery
+### Reenviar e-mail enviado
 
 `PUT /api/v1/email_deliveries/:id/resend` ou `PATCH /api/v1/email_deliveries/:id/resend`
 
-Você pode reenviar email deliveries.
+Você pode reenviar e-mails enviados.
 
 #### Exemplo
 
