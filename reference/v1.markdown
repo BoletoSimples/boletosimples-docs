@@ -33,6 +33,8 @@ en: "/en/reference/v1"
 
 ### [Webhooks Deliveries](/reference/v1/webhook_deliveries)
 
+### [Email Deliveries](/reference/v1/email_deliveries)
+
 ### [Usuários](/reference/v1/users)
 
 ### [Usuário Autenticado](/reference/v1/userinfo)
