@@ -33,9 +33,11 @@ layout: pt
 | **description**                 | Sim   | Text    |         | Descrição do produto ou serviço
 | **customer_id**                 | Não   | Integer |         | ID do [Cliente](/reference/v1/customers/). Quando esse ID é passado, os campos `customer_person_name`, `customer_cnpj_cpf`, `customer_zipcode`, `customer_address`, `customer_city_name`, `customer_state` e `customer_neighborhood` não são obrigatórios.
 | **customer_person_name**        | Sim   | String  | 120     | Nome ou Razão Social do Pagador
+| **customer_nickname**           | Não   | String  | 255     | Apelido ou Nome Fantasia do Pagador
 | **customer_cnpj_cpf**           | Sim   | String  | 20      | CNPJ ou CPF do Pagador
 | **customer_zipcode**            | Sim   | Integer | 8       | CEP (formato 99999999)
 | **customer_email**              | Não   | String  | 80     | E-mail do Pagador
+| **customer_email_cc**           | Não   | String  | 80     | E-mail alternativo do Pagador
 | **customer_address**            | Sim   | String    | 255        | Endereço
 | **customer_city_name**          | Sim   | String  | 60     | Cidade(Nome deve estar correto e completo)
 | **customer_state**              | Sim   | String  | 2       | Estado
@@ -44,6 +46,9 @@ layout: pt
 | **customer_address_complement** | Não   | String  | 60     | Complemento
 | **customer_phone_number**       | Não   | String  | 11      | Telefone (com DDD)
 | **customer_person_type**        | N/A   | String  | 10     | Tipo de pagador ([possíveis valores](#customer_person_type))
+| **customer_mobile_local_code**  | Não   | String  | 2       | DDD do Celular
+| **customer_mobile_number**      | Não   | String  | 9       | Celular
+| **customer_notes**              | Não   | Text    |         | Anotações do Pagador
 | **meta**                        | Não   | Campo Genérico | | Aceita qualquer formato passado. Pode ser usado para salvar dados que não existam dentro do Boleto Simples. Exemplo: {pedido: 12345}
 | **status**                      | N/A   | String  |         | Situação do boleto ([possíveis valores](#status))
 | **paid_at**                     | N/A   | Date    |         | Data do pagamento
