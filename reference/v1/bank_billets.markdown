@@ -134,6 +134,8 @@ layout: pt
 | canceled   | Cancelado
 | paid       | Pago
 | overdue    | Vencido
+| generation_failed | Falha ao gerar
+| validation_failed | Inválido
 
 #### fine_type
 
