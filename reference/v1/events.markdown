@@ -21,6 +21,7 @@ breadcrumb: Eventos
 | **code**        | N/A   | String   | 255     | Código do evento. Ver possíveis valores na [lista de eventos](/webhooks/events)
 | **data**        | N/A   | Hash     |         | Mais informações relativas ao evento. Ver possíveis valores em [Payloads](/webhooks/payloads)
 | **occurred_at** | N/A   | DateTime |         | Data e hora de quando o evento ocorreu.
+| **bank_billet_account_id**   | N/A   | Integer |         | ID da [Carteira de Cobrança](/reference/v1/bank_billet_accounts/).
 
 ### Informações do evento
 
@@ -58,6 +59,7 @@ Content-Type: application/json; charset=utf-8
 {
   "id": 223,
   "code": "transaction.created",
+  "bank_billet_account_id": 2
   "data": {
     "object": {
       "id": 68,
@@ -71,7 +73,7 @@ Content-Type: application/json; charset=utf-8
       "credit_at": "2015-03-26"
     }
   },
-  "occurred_at": "2015-03-17T21:37:27.000-03:00"
+  "occurred_at": "2015-03-17T21:37:27.000-03:00",
 }
 </pre>
   </div>
@@ -222,6 +224,7 @@ Content-Type: application/json; charset=utf-8
   {
     "id": 224,
     "code": "customer.updated",
+    "bank_billet_account_id": null,
     "data": {
       "object": {
         "id": 67,
@@ -265,6 +268,7 @@ Content-Type: application/json; charset=utf-8
   {
     "id": 223,
     "code": "transaction.created",
+    "bank_billet_account_id": null,
     "data": {
       "object": {
         "id": 68,
