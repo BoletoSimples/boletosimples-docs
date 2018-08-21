@@ -694,6 +694,21 @@ Array
         Quantidade de registros por página (Maximo de 250)
       </td>
     </tr>
+
+    <tr>
+      <td>
+        <strong>bank_billet_account_id </strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        Number
+      </td>
+      <td>
+        Filtro por ID da Carteira.
+      </td>
+    </tr>
   </tbody>
 </table>
 

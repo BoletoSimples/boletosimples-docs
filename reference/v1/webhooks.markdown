@@ -29,6 +29,7 @@ breadcrumb: Webhooks
 | **events**                   | Não   | Array   |         | Eventos que devem gerar notificações para o webhook. Ver possíveis valores na [lista de eventos](/webhooks/events). O valor padrão é `*` (que representa todos os eventos atuais e futuros).
 | **active**                   | Não   | Boolean |         | Define se o webhook estará ativo, recebendo notificações. O valor padrão é `true`.
 | **ssl_verification_enabled** | N/A   | Boolean |         | Define se a verificação SSL está habilitada no webhook.
+| **bank_billet_account_id**   | Não   | Integer |         | ID da [Carteira de Cobrança](/reference/v1/bank_billet_accounts/). Se informado, o webhook apenas receberá notificações de eventos relacionados à carteira indicada.
 
 ### Criar webhook
 
@@ -169,7 +170,8 @@ Content-Type: application/json; charset=utf-8
     "*"
   ],
   "ssl_verification_enabled": true,
-  "active": true
+  "active": true,
+  "bank_billet_account_id": null
 }
 </pre>
   </div>
@@ -311,7 +313,8 @@ Content-Type: application/json; charset=utf-8
     "bank_billet.generated"
   ],
   "ssl_verification_enabled": true,
-  "active": true
+  "active": true,
+  "bank_billet_account_id": 2
 }
 </pre>
   </div>
@@ -697,7 +700,8 @@ Content-Type: application/json; charset=utf-8
       "bank_billet.generated"
     ],
     "ssl_verification_enabled": true,
-    "active": true
+    "active": true,
+    "bank_billet_account_id": 2
   }
 ]
 
