@@ -76,9 +76,9 @@ layout: pt
 | **payment_place**               | Não   | String  | 100     | Local de Pagamento
 | **instructions**                | Não   | Text    |         | Instruções para o Caixa
 | **document_date**               | Não   | Date    |         | Data do Documento
-| **document_type**               | Não   | String  |         | Tipo de Documento ([possíveis valores](#document_type))
+| **document_type**               | Sim   | String  |         | Tipo de Documento ([possíveis valores](#document_type)) Padrão: DM
 | **document_number**             | Não   | String |         | Número do Documento
-| **acceptance**                  | Não   | String  |         | Aceite
+| **acceptance**                  | Sim   | String  |         | Aceite. Padrão: N
 | **bank_billet_layout_id**       | Não   | Integer |         | ID do Modelo de Boleto
 | **remittance_id**               | Não   | Integer |         | ID da [Remessa](/reference/v1/remittances/)
 | **notes**                       | Não   | Text    |         | Anotações
@@ -162,7 +162,7 @@ layout: pt
 #### acceptance
 
 | S | Sim
-| N | Não
+| N | Não (Padrão)
 
 #### customer_person_type
 
@@ -173,7 +173,7 @@ layout: pt
 
 | **Código** | **Sigla**    | **Descrição**
 | 01     | CH       | Cheque
-| 02     | DM       | Duplicata Mercantil
+| 02     | DM       | Duplicata Mercantil (Padrão)
 | 03     | DMI      | Duplicata Mercantil p/ Indicação
 | 04     | DS       | Duplicata de Serviço
 | 05     | DSI      | Duplicata de Serviço p/ Indicação
