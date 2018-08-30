@@ -80,7 +80,6 @@ layout: pt
 | **document_number**             | Não   | String |         | Número do Documento
 | **acceptance**                  | Sim   | String  |         | Aceite. Padrão: N
 | **bank_billet_layout_id**       | Não   | Integer |         | ID do Modelo de Boleto
-| **remittance_id**               | Não   | Integer |         | ID da [Remessa](/reference/v1/remittances/)
 | **notes**                       | Não   | Text    |         | Anotações
 | **tags**                        | Não   | Array   |         | Tags associadas ao boleto
 | **days_for_sue**                | Não   | Integer |         | Dias corridos para Protesto/Negativação
