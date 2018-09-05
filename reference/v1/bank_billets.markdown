@@ -768,6 +768,20 @@ Array
     </tr>
     <tr>
       <td>
+        <strong>paid_at</strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        Array[2]
+      </td>
+      <td>
+        Filtro por faixa de datas de pagamento do boleto. Se qualquer um dos dois itens for deixado em branco, será inválido.
+      </td>
+    </tr>
+    <tr>
+      <td>
         <strong>our_number </strong>
       </td>
       <td>
