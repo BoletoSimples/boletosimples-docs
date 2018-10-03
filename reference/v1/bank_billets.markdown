@@ -810,7 +810,7 @@ Array
     </tr>
     <tr>
       <td>
-        <strong>customer_cnpj_cpf </strong>
+        <strong>cnpj_cpf </strong>
       </td>
       <td>
         Não
@@ -819,7 +819,7 @@ Array
         String
       </td>
       <td>
-        Filtro por CPF/CNPJ do cliente.
+        Filtro por CPF/CNPJ do cliente. Deve ser formatado. Ex. 000.000.000-00
       </td>
     </tr>
     <tr>
