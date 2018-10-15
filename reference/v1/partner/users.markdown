@@ -419,7 +419,7 @@ layout: pt
 <pre class="bash">
 curl -i \
 -u $BOLETOSIMPLES_TOKEN:x \
--H 'Content-Type: multipart/form-data' \
+-H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
 -X POST 'https://sandbox.boletosimples.com.br/api/v1/partner/users'
 </pre>

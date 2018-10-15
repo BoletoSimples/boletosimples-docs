@@ -48,7 +48,7 @@ breadcrumb: Pagamento de Boleto
 <pre class="bash">
 curl -i \
 -u $BOLETOSIMPLES_TOKEN:x \
--H 'Content-Type: multipart/form-data' \
+-H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
 -X POST 'https://sandbox.boletosimples.com.br/api/v1/bank_billet_payments'
 </pre>
@@ -84,7 +84,7 @@ Content-Type: application/json; charset=utf-8
 curl -i \
 -u $BOLETOSIMPLES_TOKEN:x \
 -d '{"bank_billet_payment":{"paid_amount":40.01,"bank_rate":4,02,"paid_at":"2017-03-13","paid_bank":"001","paid_agency":"00001","bank_billet_id":1}}' \
--H 'Content-Type: multipart/form-data' \
+-H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
 -X POST 'https://sandbox.boletosimples.com.br/api/v1/bank_billet_payments'
 </pre>
