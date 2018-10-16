@@ -22,6 +22,11 @@ Você também pode se inscrever para receber as notificações de alterações d
 
 #### Últimas alterações realizadas na API.
 
+### 16/10/2018
+
+* Documenta  [Pagamentos de Boleto](/reference/v1/bank_billet_payments)
+* Atualiza lista de [Eventos](/webhooks/events)
+
 ### 14/06/2018
 
 * Documenta  [E-mails enviados](/reference/v1/email_deliveries)

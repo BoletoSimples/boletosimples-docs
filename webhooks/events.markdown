@@ -33,6 +33,9 @@ Abaixo a listagem de eventos registrados pelo Boleto Simples:
 | bank_billet_discharge.created     | Toda vez que um registro de retorno é criado.      |
 | bank_billet_discharge.updated     | Toda vez que um registro de retorno é atualizado.  |
 | bank_billet_discharge.deleted     | Toda vez que um registro de retorno é excluído.    |
+| bank_billet_payment.created    | Toda vez que um pagamento é criado.      |
+| bank_billet_payment.updated    | Toda vez que um pagamento é atualizado.  |
+| bank_billet_payment.deleted    | Toda vez que um pagamento é excluído.    |
 | bank_billet_remittance.created    | Toda vez que um registro de remessa é criado.      |
 | bank_billet_remittance.updated    | Toda vez que um registro de remessa é atualizado.  |
 | bank_billet_remittance.deleted    | Toda vez que um registro de remessa é excluído.    |
