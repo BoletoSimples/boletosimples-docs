@@ -1,9 +1,9 @@
 ---
 title: Eventos
 position: 7
-layout: pt
 en: "/en/events"
 breadcrumb: Eventos
+layout: pt
 ---
 
 ## Eventos
@@ -185,7 +185,62 @@ Array
         Quantidade de registros por página
       </td>
     </tr>
-
+<tr>
+      <td>
+        <strong>object_id </strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        Number
+      </td>
+      <td>
+        ID do objeto que gerou o evento. Ex. ID do boleto.
+      </td>
+    </tr>
+<tr>
+      <td>
+        <strong>code </strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        String
+      </td>
+      <td>
+        Código do evento
+      </td>
+    </tr>
+<tr>
+      <td>
+        <strong>occurred_at_from </strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        String
+      </td>
+      <td>
+        Início da data de ocorrência do evento.
+      </td>
+    </tr>
+<tr>
+      <td>
+        <strong>occurred_at_to </strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        String
+      </td>
+      <td>
+        Fim da data de ocorrência do evento.
+      </td>
+    </tr>
   </tbody>
 </table>
 
