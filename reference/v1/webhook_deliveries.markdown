@@ -11,7 +11,8 @@ breadcrumb: Webhook Deliveries
 | Recurso                  | Descrição
 | ------------------------ | ------------------------
 | [GET /api/v1/webhook_deliveries/:id](#informações-do-webhook-delivery) | Informações do webhook delivery
-| [GET /api/v1/webhook_deliveries](#listar-webhook-delivery) | Listar webhook deliveries
+| [GET /api/v1/webhook_deliveries](#listar-webhook-deliveries) | Listar webhook deliveries
+| [PUT /api/v1/webhook_deliveries/resend](#reenviar-webhook-deliveries) | Reenviar webhook deliveries
 
 ### Modelo de Dados
 
@@ -30,6 +31,22 @@ breadcrumb: Webhook Deliveries
 | **duration**         | N/A   | Integer  |         | Duração em milesegundos do round trip entre requisição e resposta
 | **event**            | N/A   | Object   |         | Evento relativo à entrega. [Leia mais](/reference/v1/events/#modelo-de-dados)
 | **webhook**          | N/A   | Object   |         | [Webhook](/reference/v1/webhooks/#modelo-de-dados)
+| **event_code**       | N/A   | String   | 255     | Código do evento. Ver possíveis valores na [lista de eventos](/webhooks/events)
+| **event_id**         | N/A   | Integer  |         | ID do Evento
+| **webhook_id**       | N/A   | Integer  |         | ID do Webhook
+| **response_code**    | N/A   | Integer  |         | Código HTTP da resposta. [Leia mais](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes)
+| **uid**              | N/A   | String   | 255     | UID usado no cabeçalho da requisição
+| **status**           | N/A   | Integer  |         | Situação do webhook delivery ([possíveis valores](#status))
+
+
+### Dicionário de Dados
+
+#### status
+
+| 0 | pending
+| 1 | delivered
+| 2 | failed
+
 
 ### Informações do webhook delivery
 
@@ -262,35 +279,53 @@ Array
   </thead>
   <tbody>
     <tr>
-      <td>
-        <strong>page </strong>
-      </td>
-      <td>
-        Não
-      </td>
-      <td>
-        Number
-      </td>
-      <td>
-        Número da Página
-      </td>
+      <td><strong>page </strong></td>
+      <td>Não</td>
+      <td>Number</td>
+      <td>Número da Página</td>
     </tr>
-
     <tr>
-      <td>
-        <strong>per_page </strong>
-      </td>
-      <td>
-        Não
-      </td>
-      <td>
-        Number
-      </td>
-      <td>
-        Quantidade de registros por página
-      </td>
+      <td><strong>per_page </strong></td>
+      <td>Não</td>
+      <td>Number</td>
+      <td>Quantidade de registros por página</td>
     </tr>
-
+    <tr>
+      <td><strong>event_code</strong></td>
+      <td>Não</td>
+      <td>String</td>
+      <td>Código do evento. Ver possíveis valores na <a href="/webhooks/events">lista de eventos</a></td>
+    </tr>
+    <tr>
+      <td><strong>event_id </strong></td>
+      <td>Não</td>
+      <td>Number</td>
+      <td>ID do Evento</td>
+    </tr>
+    <tr>
+      <td><strong>webhook_id </strong></td>
+      <td>Não</td>
+      <td>Number</td>
+      <td>ID do Webhook</td>
+    </tr>
+    <tr>
+      <td><strong>response_code</strong></td>
+      <td>Não</td>
+      <td>Integer</td>
+      <td>Código HTTP da resposta. <a href="https://en.wikipedia.org/wiki/List_of_HTTP_status_codes">Leia mais</a></td>
+    </tr>
+    <tr>
+      <td><strong>uid</strong></td>
+      <td>Não</td>
+      <td>String</td>
+      <td>UID usado no cabeçalho da requisição</td>
+    </tr>
+    <tr>
+      <td><strong>status</strong></td>
+      <td>Não</td>
+      <td>Integer</td>
+      <td>Situação do webhook delivery (<a href="#status">possíveis valores</a>)</td>
+    </tr>
   </tbody>
 </table>
 
@@ -493,4 +528,93 @@ Próxima Página: https://sandbox.boletosimples.com.br/api/v1/transactions?page=
 Última Página: https://sandbox.boletosimples.com.br/api/v1/transactions?page=2&per_page=2
 </pre>
   </div-->
+</div>
+
+
+### Reenviar webhook deliveries
+
+`PUT /api/v1/webhook_deliveries/resend` ou `PATCH /api/v1/webhook_deliveries/resend`
+
+<table class='table table-bordered'>
+  <thead>
+    <tr>
+      <th>Parâmetro</th>
+      <th data-container="body" data-toggle="tooltip" title="Obrigatório">Obrigatório</th>
+      <th>Tipo</th>
+      <th>Descrição</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>event_code</strong></td>
+      <td>Não</td>
+      <td>String</td>
+      <td>Código do evento. Ver possíveis valores na <a href="/webhooks/events">lista de eventos</a></td>
+    </tr>
+    <tr>
+      <td><strong>event_id </strong></td>
+      <td>Não</td>
+      <td>Integer</td>
+      <td>ID do Evento</td>
+    </tr>
+    <tr>
+      <td><strong>webhook_id </strong></td>
+      <td>Não</td>
+      <td>Integer</td>
+      <td>ID do Webhook</td>
+    </tr>
+    <tr>
+      <td><strong>response_code</strong></td>
+      <td>Não</td>
+      <td>Integer</td>
+      <td>Código HTTP da resposta. <a href="https://en.wikipedia.org/wiki/List_of_HTTP_status_codes">Leia mais</a></td>
+    </tr>
+    <tr>
+      <td><strong>uid</strong></td>
+      <td>Não</td>
+      <td>String</td>
+      <td>UID usado no cabeçalho da requisição</td>
+    </tr>
+    <tr>
+      <td><strong>status</strong></td>
+      <td>Não</td>
+      <td>Integer</td>
+      <td>Situação do webhook delivery (<a href="#status">possíveis valores</a>)</td>
+    </tr>
+  </tbody>
+</table>
+
+#### Exemplo
+
+<ul class="nav nav-tabs" role="tablist">
+  <li class="active"><a href="#bash4" role="tab" data-toggle="tab">Bash</a></li>
+  <!--li><a href="#ruby4" role="tab" data-toggle="tab">Ruby</a></li>
+  <li><a href="#php4" role="tab" data-toggle="tab">PHP</a></li-->
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="bash4">
+    <small>Requisição:</small>
+
+<pre class="bash">
+curl -i \
+-u $BOLETOSIMPLES_TOKEN:x \
+-H 'Content-Type: application/json' \
+-H 'User-Agent: MyApp (myapp@example.com)' \
+-d '{"event_code":"bank_billet.paid","status":2}' \
+-X PUT "https://sandbox.boletosimples.com.br/api/v1/webhook_deliveries/resend"
+</pre>
+
+    <small>Resposta:</small>
+
+<pre class="http">
+HTTP/1.1 200 OK
+Date: Fri, 17 Oct 2014 19:46:16 GMT
+Content-Type: application/json; charset=utf-8
+Status: 200 OK
+...
+
+{"message":"Solicitação de reenvio de webhook deliveries enviada para processamento"}
+</pre>
+</div>
 </div>
