@@ -81,7 +81,7 @@ breadcrumb: Registro de Remessa
         String
       </td>
       <td>
-        Código de operação de registro. Consulte os possíveis valores <a href="/bank_contracts">para cada banco</a>. Obrigatório os parâmetros <code class="highlighter-rouge">expire_from, expire_to, bank_billet_account_id</code>
+        Código de operação de registro. Consulte os possíveis valores <a href="/bank_contracts">para cada banco</a>.
       </td>
     </tr>
     <tr>
@@ -109,7 +109,7 @@ breadcrumb: Registro de Remessa
         Number
       </td>
       <td>
-        ID da Carteira. Obrigatório os parâmetros <code class="highlighter-rouge">expire_from, expire_to, code</code>
+        ID da Carteira
       </td>
     </tr>
     <tr>
@@ -123,7 +123,7 @@ breadcrumb: Registro de Remessa
         Date
       </td>
       <td>
-        A partir de Data de vencimento. Obrigatório os parâmetros <code class="highlighter-rouge">expire_to, code, bank_billet_account_id</code>
+        A partir de Data de vencimento
       </td>
     </tr>
     <tr>
@@ -137,7 +137,7 @@ breadcrumb: Registro de Remessa
         Date
       </td>
       <td>
-        Até Data de vencimento. Obrigatório os parâmetros <code class="highlighter-rouge">expire_from, code, bank_billet_account_id</code>
+        Até Data de vencimento
       </td>
     </tr>
   </tbody>
@@ -226,6 +226,76 @@ Content-Type: application/json; charset=utf-8
       </td>
       <td>
         Número da Página
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>per_page </strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        Number
+      </td>
+      <td>
+        Quantidade de registros por página (Maximo de 250)
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>our_code </strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        String
+      </td>
+      <td>
+        Código de operação de registro. Consulte os possíveis valores <a href="/bank_contracts">para cada banco</a>.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>bank_billet_account_id </strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        Number
+      </td>
+      <td>
+        ID da Carteira
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>expire_from </strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        Date
+      </td>
+      <td>
+        A partir de Data de vencimento
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>expire_to </strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        Date
+      </td>
+      <td>
+        Até Data de vencimento
       </td>
     </tr>
   </tbody>
