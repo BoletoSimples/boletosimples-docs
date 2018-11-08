@@ -21,7 +21,6 @@ breadcrumb: Registro de Retorno
 | **our_occurrence**         | Não  | String  | 4       | Código de operação de retorno  |
 | **discharge_id**           | Não  | Integer |         | ID do Retorno                  |
 | **bank_billet_id**         | Não  | Integer |         | ID do Boleto                   |
-| **bank_billet_account_id** | N/A  | Integer |         | ID da Carteira                 |
 | **processed_at**           | N/A  | Date    |         | Quando foi processado          |
 | **date_of_occurrence**     | N/A  | Date    |         | Data da ocorrência             |
 | **occurrence**             | N/A  | String  | 2       | Código da operação (banco)     |
