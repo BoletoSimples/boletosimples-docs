@@ -123,6 +123,8 @@ layout: pt
 | **guarantor_address_number**     | Não   | String  | 10     | Número do Sacador/Avalista
 | **guarantor_address_complement** | Não   | String  | 60     | Complemento do Sacador/Avalista
 | **guarantor_phone_number**       | Não   | String  | 11      | Telefone (com DDD) do Sacador/Avalista
+| **registered_at**                | N/A   | Date    |         | Data do registro
+
 
 ### Dicionário de Dados
 
@@ -754,6 +756,34 @@ Array
     </tr>
     <tr>
       <td>
+        <strong>expire_from </strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        Date
+      </td>
+      <td>
+        A partir da Data de vencimento
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>expire_to </strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        Date
+      </td>
+      <td>
+        Até a Data de vencimento
+      </td>
+    </tr>
+    <tr>
+      <td>
         <strong>expire_at </strong>
       </td>
       <td>
@@ -763,7 +793,35 @@ Array
         Array[2]
       </td>
       <td>
-        Filtro por faixa de datas de vencimento do boleto. Se qualquer um dos dois itens for deixado em branco, será inválido.
+        Filtro por faixa de datas de vencimento do boleto. Se qualquer um dos dois itens for deixado em branco, será inválido. <div class="alert alert-danger"><strong>ATENÇÃO</strong> Este atributo está descontinuado e será removido do sistema em breve. Utilize <code class="highlighter-rouge">expire_from</code> e <code class="highlighter-rouge">expire_to</code>.</div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>paid_from </strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        Date
+      </td>
+      <td>
+        A partir da Data de pagamento
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>paid_to </strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        Date
+      </td>
+      <td>
+        Até a Data de pagamento
       </td>
     </tr>
     <tr>
@@ -777,7 +835,7 @@ Array
         Array[2]
       </td>
       <td>
-        Filtro por faixa de datas de pagamento do boleto. Se qualquer um dos dois itens for deixado em branco, será inválido.
+        Filtro por faixa de datas de pagamento do boleto. Se qualquer um dos dois itens for deixado em branco, será inválido. <div class="alert alert-danger"><strong>ATENÇÃO</strong> Este atributo está descontinuado e será removido do sistema em breve. Utilize <code class="highlighter-rouge">paid_from</code> e <code class="highlighter-rouge">paid_to</code>.</div>
       </td>
     </tr>
     <tr>
@@ -834,6 +892,34 @@ Array
       </td>
       <td>
         Filtro ID da Carteira.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>registered_from </strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        Date
+      </td>
+      <td>
+        A partir da Data de Registro
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>registered_to </strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        Date
+      </td>
+      <td>
+        Até a Data de Registro
       </td>
     </tr>
   </tbody>
