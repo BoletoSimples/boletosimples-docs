@@ -23,6 +23,8 @@ en: "/en/reference"
 
 ### [Registro de Remessa](/reference/v1/bank_billet_remittances)
 
+### [Registro de Retorno](/reference/v1/bank_billet_discharges)
+
 ### [Pagamentos de Boleto](/reference/v1/bank_billet_payments)
 
 ### [Eventos](/reference/v1/events)
