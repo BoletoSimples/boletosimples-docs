@@ -187,6 +187,34 @@ Content-Type: application/json; charset=utf-8
         ID da Carteira.
       </td>
     </tr>
+    <tr>
+      <td>
+        <strong>paid_from </strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        Date
+      </td>
+      <td>
+        A partir da Data de pagamento
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>paid_to </strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        Date
+      </td>
+      <td>
+        Até a Data de pagamento
+      </td>
+    </tr>
   </tbody>
 </table>
 
