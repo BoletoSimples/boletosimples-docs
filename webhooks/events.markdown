@@ -10,7 +10,7 @@ en: "/en/webhooks/events"
 Alguns eventos que ocorrem dentro do Boleto Simples são registrados. Todos eles, quando registrados, geram notificações para cada webhook que esteja ativo e configurado para receber o respectivo evento.
 Você pode acessar a qualquer momento o [Log de Eventos](https://boletosimples.com.br/conta/eventos) da sua conta.
 
-Os códigos dos eventos seguem um padrão `resource.event`, onde `resource` é o nome do recursos que gerou o evento e `event` é a ação propriamente dita.
+Os códigos dos eventos seguem um padrão `resource.event`, onde `resource` é o nome do recurso que gerou o evento e `event` é a ação propriamente dita.
 
 Abaixo a listagem de eventos registrados pelo Boleto Simples:
 
@@ -23,6 +23,7 @@ Abaixo a listagem de eventos registrados pelo Boleto Simples:
 | bank_billet.overdue               | Toda vez que um boleto fica vencido.               |
 | bank_billet.paid                  | Toda vez que um boleto é pago.                     |
 | bank_billet.blocked               | Toda vez que o pagamento de um boleto é bloqueado. |
+| bank_billet.rejected              | Toda vez que um boleto é rejeitado pelo banco.     |
 | bank_billet.due_date              | Notifica boleto com 15, 7, 3 e 1 dias antes do vencimento. |
 | bank_billet_account.created       | Toda vez que uma carteira de cobrança é criada.    |
 | bank_billet_account.homologated   | Toda vez que uma carteira de cobrança é enviada para homologação.<br/><br/> **Atenção!** O código deste evento será alterado para **bank_billet_account.homologation_started** em breve. Faça um código que aceite ambos os códigos. |
@@ -67,6 +68,8 @@ Abaixo a listagem de eventos registrados pelo Boleto Simples:
 | user.bank_billet_creation_blocked | Toda vez que a emissão de boletos é bloqueada.     |
 | withdrawal.requested              | Toda vez que um saque é solicitado.                |
 | withdrawal.transferred            | Toda vez que um saque é transferido.               |
+| addon.activated                   | Toda vez que um add-on é ativado.                  |
+| addon.removed                     | Toda vez que um add-on é removido.                 |
 
 ### Evento Ping
 
