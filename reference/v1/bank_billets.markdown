@@ -922,6 +922,34 @@ Array
         Até a Data de Registro
       </td>
     </tr>
+    <tr>
+      <td>
+        <strong>created_from </strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        Date
+      </td>
+      <td>
+        A partir da Data de criação
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>created_to </strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        Date
+      </td>
+      <td>
+        Até a Data de criação
+      </td>
+    </tr>
   </tbody>
 </table>
 
