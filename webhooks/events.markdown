@@ -1,8 +1,8 @@
 ---
 title: Eventos
 position: 2
-layout: pt
 en: "/en/webhooks/events"
+layout: pt
 ---
 
 ## Eventos
@@ -24,6 +24,7 @@ Abaixo a listagem de eventos registrados pelo Boleto Simples:
 | bank_billet.paid                  | Toda vez que um boleto é pago.                     |
 | bank_billet.blocked               | Toda vez que o pagamento de um boleto é bloqueado. |
 | bank_billet.rejected              | Toda vez que um boleto é rejeitado pelo banco.     |
+| bank_billet.registered              | Toda vez que um boleto é registrado pelo banco.     |
 | bank_billet.due_date              | Notifica boleto com 15, 7, 3 e 1 dias antes do vencimento. |
 | bank_billet_account.created       | Toda vez que uma carteira de cobrança é criada.    |
 | bank_billet_account.homologated   | Toda vez que uma carteira de cobrança é enviada para homologação.<br/><br/> **Atenção!** O código deste evento será alterado para **bank_billet_account.homologation_started** em breve. Faça um código que aceite ambos os códigos. |
