@@ -177,7 +177,8 @@ A regra é que todos os payloads possuem as chaves `event_code`, `webhook`, `obj
     "address_number": "0",
     "created_via_api": true,
     "mobile_local_code": null,
-    "address_complement": "Rua Glória, 36"
+    "address_complement": "Rua Glória, 36",
+    "contact_person": "José da Silva"
   },
   "event_code": "customer.created",
   "webhook": {
@@ -725,7 +726,8 @@ A regra é que todos os payloads possuem as chaves `event_code`, `webhook`, `obj
     "bank_contract_slug": "banrisul-bs-4-2",
     "beneficiary_address": "Rua Glória",
     "beneficiary_cnpj_cpf": "05.813.794/0001-26",
-    "next_remittance_number": 2
+    "next_remittance_number": 2,
+    "custom_name": "My Account"
   },
   "changes": {
     "updated_at": [

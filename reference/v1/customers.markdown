@@ -41,6 +41,7 @@ layout: pt
 | **notes**              | Não   | Text    |         | Anotações
 | **email_cc**           | Não   | String  | 80     | E-mail alternativo
 | **created_via_api**    | N/A   | Boolean |         | Enviado pela API
+| **contact_person**     | N/A   | String  | 255     | Pessoa de contato
 
 ### Criar cliente
 
@@ -191,7 +192,8 @@ Content-Type: application/json; charset=utf-8
   "phone_number":null,
   "zipcode":"20071004",
   "mobile_local_code":null,
-  "state":"RJ"
+  "state":"RJ",
+  "contact_person":"Nome do Contato"
 }
 </pre>
   </div>
@@ -210,7 +212,8 @@ Content-Type: application/json; charset=utf-8
   zipcode: "20071004",
   address_number: "111",
   address_complement: "Sala 4",
-  phone_number: "2112123434"
+  phone_number: "2112123434",
+  contact_person: "Nome do Contato"
 })
 if @customer.persisted?
   puts "Sucesso :)"
@@ -240,7 +243,8 @@ Sucesso :)
          "mobile_number" => nil,
            "person_type" => "individual",
      "mobile_local_code" => nil,
-       "created_via_api" => true
+       "created_via_api" => true,
+       "nome_do_contato" => "Nome do Contato"
 }
 </pre>
   </div>
@@ -259,7 +263,8 @@ $customer = BoletoSimples\Customer::create([
   'zipcode' => "20071004",
   'address_number' => "111",
   'address_complement' => "Sala 4",
-  'phone_number' => "2112123434"
+  'phone_number' => "2112123434",
+  "nome_do_contato" => "Nome do Contato"
 ]);
 if($customer->isPersisted()) {
   echo "Sucesso :)\n";
@@ -291,6 +296,7 @@ Array
     [mobile_local_code] =>
     [state] => RJ
     [created_via_api] => 1
+    [contact_person] => Nome do Contato
 )
 </pre>
   </div>
@@ -345,7 +351,8 @@ Content-Type: application/json; charset=utf-8
   "phone_number":null,
   "zipcode":"20071004",
   "mobile_local_code":null,
-  "state":"RJ"
+  "state":"RJ",
+  "contact_person":"Nome do Contato"
 }
 </pre>
   </div>
@@ -376,7 +383,8 @@ puts @customer.attributes
      "mobile_local_code" => nil,
                  "state" => "RJ",
        "created_via_api" => true,
-                    "id" => 67
+                    "id" => 67,
+        "contact_person" => "Nome do Contato"
 }
 </pre>
   </div>
@@ -409,6 +417,7 @@ Array
     [mobile_local_code] =>
     [state] => RJ
     [created_via_api] => 1
+    [contact_person] => Nome do Contato
 )
 </pre>
   </div>
@@ -558,7 +567,8 @@ Location: https://sandbox.boletosimples.com.br/api/v1/customers/1
   "phone_number":null,
   "zipcode":"20071004",
   "mobile_local_code":null,
-  "state":"RJ"
+  "state":"RJ",
+  "contact_person":"Nome do Contato"
 }
 </pre>
   </div>
@@ -700,7 +710,8 @@ Content-Type: application/json; charset=utf-8
     "phone_number":null,
     "zipcode":"20071004",
     "mobile_local_code":null,
-    "state":"RJ"
+    "state":"RJ",
+    "contact_person":"Nome do Contato"
   }
 ]
 </pre>
@@ -830,7 +841,8 @@ Content-Type: application/json; charset=utf-8
   "phone_number":null,
   "zipcode":"20071004",
   "mobile_local_code":null,
-  "state":"RJ"
+  "state":"RJ",
+  "contact_person":"Nome do Contato"
 }
 </pre>
   </div>
@@ -975,7 +987,8 @@ Content-Type: application/json; charset=utf-8
   "phone_number":null,
   "zipcode":"20071004",
   "mobile_local_code":null,
-  "state":"RJ"
+  "state":"RJ",
+  "contact_person":"Nome do Contato"
 }
 </pre>
   </div>
