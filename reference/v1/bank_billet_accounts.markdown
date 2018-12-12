@@ -49,6 +49,7 @@ breadcrumb: Carteiras de Cobrança
 | [**default**](#default)  | Não   | Boolean |         | Padrão
 | **configuration**        | Não   | JSON    |         | Configuração de dados padrões para boleto
 | **bank_contract**        | Não   | Hash    |         | Dados da Carteira ***
+| **custom_name**          | Não   | String  | 255     | Nome da Carteira para identificação dentro do Boleto Simples
 
 '*' Depende da carteira escolhida.
 
@@ -239,6 +240,7 @@ Content-Type: application/json; charset=utf-8
   "beneficiary_address":"Av. Presidente Vargas, 633 sala 1716. Rio de Janeiro - RJ",
   "name":"Bancoob/Sicoob 02 - CC 00003666-8",
   "status":"pending",
+  "custom_name":"Minha Carteira",
   "bank_contract": {
     "bank":{
       "code":"sicoob",
@@ -296,6 +298,7 @@ Sucesso :)
      "beneficiary_address" => "Av. Presidente Vargas, 633 sala 1716. Rio de Janeiro - RJ",
                     "name" => "Bancoob/Sicoob 02 - CC 00003666-8",
                   "status" => "pending",
+             "custom_name" => nil,
            "bank_contract" => {
                                 "bank" => {
                                   "code" => "sicoob",
@@ -416,6 +419,7 @@ Content-Type: application/json; charset=utf-8
   "beneficiary_address":"Av. Presidente Vargas, 633 sala 1716. Rio de Janeiro - RJ",
   "name":"Bancoob/Sicoob 02 - CC 00003666-8",
   "status":"pending",
+  "custom_name":"Minha Carteira",
   "bank_contract": {
     "bank":{
       "code":"sicoob",
@@ -459,6 +463,7 @@ ap @bank_billet_account.attributes
      "beneficiary_address" => "Av. Presidente Vargas, 633 sala 1716. Rio de Janeiro - RJ",
                     "name" => "Bancoob/Sicoob 02 - CC 00003666-8",
                   "status" => "pending",
+             "custom_name" => "Minha Carteira",
            "bank_contract" => {
                                 "bank" => {
                                   "code" => "sicoob",
@@ -781,6 +786,7 @@ Content-Type: application/json; charset=utf-8
     "beneficiary_address":"Av. Presidente Vargas, 633 sala 1716. Rio de Janeiro - RJ",
     "name":"Bancoob/Sicoob 02 - CC 00003666-8",
     "status":"pending",
+    "custom_name":"Minha Carteira",
     "bank_contract": {
       "bank":{
         "code":"sicoob",
@@ -900,6 +906,7 @@ Content-Type: application/json; charset=utf-8
   "beneficiary_address":"Av. Presidente Vargas, 633 sala 1716. Rio de Janeiro - RJ",
   "name":"Bancoob/Sicoob 02 - CC 00003666-8",
   "status":"homologating",
+  "custom_name":"Minha Carteira",
   "bank_contract": {
     "bank":{
       "code":"sicoob",
