@@ -124,7 +124,7 @@ layout: pt
 | **guarantor_address_complement** | Não   | String  | 60     | Complemento do Sacador/Avalista
 | **guarantor_phone_number**       | Não   | String  | 11      | Telefone (com DDD) do Sacador/Avalista
 | **registered_at**                | N/A   | Date    |         | Data do registro
-
+| **prevent_registration**         | Não   | Boolean |         | Caso `true`, impede que o boleto seja registrado. Para ser usado nos casos em que o boleto já foi registrado fora do Boleto Simples mas deseja-se incluí-lo no sistema.
 
 ### Dicionário de Dados
 
