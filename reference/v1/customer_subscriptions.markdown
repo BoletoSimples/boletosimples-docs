@@ -68,6 +68,7 @@ breadcrumb: Assinaturas
 | **notes**                       | Não   | Text    |         | Anotações
 | **tags**                        | Não   | Array   |         | Tags associadas
 | **bank_billet_ids**             | N/A   | Array   |         | IDs de boletos vinculados a assinatura
+| **prevent_registration**        | Não   | Boolean |         | Caso `true`, impede que o boleto seja registrado. Para ser usado nos casos em que o boleto já foi registrado fora do Boleto Simples mas deseja-se incluí-lo no sistema.
 
 ### Dicionário de Dados
 
