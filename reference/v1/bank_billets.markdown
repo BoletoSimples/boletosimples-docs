@@ -64,7 +64,7 @@ layout: pt
 | **days_for_fine**               | Não   | Integer |         | Quantidade de dias após o vencimento que a multa começará a incidir. O valor default é 1 dia (o dia posterior ao vencimento).
 | **fine_for_delay**              | Não   | Float   |         | Alias para `fine_percentage`
 | **interest_type**               | Não   | Integer |         | Tipo de juros ([possíveis valores](#interest_type))
-| **interest_daily_percentage**   | Não   | Float   |         | Porcentagem diária de juros. Obrigatório se `interest_type` é igual a 1 ou 3
+| **interest_daily_percentage**   | Não   | Float   |         | Porcentagem diária de juros. De 0.0 à 100.0 (Ex 1.5% = 1.5) Obrigatório se `interest_type` é igual a 1 ou 3
 | **interest_daily_value**        | Não   | String  |         | Valor diário de juros. Obrigatório se `interest_type` é igual a 2 ou 4. (R$) Formato: 1.234,34
 | **interest_monthly_percentage** | Não   | Float   |         | Juros de mora mensal (O valor será dividido por 30. Ex 3% = 0,1% ao dia.) Obrigatório se `interest_type` é igual a 5 ou 6
 | **days_for_interest**               | Não   | Integer |         | Quantidade de dias após o vencimento que a mora começará a incidir. O valor default é 1 dia (o dia posterior ao vencimento).
