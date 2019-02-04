@@ -53,7 +53,6 @@ layout: pt
 | **status**                      | N/A   | String  |         | Situação do boleto ([possíveis valores](#status))
 | **paid_at**                     | N/A   | Date    |         | Data do pagamento
 | **paid_amount**                 | N/A   | Float   |         | Valor pago
-| **shorten_url**                 | N/A   | String  |         | URL para visualização do boleto
 | **url**                         | N/A   | String  |         | URL para visualização do boleto
 | **carne_url**                   | N/A   | String  |         | URL para visualização do carnê(Quando for parcela)
 | **formats**                     | N/A   | String  |         | URLs com formatos PDF e Imagem visualização do boleto
@@ -413,7 +412,6 @@ Content-Type: application/json; charset=utf-8
   "paid_at":null,
   "description":"Prestação de Serviço",
   "status":"generating",
-  "shorten_url":null,
   "customer_person_type":"individual",
   "customer_person_name":"Nome do Cliente",
   "customer_cnpj_cpf":"125.812.717-28",
@@ -425,7 +423,6 @@ Content-Type: application/json; charset=utf-8
   "customer_address_complement":null,
   "customer_phone_number":null,
   "customer_email":null,
-  "send_email_on_creation":null,
   "created_via_api":true,
   "customer_city_name":"Rio de Janeiro",
   "paid_amount":0.0,
@@ -485,9 +482,6 @@ Sucesso :)
                              "id" => 854,
                         "paid_at" => nil,
                          "status" => "generating",
-                    "shorten_url" => nil,
-               "notification_url" => nil,
-         "send_email_on_creation" => nil,
                 "created_via_api" => true,
                     "paid_amount" => 0.0
 }
@@ -533,7 +527,6 @@ Array
     [paid_at] =>
     [description] => Despesas do contrato 0012
     [status] => generating
-    [shorten_url] =>
     [customer_person_type] => individual
     [customer_person_name] => Joao da Silva
     [customer_cnpj_cpf] => 012.345.678-90
@@ -545,8 +538,6 @@ Array
     [customer_address_complement] => Sala 4
     [customer_phone_number] => 2112123434
     [customer_email] => cliente@example.com
-    [notification_url] =>
-    [send_email_on_creation] =>
     [created_via_api] => 1
     [customer_city_name] => Rio de Janeiro
     [paid_amount] => 0
@@ -595,7 +586,7 @@ Content-Type: application/json; charset=utf-8
   "paid_at":null,
   "description":"Prestação de Serviço",
   "status":"opened",
-  "shorten_url":"http://bole.to/xxxxxxxx",
+  "url":"http://bole.to/xxxxxxxx",
   "customer_person_type":"individual",
   "customer_person_name":"Nome do Cliente",
   "customer_cnpj_cpf":"125.812.717-28",
@@ -607,7 +598,6 @@ Content-Type: application/json; charset=utf-8
   "customer_address_complement":null,
   "customer_phone_number":null,
   "customer_email":null,
-  "send_email_on_creation":null,
   "created_via_api":true,
   "customer_city_name":"Rio de Janeiro",
   "paid_amount":0.0,
@@ -632,7 +622,6 @@ puts @bank_billet.attributes
                         "paid_at" => nil,
                     "description" => "Despesas do contrato 0012",
                          "status" => "opened",
-                    "shorten_url" => "http://bole.to/xxxxxxxx",
            "customer_person_type" => "individual",
            "customer_person_name" => "Joao da Silva",
               "customer_cnpj_cpf" => "012.345.678-90",
@@ -644,8 +633,6 @@ puts @bank_billet.attributes
     "customer_address_complement" => "Sala 4",
           "customer_phone_number" => "2112123434",
                  "customer_email" => "cliente@example.com",
-               "notification_url" => nil,
-         "send_email_on_creation" => nil,
                 "created_via_api" => true,
              "customer_city_name" => "Rio de Janeiro",
                     "paid_amount" => 0.0,
@@ -673,7 +660,6 @@ Array
     [paid_at] =>
     [description] => Despesas do contrato 0012
     [status] => opened
-    [shorten_url] => http://bole.to/xxxxxxxx
     [customer_person_type] => individual
     [customer_person_name] => Joao da Silva
     [customer_cnpj_cpf] => 012.345.678-90
@@ -685,8 +671,6 @@ Array
     [customer_address_complement] => Sala 4
     [customer_phone_number] => 2112123434
     [customer_email] => cliente@example.com
-    [notification_url] =>
-    [send_email_on_creation] =>
     [created_via_api] => 1
     [customer_city_name] => Rio de Janeiro
     [paid_amount] => 0
@@ -991,7 +975,7 @@ Content-Type: application/json; charset=utf-8
     "paid_at":null,
     "description":"Prestação de Serviço",
     "status":"opened",
-    "shorten_url":"http://bole.to/xxxxxxxx",
+    "url":"http://bole.to/xxxxxxxx",
     "customer_person_type":"individual",
     "customer_person_name":"Nome do Cliente",
     "customer_cnpj_cpf":"125.812.717-28",
@@ -1200,7 +1184,7 @@ Content-Type: application/json; charset=utf-8
   "paid_at":null,
   "description":"Prestação de Serviço",
   "status":"opened",
-  "shorten_url":"http://bole.to/xxxxxxxx",
+  "url":"http://bole.to/xxxxxxxx",
   "customer_person_type":"individual",
   "customer_person_name":"Nome do Cliente",
   "customer_cnpj_cpf":"125.812.717-28",
@@ -1521,7 +1505,7 @@ Content-Type: application/json; charset=utf-8
   "paid_at":null,
   "description":"Prestação de Serviço",
   "status":"opened",
-  "shorten_url":"http://bole.to/xxxxxxxx",
+  "url":"http://bole.to/xxxxxxxx",
   "customer_person_type":"individual",
   "customer_person_name":"Nome do Cliente",
   "customer_cnpj_cpf":"125.812.717-28",
@@ -1646,7 +1630,6 @@ Content-Type: application/json; charset=utf-8
   "paid_at":null,
   "description":"Prestação de Serviço",
   "status":"generating",
-  "shorten_url":null,
   "customer_person_type":"individual",
   "customer_person_name":"Nome do Cliente",
   "customer_cnpj_cpf":"125.812.717-28",
@@ -1658,7 +1641,6 @@ Content-Type: application/json; charset=utf-8
   "customer_address_complement":null,
   "customer_phone_number":null,
   "customer_email":null,
-  "send_email_on_creation":null,
   "created_via_api":true,
   "customer_city_name":"Rio de Janeiro",
   "paid_amount":0.0,
@@ -1718,9 +1700,6 @@ Sucesso :)
                              "id" => 854,
                         "paid_at" => nil,
                          "status" => "generating",
-                    "shorten_url" => nil,
-               "notification_url" => nil,
-         "send_email_on_creation" => nil,
                 "created_via_api" => true,
                     "paid_amount" => 0.0
 }
@@ -1766,7 +1745,6 @@ Array
     [paid_at] =>
     [description] => Despesas do contrato 0012
     [status] => generating
-    [shorten_url] =>
     [customer_person_type] => individual
     [customer_person_name] => Joao da Silva
     [customer_cnpj_cpf] => 012.345.678-90
@@ -1778,8 +1756,6 @@ Array
     [customer_address_complement] => Sala 4
     [customer_phone_number] => 2112123434
     [customer_email] => cliente@example.com
-    [notification_url] =>
-    [send_email_on_creation] =>
     [created_via_api] => 1
     [customer_city_name] => Rio de Janeiro
     [paid_amount] => 0
@@ -2420,7 +2396,6 @@ Content-Type: application/json; charset=utf-8
   "paid_at":"2014-11-15",
   "description":"Prestação de Serviço",
   "status":"paid",
-  "shorten_url":null,
   "customer_person_type":"individual",
   "customer_person_name":"Nome do Cliente",
   "customer_cnpj_cpf":"125.812.717-28",
@@ -2492,9 +2467,6 @@ Sucesso :)
                              "id" => 854,
                         "paid_at" => nil,
                          "status" => "generating",
-                    "shorten_url" => nil,
-               "notification_url" => nil,
-         "send_email_on_creation" => nil,
                 "created_via_api" => true,
                     "paid_amount" => 0.0
 }
@@ -2540,7 +2512,6 @@ Array
     [paid_at] =>
     [description] => Despesas do contrato 0012
     [status] => generating
-    [shorten_url] =>
     [customer_person_type] => individual
     [customer_person_name] => Joao da Silva
     [customer_cnpj_cpf] => 012.345.678-90
@@ -2552,8 +2523,6 @@ Array
     [customer_address_complement] => Sala 4
     [customer_phone_number] => 2112123434
     [customer_email] => cliente@example.com
-    [notification_url] =>
-    [send_email_on_creation] =>
     [created_via_api] => 1
     [customer_city_name] => Rio de Janeiro
     [paid_amount] => 0
