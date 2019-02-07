@@ -124,6 +124,7 @@ layout: pt
 | **guarantor_phone_number**       | Não   | String  | 11      | Telefone (com DDD) do Sacador/Avalista
 | **registered_at**                | N/A   | Date    |         | Data do registro
 | **prevent_registration**         | Não   | Boolean |         | Caso `true`, impede que o boleto seja registrado. Para ser usado nos casos em que o boleto já foi registrado fora do Boleto Simples mas deseja-se incluí-lo no sistema.
+| **control_number**               | Não   | String  | 25      | Pode conter qualquer informação de interesse da Empresa. A informação contida neste campo sempre retornará com o respectivo título no arquivo-retorno. Caso não seja informado, será enviado na remessa o valor passado em `document_number`.
 
 ### Dicionário de Dados
 
