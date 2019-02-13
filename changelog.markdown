@@ -11,16 +11,23 @@ layout: pt
 
 A documentação da API é um [projeto público no Github](https://github.com/BoletoSimples/boletosimples-api). Você pode acompanhar as mudanças na documentação na [página dos commits](https://github.com/BoletoSimples/boletosimples-api/commits/gh-pages).
 
-#### Receba as atualizações por e-mail
+<!-- #### Receba as atualizações por e-mail
 
 Você também pode se inscrever para receber as notificações de alterações da API por e-mail.
 
 <form action="https://www.getdrip.com/forms/93702557/submissions" method="post" data-drip-embedded-form="93702557">
 <input type="email" name="fields\[email\]" value="" required="required" placeholder="Seu e-mail" />
 <input type="submit" name="submit" value="Inscrever" data-drip-attribute="sign-up-button" />
-</form>
+</form> -->
 
 #### Últimas alterações realizadas na API.
+
+### 13/02/2019
+
+* Adiciona o campo `control_number` em [Boletos](/reference/v1/bank_billets/)
+* Descontinuando o endpoint de filtro de [Boletos por status](/reference/v1/bank_billets/#buscar-por-situação-do-boleto)
+* Descontinuando o endpoint de filtro de [Boletos por CPF/CNPJ](/reference/v1/bank_billets/#buscar-por-cpf-ou-cnpj)
+* Descontinuando o endpoint de filtro de [Boletos por nosso número](/reference/v1/bank_billets/#buscar-por-nosso-número)
 
 ### 16/10/2018
 
