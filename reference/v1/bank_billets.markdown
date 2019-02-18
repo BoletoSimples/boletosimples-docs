@@ -769,20 +769,6 @@ Array
     </tr>
     <tr>
       <td>
-        <strong>expire_at </strong>
-      </td>
-      <td>
-        Não
-      </td>
-      <td>
-        Array[2]
-      </td>
-      <td>
-        Filtro por faixa de datas de vencimento do boleto. Se qualquer um dos dois itens for deixado em branco, será inválido. <div class="alert alert-danger"><strong>ATENÇÃO</strong> Este atributo está descontinuado e será removido do sistema em breve. Utilize <code class="highlighter-rouge">expire_from</code> e <code class="highlighter-rouge">expire_to</code>.</div>
-      </td>
-    </tr>
-    <tr>
-      <td>
         <strong>paid_from </strong>
       </td>
       <td>
@@ -807,20 +793,6 @@ Array
       </td>
       <td>
         Até a Data de pagamento
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <strong>paid_at</strong>
-      </td>
-      <td>
-        Não
-      </td>
-      <td>
-        Array[2]
-      </td>
-      <td>
-        Filtro por faixa de datas de pagamento do boleto. Se qualquer um dos dois itens for deixado em branco, será inválido. <div class="alert alert-danger"><strong>ATENÇÃO</strong> Este atributo está descontinuado e será removido do sistema em breve. Utilize <code class="highlighter-rouge">paid_from</code> e <code class="highlighter-rouge">paid_to</code>.</div>
       </td>
     </tr>
     <tr>

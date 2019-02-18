@@ -526,23 +526,34 @@ Array
         Quantidade de registros por página (Maximo de 250)
       </td>
     </tr>
-
     <tr>
       <td>
-        <strong>expire_at </strong>
+        <strong>expire_from </strong>
       </td>
       <td>
         Não
       </td>
       <td>
-        Array[2]
+        Date
       </td>
       <td>
-        Filtro por faixa de datas de vencimento do boleto. Se qualquer um dos dois itens
-        for deixado em branco, a data (inicial ou final) ficará em aberto.
+        A partir da Data de vencimento do boleto
       </td>
     </tr>
-
+    <tr>
+      <td>
+        <strong>expire_to </strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        Date
+      </td>
+      <td>
+        Até a Data de vencimento do boleto
+      </td>
+    </tr>
     <tr>
       <td>
         <strong>our_code </strong>
@@ -557,7 +568,6 @@ Array
         Filtro por Nosso número.
       </td>
     </tr>
-
     <tr>
       <td>
         <strong>bank_billet_account_id </strong>
