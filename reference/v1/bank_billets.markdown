@@ -15,9 +15,9 @@ layout: pt
 | [PUT /api/v1/bank_billets/:id/cancel](#cancelar-boleto) | Cancelar boleto
 | [PUT /api/v1/bank_billets/:id](#alterar-boleto) | Alterar boleto
 | [POST /api/v1/bank_billets/:id/duplicate](#duplicar-boleto) | Duplicar boleto
-| [GET /api/v1/bank_billets/cnpj_cpf](#buscar-por-cpf-ou-cnpj) | Buscar por CPF ou CNPJ
-| [GET /api/v1/bank_billets/our_number](#buscar-por-nosso-número) | Buscar por nosso número
-| [GET /api/v1/bank_billets/status](#buscar-por-situação-do-boleto) | Buscar por Situação do boleto ([possíveis valores](#status))
+| [GET /api/v1/bank_billets/cnpj_cpf](#buscar-por-cpf-ou-cnpj) | Buscar por CPF ou CNPJ ([Deprecated usar Listar boletos](#listar-boletos))
+| [GET /api/v1/bank_billets/our_number](#buscar-por-nosso-número) | Buscar por nosso número ([Deprecated usar Listar boletos](#listar-boletos))
+| [GET /api/v1/bank_billets/status](#buscar-por-situação-do-boleto) | Buscar por Situação do boleto ([Deprecated usar Listar boletos](#listar-boletos))
 | [PUT /api/v1/bank_billets/:id/pay](#marcar-boleto-como-pago) | Marcar boleto como pago
 | [POST /api/v1/bank_billets/cancel_all](#cancelar-boletos-em-lote) | Cancelar boletos em lote
 | [POST /api/v1/bank_billets/bulk](#criar-boletos-em-lote) | Criar boletos em lote
@@ -1768,6 +1768,8 @@ Array
 
 ### Buscar por CPF ou CNPJ
 
+<div class="alert alert-danger"><strong>ATENÇÃO</strong> Este endpoint esta descontinuado e será removido do sistema em breve. Utilize o <a href="/reference/v1/bank_billets/#listar-boletos">Listar boletos</a>.</div>
+
 `GET /api/v1/bank_billets/cnpj_cpf`
 
 <table class='table table-bordered'>
@@ -1971,6 +1973,8 @@ Array
 
 ### Buscar por nosso número
 
+<div class="alert alert-danger"><strong>ATENÇÃO</strong> Este endpoint esta descontinuado e será removido do sistema em breve. Utilize o <a href="/reference/v1/bank_billets/#listar-boletos">Listar boletos</a>.</div>
+
 `GET /api/v1/bank_billets/our_number`
 
 <table class='table table-bordered'>
@@ -2145,6 +2149,8 @@ Array
 </div>
 
 ### Buscar por situação do boleto
+
+<div class="alert alert-danger"><strong>ATENÇÃO</strong> Este endpoint esta descontinuado e será removido do sistema em breve. Utilize o <a href="/reference/v1/bank_billets/#listar-boletos">Listar boletos</a>.</div>
 
 `GET /api/v1/bank_billets/status`
 
