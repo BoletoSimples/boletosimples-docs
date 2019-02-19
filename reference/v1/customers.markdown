@@ -41,7 +41,8 @@ layout: pt
 | **notes**              | Não   | Text    |         | Anotações
 | **email_cc**           | Não   | String  | 80     | E-mail alternativo
 | **created_via_api**    | N/A   | Boolean |         | Enviado pela API
-| **contact_person**     | N/A   | String  | 255     | Pessoa de contato
+| **contact_person**     | Não   | String  | 255     | Pessoa de contato
+| **truncated_address**  | Não   | String  | 40      | Endereço para remessa
 
 ### Criar cliente
 
@@ -193,7 +194,8 @@ Content-Type: application/json; charset=utf-8
   "zipcode":"20071004",
   "mobile_local_code":null,
   "state":"RJ",
-  "contact_person":"Nome do Contato"
+  "contact_person":"Nome do Contato",
+  "truncated_address":"Rua quinhentos"
 }
 </pre>
   </div>
@@ -213,7 +215,8 @@ Content-Type: application/json; charset=utf-8
   address_number: "111",
   address_complement: "Sala 4",
   phone_number: "2112123434",
-  contact_person: "Nome do Contato"
+  contact_person: "Nome do Contato",
+  truncated_address:"Rua quinhentos"
 })
 if @customer.persisted?
   puts "Sucesso :)"
@@ -244,7 +247,8 @@ Sucesso :)
            "person_type" => "individual",
      "mobile_local_code" => nil,
        "created_via_api" => true,
-       "nome_do_contato" => "Nome do Contato"
+       "nome_do_contato" => "Nome do Contato",
+     "truncated_address" => "Rua quinhentos, 111"
 }
 </pre>
   </div>
@@ -264,7 +268,8 @@ $customer = BoletoSimples\Customer::create([
   'address_number' => "111",
   'address_complement' => "Sala 4",
   'phone_number' => "2112123434",
-  "nome_do_contato" => "Nome do Contato"
+  "contact_person" => "Nome do Contato",
+  "truncated_address" => "Rua quinhentos, 111"
 ]);
 if($customer->isPersisted()) {
   echo "Sucesso :)\n";
@@ -352,7 +357,8 @@ Content-Type: application/json; charset=utf-8
   "zipcode":"20071004",
   "mobile_local_code":null,
   "state":"RJ",
-  "contact_person":"Nome do Contato"
+  "contact_person":"Nome do Contato",
+  "truncated_address":"Rua quinhentos"
 }
 </pre>
   </div>
@@ -418,6 +424,7 @@ Array
     [state] => RJ
     [created_via_api] => 1
     [contact_person] => Nome do Contato
+    [truncated_address] => Rua quinhentos, 111
 )
 </pre>
   </div>
@@ -568,7 +575,8 @@ Location: https://sandbox.boletosimples.com.br/api/v1/customers/1
   "zipcode":"20071004",
   "mobile_local_code":null,
   "state":"RJ",
-  "contact_person":"Nome do Contato"
+  "contact_person":"Nome do Contato",
+  "truncated_address":"Rua quinhentos"
 }
 </pre>
   </div>
@@ -711,7 +719,8 @@ Content-Type: application/json; charset=utf-8
     "zipcode":"20071004",
     "mobile_local_code":null,
     "state":"RJ",
-    "contact_person":"Nome do Contato"
+    "contact_person":"Nome do Contato",
+    "truncated_address":"Rua quinhentos"
   }
 ]
 </pre>
@@ -842,7 +851,8 @@ Content-Type: application/json; charset=utf-8
   "zipcode":"20071004",
   "mobile_local_code":null,
   "state":"RJ",
-  "contact_person":"Nome do Contato"
+  "contact_person":"Nome do Contato",
+  "truncated_address":"Rua quinhentos"
 }
 </pre>
   </div>
@@ -988,7 +998,8 @@ Content-Type: application/json; charset=utf-8
   "zipcode":"20071004",
   "mobile_local_code":null,
   "state":"RJ",
-  "contact_person":"Nome do Contato"
+  "contact_person":"Nome do Contato",
+  "truncated_address":"Rua quinhentos"
 }
 </pre>
   </div>
