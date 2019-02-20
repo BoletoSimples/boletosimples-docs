@@ -22,6 +22,10 @@ Você também pode se inscrever para receber as notificações de alterações d
 
 #### Últimas alterações realizadas na API.
 
+### 20/02/2019
+
+* Documenta o campo `truncated_address` em [Clientes](/reference/v1/customers)
+
 ### 13/02/2019
 
 * Adiciona o campo `control_number` em [Boletos](/reference/v1/bank_billets/)
