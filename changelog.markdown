@@ -22,6 +22,10 @@ Você também pode se inscrever para receber as notificações de alterações d
 
 #### Últimas alterações realizadas na API.
 
+### 25/02/2019
+
+* Documenta o camp `line_parsed` em [Registro de Retorno](/reference/v1/bank_billet_discharges/)
+
 ### 20/02/2019
 
 * Documenta o campo `truncated_address` em [Clientes](/reference/v1/customers)
