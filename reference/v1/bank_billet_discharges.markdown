@@ -27,7 +27,32 @@ breadcrumb: Registro de Retorno
 | **occurrence_detail**      | N/A  | String  |         | Descrição do evento no Retorno |
 | **occurrence_error**       | N/A  | String  |         | Erro no retorno                |
 | **occurrence_error_detail**| N/A  | String  |         | Descrição do erro no retorno   |
+| **line_parsed**             | N/A  | Hash/Array  |        | Linha parseada com informações vindas do banco([possíveis valores](#line_parsed))     |
 
+### Dicionário de Dados
+
+#### line_parsed
+
+Conteúdo do retorno bancário. Pode mudar de acordo com o banco e o formato 240 ou 400. Se algum dos campos estiver em branco é porque o seu banco não disponibiliza essa informação.
+
+| paid_at | Data de pagamento
+| paid_amount | Valor pago
+| bank_rate   | Taxa do boleto paga ao banco
+| credit_at       | Data de crédito
+| credit_amount | Valor do Crédito
+| our_number | Nosso número
+| processed_our_number_raw | Nosso número formatado
+| discount     | Desconto
+| billet_fine | Acréscimos(Multa/Juros cobrados)
+| other_fines | Outras cobranças adicionais
+| other_credit | Outros valores pagos
+| value_rebate | Outras taxas
+| error_code    | Código de erro
+| event_type | Ocorrência bancária
+| agency_number | Agência
+| account_number | Conta
+| banco_recebedor | Banco recebedor
+| agencia_recebedora | Agência recebedora
 
 ### Listar Registros de Retorno
 
