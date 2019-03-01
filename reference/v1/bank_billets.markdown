@@ -2515,6 +2515,9 @@ Array
 
 `POST /api/v1/bank_billets/cancel_all`
 
+ <div class="alert alert-info">Pelo menos um parâmetro é obrigatório na chamada. Os parâmetros podem ser combinados.</div>
+  <div class="alert alert-danger"><strong>ATENÇÃO</strong> Essa ação é irreversível, pois os boletos serão cancelados no banco.</div>
+
 <table class='table table-bordered'>
   <thead>
     <tr>
@@ -2530,7 +2533,7 @@ Array
         <strong>status</strong>
       </td>
       <td>
-        Sim
+        Não
       </td>
       <td>
         String
@@ -2544,7 +2547,7 @@ Array
         <strong>expire_from</strong>
       </td>
       <td>
-        Sim
+        Não
       </td>
       <td>
         Date
@@ -2558,7 +2561,7 @@ Array
         <strong>expire_to</strong>
       </td>
       <td>
-        Sim
+        Não
       </td>
       <td>
         Date
@@ -2572,7 +2575,7 @@ Array
         <strong>bank_billet_ids</strong>
       </td>
       <td>
-        Sim
+        Não
       </td>
       <td>
         Array
@@ -2586,7 +2589,7 @@ Array
         <strong>cnpj_cpf</strong>
       </td>
       <td>
-        Sim
+        Não
       </td>
       <td>
         String
