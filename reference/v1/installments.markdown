@@ -68,6 +68,13 @@ breadcrumb: Carnês
 | **notes**                       | Não   | Text    |         | Anotações
 | **tags**                        | Não   | Array   |         | Tags associadas
 | **prevent_registration**        | Não   | Boolean |         | Caso `true`, impede que o boleto seja registrado. Para ser usado nos casos em que o boleto já foi registrado fora do Boleto Simples mas deseja-se incluí-lo no sistema.
+| **divergent_payment_type**       | Não   | Integer |         | Tipo de pagamento divergente. Válido apenas para [Itaú](/bank_contracts/itau) e [Caixa](/bank_contracts/cef). ([possíveis valores](#divergent_payment_type))
+| **divergent_payment_value_type** | Não   | Integer |         | Tipo de valor a considerar para os limites de pagamentos. Válido apenas para [Itaú](/bank_contracts/itau) e [Caixa](/bank_contracts/cef). ([possíveis valores](#divergent_payment_value_type))
+| **divergent_payment_minimum_value** | Não | Float |          | Valor mínimo para a faixa de pagamentos divergentes. Válido apenas para [Itaú](/bank_contracts/itau) e [Caixa](/bank_contracts/cef).
+| **divergent_payment_maximum_value** | Não | Float |          | Valor máximo para a faixa de pagamentos divergentes. Válido apenas para [Itaú](/bank_contracts/itau) e [Caixa](/bank_contracts/cef).
+| **divergent_payment_minimum_percentage** | Não | Float |          | Percentual mínimo para a faixa de pagamentos divergentes. Válido apenas para [Itaú](/bank_contracts/itau) e [Caixa](/bank_contracts/cef).
+| **divergent_payment_maximum_percentage** | Não | Float |          | Percentual máximo para a faixa de pagamentos divergentes. Válido apenas para [Itaú](/bank_contracts/itau) e [Caixa](/bank_contracts/cef).
+| **divergent_payment_limit**         | Não | Integer |          | Quantidade de pagamentos permitida. Obrigatório se informados dados para pagamento divergente. Usado somente pela [Caixa](/bank_contracts/cef).
 
 ### Dicionário de Dados
 
@@ -112,6 +119,20 @@ breadcrumb: Carnês
 | 0 | Inexistente (Padrão)
 | 1 | Para valor fixo
 | 2 | Para percentual do valor do boleto
+
+#### divergent_payment_type
+
+| 1 | Aceita qualquer valor divergente
+| 2 | Aceita pagamentos dentro de uma faixa de valores ou percentuais
+| 3 | Não aceita pagamento de valores divergentes
+| 4 | Aceita pagamentos de valores superiores a um valor ou percentual mínimo
+
+#### divergent_payment_value_type
+
+| 1 | Informa pagamentos divergentes por valores
+| 2 | Informa pagamentos divergentes por percentuais
+
+
 
 ### Criar carnê
 
