@@ -19,7 +19,7 @@ breadcrumb: Pagamento de Boleto
 
 | Parâmetro                  | Obrigatório | Tipo    | Tamanho | Descrição                      |
 | -------------------------- | ---- | ------- | ------- | ------------------------------ |
-| **id**                     | N/A  | Integer |         | ID da carteira                 |
+| **id**                     | N/A  | Integer |         | ID do Pagamento de Boleto                 |
 | **bank_billet_id**         | Sim  | Integer |         | ID do Boleto                   |
 | **bank_billet_account_id** | Sim  | Integer |         | ID da Carteira                 |
 | **paid_at**                | Sim  | Date    |         | Data do pagamento              |

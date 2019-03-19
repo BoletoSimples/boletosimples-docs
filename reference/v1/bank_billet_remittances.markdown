@@ -18,7 +18,7 @@ breadcrumb: Registro de Remessa
 
 | Parâmetro                  | Obrigatório | Tipo    | Tamanho | Descrição                      |
 | -------------------------- | ---- | ------- | ------- | ------------------------------ |
-| **id**                     | N/A  | Integer |         | ID da carteira                 |
+| **id**                     | N/A  | Integer |         | ID do Registro de Remessa               |
 | **our_code**               | Sim  | String  | 6       | Código de operação de registro. Consulte os possíveis valores <a href="/bank_contracts">para cada banco</a>.          |
 | **occurrence**             | Não  | String  | 3       | Ocorrência                     |
 | **remittance_id**          | Sim  | Integer |         | ID da Remessa                  |
