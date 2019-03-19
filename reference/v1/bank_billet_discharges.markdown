@@ -17,7 +17,7 @@ breadcrumb: Registro de Retorno
 
 | Parâmetro           | Obrigatório | Tipo    | Tamanho | Descrição                      |
 | -------------------------- | ---- | ------- | ------- | ------------------------------ |
-| **id**                     | N/A  | Integer |         | ID da carteira                 |
+| **id**                     | N/A  | Integer |         | ID do Registro de Retorno                 |
 | **our_occurrence**         | Não  | String  | 4       | Código de operação de retorno  |
 | **discharge_id**           | Não  | Integer |         | ID do Retorno                  |
 | **bank_billet_id**         | Não  | Integer |         | ID do Boleto                   |
