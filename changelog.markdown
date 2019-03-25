@@ -22,6 +22,10 @@ Você também pode se inscrever para receber as notificações de alterações d
 
 #### Últimas alterações realizadas na API.
 
+### 25/03/2019
+
+* Adicionado novo endpoint para [Excluir pendências](/reference/v1/bank_billet_remittances/#excluir-pendências).
+
 ### 25/02/2019
 
 * Documenta o camp `line_parsed` em [Registro de Retorno](/reference/v1/bank_billet_discharges/)

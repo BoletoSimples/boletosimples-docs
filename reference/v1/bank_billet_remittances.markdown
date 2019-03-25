@@ -13,6 +13,8 @@ breadcrumb: Registro de Remessa
 | [GET /api/v1/bank_billet_remittances](#listar-registros-de-remessa)                     | Listar Registros de Remessa                     |
 | [GET /api/v1/bank_billet_remittances/pending](#listar-registros-de-remessa-pendentes)   | Listar Registros de Remessa pendentes           |
 | [POST /api/v1/bank_billet_remittances/:id/occurrence/:code](#criar-pendências) | Criar pendências |
+| [DELETE /api/v1/bank_billet_remittances/:id](#excluir-pendências) | Excluir pendências                |
+
 
 ### Modelo de Dados
 
@@ -473,4 +475,39 @@ Content-Type: application/json; charset=utf-8
 </pre>
   </div>
 
+</div>
+
+### Excluir pendências
+
+`DELETE /api/v1/bank_billet_remittances/:id`
+
+#### Exemplo
+
+<ul class="nav nav-tabs" role="tablist">
+  <li class="active"><a href="#bash2" role="tab" data-toggle="tab">Bash</a></li>
+  <!--li><a href="#ruby2" role="tab" data-toggle="tab">Ruby</a></li>
+  <li><a href="#php2" role="tab" data-toggle="tab">PHP</a></li-->
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="bash2">
+    <small>Requisição:</small>
+
+<pre class="bash">
+curl -i \
+-u $BOLETOSIMPLES_TOKEN:x \
+-H 'User-Agent: MyApp (myapp@example.com)' \
+-X DELETE 'https://sandbox.boletosimples.com.br/api/v1/bank_billet_remittances/1'
+</pre>
+
+    <small>Resposta:</small>
+
+<pre class="http">
+HTTP/1.1 204 No Content
+Date: Fri, 17 Oct 2014 19:30:06 GMT
+Status: 204 No Content
+...
+
+</pre>
+  </div>
 </div>
