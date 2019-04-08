@@ -22,6 +22,11 @@ Você também pode se inscrever para receber as notificações de alterações d
 
 #### Últimas alterações realizadas na API.
 
+### 09/04/2019
+
+* Documenta [Registros de Boleto](/reference/v1/bank_billet_registrations)
+
+
 ### 25/03/2019
 
 * Adicionado novo endpoint para [Excluir pendências](/reference/v1/bank_billet_remittances/#excluir-pendências).
