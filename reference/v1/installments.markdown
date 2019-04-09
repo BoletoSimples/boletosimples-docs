@@ -58,10 +58,16 @@ breadcrumb: Carnês
 | **interest_monthly_percentage** | Não   | Float   |         | Juros de mora mensal (O valor será dividido por 30. Ex 3% = 0,1% ao dia.) Obrigatório se `interest_type` é igual a 5 ou 6
 | **days_for_interest**               | Não   | Integer |         | Quantidade de dias após o vencimento que a mora começará a incidir. O valor default é 1 dia (o dia posterior ao vencimento).
 | **late_payment_interest**       | Não   | Float   |         | Alias para `interest_monthly_percentage`
-| **discount_type**               | Não   | Integer |         | Tipo de desconto ([possíveis valores](#discount_type))
+| **discount_type**               | Não   | Integer |         | Tipo de desconto. O tipo será o mesmo para todos os três descontos, caso existam. ([possíveis valores](#discount_type))
 | **discount_value**              | Não   | String  |         | Valor do desconto. Obrigatório se `discount_type` é igual a 1. (R$) Formato: 1.234,34
 | **discount_percentage**         | Não   | Float   |         | Percentual do valor do boleto equivalente ao desconto. Obrigatório se `discount_type` é igual a 2
 | **days_for_discount**           | Não   | Integer |         | Dias para desconto. Obrigatório se `discount_type` é diferente de zero
+| **second_discount_value**              | Não   | String  |         | Valor do segundo desconto. (R$) Formato: 1.234,34.
+| **second_discount_percentage**         | Não   | Float   |         | Percentual do valor do boleto equivalente ao segundo desconto.
+| **days_for_second_discount**           | Não   | Integer |         | Dias para segundo desconto.
+| **third_discount_value**              | Não   | String  |         | Valor do terceiro desconto. (R$) Formato: 1.234,34
+| **third_discount_percentage**         | Não   | Float   |         | Percentual do valor do boleto equivalente ao terceiro desconto.
+| **days_for_third_discount**           | Não   | Integer |         | Dias para terceiro desconto.
 | **bank_billet_layout_id**       | Não   | Integer |         | ID do Modelo de Boleto
 | **url**                         | N/A   | String  |         | URL para visualização do carnê
 | **bank_billet_ids**             | N/A   | Array   |         | IDs de boletos vinculados ao carnê
