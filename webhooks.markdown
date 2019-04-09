@@ -63,4 +63,8 @@ Todas as outras informações retornadas no cabeçalho ou no conteúdo da respos
 
 #### Falhas
 
-O Boleto Simples faz a retentativa de entrega caso o seu servidor retorne um erro, ou seja, com o `Status Code` **diferente de** `2xx`. Serão feitas 5 tentativas de entrega da notificação. As tentativas são feitas de hora em hora.
+O Boleto Simples faz a retentativa de entrega caso o seu servidor retorne um erro, ou seja, com o `Status Code` **diferente de** `2xx`. 
+
+Serão feitas 5 tentativas de entrega da notificação. As tentativas são feitas de hora em hora.
+
+Se o seu servidor não responder em até 5 segundos, será considerado uma falha e retornará erro de timeout.
