@@ -18,11 +18,15 @@ Entre em cada banco para visualizar as carteiras suportadas e os comandos implem
 | [Banrisul](/bank_contracts/banrisul)           | Sim     | 400          | Sim     | 400
 | [Bradesco](/bank_contracts/bradesco)           | Sim     | 400 ou 240          | Sim     | 400
 | [Caixa Econômica Federal](/bank_contracts/cef) | Sim     | 400 ou 240   | Sim     | 400 ou 240
+| [Caruana](/bank_contracts/caruana)           | Sim     | 400          | Sim     | 400
 | [Citibank](/bank_contracts/citibank)           | Sim     | 400          | Sim     | 400
+| [CECRED](/bank_contracts/cecred)               | Sim     | 240          | Sim     | 240
+| [Credisis](/bank_contracts/credisis)           | Sim     | 400          | Sim     | 400
+| [CRESOL](/bank_contracts/cresol)           | Sim     | 400          | Sim     | 400
+| [Daycoval](/bank_contracts/daycoval)           | Sim     | 400          | Sim     | 400
 | [Itaú](/bank_contracts/itau)                   | Sim     | 400 ou 240         | Sim     | 400 ou 240
 | [Safra](/bank_contracts/safra)                 | Sim     | 400            | Sim     | 400
 | [Santander](/bank_contracts/santander)         | Sim     | 400 ou 240         | Sim     | 400 ou 240
 | [Sicoob](/bank_contracts/sicoob)               | Sim     | 400 ou 240   | Sim     | 400 ou 240
 | [Sicredi](/bank_contracts/sicredi)             | Sim     | 400          | Sim     | 400
-| [CECRED](/bank_contracts/cecred)               | Sim     | 240          | Sim     | 240
-| [Credisis](/bank_contracts/credisis)           | Sim     | 400          | Sim     | 400
+| [Sofisa](/bank_contracts/sofisa)           | Sim     | 240          | Sim     | 240

@@ -1,28 +1,29 @@
 ---
-title: Credisis
+title: Sofisa
 layout: pt
-en: "/en/bank_contracts/credisis"
+en: "/en/bank_contracts/sofisa"
 ---
 
-## Credisis
+## Sofisa
 
-| Carteiras  | Slug
-| ---------- | ------------
-| 18         | credisis-bs-18
+Correspondente Santander
 
+| Carteiras                   | Slug
+| --------------------------- | ------------
+| 101  | sofisa-santander-bs-101
 
 ### Ocorrências
 
 | Our code | Descrição                                           | Suporte Banco | Suporte Boleto Simples |
 |:---------|:----------------------------------------------------|:--------------|:-----------------------|
-| 1001     | Entrada de título                                   | Não           | Não                    |
-| 1002     | Pedido de baixa                                     | Não           | Não                    |
-| 1003     | Alteração de vencimento                             | Não           | Não                    |
-| 1004     | Concessão de abatimento                             | Não           | Não                    |
-| 1005     | Cancelamento de abatimento                          | Não           | Não                    |
+| 1001     | Entrada de título                                   | Sim           | Sim                    |
+| 1002     | Pedido de baixa                                     | Sim           | Sim                    |
+| 1003     | Alteração de vencimento                             | Sim           | Sim                    |
+| 1004     | Concessão de abatimento                             | Sim           | Não                    |
+| 1005     | Cancelamento de abatimento                          | Sim           | Não                    |
 | 1007     | Alteração do "uso da empresa"                       | Não           | Não                    |
-| 1008     | Alteração do "seu número"                           | Não           | Não                    |
-| 1009     | Protestar                                           | Não           | Não                    |
+| 1008     | Alteração do "seu número"                           | Sim           | Não                    |
+| 1009     | Protestar                                           | Sim           | Não                    |
 | 1010     | Não protestar                                       | Não           | Não                    |
 | 1011     | Protesto para fins falimentares                     | Não           | Não                    |
 | 1012     | Alterar nome do pagador                             | Não           | Não                    |
@@ -30,7 +31,7 @@ en: "/en/bank_contracts/credisis"
 | 1014     | Alterar Cidade do pagador                           | Não           | Não                    |
 | 1015     | Alterar UF do pagador                               | Não           | Não                    |
 | 1017     | Alteração do número de dias para protesto           | Não           | Não                    |
-| 1018     | Sustar o protesto                                   | Não           | Não                    |
+| 1018     | Sustar o protesto                                   | Sim           | Não                    |
 | 1019     | Sustar protesto e manter em carteira                                   | Não           | Não            |
 | 1020     | Alterar CPF/CNPJ do pagador                         | Não           | Não                    |
 | 1021     | Alteração de valor com emissão de Boleto (quando a emissão é pelo Banco)                         | Não           | Não                    |
@@ -62,11 +63,12 @@ en: "/en/bank_contracts/credisis"
 | 1085     | Pedido de devolução                                 | Não           | Não                    |
 | 1086     | Pedido de devolução (entregue ao sacado)            | Não           | Não                    |
 | 1087     | Pedido dos títulos em aberto                        | Não           | Não                    |
+| 1093     | Acerto nos dados do rateio de crédito               | Não           | Não                    |
 | 1094     | Cancelamento do rateio de crédito                   | Não           | Não                    |
 | 1095     | Alteração do prazo de devolução                     | Não           | Não                    |
 | 1096     | Alteração da opção de protesto para devolução       | Não           | Não                    |
 | 1097     | Alteração da opção de devolução para protesto       | Não           | Não                    |
-| 1098     | Alt. número cont. cedente                           | Não           | Não                    |
+| 1098     | Alt. número cont. cedente                           | Sim           | Não                    |
 | 1099     | Alteração de pagador                                | Não           | Não                    |
 | 1100     | Pedido de débito em conta                           | Não           | Não                    |
 | 1101     | Alteração de nome e endereço do sacado              | Não           | Não                    |
@@ -83,3 +85,4 @@ en: "/en/bank_contracts/credisis"
 | 1112     | Beneficiário não concorda com a alegação do pagador | Não           | Não                    |
 | 1113     | Alteração de dados extras (registro de multa)       | Não           | Não                    |
 | 1114     | Descontar títulos encaminhados no dia               | Não           | Não                    |
+

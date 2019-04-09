@@ -22,10 +22,16 @@ Você também pode se inscrever para receber as notificações de alterações d
 
 #### Últimas alterações realizadas na API.
 
+### 10/04/2019
+
+* Documenta [Caruana](/bank_contracts/caruana/)
+* Documenta [CRESOL](/bank_contracts/cresol/)
+* Documenta [Daycoval](/bank_contracts/daycoval/)
+* Documenta [Sofisa](/bank_contracts/sofisa/)
+
 ### 09/04/2019
 
 * Documenta [Registros de Boleto](/reference/v1/bank_billet_registrations)
-
 
 ### 25/03/2019
 
