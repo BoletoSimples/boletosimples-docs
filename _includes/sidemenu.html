@@ -12,6 +12,9 @@
       <li><a href="/#limite-de-requisições">Limite de Requisições</a></li>
     </ul>
   </li>
+  <li {% if page.url == '/sandbox/' %}class="active"{% endif %}>
+    <a class="main-link" href="/sandbox" title="Sandbox">Ambiente Sandbox</a>
+  </li>
   <li {% if page.url == '/libraries/' %}class="active"{% endif %}>
     <a class="main-link" href="/libraries" title="Bibliotecas">Bibliotecas</a>
   </li>
@@ -45,9 +48,6 @@
         <a href="/integrations/pluga" title="Pluga">Pluga</a>
       </li>
     </ul>
-  </li>
-  <li {% if page.url == '/sandbox/' %}class="active"{% endif %}>
-    <a class="main-link" href="/sandbox" title="Sandbox">Ambiente Sandbox</a>
   </li>
   <li class="{% if page.url == '/authentication/' %}active{% endif %}">
     <a class="main-link" href="/authentication" title="Autenticação">Autenticação</a>
@@ -98,6 +98,9 @@
       </li>
       <li {% if page.url == '/reference/v1/bank_billet_payments/' %}class="active"{% endif %}>
       <a href="/reference/v1/bank_billet_payments/" title="Pagamentos de Boleto">Pagamentos de Boleto</a>
+      </li>
+      <li {% if page.url == '/reference/v1/bank_billet_registrations/' %}class="active"{% endif %}>
+      <a href="/reference/v1/bank_billet_registrations/" title="Registros de Boleto">Registros de Boleto</a>
       </li>
       <li {% if page.url == '/reference/v1/events/' %}class="active"{% endif %}>
         <a href="/reference/v1/events/" title="Eventos">Eventos</a>
@@ -185,6 +188,9 @@
       <li {% if page.url == '/bank_contracts/cef/' %}class="active"{% endif %}>
         <a href="/bank_contracts/cef" title="Caixa Econômica Federal">Caixa Econômica Federal</a>
       </li>
+      <li {% if page.url == '/bank_contracts/caruana/' %}class="active"{% endif %}>
+        <a href="/bank_contracts/caruana" title="Caruana">Caruana</a>
+      </li>
       <li {% if page.url == '/bank_contracts/cecred/' %}class="active"{% endif %}>
         <a href="/bank_contracts/cecred" title="CECRED">CECRED</a>
       </li>
@@ -194,11 +200,20 @@
       <li {% if page.url == '/bank_contracts/credisis/' %}class="active"{% endif %}>
         <a href="/bank_contracts/credisis" title="Credisis">Credisis</a>
       </li>
+      <li {% if page.url == '/bank_contracts/cresol/' %}class="active"{% endif %}>
+        <a href="/bank_contracts/cresol" title="CRESOL">CRESOL</a>
+      </li>
+      <li {% if page.url == '/bank_contracts/daycoval/' %}class="active"{% endif %}>
+        <a href="/bank_contracts/daycoval" title="Daycoval">Daycoval</a>
+      </li>
       <li {% if page.url == '/bank_contracts/itau/' %}class="active"{% endif %}>
         <a href="/bank_contracts/itau" title="Itaú">Itaú</a>
       </li>
       <li {% if page.url == '/bank_contracts/safra/' %}class="active"{% endif %}>
         <a href="/bank_contracts/safra" title="Safra">Safra</a>
+      </li>
+      <li {% if page.url == '/bank_contracts/santander/' %}class="active"{% endif %}>
+        <a href="/bank_contracts/santander" title="Santander">Santander</a>
       </li>
       <li {% if page.url == '/bank_contracts/sicoob/' %}class="active"{% endif %}>
         <a href="/bank_contracts/sicoob" title="Sicoob">Sicoob</a>
@@ -206,8 +221,8 @@
       <li {% if page.url == '/bank_contracts/sicredi/' %}class="active"{% endif %}>
         <a href="/bank_contracts/sicredi" title="Sicredi">Sicredi</a>
       </li>
-      <li {% if page.url == '/bank_contracts/santander/' %}class="active"{% endif %}>
-        <a href="/bank_contracts/santander" title="Santander">Santander</a>
+      <li {% if page.url == '/bank_contracts/sofisa/' %}class="active"{% endif %}>
+        <a href="/bank_contracts/sofisa" title="Sofisa">Sofisa</a>
       </li>
     </ul>
   </li>

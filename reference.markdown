@@ -27,6 +27,8 @@ en: "/en/reference"
 
 ### [Pagamentos de Boleto](/reference/v1/bank_billet_payments)
 
+### [Registros de Boleto](/reference/v1/bank_billet_registrations)
+
 ### [Eventos](/reference/v1/events)
 
 ### [Saques](/reference/v1/withdrawals)

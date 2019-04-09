@@ -1,25 +1,25 @@
 ---
-title: Credisis
+title: Caruana
 layout: pt
-en: "/en/bank_contracts/credisis"
+en: "/en/bank_contracts/caruana"
 ---
 
-## Credisis
+## Caruana
 
 | Carteiras  | Slug
 | ---------- | ------------
-| 18         | credisis-bs-18
-
+| 112         | caruana-bs-112
+| 121         | caruana-bs-121
 
 ### Ocorrências
 
 | Our code | Descrição                                           | Suporte Banco | Suporte Boleto Simples |
 |:---------|:----------------------------------------------------|:--------------|:-----------------------|
-| 1001     | Entrada de título                                   | Não           | Não                    |
-| 1002     | Pedido de baixa                                     | Não           | Não                    |
-| 1003     | Alteração de vencimento                             | Não           | Não                    |
-| 1004     | Concessão de abatimento                             | Não           | Não                    |
-| 1005     | Cancelamento de abatimento                          | Não           | Não                    |
+| 1001     | Entrada de título                                   | Sim           | Sim                    |
+| 1002     | Pedido de baixa                                     | Sim           | Sim                    |
+| 1003     | Alteração de vencimento                             | Sim           | Sim                    |
+| 1004     | Concessão de abatimento                             | Sim           | Não                    |
+| 1005     | Cancelamento de abatimento                          | Sim           | Não                    |
 | 1007     | Alteração do "uso da empresa"                       | Não           | Não                    |
 | 1008     | Alteração do "seu número"                           | Não           | Não                    |
 | 1009     | Protestar                                           | Não           | Não                    |

@@ -21,7 +21,7 @@ Após criar a conta, você poderá utilizar o ambiente Sandbox da mesma forma qu
 
 Nenhuma validação de conta é realizada neste ambiente e logo após a criação da conta, você já conseguirá utilizar a API.
 
-Atenção que o token de acesso da conta no ambiente Sandbox é diferente do token da sua conta no ambiente de Produção.
+ <div class="alert alert-info"><strong>ATENÇÃO</strong> O token de acesso da conta no ambiente Sandbox é diferente do token da sua conta no ambiente de Produção.</div>
 
 ### Endpoint do Sandbox
 
@@ -35,14 +35,14 @@ O ambiente Sandbox não deve ser usado com o objetivo de gerar boletos bancário
 
 Por esse motivo, este ambiente possui algumas restrições. São elas:
 
-*   A descrição do boleto é substituída por: **"BOLETO DE TESTES"**.
-*   As instruções para o caixa no boleto gerado vão com a mensagem: **"SR(a) CAIXA, NÃO AUTORIZAMOS RECEBER ESTE BOLETO"**.
+* Agência e Conta nos boletos gerados serão alterados para `1` e `2`.
+* As instruções para o caixa no boleto gerado vão com a mensagem: **"SR(a) CAIXA, NÃO AUTORIZAMOS RECEBER ESTE BOLETO"**.
+* Agência e Conta nas remessas geradas  serão alterados para `1` e `2`.
+* Boletos e remessas não devem ser utilizados para fins de homologação junto ao banco.
 
 ### Limpeza do ambiente
 
 Por motivos de segurança, todos os boletos são excluídos automaticamente no ambiente de Sandbox às segundas-feiras, quartas-feiras e sextas-feiras.
-
-Essa medida de segurança foi implementada para ser executada pela primeira vez em 15 de fevereiro de 2017.
 
 ### Eventos
 
