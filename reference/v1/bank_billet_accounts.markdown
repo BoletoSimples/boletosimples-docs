@@ -50,6 +50,7 @@ breadcrumb: Carteiras de Cobrança
 | **configuration**        | Não   | JSON    |         | Configuração de dados padrões para boleto
 | **bank_contract**        | Não   | Hash    |         | Dados da Carteira ***
 | **custom_name**          | Não   | String  | 255     | Nome da Carteira para identificação dentro do Boleto Simples
+| [**kind**](#kind) | Não | String |   | Tipo de CNAB
 
 '*' Depende da carteira escolhida.
 
@@ -67,13 +68,11 @@ Nesse momento o usuário deve aceitar os termos e iniciar a homologação.
 
 Ao clicar em "Prosseguir com a Homologação", o status passa para `homologating`.
 
-Um boleto bancário é gerado e pago pela equipe do Boleto Simples.
+Será gerado um boleto e uma remessa de  Homologação para ser enviada ao banco. Após o término, o status passa para `validating`.
 
-Após a equipe do Boleto Simples efetuar o pagamento do boleto, o status para para `validating`.
+A partir desse momento o usuário precisa informar o valor do boleto que foi gerado ou enviar o retorno processado pelo banco.
 
-A partir desse momento o usuário precisa informar o valor do boleto que foi pago.
-
-Quando o valor é informado corretamente, o status passa para `active`.
+Quando o valor é informado corretamente, ou no retorno processado, o banco diz estar tudo certo, o status passa para `active`.
 
 | pending      | Homologação não iniciada
 | homologating | Em homologação, aguardand pagamento do boleto
@@ -84,8 +83,12 @@ Quando o valor é informado corretamente, o status passa para `active`.
 
 O campo `default` determina a carteira de cobrança que será usada na criação do boleto quando nenhuma carteira for informada.
 
-No momento que a primeira carteira é homologada (para para o `status` = `active`), ela recebe o valor `default` = true
+No momento que a primeira carteira é homologada (passa para o `status` = `active`), ela recebe o valor `default` = true
 
+#### kind
+
+| cnab400 | CNAB 400
+| cnab240 | CNAB 240
 
 ### Criar carteira
 
