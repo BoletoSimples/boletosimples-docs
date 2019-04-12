@@ -22,6 +22,11 @@ Você também pode se inscrever para receber as notificações de alterações d
 
 #### Últimas alterações realizadas na API.
 
+### 11/04/2019
+
+* Adiciona [tabela de códigos de ocorrência do Boleto Simples](/reference/v1/bank_billet_discharges/#our_occurrence)
+* Documenta [Kind](/reference/v1/bank_billet_accounts/#kind) em Carteiras de Cobrança
+
 ### 10/04/2019
 
 * Documenta [Caruana](/bank_contracts/caruana/)
