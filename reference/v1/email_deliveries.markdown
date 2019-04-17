@@ -27,7 +27,9 @@ breadcrumb: E-mails enviados
 | **content**          | N/A   | Text     |         | Conteúdo do email
 | **sent_error**       | N/A   | String   | 255     | Erro ocorrido no envio
 | **bank_billet_id**   | N/A   | Integer  |         | ID do Boleto
+| **obj_id**         | N/A   | Integer  |         | ID do Objeto associado ao evento
 
+O `ID do Objeto` vai retornar todos e qualquer tipo de objeto que tenha o ID enviado, ou seja, se você enviar `1`, poderá retornar boletos, clientes e etc. Caso queira um filtro mais refinado, combine o `ID do Objeto ` com o `Código do evento`.
 
 ### Dicionário de Dados
 

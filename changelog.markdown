@@ -24,6 +24,10 @@ Você também pode se inscrever para receber as notificações de alterações d
 
 ### 11/04/2019
 
+* Adiciona filtro por  [ID do Objeto](/reference/v1/email_deliveries/) nos emails enviados
+
+### 11/04/2019
+
 * Adiciona [tabela de códigos de ocorrência do Boleto Simples](/reference/v1/bank_billet_discharges/#our_occurrence)
 * Documenta [Kind](/reference/v1/bank_billet_accounts/#kind) em Carteiras de Cobrança
 
