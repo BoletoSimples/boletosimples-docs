@@ -56,6 +56,7 @@ Conteúdo do retorno bancário. Pode mudar de acordo com o banco e o formato 240
 | banco_recebedor | Banco recebedor
 | agencia_recebedora | Agência recebedora
 | control_number | Número de Controle
+| document_number | Número do Documento
 
 #### our_occurrence
 
