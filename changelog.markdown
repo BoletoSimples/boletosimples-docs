@@ -22,6 +22,10 @@ Você também pode se inscrever para receber as notificações de alterações d
 
 #### Últimas alterações realizadas na API.
 
+### 30/04/2019
+
+* Atualiza lista de ocorrências [Banrisul](/bank_contracts/banrisul/)
+
 ### 11/04/2019
 
 * Adiciona filtro por  [ID do Objeto](/reference/v1/email_deliveries/) nos emails enviados
