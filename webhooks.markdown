@@ -68,3 +68,5 @@ O Boleto Simples faz a retentativa de entrega caso o seu servidor retorne um err
 Serão feitas 5 tentativas de entrega da notificação. As tentativas são feitas de hora em hora.
 
 Se o seu servidor não responder em até 5 segundos, será considerado uma falha e retornará erro de timeout.
+
+<div class="alert alert-info"><strong>ATENÇÃO</strong> O Sandbox não faz retentativas, você deve fazer a simulação de forma manual.</div>
