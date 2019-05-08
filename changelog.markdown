@@ -25,6 +25,7 @@ Você também pode se inscrever para receber as notificações de alterações d
 ### 08/05/2019
 
 * Atualiza lista de [Tipo de Documento](/reference/v1/bank_billets/#document_type)
+* Remove status `downloaded` não utilizado em [Remessas](/reference/v1/remittances/#status)
 
 ### 30/04/2019
 

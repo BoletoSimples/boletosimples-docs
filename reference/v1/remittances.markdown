@@ -33,7 +33,7 @@ layout: pt
 | **bank_billet_ids**           | Não   | Array   |         | IDs de boletos
 | **remittance_number**         | Não   | Integer |         | Número da remessa
 | **sent_via_integration**      | Não   | Date    |         | Data de envio automático para o banco
-| **bank_billet_remittance_ids**           | Não   | Array   |         | IDs de [Registros de Remessa] (/reference/v1/bank_billet_remittances/)
+| **bank_billet_remittance_ids**           | Não   | Array   |         | IDs de [Registros de Remessa](/reference/v1/bank_billet_remittances/)
 
 ### Dicionário de Dados
 
@@ -41,8 +41,7 @@ layout: pt
 
 | unprocessed | Pendente
 | processed   | Processado
-| downloaded  | Baixada pelo usuário
-| sent        | Enviada para o banco
+| sent        | Enviada para o banco (Somente quando contratado envio automático)
 
 ### Criar CNAB
 
@@ -785,6 +784,8 @@ Array
 ### Raw(text/plain) do CNAB
 
 `GET /api/v1/remittances/:id/raw`
+
+Será disparado o evento `remittance.downloaded`.
 
 #### Exemplo
 
