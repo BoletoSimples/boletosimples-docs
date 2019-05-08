@@ -60,7 +60,7 @@ Abaixo a listagem de eventos registrados pelo Boleto Simples:
 | remittance.created                | Toda vez que uma remessa é criada.                 |
 | remittance.processed              | Toda vez que uma remessa é processada.             |
 | remittance.downloaded             | Toda vez que uma remessa é baixada.                |
-| remittance.sent                   | Toda vez que uma remessa é enviada.                |
+| remittance.sent                   | Toda vez que uma remessa é enviada. (Somente quando contratado envio automático)               |
 | transaction.created               | Toda vez que uma transação é criada.               |
 | transaction.updated               | Toda vez que uma transação é atualizada.           |
 | transaction.processed             | Toda vez que uma transação é processada.           |
