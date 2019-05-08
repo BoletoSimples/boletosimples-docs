@@ -22,6 +22,10 @@ Você também pode se inscrever para receber as notificações de alterações d
 
 #### Últimas alterações realizadas na API.
 
+### 08/05/2019
+
+* Atualiza lista de [Tipo de Documento](/reference/v1/bank_billets/#document_type)
+
 ### 30/04/2019
 
 * Atualiza lista de ocorrências [Banrisul](/bank_contracts/banrisul/)
