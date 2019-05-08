@@ -221,6 +221,17 @@ layout: pt
 | 32     | CSR      | Cobrança Seriada
 | 33     | CAR      | Carnê
 | 34     | ARE      | Apólice Ramos Elementares
+| 35     | CC        | Cartão de Crédito
+| 36     | BDP      | Boleto de Proposta
+| 37     | NPD      | Nota Promissória Direta
+| 38     | DAE     | Dívida Ativa de Estado
+| 39     | DAM      | Divida Ativa de Município
+| 40     | DAU      | Dívida Ativa União
+| 41     | CCB      | Célula de Crédito Bancário
+| 42     | FI           | Financiamento
+| 43     | RD           | Rateio de Despesas
+| 44     | DRI          | Duplicata Rural p/ Indicação
+| 45     | ECI           | Encargos Condominiais p/ Indicação
 | 99     | Outros   | Outros
 
 #### divergent_payment_type
