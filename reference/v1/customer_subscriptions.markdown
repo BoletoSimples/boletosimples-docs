@@ -55,9 +55,11 @@ breadcrumb: Assinaturas
 | **days_for_fine**               | Não   | Integer |         | Quantidade de dias após o vencimento que a multa começará a incidir. O valor default é 1 dia (o dia posterior ao vencimento).
 | **fine_for_delay**              | Não   | Float   |         | Alias para `fine_percentage`
 | **interest_type**               | Não   | Integer |         | Tipo de juros ([possíveis valores](#interest_type))
-| **interest_daily_percentage**   | Não   | Float   |         | Porcentagem diária de juros. Obrigatório se `interest_type` é igual a 1 ou 3
-| **interest_daily_value**        | Não   | String  |         | Valor diário de juros. Obrigatório se `interest_type` é igual a 2 ou 4. (R$) Formato: 1.234,34
-| **interest_monthly_percentage** | Não   | Float   |         | Juros de mora mensal (O valor será dividido por 30. Ex 3% = 0,1% ao dia.) Obrigatório se `interest_type` é igual a 5 ou 6
+| **interest_percentage**         | Não   | Float   |         | Porcentagem diária de juros. De 0.0 a 100.0 (Ex 1.5% = 1.5) Obrigatório se `interest_type` é igual a 1.
+| **interest_value**              | Não   | String  |         | Valor diário de juros. Obrigatório se `interest_type` é igual a 2. (R$) Formato: 1.234,34
+| **interest_daily_percentage**   | Não   | Float   |         | Porcentagem diária de juros. De 0.0 a 100.0 (Ex 1.5% = 1.5) Obrigatório se `interest_type` é igual a 1 ou 3. <span style="display: block;" class="alert alert-danger"><strong>ATENÇÃO</strong> Este atributo está descontinuado e será removido do sistema em breve. Utilize <code class="highlighter-rouge">interest_percentage</code>.</span>
+| **interest_daily_value**        | Não   | String  |         | Valor diário de juros. Obrigatório se `interest_type` é igual a 2 ou 4. (R$) Formato: 1.234,34. <span style="display: block;" class="alert alert-danger"><strong>ATENÇÃO</strong> Este atributo está descontinuado e será removido do sistema em breve. Utilize <code class="highlighter-rouge">interest_value</code>.</span>
+| **interest_monthly_percentage** | Não   | Float   |         | Juros de mora mensal (O valor será dividido por 30. Ex 3% = 0,1% ao dia.) Obrigatório se `interest_type` é igual a 5 ou 6. <span style="display: block;" class="alert alert-danger"><strong>ATENÇÃO</strong> Este atributo está descontinuado e será removido do sistema em breve. Utilize <code class="highlighter-rouge">interest_percentage</code> passando a taxa diária.</span>
 | **days_for_interest**               | Não   | Integer |         | Quantidade de dias após o vencimento que a mora começará a incidir. O valor default é 1 dia (o dia posterior ao vencimento).
 | **late_payment_interest**       | Não   | Float   |         | Alias para `interest_monthly_percentage`ao dia.)
 | **discount_type**               | Não   | Integer |         | Tipo de desconto. O tipo será o mesmo para todos os três descontos, caso existam. ([possíveis valores](#discount_type))
@@ -108,12 +110,14 @@ breadcrumb: Assinaturas
 #### interest_type
 
 | 0 | Inexistente (Padrão)
-| 1 | Para porcentagem diária após um dia corrido
-| 2 | Para valor diário após um dia corrido
-| 3 | Para porcentagem diária após um dia útil
-| 4 | Para valor diário após um dia útil
-| 5 | Para porcentagem mensal após um dia corrido
-| 6 | Para porcentagem mensal após um dia útil
+| 1 | Para porcentagem diária
+| 2 | Para valor diário
+| 3 | Para porcentagem diária após um dia útil. <span style="color: #b94a48"><strong>ATENÇÃO</strong> Esta opção está descontinuada e será removida do sistema em breve. Entradas com este valor estão sendo convertidas para <code class="highlighter-rouge">1</code>.</span>
+| 4 | Para valor diário após um dia útil. <span style="color: #b94a48"><strong>ATENÇÃO</strong> Esta opção está descontinuada e será removida do sistema em breve. Entradas com este valor estão sendo convertidas para <code class="highlighter-rouge">2</code>.</span>
+| 5 | Para porcentagem mensal após um dia corrido. <span style="color: #b94a48"><strong>ATENÇÃO</strong> Esta opção está descontinuada e será removida do sistema em breve. Entradas com este valor estão sendo convertidas para <code class="highlighter-rouge">1</code> e o valor da porcentagem recalculado de acordo.</span>
+| 6 | Para porcentagem mensal após um dia útil. <span style="color: #b94a48"><strong>ATENÇÃO</strong> Esta opção está descontinuada e será removida do sistema em breve. Entradas com este valor estão sendo convertidas para <code class="highlighter-rouge">1</code> e o valor da porcentagem recalculado de acordo.</span>
+
+#### discount_type
 
 #### discount_type
 
