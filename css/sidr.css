@@ -7,6 +7,7 @@
   width: 260px;
   overflow-x: hidden;
   overflow-y: auto;
+  top: 69px;
 }
 .sidr.right {
   left: auto;
