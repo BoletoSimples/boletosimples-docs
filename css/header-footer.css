@@ -403,8 +403,8 @@ Media Queries for Tablets.
     header#main-header .containner {
       width: 94% !important; }
     header#main-header .logo img {
-      width: 8em;
-      padding: .5em 1em .5em 0; }
+      width: 160px;
+      padding: .2em 0; }
     header#main-header #menu-trigger {
       border-radius: 2px;
       width: 34px;
