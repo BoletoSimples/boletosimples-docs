@@ -46,8 +46,11 @@ class Runner
     end
 
     def update_css
+      output = open("#{base_url}/stylesheets/header-footer.css").read
+      output = output.gsub('http://localhost:4567','https://www.boletosimples.com.br')
+      output = output.gsub('https://www.boletosimples.com.br/images/','/img/')
       open('css/header-footer.css', 'w') do |file|
-        file << open("#{base_url}/stylesheets/header-footer.css").read
+        file << output
       end
     end
 
