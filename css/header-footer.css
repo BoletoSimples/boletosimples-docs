@@ -1,4 +1,23 @@
-@import url("https://fonts.googleapis.com/css?family=Khula:400,700");
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+@import url("https://fonts.googleapis.com/css?family=Quicksand:700");
+body {
+  font-family: 'Roboto', Helvetica, Arial, sans-serif;
+  background: #fff;
+  color: #333;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility; }
+
+h2, h3 {
+  font-family: 'Quicksand', sans-serif; }
+
+h3.main-title {
+  color: #3399CC;
+  font-size: 3em;
+  text-align: center; }
+  @media (max-width: 800px) {
+    h3.main-title {
+      font-size: 2em; } }
+
 .alert {
   padding: 15px;
   margin-bottom: 20px;
@@ -182,6 +201,12 @@ header#main-header {
     header#main-header .signup-trigger:hover {
       text-decoration: none;
       opacity: .9; }
+  header#main-header .sign-in-up-item {
+    display: none; }
+    header#main-header .sign-in-up-item a {
+      background-color: #ff9000;
+      border-color: #f58a00;
+      color: white; }
   header#main-header #login-form input[type="submit"],
   header#main-header .login-trigger {
     width: 70px; }
@@ -283,7 +308,7 @@ header#main-header {
   header#main-header .dropdown-trigger > a {
     cursor: pointer; }
     header#main-header .dropdown-trigger > a:after {
-      background: url(http://localhost:4567/images/menu/arrow-down.svg);
+      background: url(/img/menu/arrow-down.svg);
       background-size: 12px 15px;
       content: " ";
       display: inline-block;
@@ -377,6 +402,9 @@ Media Queries for Tablets.
     min-height: 69px; }
     header#main-header .containner {
       width: 94% !important; }
+    header#main-header .logo img {
+      width: 160px;
+      padding: .2em 0; }
     header#main-header #menu-trigger {
       border-radius: 2px;
       width: 34px;
@@ -391,15 +419,26 @@ Media Queries for Tablets.
       background: #008de4;
       color: #fff;
       text-align: center; }
-    header#main-header nav.signup, header#main-header nav.login {
-      clear: both;
+    header#main-header .login {
+      float: none;
       width: 100%; }
-      header#main-header nav.signup #menu-trigger, header#main-header nav.login #menu-trigger {
-        right: 1em; }
-    header#main-header nav.login .login-trigger, header#main-header nav.signup .login-trigger, header#main-header nav.login .signup-trigger, header#main-header nav.signup .signup-trigger {
-      display: none; }
-    header#main-header nav.login #menu-trigger, header#main-header nav.signup #menu-trigger {
-      right: 1em; }
+      header#main-header .login #menu-trigger {
+        right: 5em; }
+    header#main-header nav.login, header#main-header nav.signup {
+      display: block;
+      float: none;
+      line-height: normal; }
+      header#main-header nav.login .login-trigger, header#main-header nav.signup .login-trigger {
+        position: absolute;
+        display: inline-block;
+        right: 4em; }
+      header#main-header nav.login .signup-trigger, header#main-header nav.signup .signup-trigger {
+        display: none; }
+      header#main-header nav.login .sign-in-up-item, header#main-header nav.signup .sign-in-up-item {
+        display: block; }
+      header#main-header nav.login #menu-trigger, header#main-header nav.signup #menu-trigger {
+        float: right;
+        right: 0; }
     header#main-header .dropdown-trigger {
       height: auto; }
       header#main-header .dropdown-trigger .header-dropdown {
@@ -421,7 +460,7 @@ Media Queries for Tablets.
       width: 100%;
       display: none;
       position: inherit;
-      padding-bottom: 12px;
+      padding-bottom: 2em;
       padding-right: 0;
       padding-left: 0;
       right: none;
@@ -441,7 +480,9 @@ Media Queries for Tablets.
       header#main-header #signup-form input[type="password"],
       header#main-header #signup-form .email-field,
       header#main-header #signup-form .password-field {
-        width: 100% !important;
+        margin-left: 0;
+        top: 1em;
+        width: 100%;
         margin-right: 0; }
       header#main-header #login-form input[type="email"],
       header#main-header #login-form input[type="password"],
@@ -461,6 +502,9 @@ Media Queries for Tablets.
         display: none; }
     header#main-header nav.signup ul, header#main-header nav.login ul {
       padding: 0; }
+    header#main-header nav.signup #form-signin input, header#main-header nav.login #form-signin input {
+      margin-left: 0;
+      top: 2em; }
     header#main-header nav.login ul, header#main-header nav.signup ul {
       padding: 0; }
     header#main-header nav ul {
@@ -555,6 +599,11 @@ footer#main-footer {
       vertical-align: middle; }
       footer#main-footer .logos a img:hover {
         opacity: .7; }
+  footer#main-footer .social-media ul {
+    margin: 16px 0 -32px; }
+  footer#main-footer .social-media li a {
+    font-size: 32px;
+    color: #444; }
   footer#main-footer .bs-infos {
     margin-bottom: 4em; }
 
