@@ -17,11 +17,11 @@ Acessar -> Ajustes da Conta -> API
 
 <div class="alert alert-info"><strong>ATENÇÃO</strong> O Token é diferente entre Sandbox e sua conta real.</div>
 
-Quando for começar a gerar os boletos em sua conta verdadeira, você deve repetir o procedimento acima e pegar o Token da sua conta real.
+Quando for começar a gerar os boletos em sua conta verdadeira, você deve repetir o procedimento acima e pegar o `Token` da sua [conta real](https://boletosimples.com.br/conta/api).
 
-A autenticação usando o `Token de Acesso` é feita via `HTTP Basic`, porém ao invés de passar o login e senha do usuário, como é tradicional, deve-se fornecer o `Token de Acesso` do usuário no campo ‘login’ e nada no campo ‘password’. Alguns clientes HTTP podem reclamar do fato do campo ‘password’ estar vazio, nesse caso pode-se informar ‘X’ como senha, que o sistema irá ignorar.
+A autenticação usando o `Token de Acesso` é feita via [Bearer authentication](https://tools.ietf.org/html/rfc6750).
 
-Exemplo de chamada API autenticada (onde "zjuio96wkixkzy6z98sy" é o Token de Acesso do usuário):
+Exemplos de chamadas de API autenticada (onde "zjuio96wkixkzy6z98sy" é o Token de Acesso do usuário):
 
 ### Exemplo de token válido
 
@@ -37,7 +37,7 @@ Exemplo de chamada API autenticada (onde "zjuio96wkixkzy6z98sy" é o Token de Ac
 
 <pre class="bash">
 curl -i \
--u $BOLETOSIMPLES_TOKEN:x \
+-H "Authorization: Bearer zjuio96wkixkzy6z98sy" \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
 -X GET 'https://sandbox.boletosimples.com.br/api/v1/userinfo'
@@ -59,7 +59,7 @@ Status: 200 OK
 
 <pre class="ruby">
 BoletoSimples.configure do |c|
-c.access_token = 'valid-access-token'
+c.access_token = 'zjuio96wkixkzy6z98sy'
 end
 
 BoletoSimples::Extra.userinfo
@@ -101,7 +101,7 @@ BoletoSimples::Extra.userinfo
 
 <pre class="php">
 BoletoSimples::configure(array(
-"access_token" => 'valid-access-token'
+"access_token" => 'zjuio96wkixkzy6z98sy'
 \));
 BoletoSimples\\Extra::userinfo();
 </pre>
@@ -154,7 +154,7 @@ Array
 
 <pre class="bash">
 curl -i \
--u tokeninvalido:x \
+-H "Authorization: Bearer tokeninvalido" \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
 -X GET 'https://sandbox.boletosimples.com.br/api/v1/userinfo'
@@ -168,7 +168,7 @@ Date: Fri, 17 Oct 2014 18:20:18 GMT
 Status: 401 Unauthorized
 ...
 
-{"error":"Email ou senha inválidos."}
+{"error":"Você precisa se logar ou registrar antes de prosseguir."}
 </pre>
 </div>
 <div class="tab-pane" id="ruby2">

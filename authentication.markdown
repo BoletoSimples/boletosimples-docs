@@ -32,6 +32,10 @@ Nós oferecemos duas formas de autenticação para acessar a API do Boleto Simpl
 
 #### Salve as credenciais de forma segura!
 
-Você deve se preocupar em como guardar as credencias que você consegue de forma segura. Se alguém obtém o `access_token` com permissões, eles poderão acessar informações particulares suas e dos seus clientes.
+Você deve se preocupar em como guardar as credencias que você consegue de forma segura. 
 
-Nunca salve suas credenciais junto ao seu código fonte ou em seu banco de dados à menos que estejam criptografadas. Separar as credencias do seu código fonte e do banco de dados são excelentes práticas a serem adotadas.
+Se alguém obtém o `access_token` com permissões, eles poderão acessar informações particulares suas e dos seus clientes.
+
+Nunca salve suas credenciais junto ao seu código fonte ou em seu banco de dados à menos que estejam criptografadas. 
+
+Separar as credencias do seu código fonte e do banco de dados são excelentes práticas a serem adotadas.

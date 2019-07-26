@@ -77,7 +77,7 @@ A permissão padrão é `login` caso você não especifice um scope.
 
 Você pode solicitar permissões individuais ou em grupo.
 
-Permissões em grupo devem ser separadas com caracter`+` na URL.
+Permissões em grupo devem ser separadas com caracter `+` na URL.
 
 Abaixo um exemplo de URL de requisição com parâmetro `scope` no final:
 

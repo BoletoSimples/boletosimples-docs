@@ -433,7 +433,7 @@ Código único de operação dentro do Boleto Simples
 
 <pre class="bash">
   curl -i \
-  -u $BOLETOSIMPLES_TOKEN:x \
+  -H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
   -H 'Content-Type: application/json' \
   -H 'User-Agent: MyApp (myapp@example.com)' \
   -X GET 'https://sandbox.boletosimples.com.br/api/v1/bank_billet_discharges?page=1&per_page=50'
@@ -494,7 +494,7 @@ Content-Type: application/json; charset=utf-8
 
 <pre class="bash">
   curl -i \
-  -u $BOLETOSIMPLES_TOKEN:x \
+  -H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
   -H 'Content-Type: application/json' \
   -H 'User-Agent: MyApp (myapp@example.com)' \
   -X GET 'https://sandbox.boletosimples.com.br/api/v1/bank_billet_discharges/1'

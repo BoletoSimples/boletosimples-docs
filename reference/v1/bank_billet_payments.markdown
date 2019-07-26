@@ -47,7 +47,7 @@ breadcrumb: Pagamento de Boleto
 
 <pre class="bash">
 curl -i \
--u $BOLETOSIMPLES_TOKEN:x \
+-H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
 -X POST 'https://sandbox.boletosimples.com.br/api/v1/bank_billet_payments'
@@ -82,7 +82,7 @@ Content-Type: application/json; charset=utf-8
 
 <pre class="bash">
 curl -i \
--u $BOLETOSIMPLES_TOKEN:x \
+-H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -d '{"bank_billet_payment":{"paid_amount":40.01,"bank_rate":4,02,"paid_at":"2017-03-13","paid_bank":"001","paid_agency":"00001","bank_billet_id":1}}' \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
@@ -232,7 +232,7 @@ Content-Type: application/json; charset=utf-8
 
 <pre class="bash">
 curl -i \
-  -u $BOLETOSIMPLES_TOKEN:x \
+  -H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
   -H 'Content-Type: application/json' \
   -H 'User-Agent: MyApp (myapp@example.com)' \
   -X GET 'https://sandbox.boletosimples.com.br/api/v1/bank_billet_payments?page=1&per_page=50'
@@ -283,7 +283,7 @@ Content-Type: application/json; charset=utf-8
 
 <pre class="bash">
 curl -i \
--u $BOLETOSIMPLES_TOKEN:x \
+-H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
 -X GET 'https://sandbox.boletosimples.com.br/api/v1/bank_billet_payments/1'
@@ -333,7 +333,7 @@ Content-Type: application/json; charset=utf-8
 
 <pre class="bash">
 curl -i \
--u $BOLETOSIMPLES_TOKEN:x \
+-H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -H 'User-Agent: MyApp (myapp@example.com)' \
 -X DELETE 'https://sandbox.boletosimples.com.br/api/v1/bank_billet_payments/1'
 </pre>
