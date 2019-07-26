@@ -62,7 +62,7 @@ layout: pt
 
 <pre class="bash">
 curl -i \
--u $BOLETOSIMPLES_TOKEN:x \
+-H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -d '{"customer":{}}' \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
@@ -160,7 +160,7 @@ Array
 
 <pre class="bash">
 curl -i \
--u $BOLETOSIMPLES_TOKEN:x \
+-H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -d '{"customer":{"person_name":"Nome do Cliente", "cnpj_cpf": "125.812.717-28", "zipcode": "20071004", "address": "Rua quinhentos", "city_name": "Rio de Janeiro", "state": "RJ", "neighborhood": "bairro"}}' \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
@@ -325,7 +325,7 @@ Array
 
 <pre class="bash">
 curl -i \
--u $BOLETOSIMPLES_TOKEN:x \
+-H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
 -X GET 'https://sandbox.boletosimples.com.br/api/v1/customers/1'
@@ -448,7 +448,7 @@ Array
 
 <pre class="bash">
 curl -i \
--u $BOLETOSIMPLES_TOKEN:x \
+-H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -d '{"customer":{"person_name":""}}' \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
@@ -540,7 +540,7 @@ Array
 
 <pre class="bash">
 curl -i \
--u $BOLETOSIMPLES_TOKEN:x \
+-H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -d '{"customer":{"person_name":"Nome do Cliente Atualizado"}}' \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
@@ -685,7 +685,7 @@ Novo nome: Nome 1234
 
 <pre class="bash">
 curl -i \
--u $BOLETOSIMPLES_TOKEN:x \
+-H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
 -X GET "https://sandbox.boletosimples.com.br/api/v1/customers?page=1&per_page=50"
@@ -820,7 +820,7 @@ Próxima Página: https://sandbox.boletosimples.com.br/api/v1/customers?page=2&p
 
 <pre class="bash">
 curl -i \
--u $BOLETOSIMPLES_TOKEN:x \
+-H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
 -X GET 'https://sandbox.boletosimples.com.br/api/v1/customers/cnpj_cpf?q=125.812.717-28'
@@ -967,7 +967,7 @@ Array
 
 <pre class="bash">
 curl -i \
--u $BOLETOSIMPLES_TOKEN:x \
+-H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
 -X GET 'https://sandbox.boletosimples.com.br/api/v1/customers/email?q=cliente@example.com'

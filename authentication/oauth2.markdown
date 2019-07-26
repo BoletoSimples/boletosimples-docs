@@ -9,19 +9,19 @@ en: "/en/authentication"
 
 #### Nós recomendamos essa opção caso sua app necessite acessar contas de terceiros.
 
-O protocolo [OAuth2](http://en.wikipedia.org/wiki/OAuth#OAuth_2.0) permite o acesso parcial ou total por terceiros sem necessidade de compartilhar sua senha. É mais complexo que acessar por usuário e senha mas é mais flexível. OAuth2 funciona muito bem para aplicações web, assim como para desktop e mobile.
+O protocolo [OAuth2](https://oauth.net/2/) permite o acesso parcial ou total por terceiros sem necessidade de compartilhar sua senha. É mais complexo que acessar por usuário e senha mas é mais flexível. OAuth2 funciona muito bem para aplicações web, assim como para desktop e mobile.
 
 ### Bibliotecas
 
-Há bibliotecas OAuth2 para quase todas as linguagens visto que é um protocolo amplamente utilizado na industria de software e por empresas como like Google e Facebook.
+Há bibliotecas OAuth2 para quase todas as linguagens visto que é um protocolo amplamente utilizado na industria de software e por empresas como Google e Facebook.
 
-[Escolha uma biblioteca antes de começar](http://oauth.net/code/).
+[Escolha uma biblioteca antes de começar](https://oauth.net/2/).
 
 ### Registro da Aplicação
 
 Para começar você precisa [cadastrar a sua aplicação](https://sandbox.boletosimples.com.br/conta/api/aplicacoes). Nós te forneceremos um `client_id` e `client_secret`.
 
-Você também deverá nos fornecer uma URL de Redirecionamento `redirect_uri` para o seu site. Se você desenvolve para desktop ou mobile, veja na seção a baixo como configurar a `redirect_uri`.
+Você também deverá nos fornecer uma URL de Redirecionamento `redirect_uri` para o seu site.
 
 ### Endpoints
 
@@ -189,7 +189,7 @@ curl -i \
 
         <pre class="bash">
 curl -i \
--u $BOLETOSIMPLES_TOKEN:x \
+-H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
 -X GET 'https://sandbox.boletosimples.com.br/api/v1/userinfo'
@@ -284,12 +284,6 @@ Utilize esse token na api de parceiros para criar novas contas no Boleto Simples
 
 ### Desenvolvendo aplicações para Mobile e Desktop
 
-Se você está desenvolvendo para mobile ou desktop, você talvez não tenha uma url de redirecionamento. Nestes
-casos você pode configurar a url para: `urn:ietf:wg:oauth:2.0:oob`. Isto faz com que o servidor
-mostre uma página em branco com o código de autorização na url e título da página. Você pode ler essa informação
-de alguma forma dentro da sua aplicação para poder utilizada mais tarde.
+Se você está desenvolvendo para mobile ou desktop, você talvez não tenha uma url de redirecionamento. 
 
-Isso usa a mesma técnica adotada pelo
-[Google](https://developers.google.com/accounts/docs/OAuth2InstalledApp).
-
-[Aqui tem um guia (Em inglês)](http://www.slideshare.net/briandavidcampbell/is-that-a-token-in-your-phone-in-your-pocket-or-are-you-just-glad-to-see-me-oauth-20-and-mobile-devices) com um exemplo para iOS e Android.
+Nestes casos você pode conferir as formas de se usar OAuth 2.0 para [diversos tipos de devices](https://oauth.net/2/).

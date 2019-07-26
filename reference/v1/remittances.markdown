@@ -65,7 +65,7 @@ ao término do processamento serão emitidas notificações através dos Webhook
 
 <pre class="bash">
 curl -i \
--u $BOLETOSIMPLES_TOKEN:x \
+-H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
 -X POST 'https://sandbox.boletosimples.com.br/api/v1/remittances'
@@ -163,7 +163,7 @@ Array
 
 <pre class="bash">
 curl -i \
--u $BOLETOSIMPLES_TOKEN:x \
+-H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -d '{"remittance":{"bank_billet_account_id": "1"}}' \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
@@ -339,7 +339,7 @@ ao término do processamento serão emitidas notificações através dos Webhook
 
 <pre class="bash">
 curl -i \
--u $BOLETOSIMPLES_TOKEN:x \
+-H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -d '{"remittance":{"bank_billet_remittance_ids":["1","2"]}}' \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
@@ -393,7 +393,7 @@ Content-Type: application/json; charset=utf-8
 
 <pre class="bash">
 curl -i \
--u $BOLETOSIMPLES_TOKEN:x \
+-H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
 -X GET 'https://sandbox.boletosimples.com.br/api/v1/remittances/1'
@@ -598,7 +598,7 @@ Array
 
 <pre class="bash">
 curl -i \
--u $BOLETOSIMPLES_TOKEN:x \
+-H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
 -X GET "https://sandbox.boletosimples.com.br/api/v1/remittances?page=1&per_page=50"
@@ -698,7 +698,7 @@ Próxima Página: https://sandbox.boletosimples.com.br/api/v1/remittances?page=2
 
 <pre class="bash">
 curl -i \
--u $BOLETOSIMPLES_TOKEN:x \
+-H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
 -X DELETE 'https://sandbox.boletosimples.com.br/api/v1/remittances/11'
@@ -801,7 +801,7 @@ Será disparado o evento `remittance.downloaded`.
 
 <pre class="bash">
 curl -i \
--u $BOLETOSIMPLES_TOKEN:x \
+-H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -H 'Content-Type: text/plain' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
 -X GET 'https://sandbox.boletosimples.com.br/api/v1/remittances/1/raw'

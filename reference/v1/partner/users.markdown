@@ -418,7 +418,7 @@ layout: pt
 
 <pre class="bash">
 curl -i \
--u $BOLETOSIMPLES_TOKEN:x \
+-H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
 -X POST 'https://sandbox.boletosimples.com.br/api/v1/partner/users'
@@ -513,7 +513,7 @@ Array
 
 <pre class="bash">
 curl -i \
--u $BOLETOSIMPLES_TOKEN:x \
+-H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -d '{"user":{"email": "customer@example.com"}}' \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \

@@ -279,7 +279,7 @@ Será retornado `404 Not Found` ao tentar acessar a url de um boleto que ainda e
     <small>Requisição:</small>
 <pre class="bash">
 curl -i \
--u $BOLETOSIMPLES_TOKEN:x \
+-H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -d '{"bank_billet":{}}' \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
@@ -431,8 +431,8 @@ Array
 
 <pre class="bash">
 curl -i \
--u $BOLETOSIMPLES_TOKEN:x \
--d '{"bank_billet":{"amount":12.34, "expire_at": "2014-11-15", "description": "Prestação de Serviço", "customer_person_name": "Nome do Cliente", "customer_cnpj_cpf": "125.812.717-28", "customer_zipcode": "12312123", "customer_address": "Rua quinhentos", "customer_city_name": "Rio de Janeiro", "customer_state": "RJ", "customer_neighborhood": "bairro"}}' \
+-H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
+-d '{"bank_billet":{"amount":12.34, "expire_at": "2021-11-15", "description": "Prestação de Serviço", "customer_person_name": "Nome do Cliente", "customer_cnpj_cpf": "125.812.717-28", "customer_zipcode": "12312123", "customer_address": "Rua quinhentos", "customer_city_name": "Rio de Janeiro", "customer_state": "RJ", "customer_neighborhood": "bairro"}}' \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
 -X POST 'https://sandbox.boletosimples.com.br/api/v1/bank_billets'
@@ -607,7 +607,7 @@ Array
 
 <pre class="bash">
 curl -i \
--u $BOLETOSIMPLES_TOKEN:x \
+-H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
 -X GET 'https://sandbox.boletosimples.com.br/api/v1/bank_billets/1'
@@ -965,7 +965,7 @@ Array
 
 <pre class="bash">
 curl -i \
--u $BOLETOSIMPLES_TOKEN:x \
+-H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
 -X GET "https://sandbox.boletosimples.com.br/api/v1/bank_billets?page=1&per_page=50"
@@ -1082,7 +1082,7 @@ Você pode cancelar boletos nos status de Aberto(`opened`) ou Vencido(`overdue`)
 
 <pre class="bash">
 curl -i \
--u $BOLETOSIMPLES_TOKEN:x \
+-H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
 -X PUT https://sandbox.boletosimples.com.br/api/v1/bank_billets/1/cancel
@@ -1177,7 +1177,7 @@ Status Final: paid
 
 <pre class="bash">
 curl -i \
--u $BOLETOSIMPLES_TOKEN:x \
+-H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
 -X PUT https://sandbox.boletosimples.com.br/api/v1/bank_billets/1/cancel
@@ -1404,7 +1404,7 @@ Em carteiras registradas, a alteração irá entrar na remessa e pode ser cobrad
 
 <pre class="bash">
 curl -i \
--u $BOLETOSIMPLES_TOKEN:x \
+-H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -d '{"bank_billet":{}}' \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
@@ -1497,7 +1497,7 @@ Status Final: paid
 
 <pre class="bash">
 curl -i \
--u $BOLETOSIMPLES_TOKEN:x \
+-H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -d '{"bank_billet":{"expire_at":"2017-11-15"}}' \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
@@ -1621,7 +1621,7 @@ Status Final: canceled
 
 <pre class="bash">
 curl -i \
--u $BOLETOSIMPLES_TOKEN:x \
+-H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -d '{"expire_at_in_days":"5"}' \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
@@ -1883,7 +1883,7 @@ Array
 
 <pre class="bash">
 curl -i \
--u $BOLETOSIMPLES_TOKEN:x \
+-H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
 -X GET 'https://sandbox.boletosimples.com.br/api/v1/bank_billets/cnpj_cpf?q=125.812.717-28'
@@ -2060,7 +2060,7 @@ Array
 
 <pre class="bash">
 curl -i \
--u $BOLETOSIMPLES_TOKEN:x \
+-H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
 -X GET 'https://sandbox.boletosimples.com.br/api/v1/bank_billets/our_number?q=00000000441'
@@ -2265,7 +2265,7 @@ Array
 
 <pre class="bash">
 curl -i \
--u $BOLETOSIMPLES_TOKEN:x \
+-H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
 -X GET 'https://sandbox.boletosimples.com.br/api/v1/bank_billets/status?q=opened'
@@ -2393,7 +2393,7 @@ Array
 
 <pre class="bash">
 curl -i \
--u $BOLETOSIMPLES_TOKEN:x \
+-H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -d '{"bank_billet":{"paid_amount":120.34, "paid_at": "2014-11-15"}}' \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
@@ -2653,7 +2653,7 @@ Array
     <small>Requisição:</small>
 <pre class="bash">
 curl -i \
--u $BOLETOSIMPLES_TOKEN:x \
+-H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -d '{"status":""}' \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
@@ -2689,7 +2689,7 @@ Content-Type: application/json; charset=utf-8
 
 <pre class="bash">
 curl -i \
--u $BOLETOSIMPLES_TOKEN:x \
+-H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -d '{"status":"opened", "expire_from":"20-04-2017", "expire_to"="20-10-2017", "bank_billet_ids":"[345,456,788]", "cnpj_cpf": "125.812.717-28"}' \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
@@ -2770,7 +2770,7 @@ Será retornado `404 Not Found` ao tentar acessar a url de um boleto que ainda e
     <small>Requisição:</small>
 <pre class="bash">
 curl -i \
--u $BOLETOSIMPLES_TOKEN:x \
+-H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -d '{"bank_billets":{}}' \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
@@ -2830,7 +2830,7 @@ Content-Type: application/json; charset=utf-8
 
 <pre class="bash">
 curl -i \
--u $BOLETOSIMPLES_TOKEN:x \
+-H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -d '{"bank_billets":[{"amount":12.34, "expire_at": "2018-11-15", "description": "Prestação de Serviço", "customer_person_name": "Nome do Cliente", "customer_cnpj_cpf": "125.812.717-28", "customer_zipcode": "12312123", "customer_address": "Rua quinhentos", "customer_city_name": "Rio de Janeiro", "customer_state": "RJ", "customer_neighborhood": "bairro"},{"amount":12.34, "expire_at": "2018-11-15", "description": "Prestação de Serviço", "customer_person_name": "Nome do Cliente", "customer_cnpj_cpf": "125.812.717-28", "customer_zipcode": "12312123", "customer_address": "Rua quinhentos", "customer_city_name": "Rio de Janeiro", "customer_state": "RJ", "customer_neighborhood": "bairro"},{"amount":12.34, "expire_at": "", "description": "Prestação de Serviço", "customer_person_name": "Nome do Cliente", "customer_cnpj_cpf": "", "customer_zipcode": "12312123", "customer_address": "Rua quinhentos", "customer_city_name": "Rio de Janeiro", "customer_state": "RJ", "customer_neighborhood": "bairro"}]}' \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \

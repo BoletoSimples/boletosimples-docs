@@ -108,7 +108,7 @@ No momento que a primeira carteira é homologada (passa para o `status` = `activ
 
 <pre class="bash">
 curl -i \
--u $BOLETOSIMPLES_TOKEN:x \
+-H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -d '{"bank_billet_account":{}}' \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
@@ -207,7 +207,7 @@ Array
 
 <pre class="bash">
 curl -i \
--u $BOLETOSIMPLES_TOKEN:x \
+-H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -d '{"bank_billet_account":{"bank_contract_slug": "sicoob-02", "agency_number": "4327", "agency_digit": "3", "account_number": "3666", "account_digit": "8", "next_our_number": "1", "extra1": "1234567"}}' \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
@@ -388,7 +388,7 @@ Array
 
 <pre class="bash">
 curl -i \
--u $BOLETOSIMPLES_TOKEN:x \
+-H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
 -X GET 'https://sandbox.boletosimples.com.br/api/v1/bank_billet_accounts/3'
@@ -536,7 +536,7 @@ Array
 
 <pre class="bash">
 curl -i \
--u $BOLETOSIMPLES_TOKEN:x \
+-H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -d '{"bank_billet_account":{"agency_number":""}}' \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
@@ -630,7 +630,7 @@ Array
 
 <pre class="bash">
 curl -i \
--u $BOLETOSIMPLES_TOKEN:x \
+-H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -d '{"bank_billet_account":{"agency_number":"4567"}}' \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
@@ -753,7 +753,7 @@ Novo nome: Nome 1234
 
 <pre class="bash">
 curl -i \
--u $BOLETOSIMPLES_TOKEN:x \
+-H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
 -X GET "https://sandbox.boletosimples.com.br/api/v1/bank_billet_accounts?page=1&per_page=50"
@@ -874,7 +874,7 @@ Próxima Página: https://sandbox.boletosimples.com.br/api/v1/bank_billet_accoun
 
 <pre class="bash">
 curl -i \
--u $BOLETOSIMPLES_TOKEN:x \
+-H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
 -X GET 'https://sandbox.boletosimples.com.br/api/v1/bank_billet_accounts/1/ask'
@@ -1029,7 +1029,7 @@ Array
 
 <pre class="bash">
 curl -i \
--u $BOLETOSIMPLES_TOKEN:x \
+-H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -d '{"homologation_amount":""}' \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
@@ -1124,7 +1124,7 @@ Array
 
 <pre class="bash">
 curl -i \
--u $BOLETOSIMPLES_TOKEN:x \
+-H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -d '{"homologation_amount":"1,67"}' \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
@@ -1214,7 +1214,7 @@ Novo nome: Nome 1234
 
 <pre class="bash">
 curl -i \
--u $BOLETOSIMPLES_TOKEN:x \
+-H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -d '{"default":""}' \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
@@ -1309,7 +1309,7 @@ Array
 
 <pre class="bash">
 curl -i \
--u $BOLETOSIMPLES_TOKEN:x \
+-H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -d '{"default":"true"}' \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \

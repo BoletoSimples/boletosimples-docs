@@ -162,7 +162,7 @@ breadcrumb: Carnês
 
 <pre class="bash">
 curl -i \
--u $BOLETOSIMPLES_TOKEN:x \
+-H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -d '{"installment":{}}' \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
@@ -261,7 +261,7 @@ Array
 
 <pre class="bash">
   curl -i \
-  -u $BOLETOSIMPLES_TOKEN:x \
+  -H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
   -d '{"installment":{"customer_id":"1", "bank_billet_account_id": "1", "amount": "1.120,4", "cycle": "monthly", "start_at": "2016-09-15", "total": "3", "description": "Hospedagem"}}' \
   -H 'Content-Type: application/json' \
   -H 'User-Agent: MyApp (myapp@example.com)' \
@@ -429,7 +429,7 @@ Array
 
 <pre class="bash">
 curl -i \
--u $BOLETOSIMPLES_TOKEN:x \
+-H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
 -X GET 'https://sandbox.boletosimples.com.br/api/v1/installments/1'
@@ -602,7 +602,7 @@ Array
 
 <pre class="bash">
 curl -i \
--u $BOLETOSIMPLES_TOKEN:x \
+-H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
 -X GET "https://sandbox.boletosimples.com.br/api/v1/installments?page=1&per_page=50"
@@ -724,7 +724,7 @@ Nenhum boleto gerado pela carnê será excluído.
 
 <pre class="bash">
 curl -i \
--u $BOLETOSIMPLES_TOKEN:x \
+-H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -H 'User-Agent: MyApp (myapp@example.com)' \
 -X DELETE 'https://sandbox.boletosimples.com.br/api/v1/installments/1'
 </pre>
