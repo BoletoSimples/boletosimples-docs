@@ -15,6 +15,23 @@
   <li {% if page.url == '/sandbox/' %}class="active"{% endif %}>
     <a class="main-link" href="/sandbox" title="Sandbox">Ambiente Sandbox</a>
   </li>
+  <li class="{% if page.url == '/authentication/' %}active{% endif %}">
+    <a class="main-link" href="/authentication" title="Autenticação">Autenticação</a>
+    <ul class="subnav">
+      <li {% if page.url == '/authentication/' %}class="active"{% endif %}>
+      <a href="/authentication" title="Como Funciona">Como Funciona</a>
+      </li>
+      <li {% if page.url == '/authentication/token/' %}class="active"{% endif %}>
+      <a href="/authentication/token" title="Token de Acesso">Token de Acesso</a>
+      </li>
+      <li {% if page.url == '/authentication/oauth2/' %}class="active"{% endif %}>
+      <a href="/authentication/oauth2" title="OAuth2">OAuth2</a>
+      </li>
+      <li {% if page.url == '/authentication/permissions/' %}class="active"{% endif %}>
+      <a href="/authentication/permissions" title="Permissões">Permissões</a>
+      </li>
+    </ul>
+  </li>
   <li {% if page.url == '/libraries/' %}class="active"{% endif %}>
     <a class="main-link" href="/libraries" title="Bibliotecas">Bibliotecas</a>
   </li>
@@ -46,23 +63,6 @@
       </li>
       <li {% if page.url == '/integrations/pluga/' %}class="active"{% endif %}>
         <a href="/integrations/pluga" title="Pluga">Pluga</a>
-      </li>
-    </ul>
-  </li>
-  <li class="{% if page.url == '/authentication/' %}active{% endif %}">
-    <a class="main-link" href="/authentication" title="Autenticação">Autenticação</a>
-    <ul class="subnav">
-      <li {% if page.url == '/authentication/' %}class="active"{% endif %}>
-        <a href="/authentication" title="Como Funciona">Como Funciona</a>
-      </li>
-      <li {% if page.url == '/authentication/token/' %}class="active"{% endif %}>
-        <a href="/authentication/token" title="Token de Acesso">Token de Acesso</a>
-      </li>
-      <li {% if page.url == '/authentication/oauth2/' %}class="active"{% endif %}>
-        <a href="/authentication/oauth2" title="OAuth2">OAuth2</a>
-      </li>
-      <li {% if page.url == '/authentication/permissions/' %}class="active"{% endif %}>
-        <a href="/authentication/permissions" title="Permissões">Permissões</a>
       </li>
     </ul>
   </li>
