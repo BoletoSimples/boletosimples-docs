@@ -22,6 +22,10 @@ Você também pode se inscrever para receber as notificações de alterações d
 
 #### Últimas alterações realizadas na API.
 
+### 09/08/2019
+
+* Documenta filtro por `ID do Objeto` em [Webhooks enviados](/reference/v1/webhook_deliveries/#listar-webhook-enviados)
+
 ### 08/05/2019
 
 * Atualiza lista de [Tipo de Documento](/reference/v1/bank_billets/#document_type)

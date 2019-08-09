@@ -1,18 +1,18 @@
 ---
-title: Webhook Deliveries
+title: Webhook Enviados
 position: 14
 layout: pt
 en: "/en/webhook_deliveries"
-breadcrumb: Webhook Deliveries
+breadcrumb: Webhook Enviados
 ---
 
-## Webhook Deliveries
+## Webhook Enviados
 
 | Recurso                  | Descrição
 | ------------------------ | ------------------------
-| [GET /api/v1/webhook_deliveries/:id](#informações-do-webhook-delivery) | Informações do webhook delivery
-| [GET /api/v1/webhook_deliveries](#listar-webhook-deliveries) | Listar webhook deliveries
-| [PUT /api/v1/webhook_deliveries/resend](#reenviar-webhook-deliveries) | Reenviar webhook deliveries
+| [GET /api/v1/webhook_deliveries/:id](#informações-do-webhook-enviado) | Informações do webhook enviado
+| [GET /api/v1/webhook_deliveries](#listar-webhook-enviados) | Listar webhook enviados
+| [PUT /api/v1/webhook_deliveries/resend](#reenviar-webhook) | Reenviar webhook
 
 ### Modelo de Dados
 
@@ -48,7 +48,7 @@ breadcrumb: Webhook Deliveries
 | 2 | failed
 
 
-### Informações do webhook delivery
+### Informações do webhook enviado
 
 `GET /api/v1/webhook_deliveries/:id`
 
@@ -264,7 +264,7 @@ Array
   </div-->
 </div>
 
-### Listar webhook deliveries
+### Listar webhook enviados
 
 `GET /api/v1/webhook_deliveries`
 
@@ -326,8 +326,16 @@ Array
       <td>Integer</td>
       <td>Situação do webhook delivery (<a href="#status">possíveis valores</a>)</td>
     </tr>
+    <tr>
+      <td><strong>obj_id</strong></td>
+      <td>Não</td>
+      <td>Integer</td>
+      <td>ID do Objeto</td>
+    </tr>
   </tbody>
 </table>
+
+O `ID do Objeto` vai retornar todos e qualquer tipo de objeto que tenha o ID enviado, ou seja, se você enviar `1`, poderá retornar boletos, clientes e etc. Caso queira um filtro mais refinado, combine o `ID do Objeto ` com o `Código do evento`.
 
 #### Exemplo
 
@@ -531,7 +539,7 @@ Próxima Página: https://sandbox.boletosimples.com.br/api/v1/transactions?page=
 </div>
 
 
-### Reenviar webhook deliveries
+### Reenviar webhook
 
 `PUT /api/v1/webhook_deliveries/resend` ou `PATCH /api/v1/webhook_deliveries/resend`
 
@@ -581,8 +589,16 @@ Próxima Página: https://sandbox.boletosimples.com.br/api/v1/transactions?page=
       <td>Integer</td>
       <td>Situação do webhook delivery (<a href="#status">possíveis valores</a>)</td>
     </tr>
+    <tr>
+      <td><strong>obj_id</strong></td>
+      <td>Não</td>
+      <td>Integer</td>
+      <td>ID do Objeto</td>
+    </tr>
   </tbody>
 </table>
+
+O `ID do Objeto` vai retornar todos e qualquer tipo de objeto que tenha o ID enviado, ou seja, se você enviar `1`, poderá retornar boletos, clientes e etc. Caso queira um filtro mais refinado, combine o `ID do Objeto ` com o `Código do evento`.
 
 #### Exemplo
 
