@@ -491,6 +491,7 @@ A regra é que todos os payloads possuem as chaves `event_code`, `webhook`, `obj
       {
         "id": 1,
         "occurrence": "06",
+        "our_occurrence": "2006",
         "date_of_occurrence": "2018-04-18",
         "discharge_id": 1,
         "bank_billet_id": 1,
@@ -525,6 +526,7 @@ A regra é que todos os payloads possuem as chaves `event_code`, `webhook`, `obj
       {
         "id": 2,
         "occurrence": "06",
+        "our_occurrence": "2006",
         "date_of_occurrence": "2018-04-18",
         "discharge_id": 1,
         "bank_billet_id": 2,
@@ -559,6 +561,7 @@ A regra é que todos os payloads possuem as chaves `event_code`, `webhook`, `obj
       {
         "id": 3,
         "occurrence": "06",
+        "our_occurrence": "2006",
         "date_of_occurrence": "2018-04-18",
         "discharge_id": 1,
         "bank_billet_id": 3,
@@ -593,6 +596,7 @@ A regra é que todos os payloads possuem as chaves `event_code`, `webhook`, `obj
       {
         "id": 4,
         "occurrence": "02",
+        "our_occurrence": "2001",
         "date_of_occurrence": "2018-04-18",
         "discharge_id": 1,
         "bank_billet_id": 4,
@@ -755,6 +759,7 @@ Contéudo do `line_parsed` depende das informações que seu banco disponibiliza
   "object": {
     "id": 4,
     "occurrence": "02",
+    "our_occurrence": "2001",
     "date_of_occurrence": "2018-04-18",
     "discharge_id": 1,
     "bank_billet_id": 4,

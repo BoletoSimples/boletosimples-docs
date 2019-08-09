@@ -23,7 +23,7 @@ en: "/en/bank_contracts/safra"
 | 1007     | Alteração do "uso da empresa"                       | Não           | Não                    |
 | 1008     | Alteração do "seu número"                           | Sim           | Sim                    |
 | 1009     | Protestar                                           | Sim           | Sim                    |
-| 1010     | Não protestar                                       | Não           | Não                    |
+| 1010     | Não protestar                                       | Sim           | Sim                    |
 | 1011     | Protesto para fins falimentares                     | Não           | Não                    |
 | 1012     | Alterar nome do pagador                             | Não           | Não                    |
 | 1013     | Alteração de endereço do pagador                    | Não           | Não                    |
@@ -41,9 +41,10 @@ en: "/en/bank_contracts/safra"
 | 1031     | Alteração de outros dados                           | Não           | Não                    |
 | 1034     | Pago diretamente ao beneficiário                    | Não           | Não                    |
 | 1038     | Alterar CEP do pagador                              | Não           | Não                    |
-| 1047     | Não cobrar juros                                    | Sim           | Sim                    |
-| 1066     | Solicitar negativação expressa                      | Não           | Não                    |
-| 1067     | Não negativar                                       | Não           | Não                    |
+| 1047     | Não cobrar juros de mora                            | Sim           | Sim                    |
+| 1048     | Cobrar juros de mora                                | Sim           | Sim                    |
+| 1066     | Solicitar negativação expressa                      | Sim           | Sim                    |
+| 1067     | Não negativar                                       | Sim           | Sim                    |
 | 1068     | Excluir negativação expressa                        | Não           | Não                    |
 | 1069     | Cancelar negativação expressa                       | Não           | Não                    |
 | 1071     | Concessão de desconto                               | Não           | Não                    |
@@ -84,4 +85,4 @@ en: "/en/bank_contracts/safra"
 | 1112     | Beneficiário não concorda com a alegação do pagador | Não           | Não                    |
 | 1113     | Alteração de dados extras (registro de multa)       | Não           | Não                    |
 | 1114     | Descontar títulos encaminhados no dia               | Não           | Não                    |
-| 1118     | Cancelar instrução automática de negativação               | Sim           | Sim                    |
+| 1118     | Cancelar instrução automática de negativação        | Sim           | Sim                    |

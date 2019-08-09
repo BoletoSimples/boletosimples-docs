@@ -191,7 +191,9 @@ Array
 | **bank_billet_id**   | Não   | Integer  | ID do Boleto
 | **event_code**       | Não   | String   | Código do evento. Ver possíveis valores na [lista de eventos](/webhooks/events)
 | **status**           | Não   | Integer  | Status do e-mail enviado ([possíveis valores](#status))
+| **obj_id**           | Não   | Integer  | ID do Objeto
 
+O `ID do Objeto` vai retornar todos e qualquer tipo de objeto que tenha o ID enviado, ou seja, se você enviar `1`, poderá retornar boletos, clientes e etc. Caso queira um filtro mais refinado, combine o `ID do Objeto ` com o `Código do evento`.
 
 #### Exemplo
 
