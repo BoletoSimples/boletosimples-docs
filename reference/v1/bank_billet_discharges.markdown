@@ -303,6 +303,14 @@ Código único de operação dentro do Boleto Simples
 | 2239 | Tarifa Mensal de Cancelamento de Negativação Expressa
 | 2240 | Tarifa Mensal de Exclusão de Negativação Expressa Por Liquidação
 | 2241 | Confirma Recebimento de Instrução de Não Negativar
+| 2242 | Transferência de Beneficiário |
+| 2243 | Baixa de Título Protestado |
+| 2244 | Despesa de Cartório |
+| 2245 | Acerto de Data de Emissão |
+| 2246 | Acerto de Código de Espécie Documento |
+| 2247 | Instrução Negativação Aceita |
+| 2248 | Instrução Baixa de Negativação Aceita |
+| 2249 | Instrução Não Negativar Aceita |
 
 ### Listar Registros de Retorno
 
