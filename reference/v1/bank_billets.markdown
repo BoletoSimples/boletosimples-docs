@@ -2378,6 +2378,7 @@ Array
 | **paid_at**                     | Sim   | Date    |         | Data de pagamento
 | **paid_amount**                 | Sim   | String  |         | Valor pago. Formato: 1.345,56
 | **bank_rate**                   | Não   | String  |         | Valor da taxa bancária. Formato: 1.345,56
+| **direct_payment**              | Não   | Boolean |         | Informa se o pagamento foi feito diretamente ao beneficiário.
 
 #### Exemplo de requisição válida
 
