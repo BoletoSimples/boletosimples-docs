@@ -179,35 +179,16 @@ Nós temos uma página que informa o status dos servidores do Boleto Simples em
 
 ### Limite de Requisições
 
-Existem dois tipos de limite de requisições. O limite por segundo e por hora.
+Existem dois tipos de limite de requisições. 
 
-Em ambos os casos a contagem é feita para o **Token de Acesso** usado na autenticação e para o **IP** do cliente.
+O limite por GET e POST.
 
-#### Intervalo entre requisições
-
-Cada token ou cada IP podem realizar 5 requisições a cada 1 segundo. Caso
-um token ou um IP realize mais de 5 requisições no mesmo segundo, o servidor
-retorna o status `HTTP 429 Too Many Requests`. Neste caso, o
-servidor envia o cabeçalho `Retry-After` com o número de
-segundos que você deve esperar até realizar a próxima requisição.
-
-<small>Exemplo de Resposta em caso de bloqueio:</small>
-
-<pre class="http">
-HTTP/1.1 429 Too Many Requests
-Date: Fri, 05 Nov 2010 12:00:00 GMT
-Content-Type: application/json; charset=utf-8
-X-RateLimit-Limit: 5
-X-RateLimit-Remaining: 0
-Retry-After: 1
-...
-
-{error: "Limite de requisições por segundo execedido para esse usuário."}
-</pre>
+Em ambos os casos a contagem é feita por **hora** para o **Token de Acesso** usado na autenticação.
 
 #### Requisições por hora
 
-Cada token ou cada IP podem realizar no máximo 500 requisições por hora.
+Cada token pode realizar no máximo 60 requisições GET e 1000 requisições POST por hora.
+
 O número de requisições feitas pelo usuário é
 zerada no primeiro minuto de cada hora.
 
@@ -222,12 +203,14 @@ restantes para aquela hora.
 HTTP/1.1 200 OK
 Date: Fri, 05 Nov 2010 12:00:00 GMT
 Content-Type: application/json; charset=utf-8
-X-RateLimit-Limit: 500
+X-RateLimit-Limit: 1000
 X-RateLimit-Remaining: 486
 </pre>
 
 Caso atinja o número máximo de requisições dentro de uma hora, o servidor retorna o status<br/>
-`HTTP 429 Too Many Requests`. Neste caso, você deve esperar o número de segundos retornado no header `Retry-After` antes de realizar a próxima requisição.
+`HTTP 429 Too Many Requests`.
+
+Neste caso, você deve esperar o número de segundos retornado no header `Retry-After` antes de realizar a próxima requisição.
 
 <small>Exemplo de Resposta em caso de bloqueio:</small>
 
@@ -235,10 +218,10 @@ Caso atinja o número máximo de requisições dentro de uma hora, o servidor re
 HTTP/1.1 429 Too Many Requests
 Date: Fri, 05 Nov 2010 12:00:00 GMT
 Content-Type: application/json; charset=utf-8
-X-RateLimit-Limit: 500
+X-RateLimit-Limit: 1000
 X-RateLimit-Remaining: 0
 Retry-After: 3600
 ...
 
-{error: "Limite de requisições por hora execedido para esse usuário."}
+{error: "Limite de requisições POST por hora excedido para esse usuário."}
 </pre>
