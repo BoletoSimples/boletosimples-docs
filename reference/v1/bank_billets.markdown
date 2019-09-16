@@ -254,17 +254,23 @@ layout: pt
 
 `POST /api/v1/bank_billets`
 
- <div class="alert alert-danger"><strong>ATENÇÃO</strong> Apesar de receber a resposta com os dados do boleto, isso, somente, não garante que o boleto esteja pronto para uso. Isso apenas indica que o boleto foi aceito e cadastrado em sua conta.</div>
+<div class="alert alert-danger"><strong>ATENÇÃO</strong> Apesar de receber a resposta com os dados do boleto, isso, somente, não garante que o boleto esteja pronto para uso. Isso apenas indica que o boleto foi aceito e cadastrado em sua conta.</div>
 
-A partir desse momento o boleto entra em uma fila para ser gerado por completo(código de barras, linha digitável, layout).
+A partir desse momento o boleto entra em uma fila para ser gerado o layout.
 
-Após o boleto ser gerado por completo seu status mudará para `opened`.
+Após o layout do boleto ser gerado por completo seu status mudará para `opened`.
+
+O boleto deverá ser registrado. 
+
+Para clientes com registro automático ativado, nós faremos o registro imediatamente após o boleto estar cadastrado. 
+
+Para clientes sem registro automático ativado, o registro é feito via [Remessa](/reference/v1/remittances/), gerada e enviada manualmente por você através do sistema do banco.
 
 Só então você poderá disponibilizar o boleto aos seus clientes.
 
 Para saber se um boleto foi gerado por completo, você deve preparar seu sisema para receber nossos [Webhooks](/webhooks)
 
-Será retornado `404 Not Found` ao tentar acessar a url de um boleto que ainda esteja sendo gerado(`generating`).
+Será retornado `404 Not Found` ao tentar acessar a url de um boleto que ainda esteja sendo gerado(`generating`)
 
 #### Exemplo de requisição inválida
 
@@ -2716,11 +2722,17 @@ Content-Type: application/json; charset=utf-8
 
 `POST /api/v1/bank_billets/bulk`
 
- <div class="alert alert-danger"><strong>ATENÇÃO</strong> Apesar de receber a resposta com os dados do boleto, isso, somente, não garante que o boleto esteja pronto para uso. Isso apenas indica que o boleto foi aceito e cadastrado em sua conta.</div>
+<div class="alert alert-danger"><strong>ATENÇÃO</strong> Apesar de receber a resposta com os dados do boleto, isso, somente, não garante que o boleto esteja pronto para uso. Isso apenas indica que o boleto foi aceito e cadastrado em sua conta.</div>
 
-A partir desse momento o boleto entra em uma fila para ser gerado por completo(código de barras, linha digitável, layout).
+A partir desse momento o boleto entra em uma fila para ser gerado o layout.
 
-Após o boleto ser gerado por completo seu status mudará para `opened`.
+Após o layout do boleto ser gerado por completo seu status mudará para `opened`.
+
+O boleto deverá ser registrado. 
+
+Para clientes com registro automático ativado, nós faremos o registro imediatamente após o boleto estar cadastrado. 
+
+Para clientes sem registro automático ativado, o registro é feito via [Remessa](/reference/v1/remittances/), gerada e enviada manualmente por você através do sistema do banco.
 
 Só então você poderá disponibilizar o boleto aos seus clientes.
 
