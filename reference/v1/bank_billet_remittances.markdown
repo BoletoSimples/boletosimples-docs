@@ -69,7 +69,7 @@ breadcrumb: Registro de Remessa
         Number
       </td>
       <td>
-        Quantidade de registros por página (Maximo de 250)
+        Quantidade de registros por página (Máximo de 50)
       </td>
     </tr>
     <tr>
@@ -88,20 +88,6 @@ breadcrumb: Registro de Remessa
     </tr>
     <tr>
       <td>
-        <strong>code </strong>
-      </td>
-      <td>
-        Não
-      </td>
-      <td>
-        String
-      </td>
-      <td>
-        <div class="alert alert-danger"><strong>ATENÇÃO</strong> Este atributo está descontinuado e será removido do sistema em breve. Utilize <code class="highlighter-rouge">our_code</code>.</div>
-      </td>
-    </tr>
-    <tr>
-      <td>
         <strong>bank_billet_account_id </strong>
       </td>
       <td>
@@ -112,6 +98,34 @@ breadcrumb: Registro de Remessa
       </td>
       <td>
         ID da Carteira
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>remittance_id </strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        Number
+      </td>
+      <td>
+        ID da Remessa
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>bank_billet_id </strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        Number
+      </td>
+      <td>
+        ID do Boleto
       </td>
     </tr>
     <tr>
@@ -241,7 +255,7 @@ Content-Type: application/json; charset=utf-8
         Number
       </td>
       <td>
-        Quantidade de registros por página (Maximo de 250)
+        Quantidade de registros por página (Máximo de 50)
       </td>
     </tr>
     <tr>
@@ -270,6 +284,34 @@ Content-Type: application/json; charset=utf-8
       </td>
       <td>
         ID da Carteira
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>remittance_id </strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        Number
+      </td>
+      <td>
+        ID da Remessa
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>bank_billet_id </strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        Number
+      </td>
+      <td>
+        ID do Boleto
       </td>
     </tr>
     <tr>

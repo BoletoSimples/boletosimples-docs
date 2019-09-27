@@ -691,7 +691,7 @@ Array
         Number
       </td>
       <td>
-        Quantidade de registros por página (Maximo de 250)
+        Quantidade de registros por página (Máximo de 50)
       </td>
     </tr>
 

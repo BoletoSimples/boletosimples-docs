@@ -22,6 +22,11 @@ Você também pode se inscrever para receber as notificações de alterações d
 
 #### Últimas alterações realizadas na API.
 
+### 27/09/2019
+
+* Documenta filtro por `ID da Remessa` em [Registro de Remessa](/reference/v1/bank_billet_remittances/#listar-registros-de-remessa)
+* Documenta novos eventos de usuários em [Eventos](/webhooks/events/)
+
 ### 09/08/2019
 
 * Documenta filtro por `ID do Objeto` em [Webhooks enviados](/reference/v1/webhook_deliveries/#listar-webhook-enviados)
