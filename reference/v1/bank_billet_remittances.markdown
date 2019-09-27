@@ -142,6 +142,34 @@ breadcrumb: Registro de Remessa
         Até Data de vencimento
       </td>
     </tr>
+    <tr>
+      <td>
+        <strong>remittance_id </strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        Number
+      </td>
+      <td>
+        ID da Remessa
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>bank_billet_id </strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        Number
+      </td>
+      <td>
+        ID do Boleto
+      </td>
+    </tr>
   </tbody>
 </table>
 
@@ -298,6 +326,20 @@ Content-Type: application/json; charset=utf-8
       </td>
       <td>
         Até Data de vencimento
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>bank_billet_id </strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        Number
+      </td>
+      <td>
+        ID do Boleto
       </td>
     </tr>
   </tbody>
