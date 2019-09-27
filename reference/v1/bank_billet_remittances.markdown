@@ -88,20 +88,6 @@ breadcrumb: Registro de Remessa
     </tr>
     <tr>
       <td>
-        <strong>code </strong>
-      </td>
-      <td>
-        Não
-      </td>
-      <td>
-        String
-      </td>
-      <td>
-        <div class="alert alert-danger"><strong>ATENÇÃO</strong> Este atributo está descontinuado e será removido do sistema em breve. Utilize <code class="highlighter-rouge">our_code</code>.</div>
-      </td>
-    </tr>
-    <tr>
-      <td>
         <strong>bank_billet_account_id </strong>
       </td>
       <td>
@@ -112,34 +98,6 @@ breadcrumb: Registro de Remessa
       </td>
       <td>
         ID da Carteira
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <strong>expire_from </strong>
-      </td>
-      <td>
-        Não
-      </td>
-      <td>
-        Date
-      </td>
-      <td>
-        A partir de Data de vencimento
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <strong>expire_to </strong>
-      </td>
-      <td>
-        Não
-      </td>
-      <td>
-        Date
-      </td>
-      <td>
-        Até Data de vencimento
       </td>
     </tr>
     <tr>
@@ -168,6 +126,34 @@ breadcrumb: Registro de Remessa
       </td>
       <td>
         ID do Boleto
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>expire_from </strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        Date
+      </td>
+      <td>
+        A partir de Data de vencimento
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>expire_to </strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        Date
+      </td>
+      <td>
+        Até Data de vencimento
       </td>
     </tr>
   </tbody>
@@ -302,6 +288,34 @@ Content-Type: application/json; charset=utf-8
     </tr>
     <tr>
       <td>
+        <strong>remittance_id </strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        Number
+      </td>
+      <td>
+        ID da Remessa
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>bank_billet_id </strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        Number
+      </td>
+      <td>
+        ID do Boleto
+      </td>
+    </tr>
+    <tr>
+      <td>
         <strong>expire_from </strong>
       </td>
       <td>
@@ -326,20 +340,6 @@ Content-Type: application/json; charset=utf-8
       </td>
       <td>
         Até Data de vencimento
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <strong>bank_billet_id </strong>
-      </td>
-      <td>
-        Não
-      </td>
-      <td>
-        Number
-      </td>
-      <td>
-        ID do Boleto
       </td>
     </tr>
   </tbody>

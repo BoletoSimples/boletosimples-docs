@@ -106,6 +106,10 @@ layout: pt
 
 ### Códigos de Instrução de Cobrança
 
+Para ser enviado nos campos `first_instruction` e `second_instruction` do [Boleto](/reference/v1/bank_billets/).
+
+Usado apenas em remessas com formato CNAB 400.
+
 | Código     | Descrição |
 |----------|---------------------------------------------------|
 |    02    | DEVOLVER APÓS 05 DIAS DO VENCIMENTO  |
