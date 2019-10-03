@@ -22,6 +22,11 @@ Você também pode se inscrever para receber as notificações de alterações d
 
 #### Últimas alterações realizadas na API.
 
+### 03/10/2019
+
+* Documenta [Relatórios](/reference/v1/reports)
+
+
 ### 27/09/2019
 
 * Documenta filtro por `ID da Remessa` em [Registro de Remessa](/reference/v1/bank_billet_remittances/#listar-registros-de-remessa)
@@ -66,7 +71,7 @@ Você também pode se inscrever para receber as notificações de alterações d
 
 ### 25/02/2019
 
-* Documenta o camp `line_parsed` em [Registro de Retorno](/reference/v1/bank_billet_discharges/)
+* Documenta o campo `line_parsed` em [Registro de Retorno](/reference/v1/bank_billet_discharges/)
 
 ### 20/02/2019
 
