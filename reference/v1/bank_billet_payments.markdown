@@ -17,16 +17,26 @@ breadcrumb: Pagamento de Boleto
 
 ### Modelo de Dados
 
-| Parâmetro                  | Obrigatório | Tipo    | Tamanho | Descrição                      |
+| Parâmetro                  | Obrigatório | Tipo    | Tamanho | Descrição               |
 | -------------------------- | ---- | ------- | ------- | ------------------------------ |
-| **id**                     | N/A  | Integer |         | ID do Pagamento de Boleto                 |
+| **id**                     | N/A  | Integer |         | ID do Pagamento de Boleto      |
 | **bank_billet_id**         | Sim  | Integer |         | ID do Boleto                   |
 | **bank_billet_account_id** | Sim  | Integer |         | ID da Carteira                 |
+| **discharge_id**           | Sim  | Integer |         | ID do Retorno                  |
+| **amount**                 | Não  | Float   |         | Valor do Boleto                |
 | **paid_at**                | Sim  | Date    |         | Data do pagamento              |
 | **paid_amount**            | Sim  | Float   |         | Valor pago                     |
 | **paid_bank**              | Não  | String  |    3    | Banco de Pagamento             |
 | **paid_agency**            | Não  | String  |    5    | Agência de Pagamento           |
 | **bank_rate**              | Não  | Float   |         | Taxa bancária                  |
+| **credit_at**              | Não  | Date    |         | Data de crédito                |
+| **direct**                 | Não  | Boolean |         | Pagamento direto ao beneficíario                |
+| **expire_at**              | Não  | Date    |         | Data de vencimento                |
+| **our_number**             | Não  | Date    |         | Nosso número                |
+| **created_via_api**        | N/A  | Boolean |         | Enviado pela API    |
+| **created_at**             | Não  | Date    |         | Criado em                |
+| [**line_parsed**](/reference/v1/bank_billet_discharges/#line_parsed)            | N/A  | Hash/Array  |        | Linha parseada com informações vindas do banco     |
+| **customer_person_name**              | Não  | String  |    3    | Nome do cliente             |
 
 
 ### Efetuar Pagamento de Boleto

@@ -22,6 +22,10 @@ Você também pode se inscrever para receber as notificações de alterações d
 
 #### Últimas alterações realizadas na API.
 
+### 14/10/2019
+
+* Documenta o campo `credit_at` em [Registro de Retorno](/reference/v1/bank_billet_payments/)
+
 ### 03/10/2019
 
 * Documenta [Relatórios](/reference/v1/reports)
