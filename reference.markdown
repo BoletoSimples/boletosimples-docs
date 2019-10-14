@@ -31,6 +31,8 @@ en: "/en/reference"
 
 ### [Eventos](/reference/v1/events)
 
+### [Relatórios](/reference/v1/reports)
+
 ### [Saques](/reference/v1/withdrawals)
 
 ### [Transações](/reference/v1/transactions)
