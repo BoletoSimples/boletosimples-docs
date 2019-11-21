@@ -20,7 +20,7 @@ Entre em cada banco para visualizar as carteiras suportadas e os comandos implem
 | [Caixa Econômica Federal](/bank_contracts/cef) | Sim     | 400 ou 240   | Sim     | 400 ou 240
 | [Caruana](/bank_contracts/caruana)           | Sim     | 400          | Sim     | 400
 | [Citibank](/bank_contracts/citibank)           | Sim     | 400          | Sim     | 400
-| [CECRED](/bank_contracts/cecred)               | Sim     | 240          | Sim     | 240
+| [AILOS](/bank_contracts/ailos)               | Sim     | 240          | Sim     | 240
 | [Credisis](/bank_contracts/credisis)           | Sim     | 400          | Sim     | 400
 | [CRESOL](/bank_contracts/cresol)           | Sim     | 400          | Sim     | 400
 | [Daycoval](/bank_contracts/daycoval)           | Sim     | 400          | Sim     | 400
