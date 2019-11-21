@@ -1,11 +1,11 @@
 ---
-title: CECRED
+title: AILOS
 position: 13
 layout: pt
-en: "/en/bank_contracts/cecred"
+en: "/en/bank_contracts/ailos"
 ---
 
-## CECRED
+## AILOS
 
 | Carteiras          | Slug
 | ------------------ | ------------
