@@ -22,7 +22,15 @@ Você também pode se inscrever para receber as notificações de alterações d
 
 #### Últimas alterações realizadas na API.
 
-### 14/10/201
+### 10/04/2019
+
+* Documenta [ABC](/bank_contracts/abc/)
+* Documenta [ARBI](/bank_contracts/arbi/)
+* Documenta [BIB](/bank_contracts/bib/)
+* Documenta [BNP Paribas](/bank_contracts/bnpparibas/)
+* Atualiza Documenta [Sofisa](/bank_contracts/sofisa/)
+
+### 14/10/2019
 
 * Altera nome da cooperativa CECRED para AILOS
 

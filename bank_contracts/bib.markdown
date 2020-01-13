@@ -1,18 +1,14 @@
 ---
-title: Sofisa
+title: BIB
 layout: pt
-en: "/en/bank_contracts/sofisa"
+en: "/en/bank_contracts/bib"
 ---
 
-## Sofisa
+## BIB - Banco Industrial do Brasil
 
-Correspondente Santander
-
-| Carteiras                   | Slug
-| --------------------------- | ------------
-| 110         | sofisa-bs-110
-| 121         | sofisa-bs-121
-| 101.        | sofisa-santander-bs-101
+| Carteiras  | Slug
+| ---------- | ------------
+| 121         | abc-bs-121
 
 ### Ocorrências
 

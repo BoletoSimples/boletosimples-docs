@@ -170,6 +170,15 @@
   <li class="{% if page.url == '/bank_contracts/' %}active{% endif %}">
     <a class="main-link" href="/bank_contracts" title="Suporte aos Bancos">Suporte aos Bancos</a>
     <ul class="subnav">
+      <li {% if page.url == '/bank_contracts/abc/' %}class="active"{% endif %}>
+        <a href="/bank_contracts/abc" title="ABC">ABC</a>
+      </li>
+      <li {% if page.url == '/bank_contracts/arbi/' %}class="active"{% endif %}>
+        <a href="/bank_contracts/arbi" title="ARBI">ARBI</a>
+      </li>
+      <li {% if page.url == '/bank_contracts/bib/' %}class="active"{% endif %}>
+        <a href="/bank_contracts/bib" title="BIB">BIB</a>
+      </li>
       <li {% if page.url == '/bank_contracts/bb/' %}class="active"{% endif %}>
         <a href="/bank_contracts/bb" title="Banco do Brasil">Banco do Brasil</a>
       </li>
@@ -185,11 +194,14 @@
       <li {% if page.url == '/bank_contracts/banrisul/' %}class="active"{% endif %}>
         <a href="/bank_contracts/banrisul" title="Banrisul">Banrisul</a>
       </li>
+      <li {% if page.url == '/bank_contracts/bnpparibas/' %}class="active"{% endif %}>
+        <a href="/bank_contracts/bnpparibas" title="BNP Paribas">BNP Paribas</a>
+      </li>
       <li {% if page.url == '/bank_contracts/bradesco/' %}class="active"{% endif %}>
         <a href="/bank_contracts/bradesco" title="Bradesco">Bradesco</a>
       </li>
       <li {% if page.url == '/bank_contracts/cef/' %}class="active"{% endif %}>
-        <a href="/bank_contracts/cef" title="Caixa Econômica Federal">Caixa Econômica Federal</a>
+        <a href="/bank_contracts/cef" title="Caixa Econômica Federal">Caixa</a>
       </li>
       <li {% if page.url == '/bank_contracts/caruana/' %}class="active"{% endif %}>
         <a href="/bank_contracts/caruana" title="Caruana">Caruana</a>

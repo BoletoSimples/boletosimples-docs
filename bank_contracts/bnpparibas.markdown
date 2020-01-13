@@ -1,18 +1,16 @@
 ---
-title: Sofisa
+title: BNP Paribas
+position: 1
+en: "/en/bank_contracts/bnpparibas"
 layout: pt
-en: "/en/bank_contracts/sofisa"
 ---
 
-## Sofisa
+## BNP Paribas
 
-Correspondente Santander
+| Carteiras                                       | Slug
+| ----------------------------------------------- | ------------
+| 09 (Com Registro)                               | bnpparibas-bs-09
 
-| Carteiras                   | Slug
-| --------------------------- | ------------
-| 110         | sofisa-bs-110
-| 121         | sofisa-bs-121
-| 101.        | sofisa-santander-bs-101
 
 ### Ocorrências
 
@@ -21,37 +19,36 @@ Correspondente Santander
 | 1001     | Entrada de título                                   | Sim           | Sim                    |
 | 1002     | Pedido de baixa                                     | Sim           | Sim                    |
 | 1003     | Alteração de vencimento                             | Sim           | Sim                    |
-| 1004     | Concessão de abatimento                             | Sim           | Não                    |
-| 1005     | Cancelamento de abatimento                          | Sim           | Não                    |
-| 1007     | Alteração do "uso da empresa"                       | Não           | Não                    |
-| 1008     | Alteração do "seu número"                           | Não           | Não                    |
+| 1004     | Concessão de abatimento                             | Sim           | Sim                    |
+| 1005     | Cancelamento de abatimento                          | Sim           | Sim                    |
+| 1007     | Alteração do "uso da empresa"                       | Sim           | Sim                    |
+| 1008     | Alteração do "seu número"                           | Sim           | Sim                    |
 | 1009     | Protestar                                           | Sim           | Sim                    |
-| 1010     | Não protestar                                       | Não           | Não                    |
-| 1011     | Protesto para fins falimentares                     | Não           | Não                    |
+| 1010     | Não protestar                                       | Sim           | Sim                    |
+| 1011     | Protesto para fins falimentares                     | Sim           | Sim                    |
 | 1012     | Alterar nome do pagador                             | Não           | Não                    |
 | 1013     | Alteração de endereço do pagador                    | Não           | Não                    |
 | 1014     | Alterar Cidade do pagador                           | Não           | Não                    |
 | 1015     | Alterar UF do pagador                               | Não           | Não                    |
 | 1017     | Alteração do número de dias para protesto           | Não           | Não                    |
 | 1018     | Sustar o protesto                                   | Sim           | Sim                    |
-| 1019     | Sustar protesto e manter em carteira                | Sim           | Sim                    |
+| 1019     | Sustar protesto e manter em carteira                                   | Sim           | Sim            |
 | 1020     | Alterar CPF/CNPJ do pagador                         | Não           | Não                    |
-| 1021     | Alteração de valor com emissão de Boleto (quando a emissão é pelo Banco)    | Não           | Não                    |
-| 1022     | Transferência cessão crédito ID. Prod. 10           | Não           | Não                    |
-| 1023     | Transferência entre carteiras                       | Não           | Não                    |
-| 1024     | Dev. transferências entre carteiras                 | Não           | Não                    |
+| 1021     | Alteração de valor com emissão de Boleto (quando a emissão é pelo Banco)                         | Sim           | Não                    |
+| 1022     | Transferência cessão crédito ID. Prod. 10           | Sim           | Não                    |
+| 1023     | Transferência entre carteiras                       | Sim           | Não                    |
+| 1024     | Dev. transferências entre carteiras                 | Sim           | Não                    |
 | 1028     | Alterar Valor                                       | Sim           | Sim                    |
-| 1030     | Recusa da Alegação do Sacado                        | Sim           | Sim                    |
-| 1031     | Alteração de outros dados                           | Não           | Não                    |
+| 1031     | Alteração de outros dados                           | Sim           | Sim           |
 | 1034     | Pago diretamente ao beneficiário                    | Não           | Não                    |
 | 1038     | Alterar CEP do pagador                              | Não           | Não                    |
 | 1047     | Não cobrar juros                                    | Não           | Não                    |
-| 1066     | Solicitar negativação expressa                      | Não           | Não                    |
+| 1066     | Solicitar negativação expressa                      | Sim           | Sim                    |
 | 1067     | Não negativar                                       | Não           | Não                    |
-| 1068     | Excluir negativação expressa                        | Não           | Não                    |
-| 1069     | Cancelar negativação expressa                       | Não           | Não                    |
-| 1071     | Concessão de desconto                               | Sim           | Não                    |
-| 1072     | Cancelamento de desconto                            | Sim           | Não                    |
+| 1068     | Excluir negativação expressa                        | Sim           | Sim                    |
+| 1069     | Cancelar negativação expressa                       | Sim           | Sim                    |
+| 1071     | Concessão de desconto                               | Não           | Não                    |
+| 1072     | Cancelamento de desconto                            | Não           | Não                    |
 | 1073     | Alteração do valor do desconto                      | Não           | Não                    |
 | 1074     | Alteração do valor ou percentual de multa           | Não           | Não                    |
 | 1075     | Não cobrar multa                                    | Não           | Não                    |
@@ -66,7 +63,8 @@ Correspondente Santander
 | 1085     | Pedido de devolução                                 | Não           | Não                    |
 | 1086     | Pedido de devolução (entregue ao sacado)            | Não           | Não                    |
 | 1087     | Pedido dos títulos em aberto                        | Não           | Não                    |
-| 1094     | Cancelamento do rateio de crédito                   | Não           | Não                    |
+| 1093     | Acerto nos dados do rateio de crédito               | Sim           | Não                    |
+| 1094     | Cancelamento do rateio de crédito                   | Sim           | Não                    |
 | 1095     | Alteração do prazo de devolução                     | Não           | Não                    |
 | 1096     | Alteração da opção de protesto para devolução       | Não           | Não                    |
 | 1097     | Alteração da opção de devolução para protesto       | Não           | Não                    |
@@ -87,5 +85,3 @@ Correspondente Santander
 | 1112     | Beneficiário não concorda com a alegação do pagador | Não           | Não                    |
 | 1113     | Alteração de dados extras (registro de multa)       | Não           | Não                    |
 | 1114     | Descontar títulos encaminhados no dia               | Não           | Não                    |
-| 1148     | Alteração do Valor Mínimo/Percentual                | Sim           | Sim                    |
-| 1149     | Alteração do Valor Máximo/Percentual                | Sim           | Sim                    |

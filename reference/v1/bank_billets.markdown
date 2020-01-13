@@ -141,6 +141,8 @@ layout: pt
 | **divergent_payment_minimum_percentage** | Não | Float |          | Percentual mínimo para a faixa de pagamentos divergentes. Válido apenas para [Itaú](/bank_contracts/itau) e [Caixa](/bank_contracts/cef).
 | **divergent_payment_maximum_percentage** | Não | Float |          | Percentual máximo para a faixa de pagamentos divergentes. Válido apenas para [Itaú](/bank_contracts/itau) e [Caixa](/bank_contracts/cef).
 | **divergent_payment_limit**         | Não | Integer |          | Quantidade de pagamentos permitida. Obrigatório se informados dados para pagamento divergente. Usado somente pela [Caixa](/bank_contracts/cef).
+| **split_accounts**       | Não   | Array |         | Contas para Split de pagamento. Válido apenas para [ABC Brasil](/bank_contracts/abc). ([possíveis valores](#split_accounts))
+
 
 ### Dicionário de Dados
 
@@ -248,6 +250,18 @@ layout: pt
 | 1 | Informa pagamentos divergentes por valores
 | 2 | Informa pagamentos divergentes por percentuais
 
+
+#### split_accounts
+
+| **Parâmetro**  | **Obrigatório**  | **Tipo**    | **Tamanho** | **Descrição**
+| bank_number    | Sim | String | 3   | Número do banco
+| agency_number  | Sim | String | 5   | Agência (Sem dígito)
+| agency_digit   | Não | String | 2   | Dígito da Agência
+| account_number | Sim | String | 20  | Conta (Sem dígito)
+| account_digit  | Sim | String | 2   | Dígito da Conta
+| cnpj_cpf       | Sim | String | 20  | CNPJ/CPF do Beneficiário
+| name           | Sim | String | 255 | Nome do Beneficiário
+| amount         | Sim | String |     | Percentual ( Ex.: 12,54 )
 
 
 ### Criar boleto
