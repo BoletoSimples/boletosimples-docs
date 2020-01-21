@@ -22,7 +22,11 @@ Você também pode se inscrever para receber as notificações de alterações d
 
 #### Últimas alterações realizadas na API.
 
-### 10/04/2019
+### 21/01/2020
+
+* Documenta o campo `created_from` e `created_to` em [Registro de Retorno](/reference/v1//webhook_deliveries/#reenviar-webhook)
+
+### 10/01/2020
 
 * Documenta [ABC](/bank_contracts/abc/)
 * Documenta [ARBI](/bank_contracts/arbi/)
