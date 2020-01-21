@@ -595,6 +595,34 @@ Próxima Página: https://sandbox.boletosimples.com.br/api/v1/transactions?page=
       <td>Integer</td>
       <td>ID do Objeto</td>
     </tr>
+    <tr>
+      <td>
+        <strong>created_from </strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        Date
+      </td>
+      <td>
+        A partir da Data de criação (DD/MM/YYYY) ou (YYYY-MM-DD)
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>created_to </strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        Date
+      </td>
+      <td>
+        Até a Data de criação (DD/MM/YYYY) ou (YYYY-MM-DD)
+      </td>
+    </tr>
   </tbody>
 </table>
 
