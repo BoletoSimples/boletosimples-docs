@@ -262,7 +262,7 @@ layout: pt
 | account_digit  | Sim | String | 2   | Dígito da Conta
 | cnpj_cpf       | Sim | String | 20  | CNPJ/CPF do Beneficiário
 | name           | Sim | String | 255 | Nome do Beneficiário
-| amount         | Sim | String |     | Percentual ( Ex.: 12,54 )
+| amount         | Sim | String |     | Quantia (R$) Formato: 1.345,56
 
 
 ### Criar boleto

@@ -543,6 +543,8 @@ Próxima Página: https://sandbox.boletosimples.com.br/api/v1/transactions?page=
 
 `PUT /api/v1/webhook_deliveries/resend` ou `PATCH /api/v1/webhook_deliveries/resend`
 
+Está limitado aos primeiros 1000 encontrados na busca conforme os parâmetros.
+
 <table class='table table-bordered'>
   <thead>
     <tr>
