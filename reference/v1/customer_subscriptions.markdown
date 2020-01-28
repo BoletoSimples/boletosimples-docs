@@ -84,6 +84,7 @@ breadcrumb: Assinaturas
 | **divergent_payment_minimum_percentage** | Não | Float |          | Percentual mínimo para a faixa de pagamentos divergentes. Válido apenas para [Itaú](/bank_contracts/itau) e [Caixa](/bank_contracts/cef).
 | **divergent_payment_maximum_percentage** | Não | Float |          | Percentual máximo para a faixa de pagamentos divergentes. Válido apenas para [Itaú](/bank_contracts/itau) e [Caixa](/bank_contracts/cef).
 | **divergent_payment_limit**         | Não | Integer |          | Quantidade de pagamentos permitida. Obrigatório se informados dados para pagamento divergente. Usado somente pela [Caixa](/bank_contracts/cef).
+| **custom_attachment_name** | Não | String | 255 | Nome para ser usado nos arquivos de boleto enviados para o cliente em notificações. Aceita uso de variáveis. Caso seja deixado vazio, o padrão é a palavra "boleto" acompanhada do ID.
 
 ### Dicionário de Dados
 

@@ -142,6 +142,7 @@ layout: pt
 | **divergent_payment_maximum_percentage** | Não | Float |          | Percentual máximo para a faixa de pagamentos divergentes. Válido apenas para [Itaú](/bank_contracts/itau) e [Caixa](/bank_contracts/cef).
 | **divergent_payment_limit**         | Não | Integer |          | Quantidade de pagamentos permitida. Obrigatório se informados dados para pagamento divergente. Usado somente pela [Caixa](/bank_contracts/cef).
 | **split_accounts**       | Não   | Array |         | Contas para Split de pagamento. Válido apenas para [ABC Brasil](/bank_contracts/abc). ([possíveis valores](#split_accounts))
+| **custom_attachment_name** | Não | String | 255 | Nome para ser usado nos arquivos de boleto enviados para o cliente em notificações. Aceita uso de variáveis. Caso seja deixado vazio, o padrão é a palavra "boleto" acompanhada do ID.
 
 
 ### Dicionário de Dados
@@ -261,7 +262,7 @@ layout: pt
 | account_digit  | Sim | String | 2   | Dígito da Conta
 | cnpj_cpf       | Sim | String | 20  | CNPJ/CPF do Beneficiário
 | name           | Sim | String | 255 | Nome do Beneficiário
-| amount         | Sim | String |     | Percentual ( Ex.: 12,54 )
+| amount         | Sim | String |     | Quantia (R$) Formato: 1.345,56
 
 
 ### Criar boleto
@@ -274,9 +275,9 @@ A partir desse momento o boleto entra em uma fila para ser gerado o layout.
 
 Após o layout do boleto ser gerado por completo seu status mudará para `opened`.
 
-O boleto deverá ser registrado. 
+O boleto deverá ser registrado.
 
-Para clientes com registro automático ativado, nós faremos o registro imediatamente após o boleto estar cadastrado. 
+Para clientes com registro automático ativado, nós faremos o registro imediatamente após o boleto estar cadastrado.
 
 Para clientes sem registro automático ativado, o registro é feito via [Remessa](/reference/v1/remittances/), gerada e enviada manualmente por você através do sistema do banco.
 
@@ -2742,9 +2743,9 @@ A partir desse momento o boleto entra em uma fila para ser gerado o layout.
 
 Após o layout do boleto ser gerado por completo seu status mudará para `opened`.
 
-O boleto deverá ser registrado. 
+O boleto deverá ser registrado.
 
-Para clientes com registro automático ativado, nós faremos o registro imediatamente após o boleto estar cadastrado. 
+Para clientes com registro automático ativado, nós faremos o registro imediatamente após o boleto estar cadastrado.
 
 Para clientes sem registro automático ativado, o registro é feito via [Remessa](/reference/v1/remittances/), gerada e enviada manualmente por você através do sistema do banco.
 
