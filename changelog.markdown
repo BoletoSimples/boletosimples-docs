@@ -22,6 +22,10 @@ Você também pode se inscrever para receber as notificações de alterações d
 
 #### Últimas alterações realizadas na API.
 
+### 31/01/2020
+
+* Depreca o endpoint em [Criar boletos em lote](/reference/v1/bank_billets/#criar-boletos-em-lote)
+
 ### 21/01/2020
 
 * Documenta o campo `created_from` e `created_to` em [Registro de Retorno](/reference/v1//webhook_deliveries/#reenviar-webhook)
