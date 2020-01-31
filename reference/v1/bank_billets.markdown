@@ -20,7 +20,7 @@ layout: pt
 | [GET /api/v1/bank_billets/status](#buscar-por-situação-do-boleto) | Buscar por Situação do boleto ([Deprecated usar Listar boletos](#listar-boletos))
 | [PUT /api/v1/bank_billets/:id/pay](#marcar-boleto-como-pago) | Marcar boleto como pago
 | [POST /api/v1/bank_billets/cancel_all](#cancelar-boletos-em-lote) | Cancelar boletos em lote
-| [POST /api/v1/bank_billets/bulk](#criar-boletos-em-lote) | Criar boletos em lote
+| [POST /api/v1/bank_billets/bulk](#criar-boletos-em-lote) | Criar boletos em lote  ([Deprecated usar Criar boleto](#criar-boleto))
 
 ### Modelo de Dados
 
@@ -2737,7 +2737,9 @@ Content-Type: application/json; charset=utf-8
 
 `POST /api/v1/bank_billets/bulk`
 
-<div class="alert alert-danger"><strong>ATENÇÃO</strong> Apesar de receber a resposta com os dados do boleto, isso, somente, não garante que o boleto esteja pronto para uso. Isso apenas indica que o boleto foi aceito e cadastrado em sua conta.</div>
+<div class="alert alert-danger"><strong>ATENÇÃO</strong> Este endpoint esta descontinuado e será removido do sistema em breve. Utilize o <a href="/reference/v1/bank_billets/#criar-boleto">Criar boleto</a>.</div>
+
+Apesar de receber a resposta com os dados do boleto, isso, somente, não garante que o boleto esteja pronto para uso. Isso apenas indica que o boleto foi aceito e cadastrado em sua conta.
 
 A partir desse momento o boleto entra em uma fila para ser gerado o layout.
 
