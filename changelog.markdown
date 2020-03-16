@@ -22,6 +22,10 @@ Você também pode se inscrever para receber as notificações de alterações d
 
 #### Últimas alterações realizadas na API.
 
+### 16/03/2020
+
+* Atualiza parâmentros de [Contas para Split](/reference/v1/bank_billets/#split_accounts)
+
 ### 31/01/2020
 
 * Depreca o endpoint em [Criar boletos em lote](/reference/v1/bank_billets/#criar-boletos-em-lote)
