@@ -22,6 +22,11 @@ Você também pode se inscrever para receber as notificações de alterações d
 
 #### Últimas alterações realizadas na API.
 
+### 19/03/2020
+
+* Documenta `split_payment` em [Boletos](/reference/v1/bank_billets/)
+* Documenta `floating` em [Contas para Split](/reference/v1/bank_billets/#split_accounts)
+
 ### 16/03/2020
 
 * Atualiza parâmentros de [Contas para Split](/reference/v1/bank_billets/#split_accounts)
