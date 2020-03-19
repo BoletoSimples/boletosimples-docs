@@ -141,8 +141,9 @@ layout: pt
 | **divergent_payment_minimum_percentage** | Não | Float |          | Percentual mínimo para a faixa de pagamentos divergentes. Válido apenas para [Itaú](/bank_contracts/itau) e [Caixa](/bank_contracts/cef).
 | **divergent_payment_maximum_percentage** | Não | Float |          | Percentual máximo para a faixa de pagamentos divergentes. Válido apenas para [Itaú](/bank_contracts/itau) e [Caixa](/bank_contracts/cef).
 | **divergent_payment_limit**         | Não | Integer |          | Quantidade de pagamentos permitida. Obrigatório se informados dados para pagamento divergente. Usado somente pela [Caixa](/bank_contracts/cef).
-| **split_accounts**       | Não   | Array |         | Contas para Split de pagamento. Válido apenas para [ABC Brasil](/bank_contracts/abc) e [Bradesco](/bank_contracts/bradesco). ([possíveis valores](#split_accounts))
 | **custom_attachment_name** | Não | String | 255 | Nome para ser usado nos arquivos de boleto enviados para o cliente em notificações. Aceita uso de variáveis. Caso seja deixado vazio, o padrão é a palavra "boleto" acompanhada do ID.
+| **split_payment**         | Não   | Boolean |         | Split de Pagamento. Caso `true`, o rateio do boleto será registrado. Informar as contas para rateio em `split_accounts`.
+| **split_accounts**       | Não   | Array |         | Contas para Split de pagamento. Válido apenas para [ABC Brasil](/bank_contracts/abc) e [Bradesco](/bank_contracts/bradesco). ([possíveis valores](#split_accounts))
 
 
 ### Dicionário de Dados
@@ -255,14 +256,15 @@ layout: pt
 #### split_accounts
 
 | **Parâmetro**  | **Obrigatório**  | **Tipo**    | **Tamanho** | **Descrição**
-| bank_number    | Sim | String | 3   | Número do banco
-| agency_number  | Sim | String | 5   | Agência (Sem dígito)
-| agency_digit   | Sim | String | 1   | Dígito da Agência
-| account_number | Sim | String | 12  | Conta (Sem dígito)
-| account_digit  | Sim | String | 1   | Dígito da Conta
-| cnpj_cpf       | Sim | String | 20  | CNPJ/CPF do Beneficiário
-| name           | Sim | String | 255 | Nome do Beneficiário
-| amount         | Sim | String |     | Quantia (R$) Formato: 1.345,56
+| bank_number    | Sim | String  | 3   | Número do banco
+| agency_number  | Sim | String  | 5   | Agência (Sem dígito)
+| agency_digit   | Sim | String  | 1   | Dígito da Agência
+| account_number | Sim | String  | 12  | Conta (Sem dígito)
+| account_digit  | Sim | String  | 1   | Dígito da Conta
+| cnpj_cpf       | Sim | String  | 20  | CNPJ/CPF do Beneficiário
+| name           | Sim | String  | 40  | Nome do Beneficiário
+| amount         | Sim | String  | 15  | Quantia (R$) Formato: 1.345,56
+| floating       | Sim | Integer | 2   | Quantidade de Dias para Crédito. Padrão 5 dias. Máximo 30 dias.
 
 
 ### Criar boleto
