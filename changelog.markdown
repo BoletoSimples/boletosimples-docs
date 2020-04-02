@@ -22,6 +22,12 @@ Você também pode se inscrever para receber as notificações de alterações d
 
 #### Últimas alterações realizadas na API.
 
+### 02/04/2020
+
+* Documenta `charge_type` em [Boletos](/reference/v1/bank_billets/#charge_type)
+* Documenta `dispatch_type` em [Boletos](/reference/v1/bank_billets/#dispatch_type)
+* Documenta `register_type` em [Boletos](/reference/v1/bank_billets/#register_type)
+
 ### 19/03/2020
 
 * Documenta `split_payment` em [Boletos](/reference/v1/bank_billets/)

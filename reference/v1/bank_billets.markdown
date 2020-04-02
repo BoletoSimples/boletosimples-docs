@@ -142,6 +142,9 @@ layout: pt
 | **divergent_payment_maximum_percentage** | Não | Float |          | Percentual máximo para a faixa de pagamentos divergentes. Válido apenas para [Itaú](/bank_contracts/itau) e [Caixa](/bank_contracts/cef).
 | **divergent_payment_limit**         | Não | Integer |          | Quantidade de pagamentos permitida. Obrigatório se informados dados para pagamento divergente. Usado somente pela [Caixa](/bank_contracts/cef).
 | **custom_attachment_name** | Não | String | 255 | Nome para ser usado nos arquivos de boleto enviados para o cliente em notificações. Aceita uso de variáveis. Caso seja deixado vazio, o padrão é a palavra "boleto" acompanhada do ID.
+| **charge_type**               | Não   | Integer  |         | Tipo de Cobrança ([possíveis valores](#charge_type)) Padrão: 1 - Simples
+| **dispatch_type**               | Não   | Integer  |         | Tipo de Impressão ([possíveis valores](#dispatch_type)) Padrão: 1 - Cliente
+| **register_type**               | Não   | Integer  |         | Tipo de Registro ([possíveis valores](#register_type))
 | **split_payment**         | Não   | Boolean |         | Split de Pagamento. Caso `true`, o rateio do boleto será registrado. Informar as contas para rateio em `split_accounts`.
 | **split_accounts**       | Não   | Array |         | Contas para Split de pagamento. Válido apenas para [ABC Brasil](/bank_contracts/abc) e [Bradesco](/bank_contracts/bradesco). ([possíveis valores](#split_accounts))
 
@@ -252,6 +255,27 @@ layout: pt
 | 1 | Informa pagamentos divergentes por valores
 | 2 | Informa pagamentos divergentes por percentuais
 
+#### charge_type
+
+| 1 | Simples
+| 2 | Vinculada
+| 3 | Descontada
+| 4 | Vendor
+
+#### dispatch_type
+
+Quando o boleto precisa ser enviado pelo correio.
+É preciso contratar o serviço junto ao banco e pagará tarifa.
+
+| 1 | Cliente
+| 2 | Banco
+
+#### register_type
+
+Este campo é apenas retornado. Não é aceito para envio.
+
+| 1 | API
+| 2 | EDI
 
 #### split_accounts
 
