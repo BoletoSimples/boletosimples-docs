@@ -33,6 +33,21 @@ O Boleto Simples possui também um [Ambiente Sandbox](/sandbox).
 
 A API aceita apenas o formato `JSON`, sendo assim todas as requisições usam content type `application/json`.
 
+<table class='table table-bordered'>
+  <thead>
+    <tr>
+      <th>Descrição</th>
+      <th>Convenção</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>DateTime</th>
+      <td>Formato ISO8601</td>
+    </tr>
+  </tbody>
+</table>
+
 ### Convenções
 
 Utilizamos as seguintes convenções nesta documentação:

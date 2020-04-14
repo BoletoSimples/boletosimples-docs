@@ -21,9 +21,9 @@ breadcrumb: Registro de Boleto
 | **bank_billet_id**         | N/A  | Integer |         | ID do Boleto
 | **bank_billet_account_id** | N/A  | Integer |         | ID da Carteira
 | **status**                 | N/A  | String  |         | Situação do registro ([possíveis valores](#status))
-| **registered_at**          | N/A  | Date    |         | Data do registro
+| **registered_at**          | N/A  | DateTime    |         | Data e hora do registro
 | **error_message**          | N/A  | String  |         | Mensagem de erro do registro
-| **failed_at**              | N/A  | Date    |         | Data da falha
+| **failed_at**              | N/A  | DateTime    |         | Data e hora da falha
 | **fails_count**            | N/A  | Integer |         | Quantidade de falhas em tentativas de registrar o boleto
 
 

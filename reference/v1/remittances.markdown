@@ -27,12 +27,12 @@ layout: pt
 | **processed_at**              | Não   | Time    |         | Data de Processamento
 | **created_via_api**           | Não   | Boolean |         | Enviado pela API
 | **status**                    | Não   | String  |         | Situação do arquivo ([possíveis valores](#status))
-| **created_at**                | Não   | DateTime|         | Data de criação
+| **created_at**                | Não   | DateTime|         | Data e hora de criação
 | **url**                       | Não   | String  |         | URL do arquivo de remessa
 | **bank_billet_account_id**    | Sim   | Integer |         | ID da [Carteira de Cobrança](/reference/v1/bank_billet_accounts/)
 | **bank_billet_ids**           | Não   | Array   |         | IDs de boletos
 | **remittance_number**         | Não   | Integer |         | Número da remessa
-| **sent_via_integration**      | Não   | Date    |         | Data de envio automático para o banco
+| **sent_via_integration**      | Não   | DateTime    |         | Data e hora de envio automático para o banco
 | **bank_billet_remittance_ids**           | Não   | Array   |         | IDs de [Registros de Remessa](/reference/v1/bank_billet_remittances/)
 
 ### Dicionário de Dados

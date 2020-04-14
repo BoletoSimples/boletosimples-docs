@@ -44,7 +44,7 @@ breadcrumb: Carteiras de Cobrança
 | **beneficiary_address**  | Não   | String  | 255     | Endereço do Beneficiário
 | **name**                 | Não   | String  |         | Nome da Conta ***
 | [**status**](#status)    | Não   | String  |         | Situação da carteira
-| **homologated_at**       | Não   | Date    |         | Data de homologação
+| **homologated_at**       | Não   | DateTime    |         | Data de homologação
 | **next_remittance_number**| Não  | String  |         | Próximo Número da Remessa. Default: 1
 | [**default**](#default)  | Não   | Boolean |         | Padrão
 | **configuration**        | Não   | JSON    |         | Configuração de dados padrões para boleto

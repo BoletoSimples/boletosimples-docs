@@ -26,7 +26,7 @@ breadcrumb: Registro de Remessa
 | **remittance_id**          | Sim  | Integer |         | ID da Remessa                  |
 | **bank_billet_id**         | Sim  | Integer |         | ID do Boleto                   |
 | **bank_billet_account_id** | Sim  | Integer |         | ID da Carteira                 |
-| **processed_at**           | Não  | Date    |         | Quando foi processado          |
+| **processed_at**           | Não  | DateTime    |         | Quando foi processado          |
 | **occurrence_detail**      | Não  | String  |         | Descrição do evento na Remessa |
 
 

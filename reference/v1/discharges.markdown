@@ -25,7 +25,7 @@ breadcrumb: CNAB (Retorno)
 | **content**            | Sim   |         |         | Conteúdo do arquivo
 | **filename**           | Não   | String  | 255     | Nome do arquivo
 | **status**             | N/A   | String  | 20      | Situação do arquivo ([possíveis valores](#status))
-| **processed_at**       | N/A   | Time    |         | Data de Processamento
+| **processed_at**       | N/A   | DateTime    |         | Data de Processamento
 | **created_via_api**    | N/A   | Boolean |         | Enviado pela API
 | **bank_billet_account_id**    | Não   | Integer |         | ID da [Carteira de Cobrança](/reference/v1/bank_billet_accounts/)
 | **created_via_integration**        | Não   | DateTime    |         | Data de recebimento automático do banco

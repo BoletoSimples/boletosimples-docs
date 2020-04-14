@@ -25,9 +25,9 @@ layout: pt
 | **description**  | N/A   | Text     |         | Descrição na transação.
 | **kind**         | N/A   | String   | 255     | Tipo da transação.
 | **status**       | N/A   | String   | 20      | Status da transação.
-| **processed_at** | N/A   | Date     |         | Data do processamento.
-| **sent_at**      | N/A   | Date     |         | Data da transferência para os casos de saque (`kind: withdrawal`).
-| **credit_at**    | N/A   | Date     |         | Data de quando a transação entra para o saldo.
+| **processed_at** | N/A   | DateTime     |         | Data e hora do processamento.
+| **sent_at**      | N/A   | DateTime     |         | Data e hora da transferência para os casos de saque (`kind: withdrawal`).
+| **credit_at**    | N/A   | DateTime     |         | Data e hora de quando a transação entra para o saldo.
 
 ### Dicionário de Dados
 

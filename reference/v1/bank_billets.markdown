@@ -92,8 +92,8 @@ layout: pt
 | **tags**                        | Não   | Array   |         | Tags associadas ao boleto
 | **days_for_sue**                | Não   | Integer |         | Dias corridos para Protesto/Negativação
 | **days_for_revoke**             | Não   | Integer |         | Dias corridos para Baixa/Devolução
-| **created_at**                  | N/A   | Date    |         | Data de criação do boleto
-| **updated_at**                  | N/A   | Date    |         | Data de atualização do boleto
+| **created_at**                  | N/A   | DateTime    |         | Data e hora de criação do boleto
+| **updated_at**                  | N/A   | DateTime    |         | Data e hora de atualização do boleto
 | **paid_bank**                   | N/A   | String  |         | Banco de Pagamento
 | **paid_agency**                 | N/A   | String  |         | Agência de Pagamento
 | **line**                        | N/A   | String  |         | Linha Digitável
@@ -131,7 +131,7 @@ layout: pt
 | **guarantor_address_number**     | Não   | String  | 10     | Número do Sacador/Avalista
 | **guarantor_address_complement** | Não   | String  | 60     | Complemento do Sacador/Avalista
 | **guarantor_phone_number**       | Não   | String  | 11      | Telefone (com DDD) do Sacador/Avalista
-| **registered_at**                | N/A   | Date    |         | Data do registro
+| **registered_at**                | N/A   | DateTime    |         | Data e hora do registro
 | **prevent_registration**         | Não   | Boolean |         | Caso `true`, impede que o boleto seja registrado. Para ser usado nos casos em que o boleto já foi registrado fora do Boleto Simples mas deseja-se incluí-lo no sistema.
 | **control_number**               | Não   | String  | 25      | Pode conter qualquer informação de interesse da Empresa. A informação contida neste campo sempre retornará com o respectivo título no arquivo-retorno. Caso não seja informado, será enviado na remessa o valor passado em `document_number`.
 | **divergent_payment_type**       | Não   | Integer |         | Tipo de pagamento divergente. Válido apenas para [Itaú](/bank_contracts/itau) e [Caixa](/bank_contracts/cef). ([possíveis valores](#divergent_payment_type))

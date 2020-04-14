@@ -34,7 +34,7 @@ breadcrumb: Pagamento de Boleto
 | **expire_at**              | Não  | Date    |         | Data de vencimento                |
 | **our_number**             | Não  | Date    |         | Nosso número                |
 | **created_via_api**        | N/A  | Boolean |         | Enviado pela API    |
-| **created_at**             | Não  | Date    |         | Criado em                |
+| **created_at**             | Não  | DateTime    |         | Criado em                |
 | [**line_parsed**](/reference/v1/bank_billet_discharges/#line_parsed)            | N/A  | Hash/Array  |        | Linha parseada com informações vindas do banco     |
 | **customer_person_name**              | Não  | String  |    3    | Nome do cliente             |
 
