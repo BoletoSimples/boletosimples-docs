@@ -22,6 +22,10 @@ Você também pode se inscrever para receber as notificações de alterações d
 
 #### Últimas alterações realizadas na API.
 
+### 16/04/2020
+
+* Remove a documentação do campo `source_type` na [Importação de Boletos](/reference/v1/imports/bank_billets/#charge_type)
+
 ### 02/04/2020
 
 * Documenta `charge_type` em [Boletos](/reference/v1/bank_billets/#charge_type)

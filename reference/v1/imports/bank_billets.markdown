@@ -20,7 +20,6 @@ layout: pt
 | ---------------------- | ----- | ------- | ------- | ------------------------|
 | **id**                 | N/A   | Integer |         | ID da importação|
 | **source**             | Sim   |         |         | Arquivo
-| **source_type**        | Não   | String  |         | Tipo do arquivo ([possíveis valores](#source_type))
 | **processed_rows**     | N/A   |  Integer       |         | Número de boletos processados
 | **created_rows**       | N/A   |  Integer       |         | Número de boletos criados
 | **updated_rows**       | N/A   |  Integer       |         | Número de boletos alterados
@@ -35,11 +34,6 @@ layout: pt
 
 ### Dicionário de Dados
 
-#### source_type
-
-| csv | CSV (default)
-| rem | Remessa
-
 #### status
 
 | enqueued | Aguardando processamento
@@ -49,6 +43,20 @@ layout: pt
 ### Importar boleto
 
 `POST /api/v1/imports/bank_billets`
+
+<p>Você pode enviar arquivos no formato&nbsp;<a href="https://pt.wikipedia.org/wiki/Comma-separated_values">CSV</a>&nbsp;ou Arquivo Remessa enviado para o seu banco.</p>
+<h4>Arquivo CSV</h4>
+<p>A extensão do arquivo deve ser .csv</p>
+<p>Exemplo: boletos.csv</p>
+<p>Arquivos de Exemplo</p>
+<ul>
+    <li><a target="_blank" href="https://docs.google.com/spreadsheets/d/1NGip505M6gcJBg9-n4J95Ij3M5sCUPk4tGfIyQzc6kg/pub?output=csv">Baixar Exemplo em CSV</a></li>
+    <li><a target="_blank" href="https://docs.google.com/spreadsheets/d/1NGip505M6gcJBg9-n4J95Ij3M5sCUPk4tGfIyQzc6kg/pub?output=xlsx">Baixar Exemplo em Excel</a></li>
+    <li><a target="_blank" href="https://docs.google.com/spreadsheets/d/1NGip505M6gcJBg9-n4J95Ij3M5sCUPk4tGfIyQzc6kg/edit#gid=0">Acessar no Google Sheets</a></li>
+</ul>
+<h4>Arquivo Remessa</h4>
+<p>A extensão do arquivo deve ser .rem</p>
+<p>Exemplo: CN200401.rem</p>
 
 #### Exemplo de requisição inválida
 
