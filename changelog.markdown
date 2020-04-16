@@ -24,7 +24,8 @@ Você também pode se inscrever para receber as notificações de alterações d
 
 ### 16/04/2020
 
-* Remove a documentação do campo `source_type` na [Importação de Boletos](/reference/v1/imports/bank_billets/#charge_type)
+* Remove a documentação do campo `source_type` na [Importação de Boletos](/reference/v1/imports/bank_billets/)
+* Melhora a documentação dos formatos de arquivos aceitos na [Importação de Boletos](/reference/v1/imports/bank_billets/)
 
 ### 02/04/2020
 
