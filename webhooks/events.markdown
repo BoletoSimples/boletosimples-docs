@@ -18,17 +18,15 @@ Abaixo a listagem de eventos registrados pelo Boleto Simples:
 |--------------------------------------|----------------------------------------------------|
 | account.updated                      | Toda vez que a conta é atualizada.                 |
 | account.blocked                      | Toda vez que a conta é bloqueada.                  |
-| account.bank_billet_creation_blocked | Toda vez que a emissão de boletos é bloqueada.     |
 | bank_billet.created                  | Toda vez que um boleto é criado.                   |
-| bank_billet.generated                | Toda vez que um boleto é gerado.                   |
+| bank_billet.generated                | Toda vez que o PDF de um boleto é gerado.          |
 | bank_billet.updated                  | Toda vez que um boleto é atualizado.               |
 | bank_billet.canceled                 | Toda vez que um boleto é cancelado.                |
 | bank_billet.overdue                  | Toda vez que um boleto fica vencido.               |
 | bank_billet.paid                     | Toda vez que um boleto é pago.                     |
 | bank_billet.blocked                  | Toda vez que o pagamento de um boleto é bloqueado. |
 | bank_billet.rejected                 | Toda vez que um boleto é rejeitado pelo banco.     |
-| bank_billet.registered               | Toda vez que um boleto é registrado pelo banco.    |
-| bank_billet.due_date                 | Notifica boleto com 15, 7, 3 e 1 dias antes do vencimento. |
+| bank_billet.registered               | Toda vez que um boleto é registrado no banco.      |
 | bank_billet_account.created          | Toda vez que uma carteira de cobrança é criada.    |
 | bank_billet_account.homologated      | Toda vez que uma carteira de cobrança é enviada para homologação.<br/><br/> **Atenção!** O código deste evento será alterado para **bank_billet_account.homologation_started** em breve. Faça um código que aceite ambos os códigos. |
 | bank_billet_account.validated        | Toda vez que uma carteira de cobrança é enviada para validação.<br/><br/> **Atenção!** O código deste evento será alterado para **bank_billet_account.validation_released** em breve. Faça um código que aceite ambos os códigos.  |
@@ -70,8 +68,6 @@ Abaixo a listagem de eventos registrados pelo Boleto Simples:
 | user.created                         | Toda vez que um usuário é criado.                  |
 | user.updated                         | Toda vez que um usuário é atualizado.              |
 | user.deleted                         | Toda vez que um usuário é excluído.                |
-| withdrawal.requested                 | Toda vez que um saque é solicitado.                |
-| withdrawal.transferred               | Toda vez que um saque é transferido.               |
 | addon.activated                      | Toda vez que um add-on é ativado.                  |
 | addon.removed                        | Toda vez que um add-on é removido.                 |
 

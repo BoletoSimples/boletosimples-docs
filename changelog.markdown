@@ -25,6 +25,7 @@ Você também pode se inscrever para receber as notificações de alterações d
 ### 30/04/2020
 
 * Atualiza [documentação do Zapier](/integrations/zapier/) com as funções disponíveis na versão 2.0.0
+* Remove eventos de webhook que não são mais usados.
 
 ### 16/04/2020
 
