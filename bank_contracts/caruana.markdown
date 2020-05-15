@@ -11,6 +11,15 @@ en: "/en/bank_contracts/caruana"
 | 112         | caruana-bs-112
 | 121         | caruana-bs-121
 
+
+### Modelo de Dados
+
+| **Parâmetro**                       | **CNAB 240**  | **CNAB 400**    | **Webservice** | **Observação**
+| **fine_type**                   | Não   | Não |    Não     | Não
+| **fine_percentage**             | Não   | Não   |    Não     | Não
+| **fine_value**                  | Não   | Não  |     Não    | Não
+| **days_for_fine**               | Não   | Não |         | Não
+
 ### Ocorrências
 
 | Our code | Descrição                                           | Suporte Banco | Suporte Boleto Simples |
