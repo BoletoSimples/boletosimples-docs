@@ -22,6 +22,11 @@ Você também pode se inscrever para receber as notificações de alterações d
 
 #### Últimas alterações realizadas na API.
 
+
+### 25/05/2020
+
+* Adiciona [Política de Retenção de Dados](/data_retention)
+
 ### 30/04/2020
 
 * Atualiza [documentação do Zapier](/integrations/zapier/) com as funções disponíveis na versão 2.0.0

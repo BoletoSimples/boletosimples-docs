@@ -1,5 +1,5 @@
 <ul class="nav">
-  <li {% if page.url == '/' %}class="active"{% endif %}>
+  <li {% if page.url == '/' %}class="active" {% endif %}>
     <a class="main-link" href="/" title="Introdução">Introdução</a>
     <ul class="subnav">
       <li><a href="/#endpoint-da-api">Endpoint da API</a></li>
@@ -12,134 +12,137 @@
       <li><a href="/#limite-de-requisições">Limite de Requisições</a></li>
     </ul>
   </li>
-  <li {% if page.url == '/sandbox/' %}class="active"{% endif %}>
+  <li {% if page.url == '/data_retention/' %}class="active" {% endif %}>
+    <a class="main-link" href="/data_retention" title="Retenção de Dados">Retenção de Dados</a>
+  </li>
+  <li {% if page.url == '/sandbox/' %}class="active" {% endif %}>
     <a class="main-link" href="/sandbox" title="Sandbox">Ambiente Sandbox</a>
   </li>
   <li class="{% if page.url == '/authentication/' %}active{% endif %}">
     <a class="main-link" href="/authentication" title="Autenticação">Autenticação</a>
     <ul class="subnav">
-      <li {% if page.url == '/authentication/' %}class="active"{% endif %}>
-      <a href="/authentication" title="Como Funciona">Como Funciona</a>
+      <li {% if page.url == '/authentication/' %}class="active" {% endif %}>
+        <a href="/authentication" title="Como Funciona">Como Funciona</a>
       </li>
-      <li {% if page.url == '/authentication/token/' %}class="active"{% endif %}>
-      <a href="/authentication/token" title="Token de Acesso">Token de Acesso</a>
+      <li {% if page.url == '/authentication/token/' %}class="active" {% endif %}>
+        <a href="/authentication/token" title="Token de Acesso">Token de Acesso</a>
       </li>
-      <li {% if page.url == '/authentication/oauth2/' %}class="active"{% endif %}>
-      <a href="/authentication/oauth2" title="OAuth2">OAuth2</a>
+      <li {% if page.url == '/authentication/oauth2/' %}class="active" {% endif %}>
+        <a href="/authentication/oauth2" title="OAuth2">OAuth2</a>
       </li>
-      <li {% if page.url == '/authentication/permissions/' %}class="active"{% endif %}>
-      <a href="/authentication/permissions" title="Permissões">Permissões</a>
+      <li {% if page.url == '/authentication/permissions/' %}class="active" {% endif %}>
+        <a href="/authentication/permissions" title="Permissões">Permissões</a>
       </li>
     </ul>
   </li>
-  <li {% if page.url == '/libraries/' %}class="active"{% endif %}>
+  <li {% if page.url == '/libraries/' %}class="active" {% endif %}>
     <a class="main-link" href="/libraries" title="Bibliotecas">Bibliotecas</a>
   </li>
   <li class="{% if page.url == '/modules/' %}active{% endif %}">
     <a class="main-link" href="/modules" title="Módulos">Módulos</a>
     <ul class="subnav">
-      <li {% if page.url == '/modules/' %}class="active"{% endif %}>
+      <li {% if page.url == '/modules/' %}class="active" {% endif %}>
         <a href="/modules" title="Visão Geral">Visão Geral</a>
       </li>
-      <li {% if page.url == '/modules/magento-v1/' %}class="active"{% endif %}>
+      <li {% if page.url == '/modules/magento-v1/' %}class="active" {% endif %}>
         <a href="/modules/magento-v1" title="Magento">Magento</a>
       </li>
-      <li {% if page.url == '/modules/shopify/' %}class="active"{% endif %}>
+      <li {% if page.url == '/modules/shopify/' %}class="active" {% endif %}>
         <a href="/modules/shopify" title="Shopify">Shopify</a>
       </li>
-      <li {% if page.url == '/modules/totvs-rm/' %}class="active"{% endif %}>
+      <li {% if page.url == '/modules/totvs-rm/' %}class="active" {% endif %}>
         <a href="/modules/totvs-rm" title="TOTVS RM">TOTVS RM</a>
       </li>
-      <li {% if page.url == '/modules/woocomerce/' %}class="active"{% endif %}>
+      <li {% if page.url == '/modules/woocomerce/' %}class="active" {% endif %}>
         <a href="/modules/woocommerce" title="Visão Geral">Wordpress/Woocommerce</a>
       </li>
     </ul>
   </li>
-  <li {% if page.url == '/integrations/' %}class="active"{% endif %}>
+  <li {% if page.url == '/integrations/' %}class="active" {% endif %}>
     <a class="main-link" href="/integrations" title="Integrações">Integrações</a>
     <ul class="subnav">
-      <li {% if page.url == '/integrations/zapier/' %}class="active"{% endif %}>
+      <li {% if page.url == '/integrations/zapier/' %}class="active" {% endif %}>
         <a href="/integrations/zapier" title="Zapier">Zapier</a>
       </li>
-      <li {% if page.url == '/integrations/pluga/' %}class="active"{% endif %}>
+      <li {% if page.url == '/integrations/pluga/' %}class="active" {% endif %}>
         <a href="/integrations/pluga" title="Pluga">Pluga</a>
       </li>
     </ul>
   </li>
-  <li {% if page.url == '/reference/' %}class="active"{% endif %}>
+  <li {% if page.url == '/reference/' %}class="active" {% endif %}>
     <a class="main-link" href="/reference" title="Referências">Referências</a>
     <ul class="subnav">
-      <li {% if page.url == '/reference/v1/customer_subscriptions/' %}class="active"{% endif %}>
-      <a href="/reference/v1/customer_subscriptions/" title="Assinaturas">Assinaturas</a>
+      <li {% if page.url == '/reference/v1/customer_subscriptions/' %}class="active" {% endif %}>
+        <a href="/reference/v1/customer_subscriptions/" title="Assinaturas">Assinaturas</a>
       </li>
-      <li {% if page.url == '/reference/v1/bank_billets/' %}class="active"{% endif %}>
+      <li {% if page.url == '/reference/v1/bank_billets/' %}class="active" {% endif %}>
         <a href="/reference/v1/bank_billets/" title="Boletos">Boletos</a>
       </li>
-      <li {% if page.url == '/reference/v1/installments/' %}class="active"{% endif %}>
+      <li {% if page.url == '/reference/v1/installments/' %}class="active" {% endif %}>
         <a href="/reference/v1/installments/" title="Carnês">Carnês</a>
       </li>
-      <li {% if page.url == '/reference/v1/bank_billet_accounts/' %}class="active"{% endif %}>
+      <li {% if page.url == '/reference/v1/bank_billet_accounts/' %}class="active" {% endif %}>
         <a href="/reference/v1/bank_billet_accounts/" title="Carteiras de Cobrança">Carteiras de Cobrança</a>
       </li>
-      <li {% if page.url == '/reference/v1/customers/' %}class="active"{% endif %}>
+      <li {% if page.url == '/reference/v1/customers/' %}class="active" {% endif %}>
         <a href="/reference/v1/customers/" title="Clientes">Clientes</a>
       </li>
-      <li {% if page.url == '/reference/v1/discharges/' %}class="active"{% endif %}>
+      <li {% if page.url == '/reference/v1/discharges/' %}class="active" {% endif %}>
         <a href="/reference/v1/discharges/" title="CNAB (Retorno)">CNAB (Retorno)</a>
       </li>
-      <li {% if page.url == '/reference/v1/remittances/' %}class="active"{% endif %}>
-      <a href="/reference/v1/remittances/" title="CNAB (Remessa)">CNAB (Remessa)</a>
+      <li {% if page.url == '/reference/v1/remittances/' %}class="active" {% endif %}>
+        <a href="/reference/v1/remittances/" title="CNAB (Remessa)">CNAB (Remessa)</a>
       </li>
-      <li {% if page.url == '/reference/v1/bank_billet_remittances/' %}class="active"{% endif %}>
-      <a href="/reference/v1/bank_billet_remittances/" title="Registro de Remessas">Registro de Remessa</a>
+      <li {% if page.url == '/reference/v1/bank_billet_remittances/' %}class="active" {% endif %}>
+        <a href="/reference/v1/bank_billet_remittances/" title="Registro de Remessas">Registro de Remessa</a>
       </li>
-      <li {% if page.url == '/reference/v1/bank_billet_discharges/' %}class="active"{% endif %}>
-      <a href="/reference/v1/bank_billet_discharges/" title="Registro de Retornos">Registro de Retorno</a>
+      <li {% if page.url == '/reference/v1/bank_billet_discharges/' %}class="active" {% endif %}>
+        <a href="/reference/v1/bank_billet_discharges/" title="Registro de Retornos">Registro de Retorno</a>
       </li>
-      <li {% if page.url == '/reference/v1/bank_billet_payments/' %}class="active"{% endif %}>
-      <a href="/reference/v1/bank_billet_payments/" title="Pagamentos de Boleto">Pagamentos de Boleto</a>
+      <li {% if page.url == '/reference/v1/bank_billet_payments/' %}class="active" {% endif %}>
+        <a href="/reference/v1/bank_billet_payments/" title="Pagamentos de Boleto">Pagamentos de Boleto</a>
       </li>
-      <li {% if page.url == '/reference/v1/bank_billet_registrations/' %}class="active"{% endif %}>
-      <a href="/reference/v1/bank_billet_registrations/" title="Registros de Boleto">Registros de Boleto</a>
+      <li {% if page.url == '/reference/v1/bank_billet_registrations/' %}class="active" {% endif %}>
+        <a href="/reference/v1/bank_billet_registrations/" title="Registros de Boleto">Registros de Boleto</a>
       </li>
-      <li {% if page.url == '/reference/v1/events/' %}class="active"{% endif %}>
+      <li {% if page.url == '/reference/v1/events/' %}class="active" {% endif %}>
         <a href="/reference/v1/events/" title="Eventos">Eventos</a>
       </li>
       <li {% if page.url == '/reference/v1/reports/' %}class="active" {% endif %}>
         <a href="/reference/v1/reports/" title="Relatórios">Relatórios</a>
       </li>
-      <li {% if page.url == '/reference/v1/webhooks/' %}class="active"{% endif %}>
+      <li {% if page.url == '/reference/v1/webhooks/' %}class="active" {% endif %}>
         <a href="/reference/v1/webhooks/" title="Webhooks">Webhooks</a>
       </li>
-      <li {% if page.url == '/reference/v1/webhook_deliveries/' %}class="active"{% endif %}>
+      <li {% if page.url == '/reference/v1/webhook_deliveries/' %}class="active" {% endif %}>
         <a href="/reference/v1/webhook_deliveries/" title="Webhooks enviados">Webhooks enviados</a>
       </li>
-      <li {% if page.url == '/reference/v1/email_deliveries/' %}class="active"{% endif %}>
+      <li {% if page.url == '/reference/v1/email_deliveries/' %}class="active" {% endif %}>
         <a href="/reference/v1/email_deliveries/" title="E-mails enviados">E-mails enviados</a>
       </li>
-      <li {% if page.url == '/reference/v1/users/' %}class="active"{% endif %}>
+      <li {% if page.url == '/reference/v1/users/' %}class="active" {% endif %}>
         <a href="/reference/v1/users/" title="Usuários">Usuários</a>
       </li>
-      <li {% if page.url == '/reference/v1/userinfo/' %}class="active"{% endif %}>
+      <li {% if page.url == '/reference/v1/userinfo/' %}class="active" {% endif %}>
         <a href="/reference/v1/userinfo/" title="Usuário Autenticado">Usuário Autenticado</a>
       </li>
-      <li {% if page.url == '/reference/v1/imports/' %}class="active"{% endif %}>
+      <li {% if page.url == '/reference/v1/imports/' %}class="active" {% endif %}>
         <a class="main-link-subnav" href="/reference/v1/imports/" title="Importações">Importações</a>
         <ul class="subnav-subnav">
-          <li {% if page.url == '/reference/v1/imports/customer_subscriptions/' %}class="active"{% endif %}>
+          <li {% if page.url == '/reference/v1/imports/customer_subscriptions/' %}class="active" {% endif %}>
             <a href="/reference/v1/imports/customer_subscriptions/" title="Assinaturas">Assinaturas</a>
           </li>
-          <li {% if page.url == '/reference/v1/imports/bank_billets/' %}class="active"{% endif %}>
+          <li {% if page.url == '/reference/v1/imports/bank_billets/' %}class="active" {% endif %}>
             <a href="/reference/v1/imports/bank_billets/" title="Boletos">Boletos</a>
           </li>
-          <li {% if page.url == '/reference/v1/imports/installments/' %}class="active"{% endif %}>
+          <li {% if page.url == '/reference/v1/imports/installments/' %}class="active" {% endif %}>
             <a href="/reference/v1/imports/installments/" title="Carnês">Carnês</a>
           </li>
-          <li {% if page.url == '/reference/v1/imports/customers/' %}class="active"{% endif %}>
+          <li {% if page.url == '/reference/v1/imports/customers/' %}class="active" {% endif %}>
             <a href="/reference/v1/imports/customers/" title="Clientes">Clientes</a>
           </li>
         </ul>
-      <!--li {% if page.url == '/reference/v1/partner/users/' %}class="active"{% endif %}>
+        <!--li {% if page.url == '/reference/v1/partner/users/' %}class="active"{% endif %}>
         <a href="/reference/v1/partner/users" title="Parceiros e Usuários">API de Parceiros</a>
       </li-->
     </ul>
@@ -147,22 +150,22 @@
   <li class=" {% if page.url == '/webhooks/' %}active{% endif %}">
     <a class="main-link" href="/webhooks" title="Webhooks">Webhooks</a>
     <ul class="subnav">
-      <li {% if page.url == '/webhooks/' %}class="active"{% endif %}>
+      <li {% if page.url == '/webhooks/' %}class="active" {% endif %}>
         <a href="/webhooks" title="Como Funciona">Como Funciona</a>
       </li>
-      <li {% if page.url == '/webhooks/events/' %}class="active"{% endif %}>
+      <li {% if page.url == '/webhooks/events/' %}class="active" {% endif %}>
         <a href="/webhooks/events" title="Eventos">Eventos</a>
       </li>
-      <li {% if page.url == '/webhooks/configuration/' %}class="active"{% endif %}>
+      <li {% if page.url == '/webhooks/configuration/' %}class="active" {% endif %}>
         <a href="/webhooks/configuration" title="Configurando Webhooks">Configurando</a>
       </li>
-      <li {% if page.url == '/webhooks/deliveries/' %}class="active"{% endif %}>
+      <li {% if page.url == '/webhooks/deliveries/' %}class="active" {% endif %}>
         <a href="/webhooks/deliveries" title="Notificações">Notificações</a>
       </li>
-      <li {% if page.url == '/webhooks/payloads/' %}class="active"{% endif %}>
+      <li {% if page.url == '/webhooks/payloads/' %}class="active" {% endif %}>
         <a href="/webhooks/payloads" title="Payloads">Payloads</a>
       </li>
-      <li {% if page.url == '/webhooks/signature/' %}class="active"{% endif %}>
+      <li {% if page.url == '/webhooks/signature/' %}class="active" {% endif %}>
         <a href="/webhooks/signature" title="Segurança do Webhook">Assinatura de Segurança</a>
       </li>
     </ul>
@@ -170,73 +173,73 @@
   <li class="{% if page.url == '/bank_contracts/' %}active{% endif %}">
     <a class="main-link" href="/bank_contracts" title="Suporte aos Bancos">Suporte aos Bancos</a>
     <ul class="subnav">
-      <li {% if page.url == '/bank_contracts/abc/' %}class="active"{% endif %}>
+      <li {% if page.url == '/bank_contracts/abc/' %}class="active" {% endif %}>
         <a href="/bank_contracts/abc" title="ABC">ABC</a>
       </li>
-      <li {% if page.url == '/bank_contracts/arbi/' %}class="active"{% endif %}>
+      <li {% if page.url == '/bank_contracts/arbi/' %}class="active" {% endif %}>
         <a href="/bank_contracts/arbi" title="ARBI">ARBI</a>
       </li>
-      <li {% if page.url == '/bank_contracts/bib/' %}class="active"{% endif %}>
+      <li {% if page.url == '/bank_contracts/bib/' %}class="active" {% endif %}>
         <a href="/bank_contracts/bib" title="BIB">BIB</a>
       </li>
-      <li {% if page.url == '/bank_contracts/bb/' %}class="active"{% endif %}>
+      <li {% if page.url == '/bank_contracts/bb/' %}class="active" {% endif %}>
         <a href="/bank_contracts/bb" title="Banco do Brasil">Banco do Brasil</a>
       </li>
-      <li {% if page.url == '/bank_contracts/bnb/' %}class="active"{% endif %}>
+      <li {% if page.url == '/bank_contracts/bnb/' %}class="active" {% endif %}>
         <a href="/bank_contracts/bnb" title="Banco do Brasil">Banco do Nordeste</a>
       </li>
-      <li {% if page.url == '/bank_contracts/brb/' %}class="active"{% endif %}>
+      <li {% if page.url == '/bank_contracts/brb/' %}class="active" {% endif %}>
         <a href="/bank_contracts/brb" title="Banco de Brasília">Banco de Brasília</a>
       </li>
-      <li {% if page.url == '/bank_contracts/banestes/' %}class="active"{% endif %}>
+      <li {% if page.url == '/bank_contracts/banestes/' %}class="active" {% endif %}>
         <a href="/bank_contracts/banestes" title="Banrisul">Banestes</a>
       </li>
-      <li {% if page.url == '/bank_contracts/banrisul/' %}class="active"{% endif %}>
+      <li {% if page.url == '/bank_contracts/banrisul/' %}class="active" {% endif %}>
         <a href="/bank_contracts/banrisul" title="Banrisul">Banrisul</a>
       </li>
-      <li {% if page.url == '/bank_contracts/bnpparibas/' %}class="active"{% endif %}>
+      <li {% if page.url == '/bank_contracts/bnpparibas/' %}class="active" {% endif %}>
         <a href="/bank_contracts/bnpparibas" title="BNP Paribas">BNP Paribas</a>
       </li>
-      <li {% if page.url == '/bank_contracts/bradesco/' %}class="active"{% endif %}>
+      <li {% if page.url == '/bank_contracts/bradesco/' %}class="active" {% endif %}>
         <a href="/bank_contracts/bradesco" title="Bradesco">Bradesco</a>
       </li>
-      <li {% if page.url == '/bank_contracts/cef/' %}class="active"{% endif %}>
+      <li {% if page.url == '/bank_contracts/cef/' %}class="active" {% endif %}>
         <a href="/bank_contracts/cef" title="Caixa Econômica Federal">Caixa</a>
       </li>
-      <li {% if page.url == '/bank_contracts/caruana/' %}class="active"{% endif %}>
+      <li {% if page.url == '/bank_contracts/caruana/' %}class="active" {% endif %}>
         <a href="/bank_contracts/caruana" title="Caruana">Caruana</a>
       </li>
-      <li {% if page.url == '/bank_contracts/ailos/' %}class="active"{% endif %}>
+      <li {% if page.url == '/bank_contracts/ailos/' %}class="active" {% endif %}>
         <a href="/bank_contracts/ailos" title="AILOS">AILOS</a>
       </li>
-      <li {% if page.url == '/bank_contracts/citibank/' %}class="active"{% endif %}>
+      <li {% if page.url == '/bank_contracts/citibank/' %}class="active" {% endif %}>
         <a href="/bank_contracts/citibank" title="Citibank">Citibank</a>
       </li>
-      <li {% if page.url == '/bank_contracts/credisis/' %}class="active"{% endif %}>
+      <li {% if page.url == '/bank_contracts/credisis/' %}class="active" {% endif %}>
         <a href="/bank_contracts/credisis" title="Credisis">Credisis</a>
       </li>
-      <li {% if page.url == '/bank_contracts/cresol/' %}class="active"{% endif %}>
+      <li {% if page.url == '/bank_contracts/cresol/' %}class="active" {% endif %}>
         <a href="/bank_contracts/cresol" title="CRESOL">CRESOL</a>
       </li>
-      <li {% if page.url == '/bank_contracts/daycoval/' %}class="active"{% endif %}>
+      <li {% if page.url == '/bank_contracts/daycoval/' %}class="active" {% endif %}>
         <a href="/bank_contracts/daycoval" title="Daycoval">Daycoval</a>
       </li>
-      <li {% if page.url == '/bank_contracts/itau/' %}class="active"{% endif %}>
+      <li {% if page.url == '/bank_contracts/itau/' %}class="active" {% endif %}>
         <a href="/bank_contracts/itau" title="Itaú">Itaú</a>
       </li>
-      <li {% if page.url == '/bank_contracts/safra/' %}class="active"{% endif %}>
+      <li {% if page.url == '/bank_contracts/safra/' %}class="active" {% endif %}>
         <a href="/bank_contracts/safra" title="Safra">Safra</a>
       </li>
-      <li {% if page.url == '/bank_contracts/santander/' %}class="active"{% endif %}>
+      <li {% if page.url == '/bank_contracts/santander/' %}class="active" {% endif %}>
         <a href="/bank_contracts/santander" title="Santander">Santander</a>
       </li>
-      <li {% if page.url == '/bank_contracts/sicoob/' %}class="active"{% endif %}>
+      <li {% if page.url == '/bank_contracts/sicoob/' %}class="active" {% endif %}>
         <a href="/bank_contracts/sicoob" title="Sicoob">Sicoob</a>
       </li>
-      <li {% if page.url == '/bank_contracts/sicredi/' %}class="active"{% endif %}>
+      <li {% if page.url == '/bank_contracts/sicredi/' %}class="active" {% endif %}>
         <a href="/bank_contracts/sicredi" title="Sicredi">Sicredi</a>
       </li>
-      <li {% if page.url == '/bank_contracts/sofisa/' %}class="active"{% endif %}>
+      <li {% if page.url == '/bank_contracts/sofisa/' %}class="active" {% endif %}>
         <a href="/bank_contracts/sofisa" title="Sofisa">Sofisa</a>
       </li>
     </ul>
