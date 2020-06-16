@@ -128,7 +128,6 @@ header#main-header {
   font-family: 'Khula Sans', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  border-top: 5px solid #008de4;
   width: 100%;
   margin: 0;
   height: 69px;
@@ -179,6 +178,7 @@ header#main-header {
         padding: 0; }
   header#main-header .header-form input[type="submit"],
   header#main-header .login-trigger,
+  header#main-header .demo-trigger,
   header#main-header .signup-trigger {
     position: relative;
     right: 0;
@@ -191,13 +191,14 @@ header#main-header {
     display: inline-block;
     border-radius: 3px;
     text-transform: uppercase;
-    font-size: 12px;
+    font-size: 11px;
     letter-spacing: 0;
     border: none;
     font-weight: bold;
     outline: none; }
     header#main-header .header-form input[type="submit"]:hover,
     header#main-header .login-trigger:hover,
+    header#main-header .demo-trigger:hover,
     header#main-header .signup-trigger:hover {
       text-decoration: none;
       opacity: .9; }
@@ -215,6 +216,9 @@ header#main-header {
   header#main-header #signup-form input[type="submit"],
   header#main-header .signup-trigger {
     width: 160px; }
+  header#main-header .demo-trigger {
+    width: 180px; }
+  header#main-header .demo-trigger,
   header#main-header .signup-trigger {
     background: #ff9000; }
   header#main-header #signup-form input[type="email"] {
@@ -298,7 +302,9 @@ header#main-header {
     float: right; }
     header#main-header .signup .menu-menu, header#main-header .login .menu-menu {
       float: left; }
-      header#main-header .signup .menu-menu .signup-trigger, header#main-header .login .menu-menu .signup-trigger {
+      header#main-header .signup .menu-menu .demo-trigger, header#main-header .login .menu-menu .demo-trigger,
+      header#main-header .signup .menu-menu .signup-trigger,
+      header#main-header .login .menu-menu .signup-trigger {
         position: relative; }
   header#main-header .login #form-signin {
     padding-right: 0; }
@@ -432,7 +438,9 @@ Media Queries for Tablets.
         position: absolute;
         display: inline-block;
         right: 4em; }
-      header#main-header nav.login .signup-trigger, header#main-header nav.signup .signup-trigger {
+      header#main-header nav.login .demo-trigger, header#main-header nav.signup .demo-trigger,
+      header#main-header nav.login .signup-trigger,
+      header#main-header nav.signup .signup-trigger {
         display: none; }
       header#main-header nav.login .sign-in-up-item, header#main-header nav.signup .sign-in-up-item {
         display: block; }
@@ -558,7 +566,7 @@ footer#main-footer {
   footer#main-footer .sitemap li:first-child {
     margin-top: 0; }
   footer#main-footer .sitemap .column {
-    width: 20%;
+    width: 25%;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     float: left; }
