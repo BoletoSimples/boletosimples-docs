@@ -1,9 +1,9 @@
 ---
 title: Carnês
 position: 3
-layout: pt
 en: "/en/references"
 breadcrumb: Carnês
+layout: pt
 ---
 
 ## Carnês
@@ -99,8 +99,8 @@ breadcrumb: Carnês
 #### status
 
 | created    | Gerando
-| processed  | Aberto
-| finished   | Finalizado
+| processed  | Parcelas criadas
+| generated  | Aberto
 
 #### customer_person_type
 
