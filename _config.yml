@@ -1,0 +1,18 @@
+---
+title: Boleto Simples API
+timezone: America/Sao_Paulo
+collections:
+  posts:
+    title: Posts
+    output: true
+  uploads:
+    title: Uploads
+    output: true
+highlighter: rouge
+exclude:
+- Gemfile
+- Gemfile.lock
+- README.textile
+permalink: pretty
+jekyll-sitemap:
+- 

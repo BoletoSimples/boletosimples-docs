@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <title>Teste de boleto Embedado</title>
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+    <meta content='width=device-width, initial-scale=1.0' name='viewport'>
+  </head>
+  <body>
+    <h1>Testando o Embed</h1>
+
+    <h2>Boleto ainda não gerado</h2>
+    <script src="https://localhost:5001/2/xxx.js"></script>
+
+    <h2>Boleto Avulso</h2>
+    <script src="https://localhost:5001/2/zp.js"></script>
+
+    <h2>Boleto Fatura</h2>
+    <div id="boleto-fatura"></div>
+
+    <h2>Parcela 2 do Carnê</h2>
+    <div id="boleto-parcela-2"></div>
+
+    <h2>Carnê Inteiro</h2>
+    <div id="carne"></div>
+
+    <script src="https://localhost:5001/2/yj/carne.js?target=carne"></script>
+    <script src="https://localhost:5001/2/zp/letter.js?target=boleto-fatura"></script>
+    <script src="https://localhost:5001/2/yj/carne/2.js?target=boleto-parcela-2"></script>
+  </body>
+</html>

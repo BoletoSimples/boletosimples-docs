@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    {% include tracking/gtag_head.html %}
+    <title>{{ page.title }}</title>
+
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+    <meta content='width=device-width, initial-scale=1.0' name='viewport'>
+    <meta content='Boleto Simples' name='application-name'>
+    <meta content='Boleto Simples' name='author'>
+    <meta content='© 2015 Boleto Simples Cobranças Ltda.' name='copyright'>
+    <meta content='index, follow' name='robots'>
+    <meta content='API para gerar, emitir e registrar boletos bancários com registro, geração de arquivo remessa, leitura de arquivo retorno e integração com todos os bancos - Boleto Simples' name='description'>
+    <meta content='boleto bancario, gerar boleto, criar boleto, boleto internet, emitir boleto, gerar boletos, sistema boleto, pagamento boletos, boleto facil, api' name='keywords'>
+    <meta content='pt_BR' property='og:locale'>
+    <meta content='Boleto Simples' property='og:site_name'>
+    <meta content='Emissão de cobrança por boleto bancário com registro - Boleto Simples' property='og:title'>
+    <meta content='API para gerar, emitir e registrar boletos bancários com registro, geração de arquivo remessa, leitura de arquivo retorno e integração com todos os bancos - Boleto Simples' property='og:description'>
+    <meta content='https://boletosimples.com.br/' property='og:url'>
+    <meta content='https://boletosimples.com.br/logo.png' property='og:image'>
+    <meta content='image/png' property='og:image:type'>
+    <meta content='500' property='og:image:width'>
+    <meta content='85' property='og:image:height'>
+    <meta content='website' property='og:type'>
+
+    <!-- Favicon Tags https://realfavicongenerator.net -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=lkdpLO9Bk8">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=lkdpLO9Bk8">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=lkdpLO9Bk8">
+    <link rel="manifest" href="/site.webmanifest?v=lkdpLO9Bk8">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg?v=lkdpLO9Bk8" color="#5bbad5">
+    <link rel="shortcut icon" href="/favicon.ico?v=lkdpLO9Bk8">
+    <meta name="apple-mobile-web-app-title" content="Boleto Simples">
+    <meta name="application-name" content="Boleto Simples">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="msapplication-TileImage" content="/mstile-144x144.png?v=lkdpLO9Bk8">
+    <meta name="theme-color" content="#ffffff">
+    <!-- End of Favicon Tags -->
+
+    <link href="/css/header-footer.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/github.css" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+    {% include tracking/gtag_body.html %} {% include header.html %}
+    <div class='generic-call'>
+        <div class='containner'>
+            <a id="simple-menu" href="#sidr">☰</a>
+            <h1>Documentação para Desenvolvedores</h1>
+        </div>
+    </div>
+
+    <section class="generic-entry">
+        <div class='containner'>
+
+            <aside>
+                {% include sidemenu.html %}
+            </aside>
+
+            <div id="sidr">
+                {% include sidemenu.html %}
+            </div>
+
+            <article class="content">
+                {% if page.breadcrumb %}{% include breadcrumb.html %}{% endif %} {{ content }}
+            </article>
+
+        </div>
+    </section>
+
+    {% include footer.html %}
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="//cdn.jsdelivr.net/jquery.sidr/2.2.1/jquery.sidr.min.js"></script>
+    <script src="/js/highlight.pack.js"></script>
+    <script src="/js/header-footer.js"></script>
+
+    <script>
+        $(document).ready(function() {
+
+            $('#simple-menu').sidr();
+
+            $('[data-toggle="offcanvas"]').click(function() {
+                $('.row-offcanvas').toggleClass('active')
+            });
+            $('[data-toggle="offcanvas"]').focusout(function() {
+                $('.row-offcanvas').removeClass('active')
+            });
+            $('pre').each(function(i, block) {
+                hljs.highlightBlock(block);
+            });
+            $('th').tooltip();
+            $('table').addClass('table table-striped')
+        });
+    </script>
+</body>
+
+</html>
