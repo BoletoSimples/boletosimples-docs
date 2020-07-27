@@ -1,8 +1,8 @@
 ---
 title: Assinatura de Segurança
 position: 4
-layout: pt
 en: "/en/webhooks/signature"
+layout: pt
 ---
 
 ## Assinatura de Segurança
@@ -101,5 +101,32 @@ $hmac_header = $_SERVER['HTTP_X_HUB_SIGNATURE'];
 $data = file_get_contents('php://input');
 $verified = verify_webhook($data, $hmac_header);
 error_log('Webhook verified: '.var_export($verified, true)); //check error.log to see the result
+
+</pre>
+
+#### C#
+
+<pre class="ruby">
+
+private string ObterChave(string key, string message)
+{
+Encoding encoding = Encoding.UTF8;
+
+var keyByte = encoding.GetBytes(key);
+using (var hmacshaSHA1 = new HMACSHA1(keyByte))
+{
+hmacshaSHA1.ComputeHash(encoding.GetBytes(message));
+
+return ByteToString(hmacshaSHA1.Hash);
+}
+}
+
+public string ByteToString(byte[] buff)
+{
+string sbinary = "";
+for (int i = 0; i < buff.Length; i++)
+sbinary += buff[i].ToString("X2"); /* hex format */
+return sbinary;
+}
 
 </pre>
