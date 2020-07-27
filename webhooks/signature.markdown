@@ -104,29 +104,27 @@ error_log('Webhook verified: '.var_export($verified, true)); //check error.log t
 
 </pre>
 
-#### C#
+#### C# (Exemplo desenvolvido por Davi Kendy Yorozuya)
 
 <pre class="ruby">
 
-private string ObterChave(string key, string message)
-{
-Encoding encoding = Encoding.UTF8;
+private string ObterChave(string key, string message){
+  Encoding encoding = Encoding.UTF8;
 
-var keyByte = encoding.GetBytes(key);
-using (var hmacshaSHA1 = new HMACSHA1(keyByte))
-{
-hmacshaSHA1.ComputeHash(encoding.GetBytes(message));
+  var keyByte = encoding.GetBytes(key);
+  using (var hmacshaSHA1 = new HMACSHA1(keyByte)){
+ hmacshaSHA1.ComputeHash(encoding.GetBytes(message));
 
-return ByteToString(hmacshaSHA1.Hash);
-}
+  return ByteToString(hmacshaSHA1.Hash);
+  }
 }
 
-public string ByteToString(byte[] buff)
-{
-string sbinary = "";
-for (int i = 0; i < buff.Length; i++)
-sbinary += buff[i].ToString("X2"); /* hex format */
-return sbinary;
+public string ByteToString(byte[] buff){
+  string sbinary = "";
+  for (int i = 0; i < buff.Length; i++)
+  sbinary += buff[i].ToString("X2"); /* hex format 
+  */
+  return sbinary;
 }
 
 </pre>
