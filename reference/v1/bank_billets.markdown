@@ -35,7 +35,7 @@ layout: pt
 | **customer_person_name**        | Sim   | String  | 120     | Nome ou Razão Social do Pagador
 | **customer_nickname**           | Não   | String  | 255     | Apelido ou Nome Fantasia do Pagador
 | **customer_cnpj_cpf**           | Sim   | String  | 20      | CNPJ ou CPF do Pagador
-| **customer_zipcode**            | Sim   | Integer | 8       | CEP (formato 99999999)
+| **customer_zipcode**            | Sim   | String  | 8       | CEP (formato 99999999)
 | **customer_email**              | Não   | String  | 80     | E-mail do Pagador
 | **customer_email_cc**           | Não   | String  | 80     | E-mail alternativo do Pagador
 | **customer_address**            | Sim   | String    | 255        | Endereço
@@ -123,7 +123,7 @@ layout: pt
 | **revoke_code**                 | Não   | String  | 1    | Código de Baixa(CNAB 240). Consulte os possíveis valores <a href="/bank_contracts">para cada banco</a>.
 | **guarantor_name**              | Não   | String  |   100      | Nome do Sacador/Avalista
 | **guarantor_cnpj_cpf**          | Não   | String  |   20      | CNPJ/CPF do Sacador/Avalista
-| **guarantor_zipcode**            | Não   | Integer | 8       | CEP (formato 99999999) do Sacador/Avalista
+| **guarantor_zipcode**            | Não   | String | 8       | CEP (formato 99999999) do Sacador/Avalista
 | **guarantor_address**            | Não   | String    |  255       | Endereço do Sacador/Avalista
 | **guarantor_city_name**          | Não   | String  | 60     | Cidade(Nome deve estar correto e completo) do Sacador/Avalista
 | **guarantor_state**              | Não   | String  | 2       | Estado do Sacador/Avalista
