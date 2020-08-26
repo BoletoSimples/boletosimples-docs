@@ -1,8 +1,8 @@
 ---
 title: Sandbox
 position: 5
-layout: pt
 en: "/en/sandbox"
+layout: pt
 ---
 
 ## Ambiente Sandbox
@@ -42,7 +42,7 @@ Por esse motivo, este ambiente possui algumas restrições. São elas:
 
 ### Limpeza do ambiente
 
-Por motivos de segurança, todos os boletos são excluídos automaticamente no ambiente de Sandbox às segundas-feiras, quartas-feiras e sextas-feiras.
+Por motivos de segurança, todos os boletos são excluídos automaticamente no ambiente de Sandbox às terças-feiras, quintas-feiras e sábados por volta das 02:00 da manhã no horário de Brasília.
 
 ### Eventos
 
