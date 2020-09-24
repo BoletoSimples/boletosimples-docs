@@ -995,6 +995,19 @@ Array
         Até a Data de criação
       </td>
     </tr>
+<tr>
+      <td>
+        <strong>meta </strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        String
+      </td>
+      <td>
+      </td>
+    </tr>
   </tbody>
 </table>
 
