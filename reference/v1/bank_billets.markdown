@@ -1006,6 +1006,7 @@ Array
         String
       </td>
       <td>
+Filtrar dados no campo meta
       </td>
     </tr>
   </tbody>
