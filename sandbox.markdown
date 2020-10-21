@@ -42,7 +42,7 @@ Por esse motivo, este ambiente possui algumas restrições. São elas:
 
 ### Limpeza do ambiente
 
-Por motivos de segurança, todos os boletos são excluídos automaticamente do ambiente de Sandbox nas segundas, quartas e sextas-feiras entre 02:00 e 03:00 da manhã.
+Por motivos de segurança, todos os boletos são excluídos automaticamente do ambiente de Sandbox nas segundas, quartas e sextas-feiras entre 02:00 e 03:00 da manhã do horário de Brasília.
 
 ### Eventos
 
