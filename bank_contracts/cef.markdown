@@ -1,8 +1,8 @@
 ---
 title: Caixa Econômica Federal
 position: 2
-layout: pt
 en: "/en/bank_contracts/cef"
+layout: pt
 ---
 
 ## Caixa Econômica Federal
@@ -19,7 +19,7 @@ en: "/en/bank_contracts/cef"
 |:---------|:----------------------------------------------------|:--------------|:-----------------------|
 | 1001     | Entrada de título                                   | Sim           | Sim                    |
 | 1002     | Pedido de baixa                                     | Sim           | Sim                    |
-| 1003     | Alteração de vencimento                             | Sim           | Sim                    |
+| 1003     | Alteração de vencimento                             | Sim           | [Veja tabela](https://suporte.boletosimples.com.br/article/pten2qs3c0-posso-alterar-a-data-de-vencimento-e-o-valor-de-um-boleto-j-emitido)                    |
 | 1004     | Concessão de abatimento                             | Sim           | Não                    |
 | 1005     | Cancelamento de abatimento                          | Sim           | Não                    |
 | 1007     | Alteração do "uso da empresa"                       | Sim           | Não                    |
@@ -39,7 +39,7 @@ en: "/en/bank_contracts/cef"
 | 1022     | Transferência cessão crédito ID. Prod. 10           | Não           | Não                    |
 | 1023     | Transferência entre carteiras                       | Não           | Não                    |
 | 1024     | Dev. transferências entre carteiras                 | Não           | Não                    |
-| 1028     | Alterar Valor                                       | Não           | Não                    |
+| 1028     | Alterar Valor                                       | Não           | [Veja tabela](https://suporte.boletosimples.com.br/article/pten2qs3c0-posso-alterar-a-data-de-vencimento-e-o-valor-de-um-boleto-j-emitido)                    |
 | 1031     | Alteração de outros dados                           | Sim           | Não                    |
 | 1034     | Pago diretamente ao beneficiário                    | Não           | Não                    |
 | 1038     | Alterar CEP do pagador                              | Não           | Não                    |
