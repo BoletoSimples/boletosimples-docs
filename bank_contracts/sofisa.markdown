@@ -40,7 +40,7 @@ Correspondente Santander
 | 1022     | Transferência cessão crédito ID. Prod. 10           | Não           | Não                    |
 | 1023     | Transferência entre carteiras                       | Não           | Não                    |
 | 1024     | Dev. transferências entre carteiras                 | Não           | Não                    |
-| 1028     | Alterar Valor                                       | Sim           | Sim                    |
+| 1028     | Alterar Valor                                       | Sim           | [Veja tabela](https://suporte.boletosimples.com.br/article/pten2qs3c0-posso-alterar-a-data-de-vencimento-e-o-valor-de-um-boleto-j-emitido)                    |
 | 1030     | Recusa da Alegação do Sacado                        | Sim           | Sim                    |
 | 1031     | Alteração de outros dados                           | Não           | Não                    |
 | 1034     | Pago diretamente ao beneficiário                    | Não           | Não                    |
