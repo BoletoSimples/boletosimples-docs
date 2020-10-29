@@ -1,7 +1,7 @@
 ---
 title: CRESOL
-layout: pt
 en: "/en/bank_contracts/cresol"
+layout: pt
 ---
 
 ## CRESOL
@@ -18,7 +18,7 @@ Correspondente Bradesco
 |:---------|:----------------------------------------------------|:--------------|:-----------------------|
 | 1001     | Entrada de título                                   | Sim           | Sim                    |
 | 1002     | Pedido de baixa                                     | Sim           | Sim                    |
-| 1003     | Alteração de vencimento                             | Sim           | Sim                    |
+| 1003     | Alteração de vencimento                             | Sim           | [Veja tabela](https://suporte.boletosimples.com.br/article/pten2qs3c0-posso-alterar-a-data-de-vencimento-e-o-valor-de-um-boleto-j-emitido)                    |
 | 1004     | Concessão de abatimento                             | Sim           | Sim                    |
 | 1005     | Cancelamento de abatimento                          | Sim           | Sim                    |
 | 1007     | Alteração do "uso da empresa"                       | Sim           | Sim                    |
@@ -38,7 +38,7 @@ Correspondente Bradesco
 | 1022     | Transferência cessão crédito ID. Prod. 10           | Sim           | Não                    |
 | 1023     | Transferência entre carteiras                       | Sim           | Não                    |
 | 1024     | Dev. transferências entre carteiras                 | Sim           | Não                    |
-| 1028     | Alterar Valor                                       | Sim           | Sim                    |
+| 1028     | Alterar Valor                                       | Sim           | [Veja tabela](https://suporte.boletosimples.com.br/article/pten2qs3c0-posso-alterar-a-data-de-vencimento-e-o-valor-de-um-boleto-j-emitido)                    |
 | 1031     | Alteração de outros dados                           | Sim           | Sim           |
 | 1034     | Pago diretamente ao beneficiário                    | Não           | Não                    |
 | 1038     | Alterar CEP do pagador                              | Não           | Não                    |
