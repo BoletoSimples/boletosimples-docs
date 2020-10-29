@@ -1,5 +1,5 @@
 ---
-title: BIB
+title: Banco Industrial do Brasil (BIB)
 en: "/en/bank_contracts/bib"
 layout: pt
 ---
