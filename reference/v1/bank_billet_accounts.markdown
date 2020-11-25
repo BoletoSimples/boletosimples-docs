@@ -39,9 +39,9 @@ breadcrumb: Carteiras de Cobrança
 | **extra2**               | *     | String  | 15      | Campo Extra 2
 | **extra2_digit**         | *     | String  | 3       | Dígito do Campo Extra 2
 | **extra3**               | **    | String  | 30      | [Código de Remessa](/reference/v1/remittances/)
-| **beneficiary_name**     | Não   | String  | 255     | Nome do Beneficiário
-| **beneficiary_cnpj_cpf** | Não   | String  | 20      | CPF/CNPJ do Beneficiário
-| **beneficiary_address**  | Não   | String  | 255     | Endereço do Beneficiário
+| **beneficiary_name**     | Sim   | String  | 255     | Nome do Beneficiário
+| **beneficiary_cnpj_cpf** | Sim   | String  | 20      | CPF/CNPJ do Beneficiário
+| **beneficiary_address**  | Sim   | String  | 255     | Endereço do Beneficiário
 | **name**                 | Não   | String  |         | Nome da Conta ***
 | [**status**](#status)    | Não   | String  |         | Situação da carteira
 | **homologated_at**       | Não   | DateTime    |         | Data de homologação
