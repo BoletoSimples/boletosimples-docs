@@ -43,6 +43,7 @@ layout: pt
 | **created_via_api**    | N/A   | Boolean |         | Enviado pela API
 | **contact_person**     | Não   | String  | 255     | Pessoa de contato
 | **truncated_address**  | Não   | String  | 40      | Endereço para remessa
+| **external_code**      | Não   | String  | 60      | Código externo do Cliente
 
 ### Criar cliente
 
@@ -195,7 +196,8 @@ Content-Type: application/json; charset=utf-8
   "mobile_local_code":null,
   "state":"RJ",
   "contact_person":"Nome do Contato",
-  "truncated_address":"Rua quinhentos"
+  "truncated_address":"Rua quinhentos",
+  "external_code":"12346578"
 }
 </pre>
   </div>
@@ -216,7 +218,8 @@ Content-Type: application/json; charset=utf-8
   address_complement: "Sala 4",
   phone_number: "2112123434",
   contact_person: "Nome do Contato",
-  truncated_address:"Rua quinhentos"
+  truncated_address:"Rua quinhentos",
+  external_code:"12345678"
 })
 if @customer.persisted?
   puts "Sucesso :)"
@@ -248,7 +251,8 @@ Sucesso :)
      "mobile_local_code" => nil,
        "created_via_api" => true,
        "nome_do_contato" => "Nome do Contato",
-     "truncated_address" => "Rua quinhentos, 111"
+     "truncated_address" => "Rua quinhentos, 111",
+     "external_code" => "12346578"
 }
 </pre>
   </div>
@@ -269,7 +273,8 @@ $customer = BoletoSimples\Customer::create([
   'address_complement' => "Sala 4",
   'phone_number' => "2112123434",
   "contact_person" => "Nome do Contato",
-  "truncated_address" => "Rua quinhentos, 111"
+  "truncated_address" => "Rua quinhentos, 111",
+  "external_code" => "12345678"
 ]);
 if($customer->isPersisted()) {
   echo "Sucesso :)\n";
@@ -302,6 +307,8 @@ Array
     [state] => RJ
     [created_via_api] => 1
     [contact_person] => Nome do Contato
+    [truncated_address] => Rua quinhentos, 111
+    [external_code] => 12345678
 )
 </pre>
   </div>
@@ -358,7 +365,8 @@ Content-Type: application/json; charset=utf-8
   "mobile_local_code":null,
   "state":"RJ",
   "contact_person":"Nome do Contato",
-  "truncated_address":"Rua quinhentos"
+  "truncated_address":"Rua quinhentos",
+  "external_code":"12346578"
 }
 </pre>
   </div>
@@ -390,7 +398,9 @@ puts @customer.attributes
                  "state" => "RJ",
        "created_via_api" => true,
                     "id" => 67,
-        "contact_person" => "Nome do Contato"
+        "contact_person" => "Nome do Contato",
+        "truncated_address" => "Rua quinhentos",
+        "external_code" => "12346578"
 }
 </pre>
   </div>
@@ -425,6 +435,7 @@ Array
     [created_via_api] => 1
     [contact_person] => Nome do Contato
     [truncated_address] => Rua quinhentos, 111
+    [external_code] => 12345678
 )
 </pre>
   </div>
@@ -576,7 +587,8 @@ Location: https://sandbox.boletosimples.com.br/api/v1/customers/1
   "mobile_local_code":null,
   "state":"RJ",
   "contact_person":"Nome do Contato",
-  "truncated_address":"Rua quinhentos"
+  "truncated_address":"Rua quinhentos",
+  "external_code":"12345678"
 }
 </pre>
   </div>
@@ -720,7 +732,8 @@ Content-Type: application/json; charset=utf-8
     "mobile_local_code":null,
     "state":"RJ",
     "contact_person":"Nome do Contato",
-    "truncated_address":"Rua quinhentos"
+    "truncated_address":"Rua quinhentos",
+    "external_code":"12345678"
   }
 ]
 </pre>
@@ -852,7 +865,8 @@ Content-Type: application/json; charset=utf-8
   "mobile_local_code":null,
   "state":"RJ",
   "contact_person":"Nome do Contato",
-  "truncated_address":"Rua quinhentos"
+  "truncated_address":"Rua quinhentos",
+  "external_code":"12345678"
 }
 </pre>
   </div>
@@ -999,7 +1013,8 @@ Content-Type: application/json; charset=utf-8
   "mobile_local_code":null,
   "state":"RJ",
   "contact_person":"Nome do Contato",
-  "truncated_address":"Rua quinhentos"
+  "truncated_address":"Rua quinhentos",
+  "external_code":"12345678"
 }
 </pre>
   </div>
