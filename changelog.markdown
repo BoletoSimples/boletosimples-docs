@@ -22,6 +22,10 @@ Você também pode se inscrever para receber as notificações de alterações d
 
 #### Últimas alterações realizadas na API.
 
+### 02/12/2020
+
+* Documenta o campo `external_code` em [Clientes](reference/v1/customers/)
+* Documenta o campo `custom_data` em [Boletos](/reference/v1/bank_billets/)
 
 ### 25/05/2020
 
