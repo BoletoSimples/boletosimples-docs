@@ -8,7 +8,7 @@ en: "/en/modules/whmcs"
 
 [WHMCS](https://www.whmcs.com/) é um sistema de automação de faturamento e cobrança, muito usado por empresas que oferecem serviço de hospedagem.
 
-O módulo do Boleto Simples para o WHMCS gera automaticamente os boletos com diversas configurações bem flexíveis e disponibiliza dentro da fatura e dos e-mail de fatura. Além disso dá baixa na fatura 
+O módulo do Boleto Simples para o WHMCS gera automaticamente os boletos com diversas configurações bem flexíveis. Apresenta o código de barras dentro da fatura e dos e-mail de fatura. Além disso dá baixa na fatura automaticamente quando um boleto é pago.
 
 ### Código Fonte
 
