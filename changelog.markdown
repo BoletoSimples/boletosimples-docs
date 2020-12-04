@@ -23,6 +23,10 @@ Você também pode se inscrever para receber as notificações de alterações d
 #### Últimas alterações realizadas na API.
 
 
+### 04/12/2020
+
+* Adiciona [módulo WHMCS](/modules/whmcs)
+
 ### 25/05/2020
 
 * Adiciona [Política de Retenção de Dados](/data_retention)

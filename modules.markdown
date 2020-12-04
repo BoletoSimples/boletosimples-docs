@@ -15,6 +15,7 @@ Os módulos open-source estão disponíveis em [https://github.com/boletosimples
 
 *   [WooCommerce](/modules/woocommerce)
 *   [Shopify](/modules/shopify)
+*   [WHMCS](/modules/whmcs)
 
 ### Módulo de Terceiros
 
