@@ -25,7 +25,7 @@ O código fonte do módulo oficial do Boleto Simples para WHMCS está disponíve
 ### Requisitos
 
 * PHP 5.6 ou superior
-* WHMCS
+* WHMCS 6.0 ou superior
 
 ### Instalação
 
