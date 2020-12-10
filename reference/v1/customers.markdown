@@ -44,6 +44,7 @@ layout: pt
 | **contact_person**     | Não   | String  | 255     | Pessoa de contato
 | **truncated_address**  | Não   | String  | 40      | Endereço para remessa
 | **external_code**      | Não   | String  | 60      | Código externo do Cliente
+| **tags**               | Não   | Array   |         | Etiquetas (Tags)
 
 ### Criar cliente
 
@@ -162,7 +163,7 @@ Array
 <pre class="bash">
 curl -i \
 -H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
--d '{"customer":{"person_name":"Nome do Cliente", "cnpj_cpf": "125.812.717-28", "zipcode": "20071004", "address": "Rua quinhentos", "city_name": "Rio de Janeiro", "state": "RJ", "neighborhood": "bairro"}}' \
+-d '{"customer":{"person_name":"Nome do Cliente", "cnpj_cpf": "125.812.717-28", "zipcode": "20071004", "address": "Rua quinhentos", "city_name": "Rio de Janeiro", "state": "RJ", "neighborhood": "bairro", "tags": ["tag1", "tag2"]}}' \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
 -X POST 'https://sandbox.boletosimples.com.br/api/v1/customers'
@@ -182,7 +183,7 @@ Content-Type: application/json; charset=utf-8
   "id":1,
   "city_name":"Rio de Janeiro",
   "person_name":"Nome do Cliente",
-  "nikcname":null,
+  "nickname":null,
   "address":"Rua quinhentos",
   "address_complement":null,
   "address_number":null,
@@ -197,7 +198,12 @@ Content-Type: application/json; charset=utf-8
   "state":"RJ",
   "contact_person":"Nome do Contato",
   "truncated_address":"Rua quinhentos",
-  "external_code":"12346578"
+  "external_code":"12346578",
+  "tags": [
+      "tag1",
+      "tag2"
+  ],
+  "tag_list": "tag1,tag2"
 }
 </pre>
   </div>
@@ -219,7 +225,8 @@ Content-Type: application/json; charset=utf-8
   phone_number: "2112123434",
   contact_person: "Nome do Contato",
   truncated_address:"Rua quinhentos",
-  external_code:"12345678"
+  external_code:"12345678",
+  tags: ["tag1", "tag2"]
 })
 if @customer.persisted?
   puts "Sucesso :)"
@@ -252,7 +259,9 @@ Sucesso :)
        "created_via_api" => true,
        "nome_do_contato" => "Nome do Contato",
      "truncated_address" => "Rua quinhentos, 111",
-     "external_code" => "12346578"
+     "external_code" => "12346578",
+     "tags" => ["tag1", "tag2"],
+     "tag_list" => "tag1,tag2"
 }
 </pre>
   </div>
@@ -261,20 +270,21 @@ Sucesso :)
 
 <pre class="php">
 $customer = BoletoSimples\Customer::create([
-  'person_name' => "Joao da Silva",
-  'cnpj_cpf' => "860.196.915-19",
-  'email' => "cliente@example.com",
-  'address' => "Rua quinhentos",
-  'city_name' => "Rio de Janeiro",
-  'state' => "RJ",
-  'neighborhood' => "bairro",
-  'zipcode' => "20071004",
-  'address_number' => "111",
-  'address_complement' => "Sala 4",
-  'phone_number' => "2112123434",
+  "person_name" => "Joao da Silva",
+  "cnpj_cpf" => "860.196.915-19",
+  "email" => "cliente@example.com",
+  "address" => "Rua quinhentos",
+  "city_name" => "Rio de Janeiro",
+  "state" => "RJ",
+  "neighborhood" => "bairro",
+  "zipcode" => "20071004",
+  "address_number" => "111",
+  "address_complement" => "Sala 4",
+  "phone_number" => "2112123434",
   "contact_person" => "Nome do Contato",
   "truncated_address" => "Rua quinhentos, 111",
-  "external_code" => "12345678"
+  "external_code" => "12345678",
+  "tags" => ["tag1", "tag2"]
 ]);
 if($customer->isPersisted()) {
   echo "Sucesso :)\n";
@@ -309,6 +319,11 @@ Array
     [contact_person] => Nome do Contato
     [truncated_address] => Rua quinhentos, 111
     [external_code] => 12345678
+    [tags] => {
+                [0] => "tag1"
+                [1] => "tag2"
+              }
+    [tag_list] => tag1,tag2
 )
 </pre>
   </div>
@@ -351,7 +366,7 @@ Content-Type: application/json; charset=utf-8
   "id":1,
   "city_name":"Rio de Janeiro",
   "person_name":"Nome do Cliente",
-  "nikcname":null,
+  "nickname":null,
   "address":"Rua quinhentos",
   "address_complement":null,
   "address_number":null,
@@ -366,7 +381,12 @@ Content-Type: application/json; charset=utf-8
   "state":"RJ",
   "contact_person":"Nome do Contato",
   "truncated_address":"Rua quinhentos",
-  "external_code":"12346578"
+  "external_code":"12346578",
+  "tags": [
+      "tag1",
+      "tag2"
+  ],
+  "tag_list": "tag1,tag2"
 }
 </pre>
   </div>
@@ -400,7 +420,8 @@ puts @customer.attributes
                     "id" => 67,
         "contact_person" => "Nome do Contato",
         "truncated_address" => "Rua quinhentos",
-        "external_code" => "12346578"
+        "external_code" => "12346578",
+        "tags" => ["tag1", "tag2"]
 }
 </pre>
   </div>
@@ -436,6 +457,10 @@ Array
     [contact_person] => Nome do Contato
     [truncated_address] => Rua quinhentos, 111
     [external_code] => 12345678
+    [tags] => {
+                [0] => "tag1"
+                [1]=> "tag2"
+              }
 )
 </pre>
   </div>
@@ -569,27 +594,6 @@ Strict-Transport-Security: max-age=2592000
 Location: https://sandbox.boletosimples.com.br/api/v1/customers/1
 ...
 
-{
-  "id":1,
-  "city_name":"Rio de Janeiro",
-  "person_name":"Nome do Cliente Atualizado",
-  "nikcname":null,
-  "address":"Rua quinhentos",
-  "address_complement":null,
-  "address_number":null,
-  "mobile_number":null,
-  "cnpj_cpf":"125.812.717-28",
-  "email":null,
-  "neighborhood":"bairro",
-  "person_type":"individual",
-  "phone_number":null,
-  "zipcode":"20071004",
-  "mobile_local_code":null,
-  "state":"RJ",
-  "contact_person":"Nome do Contato",
-  "truncated_address":"Rua quinhentos",
-  "external_code":"12345678"
-}
 </pre>
   </div>
   <div class="tab-pane" id="ruby5">
@@ -680,6 +684,22 @@ Novo nome: Nome 1234
         Quantidade de registros por página (Máximo de 50)
       </td>
     </tr>
+
+    <tr>
+      <td>
+        <strong>tags[]</strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        String
+      </td>
+      <td>
+        Filtra por tags.
+      </td>
+    </tr>
+
   </tbody>
 </table>
 
@@ -734,6 +754,10 @@ Content-Type: application/json; charset=utf-8
     "contact_person":"Nome do Contato",
     "truncated_address":"Rua quinhentos",
     "external_code":"12345678"
+    "tags": [
+              "tag1"
+          ],
+    "tag_list": "tag1"
   }
 ]
 </pre>
@@ -866,7 +890,11 @@ Content-Type: application/json; charset=utf-8
   "state":"RJ",
   "contact_person":"Nome do Contato",
   "truncated_address":"Rua quinhentos",
-  "external_code":"12345678"
+  "external_code":"12345678",
+  "tags": [
+            "tag1"
+        ],
+  "tag_list": "tag1"
 }
 </pre>
   </div>
@@ -1014,7 +1042,11 @@ Content-Type: application/json; charset=utf-8
   "state":"RJ",
   "contact_person":"Nome do Contato",
   "truncated_address":"Rua quinhentos",
-  "external_code":"12345678"
+  "external_code":"12345678",
+  "tags": [
+            "tag1"
+        ],
+  "tag_list": "tag1"
 }
 </pre>
   </div>
