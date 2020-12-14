@@ -33,6 +33,11 @@ Você também pode se inscrever para receber as notificações de alterações d
 
 * Adiciona [módulo WHMCS](/modules/whmcs)
 
+### 02/12/2020
+
+* Documenta o campo `external_code` em [Clientes](reference/v1/customers/)
+* Documenta o campo `custom_data` em [Boletos](/reference/v1/bank_billets/)
+
 ### 25/05/2020
 
 * Adiciona [Política de Retenção de Dados](/data_retention)
