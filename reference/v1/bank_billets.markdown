@@ -150,6 +150,7 @@ layout: pt
 | **register_type**               | Não   | Integer  |         | Tipo de Registro ([possíveis valores](#register_type))
 | **split_payment**         | Não   | Boolean |         | Split de Pagamento. Caso `true`, o rateio do boleto será registrado. Informar as contas para rateio em `split_accounts`.
 | **split_accounts**       | Não   | Array |         | Contas para Split de pagamento. Válido apenas para [ABC Brasil](/bank_contracts/abc) e [Bradesco](/bank_contracts/bradesco). ([possíveis valores](#split_accounts))
+| **custom_data**       | Não   | Json |         | Disponível para envio de um JSON, os valores podem ser usados ao e-mail ou em um template personalizado. Variável a ser substituida `bank_billet.custom_data`)
 
 
 ### Dicionário de Dados
