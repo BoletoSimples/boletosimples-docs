@@ -6,24 +6,35 @@ layout: pt
 
 ## Safra
 
-| Carteiras                | Slug
-| ------------------------ | ------------
-| 1 - Registrada                        |  safra-bs-1
+| Carteiras                                 | Slug
+| -------------------------------           | ------------
+| 1 - Cobrança simples registrada           | safra-bs-1
+| 2 - Cobrança simples vinculada            | safra-bs-2
 
 
 ### Ocorrências
+
+#### CNAB 400
 
 | Our code | Descrição                                           | Suporte Banco | Suporte Boleto Simples |
 |:---------|:----------------------------------------------------|:--------------|:-----------------------|
 | 1001     | Entrada de título                                   | Sim           | Sim                    |
 | 1002     | Pedido de baixa                                     | Sim           | Sim                    |
-| 1003     | Alteração de vencimento                             | Sim           | [Veja tabela](https://suporte.boletosimples.com.br/article/pten2qs3c0-posso-alterar-a-data-de-vencimento-e-o-valor-de-um-boleto-j-emitido)                    |
+| 1003     | Alteração de vencimento                             | Sim           | [Veja tabela](https://suporte.boletosimples.com.br/article/pten2qs3c0-posso-alterar-a-data-de-vencimento-e-o-valor-de-um-boleto-j-emitido)                           |
 | 1004     | Concessão de abatimento                             | Sim           | Sim                    |
 | 1005     | Cancelamento de abatimento                          | Sim           | Sim                    |
-| 1007     | Alteração do "uso da empresa"                       | Não           | Não                    |
 | 1008     | Alteração do "seu número"                           | Sim           | Sim                    |
 | 1009     | Protestar                                           | Sim           | Sim                    |
 | 1010     | Não protestar                                       | Sim           | Sim                    |
+| 1028     | Alterar Valor                                       | Sim           | [Veja tabela](https://suporte.boletosimples.com.br/article/pten2qs3c0-posso-alterar-a-data-de-vencimento-e-o-valor-de-um-boleto-j-emitido)                           |
+| 1047     | Não cobrar juros de mora                            | Sim           | Sim                    |
+| 1048     | Cobrar juros de mora                                | Sim           | Sim                    |
+| 1066     | Solicitar negativação expressa                      | Sim           | Sim                    |
+| 1067     | Não negativar                                       | Sim           | Sim                    |
+| 1118     | Cancelar instrução automática de negativação        | Sim           | Sim                    |
+
+<!--- comment: old occurrences for reference in the documentation
+| 1007     | Alteração do "uso da empresa"                       | Não           | Não                    |
 | 1011     | Protesto para fins falimentares                     | Não           | Não                    |
 | 1012     | Alterar nome do pagador                             | Não           | Não                    |
 | 1013     | Alteração de endereço do pagador                    | Não           | Não                    |
@@ -37,14 +48,9 @@ layout: pt
 | 1022     | Transferência cessão crédito ID. Prod. 10           | Não           | Não                    |
 | 1023     | Transferência entre carteiras                       | Não           | Não                    |
 | 1024     | Dev. transferências entre carteiras                 | Não           | Não                    |
-| 1028     | Alterar Valor                                       | Sim           | [Veja tabela](https://suporte.boletosimples.com.br/article/pten2qs3c0-posso-alterar-a-data-de-vencimento-e-o-valor-de-um-boleto-j-emitido)                    |
 | 1031     | Alteração de outros dados                           | Não           | Não                    |
 | 1034     | Pago diretamente ao beneficiário                    | Não           | Não                    |
 | 1038     | Alterar CEP do pagador                              | Não           | Não                    |
-| 1047     | Não cobrar juros de mora                            | Sim           | Sim                    |
-| 1048     | Cobrar juros de mora                                | Sim           | Sim                    |
-| 1066     | Solicitar negativação expressa                      | Sim           | Sim                    |
-| 1067     | Não negativar                                       | Sim           | Sim                    |
 | 1068     | Excluir negativação expressa                        | Não           | Não                    |
 | 1069     | Cancelar negativação expressa                       | Não           | Não                    |
 | 1071     | Concessão de desconto                               | Não           | Não                    |
@@ -85,4 +91,4 @@ layout: pt
 | 1112     | Beneficiário não concorda com a alegação do pagador | Não           | Não                    |
 | 1113     | Alteração de dados extras (registro de multa)       | Não           | Não                    |
 | 1114     | Descontar títulos encaminhados no dia               | Não           | Não                    |
-| 1118     | Cancelar instrução automática de negativação        | Sim           | Sim                    |
+-->
