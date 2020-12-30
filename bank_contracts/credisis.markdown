@@ -13,10 +13,17 @@ layout: pt
 
 ### Ocorrências
 
+#### CNAB 400
+
 | Our code | Descrição                                           | Suporte Banco | Suporte Boleto Simples |
 |:---------|:----------------------------------------------------|:--------------|:-----------------------|
-| 1001     | Entrada de título                                   | Não           | Não                    |
-| 1002     | Pedido de baixa                                     | Não           | Não                    |
+| 1001     | Entrada de título                                   | Não           | Sim                    |
+| 1002     | Pedido de baixa                                     | Não           | Sim                    |
+| 1031     | Alteração de outros dados                           | Não           | Não                    |
+| 1034     | Pago diretamente ao beneficiário                    | Não           | Não                    |
+| 1130     | Cancelamento manual                                 | Não           | Sim                    |
+
+<!--- comment: old occurrences for reference in the documentation
 | 1003     | Alteração de vencimento                             | Não           | [Veja tabela](https://suporte.boletosimples.com.br/article/pten2qs3c0-posso-alterar-a-data-de-vencimento-e-o-valor-de-um-boleto-j-emitido)                    |
 | 1004     | Concessão de abatimento                             | Não           | Não                    |
 | 1005     | Cancelamento de abatimento                          | Não           | Não                    |
@@ -38,8 +45,6 @@ layout: pt
 | 1023     | Transferência entre carteiras                       | Não           | Não                    |
 | 1024     | Dev. transferências entre carteiras                 | Não           | Não                    |
 | 1028     | Alterar Valor                                       | Não           | [Veja tabela](https://suporte.boletosimples.com.br/article/pten2qs3c0-posso-alterar-a-data-de-vencimento-e-o-valor-de-um-boleto-j-emitido)                    |
-| 1031     | Alteração de outros dados                           | Não           | Não                    |
-| 1034     | Pago diretamente ao beneficiário                    | Não           | Não                    |
 | 1038     | Alterar CEP do pagador                              | Não           | Não                    |
 | 1047     | Não cobrar juros                                    | Não           | Não                    |
 | 1066     | Solicitar negativação expressa                      | Não           | Não                    |
@@ -83,3 +88,4 @@ layout: pt
 | 1112     | Beneficiário não concorda com a alegação do pagador | Não           | Não                    |
 | 1113     | Alteração de dados extras (registro de multa)       | Não           | Não                    |
 | 1114     | Descontar títulos encaminhados no dia               | Não           | Não                    |
+-->

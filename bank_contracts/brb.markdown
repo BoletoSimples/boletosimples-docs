@@ -9,39 +9,44 @@ layout: pt
 
 | Carteiras          | Slug
 | ------------------ | ------------
-| Sem Registro       | brb-bs-1
-| Com Registro       | brb-bs-2
+| 1 - Sem registro   | brb-bs-1
+| 2 - Com registro   | brb-bs-2
+
 
 ### Ocorrências
+
+#### CNAB 400
 
 | Our code | Descrição                                           | Suporte Banco | Suporte Boleto Simples |
 |:---------|:----------------------------------------------------|:--------------|:-----------------------|
 | 1001     | Entrada de título                                   | Sim           | Sim                    |
 | 1002     | Pedido de baixa                                     | Sim           | Sim                    |
-| 1003     | Alteração de vencimento                             | Sim           | [Veja tabela](https://suporte.boletosimples.com.br/article/pten2qs3c0-posso-alterar-a-data-de-vencimento-e-o-valor-de-um-boleto-j-emitido)                    |
+| 1003     | Alteração de vencimento                             | Sim           | [Veja tabela](https://suporte.boletosimples.com.br/article/pten2qs3c0-posso-alterar-a-data-de-vencimento-e-o-valor-de-um-boleto-j-emitido)                           |
 | 1004     | Concessão de abatimento                             | Sim           | Não                    |
+| 1012     | Alterar nome do pagador                             | Sim           | Não                    |
+| 1013     | Alteração de endereço do pagador                    | Sim           | Não                    |
+| 1014     | Alterar Cidade do pagador                           | Sim           | Não                    |
+| 1015     | Alterar UF do pagador                               | Sim           | Não                    |
+| 1020     | Alterar CPF/CNPJ do pagador                         | Não           | Não                    |
+| 1028     | Alterar Valor                                       | Sim           | [Veja tabela](https://suporte.boletosimples.com.br/article/pten2qs3c0-posso-alterar-a-data-de-vencimento-e-o-valor-de-um-boleto-j-emitido)                           |
+| 1034     | Pago diretamente ao beneficiário                    | Não           | Não                    |
+| 1038     | Alterar CEP do pagador                              | Sim           | Não                    |
+
+<!--- comment: old occurrences for reference in the documentation
 | 1005     | Cancelamento de abatimento                          | Não           | Não                    |
 | 1007     | Alteração do "uso da empresa"                       | Não           | Não                    |
 | 1008     | Alteração do "seu número"                           | Não           | Não                    |
 | 1009     | Protestar                                           | Não           | Não                    |
 | 1010     | Não protestar                                       | Não           | Não                    |
 | 1011     | Protesto para fins falimentares                     | Não           | Não                    |
-| 1012     | Alterar nome do pagador                             | Sim           | Não                    |
-| 1013     | Alteração de endereço do pagador                    | Sim           | Não                    |
-| 1014     | Alterar Cidade do pagador                           | Sim           | Não                    |
-| 1015     | Alterar UF do pagador                               | Sim           | Não                    |
 | 1017     | Alteração do número de dias para protesto           | Não           | Não                    |
 | 1018     | Sustar o protesto                                   | Não           | Não                    |
 | 1019     | Sustar protesto e manter em carteira                                   | Não           | Não            |
-| 1020     | Alterar CPF/CNPJ do pagador                         | Não           | Não                    |
 | 1021     | Alteração de valor com emissão de Boleto (quando a emissão é pelo Banco)                         | Não           | Não                    |
 | 1022     | Transferência cessão crédito ID. Prod. 10           | Não           | Não                    |
 | 1023     | Transferência entre carteiras                       | Não           | Não                    |
 | 1024     | Dev. transferências entre carteiras                 | Não           | Não                    |
-| 1028     | Alterar Valor                                       | Sim           | [Veja tabela](https://suporte.boletosimples.com.br/article/pten2qs3c0-posso-alterar-a-data-de-vencimento-e-o-valor-de-um-boleto-j-emitido)                    |
 | 1031     | Alteração de outros dados                           | Sim           | Não                    |
-| 1034     | Pago diretamente ao beneficiário                    | Não           | Não                    |
-| 1038     | Alterar CEP do pagador                              | Sim           | Não                    |
 | 1047     | Não cobrar juros                                    | Não           | Não                    |
 | 1066     | Solicitar negativação expressa                      | Não           | Não                    |
 | 1067     | Não negativar                                       | Não           | Não                    |
@@ -85,3 +90,4 @@ layout: pt
 | 1112     | Beneficiário não concorda com a alegação do pagador | Não           | Não                    |
 | 1113     | Alteração de dados extras (registro de multa)       | Não           | Não                    |
 | 1114     | Descontar títulos encaminhados no dia               | Não           | Não                    |
+-->
