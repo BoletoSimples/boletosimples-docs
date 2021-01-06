@@ -10,7 +10,7 @@ layout: pt
 
 | Recurso                  | Descrição
 | [POST /api/v1/bank_billets](#criar-boleto) | Criar boleto
-| [GET /api/v1/bank_billets/:id](#informações-do-boleto) | Informações do boleto
+| [GET /api/v1/bank_billets/:id](#informa%C3%A7%C3%B5es-do-boleto) | Informações do boleto
 | [GET /api/v1/bank_billets](#listar-boletos) | Listar boletos
 | [PUT /api/v1/bank_billets/:id/cancel](#cancelar-boleto) | Cancelar boleto
 | [PATCH /api/v1/bank_billets/:id/cancel](#cancelar-boleto) | Cancelar boleto
@@ -18,8 +18,8 @@ layout: pt
 | [PATCH /api/v1/bank_billets/:id](#alterar-boleto) | Alterar boleto
 | [POST /api/v1/bank_billets/:id/duplicate](#duplicar-boleto) | Duplicar boleto
 | [GET /api/v1/bank_billets/cnpj_cpf](#buscar-por-cpf-ou-cnpj) | Buscar por CPF ou CNPJ ([Deprecated usar Listar boletos](#listar-boletos))
-| [GET /api/v1/bank_billets/our_number](#buscar-por-nosso-número) | Buscar por nosso número ([Deprecated usar Listar boletos](#listar-boletos))
-| [GET /api/v1/bank_billets/status](#buscar-por-situação-do-boleto) | Buscar por Situação do boleto ([Deprecated usar Listar boletos](#listar-boletos))
+| [GET /api/v1/bank_billets/our_number](#buscar-por-nosso-n%C3%BAmero) | Buscar por nosso número ([Deprecated usar Listar boletos](#listar-boletos))
+| [GET /api/v1/bank_billets/status](#buscar-por-situa%C3%A7%C3%A3o-do-boleto) | Buscar por Situação do boleto ([Deprecated usar Listar boletos](#listar-boletos))
 | [PUT /api/v1/bank_billets/:id/pay](#marcar-boleto-como-pago) | Marcar boleto como pago
 | [PATCH /api/v1/bank_billets/:id/pay](#marcar-boleto-como-pago) | Marcar boleto como pago
 | [POST /api/v1/bank_billets/cancel_all](#cancelar-boletos-em-lote) | Cancelar boletos em lote
@@ -94,7 +94,7 @@ layout: pt
 | **notes**                       | Não   | Text    |         | Anotações
 | **tags**                        | Não   | Array   |         | Tags associadas ao boleto
 | **days_for_sue**                | Não   | Integer |         | Dias corridos para Protesto/Negativação
-| **days_for_revoke**             | Não   | Integer |         | Dias corridos para Baixa/Devolução*
+| **days_for_revoke**             | Não   | Integer |         | Dias corridos para Baixa/Devolução\*
 | **created_at**                  | N/A   | DateTime    |         | Data e hora de criação do boleto
 | **updated_at**                  | N/A   | DateTime    |         | Data e hora de atualização do boleto
 | **paid_bank**                   | N/A   | String  |         | Banco de Pagamento
@@ -152,7 +152,7 @@ layout: pt
 | **split_accounts**       | Não   | Array |         | Contas para Split de pagamento. Válido apenas para [ABC Brasil](/bank_contracts/abc) e [Bradesco](/bank_contracts/bradesco). ([possíveis valores](#split_accounts))
 | **custom_data**       | Não   | Json |         | Disponível para envio de um JSON, os valores podem ser usados ao e-mail ou em um template personalizado. Variável a ser substituida `bank_billet.custom_data`)
 
-`* Caso sua empresa utilize o serviço de registro via web service a inclusão de dias para protesto ou negativação poderá não fazer efeito. Consulte a nossa equipe de suporte para saber mais.
+\* Caso sua empresa utilize o serviço de registro via web service a inclusão de dias para protesto ou negativação poderá não fazer efeito. Consulte a nossa equipe de suporte para saber mais.
 
 ### Dicionário de Dados
 
@@ -295,7 +295,6 @@ Este campo é apenas retornado. Não é aceito para envio.
 | amount         | Sim | String  | 15  | Quantia (R$) Formato: 1.345,56
 | floating       | Sim | Integer | 2   | Quantidade de Dias para Crédito. Padrão 5 dias. Máximo 30 dias.
 
-
 ### Criar boleto
 
 `POST /api/v1/bank_billets`
@@ -321,14 +320,14 @@ Será retornado `404 Not Found` ao tentar acessar a url de um boleto que ainda e
 #### Exemplo de requisição inválida
 
 <ul class="nav nav-tabs" role="tablist">
-  <li class="active"><a href="#bash" role="tab" data-toggle="tab">Bash</a></li>
-  <li><a href="#ruby" role="tab" data-toggle="tab">Ruby</a></li>
-  <li><a href="#php" role="tab" data-toggle="tab">PHP</a></li>
+<li class="active"><a href="#bash" role="tab" data-toggle="tab">Bash</a></li>
+<li><a href="#ruby" role="tab" data-toggle="tab">Ruby</a></li>
+<li><a href="#php" role="tab" data-toggle="tab">PHP</a></li>
 </ul>
 
 <div class="tab-content">
-  <div class="tab-pane active" id="bash">
-    <small>Requisição:</small>
+<div class="tab-pane active" id="bash">
+<small>Requisição:</small>
 <pre class="bash">
 curl -i \
 -H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
@@ -347,20 +346,20 @@ Status: 422 Unprocessable Entity
 Content-Type: application/json; charset=utf-8
 ...
 
-{"errors":{"bank_billet":["não pode ficar em branco"]}}
+{"errors":{"bank_billet":\["não pode ficar em branco"\]}}
 </pre>
-  </div>
+</div>
 
-  <div class="tab-pane" id="ruby">
-    <small>Requisição:</small>
+<div class="tab-pane" id="ruby">
+<small>Requisição:</small>
 <pre class="ruby">
 @bank_billet = BoletoSimples::BankBillet.create({amount: 9.10})
 if @bank_billet.persisted?
-  puts "Sucesso :)"
-  puts @bank_billet.attributes
+puts "Sucesso :)"
+puts @bank_billet.attributes
 else
-  puts "Erro :("
-  puts @bank_billet.response_errors
+puts "Erro :("
+puts @bank_billet.response_errors
 end
 </pre>
 
@@ -369,47 +368,47 @@ end
 <pre class="ruby">
 Erro :(
 {
-  :expire_at => [
-    [0] "não pode ficar em branco",
-    [1] "não é uma data válida"
-  ],
-  :customer_person_name => [
-    [0] "não pode ficar em branco"
-  ],
-  :customer_cnpj_cpf => [
-    [0] "não pode ficar em branco"
-  ],
-  :description => [
-    [0] "não pode ficar em branco"
-  ],
-  :customer_zipcode => [
-    [0] "não pode ficar em branco"
-  ],
-  :customer_state => [
-    [0] "não pode ficar em branco"
-  ],
-  :customer_address => [
-    [0] "não pode ficar em branco"
-  ],
-  :customer_neighborhood => [
-    [0] "não pode ficar em branco"
-  ],
-  :customer_city_id => [
-    [0] "não pode ficar em branco"
-  ]
+\:expire_at => \[
+\[0\] "não pode ficar em branco",
+\[1\] "não é uma data válida"
+\],
+\:customer_person_name => \[
+\[0\] "não pode ficar em branco"
+\],
+\:customer_cnpj_cpf => \[
+\[0\] "não pode ficar em branco"
+\],
+\:description => \[
+\[0\] "não pode ficar em branco"
+\],
+\:customer_zipcode => \[
+\[0\] "não pode ficar em branco"
+\],
+\:customer_state => \[
+\[0\] "não pode ficar em branco"
+\],
+\:customer_address => \[
+\[0\] "não pode ficar em branco"
+\],
+\:customer_neighborhood => \[
+\[0\] "não pode ficar em branco"
+\],
+\:customer_city_id => \[
+\[0\] "não pode ficar em branco"
+\]
 }
 </pre>
-  </div>
-    <div class="tab-pane" id="php">
-      <small>Requisição:</small>
+</div>
+<div class="tab-pane" id="php">
+<small>Requisição:</small>
 <pre class="php">
-$bank_billet = BoletoSimples\BankBillet::create(['amount' => 9.1]);
+\$bank_billet = BoletoSimples\\BankBillet::create(\['amount' => 9.1\]);
 if($bank_billet->isPersisted()) {
-  echo "Sucesso :)\n";
-  print_r($bank_billet->attributes());
+echo "Sucesso :)\\n";
+print_r($bank_billet->attributes());
 } else {
-  echo "Erro :(\n";
-  print_r($bank_billet->response_errors);
+echo "Erro :(\\n";
+print_r($bank_billet->response_errors);
 }
 </pre>
 
@@ -418,28 +417,28 @@ if($bank_billet->isPersisted()) {
 <pre class="php">
 Erro :(
 Array
-(
-    [expire_at] => Array
-        (
-            [0] => não pode ficar em branco
-            [1] => não é uma data válida
-        )
+\(
+\[expire_at\] => Array
+\(
+\[0\] => não pode ficar em branco
+\[1\] => não é uma data válida
+\)
 
     [customer_person_name] => Array
         (
             [0] => não pode ficar em branco
         )
-
+    
     [customer_cnpj_cpf] => Array
         (
             [0] => não pode ficar em branco
         )
-
+    
     [description] => Array
         (
             [0] => não pode ficar em branco
         )
-
+    
     [customer_zipcode] => Array
         (
             [0] => não pode ficar em branco
@@ -448,38 +447,38 @@ Array
         (
             [0] => não pode ficar em branco
         )
-
+    
     [customer_address] => Array
         (
             [0] => não pode ficar em branco
         )
-
+    
     [customer_neighborhood] => Array
         (
             [0] => não pode ficar em branco
         )
-
+    
     [customer_city_id] => Array
         (
             [0] => não pode ficar em branco
         )
 
-)
+\)
 </pre>
-    </div>
+</div>
 </div>
 
 #### Exemplo de requisição válida
 
 <ul class="nav nav-tabs" role="tablist">
-  <li class="active"><a href="#bash2" role="tab" data-toggle="tab">Bash</a></li>
-  <li><a href="#ruby2" role="tab" data-toggle="tab">Ruby</a></li>
-  <li><a href="#php2" role="tab" data-toggle="tab">PHP</a></li>
+<li class="active"><a href="#bash2" role="tab" data-toggle="tab">Bash</a></li>
+<li><a href="#ruby2" role="tab" data-toggle="tab">Ruby</a></li>
+<li><a href="#php2" role="tab" data-toggle="tab">PHP</a></li>
 </ul>
 
 <div class="tab-content">
-  <div class="tab-pane active" id="bash2">
-    <small>Requisição:</small>
+<div class="tab-pane active" id="bash2">
+<small>Requisição:</small>
 
 <pre class="bash">
 curl -i \
@@ -501,112 +500,112 @@ Content-Type: application/json; charset=utf-8
 ...
 
 {
-  "id":1,
-  "expire_at":"2014-11-15",
-  "paid_at":null,
-  "description":"Prestação de Serviço",
-  "status":"generating",
-  "customer_person_type":"individual",
-  "customer_person_name":"Nome do Cliente",
-  "customer_cnpj_cpf":"125.812.717-28",
-  "customer_address":"Rua quinhentos",
-  "customer_state":"RJ",
-  "customer_neighborhood":"bairro",
-  "customer_zipcode":"12312123",
-  "customer_address_number":null,
-  "customer_address_complement":null,
-  "customer_phone_number":null,
-  "customer_email":null,
-  "created_via_api":true,
-  "customer_city_name":"Rio de Janeiro",
-  "paid_amount":0.0,
-  "amount":12.34
+"id":1,
+"expire_at":"2014-11-15",
+"paid_at":null,
+"description":"Prestação de Serviço",
+"status":"generating",
+"customer_person_type":"individual",
+"customer_person_name":"Nome do Cliente",
+"customer_cnpj_cpf":"125.812.717-28",
+"customer_address":"Rua quinhentos",
+"customer_state":"RJ",
+"customer_neighborhood":"bairro",
+"customer_zipcode":"12312123",
+"customer_address_number":null,
+"customer_address_complement":null,
+"customer_phone_number":null,
+"customer_email":null,
+"created_via_api":true,
+"customer_city_name":"Rio de Janeiro",
+"paid_amount":0.0,
+"amount":12.34
 }
 </pre>
-  </div>
-  <div class="tab-pane" id="ruby2">
-    <small>Requisição:</small>
+</div>
+<div class="tab-pane" id="ruby2">
+<small>Requisição:</small>
 <pre class="ruby">
 @bank_billet = BoletoSimples::BankBillet.create({
-  amount: 9.01,
-  description: 'Despesas do contrato 0012',
-  expire_at: '2014-01-01',
-  customer_address: 'Rua quinhentos',
-  customer_address_complement: 'Sala 4',
-  customer_address_number: '111',
-  customer_city_name: 'Rio de Janeiro',
-  customer_cnpj_cpf: '012.345.678-90',
-  customer_email: 'cliente@example.com',
-  customer_neighborhood: 'Sao Francisco',
-  customer_person_name: 'Joao da Silva',
-  customer_person_type: 'individual',
-  customer_phone_number: '2112123434',
-  customer_state: 'RJ',
-  customer_zipcode: '12312123'
+amount: 9.01,
+description: 'Despesas do contrato 0012',
+expire_at: '2014-01-01',
+customer_address: 'Rua quinhentos',
+customer_address_complement: 'Sala 4',
+customer_address_number: '111',
+customer_city_name: 'Rio de Janeiro',
+customer_cnpj_cpf: '012.345.678-90',
+customer_email: 'cliente@example.com',
+customer_neighborhood: 'Sao Francisco',
+customer_person_name: 'Joao da Silva',
+customer_person_type: 'individual',
+customer_phone_number: '2112123434',
+customer_state: 'RJ',
+customer_zipcode: '12312123'
 })
 if @bank_billet.persisted?
-  puts "Sucesso :)"
-  puts @bank_billet.attributes
+puts "Sucesso :)"
+puts @bank_billet.attributes
 else
-  puts "Erro :("
-  puts @bank_billet.response_errors
+puts "Erro :("
+puts @bank_billet.response_errors
 end
 </pre>
 
-  <small>Resposta:</small>
+<small>Resposta:</small>
 
 <pre class="ruby">
 Sucesso :)
 {
-                         "amount" => 9.01,
-                    "description" => "Despesas do contrato 0012",
-                      "expire_at" => "2014-01-01",
-               "customer_address" => "Rua quinhentos",
-    "customer_address_complement" => "Sala 4",
-        "customer_address_number" => "111",
-             "customer_city_name" => "Rio de Janeiro",
-              "customer_cnpj_cpf" => "012.345.678-90",
-                 "customer_email" => "cliente@example.com",
-          "customer_neighborhood" => "Sao Francisco",
-           "customer_person_name" => "Joao da Silva",
-           "customer_person_type" => "individual",
-          "customer_phone_number" => "2112123434",
-                 "customer_state" => "RJ",
-               "customer_zipcode" => "12312123",
-                             "id" => 854,
-                        "paid_at" => nil,
-                         "status" => "generating",
-                "created_via_api" => true,
-                    "paid_amount" => 0.0
+"amount" => 9.01,
+"description" => "Despesas do contrato 0012",
+"expire_at" => "2014-01-01",
+"customer_address" => "Rua quinhentos",
+"customer_address_complement" => "Sala 4",
+"customer_address_number" => "111",
+"customer_city_name" => "Rio de Janeiro",
+"customer_cnpj_cpf" => "012.345.678-90",
+"customer_email" => "cliente@example.com",
+"customer_neighborhood" => "Sao Francisco",
+"customer_person_name" => "Joao da Silva",
+"customer_person_type" => "individual",
+"customer_phone_number" => "2112123434",
+"customer_state" => "RJ",
+"customer_zipcode" => "12312123",
+"id" => 854,
+"paid_at" => nil,
+"status" => "generating",
+"created_via_api" => true,
+"paid_amount" => 0.0
 }
 </pre>
-  </div>
-    <div class="tab-pane" id="php2">
-      <small>Requisição:</small>
+</div>
+<div class="tab-pane" id="php2">
+<small>Requisição:</small>
 <pre class="php">
-$bank_billet = BoletoSimples\BankBillet::create(array (
-  'amount' => 9.01,
-  'description' => 'Despesas do contrato 0012',
-  'expire_at' => '2014-01-01',
-  'customer_address' => 'Rua quinhentos',
-  'customer_address_complement' => 'Sala 4',
-  'customer_address_number' => '111',
-  'customer_city_name' => 'Rio de Janeiro',
-  'customer_cnpj_cpf' => '012.345.678-90',
-  'customer_email' => 'cliente@example.com',
-  'customer_neighborhood' => 'Sao Francisco',
-  'customer_person_name' => 'Joao da Silva',
-  'customer_person_type' => 'individual',
-  'customer_phone_number' => '2112123434',
-  'customer_state' => 'RJ',
-  'customer_zipcode' => '12312123'
-));
+\$bank_billet = BoletoSimples\\BankBillet::create(array (
+\'amount' => 9.01,
+\'description' => 'Despesas do contrato 0012',
+\'expire_at' => '2014-01-01',
+\'customer_address' => 'Rua quinhentos',
+\'customer_address_complement' => 'Sala 4',
+\'customer_address_number' => '111',
+\'customer_city_name' => 'Rio de Janeiro',
+\'customer_cnpj_cpf' => '012.345.678-90',
+\'customer_email' => 'cliente@example.com',
+\'customer_neighborhood' => 'Sao Francisco',
+\'customer_person_name' => 'Joao da Silva',
+\'customer_person_type' => 'individual',
+\'customer_phone_number' => '2112123434',
+\'customer_state' => 'RJ',
+\'customer_zipcode' => '12312123'
+\));
 if($bank_billet->isPersisted()) {
-  echo "Sucesso :)\n";
-  print_r($bank_billet->attributes());
+echo "Sucesso :)\\n";
+print_r($bank_billet->attributes());
 } else {
-  echo "Erro :(\n";
-  print_r($bank_billet->response_errors);
+echo "Erro :(\\n";
+print_r($bank_billet->response_errors);
 }
 </pre>
 
@@ -615,30 +614,30 @@ if($bank_billet->isPersisted()) {
 <pre class="php">
 Sucesso :)
 Array
-(
-    [id] => 857
-    [expire_at] => 2014-01-01
-    [paid_at] =>
-    [description] => Despesas do contrato 0012
-    [status] => generating
-    [customer_person_type] => individual
-    [customer_person_name] => Joao da Silva
-    [customer_cnpj_cpf] => 012.345.678-90
-    [customer_address] => Rua quinhentos
-    [customer_state] => RJ
-    [customer_neighborhood] => Sao Francisco
-    [customer_zipcode] => 12312123
-    [customer_address_number] => 111
-    [customer_address_complement] => Sala 4
-    [customer_phone_number] => 2112123434
-    [customer_email] => cliente@example.com
-    [created_via_api] => 1
-    [customer_city_name] => Rio de Janeiro
-    [paid_amount] => 0
-    [amount] => 9.01
-)
+\(
+\[id\] => 857
+\[expire_at\] => 2014-01-01
+\[paid_at\] =>
+\[description\] => Despesas do contrato 0012
+\[status\] => generating
+\[customer_person_type\] => individual
+\[customer_person_name\] => Joao da Silva
+\[customer_cnpj_cpf\] => 012.345.678-90
+\[customer_address\] => Rua quinhentos
+\[customer_state\] => RJ
+\[customer_neighborhood\] => Sao Francisco
+\[customer_zipcode\] => 12312123
+\[customer_address_number\] => 111
+\[customer_address_complement\] => Sala 4
+\[customer_phone_number\] => 2112123434
+\[customer_email\] => cliente@example.com
+\[created_via_api\] => 1
+\[customer_city_name\] => Rio de Janeiro
+\[paid_amount\] => 0
+\[amount\] => 9.01
+\)
 </pre>
-    </div>
+</div>
 </div>
 
 ### Informações do boleto
@@ -648,14 +647,14 @@ Array
 #### Exemplo
 
 <ul class="nav nav-tabs" role="tablist">
-  <li class="active"><a href="#bash3" role="tab" data-toggle="tab">Bash</a></li>
-  <li><a href="#ruby3" role="tab" data-toggle="tab">Ruby</a></li>
-  <li><a href="#php3" role="tab" data-toggle="tab">PHP</a></li>
+<li class="active"><a href="#bash3" role="tab" data-toggle="tab">Bash</a></li>
+<li><a href="#ruby3" role="tab" data-toggle="tab">Ruby</a></li>
+<li><a href="#php3" role="tab" data-toggle="tab">PHP</a></li>
 </ul>
 
 <div class="tab-content">
-  <div class="tab-pane active" id="bash3">
-    <small>Requisição:</small>
+<div class="tab-pane active" id="bash3">
+<small>Requisição:</small>
 
 <pre class="bash">
 curl -i \
@@ -675,33 +674,33 @@ Content-Type: application/json; charset=utf-8
 ...
 
 {
-  "id":1,
-  "expire_at":"2014-11-15",
-  "paid_at":null,
-  "description":"Prestação de Serviço",
-  "status":"opened",
-  "url":"http://bole.to/xxxxxxxx",
-  "customer_person_type":"individual",
-  "customer_person_name":"Nome do Cliente",
-  "customer_cnpj_cpf":"125.812.717-28",
-  "customer_address":"Rua quinhentos",
-  "customer_state":"RJ",
-  "customer_neighborhood":"bairro",
-  "customer_zipcode":"12312123",
-  "customer_address_number":null,
-  "customer_address_complement":null,
-  "customer_phone_number":null,
-  "customer_email":null,
-  "created_via_api":true,
-  "customer_city_name":"Rio de Janeiro",
-  "paid_amount":0.0,
-  "amount":12.34
+"id":1,
+"expire_at":"2014-11-15",
+"paid_at":null,
+"description":"Prestação de Serviço",
+"status":"opened",
+"url":"http://bole.to/xxxxxxxx",
+"customer_person_type":"individual",
+"customer_person_name":"Nome do Cliente",
+"customer_cnpj_cpf":"125.812.717-28",
+"customer_address":"Rua quinhentos",
+"customer_state":"RJ",
+"customer_neighborhood":"bairro",
+"customer_zipcode":"12312123",
+"customer_address_number":null,
+"customer_address_complement":null,
+"customer_phone_number":null,
+"customer_email":null,
+"created_via_api":true,
+"customer_city_name":"Rio de Janeiro",
+"paid_amount":0.0,
+"amount":12.34
 }
 
 </pre>
-  </div>
-  <div class="tab-pane" id="ruby3">
-    <small>Requisição:</small>
+</div>
+<div class="tab-pane" id="ruby3">
+<small>Requisição:</small>
 
 <pre class="ruby">
 @bank_billet = BoletoSimples::BankBillet.find(854)
@@ -712,35 +711,35 @@ puts @bank_billet.attributes
 
 <pre class="ruby">
 {
-                      "expire_at" => "2014-01-01",
-                        "paid_at" => nil,
-                    "description" => "Despesas do contrato 0012",
-                         "status" => "opened",
-           "customer_person_type" => "individual",
-           "customer_person_name" => "Joao da Silva",
-              "customer_cnpj_cpf" => "012.345.678-90",
-               "customer_address" => "Rua quinhentos",
-                 "customer_state" => "RJ",
-          "customer_neighborhood" => "Sao Francisco",
-               "customer_zipcode" => "12312123",
-        "customer_address_number" => "111",
-    "customer_address_complement" => "Sala 4",
-          "customer_phone_number" => "2112123434",
-                 "customer_email" => "cliente@example.com",
-                "created_via_api" => true,
-             "customer_city_name" => "Rio de Janeiro",
-                    "paid_amount" => 0.0,
-                         "amount" => 9.01,
-                             "id" => 854
+"expire_at" => "2014-01-01",
+"paid_at" => nil,
+"description" => "Despesas do contrato 0012",
+"status" => "opened",
+"customer_person_type" => "individual",
+"customer_person_name" => "Joao da Silva",
+"customer_cnpj_cpf" => "012.345.678-90",
+"customer_address" => "Rua quinhentos",
+"customer_state" => "RJ",
+"customer_neighborhood" => "Sao Francisco",
+"customer_zipcode" => "12312123",
+"customer_address_number" => "111",
+"customer_address_complement" => "Sala 4",
+"customer_phone_number" => "2112123434",
+"customer_email" => "cliente@example.com",
+"created_via_api" => true,
+"customer_city_name" => "Rio de Janeiro",
+"paid_amount" => 0.0,
+"amount" => 9.01,
+"id" => 854
 }
 </pre>
 
-  </div>
-    <div class="tab-pane" id="php3">
-      <small>Requisição:</small>
+</div>
+<div class="tab-pane" id="php3">
+<small>Requisição:</small>
 
 <pre class="php">
-$bank_billet = BoletoSimples\BankBillet::find(857);
+\$bank_billet = BoletoSimples\\BankBillet::find(857);
 print_r($bank_billet->attributes());
 </pre>
 
@@ -748,31 +747,32 @@ print_r($bank_billet->attributes());
 
 <pre class="php">
 Array
-(
-    [id] => 857
-    [expire_at] => 2014-01-01
-    [paid_at] =>
-    [description] => Despesas do contrato 0012
-    [status] => opened
-    [customer_person_type] => individual
-    [customer_person_name] => Joao da Silva
-    [customer_cnpj_cpf] => 012.345.678-90
-    [customer_address] => Rua quinhentos
-    [customer_state] => RJ
-    [customer_neighborhood] => Sao Francisco
-    [customer_zipcode] => 12312123
-    [customer_address_number] => 111
-    [customer_address_complement] => Sala 4
-    [customer_phone_number] => 2112123434
-    [customer_email] => cliente@example.com
-    [created_via_api] => 1
-    [customer_city_name] => Rio de Janeiro
-    [paid_amount] => 0
-    [amount] => 9.01
-)
+\(
+\[id\] => 857
+\[expire_at\] => 2014-01-01
+\[paid_at\] =>
+\[description\] => Despesas do contrato 0012
+\[status\] => opened
+\[customer_person_type\] => individual
+\[customer_person_name\] => Joao da Silva
+\[customer_cnpj_cpf\] => 012.345.678-90
+\[customer_address\] => Rua quinhentos
+\[customer_state\] => RJ
+\[customer_neighborhood\] => Sao Francisco
+\[customer_zipcode\] => 12312123
+\[customer_address_number\] => 111
+\[customer_address_complement\] => Sala 4
+\[customer_phone_number\] => 2112123434
+\[customer_email\] => cliente@example.com
+\[created_via_api\] => 1
+\[customer_city_name\] => Rio de Janeiro
+\[paid_amount\] => 0
+\[amount\] => 9.01
+\)
 </pre>
 
     </div>
+
 </div>
 
 ### Listar boletos
@@ -780,254 +780,254 @@ Array
 `GET /api/v1/bank_billets`
 
 <table class='table table-bordered features'>
-  <thead>
-    <tr>
-      <th>Parâmetro</th>
-      <th data-container="body" data-toggle="tooltip" title="Obrigatório">Obrigatório</th>
-      <th>Tipo</th>
-      <th>Descrição</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>
-        <strong>page</strong>
-        <br/>
-      </td>
-      <td>
-        Não
-      </td>
-      <td>
-        Number
-      </td>
-      <td>
-        Número da Página
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <strong>per_page</strong>
-      </td>
-      <td>
-        Não
-      </td>
-      <td>
-        Number
-      </td>
-      <td>
-        Quantidade de registros por página (Máximo de 50)
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <strong>status </strong>
-      </td>
-      <td>
-        Não
-      </td>
-      <td>
-        String
-      </td>
-      <td>
-        Filtro por Situação.
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <strong>expire_from </strong>
-      </td>
-      <td>
-        Não
-      </td>
-      <td>
-        Date
-      </td>
-      <td>
-        A partir da Data de vencimento
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <strong>expire_to </strong>
-      </td>
-      <td>
-        Não
-      </td>
-      <td>
-        Date
-      </td>
-      <td>
-        Até a Data de vencimento
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <strong>paid_from </strong>
-      </td>
-      <td>
-        Não
-      </td>
-      <td>
-        Date
-      </td>
-      <td>
-        A partir da Data de pagamento
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <strong>paid_to </strong>
-      </td>
-      <td>
-        Não
-      </td>
-      <td>
-        Date
-      </td>
-      <td>
-        Até a Data de pagamento
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <strong>our_number </strong>
-      </td>
-      <td>
-        Não
-      </td>
-      <td>
-        String
-      </td>
-      <td>
-        Filtro por Nosso número.
-      </td>
-    </tr>
+<thead>
 <tr>
-      <td>
-        <strong> processed_our_number_raw </strong>
-      </td>
-      <td>
-        Não
-      </td>
-      <td>
-        String
-      </td>
-      <td>
-        Filtro por Nosso Número com DV (limpo).
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <strong>cnpj_cpf </strong>
-      </td>
-      <td>
-        Não
-      </td>
-      <td>
-        String
-      </td>
-      <td>
-        Filtro por CPF/CNPJ do cliente. Deve ser formatado. Ex. 000.000.000-00
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <strong>bank_billet_account_id </strong>
-      </td>
-      <td>
-        Não
-      </td>
-      <td>
-        String
-      </td>
-      <td>
-        Filtro ID da Carteira.
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <strong>registered_from </strong>
-      </td>
-      <td>
-        Não
-      </td>
-      <td>
-        Date
-      </td>
-      <td>
-        A partir da Data de Registro
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <strong>registered_to </strong>
-      </td>
-      <td>
-        Não
-      </td>
-      <td>
-        Date
-      </td>
-      <td>
-        Até a Data de Registro
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <strong>created_from </strong>
-      </td>
-      <td>
-        Não
-      </td>
-      <td>
-        Date
-      </td>
-      <td>
-        A partir da Data de criação
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <strong>created_to </strong>
-      </td>
-      <td>
-        Não
-      </td>
-      <td>
-        Date
-      </td>
-      <td>
-        Até a Data de criação
-      </td>
-    </tr>
+<th>Parâmetro</th>
+<th data-container="body" data-toggle="tooltip" title="Obrigatório">Obrigatório</th>
+<th>Tipo</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
 <tr>
-      <td>
-        <strong>meta </strong>
-      </td>
-      <td>
-        Não
-      </td>
-      <td>
-        String
-      </td>
-      <td>
+<td>
+<strong>page</strong>
+<br/>
+</td>
+<td>
+Não
+</td>
+<td>
+Number
+</td>
+<td>
+Número da Página
+</td>
+</tr>
+<tr>
+<td>
+<strong>per_page</strong>
+</td>
+<td>
+Não
+</td>
+<td>
+Number
+</td>
+<td>
+Quantidade de registros por página (Máximo de 50)
+</td>
+</tr>
+<tr>
+<td>
+<strong>status </strong>
+</td>
+<td>
+Não
+</td>
+<td>
+String
+</td>
+<td>
+Filtro por Situação.
+</td>
+</tr>
+<tr>
+<td>
+<strong>expire_from </strong>
+</td>
+<td>
+Não
+</td>
+<td>
+Date
+</td>
+<td>
+A partir da Data de vencimento
+</td>
+</tr>
+<tr>
+<td>
+<strong>expire_to </strong>
+</td>
+<td>
+Não
+</td>
+<td>
+Date
+</td>
+<td>
+Até a Data de vencimento
+</td>
+</tr>
+<tr>
+<td>
+<strong>paid_from </strong>
+</td>
+<td>
+Não
+</td>
+<td>
+Date
+</td>
+<td>
+A partir da Data de pagamento
+</td>
+</tr>
+<tr>
+<td>
+<strong>paid_to </strong>
+</td>
+<td>
+Não
+</td>
+<td>
+Date
+</td>
+<td>
+Até a Data de pagamento
+</td>
+</tr>
+<tr>
+<td>
+<strong>our_number </strong>
+</td>
+<td>
+Não
+</td>
+<td>
+String
+</td>
+<td>
+Filtro por Nosso número.
+</td>
+</tr>
+<tr>
+<td>
+<strong> processed_our_number_raw </strong>
+</td>
+<td>
+Não
+</td>
+<td>
+String
+</td>
+<td>
+Filtro por Nosso Número com DV (limpo).
+</td>
+</tr>
+<tr>
+<td>
+<strong>cnpj_cpf </strong>
+</td>
+<td>
+Não
+</td>
+<td>
+String
+</td>
+<td>
+Filtro por CPF/CNPJ do cliente. Deve ser formatado. Ex. 000.000.000-00
+</td>
+</tr>
+<tr>
+<td>
+<strong>bank_billet_account_id </strong>
+</td>
+<td>
+Não
+</td>
+<td>
+String
+</td>
+<td>
+Filtro ID da Carteira.
+</td>
+</tr>
+<tr>
+<td>
+<strong>registered_from </strong>
+</td>
+<td>
+Não
+</td>
+<td>
+Date
+</td>
+<td>
+A partir da Data de Registro
+</td>
+</tr>
+<tr>
+<td>
+<strong>registered_to </strong>
+</td>
+<td>
+Não
+</td>
+<td>
+Date
+</td>
+<td>
+Até a Data de Registro
+</td>
+</tr>
+<tr>
+<td>
+<strong>created_from </strong>
+</td>
+<td>
+Não
+</td>
+<td>
+Date
+</td>
+<td>
+A partir da Data de criação
+</td>
+</tr>
+<tr>
+<td>
+<strong>created_to </strong>
+</td>
+<td>
+Não
+</td>
+<td>
+Date
+</td>
+<td>
+Até a Data de criação
+</td>
+</tr>
+<tr>
+<td>
+<strong>meta </strong>
+</td>
+<td>
+Não
+</td>
+<td>
+String
+</td>
+<td>
 Filtrar dados no campo meta
-      </td>
-    </tr>
-  </tbody>
+</td>
+</tr>
+</tbody>
 </table>
 
 #### Exemplo
 
 <ul class="nav nav-tabs" role="tablist">
-  <li class="active"><a href="#bash4" role="tab" data-toggle="tab">Bash</a></li>
-  <li><a href="#ruby4" role="tab" data-toggle="tab">Ruby</a></li>
-  <li><a href="#php4" role="tab" data-toggle="tab">PHP</a></li>
+<li class="active"><a href="#bash4" role="tab" data-toggle="tab">Bash</a></li>
+<li><a href="#ruby4" role="tab" data-toggle="tab">Ruby</a></li>
+<li><a href="#php4" role="tab" data-toggle="tab">PHP</a></li>
 </ul>
 
 <div class="tab-content">
-  <div class="tab-pane active" id="bash4">
-    <small>Requisição:</small>
+<div class="tab-pane active" id="bash4">
+<small>Requisição:</small>
 
 <pre class="bash">
 curl -i \
@@ -1043,50 +1043,50 @@ curl -i \
 HTTP/1.1 200 OK
 Date: Fri, 17 Oct 2014 19:46:16 GMT
 Status: 200 OK
-Link: <https://sandbox.boletosimples.com.br/api/v1/bank_billets?page=3&per_page=50>; rel="last", <https://sandbox.boletosimples.com.br/api/v1/bank_billets?page=2&per_page=50>; rel="next"
+Link: [https://sandbox.boletosimples.com.br/api/v1/bank_billets?page=3&per_page=50](https://sandbox.boletosimples.com.br/api/v1/bank_billets?page=3&per_page=50); rel="last", [https://sandbox.boletosimples.com.br/api/v1/bank_billets?page=2&per_page=50](https://sandbox.boletosimples.com.br/api/v1/bank_billets?page=2&per_page=50); rel="next"
 Total: 101
 Content-Type: application/json; charset=utf-8
 ...
 
-[
-  {
-    "id":1,
-    "expire_at":"2014-11-15",
-    "paid_at":null,
-    "description":"Prestação de Serviço",
-    "status":"opened",
-    "url":"http://bole.to/xxxxxxxx",
-    "customer_person_type":"individual",
-    "customer_person_name":"Nome do Cliente",
-    "customer_cnpj_cpf":"125.812.717-28",
-    "customer_address":"Rua quinhentos",
-    "customer_state":"RJ",
-    "customer_neighborhood":"bairro",
-    "customer_zipcode":"12312123",
-    "customer_address_number":null,
-    "customer_address_complement":null,
-    "customer_phone_number":null,
-    "customer_email":null,
-    "send_email_on_creation":null,
-    "created_via_api":true,
-    "customer_city_name":"Rio de Janeiro",
-    "paid_amount":0.0,
-    "amount":12.34
-  }
-]
+\[
+{
+"id":1,
+"expire_at":"2014-11-15",
+"paid_at":null,
+"description":"Prestação de Serviço",
+"status":"opened",
+"url":"http://bole.to/xxxxxxxx",
+"customer_person_type":"individual",
+"customer_person_name":"Nome do Cliente",
+"customer_cnpj_cpf":"125.812.717-28",
+"customer_address":"Rua quinhentos",
+"customer_state":"RJ",
+"customer_neighborhood":"bairro",
+"customer_zipcode":"12312123",
+"customer_address_number":null,
+"customer_address_complement":null,
+"customer_phone_number":null,
+"customer_email":null,
+"send_email_on_creation":null,
+"created_via_api":true,
+"customer_city_name":"Rio de Janeiro",
+"paid_amount":0.0,
+"amount":12.34
+}
+\]
 </pre>
-  </div>
-  <div class="tab-pane" id="ruby4">
-    <small>Requisição</small>
+</div>
+<div class="tab-pane" id="ruby4">
+<small>Requisição</small>
 
 <pre class="ruby">
 @bank_billets = BoletoSimples::BankBillet.all(page: 1, per_page: 2)
 puts "Boletos Retornados: #{@bank_billets.count}"
 puts "Total: #{BoletoSimples.last_request.total}"
-puts "Primeira Página: #{BoletoSimples.last_request.links[:first]}"
-puts "Página Anterior: #{BoletoSimples.last_request.links[:prev]}"
-puts "Próxima Página: #{BoletoSimples.last_request.links[:next]}"
-puts "Última Página: #{BoletoSimples.last_request.links[:last]}"
+puts "Primeira Página: #{BoletoSimples.last_request.links\[:first\]}"
+puts "Página Anterior: #{BoletoSimples.last_request.links\[:prev\]}"
+puts "Próxima Página: #{BoletoSimples.last_request.links\[:next\]}"
+puts "Última Página: #{BoletoSimples.last_request.links\[:last\]}"
 </pre>
 
     <small>Resposta:</small>
@@ -1100,18 +1100,18 @@ Próxima Página: https://sandbox.boletosimples.com.br/api/v1/bank_billets?page=
 Última Página: https://sandbox.boletosimples.com.br/api/v1/bank_billets?page=62&per_page=2
 </pre>
 
-  </div>
-    <div class="tab-pane" id="php4">
-      <small>Requisição</small>
+</div>
+<div class="tab-pane" id="php4">
+<small>Requisição</small>
 
 <pre class="php">
-$bank_billets = BoletoSimples\BankBillet::all(['page' => 1, 'per_page' => 2]);
-echo "Boletos Retornados: " . sizeof($bank_billets) . "\n";
-echo "Total: " . BoletoSimples::$last_request->total . "\n";
-echo "Primeira Página: " . BoletoSimples::$last_request->links['first'] . "\n";
-echo "Página Anterior: " . BoletoSimples::$last_request->links['prev'] . "\n";
-echo "Próxima Página: " . BoletoSimples::$last_request->links['next'] . "\n";
-echo "Última Página: " . BoletoSimples::$last_request->links['last'] . "\n";
+\$bank_billets = BoletoSimples\\BankBillet::all(\['page' => 1, 'per_page' => 2\]);
+echo "Boletos Retornados: " . sizeof($bank_billets) . "\\n";
+echo "Total: " . BoletoSimples::$last_request->total . "\\n";
+echo "Primeira Página: " . BoletoSimples::$last_request->links\['first'\] . "\\n";
+echo "Página Anterior: " . BoletoSimples::$last_request->links\['prev'\] . "\\n";
+echo "Próxima Página: " . BoletoSimples::$last_request->links\['next'\] . "\\n";
+echo "Última Página: " . BoletoSimples::$last_request->links\['last'\] . "\\n";
 </pre>
 
       <small>Resposta:</small>
@@ -1126,6 +1126,7 @@ Próxima Página: https://sandbox.boletosimples.com.br/api/v1/bank_billets?page=
 </pre>
 
     </div>
+
 </div>
 
 ### Cancelar boleto
@@ -1137,14 +1138,14 @@ Você pode cancelar boletos nos status de Aberto(`opened`) ou Vencido(`overdue`)
 #### Exemplo de requisição inválida
 
 <ul class="nav nav-tabs" role="tablist">
-  <li class="active"><a href="#bash5" role="tab" data-toggle="tab">Bash</a></li>
-  <li><a href="#ruby5" role="tab" data-toggle="tab">Ruby</a></li>
-  <li><a href="#php5" role="tab" data-toggle="tab">PHP</a></li>
+<li class="active"><a href="#bash5" role="tab" data-toggle="tab">Bash</a></li>
+<li><a href="#ruby5" role="tab" data-toggle="tab">Ruby</a></li>
+<li><a href="#php5" role="tab" data-toggle="tab">PHP</a></li>
 </ul>
 
 <div class="tab-content">
-  <div class="tab-pane active" id="bash5">
-    <small>Requisição:</small>
+<div class="tab-pane active" id="bash5">
+<small>Requisição:</small>
 
 <pre class="bash">
 curl -i \
@@ -1164,23 +1165,23 @@ Content-Type: application/json; charset=utf-8
 ...
 
 {
-  "errors": {
-    "status": ["Boleto não pode ser cancelado para o status canceled"]
-  }
+"errors": {
+"status": \["Boleto não pode ser cancelado para o status canceled"\]
+}
 }
 </pre>
-  </div>
-  <div class="tab-pane" id="ruby5">
-    <small>Requisição</small>
+</div>
+<div class="tab-pane" id="ruby5">
+<small>Requisição</small>
 
 <pre class="ruby">
 @bank_billet = BoletoSimples::BankBillet.find(863)
 puts "Status Anterior: #{@bank_billet.status}"
 if @bank_billet.cancel
-  puts "Cancelado :)"
+puts "Cancelado :)"
 else
-  puts "Erro :)"
-  puts @bank_billet.response_errors
+puts "Erro :)"
+puts @bank_billet.response_errors
 end
 puts "Status Final: #{@bank_billet.status}"
 </pre>
@@ -1190,24 +1191,24 @@ puts "Status Final: #{@bank_billet.status}"
 <pre class="ruby">
 Status Anterior: paid
 Erro :)
-{:status=>["cannot transition via cancel"]}
+{:status=>\["cannot transition via cancel"\]}
 Status Final: paid
 </pre>
 
-  </div>
-    <div class="tab-pane" id="php5">
-      <small>Requisição</small>
+</div>
+<div class="tab-pane" id="php5">
+<small>Requisição</small>
 
 <pre class="php">
-$bank_billet = BoletoSimples\BankBillet::find(863);
-echo "Status Anterior: " . $bank_billet->status . "\n";
+\$bank_billet = BoletoSimples\\BankBillet::find(863);
+echo "Status Anterior: " . $bank_billet->status . "\\n";
 if($bank_billet->cancel()) {
-  echo "Cancelado :)\n";
+echo "Cancelado :)\\n";
 } else {
-  echo "Erro :)\n";
-  print_r($bank_billet->response_errors);
+echo "Erro :)\\n";
+print_r($bank_billet->response_errors);
 }
-echo "Status Final: " . $bank_billet->status . "\n";
+echo "Status Final: " . $bank_billet->status . "\\n";
 </pre>
 
       <small>Resposta:</small>
@@ -1216,30 +1217,31 @@ echo "Status Final: " . $bank_billet->status . "\n";
 Status Anterior: paid
 Erro :)
 Array
-(
-    [status] => Array
-        (
-            [0] => Boleto não pode ser cancelado para o status canceled
-        )
+\(
+\[status\] => Array
+\(
+\[0\] => Boleto não pode ser cancelado para o status canceled
+\)
 
-)
+\)
 Status Final: paid
 </pre>
 
     </div>
+
 </div>
 
 #### Exemplo de requisição válida
 
 <ul class="nav nav-tabs" role="tablist">
-  <li class="active"><a href="#bash6" role="tab" data-toggle="tab">Bash</a></li>
-  <li><a href="#ruby6" role="tab" data-toggle="tab">Ruby</a></li>
-  <li><a href="#php6" role="tab" data-toggle="tab">PHP</a></li>
+<li class="active"><a href="#bash6" role="tab" data-toggle="tab">Bash</a></li>
+<li><a href="#ruby6" role="tab" data-toggle="tab">Ruby</a></li>
+<li><a href="#php6" role="tab" data-toggle="tab">PHP</a></li>
 </ul>
 
 <div class="tab-content">
-  <div class="tab-pane active" id="bash6">
-    <small>Requisição:</small>
+<div class="tab-pane active" id="bash6">
+<small>Requisição:</small>
 
 <pre class="bash">
 curl -i \
@@ -1259,18 +1261,18 @@ Content-Type: application/json; charset=utf-8
 ...
 
 </pre>
-  </div>
-  <div class="tab-pane" id="ruby6">
-    <small>Requisição</small>
+</div>
+<div class="tab-pane" id="ruby6">
+<small>Requisição</small>
 
 <pre class="ruby">
 @bank_billet = BoletoSimples::BankBillet.find(862)
 puts "Status Anterior: #{@bank_billet.status}"
 if @bank_billet.cancel
-  puts "Cancelado :)"
+puts "Cancelado :)"
 else
-  puts "Erro :)"
-  puts @bank_billet.response_errors
+puts "Erro :)"
+puts @bank_billet.response_errors
 end
 puts "Status Final: #{@bank_billet.status}"
 </pre>
@@ -1283,20 +1285,20 @@ Cancelado :)
 Status Final: canceled
 </pre>
 
-  </div>
-    <div class="tab-pane" id="php6">
-      <small>Requisição</small>
+</div>
+<div class="tab-pane" id="php6">
+<small>Requisição</small>
 
 <pre class="php">
-$bank_billet = BoletoSimples\BankBillet::find(860);
-echo "Status Anterior: " . $bank_billet->status . "\n";
+\$bank_billet = BoletoSimples\\BankBillet::find(860);
+echo "Status Anterior: " . $bank_billet->status . "\\n";
 if($bank_billet->cancel()) {
-  echo "Cancelado :)\n";
+echo "Cancelado :)\\n";
 } else {
-  echo "Erro :)\n";
-  print_r($bank_billet->response_errors);
+echo "Erro :)\\n";
+print_r($bank_billet->response_errors);
 }
-echo "Status Final: " . $bank_billet->status . "\n";
+echo "Status Final: " . $bank_billet->status . "\\n";
 </pre>
 
       <small>Resposta:</small>
@@ -1308,6 +1310,7 @@ Status Final: canceled
 </pre>
 
     </div>
+
 </div>
 
 ### Alterar boleto
@@ -1321,43 +1324,43 @@ Você receberá webhooks `generating` e `opened` para o boleto alterado.
 Em carteiras registradas, a alteração irá entrar na remessa e pode ser cobrada taxa bancária.
 
 <table class='table table-bordered'>
-  <thead>
-    <tr>
-      <th>Parâmetro</th>
-      <th data-container="body" data-toggle="tooltip" title="Obrigatório">Obrigatório</th>
-      <th>Tipo</th>
-      <th>Descrição</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>
-        <strong>expire_at</strong>
-      </td>
-      <td>
-        Não
-      </td>
-      <td>
-        Date
-      </td>
-      <td>
-        Data de vencimento
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <strong>tags</strong>
-      </td>
-      <td>
-        Não
-      </td>
-      <td>
-        Array
-      </td>
-      <td>
-        Tags associadas ao boleto
-      </td>
-    </tr>
+<thead>
+<tr>
+<th>Parâmetro</th>
+<th data-container="body" data-toggle="tooltip" title="Obrigatório">Obrigatório</th>
+<th>Tipo</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<strong>expire_at</strong>
+</td>
+<td>
+Não
+</td>
+<td>
+Date
+</td>
+<td>
+Data de vencimento
+</td>
+</tr>
+<tr>
+<td>
+<strong>tags</strong>
+</td>
+<td>
+Não
+</td>
+<td>
+Array
+</td>
+<td>
+Tags associadas ao boleto
+</td>
+</tr>
 
     <tr>
       <td>
@@ -1429,20 +1432,21 @@ Em carteiras registradas, a alteração irá entrar na remessa e pode ser cobrad
         Quantia (R$) Formato: 1.345,56 Obs.: Disponível apenas para alguns bancos.
       </td>
     </tr>
-  </tbody>
+
+</tbody>
 </table>
 
 #### Exemplo de requisição inválida
 
 <ul class="nav nav-tabs" role="tablist">
-  <li class="active"><a href="#bash5" role="tab" data-toggle="tab">Bash</a></li>
-  <!-- <li><a href="#ruby5" role="tab" data-toggle="tab">Ruby</a></li>
-  <li><a href="#php5" role="tab" data-toggle="tab">PHP</a></li> -->
+<li class="active"><a href="#bash5" role="tab" data-toggle="tab">Bash</a></li>
+<!-- <li><a href="#ruby5" role="tab" data-toggle="tab">Ruby</a></li>
+<li><a href="#php5" role="tab" data-toggle="tab">PHP</a></li> -->
 </ul>
 
 <div class="tab-content">
-  <div class="tab-pane active" id="bash5">
-    <small>Requisição:</small>
+<div class="tab-pane active" id="bash5">
+<small>Requisição:</small>
 
 <pre class="bash">
 curl -i \
@@ -1462,21 +1466,21 @@ Status: 422 Unprocessable Entity
 Content-Type: application/json; charset=utf-8
 ...
 
-{"errors":{"bank_billet":["não pode ficar em branco"]}}
+{"errors":{"bank_billet":\["não pode ficar em branco"\]}}
 
 </pre>
-  </div>
-  <!-- <div class="tab-pane" id="ruby5">
-    <small>Requisição</small>
+</div>
+<!-- <div class="tab-pane" id="ruby5">
+<small>Requisição</small>
 
 <pre class="ruby">
 @bank_billet = BoletoSimples::BankBillet.find(863)
 puts "Status Anterior: #{@bank_billet.status}"
 if @bank_billet.cancel
-  puts "Cancelado :)"
+puts "Cancelado :)"
 else
-  puts "Erro :)"
-  puts @bank_billet.response_errors
+puts "Erro :)"
+puts @bank_billet.response_errors
 end
 puts "Status Final: #{@bank_billet.status}"
 </pre>
@@ -1486,24 +1490,24 @@ puts "Status Final: #{@bank_billet.status}"
 <pre class="ruby">
 Status Anterior: paid
 Erro :)
-{:status=>["cannot transition via cancel"]}
+{:status=>\["cannot transition via cancel"\]}
 Status Final: paid
 </pre>
 
-  </div>
-    <div class="tab-pane" id="php5">
-      <small>Requisição</small>
+</div>
+<div class="tab-pane" id="php5">
+<small>Requisição</small>
 
 <pre class="php">
-$bank_billet = BoletoSimples\BankBillet::find(863);
-echo "Status Anterior: " . $bank_billet->status . "\n";
+\$bank_billet = BoletoSimples\\BankBillet::find(863);
+echo "Status Anterior: " . $bank_billet->status . "\\n";
 if($bank_billet->cancel()) {
-  echo "Cancelado :)\n";
+echo "Cancelado :)\\n";
 } else {
-  echo "Erro :)\n";
-  print_r($bank_billet->response_errors);
+echo "Erro :)\\n";
+print_r($bank_billet->response_errors);
 }
-echo "Status Final: " . $bank_billet->status . "\n";
+echo "Status Final: " . $bank_billet->status . "\\n";
 </pre>
 
       <small>Resposta:</small>
@@ -1512,31 +1516,31 @@ echo "Status Final: " . $bank_billet->status . "\n";
 Status Anterior: paid
 Erro :)
 Array
-(
-    [status] => Array
-        (
-            [0] => cannot transition via cancel
-        )
+\(
+\[status\] => Array
+\(
+\[0\] => cannot transition via cancel
+\)
 
-)
+\)
 Status Final: paid
 </pre>
 
     </div> -->
-</div>
 
+</div>
 
 #### Exemplo de requisição válida
 
 <ul class="nav nav-tabs" role="tablist">
-  <li class="active"><a href="#bash6" role="tab" data-toggle="tab">Bash</a></li>
-  <!-- <li><a href="#ruby6" role="tab" data-toggle="tab">Ruby</a></li>
-  <li><a href="#php6" role="tab" data-toggle="tab">PHP</a></li> -->
+<li class="active"><a href="#bash6" role="tab" data-toggle="tab">Bash</a></li>
+<!-- <li><a href="#ruby6" role="tab" data-toggle="tab">Ruby</a></li>
+<li><a href="#php6" role="tab" data-toggle="tab">PHP</a></li> -->
 </ul>
 
 <div class="tab-content">
-  <div class="tab-pane active" id="bash6">
-    <small>Requisição:</small>
+<div class="tab-pane active" id="bash6">
+<small>Requisição:</small>
 
 <pre class="bash">
 curl -i \
@@ -1557,18 +1561,18 @@ Content-Type: application/json; charset=utf-8
 ...
 
 </pre>
-  </div>
-  <!-- <div class="tab-pane" id="ruby6">
-    <small>Requisição</small>
+</div>
+<!-- <div class="tab-pane" id="ruby6">
+<small>Requisição</small>
 
 <pre class="ruby">
 @bank_billet = BoletoSimples::BankBillet.find(862)
 puts "Status Anterior: #{@bank_billet.status}"
 if @bank_billet.cancel
-  puts "Cancelado :)"
+puts "Cancelado :)"
 else
-  puts "Erro :)"
-  puts @bank_billet.response_errors
+puts "Erro :)"
+puts @bank_billet.response_errors
 end
 puts "Status Final: #{@bank_billet.status}"
 </pre>
@@ -1581,20 +1585,20 @@ Cancelado :)
 Status Final: canceled
 </pre>
 
-  </div>
-    <div class="tab-pane" id="php6">
-      <small>Requisição</small>
+</div>
+<div class="tab-pane" id="php6">
+<small>Requisição</small>
 
 <pre class="php">
-$bank_billet = BoletoSimples\BankBillet::find(860);
-echo "Status Anterior: " . $bank_billet->status . "\n";
+\$bank_billet = BoletoSimples\\BankBillet::find(860);
+echo "Status Anterior: " . $bank_billet->status . "\\n";
 if($bank_billet->cancel()) {
-  echo "Cancelado :)\n";
+echo "Cancelado :)\\n";
 } else {
-  echo "Erro :)\n";
-  print_r($bank_billet->response_errors);
+echo "Erro :)\\n";
+print_r($bank_billet->response_errors);
 }
-echo "Status Final: " . $bank_billet->status . "\n";
+echo "Status Final: " . $bank_billet->status . "\\n";
 </pre>
 
       <small>Resposta:</small>
@@ -1606,8 +1610,8 @@ Status Final: canceled
 </pre>
 
     </div> -->
-</div>
 
+</div>
 
 ### Duplicar boleto
 
@@ -1625,18 +1629,17 @@ Status Final: canceled
 
 É permitido o envio de qualquer outro parâmetro do [boleto](/reference/v1/bank_billets/#modelo-de-dados).
 
-
 #### Exemplo de requisição válida
 
 <ul class="nav nav-tabs" role="tablist">
-  <li class="active"><a href="#bash2" role="tab" data-toggle="tab">Bash</a></li>
-  <!-- <li><a href="#ruby2" role="tab" data-toggle="tab">Ruby</a></li>
-  <li><a href="#php2" role="tab" data-toggle="tab">PHP</a></li> -->
+<li class="active"><a href="#bash2" role="tab" data-toggle="tab">Bash</a></li>
+<!-- <li><a href="#ruby2" role="tab" data-toggle="tab">Ruby</a></li>
+<li><a href="#php2" role="tab" data-toggle="tab">PHP</a></li> -->
 </ul>
 
 <div class="tab-content">
-  <div class="tab-pane active" id="bash2">
-    <small>Requisição:</small>
+<div class="tab-pane active" id="bash2">
+<small>Requisição:</small>
 
 <pre class="bash">
 curl -i \
@@ -1658,112 +1661,112 @@ Content-Type: application/json; charset=utf-8
 ...
 
 {
-  "id":2,
-  "expire_at":"2014-11-20",
-  "paid_at":null,
-  "description":"Prestação de Serviço",
-  "status":"generating",
-  "customer_person_type":"individual",
-  "customer_person_name":"Nome do Cliente",
-  "customer_cnpj_cpf":"125.812.717-28",
-  "customer_address":"Rua quinhentos",
-  "customer_state":"RJ",
-  "customer_neighborhood":"bairro",
-  "customer_zipcode":"12312123",
-  "customer_address_number":null,
-  "customer_address_complement":null,
-  "customer_phone_number":null,
-  "customer_email":null,
-  "created_via_api":true,
-  "customer_city_name":"Rio de Janeiro",
-  "paid_amount":0.0,
-  "amount":12.34
+"id":2,
+"expire_at":"2014-11-20",
+"paid_at":null,
+"description":"Prestação de Serviço",
+"status":"generating",
+"customer_person_type":"individual",
+"customer_person_name":"Nome do Cliente",
+"customer_cnpj_cpf":"125.812.717-28",
+"customer_address":"Rua quinhentos",
+"customer_state":"RJ",
+"customer_neighborhood":"bairro",
+"customer_zipcode":"12312123",
+"customer_address_number":null,
+"customer_address_complement":null,
+"customer_phone_number":null,
+"customer_email":null,
+"created_via_api":true,
+"customer_city_name":"Rio de Janeiro",
+"paid_amount":0.0,
+"amount":12.34
 }
 </pre>
-  </div>
-  <!-- <div class="tab-pane" id="ruby2">
-    <small>Requisição:</small>
+</div>
+<!-- <div class="tab-pane" id="ruby2">
+<small>Requisição:</small>
 <pre class="ruby">
 @bank_billet = BoletoSimples::BankBillet.create({
-  amount: 9.01,
-  description: 'Despesas do contrato 0012',
-  expire_at: '2014-01-01',
-  customer_address: 'Rua quinhentos',
-  customer_address_complement: 'Sala 4',
-  customer_address_number: '111',
-  customer_city_name: 'Rio de Janeiro',
-  customer_cnpj_cpf: '012.345.678-90',
-  customer_email: 'cliente@example.com',
-  customer_neighborhood: 'Sao Francisco',
-  customer_person_name: 'Joao da Silva',
-  customer_person_type: 'individual',
-  customer_phone_number: '2112123434',
-  customer_state: 'RJ',
-  customer_zipcode: '12312123'
+amount: 9.01,
+description: 'Despesas do contrato 0012',
+expire_at: '2014-01-01',
+customer_address: 'Rua quinhentos',
+customer_address_complement: 'Sala 4',
+customer_address_number: '111',
+customer_city_name: 'Rio de Janeiro',
+customer_cnpj_cpf: '012.345.678-90',
+customer_email: 'cliente@example.com',
+customer_neighborhood: 'Sao Francisco',
+customer_person_name: 'Joao da Silva',
+customer_person_type: 'individual',
+customer_phone_number: '2112123434',
+customer_state: 'RJ',
+customer_zipcode: '12312123'
 })
 if @bank_billet.persisted?
-  puts "Sucesso :)"
-  puts @bank_billet.attributes
+puts "Sucesso :)"
+puts @bank_billet.attributes
 else
-  puts "Erro :("
-  puts @bank_billet.response_errors
+puts "Erro :("
+puts @bank_billet.response_errors
 end
 </pre>
 
-  <small>Resposta:</small>
+<small>Resposta:</small>
 
 <pre class="ruby">
 Sucesso :)
 {
-                         "amount" => 9.01,
-                    "description" => "Despesas do contrato 0012",
-                      "expire_at" => "2014-01-01",
-               "customer_address" => "Rua quinhentos",
-    "customer_address_complement" => "Sala 4",
-        "customer_address_number" => "111",
-             "customer_city_name" => "Rio de Janeiro",
-              "customer_cnpj_cpf" => "012.345.678-90",
-                 "customer_email" => "cliente@example.com",
-          "customer_neighborhood" => "Sao Francisco",
-           "customer_person_name" => "Joao da Silva",
-           "customer_person_type" => "individual",
-          "customer_phone_number" => "2112123434",
-                 "customer_state" => "RJ",
-               "customer_zipcode" => "12312123",
-                             "id" => 854,
-                        "paid_at" => nil,
-                         "status" => "generating",
-                "created_via_api" => true,
-                    "paid_amount" => 0.0
+"amount" => 9.01,
+"description" => "Despesas do contrato 0012",
+"expire_at" => "2014-01-01",
+"customer_address" => "Rua quinhentos",
+"customer_address_complement" => "Sala 4",
+"customer_address_number" => "111",
+"customer_city_name" => "Rio de Janeiro",
+"customer_cnpj_cpf" => "012.345.678-90",
+"customer_email" => "cliente@example.com",
+"customer_neighborhood" => "Sao Francisco",
+"customer_person_name" => "Joao da Silva",
+"customer_person_type" => "individual",
+"customer_phone_number" => "2112123434",
+"customer_state" => "RJ",
+"customer_zipcode" => "12312123",
+"id" => 854,
+"paid_at" => nil,
+"status" => "generating",
+"created_via_api" => true,
+"paid_amount" => 0.0
 }
 </pre>
-  </div>
-    <div class="tab-pane" id="php2">
-      <small>Requisição:</small>
+</div>
+<div class="tab-pane" id="php2">
+<small>Requisição:</small>
 <pre class="php">
-$bank_billet = BoletoSimples\BankBillet::create(array (
-  'amount' => 9.01,
-  'description' => 'Despesas do contrato 0012',
-  'expire_at' => '2014-01-01',
-  'customer_address' => 'Rua quinhentos',
-  'customer_address_complement' => 'Sala 4',
-  'customer_address_number' => '111',
-  'customer_city_name' => 'Rio de Janeiro',
-  'customer_cnpj_cpf' => '012.345.678-90',
-  'customer_email' => 'cliente@example.com',
-  'customer_neighborhood' => 'Sao Francisco',
-  'customer_person_name' => 'Joao da Silva',
-  'customer_person_type' => 'individual',
-  'customer_phone_number' => '2112123434',
-  'customer_state' => 'RJ',
-  'customer_zipcode' => '12312123'
-));
+\$bank_billet = BoletoSimples\\BankBillet::create(array (
+\'amount' => 9.01,
+\'description' => 'Despesas do contrato 0012',
+\'expire_at' => '2014-01-01',
+\'customer_address' => 'Rua quinhentos',
+\'customer_address_complement' => 'Sala 4',
+\'customer_address_number' => '111',
+\'customer_city_name' => 'Rio de Janeiro',
+\'customer_cnpj_cpf' => '012.345.678-90',
+\'customer_email' => 'cliente@example.com',
+\'customer_neighborhood' => 'Sao Francisco',
+\'customer_person_name' => 'Joao da Silva',
+\'customer_person_type' => 'individual',
+\'customer_phone_number' => '2112123434',
+\'customer_state' => 'RJ',
+\'customer_zipcode' => '12312123'
+\));
 if($bank_billet->isPersisted()) {
-  echo "Sucesso :)\n";
-  print_r($bank_billet->attributes());
+echo "Sucesso :)\\n";
+print_r($bank_billet->attributes());
 } else {
-  echo "Erro :(\n";
-  print_r($bank_billet->response_errors);
+echo "Erro :(\\n";
+print_r($bank_billet->response_errors);
 }
 </pre>
 
@@ -1772,30 +1775,30 @@ if($bank_billet->isPersisted()) {
 <pre class="php">
 Sucesso :)
 Array
-(
-    [id] => 857
-    [expire_at] => 2014-01-01
-    [paid_at] =>
-    [description] => Despesas do contrato 0012
-    [status] => generating
-    [customer_person_type] => individual
-    [customer_person_name] => Joao da Silva
-    [customer_cnpj_cpf] => 012.345.678-90
-    [customer_address] => Rua quinhentos
-    [customer_state] => RJ
-    [customer_neighborhood] => Sao Francisco
-    [customer_zipcode] => 12312123
-    [customer_address_number] => 111
-    [customer_address_complement] => Sala 4
-    [customer_phone_number] => 2112123434
-    [customer_email] => cliente@example.com
-    [created_via_api] => 1
-    [customer_city_name] => Rio de Janeiro
-    [paid_amount] => 0
-    [amount] => 9.01
-)
+\(
+\[id\] => 857
+\[expire_at\] => 2014-01-01
+\[paid_at\] =>
+\[description\] => Despesas do contrato 0012
+\[status\] => generating
+\[customer_person_type\] => individual
+\[customer_person_name\] => Joao da Silva
+\[customer_cnpj_cpf\] => 012.345.678-90
+\[customer_address\] => Rua quinhentos
+\[customer_state\] => RJ
+\[customer_neighborhood\] => Sao Francisco
+\[customer_zipcode\] => 12312123
+\[customer_address_number\] => 111
+\[customer_address_complement\] => Sala 4
+\[customer_phone_number\] => 2112123434
+\[customer_email\] => cliente@example.com
+\[created_via_api\] => 1
+\[customer_city_name\] => Rio de Janeiro
+\[paid_amount\] => 0
+\[amount\] => 9.01
+\)
 </pre>
-    </div> -->
+</div> -->
 </div>
 
 ### Buscar por CPF ou CNPJ
@@ -1805,100 +1808,100 @@ Array
 `GET /api/v1/bank_billets/cnpj_cpf`
 
 <table class='table table-bordered'>
-  <thead>
-    <tr>
-      <th>Parâmetro</th>
-      <th data-container="body" data-toggle="tooltip" title="Obrigatório">Obrigatório</th>
-      <th>Tipo</th>
-      <th>Descrição</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>
-        <strong>q</strong>
-      </td>
-      <td>
-        Sim
-      </td>
-      <td>
-        String
-      </td>
-      <td>
-        CPF ou CNPJ formatado
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <strong>page</strong>
-        <br/>
-      </td>
-      <td>
-        Não
-      </td>
-      <td>
-        Number
-      </td>
-      <td>
-        Número da Página
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <strong>per_page</strong>
-      </td>
-      <td>
-        Não
-      </td>
-      <td>
-        Number
-      </td>
-      <td>
-        Quantidade de registros por página (Máximo de 50)
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <strong>expire_from</strong>
-      </td>
-      <td>
-        Não
-      </td>
-      <td>
-        Date
-      </td>
-      <td>
-        Pesquisa a partir de Data de vencimento. Obrigatório o parâmetro <code class="highlighter-rouge">expire_to</code>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <strong>expire_to</strong>
-      </td>
-      <td>
-        Não
-      </td>
-      <td>
-        Date
-      </td>
-      <td>
-        Pesquisa até a Data de vencimento. Obrigatório o parâmetro <code class="highlighter-rouge">expire_from</code>
-      </td>
-    </tr>
-  </tbody>
+<thead>
+<tr>
+<th>Parâmetro</th>
+<th data-container="body" data-toggle="tooltip" title="Obrigatório">Obrigatório</th>
+<th>Tipo</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<strong>q</strong>
+</td>
+<td>
+Sim
+</td>
+<td>
+String
+</td>
+<td>
+CPF ou CNPJ formatado
+</td>
+</tr>
+<tr>
+<td>
+<strong>page</strong>
+<br/>
+</td>
+<td>
+Não
+</td>
+<td>
+Number
+</td>
+<td>
+Número da Página
+</td>
+</tr>
+<tr>
+<td>
+<strong>per_page</strong>
+</td>
+<td>
+Não
+</td>
+<td>
+Number
+</td>
+<td>
+Quantidade de registros por página (Máximo de 50)
+</td>
+</tr>
+<tr>
+<td>
+<strong>expire_from</strong>
+</td>
+<td>
+Não
+</td>
+<td>
+Date
+</td>
+<td>
+Pesquisa a partir de Data de vencimento. Obrigatório o parâmetro <code class="highlighter-rouge">expire_to</code>
+</td>
+</tr>
+<tr>
+<td>
+<strong>expire_to</strong>
+</td>
+<td>
+Não
+</td>
+<td>
+Date
+</td>
+<td>
+Pesquisa até a Data de vencimento. Obrigatório o parâmetro <code class="highlighter-rouge">expire_from</code>
+</td>
+</tr>
+</tbody>
 </table>
 
 #### Exemplo
 
 <ul class="nav nav-tabs" role="tablist">
-  <li class="active"><a href="#bash3" role="tab" data-toggle="tab">Bash</a></li>
-  <!-- <li><a href="#ruby3" role="tab" data-toggle="tab">Ruby</a></li>
-  <li><a href="#php3" role="tab" data-toggle="tab">PHP</a></li> -->
+<li class="active"><a href="#bash3" role="tab" data-toggle="tab">Bash</a></li>
+<!-- <li><a href="#ruby3" role="tab" data-toggle="tab">Ruby</a></li>
+<li><a href="#php3" role="tab" data-toggle="tab">PHP</a></li> -->
 </ul>
 
 <div class="tab-content">
-  <div class="tab-pane active" id="bash3">
-    <small>Requisição:</small>
+<div class="tab-pane active" id="bash3">
+<small>Requisição:</small>
 
 <pre class="bash">
 curl -i \
@@ -1917,29 +1920,29 @@ Status: 200 OK
 Content-Type: application/json; charset=utf-8
 ...
 
-[
-  {
-    "id":1,
-    "city_name":"Rio de Janeiro",
-    "person_name":"Nome do Cliente",
-    "address":"Rua quinhentos",
-    "address_complement":null,
-    "address_number":null,
-    "mobile_number":null,
-    "cnpj_cpf":"125.812.717-28",
-    "email":null,
-    "neighborhood":"bairro",
-    "person_type":"individual",
-    "phone_number":null,
-    "zipcode":"20071004",
-    "mobile_local_code":null,
-    "state":"RJ"
-  }
-]
+\[
+{
+"id":1,
+"city_name":"Rio de Janeiro",
+"person_name":"Nome do Cliente",
+"address":"Rua quinhentos",
+"address_complement":null,
+"address_number":null,
+"mobile_number":null,
+"cnpj_cpf":"125.812.717-28",
+"email":null,
+"neighborhood":"bairro",
+"person_type":"individual",
+"phone_number":null,
+"zipcode":"20071004",
+"mobile_local_code":null,
+"state":"RJ"
+}
+\]
 </pre>
-  </div>
- <!--  <div class="tab-pane" id="ruby3">
-    <small>Requisição:</small>
+</div>
+<!--  <div class="tab-pane" id="ruby3">
+<small>Requisição:</small>
 
 <pre class="ruby">
 @customer = BoletoSimples::Customer.find(67)
@@ -1950,30 +1953,30 @@ puts @customer.attributes
 
 <pre class="ruby">
 {
-             "city_name" => "Rio de Janeiro",
-           "person_name" => "Joao da Silva",
-               "address" => "Rua quinhentos",
-    "address_complement" => "Sala 4",
-        "address_number" => "111",
-         "mobile_number" => nil,
-              "cnpj_cpf" => "782.661.177-64",
-                 "email" => "cliente@bom.com",
-          "neighborhood" => "bairro",
-           "person_type" => "individual",
-          "phone_number" => "2112123434",
-               "zipcode" => "20071004",
-     "mobile_local_code" => nil,
-                 "state" => "RJ",
-       "created_via_api" => true,
-                    "id" => 67
+"city_name" => "Rio de Janeiro",
+"person_name" => "Joao da Silva",
+"address" => "Rua quinhentos",
+"address_complement" => "Sala 4",
+"address_number" => "111",
+"mobile_number" => nil,
+"cnpj_cpf" => "782.661.177-64",
+"email" => "cliente@bom.com",
+"neighborhood" => "bairro",
+"person_type" => "individual",
+"phone_number" => "2112123434",
+"zipcode" => "20071004",
+"mobile_local_code" => nil,
+"state" => "RJ",
+"created_via_api" => true,
+"id" => 67
 }
 </pre>
-  </div>
-  <div class="tab-pane" id="php3">
-    <small>Requisição:</small>
+</div>
+<div class="tab-pane" id="php3">
+<small>Requisição:</small>
 
 <pre class="php">
-$customer = BoletoSimples\Customer::find(66);
+\$customer = BoletoSimples\\Customer::find(66);
 print_r($customer->attributes());
 </pre>
 
@@ -1981,26 +1984,26 @@ print_r($customer->attributes());
 
 <pre class="php">
 Array
-(
-    [id] => 66
-    [city_name] => Rio de Janeiro
-    [person_name] => Joao da Silva
-    [address] => Rua quinhentos
-    [address_complement] => Sala 4
-    [address_number] => 111
-    [mobile_number] =>
-    [cnpj_cpf] => 860.196.915-19
-    [email] => cliente@example.com
-    [neighborhood] => bairro
-    [person_type] => individual
-    [phone_number] => 2112123434
-    [zipcode] => 20071004
-    [mobile_local_code] =>
-    [state] => RJ
-    [created_via_api] => 1
-)
+\(
+\[id\] => 66
+\[city_name\] => Rio de Janeiro
+\[person_name\] => Joao da Silva
+\[address\] => Rua quinhentos
+\[address_complement\] => Sala 4
+\[address_number\] => 111
+\[mobile_number\] =>
+\[cnpj_cpf\] => 860.196.915-19
+\[email\] => cliente@example.com
+\[neighborhood\] => bairro
+\[person_type\] => individual
+\[phone_number\] => 2112123434
+\[zipcode\] => 20071004
+\[mobile_local_code\] =>
+\[state\] => RJ
+\[created_via_api\] => 1
+\)
 </pre>
-  </div> -->
+</div> -->
 </div>
 
 ### Buscar por nosso número
@@ -2010,72 +2013,72 @@ Array
 `GET /api/v1/bank_billets/our_number`
 
 <table class='table table-bordered'>
-  <thead>
-    <tr>
-      <th>Parâmetro</th>
-      <th data-container="body" data-toggle="tooltip" title="Obrigatório">Obrigatório</th>
-      <th>Tipo</th>
-      <th>Descrição</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>
-        <strong>q</strong>
-      </td>
-      <td>
-        Sim
-      </td>
-      <td>
-        String
-      </td>
-      <td>
-        Nosso número
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <strong>page</strong>
-        <br/>
-      </td>
-      <td>
-        Não
-      </td>
-      <td>
-        Number
-      </td>
-      <td>
-        Número da Página
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <strong>per_page</strong>
-      </td>
-      <td>
-        Não
-      </td>
-      <td>
-        Number
-      </td>
-      <td>
-        Quantidade de registros por página (Máximo de 50)
-      </td>
-    </tr>
-  </tbody>
+<thead>
+<tr>
+<th>Parâmetro</th>
+<th data-container="body" data-toggle="tooltip" title="Obrigatório">Obrigatório</th>
+<th>Tipo</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<strong>q</strong>
+</td>
+<td>
+Sim
+</td>
+<td>
+String
+</td>
+<td>
+Nosso número
+</td>
+</tr>
+<tr>
+<td>
+<strong>page</strong>
+<br/>
+</td>
+<td>
+Não
+</td>
+<td>
+Number
+</td>
+<td>
+Número da Página
+</td>
+</tr>
+<tr>
+<td>
+<strong>per_page</strong>
+</td>
+<td>
+Não
+</td>
+<td>
+Number
+</td>
+<td>
+Quantidade de registros por página (Máximo de 50)
+</td>
+</tr>
+</tbody>
 </table>
 
 #### Exemplo
 
 <ul class="nav nav-tabs" role="tablist">
-  <li class="active"><a href="#bash3" role="tab" data-toggle="tab">Bash</a></li>
-  <!-- <li><a href="#ruby3" role="tab" data-toggle="tab">Ruby</a></li>
-  <li><a href="#php3" role="tab" data-toggle="tab">PHP</a></li> -->
+<li class="active"><a href="#bash3" role="tab" data-toggle="tab">Bash</a></li>
+<!-- <li><a href="#ruby3" role="tab" data-toggle="tab">Ruby</a></li>
+<li><a href="#php3" role="tab" data-toggle="tab">PHP</a></li> -->
 </ul>
 
 <div class="tab-content">
-  <div class="tab-pane active" id="bash3">
-    <small>Requisição:</small>
+<div class="tab-pane active" id="bash3">
+<small>Requisição:</small>
 
 <pre class="bash">
 curl -i \
@@ -2094,29 +2097,29 @@ Status: 200 OK
 Content-Type: application/json; charset=utf-8
 ...
 
-[
-  {
-    "id":1,
-    "city_name":"Rio de Janeiro",
-    "person_name":"Nome do Cliente",
-    "address":"Rua quinhentos",
-    "address_complement":null,
-    "address_number":null,
-    "mobile_number":null,
-    "cnpj_cpf":"125.812.717-28",
-    "email":null,
-    "neighborhood":"bairro",
-    "person_type":"individual",
-    "phone_number":null,
-    "zipcode":"20071004",
-    "mobile_local_code":null,
-    "state":"RJ"
-  }
-]
+\[
+{
+"id":1,
+"city_name":"Rio de Janeiro",
+"person_name":"Nome do Cliente",
+"address":"Rua quinhentos",
+"address_complement":null,
+"address_number":null,
+"mobile_number":null,
+"cnpj_cpf":"125.812.717-28",
+"email":null,
+"neighborhood":"bairro",
+"person_type":"individual",
+"phone_number":null,
+"zipcode":"20071004",
+"mobile_local_code":null,
+"state":"RJ"
+}
+\]
 </pre>
-  </div>
- <!--  <div class="tab-pane" id="ruby3">
-    <small>Requisição:</small>
+</div>
+<!--  <div class="tab-pane" id="ruby3">
+<small>Requisição:</small>
 
 <pre class="ruby">
 @customer = BoletoSimples::Customer.find(67)
@@ -2127,30 +2130,30 @@ puts @customer.attributes
 
 <pre class="ruby">
 {
-             "city_name" => "Rio de Janeiro",
-           "person_name" => "Joao da Silva",
-               "address" => "Rua quinhentos",
-    "address_complement" => "Sala 4",
-        "address_number" => "111",
-         "mobile_number" => nil,
-              "cnpj_cpf" => "782.661.177-64",
-                 "email" => "cliente@bom.com",
-          "neighborhood" => "bairro",
-           "person_type" => "individual",
-          "phone_number" => "2112123434",
-               "zipcode" => "20071004",
-     "mobile_local_code" => nil,
-                 "state" => "RJ",
-       "created_via_api" => true,
-                    "id" => 67
+"city_name" => "Rio de Janeiro",
+"person_name" => "Joao da Silva",
+"address" => "Rua quinhentos",
+"address_complement" => "Sala 4",
+"address_number" => "111",
+"mobile_number" => nil,
+"cnpj_cpf" => "782.661.177-64",
+"email" => "cliente@bom.com",
+"neighborhood" => "bairro",
+"person_type" => "individual",
+"phone_number" => "2112123434",
+"zipcode" => "20071004",
+"mobile_local_code" => nil,
+"state" => "RJ",
+"created_via_api" => true,
+"id" => 67
 }
 </pre>
-  </div>
-  <div class="tab-pane" id="php3">
-    <small>Requisição:</small>
+</div>
+<div class="tab-pane" id="php3">
+<small>Requisição:</small>
 
 <pre class="php">
-$customer = BoletoSimples\Customer::find(66);
+\$customer = BoletoSimples\\Customer::find(66);
 print_r($customer->attributes());
 </pre>
 
@@ -2158,26 +2161,26 @@ print_r($customer->attributes());
 
 <pre class="php">
 Array
-(
-    [id] => 66
-    [city_name] => Rio de Janeiro
-    [person_name] => Joao da Silva
-    [address] => Rua quinhentos
-    [address_complement] => Sala 4
-    [address_number] => 111
-    [mobile_number] =>
-    [cnpj_cpf] => 860.196.915-19
-    [email] => cliente@example.com
-    [neighborhood] => bairro
-    [person_type] => individual
-    [phone_number] => 2112123434
-    [zipcode] => 20071004
-    [mobile_local_code] =>
-    [state] => RJ
-    [created_via_api] => 1
-)
+\(
+\[id\] => 66
+\[city_name\] => Rio de Janeiro
+\[person_name\] => Joao da Silva
+\[address\] => Rua quinhentos
+\[address_complement\] => Sala 4
+\[address_number\] => 111
+\[mobile_number\] =>
+\[cnpj_cpf\] => 860.196.915-19
+\[email\] => cliente@example.com
+\[neighborhood\] => bairro
+\[person_type\] => individual
+\[phone_number\] => 2112123434
+\[zipcode\] => 20071004
+\[mobile_local_code\] =>
+\[state\] => RJ
+\[created_via_api\] => 1
+\)
 </pre>
-  </div> -->
+</div> -->
 </div>
 
 ### Buscar por situação do boleto
@@ -2187,100 +2190,100 @@ Array
 `GET /api/v1/bank_billets/status`
 
 <table class='table table-bordered'>
-  <thead>
-    <tr>
-      <th>Parâmetro</th>
-      <th data-container="body" data-toggle="tooltip" title="Obrigatório">Obrigatório</th>
-      <th>Tipo</th>
-      <th>Descrição</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>
-        <strong>q</strong>
-      </td>
-      <td>
-        Sim
-      </td>
-      <td>
-        String
-      </td>
-      <td>
-        Situação do boleto
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <strong>page</strong>
-        <br/>
-      </td>
-      <td>
-        Não
-      </td>
-      <td>
-        Number
-      </td>
-      <td>
-        Número da Página
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <strong>per_page</strong>
-      </td>
-      <td>
-        Não
-      </td>
-      <td>
-        Number
-      </td>
-      <td>
-        Quantidade de registros por página (Máximo de 50)
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <strong>expire_from</strong>
-      </td>
-      <td>
-        Não
-      </td>
-      <td>
-        Date
-      </td>
-      <td>
-        Pesquisa a partir de Data de vencimento. Obrigatório o parâmetro <code class="highlighter-rouge">expire_to</code>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <strong>expire_to</strong>
-      </td>
-      <td>
-        Não
-      </td>
-      <td>
-        Date
-      </td>
-      <td>
-        Pesquisa até a Data de vencimento. Obrigatório o parâmetro <code class="highlighter-rouge">expire_from</code>
-      </td>
-    </tr>
-  </tbody>
+<thead>
+<tr>
+<th>Parâmetro</th>
+<th data-container="body" data-toggle="tooltip" title="Obrigatório">Obrigatório</th>
+<th>Tipo</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<strong>q</strong>
+</td>
+<td>
+Sim
+</td>
+<td>
+String
+</td>
+<td>
+Situação do boleto
+</td>
+</tr>
+<tr>
+<td>
+<strong>page</strong>
+<br/>
+</td>
+<td>
+Não
+</td>
+<td>
+Number
+</td>
+<td>
+Número da Página
+</td>
+</tr>
+<tr>
+<td>
+<strong>per_page</strong>
+</td>
+<td>
+Não
+</td>
+<td>
+Number
+</td>
+<td>
+Quantidade de registros por página (Máximo de 50)
+</td>
+</tr>
+<tr>
+<td>
+<strong>expire_from</strong>
+</td>
+<td>
+Não
+</td>
+<td>
+Date
+</td>
+<td>
+Pesquisa a partir de Data de vencimento. Obrigatório o parâmetro <code class="highlighter-rouge">expire_to</code>
+</td>
+</tr>
+<tr>
+<td>
+<strong>expire_to</strong>
+</td>
+<td>
+Não
+</td>
+<td>
+Date
+</td>
+<td>
+Pesquisa até a Data de vencimento. Obrigatório o parâmetro <code class="highlighter-rouge">expire_from</code>
+</td>
+</tr>
+</tbody>
 </table>
 
 #### Exemplo
 
 <ul class="nav nav-tabs" role="tablist">
-  <li class="active"><a href="#bash3" role="tab" data-toggle="tab">Bash</a></li>
-  <!-- <li><a href="#ruby3" role="tab" data-toggle="tab">Ruby</a></li>
-  <li><a href="#php3" role="tab" data-toggle="tab">PHP</a></li> -->
+<li class="active"><a href="#bash3" role="tab" data-toggle="tab">Bash</a></li>
+<!-- <li><a href="#ruby3" role="tab" data-toggle="tab">Ruby</a></li>
+<li><a href="#php3" role="tab" data-toggle="tab">PHP</a></li> -->
 </ul>
 
 <div class="tab-content">
-  <div class="tab-pane active" id="bash3">
-    <small>Requisição:</small>
+<div class="tab-pane active" id="bash3">
+<small>Requisição:</small>
 
 <pre class="bash">
 curl -i \
@@ -2299,29 +2302,29 @@ Status: 200 OK
 Content-Type: application/json; charset=utf-8
 ...
 
-[
-  {
-    "id":1,
-    "city_name":"Rio de Janeiro",
-    "person_name":"Nome do Cliente",
-    "address":"Rua quinhentos",
-    "address_complement":null,
-    "address_number":null,
-    "mobile_number":null,
-    "cnpj_cpf":"125.812.717-28",
-    "email":null,
-    "neighborhood":"bairro",
-    "person_type":"individual",
-    "phone_number":null,
-    "zipcode":"20071004",
-    "mobile_local_code":null,
-    "state":"RJ"
-  }
-]
+\[
+{
+"id":1,
+"city_name":"Rio de Janeiro",
+"person_name":"Nome do Cliente",
+"address":"Rua quinhentos",
+"address_complement":null,
+"address_number":null,
+"mobile_number":null,
+"cnpj_cpf":"125.812.717-28",
+"email":null,
+"neighborhood":"bairro",
+"person_type":"individual",
+"phone_number":null,
+"zipcode":"20071004",
+"mobile_local_code":null,
+"state":"RJ"
+}
+\]
 </pre>
-  </div>
- <!--  <div class="tab-pane" id="ruby3">
-    <small>Requisição:</small>
+</div>
+<!--  <div class="tab-pane" id="ruby3">
+<small>Requisição:</small>
 
 <pre class="ruby">
 @customer = BoletoSimples::Customer.find(67)
@@ -2332,30 +2335,30 @@ puts @customer.attributes
 
 <pre class="ruby">
 {
-             "city_name" => "Rio de Janeiro",
-           "person_name" => "Joao da Silva",
-               "address" => "Rua quinhentos",
-    "address_complement" => "Sala 4",
-        "address_number" => "111",
-         "mobile_number" => nil,
-              "cnpj_cpf" => "782.661.177-64",
-                 "email" => "cliente@bom.com",
-          "neighborhood" => "bairro",
-           "person_type" => "individual",
-          "phone_number" => "2112123434",
-               "zipcode" => "20071004",
-     "mobile_local_code" => nil,
-                 "state" => "RJ",
-       "created_via_api" => true,
-                    "id" => 67
+"city_name" => "Rio de Janeiro",
+"person_name" => "Joao da Silva",
+"address" => "Rua quinhentos",
+"address_complement" => "Sala 4",
+"address_number" => "111",
+"mobile_number" => nil,
+"cnpj_cpf" => "782.661.177-64",
+"email" => "cliente@bom.com",
+"neighborhood" => "bairro",
+"person_type" => "individual",
+"phone_number" => "2112123434",
+"zipcode" => "20071004",
+"mobile_local_code" => nil,
+"state" => "RJ",
+"created_via_api" => true,
+"id" => 67
 }
 </pre>
-  </div>
-  <div class="tab-pane" id="php3">
-    <small>Requisição:</small>
+</div>
+<div class="tab-pane" id="php3">
+<small>Requisição:</small>
 
 <pre class="php">
-$customer = BoletoSimples\Customer::find(66);
+\$customer = BoletoSimples\\Customer::find(66);
 print_r($customer->attributes());
 </pre>
 
@@ -2363,26 +2366,26 @@ print_r($customer->attributes());
 
 <pre class="php">
 Array
-(
-    [id] => 66
-    [city_name] => Rio de Janeiro
-    [person_name] => Joao da Silva
-    [address] => Rua quinhentos
-    [address_complement] => Sala 4
-    [address_number] => 111
-    [mobile_number] =>
-    [cnpj_cpf] => 860.196.915-19
-    [email] => cliente@example.com
-    [neighborhood] => bairro
-    [person_type] => individual
-    [phone_number] => 2112123434
-    [zipcode] => 20071004
-    [mobile_local_code] =>
-    [state] => RJ
-    [created_via_api] => 1
-)
+\(
+\[id\] => 66
+\[city_name\] => Rio de Janeiro
+\[person_name\] => Joao da Silva
+\[address\] => Rua quinhentos
+\[address_complement\] => Sala 4
+\[address_number\] => 111
+\[mobile_number\] =>
+\[cnpj_cpf\] => 860.196.915-19
+\[email\] => cliente@example.com
+\[neighborhood\] => bairro
+\[person_type\] => individual
+\[phone_number\] => 2112123434
+\[zipcode\] => 20071004
+\[mobile_local_code\] =>
+\[state\] => RJ
+\[created_via_api\] => 1
+\)
 </pre>
-  </div> -->
+</div> -->
 </div>
 
 ### Marcar boleto como pago
@@ -2402,14 +2405,14 @@ Array
 #### Exemplo de requisição inválida
 
 <ul class="nav nav-tabs" role="tablist">
-  <li class="active"><a href="#bash5" role="tab" data-toggle="tab">Bash</a></li>
-  <!-- <li><a href="#ruby5" role="tab" data-toggle="tab">Ruby</a></li>
-  <li><a href="#php5" role="tab" data-toggle="tab">PHP</a></li> -->
+<li class="active"><a href="#bash5" role="tab" data-toggle="tab">Bash</a></li>
+<!-- <li><a href="#ruby5" role="tab" data-toggle="tab">Ruby</a></li>
+<li><a href="#php5" role="tab" data-toggle="tab">PHP</a></li> -->
 </ul>
 
 <div class="tab-content">
-  <div class="tab-pane active" id="bash5">
-    <small>Requisição:</small>
+<div class="tab-pane active" id="bash5">
+<small>Requisição:</small>
 
 <pre class="bash">
 curl -i \
@@ -2430,96 +2433,96 @@ Content-Type: application/json; charset=utf-8
 ...
 
 {
-  "errors": {
-    "bank_billet": ["não pode ficar em branco"]
-  }
+"errors": {
+"bank_billet": \["não pode ficar em branco"\]
+}
 }
 </pre>
-  </div>
+</div>
 
-  <!-- <div class="tab-pane" id="ruby2">
-    <small>Requisição:</small>
+<!-- <div class="tab-pane" id="ruby2">
+<small>Requisição:</small>
 <pre class="ruby">
 @bank_billet = BoletoSimples::BankBillet.create({
-  amount: 9.01,
-  description: 'Despesas do contrato 0012',
-  expire_at: '2014-01-01',
-  customer_address: 'Rua quinhentos',
-  customer_address_complement: 'Sala 4',
-  customer_address_number: '111',
-  customer_city_name: 'Rio de Janeiro',
-  customer_cnpj_cpf: '012.345.678-90',
-  customer_email: 'cliente@example.com',
-  customer_neighborhood: 'Sao Francisco',
-  customer_person_name: 'Joao da Silva',
-  customer_person_type: 'individual',
-  customer_phone_number: '2112123434',
-  customer_state: 'RJ',
-  customer_zipcode: '12312123'
+amount: 9.01,
+description: 'Despesas do contrato 0012',
+expire_at: '2014-01-01',
+customer_address: 'Rua quinhentos',
+customer_address_complement: 'Sala 4',
+customer_address_number: '111',
+customer_city_name: 'Rio de Janeiro',
+customer_cnpj_cpf: '012.345.678-90',
+customer_email: 'cliente@example.com',
+customer_neighborhood: 'Sao Francisco',
+customer_person_name: 'Joao da Silva',
+customer_person_type: 'individual',
+customer_phone_number: '2112123434',
+customer_state: 'RJ',
+customer_zipcode: '12312123'
 })
 if @bank_billet.persisted?
-  puts "Sucesso :)"
-  puts @bank_billet.attributes
+puts "Sucesso :)"
+puts @bank_billet.attributes
 else
-  puts "Erro :("
-  puts @bank_billet.response_errors
+puts "Erro :("
+puts @bank_billet.response_errors
 end
 </pre>
 
-  <small>Resposta:</small>
+<small>Resposta:</small>
 
 <pre class="ruby">
 Sucesso :)
 {
-                         "amount" => 9.01,
-                    "description" => "Despesas do contrato 0012",
-                      "expire_at" => "2014-01-01",
-               "customer_address" => "Rua quinhentos",
-    "customer_address_complement" => "Sala 4",
-        "customer_address_number" => "111",
-             "customer_city_name" => "Rio de Janeiro",
-              "customer_cnpj_cpf" => "012.345.678-90",
-                 "customer_email" => "cliente@example.com",
-          "customer_neighborhood" => "Sao Francisco",
-           "customer_person_name" => "Joao da Silva",
-           "customer_person_type" => "individual",
-          "customer_phone_number" => "2112123434",
-                 "customer_state" => "RJ",
-               "customer_zipcode" => "12312123",
-                             "id" => 854,
-                        "paid_at" => nil,
-                         "status" => "generating",
-                "created_via_api" => true,
-                    "paid_amount" => 0.0
+"amount" => 9.01,
+"description" => "Despesas do contrato 0012",
+"expire_at" => "2014-01-01",
+"customer_address" => "Rua quinhentos",
+"customer_address_complement" => "Sala 4",
+"customer_address_number" => "111",
+"customer_city_name" => "Rio de Janeiro",
+"customer_cnpj_cpf" => "012.345.678-90",
+"customer_email" => "cliente@example.com",
+"customer_neighborhood" => "Sao Francisco",
+"customer_person_name" => "Joao da Silva",
+"customer_person_type" => "individual",
+"customer_phone_number" => "2112123434",
+"customer_state" => "RJ",
+"customer_zipcode" => "12312123",
+"id" => 854,
+"paid_at" => nil,
+"status" => "generating",
+"created_via_api" => true,
+"paid_amount" => 0.0
 }
 </pre>
-  </div>
-    <div class="tab-pane" id="php2">
-      <small>Requisição:</small>
+</div>
+<div class="tab-pane" id="php2">
+<small>Requisição:</small>
 <pre class="php">
-$bank_billet = BoletoSimples\BankBillet::create(array (
-  'amount' => 9.01,
-  'description' => 'Despesas do contrato 0012',
-  'expire_at' => '2014-01-01',
-  'customer_address' => 'Rua quinhentos',
-  'customer_address_complement' => 'Sala 4',
-  'customer_address_number' => '111',
-  'customer_city_name' => 'Rio de Janeiro',
-  'customer_cnpj_cpf' => '012.345.678-90',
-  'customer_email' => 'cliente@example.com',
-  'customer_neighborhood' => 'Sao Francisco',
-  'customer_person_name' => 'Joao da Silva',
-  'customer_person_type' => 'individual',
-  'customer_phone_number' => '2112123434',
-  'customer_state' => 'RJ',
-  'customer_zipcode' => '12312123'
-));
+\$bank_billet = BoletoSimples\\BankBillet::create(array (
+\'amount' => 9.01,
+\'description' => 'Despesas do contrato 0012',
+\'expire_at' => '2014-01-01',
+\'customer_address' => 'Rua quinhentos',
+\'customer_address_complement' => 'Sala 4',
+\'customer_address_number' => '111',
+\'customer_city_name' => 'Rio de Janeiro',
+\'customer_cnpj_cpf' => '012.345.678-90',
+\'customer_email' => 'cliente@example.com',
+\'customer_neighborhood' => 'Sao Francisco',
+\'customer_person_name' => 'Joao da Silva',
+\'customer_person_type' => 'individual',
+\'customer_phone_number' => '2112123434',
+\'customer_state' => 'RJ',
+\'customer_zipcode' => '12312123'
+\));
 if($bank_billet->isPersisted()) {
-  echo "Sucesso :)\n";
-  print_r($bank_billet->attributes());
+echo "Sucesso :)\\n";
+print_r($bank_billet->attributes());
 } else {
-  echo "Erro :(\n";
-  print_r($bank_billet->response_errors);
+echo "Erro :(\\n";
+print_r($bank_billet->response_errors);
 }
 </pre>
 
@@ -2528,43 +2531,43 @@ if($bank_billet->isPersisted()) {
 <pre class="php">
 Sucesso :)
 Array
-(
-    [id] => 857
-    [expire_at] => 2014-01-01
-    [paid_at] =>
-    [description] => Despesas do contrato 0012
-    [status] => generating
-    [customer_person_type] => individual
-    [customer_person_name] => Joao da Silva
-    [customer_cnpj_cpf] => 012.345.678-90
-    [customer_address] => Rua quinhentos
-    [customer_state] => RJ
-    [customer_neighborhood] => Sao Francisco
-    [customer_zipcode] => 12312123
-    [customer_address_number] => 111
-    [customer_address_complement] => Sala 4
-    [customer_phone_number] => 2112123434
-    [customer_email] => cliente@example.com
-    [created_via_api] => 1
-    [customer_city_name] => Rio de Janeiro
-    [paid_amount] => 0
-    [amount] => 9.01
-)
+\(
+\[id\] => 857
+\[expire_at\] => 2014-01-01
+\[paid_at\] =>
+\[description\] => Despesas do contrato 0012
+\[status\] => generating
+\[customer_person_type\] => individual
+\[customer_person_name\] => Joao da Silva
+\[customer_cnpj_cpf\] => 012.345.678-90
+\[customer_address\] => Rua quinhentos
+\[customer_state\] => RJ
+\[customer_neighborhood\] => Sao Francisco
+\[customer_zipcode\] => 12312123
+\[customer_address_number\] => 111
+\[customer_address_complement\] => Sala 4
+\[customer_phone_number\] => 2112123434
+\[customer_email\] => cliente@example.com
+\[created_via_api\] => 1
+\[customer_city_name\] => Rio de Janeiro
+\[paid_amount\] => 0
+\[amount\] => 9.01
+\)
 </pre>
-    </div> -->
+</div> -->
 </div>
 
 #### Exemplo de requisição válida
 
 <ul class="nav nav-tabs" role="tablist">
-  <li class="active"><a href="#bash5" role="tab" data-toggle="tab">Bash</a></li>
-  <!-- <li><a href="#ruby5" role="tab" data-toggle="tab">Ruby</a></li>
-  <li><a href="#php5" role="tab" data-toggle="tab">PHP</a></li> -->
+<li class="active"><a href="#bash5" role="tab" data-toggle="tab">Bash</a></li>
+<!-- <li><a href="#ruby5" role="tab" data-toggle="tab">Ruby</a></li>
+<li><a href="#php5" role="tab" data-toggle="tab">PHP</a></li> -->
 </ul>
 
 <div class="tab-content">
-  <div class="tab-pane active" id="bash5">
-    <small>Requisição:</small>
+<div class="tab-pane active" id="bash5">
+<small>Requisição:</small>
 
 <pre class="bash">
 curl -i \
@@ -2585,109 +2588,108 @@ Content-Type: application/json; charset=utf-8
 ...
 
 </pre>
-  </div>
-  </div>
-
+</div>
+</div>
 
 ### Cancelar boletos em lote
 
 `POST /api/v1/bank_billets/cancel_all`
 
- <div class="alert alert-info">Pelo menos um parâmetro é obrigatório na chamada. Os parâmetros podem ser combinados.</div>
-  <div class="alert alert-danger"><strong>ATENÇÃO</strong> Essa ação é irreversível, pois os boletos serão cancelados no banco.</div>
+<div class="alert alert-info">Pelo menos um parâmetro é obrigatório na chamada. Os parâmetros podem ser combinados.</div>
+<div class="alert alert-danger"><strong>ATENÇÃO</strong> Essa ação é irreversível, pois os boletos serão cancelados no banco.</div>
 
 <table class='table table-bordered'>
-  <thead>
-    <tr>
-      <th>Parâmetro</th>
-      <th data-container="body" data-toggle="tooltip" title="Obrigatório">Obrigatório</th>
-      <th>Tipo</th>
-      <th>Descrição</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>
-        <strong>status</strong>
-      </td>
-      <td>
-        Não
-      </td>
-      <td>
-        String
-      </td>
-      <td>
-        Situação do boleto
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <strong>expire_from</strong>
-      </td>
-      <td>
-        Não
-      </td>
-      <td>
-        Date
-      </td>
-      <td>
-        A partir de Data de vencimento
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <strong>expire_to</strong>
-      </td>
-      <td>
-        Não
-      </td>
-      <td>
-        Date
-      </td>
-      <td>
-        Até a Data de vencimento
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <strong>bank_billet_ids</strong>
-      </td>
-      <td>
-        Não
-      </td>
-      <td>
-        Array
-      </td>
-      <td>
-        Ids dos boletos
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <strong>cnpj_cpf</strong>
-      </td>
-      <td>
-        Não
-      </td>
-      <td>
-        String
-      </td>
-      <td>
-        CNPJ ou CPF do Pagador
-      </td>
-    </tr>
-  </tbody>
+<thead>
+<tr>
+<th>Parâmetro</th>
+<th data-container="body" data-toggle="tooltip" title="Obrigatório">Obrigatório</th>
+<th>Tipo</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<strong>status</strong>
+</td>
+<td>
+Não
+</td>
+<td>
+String
+</td>
+<td>
+Situação do boleto
+</td>
+</tr>
+<tr>
+<td>
+<strong>expire_from</strong>
+</td>
+<td>
+Não
+</td>
+<td>
+Date
+</td>
+<td>
+A partir de Data de vencimento
+</td>
+</tr>
+<tr>
+<td>
+<strong>expire_to</strong>
+</td>
+<td>
+Não
+</td>
+<td>
+Date
+</td>
+<td>
+Até a Data de vencimento
+</td>
+</tr>
+<tr>
+<td>
+<strong>bank_billet_ids</strong>
+</td>
+<td>
+Não
+</td>
+<td>
+Array
+</td>
+<td>
+Ids dos boletos
+</td>
+</tr>
+<tr>
+<td>
+<strong>cnpj_cpf</strong>
+</td>
+<td>
+Não
+</td>
+<td>
+String
+</td>
+<td>
+CNPJ ou CPF do Pagador
+</td>
+</tr>
+</tbody>
 </table>
 
 #### Exemplo de requisição inválida
 
 <ul class="nav nav-tabs" role="tablist">
-  <li class="active"><a href="#bash" role="tab" data-toggle="tab">Bash</a></li>
+<li class="active"><a href="#bash" role="tab" data-toggle="tab">Bash</a></li>
 </ul>
 
 <div class="tab-content">
-  <div class="tab-pane active" id="bash">
-    <small>Requisição:</small>
+<div class="tab-pane active" id="bash">
+<small>Requisição:</small>
 <pre class="bash">
 curl -i \
 -H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
@@ -2711,23 +2713,22 @@ Content-Type: application/json; charset=utf-8
 </div>
 </div>
 
-
 #### Exemplo
 
 <ul class="nav nav-tabs" role="tablist">
-  <li class="active"><a href="#bash3" role="tab" data-toggle="tab">Bash</a></li>
-  <!-- <li><a href="#ruby3" role="tab" data-toggle="tab">Ruby</a></li>
-  <li><a href="#php3" role="tab" data-toggle="tab">PHP</a></li> -->
+<li class="active"><a href="#bash3" role="tab" data-toggle="tab">Bash</a></li>
+<!-- <li><a href="#ruby3" role="tab" data-toggle="tab">Ruby</a></li>
+<li><a href="#php3" role="tab" data-toggle="tab">PHP</a></li> -->
 </ul>
 
 <div class="tab-content">
-  <div class="tab-pane active" id="bash3">
-    <small>Requisição:</small>
+<div class="tab-pane active" id="bash3">
+<small>Requisição:</small>
 
 <pre class="bash">
 curl -i \
 -H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
--d '{"status":"opened", "expire_from":"20-04-2017", "expire_to"="20-10-2017", "bank_billet_ids":"[345,456,788]", "cnpj_cpf": "125.812.717-28"}' \
+-d '{"status":"opened", "expire_from":"20-04-2017", "expire_to"="20-10-2017", "bank_billet_ids":"\[345,456,788\]", "cnpj_cpf": "125.812.717-28"}' \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
 -X POST 'https://sandbox.boletosimples.com.br/api/v1/bank_billets/cancel_all'
@@ -2772,32 +2773,31 @@ Para saber se um boleto foi gerado por completo, você deve preparar seu sisema 
 
 Será retornado `404 Not Found` ao tentar acessar a url de um boleto que ainda esteja sendo gerado(`generating`)
 
-
 <table class='table table-bordered'>
-  <thead>
-    <tr>
-      <th>Parâmetro</th>
-      <th data-container="body" data-toggle="tooltip" title="Obrigatório">Obrigatório</th>
-      <th>Tipo</th>
-      <th>Descrição</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>
-        <strong>bank_billets</strong>
-      </td>
-      <td>
-        Sim
-      </td>
-      <td>
-        Array
-      </td>
-      <td>
-        Array de boletos. Cada item do array deve conter os mesmo parâmetros do  Modelo de Dados de <a href="/reference/v1/bank_billets/#criar-boleto">criação de boleto único</a>.
-      </td>
-    </tr>
-  </tbody>
+<thead>
+<tr>
+<th>Parâmetro</th>
+<th data-container="body" data-toggle="tooltip" title="Obrigatório">Obrigatório</th>
+<th>Tipo</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<strong>bank_billets</strong>
+</td>
+<td>
+Sim
+</td>
+<td>
+Array
+</td>
+<td>
+Array de boletos. Cada item do array deve conter os mesmo parâmetros do  Modelo de Dados de <a href="/reference/v1/bank_billets/#criar-boleto">criação de boleto único</a>.
+</td>
+</tr>
+</tbody>
 </table>
 
 <div class="alert alert-info"><strong>ATENÇÃO</strong> Máximo de 50 boletos por chamada.</div>
@@ -2805,14 +2805,14 @@ Será retornado `404 Not Found` ao tentar acessar a url de um boleto que ainda e
 #### Exemplo de requisição inválida
 
 <ul class="nav nav-tabs" role="tablist">
-  <li class="active"><a href="#bash" role="tab" data-toggle="tab">Bash</a></li>
-  <!-- <li><a href="#ruby" role="tab" data-toggle="tab">Ruby</a></li>
-  <li><a href="#php" role="tab" data-toggle="tab">PHP</a></li> -->
+<li class="active"><a href="#bash" role="tab" data-toggle="tab">Bash</a></li>
+<!-- <li><a href="#ruby" role="tab" data-toggle="tab">Ruby</a></li>
+<li><a href="#php" role="tab" data-toggle="tab">PHP</a></li> -->
 </ul>
 
 <div class="tab-content">
-  <div class="tab-pane active" id="bash">
-    <small>Requisição:</small>
+<div class="tab-pane active" id="bash">
+<small>Requisição:</small>
 <pre class="bash">
 curl -i \
 -H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
@@ -2831,12 +2831,12 @@ Status: 422 Unprocessable Entity
 Content-Type: application/json; charset=utf-8
 ...
 
-{"errors":{"bank_billets":["não pode ficar em branco"]}}
+{"errors":{"bank_billets":\["não pode ficar em branco"\]}}
 </pre>
-  </div>
+</div>
 
-  <!-- <div class="tab-pane" id="ruby">
-    <small>Requisição:</small>
+<!-- <div class="tab-pane" id="ruby">
+<small>Requisição:</small>
 <pre class="ruby">
 
 </pre>
@@ -2846,9 +2846,9 @@ Content-Type: application/json; charset=utf-8
 <pre class="ruby">
 
 </pre>
-  </div>
-    <div class="tab-pane" id="php">
-      <small>Requisição:</small>
+</div>
+<div class="tab-pane" id="php">
+<small>Requisição:</small>
 <pre class="php">
 
 </pre>
@@ -2858,25 +2858,25 @@ Content-Type: application/json; charset=utf-8
 <pre class="php">
 
 </pre>
-    </div> -->
+</div> -->
 </div>
 
 #### Exemplo de requisição válida
 
 <ul class="nav nav-tabs" role="tablist">
-  <li class="active"><a href="#bash2" role="tab" data-toggle="tab">Bash</a></li>
-  <!-- <li><a href="#ruby2" role="tab" data-toggle="tab">Ruby</a></li>
-  <li><a href="#php2" role="tab" data-toggle="tab">PHP</a></li> -->
+<li class="active"><a href="#bash2" role="tab" data-toggle="tab">Bash</a></li>
+<!-- <li><a href="#ruby2" role="tab" data-toggle="tab">Ruby</a></li>
+<li><a href="#php2" role="tab" data-toggle="tab">PHP</a></li> -->
 </ul>
 
 <div class="tab-content">
-  <div class="tab-pane active" id="bash2">
-    <small>Requisição:</small>
+<div class="tab-pane active" id="bash2">
+<small>Requisição:</small>
 
 <pre class="bash">
 curl -i \
 -H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
--d '{"bank_billets":[{"amount":12.34, "expire_at": "2018-11-15", "description": "Prestação de Serviço", "customer_person_name": "Nome do Cliente", "customer_cnpj_cpf": "125.812.717-28", "customer_zipcode": "12312123", "customer_address": "Rua quinhentos", "customer_city_name": "Rio de Janeiro", "customer_state": "RJ", "customer_neighborhood": "bairro"},{"amount":12.34, "expire_at": "2018-11-15", "description": "Prestação de Serviço", "customer_person_name": "Nome do Cliente", "customer_cnpj_cpf": "125.812.717-28", "customer_zipcode": "12312123", "customer_address": "Rua quinhentos", "customer_city_name": "Rio de Janeiro", "customer_state": "RJ", "customer_neighborhood": "bairro"},{"amount":12.34, "expire_at": "", "description": "Prestação de Serviço", "customer_person_name": "Nome do Cliente", "customer_cnpj_cpf": "", "customer_zipcode": "12312123", "customer_address": "Rua quinhentos", "customer_city_name": "Rio de Janeiro", "customer_state": "RJ", "customer_neighborhood": "bairro"}]}' \
+-d '{"bank_billets":\[{"amount":12.34, "expire_at": "2018-11-15", "description": "Prestação de Serviço", "customer_person_name": "Nome do Cliente", "customer_cnpj_cpf": "125.812.717-28", "customer_zipcode": "12312123", "customer_address": "Rua quinhentos", "customer_city_name": "Rio de Janeiro", "customer_state": "RJ", "customer_neighborhood": "bairro"},{"amount":12.34, "expire_at": "2018-11-15", "description": "Prestação de Serviço", "customer_person_name": "Nome do Cliente", "customer_cnpj_cpf": "125.812.717-28", "customer_zipcode": "12312123", "customer_address": "Rua quinhentos", "customer_city_name": "Rio de Janeiro", "customer_state": "RJ", "customer_neighborhood": "bairro"},{"amount":12.34, "expire_at": "", "description": "Prestação de Serviço", "customer_person_name": "Nome do Cliente", "customer_cnpj_cpf": "", "customer_zipcode": "12312123", "customer_address": "Rua quinhentos", "customer_city_name": "Rio de Janeiro", "customer_state": "RJ", "customer_neighborhood": "bairro"}\]}' \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
 -X POST 'https://sandbox.boletosimples.com.br/api/v1/bank_billets/bulk'
@@ -2891,58 +2891,58 @@ Content-Type: application/json; charset=utf-8
 Transfer-Encoding: chunked
 Status: 201 Created
 ...
-[
+\[
 {
-  "item":0,
-  "status":"success",
-  "bank_billet":{
-    "id":63883,
-    "expire_at":"2018-11-16",
-    "paid_at":null,"
-    description":"Prestação de Serviço",
-    "status":"generating"
-    ...
-  }
-},
-{
-  "item":1,
-  "status":"success",
-  "bank_billet":{
-    "id":63884,
-    "expire_at":"2018-11-16",
-    "paid_at":null,
-    "description":"Prestação de Serviço",
-    "status":"generating"
-    ...
-  }
-},
-{
-  "item":2,
-  "status":"error",
-  "errors":
-  {
-    "customer_id":["não pode ficar em branco"],
-    "expire_at":["não pode ficar em branco","não é uma data válida"],
-    "customer_cnpj_cpf":["não pode ficar em branco"]
-  }
+"item":0,
+"status":"success",
+"bank_billet":{
+"id":63883,
+"expire_at":"2018-11-16",
+"paid_at":null,"
+description":"Prestação de Serviço",
+"status":"generating"
+...
 }
-]
+},
+{
+"item":1,
+"status":"success",
+"bank_billet":{
+"id":63884,
+"expire_at":"2018-11-16",
+"paid_at":null,
+"description":"Prestação de Serviço",
+"status":"generating"
+...
+}
+},
+{
+"item":2,
+"status":"error",
+"errors":
+{
+"customer_id":\["não pode ficar em branco"\],
+"expire_at":\["não pode ficar em branco","não é uma data válida"\],
+"customer_cnpj_cpf":\["não pode ficar em branco"\]
+}
+}
+\]
 </pre>
-  </div>
-  <!-- <div class="tab-pane" id="ruby2">
-    <small>Requisição:</small>
+</div>
+<!-- <div class="tab-pane" id="ruby2">
+<small>Requisição:</small>
 <pre class="ruby">
 
 </pre>
 
-  <small>Resposta:</small>
+<small>Resposta:</small>
 
 <pre class="ruby">
 
 </pre>
-  </div>
-    <div class="tab-pane" id="php2">
-      <small>Requisição:</small>
+</div>
+<div class="tab-pane" id="php2">
+<small>Requisição:</small>
 <pre class="php">
 
 </pre>
@@ -2952,5 +2952,5 @@ Status: 201 Created
 <pre class="php">
 
 </pre>
-    </div> -->
+</div> -->
 </div>
