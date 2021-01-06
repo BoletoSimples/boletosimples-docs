@@ -11,23 +11,27 @@ layout: pt
 | 112         | caruana-bs-112
 | 121         | caruana-bs-121
 
-### Modelo de Dados
+<!-- ### Modelo de Dados
 
 | **Parâmetro**                       | **CNAB 240**  | **CNAB 400**    | **Webservice** | **Observação**
 | **fine_type**                   | Não   | Não |    Não     | Não
 | **fine_percentage**             | Não   | Não   |    Não     | Não
 | **fine_value**                  | Não   | Não  |     Não    | Não
-| **days_for_fine**               | Não   | Não |         | Não
+| **days_for_fine**               | Não   | Não |         | Não -->
 
 ### Ocorrências
+
+#### CNAB 400
 
 | Our code | Descrição                                           | Suporte Banco | Suporte Boleto Simples |
 |:---------|:----------------------------------------------------|:--------------|:-----------------------|
 | 1001     | Entrada de título                                   | Sim           | Sim                    |
 | 1002     | Pedido de baixa                                     | Sim           | Sim                    |
-| 1003     | Alteração de vencimento                             | Sim           | [Veja tabela](https://suporte.boletosimples.com.br/article/pten2qs3c0-posso-alterar-a-data-de-vencimento-e-o-valor-de-um-boleto-j-emitido)                    |
+| 1003     | Alteração de vencimento                             | Sim           | [Veja tabela](https://suporte.boletosimples.com.br/article/pten2qs3c0-posso-alterar-a-data-de-vencimento-e-o-valor-de-um-boleto-j-emitido)                           |
 | 1004     | Concessão de abatimento                             | Sim           | Não                    |
-| 1005     | Cancelamento de abatimento                          | Sim           | Não                    |
+| 1005     | Cancelamento de abatimento                          | Sim           | Sim                    |
+
+<!--- comment: old occurrences for reference in the documentation
 | 1007     | Alteração do "uso da empresa"                       | Não           | Não                    |
 | 1008     | Alteração do "seu número"                           | Não           | Não                    |
 | 1009     | Protestar                                           | Não           | Não                    |
@@ -91,3 +95,4 @@ layout: pt
 | 1112     | Beneficiário não concorda com a alegação do pagador | Não           | Não                    |
 | 1113     | Alteração de dados extras (registro de multa)       | Não           | Não                    |
 | 1114     | Descontar títulos encaminhados no dia               | Não           | Não                    |
+-->

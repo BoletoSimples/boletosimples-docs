@@ -16,16 +16,28 @@ Correspondente Santander
 
 ### Ocorrências
 
+#### CNAB 240
+
 | Our code | Descrição                                           | Suporte Banco | Suporte Boleto Simples |
 |:---------|:----------------------------------------------------|:--------------|:-----------------------|
 | 1001     | Entrada de título                                   | Sim           | Sim                    |
 | 1002     | Pedido de baixa                                     | Sim           | Sim                    |
-| 1003     | Alteração de vencimento                             | Sim           | [Veja tabela](https://suporte.boletosimples.com.br/article/pten2qs3c0-posso-alterar-a-data-de-vencimento-e-o-valor-de-um-boleto-j-emitido)                    |
+| 1003     | Alteração de vencimento                             | Sim           | [Veja tabela](https://suporte.boletosimples.com.br/article/pten2qs3c0-posso-alterar-a-data-de-vencimento-e-o-valor-de-um-boleto-j-emitido)                           |
 | 1004     | Concessão de abatimento                             | Sim           | Não                    |
-| 1005     | Cancelamento de abatimento                          | Sim           | Não                    |
+| 1005     | Cancelamento de abatimento                          | Sim           | Sim                    |
+| 1009     | Protestar                                           | Sim           | Sim                    |
+| 1018     | Sustar o protesto                                   | Sim           | Sim                    |
+| 1019     | Sustar protesto e manter em carteira                | Sim           | Sim                    |
+| 1028     | Alterar Valor                                       | Sim           | [Veja tabela](https://suporte.boletosimples.com.br/article/pten2qs3c0-posso-alterar-a-data-de-vencimento-e-o-valor-de-um-boleto-j-emitido)                           |
+| 1030     | Recusa da Alegação do Sacado                        | Sim           | Sim                    |
+| 1071     | Concessão de desconto                               | Sim           | Não                    |
+| 1072     | Cancelamento de desconto                            | Sim           | Sim                    |
+| 1148     | Alteração do Valor Mínimo/Percentual                | Sim           | Sim                    |
+| 1149     | Alteração do Valor Máximo/Percentual                | Sim           | Sim                    |
+
+<!--- comment: old occurrences for reference in the documentation
 | 1007     | Alteração do "uso da empresa"                       | Não           | Não                    |
 | 1008     | Alteração do "seu número"                           | Não           | Não                    |
-| 1009     | Protestar                                           | Sim           | Sim                    |
 | 1010     | Não protestar                                       | Não           | Não                    |
 | 1011     | Protesto para fins falimentares                     | Não           | Não                    |
 | 1012     | Alterar nome do pagador                             | Não           | Não                    |
@@ -33,15 +45,11 @@ Correspondente Santander
 | 1014     | Alterar Cidade do pagador                           | Não           | Não                    |
 | 1015     | Alterar UF do pagador                               | Não           | Não                    |
 | 1017     | Alteração do número de dias para protesto           | Não           | Não                    |
-| 1018     | Sustar o protesto                                   | Sim           | Sim                    |
-| 1019     | Sustar protesto e manter em carteira                | Sim           | Sim                    |
 | 1020     | Alterar CPF/CNPJ do pagador                         | Não           | Não                    |
 | 1021     | Alteração de valor com emissão de Boleto (quando a emissão é pelo Banco)    | Não           | Não                    |
 | 1022     | Transferência cessão crédito ID. Prod. 10           | Não           | Não                    |
 | 1023     | Transferência entre carteiras                       | Não           | Não                    |
 | 1024     | Dev. transferências entre carteiras                 | Não           | Não                    |
-| 1028     | Alterar Valor                                       | Sim           | [Veja tabela](https://suporte.boletosimples.com.br/article/pten2qs3c0-posso-alterar-a-data-de-vencimento-e-o-valor-de-um-boleto-j-emitido)                    |
-| 1030     | Recusa da Alegação do Sacado                        | Sim           | Sim                    |
 | 1031     | Alteração de outros dados                           | Não           | Não                    |
 | 1034     | Pago diretamente ao beneficiário                    | Não           | Não                    |
 | 1038     | Alterar CEP do pagador                              | Não           | Não                    |
@@ -50,8 +58,6 @@ Correspondente Santander
 | 1067     | Não negativar                                       | Não           | Não                    |
 | 1068     | Excluir negativação expressa                        | Não           | Não                    |
 | 1069     | Cancelar negativação expressa                       | Não           | Não                    |
-| 1071     | Concessão de desconto                               | Sim           | Não                    |
-| 1072     | Cancelamento de desconto                            | Sim           | Não                    |
 | 1073     | Alteração do valor do desconto                      | Não           | Não                    |
 | 1074     | Alteração do valor ou percentual de multa           | Não           | Não                    |
 | 1075     | Não cobrar multa                                    | Não           | Não                    |
@@ -87,5 +93,4 @@ Correspondente Santander
 | 1112     | Beneficiário não concorda com a alegação do pagador | Não           | Não                    |
 | 1113     | Alteração de dados extras (registro de multa)       | Não           | Não                    |
 | 1114     | Descontar títulos encaminhados no dia               | Não           | Não                    |
-| 1148     | Alteração do Valor Mínimo/Percentual                | Sim           | Sim                    |
-| 1149     | Alteração do Valor Máximo/Percentual                | Sim           | Sim                    |
+-->

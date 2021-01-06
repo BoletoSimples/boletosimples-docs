@@ -1,15 +1,15 @@
 ---
 title: Banestes
 position: 10
-en: "/en/bank_contracts/sicoob"
+en: "/en/bank_contracts/baneste"
 layout: pt
 ---
 
-## Banestes
+## BANESTES S.A. BANCO DO ESTADO DO ESPIRITO SANTO
 
 | Carteiras                | Slug
 | ------------------------ | ------------
-| 11 - Sem Registro        | banestes-11-2
+| 2 - Sem Registro         | banestes-11-2
 | 3 - Caucionada           | banestes-11-3
 | 4 - Com registro         | banestes-11-4
 | 5 - Com registro         | banestes-11-5
@@ -19,11 +19,19 @@ layout: pt
 
 ### Ocorrências
 
+#### CNAB 400
+
 | Our code | Descrição                                           | Suporte Banco | Suporte Boleto Simples |
 |:---------|:----------------------------------------------------|:--------------|:-----------------------|
 | 1001     | Entrada de título                                   | Sim           | Sim                    |
 | 1002     | Pedido de baixa                                     | Sim           | Sim                    |
-| 1003     | Alteração de vencimento                             | Sim           | [Veja tabela](https://suporte.boletosimples.com.br/article/pten2qs3c0-posso-alterar-a-data-de-vencimento-e-o-valor-de-um-boleto-j-emitido)                    |
+| 1003     | Alteração de vencimento                             | Sim           | [Veja tabela](https://suporte.boletosimples.com.br/article/pten2qs3c0-posso-alterar-a-data-de-vencimento-e-o-valor-de-um-boleto-j-emitido)                           |
+| 1028     | Alterar Valor                                       | Não           | [Veja tabela](https://suporte.boletosimples.com.br/article/pten2qs3c0-posso-alterar-a-data-de-vencimento-e-o-valor-de-um-boleto-j-emitido)                           |
+| 1034     | Pago diretamente ao beneficiário                    | Sim           | Não                    |
+| 1074     | Alteração do valor ou percentual de multa           | Sim           | Não                    |
+
+
+<!--- comment: old occurrences for reference in the documentation
 | 1004     | Concessão de abatimento                             | Sim           | Não                    |
 | 1005     | Cancelamento de abatimento                          | Sim           | Não                    |
 | 1007     | Alteração do "uso da empresa"                       | Sim           | Não                    |
@@ -43,9 +51,7 @@ layout: pt
 | 1022     | Transferência cessão crédito ID. Prod. 10           | Não           | Não                    |
 | 1023     | Transferência entre carteiras                       | Não           | Não                    |
 | 1024     | Dev. transferências entre carteiras                 | Não           | Não                    |
-| 1028     | Alterar Valor                                       | Não           | [Veja tabela](https://suporte.boletosimples.com.br/article/pten2qs3c0-posso-alterar-a-data-de-vencimento-e-o-valor-de-um-boleto-j-emitido)                    |
 | 1031     | Alteração de outros dados                           | Não           | Não                    |
-| 1034     | Pago diretamente ao beneficiário                    | Sim           | Não                    |
 | 1038     | Alterar CEP do pagador                              | Não           | Não                    |
 | 1047     | Não cobrar juros                                    | Sim           | Não                    |
 | 1066     | Solicitar negativação expressa                      | Não           | Não                    |
@@ -55,7 +61,6 @@ layout: pt
 | 1071     | Concessão de desconto                               | Sim           | Não                    |
 | 1072     | Cancelamento de desconto                            | Sim           | Não                    |
 | 1073     | Alteração do valor do desconto                      | Sim           | Não                    |
-| 1074     | Alteração do valor ou percentual de multa           | Sim           | Em validação           |
 | 1075     | Não cobrar multa                                    | Sim           | Não                    |
 | 1076     | Alteração de juros de mora                          | Sim           | Não                    |
 | 1077     | Alteração do valor de abatimento                    | Sim           | Não                    |
@@ -91,3 +96,4 @@ layout: pt
 | 1112     | Beneficiário não concorda com a alegação do pagador | Não           | Não                    |
 | 1113     | Alteração de dados extras (registro de multa)       | Não           | Não                    |
 | 1114     | Descontar títulos encaminhados no dia               | Não           | Não                    |
+-->

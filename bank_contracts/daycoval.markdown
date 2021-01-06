@@ -12,24 +12,28 @@ layout: pt
 
 ### Ocorrências
 
+#### CNAB 400
+
 | Our code | Descrição                                           | Suporte Banco | Suporte Boleto Simples |
 |:---------|:----------------------------------------------------|:--------------|:-----------------------|
 | 1001     | Entrada de título                                   | Sim           | Sim                    |
 | 1002     | Pedido de baixa                                     | Sim           | Sim                    |
 | 1003     | Alteração de vencimento                             | Sim           | [Veja tabela](https://suporte.boletosimples.com.br/article/pten2qs3c0-posso-alterar-a-data-de-vencimento-e-o-valor-de-um-boleto-j-emitido)                    |
 | 1004     | Concessão de abatimento                             | Sim           | Não                    |
+| 1009     | Protestar                                           | Sim           | Sim                    |
+| 1010     | Não protestar                                       | Sim           | Sim                    |
+| 1018     | Sustar o protesto                                   | Não           | Não                    |
+
+<!--- comment: old occurrences for reference in the documentation
 | 1005     | Cancelamento de abatimento                          | Sim           | Não                    |
 | 1007     | Alteração do "uso da empresa"                       | Não           | Não                    |
 | 1008     | Alteração do "seu número"                           | Não           | Não                    |
-| 1009     | Protestar                                           | Sim           | Sim                    |
-| 1010     | Não protestar                                       | Sim           | Sim                    |
 | 1011     | Protesto para fins falimentares                     | Não           | Não                    |
 | 1012     | Alterar nome do pagador                             | Não           | Não                    |
 | 1013     | Alteração de endereço do pagador                    | Não           | Não                    |
 | 1014     | Alterar Cidade do pagador                           | Não           | Não                    |
 | 1015     | Alterar UF do pagador                               | Não           | Não                    |
 | 1017     | Alteração do número de dias para protesto           | Não           | Não                    |
-| 1018     | Sustar o protesto                                   | Não           | Não                    |
 | 1019     | Sustar protesto e manter em carteira                                   | Não           | Não            |
 | 1020     | Alterar CPF/CNPJ do pagador                         | Não           | Não                    |
 | 1021     | Alteração de valor com emissão de Boleto (quando a emissão é pelo Banco)                         | Não           | Não                    |
@@ -82,3 +86,4 @@ layout: pt
 | 1112     | Beneficiário não concorda com a alegação do pagador | Não           | Não                    |
 | 1113     | Alteração de dados extras (registro de multa)       | Não           | Não                    |
 | 1114     | Descontar títulos encaminhados no dia               | Não           | Não                    |
+-->

@@ -13,12 +13,15 @@ layout: pt
 | [GET /api/v1/bank_billets/:id](#informações-do-boleto) | Informações do boleto
 | [GET /api/v1/bank_billets](#listar-boletos) | Listar boletos
 | [PUT /api/v1/bank_billets/:id/cancel](#cancelar-boleto) | Cancelar boleto
+| [PATCH /api/v1/bank_billets/:id/cancel](#cancelar-boleto) | Cancelar boleto
 | [PUT /api/v1/bank_billets/:id](#alterar-boleto) | Alterar boleto
+| [PATCH /api/v1/bank_billets/:id](#alterar-boleto) | Alterar boleto
 | [POST /api/v1/bank_billets/:id/duplicate](#duplicar-boleto) | Duplicar boleto
 | [GET /api/v1/bank_billets/cnpj_cpf](#buscar-por-cpf-ou-cnpj) | Buscar por CPF ou CNPJ ([Deprecated usar Listar boletos](#listar-boletos))
 | [GET /api/v1/bank_billets/our_number](#buscar-por-nosso-número) | Buscar por nosso número ([Deprecated usar Listar boletos](#listar-boletos))
 | [GET /api/v1/bank_billets/status](#buscar-por-situação-do-boleto) | Buscar por Situação do boleto ([Deprecated usar Listar boletos](#listar-boletos))
 | [PUT /api/v1/bank_billets/:id/pay](#marcar-boleto-como-pago) | Marcar boleto como pago
+| [PATCH /api/v1/bank_billets/:id/pay](#marcar-boleto-como-pago) | Marcar boleto como pago
 | [POST /api/v1/bank_billets/cancel_all](#cancelar-boletos-em-lote) | Cancelar boletos em lote
 | [POST /api/v1/bank_billets/bulk](#criar-boletos-em-lote) | Criar boletos em lote  ([Deprecated usar Criar boleto](#criar-boleto))
 
@@ -84,14 +87,14 @@ layout: pt
 | **payment_place**               | Não   | String  | 100     | Local de Pagamento
 | **instructions**                | Não   | Text    |         | Instruções para o Caixa
 | **document_date**               | Não   | Date    |         | Data do Documento
-| **document_type**               | Sim   | String  |         | Tipo de Documento ([possíveis valores](#document_type)) Padrão: DM
+| **document_type**               | Sim   | String  |         | Tipo de Documento ([possíveis valores](#document_type)) Padrão: "02" (Duplicata Mercantil)
 | **document_number**             | Não   | String |         | Número do Documento
 | **acceptance**                  | Sim   | String  |         | Aceite. Padrão: N
 | **bank_billet_layout_id**       | Não   | Integer |         | ID do Modelo de Boleto
 | **notes**                       | Não   | Text    |         | Anotações
 | **tags**                        | Não   | Array   |         | Tags associadas ao boleto
 | **days_for_sue**                | Não   | Integer |         | Dias corridos para Protesto/Negativação
-| **days_for_revoke**             | Não   | Integer |         | Dias corridos para Baixa/Devolução
+| **days_for_revoke**             | Não   | Integer |         | Dias corridos para Baixa/Devolução*
 | **created_at**                  | N/A   | DateTime    |         | Data e hora de criação do boleto
 | **updated_at**                  | N/A   | DateTime    |         | Data e hora de atualização do boleto
 | **paid_bank**                   | N/A   | String  |         | Banco de Pagamento
@@ -147,7 +150,9 @@ layout: pt
 | **register_type**               | Não   | Integer  |         | Tipo de Registro ([possíveis valores](#register_type))
 | **split_payment**         | Não   | Boolean |         | Split de Pagamento. Caso `true`, o rateio do boleto será registrado. Informar as contas para rateio em `split_accounts`.
 | **split_accounts**       | Não   | Array |         | Contas para Split de pagamento. Válido apenas para [ABC Brasil](/bank_contracts/abc) e [Bradesco](/bank_contracts/bradesco). ([possíveis valores](#split_accounts))
+| **custom_data**       | Não   | Json |         | Disponível para envio de um JSON, os valores podem ser usados ao e-mail ou em um template personalizado. Variável a ser substituida `bank_billet.custom_data`)
 
+* Caso sua empresa utilize o serviço de registro via web service a inclusão de dias para protesto ou negativação poderá não fazer efeito. Consulte a nossa equipe de suporte para saber mais.
 
 ### Dicionário de Dados
 
@@ -1152,15 +1157,15 @@ curl -i \
     <small>Resposta:</small>
 
 <pre class="http">
-HTTP/1.1 200 OK
+HTTP/1.1 403 Forbidden
 Date: Fri, 17 Oct 2014 19:46:16 GMT
-Status: 200 OK
+Status: 403 Forbidden
 Content-Type: application/json; charset=utf-8
 ...
 
 {
   "errors": {
-    "status": ["cannot transition via cancel"]
+    "status": ["Boleto não pode ser cancelado para o status canceled"]
   }
 }
 </pre>
@@ -1214,7 +1219,7 @@ Array
 (
     [status] => Array
         (
-            [0] => cannot transition via cancel
+            [0] => Boleto não pode ser cancelado para o status canceled
         )
 
 )
@@ -1247,36 +1252,12 @@ curl -i \
     <small>Resposta:</small>
 
 <pre class="http">
-HTTP/1.1 200 OK
+HTTP/1.1 204 Not Content
 Date: Fri, 17 Oct 2014 19:46:16 GMT
-Status: 200 OK
+Status: 204 Not Content
 Content-Type: application/json; charset=utf-8
 ...
 
-{
-  "id":1,
-  "expire_at":"2014-11-15",
-  "paid_at":null,
-  "description":"Prestação de Serviço",
-  "status":"opened",
-  "url":"http://bole.to/xxxxxxxx",
-  "customer_person_type":"individual",
-  "customer_person_name":"Nome do Cliente",
-  "customer_cnpj_cpf":"125.812.717-28",
-  "customer_address":"Rua quinhentos",
-  "customer_state":"RJ",
-  "customer_neighborhood":"bairro",
-  "customer_zipcode":"12312123",
-  "customer_address_number":null,
-  "customer_address_complement":null,
-  "customer_phone_number":null,
-  "customer_email":null,
-  "send_email_on_creation":null,
-  "created_via_api":true,
-  "customer_city_name":"Rio de Janeiro",
-  "paid_amount":0.0,
-  "amount":12.34
-}
 </pre>
   </div>
   <div class="tab-pane" id="ruby6">
@@ -1475,9 +1456,9 @@ curl -i \
     <small>Resposta:</small>
 
 <pre class="http">
-HTTP/1.1 200 OK
+HTTP/1.1 422 Unprocessable Entity
 Date: Fri, 17 Oct 2014 19:46:16 GMT
-Status: 200 OK
+Status: 422 Unprocessable Entity
 Content-Type: application/json; charset=utf-8
 ...
 
@@ -1544,6 +1525,7 @@ Status Final: paid
     </div> -->
 </div>
 
+
 #### Exemplo de requisição válida
 
 <ul class="nav nav-tabs" role="tablist">
@@ -1568,36 +1550,12 @@ curl -i \
     <small>Resposta:</small>
 
 <pre class="http">
-HTTP/1.1 204 OK
+HTTP/1.1 204 Not Content
 Date: Fri, 17 Oct 2014 19:46:16 GMT
-Status: 204 OK
+Status: 204 Not Content
 Content-Type: application/json; charset=utf-8
 ...
 
-{
-  "id":1,
-  "expire_at":"2017-11-15",
-  "paid_at":null,
-  "description":"Prestação de Serviço",
-  "status":"opened",
-  "url":"http://bole.to/xxxxxxxx",
-  "customer_person_type":"individual",
-  "customer_person_name":"Nome do Cliente",
-  "customer_cnpj_cpf":"125.812.717-28",
-  "customer_address":"Rua quinhentos",
-  "customer_state":"RJ",
-  "customer_neighborhood":"bairro",
-  "customer_zipcode":"12312123",
-  "customer_address_number":null,
-  "customer_address_complement":null,
-  "customer_phone_number":null,
-  "customer_email":null,
-  "send_email_on_creation":null,
-  "created_via_api":true,
-  "customer_city_name":"Rio de Janeiro",
-  "paid_amount":0.0,
-  "amount":12.34
-}
 </pre>
   </div>
   <!-- <div class="tab-pane" id="ruby6">
@@ -2441,62 +2399,44 @@ Array
 | **bank_rate**                   | Não   | String  |         | Valor da taxa bancária. Formato: 1.345,56
 | **direct_payment**              | Não   | Boolean |         | Informa se o pagamento foi feito diretamente ao beneficiário.
 
-#### Exemplo de requisição válida
+#### Exemplo de requisição inválida
 
 <ul class="nav nav-tabs" role="tablist">
-  <li class="active"><a href="#bash2" role="tab" data-toggle="tab">Bash</a></li>
-  <!-- <li><a href="#ruby2" role="tab" data-toggle="tab">Ruby</a></li>
-  <li><a href="#php2" role="tab" data-toggle="tab">PHP</a></li> -->
+  <li class="active"><a href="#bash5" role="tab" data-toggle="tab">Bash</a></li>
+  <!-- <li><a href="#ruby5" role="tab" data-toggle="tab">Ruby</a></li>
+  <li><a href="#php5" role="tab" data-toggle="tab">PHP</a></li> -->
 </ul>
 
 <div class="tab-content">
-  <div class="tab-pane active" id="bash2">
+  <div class="tab-pane active" id="bash5">
     <small>Requisição:</small>
 
 <pre class="bash">
 curl -i \
 -H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
--d '{"bank_billet":{"paid_amount":120.34, "paid_at": "2014-11-15"}}' \
+-d '{"bank_billet":{}}' \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X PUT 'https://sandbox.boletosimples.com.br/api/v1/bank_billets/1/pay'
+-X PUT https://sandbox.boletosimples.com.br/api/v1/bank_billets/1/pay
 </pre>
 
     <small>Resposta:</small>
 
 <pre class="http">
-HTTP/1.1 204 No Content
-Date: Fri, 17 Oct 2014 19:30:06 GMT
-Status: 204
-Location: https://sandbox.boletosimples.com.br/api/v1/bank_billets/1
+HTTP/1.1 422 Unprocessable Entity
+Date: Fri, 17 Oct 2014 19:46:16 GMT
+Status: 422 Unprocessable Entity
 Content-Type: application/json; charset=utf-8
 ...
 
 {
-  "id":2,
-  "expire_at":"2014-11-20",
-  "paid_at":"2014-11-15",
-  "description":"Prestação de Serviço",
-  "status":"paid",
-  "customer_person_type":"individual",
-  "customer_person_name":"Nome do Cliente",
-  "customer_cnpj_cpf":"125.812.717-28",
-  "customer_address":"Rua quinhentos",
-  "customer_state":"RJ",
-  "customer_neighborhood":"bairro",
-  "customer_zipcode":"12312123",
-  "customer_address_number":null,
-  "customer_address_complement":null,
-  "customer_phone_number":null,
-  "customer_email":null,
-  "send_email_on_creation":null,
-  "created_via_api":true,
-  "customer_city_name":"Rio de Janeiro",
-  "paid_amount":120.34,
-  "amount":12.34
+  "errors": {
+    "bank_billet": ["não pode ficar em branco"]
+  }
 }
 </pre>
   </div>
+
   <!-- <div class="tab-pane" id="ruby2">
     <small>Requisição:</small>
 <pre class="ruby">
@@ -2613,6 +2553,41 @@ Array
 </pre>
     </div> -->
 </div>
+
+#### Exemplo de requisição válida
+
+<ul class="nav nav-tabs" role="tablist">
+  <li class="active"><a href="#bash5" role="tab" data-toggle="tab">Bash</a></li>
+  <!-- <li><a href="#ruby5" role="tab" data-toggle="tab">Ruby</a></li>
+  <li><a href="#php5" role="tab" data-toggle="tab">PHP</a></li> -->
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="bash5">
+    <small>Requisição:</small>
+
+<pre class="bash">
+curl -i \
+-H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
+-d '{"bank_billet":{"paid_amount":120.34, "paid_at": "2014-11-15"}}' \
+-H 'Content-Type: application/json' \
+-H 'User-Agent: MyApp (myapp@example.com)' \
+-X PUT https://sandbox.boletosimples.com.br/api/v1/bank_billets/1/pay
+</pre>
+
+    <small>Resposta:</small>
+
+<pre class="http">
+HTTP/1.1 204 Not Content
+Date: Fri, 17 Oct 2014 19:46:16 GMT
+Status: 204 Not Content
+Content-Type: application/json; charset=utf-8
+...
+
+</pre>
+  </div>
+  </div>
+
 
 ### Cancelar boletos em lote
 

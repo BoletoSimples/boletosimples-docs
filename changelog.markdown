@@ -22,6 +22,25 @@ Você também pode se inscrever para receber as notificações de alterações d
 
 #### Últimas alterações realizadas na API.
 
+### 30/12/2020
+
+* Adiciona o campo `default_to_import` em [Carteiras de Cobrança](/reference/v1/bank_billet_accounts)
+
+### 10/12/2020
+
+* Adiciona campo `tags` em [Clientes](/reference/v1/customers)
+* Adiciona filtro por `tags` nos [Clientes](/reference/v1/customers/#listar-clientes)
+* Corrige erro de digitação do campo `nickname` em [Clientes](/reference/v1/customers)
+* Endpoint de atualização dos [Clientes](/reference/v1/customers/#atualizar-cliente) não retorna conteúdo
+
+### 04/12/2020
+
+* Adiciona [módulo WHMCS](/modules/whmcs)
+
+### 02/12/2020
+
+* Documenta o campo `external_code` em [Clientes](reference/v1/customers/)
+* Documenta o campo `custom_data` em [Boletos](/reference/v1/bank_billets/)
 
 ### 25/05/2020
 
