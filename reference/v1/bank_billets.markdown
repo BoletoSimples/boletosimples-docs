@@ -152,7 +152,7 @@ layout: pt
 | **split_accounts**       | Não   | Array |         | Contas para Split de pagamento. Válido apenas para [ABC Brasil](/bank_contracts/abc) e [Bradesco](/bank_contracts/bradesco). ([possíveis valores](#split_accounts))
 | **custom_data**       | Não   | Json |         | Disponível para envio de um JSON, os valores podem ser usados ao e-mail ou em um template personalizado. Variável a ser substituida `bank_billet.custom_data`)
 
-* Caso sua empresa utilize o serviço de registro via web service a inclusão de dias para protesto ou negativação poderá não fazer efeito. Consulte a nossa equipe de suporte para saber mais.
+`* Caso sua empresa utilize o serviço de registro via web service a inclusão de dias para protesto ou negativação poderá não fazer efeito. Consulte a nossa equipe de suporte para saber mais.
 
 ### Dicionário de Dados
 
