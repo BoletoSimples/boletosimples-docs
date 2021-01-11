@@ -22,8 +22,6 @@ breadcrumb: Carteiras de Cobrança
 | [PUT /api/v1/bank_billet_accounts/:id/validate](#validar-carteira-de-cobrança) | Validar Carteira de Cobrança
 | [PATCH /api/v1/bank_billet_accounts/:id/set_default](#alterar-carteira-de-cobrança-padrão) | Alterar Carteira de Cobrança padrão
 | [PUT /api/v1/bank_billet_accounts/:id/set_default](#alterar-carteira-de-cobrança-padrão) | Alterar Carteira de Cobrança padrão
-| [PATCH /api/v1/bank_billet_accounts/:id/set_default_to_import](#alterar-carteira-de-cobrança-padrão-por-remessa) | Alterar Carteira de Cobrança padrão por remessa
-| [PUT /api/v1/bank_billet_accounts/:id/set_default_to_import](#alterar-carteira-de-cobrança-padrão-por-remessa) | Alterar Carteira de Cobrança padrão por remessa 
 
 ### Modelo de Dados
 
@@ -53,7 +51,6 @@ breadcrumb: Carteiras de Cobrança
 | **bank_contract**        | Não   | Hash    |         | Dados da Carteira ***
 | **custom_name**          | Não   | String  | 255     | Nome da Carteira para identificação dentro do Boleto Simples
 | [**kind**](#kind) | Não | String |   | Tipo de CNAB
-| [**default_to_import**](#default_to_import) | Não | Boolean |   | Carteira padrão para remessa ** / ***
 
 '*' Depende da carteira escolhida.
 
@@ -87,12 +84,6 @@ Quando o valor é informado corretamente, ou no retorno processado, o banco diz 
 O campo `default` determina a carteira de cobrança que será usada na criação do boleto quando nenhuma carteira for informada.
 
 No momento que a primeira carteira é homologada (passa para o `status` = `active`), ela recebe o valor `default` = true
-
-#### default_to_import
-
-O campo `default_to_import` define a carteira padrão caso a cobrança seja feita por remessa.
-
-Só é possível ter uma carteira como padrão.
 
 #### kind
 
@@ -264,8 +255,7 @@ Content-Type: application/json; charset=utf-8
     "sufix":"02",
     "variation":null,
     "name":"1/02 - Simples Sem Registro"
-  },
-  "default_to_import": false
+  }
 }
 </pre>
   </div>
@@ -295,7 +285,6 @@ end
 <pre class="ruby">
 Sucesso :)
 {
-      "default_to_import" => false,
       "bank_contract_slug" => "sicoob-02",
          "next_our_number" => "0000001",
            "agency_number" => "4327",
@@ -376,7 +365,6 @@ Array
     [mobile_local_code] =>
     [state] => RJ
     [created_via_api] => 1
-    [default_to_import] => false
 )
 </pre>
   </div> -->
@@ -446,8 +434,7 @@ Content-Type: application/json; charset=utf-8
     "sufix":"02",
     "variation":null,
     "name":"1/02 - Simples Sem Registro"
-  },
-  "default_to_import": false
+  }
 }
 </pre>
   </div>
@@ -463,7 +450,6 @@ ap @bank_billet_account.attributes
 
 <pre class="ruby">
 {
-      "default_to_import" => false,
       "bank_contract_slug" => "sicoob-02",
          "next_our_number" => "0000001",
            "agency_number" => "4327",
@@ -527,7 +513,6 @@ Array
     [mobile_local_code] =>
     [state] => RJ
     [created_via_api] => 1
-    [default_to_import] => false
 )
 </pre>
   </div> -->
@@ -816,8 +801,7 @@ Content-Type: application/json; charset=utf-8
       "sufix":"02",
       "variation":null,
       "name":"1/02 - Simples Sem Registro"
-    },
-    "default_to_import": false
+    }
   }
 ]
 </pre>
@@ -937,8 +921,7 @@ Content-Type: application/json; charset=utf-8
     "sufix":"02",
     "variation":null,
     "name":"1/02 - Simples Sem Registro"
-  },
-  "default_to_import": false
+  }
 }
 </pre>
   </div>
@@ -955,7 +938,6 @@ ap @bank_billet_account.attributes
 
 <pre class="ruby">
 {
-      "default_to_import" => false,
       "bank_contract_slug" => "sicoob-02",
          "next_our_number" => "0000001",
            "agency_number" => "4327",
@@ -1001,7 +983,6 @@ print_r($bank_billet_account->attributes());
 <pre class="php">
 Array
 (
-    [default_to_import] => false
     [id] => 66
     [city_name] => Rio de Janeiro
     [person_name] => Joao da Silva
@@ -1391,81 +1372,4 @@ Sucesso :)
 Novo nome: Nome 1234
 </pre>
   </div> -->
-</div>
-
-### Alterar carteira de cobrança padrão por remessa
-
-`PATCH /api/v1/bank_billet_accounts/:id/set_default_to_import` ou <br> `PUT /api/v1/bank_billet_accounts/:id/set_default_to_import`
-
-### Modelo de Dados
-
-| Parâmetro                | Obrigatório  | Tipo    | Tamanho | Descrição
-| ------------------------ | ----- | ------- | ------- | ------------------------
-| **id**                   | Sim   | Integer |         | ID da carteira de cobrança
-| **default_to_import**              | Sim   | Boolean  |         | Define a carteira padrão para remessa
-
-#### Exemplo de requisição inválida
-
-<ul class="nav nav-tabs" role="tablist">
-  <li class="active"><a href="#bash4" role="tab" data-toggle="tab">Bash</a></li>
-</ul>
-
-<div class="tab-content">
-  <div class="tab-pane active" id="bash4">
-    <small>Requisição:</small>
-
-<pre class="bash">
-curl -i \
--H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
--d '{"default_to_import":""}' \
--H 'Content-Type: application/json' \
--H 'User-Agent: MyApp (myapp@example.com)' \
--X PATCH 'https://sandbox.boletosimples.com.br/api/v1/bank_billet_accounts/1/set_default_to_import'
-</pre>
-
-    <small>Resposta:</small>
-
-<pre class="http">
-HTTP/1.1 422 Unprocessable Entity
-Server: Cowboy
-Connection: keep-alive
-Strict-Transport-Security: max-age=2592000
-Content-Type: application/json; charset=utf-8
-...
-
-{"errors":{"default_to_import":["não pode ficar em branco"]}}
-</pre>
-  </div>
-</div>
-
-#### Exemplo de requisição válida
-
-<ul class="nav nav-tabs" role="tablist">
-  <li class="active"><a href="#bash5" role="tab" data-toggle="tab">Bash</a></li>
-</ul>
-
-<div class="tab-content">
-  <div class="tab-pane active" id="bash5">
-    <small>Requisição:</small>
-
-<pre class="bash">
-curl -i \
--H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
--d '{"default_to_import":true}' \
--H 'Content-Type: application/json' \
--H 'User-Agent: MyApp (myapp@example.com)' \
--X PUT 'https://sandbox.boletosimples.com.br/api/v1/bank_billet_accounts/1/set_default_to_import'
-</pre>
-
-    <small>Resposta:</small>
-
-<pre class="http">
-HTTP/1.1 204 No Content
-Date: Fri, 17 Oct 2014 19:30:06 GMT
-Status: 204 No Content
-Location: https://sandbox.boletosimples.com.br/api/v1/bank_billet_accounts/1/set_default_to_import
-...
-
-</pre>
-  </div>
 </div>

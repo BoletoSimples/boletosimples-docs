@@ -22,6 +22,10 @@ Você também pode se inscrever para receber as notificações de alterações d
 
 #### Últimas alterações realizadas na API.
 
+### 11/01/2020
+
+* Depreciado o campo `default_to_import` em [Carteiras de Cobrança](/reference/v1/bank_billet_accounts)
+
 ### 30/12/2020
 
 * Adiciona o campo `default_to_import` em [Carteiras de Cobrança](/reference/v1/bank_billet_accounts)
