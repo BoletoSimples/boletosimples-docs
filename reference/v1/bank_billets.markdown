@@ -93,8 +93,8 @@ layout: pt
 | **bank_billet_layout_id**       | Não   | Integer |         | ID do Modelo de Boleto
 | **notes**                       | Não   | Text    |         | Anotações
 | **tags**                        | Não   | Array   |         | Tags associadas ao boleto
-| **days_for_sue**                | Não   | Integer |         | Dias corridos para Protesto
-| **days_for_revoke**             | Não   | Integer |         | Dias corridos para Baixa/Devolução\*
+| **days_for_sue**                | Não   | Integer |         | Dias corridos para Protesto\*
+| **days_for_revoke**             | Não   | Integer |         | Dias corridos para Baixa/Devolução
 | **created_at**                  | N/A   | DateTime    |         | Data e hora de criação do boleto
 | **updated_at**                  | N/A   | DateTime    |         | Data e hora de atualização do boleto
 | **paid_bank**                   | N/A   | String  |         | Banco de Pagamento
