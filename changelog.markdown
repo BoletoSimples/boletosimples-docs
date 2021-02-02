@@ -22,6 +22,10 @@ Você também pode se inscrever para receber as notificações de alterações d
 
 #### Últimas alterações realizadas na API.
 
+### 02/02/2021
+
+- Adiciona o campo `allow_expiration_on_weekends` em [Carteiras de Cobrança](/reference/v1/bank_billet_accounts)
+
 ### 28/01/2021
 
 - Adiciona o campo `days_for_negativation` em [Boletos](/reference/v1/bank_billets/#days_for_negativation)
