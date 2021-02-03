@@ -52,6 +52,8 @@ layout: pt
 | **customer_mobile_local_code**  | Não   | String  | 2       | DDD do Celular
 | **customer_mobile_number**      | Não   | String  | 9       | Celular
 | **customer_notes**              | Não   | Text    |         | Anotações do Pagador
+| **customer_ignore_email**       | Não | Boolean | | Nunca enviar e-mail para este cliente
+| **ignore_email**                | Não | Boolean | | Não enviar este boleto por email
 | **meta**                        | Não   | Campo Genérico | | Aceita qualquer formato passado. Pode ser usado para salvar dados que não existam dentro do Boleto Simples. Exemplo: {pedido: 12345}
 | **status**                      | N/A   | String  |         | Situação do boleto ([possíveis valores](#status))
 | **paid_at**                     | N/A   | Date    |         | Data do pagamento

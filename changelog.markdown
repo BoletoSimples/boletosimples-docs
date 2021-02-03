@@ -22,6 +22,15 @@ Você também pode se inscrever para receber as notificações de alterações d
 
 #### Últimas alterações realizadas na API.
 
+### 02/02/2021
+
+- Adiciona o campo `allow_expiration_on_weekends` em [Carteiras de Cobrança](/reference/v1/bank_billet_accounts)
+- Documenta o campo `customer_ignore_email` em [Boletos](/reference/v1/bank_billets)
+- Documenta o campo `customer_ignore_email` em [Carnês](/reference/v1/installments)
+- Documenta o campo `customer_ignore_email` em [Assinaturas](/reference/v1/customer_subscriptions)
+- Documenta o campo `ignore_email` em [Boletos](/reference/v1/bank_billets)
+- Documenta o campo `ignore_email` em [Clientes](/reference/v1/customers)
+
 ### 28/01/2021
 
 - Adiciona o campo `days_for_negativation` em [Boletos](/reference/v1/bank_billets/#days_for_negativation)
