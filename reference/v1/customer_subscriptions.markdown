@@ -102,7 +102,7 @@ breadcrumb: Assinaturas
 #### cycle
 
 | biweekly | Quinzenal
-| bimonthly | Bimestralsou
+| bimonthly | Bimestral
 | monthly | Mensal
 | quarterly | Trimestral
 | semiannual | Semestral
