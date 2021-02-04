@@ -127,16 +127,16 @@ layout: pt
 | **second_instruction** | Não | String | 2 | Segunda Instrução(CNAB 400). Consulte os possíveis valores <a href="/bank_contracts">para cada banco</a>.
 | **sue_code** | Não | String | 1 | Código de Protesto(CNAB 240). Consulte os possíveis valores <a href="/bank_contracts">para cada banco</a>.
 | **revoke_code** | Não | String | 1 | Código de Baixa(CNAB 240). Consulte os possíveis valores <a href="/bank_contracts">para cada banco</a>.
-| **guarantor_name** | Não | String | 100 | Nome do Sacador/Avalista
-| **guarantor_cnpj_cpf** | Não | String | 20 | CNPJ/CPF do Sacador/Avalista
-| **guarantor_zipcode** | Não | String | 8 | CEP (formato 99999999) do Sacador/Avalista
-| **guarantor_address** | Não | String | 255 | Endereço do Sacador/Avalista
-| **guarantor_city_name** | Não | String | 60 | Cidade(Nome deve estar correto e completo) do Sacador/Avalista
-| **guarantor_state** | Não | String | 2 | Estado do Sacador/Avalista
-| **guarantor_neighborhood** | Não | String | 80 | Bairro do Sacador/Avalista
-| **guarantor_address_number** | Não | String | 10 | Número do Sacador/Avalista
-| **guarantor_address_complement** | Não | String | 60 | Complemento do Sacador/Avalista
-| **guarantor_phone_number** | Não | String | 11 | Telefone (com DDD) do Sacador/Avalista
+| **guarantor_name** | Não | String | 100 | Nome do Benecifiário final (Sacador/Avalista)
+| **guarantor_cnpj_cpf** | Não | String | 20 | CNPJ/CPF do Benecifiário final (Sacador/Avalista)
+| **guarantor_zipcode** | Não | String | 8 | CEP (formato 99999999) do Benecifiário final (Sacador/Avalista)
+| **guarantor_address** | Não | String | 255 | Endereço do Benecifiário final (Sacador/Avalista)
+| **guarantor_city_name** | Não | String | 60 | Cidade(Nome deve estar correto e completo) do Benecifiário final (Sacador/Avalista)
+| **guarantor_state** | Não | String | 2 | Estado do Benecifiário final (Sacador/Avalista)
+| **guarantor_neighborhood** | Não | String | 80 | Bairro do Benecifiário final (Sacador/Avalista)
+| **guarantor_address_number** | Não | String | 10 | Número do Benecifiário final (Sacador/Avalista)
+| **guarantor_address_complement** | Não | String | 60 | Complemento do Benecifiário final (Sacador/Avalista)
+| **guarantor_phone_number** | Não | String | 11 | Telefone (com DDD) do Benecifiário final (Sacador/Avalista)
 | **registered_at** | N/A | DateTime | | Data e hora do registro
 | **prevent_registration** | Não | Boolean | | Caso `true`, impede que o boleto seja registrado. Para ser usado nos casos em que o boleto já foi registrado fora do Boleto Simples mas deseja-se incluí-lo no sistema.
 | **control_number** | Não | String | 25 | Pode conter qualquer informação de interesse da Empresa. A informação contida neste campo sempre retornará com o respectivo título no arquivo-retorno. Caso não seja informado, será enviado na remessa o valor passado em `document_number`.
