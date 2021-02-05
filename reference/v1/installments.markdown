@@ -8,104 +8,115 @@ layout: pt
 
 ## Carnês
 
-| Recurso                  | Descrição
-| ------------------------ | ------------------------
-| [POST /api/v1/installments](#criar-carnê) | Criar carnê
-| [GET /api/v1/installments/:id](#informações-do-carnê) | Informações do carnê
-| [GET /api/v1/installments](#listar-carnês) | Listar Carnês
-| [DELETE /api/v1/installments/:id](#excluir-carnê) | Excluir carnê
+| Recurso                                               | Descrição            |
+| ----------------------------------------------------- | -------------------- |
+| [POST /api/v1/installments](#criar-carnê)             | Criar carnê          |
+| [GET /api/v1/installments/:id](#informações-do-carnê) | Informações do carnê |
+| [GET /api/v1/installments](#listar-carnês)            | Listar Carnês        |
+| [DELETE /api/v1/installments/:id](#excluir-carnê)     | Excluir carnê        |
 
 ### Modelo de Dados
 
-| Parâmetro                       | Obrigatório  | Tipo    | Tamanho | Descrição
-| ------------------------------- | ----- | ------- | ------- | ------------------------
-| **id**                          | N/A   | Integer |         | ID do carnê
-| **customer_id**                 | Não   | Integer |         | ID do [Cliente](/reference/v1/customers/). Quando esse ID é passado, os campos `customer_person_name`, `customer_cnpj_cpf`, `customer_zipcode`, `customer_address`, `customer_city_name`, `customer_state` e `customer_neighborhood` não são obrigatórios.
-| **customer_person_name**        | Sim   | String  | 120     | Nome ou Razão Social do Pagador
-| **customer_nickname**           | Não   | String  | 255     | Apelido ou Nome Fantasia do Pagador
-| **customer_cnpj_cpf**           | Sim   | String  | 20      | CNPJ ou CPF do Pagador
-| **customer_zipcode**            | Sim   | Integer | 8       | CEP (formato 99999999)
-| **customer_email**              | Não   | String  | 80     | E-mail do Pagador
-| **customer_email_cc**           | Não   | String  | 80     | E-mail alternativo do Pagador
-| **customer_address**            | Sim   | String    | 255        | Endereço
-| **customer_city_name**          | Sim   | String  | 60     | Cidade(Nome deve estar correto e completo)
-| **customer_state**              | Sim   | String  | 2       | Estado
-| **customer_neighborhood**       | Sim   | String  | 80     | Bairro
-| **customer_address_number**     | Não   | String  | 10     | Número
-| **customer_address_complement** | Não   | String  | 60     | Complemento
-| **customer_phone_number**       | Não   | String  | 11      | Telefone (com DDD)
-| **customer_mobile_local_code**  | Não   | String  | 2       | DDD do Celular
-| **customer_mobile_number**      | Não   | String  | 9       | Celular
-| **customer_notes**              | Não   | Text    |         | Anotações do Pagador
-| **customer_person_type**        | N/A   | String  | 10     | Tipo de pagador ([possíveis valores](#customer_person_type))
-| **bank_billet_account_id**      | Sim   | Integer |         | ID da [Carteira de Cobrança](/reference/v1/bank_billet_accounts/). Se não informado, usará a carteira padrão.
-| **amount**                      | Sim   | String  |         | Valor do carnê (R$) Formato: 1.234,34
-| **cycle**                       | Não   | String  | 20      | Ciclo do carnê ([possíveis valores](#cycle)). Default: monthly
-| **start_at**                    | Sim   | Date    |         | Data da Primeira cobrança.
-| **end_at**                      | Não   | Date    |         | Data da última cobrança.
-| **total**                       | Sim   | Integer |         | Quantidade de parcelas.
-| **description**                 | Sim   | Text    |         | Descrição do produto vendido ou serviço prestado.
-| **instructions**                | Não   | Text    |         | Instruções para o caixa
-| **status**                      | N/A   | String  |         | Situação do carnê ([possíveis valores](#status))
-| **fine_type**                   | Não   | Integer |         | Tipo de multa ([possíveis valores](#fine_type))
-| **fine_percentage**             | Não   | Float   |         | Porcentagem de Multa por Atraso Ex: 2% x R$ 250,00 = R$ 5,00. Obrigatória se `fine_type` é igual a 1
-| **fine_value**                  | Não   | String  |         | Valor da multa. Obrigatório se `fine_type` é igual a 2. (R$) Formato: 1.234,34
-| **days_for_fine**               | Não   | Integer |         | Quantidade de dias após o vencimento que a multa começará a incidir. O valor default é 1 dia (o dia posterior ao vencimento).
-| **fine_for_delay**              | Não   | Float   |         | Alias para `fine_percentage`
-| **interest_type**               | Não   | Integer |         | Tipo de juros ([possíveis valores](#interest_type))
-| **interest_percentage**         | Não   | Float   |         | Porcentagem diária de juros. De 0.0 a 100.0 (Ex 1.5% = 1.5) Obrigatório se `interest_type` é igual a 1.
-| **interest_value**              | Não   | String  |         | Valor diário de juros. Obrigatório se `interest_type` é igual a 2. (R$) Formato: 1.234,34
-| **interest_daily_percentage**   | Não   | Float   |         | Porcentagem diária de juros. De 0.0 a 100.0 (Ex 1.5% = 1.5) Obrigatório se `interest_type` é igual a 1 ou 3. <span style="display: block;" class="alert alert-danger"><strong>ATENÇÃO</strong> Este atributo está descontinuado e será removido do sistema em breve. Utilize <code class="highlighter-rouge">interest_percentage</code>.</span>
-| **interest_daily_value**        | Não   | String  |         | Valor diário de juros. Obrigatório se `interest_type` é igual a 2 ou 4. (R$) Formato: 1.234,34. <span style="display: block;" class="alert alert-danger"><strong>ATENÇÃO</strong> Este atributo está descontinuado e será removido do sistema em breve. Utilize <code class="highlighter-rouge">interest_value</code>.</span>
-| **interest_monthly_percentage** | Não   | Float   |         | Juros de mora mensal (O valor será dividido por 30. Ex 3% = 0,1% ao dia.) Obrigatório se `interest_type` é igual a 5 ou 6. <span style="display: block;" class="alert alert-danger"><strong>ATENÇÃO</strong> Este atributo está descontinuado e será removido do sistema em breve. Utilize <code class="highlighter-rouge">interest_percentage</code> passando a taxa diária.</span>
-| **days_for_interest**               | Não   | Integer |         | Quantidade de dias após o vencimento que a mora começará a incidir. O valor default é 1 dia (o dia posterior ao vencimento).
-| **late_payment_interest**       | Não   | Float   |         | Alias para `interest_monthly_percentage`
-| **discount_type**               | Não   | Integer |         | Tipo de desconto. O tipo será o mesmo para todos os três descontos, caso existam. ([possíveis valores](#discount_type))
-| **discount_value**              | Não   | String  |         | Valor do desconto. Obrigatório se `discount_type` é igual a 1. (R$) Formato: 1.234,34
-| **discount_percentage**         | Não   | Float   |         | Percentual do valor do boleto equivalente ao desconto. Obrigatório se `discount_type` é igual a 2
-| **days_for_discount**           | Não   | Integer |         | Dias para desconto. Obrigatório se `discount_type` é diferente de zero
-| **second_discount_value**              | Não   | String  |         | Valor do segundo desconto. (R$) Formato: 1.234,34.
-| **second_discount_percentage**         | Não   | Float   |         | Percentual do valor do boleto equivalente ao segundo desconto.
-| **days_for_second_discount**           | Não   | Integer |         | Dias para segundo desconto.
-| **third_discount_value**              | Não   | String  |         | Valor do terceiro desconto. (R$) Formato: 1.234,34
-| **third_discount_percentage**         | Não   | Float   |         | Percentual do valor do boleto equivalente ao terceiro desconto.
-| **days_for_third_discount**           | Não   | Integer |         | Dias para terceiro desconto.
-| **bank_billet_layout_id**       | Não   | Integer |         | ID do Modelo de Boleto
-| **url**                         | N/A   | String  |         | URL para visualização do carnê
-| **bank_billet_ids**             | N/A   | Array   |         | IDs de boletos vinculados ao carnê
-| **notes**                       | Não   | Text    |         | Anotações
-| **tags**                        | Não   | Array   |         | Tags associadas
-| **prevent_registration**        | Não   | Boolean |         | Caso `true`, impede que o boleto seja registrado. Para ser usado nos casos em que o boleto já foi registrado fora do Boleto Simples mas deseja-se incluí-lo no sistema.
-| **divergent_payment_type**       | Não   | Integer |         | Tipo de pagamento divergente. Válido apenas para [Itaú](/bank_contracts/itau) e [Caixa](/bank_contracts/cef). ([possíveis valores](#divergent_payment_type))
-| **divergent_payment_value_type** | Não   | Integer |         | Tipo de valor a considerar para os limites de pagamentos. Válido apenas para [Itaú](/bank_contracts/itau) e [Caixa](/bank_contracts/cef). ([possíveis valores](#divergent_payment_value_type))
-| **divergent_payment_minimum_value** | Não | Float |          | Valor mínimo para a faixa de pagamentos divergentes. Válido apenas para [Itaú](/bank_contracts/itau) e [Caixa](/bank_contracts/cef).
-| **divergent_payment_maximum_value** | Não | Float |          | Valor máximo para a faixa de pagamentos divergentes. Válido apenas para [Itaú](/bank_contracts/itau) e [Caixa](/bank_contracts/cef).
-| **divergent_payment_minimum_percentage** | Não | Float |          | Percentual mínimo para a faixa de pagamentos divergentes. Válido apenas para [Itaú](/bank_contracts/itau) e [Caixa](/bank_contracts/cef).
-| **divergent_payment_maximum_percentage** | Não | Float |          | Percentual máximo para a faixa de pagamentos divergentes. Válido apenas para [Itaú](/bank_contracts/itau) e [Caixa](/bank_contracts/cef).
-| **divergent_payment_limit**         | Não | Integer |          | Quantidade de pagamentos permitida. Obrigatório se informados dados para pagamento divergente. Usado somente pela [Caixa](/bank_contracts/cef).
-| **custom_attachment_name** | Não | String | 255 | Nome para ser usado nos arquivos de boleto enviados para o cliente em notificações. Aceita uso de variáveis. Caso seja deixado vazio, o padrão é a palavra "boleto" acompanhada do ID.
+| Parâmetro                                | Obrigatório | Tipo    | Tamanho | Descrição                                                                                                                                                                                                                                                                                                                                                                            |
+| ---------------------------------------- | ----------- | ------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **id**                                   | N/A         | Integer |         | ID do carnê                                                                                                                                                                                                                                                                                                                                                                          |
+| **customer_id**                          | Não         | Integer |         | ID do [Cliente](/reference/v1/customers/). Quando esse ID é passado, os campos `customer_person_name`, `customer_cnpj_cpf`, `customer_zipcode`, `customer_address`, `customer_city_name`, `customer_state` e `customer_neighborhood` não são obrigatórios.                                                                                                                           |
+| **customer_person_name**                 | Sim         | String  | 120     | Nome ou Razão Social do Pagador                                                                                                                                                                                                                                                                                                                                                      |
+| **customer_nickname**                    | Não         | String  | 255     | Apelido ou Nome Fantasia do Pagador                                                                                                                                                                                                                                                                                                                                                  |
+| **customer_cnpj_cpf**                    | Sim         | String  | 20      | CNPJ ou CPF do Pagador                                                                                                                                                                                                                                                                                                                                                               |
+| **customer_zipcode**                     | Sim         | Integer | 8       | CEP (formato 99999999)                                                                                                                                                                                                                                                                                                                                                               |
+| **customer_email**                       | Não         | String  | 80      | E-mail do Pagador                                                                                                                                                                                                                                                                                                                                                                    |
+| **customer_email_cc**                    | Não         | String  | 80      | E-mail alternativo do Pagador                                                                                                                                                                                                                                                                                                                                                        |
+| **customer_address**                     | Sim         | String  | 255     | Endereço                                                                                                                                                                                                                                                                                                                                                                             |
+| **customer_city_name**                   | Sim         | String  | 60      | Cidade(Nome deve estar correto e completo)                                                                                                                                                                                                                                                                                                                                           |
+| **customer_state**                       | Sim         | String  | 2       | Estado                                                                                                                                                                                                                                                                                                                                                                               |
+| **customer_neighborhood**                | Sim         | String  | 80      | Bairro                                                                                                                                                                                                                                                                                                                                                                               |
+| **customer_address_number**              | Não         | String  | 10      | Número                                                                                                                                                                                                                                                                                                                                                                               |
+| **customer_address_complement**          | Não         | String  | 60      | Complemento                                                                                                                                                                                                                                                                                                                                                                          |
+| **customer_phone_number**                | Não         | String  | 11      | Telefone (com DDD)                                                                                                                                                                                                                                                                                                                                                                   |
+| **customer_mobile_local_code**           | Não         | String  | 2       | DDD do Celular                                                                                                                                                                                                                                                                                                                                                                       |
+| **customer_mobile_number**               | Não         | String  | 9       | Celular                                                                                                                                                                                                                                                                                                                                                                              |
+| **customer_notes**                       | Não         | Text    |         | Anotações do Pagador                                                                                                                                                                                                                                                                                                                                                                 |
+| **customer_person_type**                 | N/A         | String  | 10      | Tipo de pagador ([possíveis valores](#customer_person_type))                                                                                                                                                                                                                                                                                                                         |
+| **customer_ignore_email**                | Não         | Boolean |         | Nunca enviar e-mail para este cliente                                                                                                                                                                                                                                                                                                                                                |
+| **bank_billet_account_id**               | Sim         | Integer |         | ID da [Carteira de Cobrança](/reference/v1/bank_billet_accounts/). Se não informado, usará a carteira padrão.                                                                                                                                                                                                                                                                        |
+| **amount**                               | Sim         | String  |         | Valor do carnê (R$) Formato: 1.234,34                                                                                                                                                                                                                                                                                                                                                |
+| **cycle**                                | Não         | String  | 20      | Ciclo do carnê ([possíveis valores](#cycle)). Default: monthly                                                                                                                                                                                                                                                                                                                       |
+| **start_at**                             | Sim         | Date    |         | Data da Primeira cobrança.                                                                                                                                                                                                                                                                                                                                                           |
+| **end_at**                               | Não         | Date    |         | Data da última cobrança.                                                                                                                                                                                                                                                                                                                                                             |
+| **total**                                | Sim         | Integer |         | Quantidade de parcelas.                                                                                                                                                                                                                                                                                                                                                              |
+| **description**                          | Sim         | Text    |         | Descrição do produto vendido ou serviço prestado.                                                                                                                                                                                                                                                                                                                                    |
+| **instructions**                         | Não         | Text    |         | Instruções para o caixa                                                                                                                                                                                                                                                                                                                                                              |
+| **status**                               | N/A         | String  |         | Situação do carnê ([possíveis valores](#status))                                                                                                                                                                                                                                                                                                                                     |
+| **fine_type**                            | Não         | Integer |         | Tipo de multa ([possíveis valores](#fine_type))                                                                                                                                                                                                                                                                                                                                      |
+| **fine_percentage**                      | Não         | Float   |         | Porcentagem de Multa por Atraso Ex: 2% x R$ 250,00 = R$ 5,00. Obrigatória se `fine_type` é igual a 1                                                                                                                                                                                                                                                                                 |
+| **fine_value**                           | Não         | String  |         | Valor da multa. Obrigatório se `fine_type` é igual a 2. (R$) Formato: 1.234,34                                                                                                                                                                                                                                                                                                       |
+| **days_for_fine**                        | Não         | Integer |         | Quantidade de dias após o vencimento que a multa começará a incidir. O valor default é 1 dia (o dia posterior ao vencimento).                                                                                                                                                                                                                                                        |
+| **fine_for_delay**                       | Não         | Float   |         | Alias para `fine_percentage`                                                                                                                                                                                                                                                                                                                                                         |
+| **interest_type**                        | Não         | Integer |         | Tipo de juros ([possíveis valores](#interest_type))                                                                                                                                                                                                                                                                                                                                  |
+| **interest_percentage**                  | Não         | Float   |         | Porcentagem diária de juros. De 0.0 a 100.0 (Ex 1.5% = 1.5) Obrigatório se `interest_type` é igual a 1.                                                                                                                                                                                                                                                                              |
+| **interest_value**                       | Não         | String  |         | Valor diário de juros. Obrigatório se `interest_type` é igual a 2. (R$) Formato: 1.234,34                                                                                                                                                                                                                                                                                            |
+| **interest_daily_percentage**            | Não         | Float   |         | Porcentagem diária de juros. De 0.0 a 100.0 (Ex 1.5% = 1.5) Obrigatório se `interest_type` é igual a 1 ou 3. <span style="display: block;" class="alert alert-danger"><strong>ATENÇÃO</strong> Este atributo está descontinuado e será removido do sistema em breve. Utilize <code class="highlighter-rouge">interest_percentage</code>.</span>                                      |
+| **interest_daily_value**                 | Não         | String  |         | Valor diário de juros. Obrigatório se `interest_type` é igual a 2 ou 4. (R$) Formato: 1.234,34. <span style="display: block;" class="alert alert-danger"><strong>ATENÇÃO</strong> Este atributo está descontinuado e será removido do sistema em breve. Utilize <code class="highlighter-rouge">interest_value</code>.</span>                                                        |
+| **interest_monthly_percentage**          | Não         | Float   |         | Juros de mora mensal (O valor será dividido por 30. Ex 3% = 0,1% ao dia.) Obrigatório se `interest_type` é igual a 5 ou 6. <span style="display: block;" class="alert alert-danger"><strong>ATENÇÃO</strong> Este atributo está descontinuado e será removido do sistema em breve. Utilize <code class="highlighter-rouge">interest_percentage</code> passando a taxa diária.</span> |
+| **days_for_interest**                    | Não         | Integer |         | Quantidade de dias após o vencimento que a mora começará a incidir. O valor default é 1 dia (o dia posterior ao vencimento).                                                                                                                                                                                                                                                         |
+| **late_payment_interest**                | Não         | Float   |         | Alias para `interest_monthly_percentage`                                                                                                                                                                                                                                                                                                                                             |
+| **discount_type**                        | Não         | Integer |         | Tipo de desconto. O tipo será o mesmo para todos os três descontos, caso existam. ([possíveis valores](#discount_type))                                                                                                                                                                                                                                                              |
+| **discount_value**                       | Não         | String  |         | Valor do desconto. Obrigatório se `discount_type` é igual a 1. (R$) Formato: 1.234,34                                                                                                                                                                                                                                                                                                |
+| **discount_percentage**                  | Não         | Float   |         | Percentual do valor do boleto equivalente ao desconto. Obrigatório se `discount_type` é igual a 2                                                                                                                                                                                                                                                                                    |
+| **days_for_discount**                    | Não         | Integer |         | Dias para desconto. Obrigatório se `discount_type` é diferente de zero                                                                                                                                                                                                                                                                                                               |
+| **second_discount_value**                | Não         | String  |         | Valor do segundo desconto. (R$) Formato: 1.234,34.                                                                                                                                                                                                                                                                                                                                   |
+| **second_discount_percentage**           | Não         | Float   |         | Percentual do valor do boleto equivalente ao segundo desconto.                                                                                                                                                                                                                                                                                                                       |
+| **days_for_second_discount**             | Não         | Integer |         | Dias para segundo desconto.                                                                                                                                                                                                                                                                                                                                                          |
+| **third_discount_value**                 | Não         | String  |         | Valor do terceiro desconto. (R$) Formato: 1.234,34                                                                                                                                                                                                                                                                                                                                   |
+| **third_discount_percentage**            | Não         | Float   |         | Percentual do valor do boleto equivalente ao terceiro desconto.                                                                                                                                                                                                                                                                                                                      |
+| **days_for_third_discount**              | Não         | Integer |         | Dias para terceiro desconto.                                                                                                                                                                                                                                                                                                                                                         |
+| **bank_billet_layout_id**                | Não         | Integer |         | ID do Modelo de Boleto                                                                                                                                                                                                                                                                                                                                                               |
+| **url**                                  | N/A         | String  |         | URL para visualização do carnê                                                                                                                                                                                                                                                                                                                                                       |
+| **bank_billet_ids**                      | N/A         | Array   |         | IDs de boletos vinculados ao carnê                                                                                                                                                                                                                                                                                                                                                   |
+| **notes**                                | Não         | Text    |         | Anotações                                                                                                                                                                                                                                                                                                                                                                            |
+| **tags**                                 | Não         | Array   |         | Tags associadas                                                                                                                                                                                                                                                                                                                                                                      |
+| **prevent_registration**                 | Não         | Boolean |         | Caso `true`, impede que o boleto seja registrado. Para ser usado nos casos em que o boleto já foi registrado fora do Boleto Simples mas deseja-se incluí-lo no sistema.                                                                                                                                                                                                              |
+| **divergent_payment_type**               | Não         | Integer |         | Tipo de pagamento divergente. Válido apenas para [Itaú](/bank_contracts/itau) e [Caixa](/bank_contracts/cef). ([possíveis valores](#divergent_payment_type))                                                                                                                                                                                                                         |
+| **divergent_payment_value_type**         | Não         | Integer |         | Tipo de valor a considerar para os limites de pagamentos. Válido apenas para [Itaú](/bank_contracts/itau) e [Caixa](/bank_contracts/cef). ([possíveis valores](#divergent_payment_value_type))                                                                                                                                                                                       |
+| **divergent_payment_minimum_value**      | Não         | Float   |         | Valor mínimo para a faixa de pagamentos divergentes. Válido apenas para [Itaú](/bank_contracts/itau) e [Caixa](/bank_contracts/cef).                                                                                                                                                                                                                                                 |
+| **divergent_payment_maximum_value**      | Não         | Float   |         | Valor máximo para a faixa de pagamentos divergentes. Válido apenas para [Itaú](/bank_contracts/itau) e [Caixa](/bank_contracts/cef).                                                                                                                                                                                                                                                 |
+| **divergent_payment_minimum_percentage** | Não         | Float   |         | Percentual mínimo para a faixa de pagamentos divergentes. Válido apenas para [Itaú](/bank_contracts/itau) e [Caixa](/bank_contracts/cef).                                                                                                                                                                                                                                            |
+| **divergent_payment_maximum_percentage** | Não         | Float   |         | Percentual máximo para a faixa de pagamentos divergentes. Válido apenas para [Itaú](/bank_contracts/itau) e [Caixa](/bank_contracts/cef).                                                                                                                                                                                                                                            |
+| **divergent_payment_limit**              | Não         | Integer |         | Quantidade de pagamentos permitida. Obrigatório se informados dados para pagamento divergente. Usado somente pela [Caixa](/bank_contracts/cef).                                                                                                                                                                                                                                      |
+| **custom_attachment_name**               | Não         | String  | 255     | Nome para ser usado nos arquivos de boleto enviados para o cliente em notificações. Aceita uso de variáveis. Caso seja deixado vazio, o padrão é a palavra "boleto" acompanhada do ID.                                                                                                                                                                                               |
+| **guarantor_name** | Não | String | 100 | Nome do Benecifiário final (Sacador/Avalista)
+| **guarantor_cnpj_cpf** | Não | String | 20 | CNPJ/CPF do Benecifiário final (Sacador/Avalista)
+| **guarantor_zipcode** | Não | String | 8 | CEP (formato 99999999) do Benecifiário final (Sacador/Avalista)
+| **guarantor_address** | Não | String | 255 | Endereço do Benecifiário final (Sacador/Avalista)
+| **guarantor_city_name** | Não | String | 60 | Cidade(Nome deve estar correto e completo) do Benecifiário final (Sacador/Avalista)
+| **guarantor_state** | Não | String | 2 | Estado do Benecifiário final (Sacador/Avalista)
+| **guarantor_neighborhood** | Não | String | 80 | Bairro do Benecifiário final (Sacador/Avalista)
+| **guarantor_address_number** | Não | String | 10 | Número do Benecifiário final (Sacador/Avalista)
+| **guarantor_address_complement** | Não | String | 60 | Complemento do Benecifiário final (Sacador/Avalista)
+| **guarantor_phone_number** | Não | String | 11 | Telefone (com DDD) do Benecifiário final (Sacador/Avalista)
 
 ### Dicionário de Dados
 
 #### cycle
 
-| biweekly   | Quinzenal
-| bimonthly  | Bimestral
-| monthly    | Mensal
-| quarterly  | Trimestral
+| biweekly | Quinzenal
+| bimonthly | Bimestral
+| monthly | Mensal
+| quarterly | Trimestral
 | semiannual | Semestral
-| annual     | Anual
+| annual | Anual
 
 #### status
 
-| created    | Gerando
-| processed  | Parcelas criadas
-| generated  | Aberto
+| created | Gerando
+| processed | Parcelas criadas
+| generated | Aberto
 
 #### customer_person_type
 
 | individual | Pessoa Física
-| juridical  | Pessoa Jurídica
+| juridical | Pessoa Jurídica
 
 #### fine_type
 
@@ -142,8 +153,6 @@ layout: pt
 
 | 1 | Informa pagamentos divergentes por valores
 | 2 | Informa pagamentos divergentes por percentuais
-
-
 
 ### Criar carnê
 
@@ -246,6 +255,7 @@ Array
 </pre>
 
     </div> -->
+
 </div>
 
 #### Exemplo de requisição válida
@@ -336,7 +346,8 @@ else
   puts @installment.response_errors
 end
 </pre>
-  <small>Resposta:</small>
+
+<small>Resposta:</small>
 
 <pre class="ruby">
 Sucesso :)
@@ -385,7 +396,8 @@ if($installment->isPersisted()) {
   print_r($installment->response_errors);
 }
 </pre>
-  <small>Resposta:</small>
+
+<small>Resposta:</small>
 
 <pre class="php">
 Sucesso :)
@@ -586,6 +598,7 @@ Array
         Quantidade de registros por página (Máximo de 50)
       </td>
     </tr>
+
   </tbody>
 </table>
 
@@ -765,7 +778,8 @@ else
   puts @customer.response_errors
 end
 </pre>
-  <small>Resposta:</small>
+
+<small>Resposta:</small>
 
 <pre class="ruby">
 Sucesso :)
@@ -814,7 +828,8 @@ if($customer->isPersisted()) {
   print_r($customer->response_errors);
 }
 </pre>
-  <small>Resposta:</small>
+
+<small>Resposta:</small>
 
 <pre class="php">
 Sucesso :)

@@ -68,16 +68,16 @@ Nesse momento o usuário deve aceitar os termos e iniciar a homologação.
 
 Ao clicar em "Prosseguir com a Homologação", o status passa para `homologating`.
 
-Será gerado um boleto e uma remessa de  Homologação para ser enviada ao banco. Após o término, o status passa para `validating`.
+Será gerado um boleto e uma remessa de Homologação para ser enviada ao banco. Após o término, o status passa para `validating`.
 
 A partir desse momento o usuário precisa informar o valor do boleto que foi gerado ou enviar o retorno processado pelo banco.
 
 Quando o valor é informado corretamente, ou no retorno processado, o banco diz estar tudo certo, o status passa para `active`.
 
-| pending      | Homologação não iniciada
+| pending | Homologação não iniciada
 | homologating | Em homologação, aguardand pagamento do boleto
-| validating   | Boleto pago, aguardando validação
-| active       | Ativa e pronta para uso
+| validating | Boleto pago, aguardando validação
+| active | Ativa e pronta para uso
 
 #### default
 
@@ -191,6 +191,7 @@ Array
 </pre>
 
     </div> -->
+
 </div>
 
 #### Exemplo de requisição válida
@@ -280,7 +281,8 @@ else
   ap @bank_billet_account.response_errors
 end
 </pre>
-  <small>Resposta:</small>
+
+<small>Resposta:</small>
 
 <pre class="ruby">
 Sucesso :)
@@ -343,7 +345,8 @@ if($bank_billet_account->isPersisted()) {
   print_r($bank_billet_account->response_errors);
 }
 </pre>
-  <small>Resposta:</small>
+
+<small>Resposta:</small>
 
 <pre class="php">
 Sucesso :)
@@ -614,6 +617,7 @@ Array
 </pre>
 
     </div> -->
+
 </div>
 
 #### Exemplo de requisição válida
@@ -662,7 +666,8 @@ else
   ap @bank_billet_account.response_errors
 end
 </pre>
-  <small>Resposta:</small>
+
+<small>Resposta:</small>
 
 <pre class="ruby">
 Sucesso :)
@@ -684,7 +689,8 @@ if($bank_billet_account->save()) {
   print_r($bank_billet_account->response_errors);
 }
 </pre>
-  <small>Resposta:</small>
+
+<small>Resposta:</small>
 
 <pre class="php">
 Sucesso :)
@@ -736,6 +742,7 @@ Novo nome: Nome 1234
         Quantidade de registros por página (Máximo de 50)
       </td>
     </tr>
+
   </tbody>
 </table>
 
@@ -1010,10 +1017,10 @@ Array
 
 ### Modelo de Dados
 
-| Parâmetro                | Obrigatório  | Tipo    | Tamanho | Descrição
-| ------------------------ | ----- | ------- | ------- | ------------------------
-| **id**                   | Sim   | Integer |         | ID da Carteira de Cobrança
-| **homologation_amount**  | Sim   | String  |         | Valor recebido pelo boleto (R$) Ex.: 1,87
+| Parâmetro               | Obrigatório | Tipo    | Tamanho | Descrição                                 |
+| ----------------------- | ----------- | ------- | ------- | ----------------------------------------- |
+| **id**                  | Sim         | Integer |         | ID da Carteira de Cobrança                |
+| **homologation_amount** | Sim         | String  |         | Valor recebido pelo boleto (R$) Ex.: 1,87 |
 
 #### Exemplo de requisição inválida
 
@@ -1108,6 +1115,7 @@ Array
 </pre>
 
     </div> -->
+
 </div>
 
 #### Exemplo de requisição válida
@@ -1158,7 +1166,8 @@ else
   ap @bank_billet_account.response_errors
 end
 </pre>
-  <small>Resposta:</small>
+
+<small>Resposta:</small>
 
 <pre class="ruby">
 Sucesso :)
@@ -1180,7 +1189,8 @@ if($bank_billet_account->save()) {
   print_r($bank_billet_account->response_errors);
 }
 </pre>
-  <small>Resposta:</small>
+
+<small>Resposta:</small>
 
 <pre class="php">
 Sucesso :)
@@ -1195,10 +1205,10 @@ Novo nome: Nome 1234
 
 ### Modelo de Dados
 
-| Parâmetro                | Obrigatório  | Tipo    | Tamanho | Descrição
-| ------------------------ | ----- | ------- | ------- | ------------------------
-| **id**                   | Sim   | Integer |         | ID da Carteira de Cobrança
-| **default**              | Sim   | Boolean  |         | Define a Carteira  padrão(Default: true) ou deixar de ser padrão(Default: false)
+| Parâmetro   | Obrigatório | Tipo    | Tamanho | Descrição                                                                       |
+| ----------- | ----------- | ------- | ------- | ------------------------------------------------------------------------------- |
+| **id**      | Sim         | Integer |         | ID da Carteira de Cobrança                                                      |
+| **default** | Sim         | Boolean |         | Define a Carteira padrão(Default: true) ou deixar de ser padrão(Default: false) |
 
 #### Exemplo de requisição inválida
 
@@ -1293,6 +1303,7 @@ Array
 </pre>
 
     </div> -->
+
 </div>
 
 #### Exemplo de requisição válida
@@ -1343,7 +1354,8 @@ else
   ap @bank_billet_account.response_errors
 end
 </pre>
-  <small>Resposta:</small>
+
+<small>Resposta:</small>
 
 <pre class="ruby">
 Sucesso :)
@@ -1365,7 +1377,8 @@ if($bank_billet_account->save()) {
   print_r($bank_billet_account->response_errors);
 }
 </pre>
-  <small>Resposta:</small>
+
+<small>Resposta:</small>
 
 <pre class="php">
 Sucesso :)

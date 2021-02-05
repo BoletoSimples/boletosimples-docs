@@ -8,7 +8,7 @@ layout: pt
 
 ## Boletos
 
-| Recurso                  | Descrição
+| Recurso | Descrição
 | [POST /api/v1/bank_billets](#criar-boleto) | Criar boleto
 | [GET /api/v1/bank_billets/:id](#informa%C3%A7%C3%B5es-do-boleto) | Informações do boleto
 | [GET /api/v1/bank_billets](#listar-boletos) | Listar boletos
@@ -23,15 +23,15 @@ layout: pt
 | [PUT /api/v1/bank_billets/:id/pay](#marcar-boleto-como-pago) | Marcar boleto como pago
 | [PATCH /api/v1/bank_billets/:id/pay](#marcar-boleto-como-pago) | Marcar boleto como pago
 | [POST /api/v1/bank_billets/cancel_all](#cancelar-boletos-em-lote) | Cancelar boletos em lote
-| [POST /api/v1/bank_billets/bulk](#criar-boletos-em-lote) | Criar boletos em lote  ([Deprecated usar Criar boleto](#criar-boleto))
+| [POST /api/v1/bank_billets/bulk](#criar-boletos-em-lote) | Criar boletos em lote ([Deprecated usar Criar boleto](#criar-boleto))
 
 ### Modelo de Dados
 
-| **Parâmetro**                       | **Obrigatório**  | **Tipo**    | **Tamanho** | **Descrição**
-| **id**                          | N/A   | Integer |         | ID do boleto
-| **bank_billet_account_id**      | Sim   | Integer |         | ID da [Carteira de Cobrança](/reference/v1/bank_billet_accounts/). Se não informado, usará a carteira padrão.
-| **our_number**                  | Não   | Integer |         | Nosso Número. Se não informado, usará o Próximo Nosso Número da Carteira de Cobrança.
-| **amount**                      | Sim   | String  |         | Quantia (R$) Formato: 1.345,56
+| **Parâmetro** | **Obrigatório** | **Tipo** | **Tamanho** | **Descrição**
+| **id** | N/A | Integer | | ID do boleto
+| **bank_billet_account_id** | Sim | Integer | | ID da [Carteira de Cobrança](/reference/v1/bank_billet_accounts/). Se não informado, usará a carteira padrão.
+| **our_number** | Não | Integer | | Nosso Número. Se não informado, usará o Próximo Nosso Número da Carteira de Cobrança.
+| **amount** | Sim | String | | Quantia (R$) Formato: 1.345,56
 | **expire_at**                   | Sim   | Date    |         | Data de vencimento
 | **description**                 | Sim   | Text    |         | Descrição do produto ou serviço
 | **customer_id**                 | Não   | Integer |         | ID do [Cliente](/reference/v1/customers/). Quando esse ID é passado, os campos `customer_person_name`, `customer_cnpj_cpf`, `customer_zipcode`, `customer_address`, `customer_city_name`, `customer_state` e `customer_neighborhood` não são obrigatórios.
@@ -52,6 +52,8 @@ layout: pt
 | **customer_mobile_local_code**  | Não   | String  | 2       | DDD do Celular
 | **customer_mobile_number**      | Não   | String  | 9       | Celular
 | **customer_notes**              | Não   | Text    |         | Anotações do Pagador
+| **customer_ignore_email**       | Não | Boolean | | Nunca enviar e-mail para este cliente
+| **ignore_email**                | Não | Boolean | | Não enviar este boleto por email
 | **meta**                        | Não   | Campo Genérico | | Aceita qualquer formato passado. Pode ser usado para salvar dados que não existam dentro do Boleto Simples. Exemplo: {pedido: 12345}
 | **status**                      | N/A   | String  |         | Situação do boleto ([possíveis valores](#status))
 | **paid_at**                     | N/A   | Date    |         | Data do pagamento
@@ -62,107 +64,108 @@ layout: pt
 | **created_via_api**             | N/A   | Boolean |         | Define se o boleto foi criado pela API
 | **fine_type**                   | Não   | Integer |         | Tipo de multa ([possíveis valores](#fine_type))
 | **fine_percentage**             | Não   | Float   |         | Porcentagem de Multa por Atraso Ex: 2% x R$ 250,00 = R$ 5,00. Obrigatória se `fine_type` é igual a 1
-| **fine_value**                  | Não   | String  |         | Valor da multa. Obrigatório se `fine_type` é igual a 2. (R$) Formato: 1.234,34
+| **fine_value** | Não | String | | Valor da multa. Obrigatório se `fine_type` é igual a 2. (R$) Formato: 1.234,34
 | **days_for_fine**               | Não   | Integer |         | Quantidade de dias após o vencimento que a multa começará a incidir. O valor default é 1 dia (o dia posterior ao vencimento).
 | **fine_for_delay**              | Não   | Float   |         | Alias para `fine_percentage`
 | **interest_type**               | Não   | Integer |         | Tipo de juros ([possíveis valores](#interest_type))
 | **interest_percentage**         | Não   | Float   |         | Porcentagem diária de juros. De 0.0 a 100.0 (Ex 1.5% = 1.5) Obrigatório se `interest_type` é igual a 1.
 | **interest_value**              | Não   | String  |         | Valor diário de juros. Obrigatório se `interest_type` é igual a 2. (R$) Formato: 1.234,34
-| **interest_daily_percentage**   | Não   | Float   |         | Porcentagem diária de juros. De 0.0 a 100.0 (Ex 1.5% = 1.5) Obrigatório se `interest_type` é igual a 1 ou 3. <span style="display: block;" class="alert alert-danger"><strong>ATENÇÃO</strong> Este atributo está descontinuado e será removido do sistema em breve. Utilize <code class="highlighter-rouge">interest_percentage</code>.</span>
-| **interest_daily_value**        | Não   | String  |         | Valor diário de juros. Obrigatório se `interest_type` é igual a 2 ou 4. (R$) Formato: 1.234,34. <span style="display: block;" class="alert alert-danger"><strong>ATENÇÃO</strong> Este atributo está descontinuado e será removido do sistema em breve. Utilize <code class="highlighter-rouge">interest_value</code>.</span>
+| **interest_daily_percentage** | Não | Float | | Porcentagem diária de juros. De 0.0 a 100.0 (Ex 1.5% = 1.5) Obrigatório se `interest_type` é igual a 1 ou 3. <span style="display: block;" class="alert alert-danger"><strong>ATENÇÃO</strong> Este atributo está descontinuado e será removido do sistema em breve. Utilize <code class="highlighter-rouge">interest_percentage</code>.</span>
+| **interest_daily_value** | Não | String | | Valor diário de juros. Obrigatório se `interest_type` é igual a 2 ou 4. (R$) Formato: 1.234,34. <span style="display: block;" class="alert alert-danger"><strong>ATENÇÃO</strong> Este atributo está descontinuado e será removido do sistema em breve. Utilize <code class="highlighter-rouge">interest_value</code>.</span>
 | **interest_monthly_percentage** | Não   | Float   |         | Juros de mora mensal (O valor será dividido por 30. Ex 3% = 0,1% ao dia.) Obrigatório se `interest_type` é igual a 5 ou 6. <span style="display: block;" class="alert alert-danger"><strong>ATENÇÃO</strong> Este atributo está descontinuado e será removido do sistema em breve. Utilize <code class="highlighter-rouge">interest_percentage</code> passando a taxa diária.</span>
 | **days_for_interest**               | Não   | Integer |         | Quantidade de dias após o vencimento que a mora começará a incidir. O valor default é 1 dia (o dia posterior ao vencimento).
 | **late_payment_interest**       | Não   | Float   |         | Alias para `interest_monthly_percentage`
 | **discount_type**               | Não   | Integer |         | Tipo de desconto. O tipo será o mesmo para todos os três descontos, caso existam. ([possíveis valores](#discount_type))
 | **discount_value**              | Não   | String  |         | Valor do desconto. Obrigatório se `discount_type` é igual a 1. (R$) Formato: 1.234,34
-| **discount_percentage**         | Não   | Float   |         | Percentual do valor do boleto equivalente ao desconto. Obrigatório se `discount_type` é igual a 2
-| **days_for_discount**           | Não   | Integer |         | Dias para desconto. Obrigatório se `discount_type` é diferente de zero
-| **discount_limit_date**         | Não   | Date    |         | Data limite para o desconto. Obrigatória se `discount_type` é diferente de zero. <span style="display: block;" class="alert alert-danger"><strong>ATENÇÃO</strong> Este atributo está descontinuado e será removido do sistema em breve. Utilize <code class="highlighter-rouge">days_for_discount</code>.</span>|
-| **second_discount_value**              | Não   | String  |         | Valor do segundo desconto. (R$) Formato: 1.234,34.
+| **discount_percentage** | Não | Float | | Percentual do valor do boleto equivalente ao desconto. Obrigatório se `discount_type` é igual a 2
+| **days_for_discount** | Não | Integer | | Dias para desconto. Obrigatório se `discount_type` é diferente de zero
+| **discount_limit_date** | Não | Date | | Data limite para o desconto. Obrigatória se `discount_type` é diferente de zero. <span style="display: block;" class="alert alert-danger"><strong>ATENÇÃO</strong> Este atributo está descontinuado e será removido do sistema em breve. Utilize <code class="highlighter-rouge">days_for_discount</code>.</span>|
+| **second_discount_value** | Não | String | | Valor do segundo desconto. (R$) Formato: 1.234,34.
 | **second_discount_percentage**         | Não   | Float   |         | Percentual do valor do boleto equivalente ao segundo desconto.
 | **days_for_second_discount**           | Não   | Integer |         | Dias para segundo desconto.
 | **third_discount_value**              | Não   | String  |         | Valor do terceiro desconto. (R$) Formato: 1.234,34
-| **third_discount_percentage**         | Não   | Float   |         | Percentual do valor do boleto equivalente ao terceiro desconto.
-| **days_for_third_discount**           | Não   | Integer |         | Dias para terceiro desconto.
-| **payment_place**               | Não   | String  | 100     | Local de Pagamento
-| **instructions**                | Não   | Text    |         | Instruções para o Caixa
-| **document_date**               | Não   | Date    |         | Data do Documento
-| **document_type**               | Sim   | String  |         | Tipo de Documento ([possíveis valores](#document_type)) Padrão: "02" (Duplicata Mercantil)
-| **document_number**             | Não   | String |         | Número do Documento
-| **acceptance**                  | Sim   | String  |         | Aceite. Padrão: N
-| **bank_billet_layout_id**       | Não   | Integer |         | ID do Modelo de Boleto
-| **notes**                       | Não   | Text    |         | Anotações
-| **tags**                        | Não   | Array   |         | Tags associadas ao boleto
-| **days_for_sue**                | Não   | Integer |         | Dias corridos para Protesto/Negativação
-| **days_for_revoke**             | Não   | Integer |         | Dias corridos para Baixa/Devolução\*
-| **created_at**                  | N/A   | DateTime    |         | Data e hora de criação do boleto
-| **updated_at**                  | N/A   | DateTime    |         | Data e hora de atualização do boleto
-| **paid_bank**                   | N/A   | String  |         | Banco de Pagamento
-| **paid_agency**                 | N/A   | String  |         | Agência de Pagamento
-| **line**                        | N/A   | String  |         | Linha Digitável
-| **bank_rate**                   | N/A   | Float   |         | Taxa bancária
-| **beneficiary_name**            | N/A   | String  | 100     | Nome do Beneficiário
-| **beneficiary_cnpj_cpf**        | N/A   | String  |         | CNPJ/CPF do Beneficiário
-| **beneficiary_address**         | N/A   | String  |         | Endereço do Beneficiário
-| **beneficiary_assignor_code**   | N/A   | String  |         | Agência/Código do Beneficiário
-| **processed_our_number**        | N/A   | String  |         | Nosso Número com DV (formatado)
-| **processed_our_number_raw**    | N/A   | String  |         | Nosso Número com DV (limpo)
-| **bank_contract_slug**          | N/A   | String  |         | [Slug da Carteira](/bank_contracts)
-| **agency_number**               | N/A   | String  |         | Agência
-| **agency_digit**                | N/A   | String  |         | Dígito da Agência
-| **account_number**              | N/A   | String  |         | Conta
-| **account_digit**               | N/A   | String  |         | Dígito da Conta
-| **extra1**                      | N/A   | String  |         | Campo extra 1
-| **extra1_digit**                | N/A   | String  |         | Digito do Campo extra 1
-| **extra2**                      | N/A   | String  |         | Campo extra 2
-| **extra2_digit**                | N/A   | String  |         | Dígito do Campo extra 2
-| **customer_subscription_id**    | N/A   | Integer |         | ID da [Assinatura](/reference/v1/customer_subscriptions/)
-| **installment_number**          | N/A   | Integer |         | Número da parcela do carnê
-| **installment_id**              | N/A   | Integer |         | ID do [Carnê](/reference/v1/installments/)
-| **bank_billet_discharges**      | N/A   | Array   |         | Retornos bancários
-| **first_instruction**           | Não   | String  | 2     | Primeira Instrução(CNAB 400). Consulte os possíveis valores <a href="/bank_contracts">para cada banco</a>.
-| **second_instruction**          | Não   | String  | 2    | Segunda Instrução(CNAB 400). Consulte os possíveis valores <a href="/bank_contracts">para cada banco</a>.
-| **sue_code**                    | Não   | String  | 1    | Código de Protesto(CNAB 240). Consulte os possíveis valores <a href="/bank_contracts">para cada banco</a>.
-| **revoke_code**                 | Não   | String  | 1    | Código de Baixa(CNAB 240). Consulte os possíveis valores <a href="/bank_contracts">para cada banco</a>.
-| **guarantor_name**              | Não   | String  |   100      | Nome do Sacador/Avalista
-| **guarantor_cnpj_cpf**          | Não   | String  |   20      | CNPJ/CPF do Sacador/Avalista
-| **guarantor_zipcode**            | Não   | String | 8       | CEP (formato 99999999) do Sacador/Avalista
-| **guarantor_address**            | Não   | String    |  255       | Endereço do Sacador/Avalista
-| **guarantor_city_name**          | Não   | String  | 60     | Cidade(Nome deve estar correto e completo) do Sacador/Avalista
-| **guarantor_state**              | Não   | String  | 2       | Estado do Sacador/Avalista
-| **guarantor_neighborhood**       | Não   | String  | 80     | Bairro do Sacador/Avalista
-| **guarantor_address_number**     | Não   | String  | 10     | Número do Sacador/Avalista
-| **guarantor_address_complement** | Não   | String  | 60     | Complemento do Sacador/Avalista
-| **guarantor_phone_number**       | Não   | String  | 11      | Telefone (com DDD) do Sacador/Avalista
-| **registered_at**                | N/A   | DateTime    |         | Data e hora do registro
-| **prevent_registration**         | Não   | Boolean |         | Caso `true`, impede que o boleto seja registrado. Para ser usado nos casos em que o boleto já foi registrado fora do Boleto Simples mas deseja-se incluí-lo no sistema.
-| **control_number**               | Não   | String  | 25      | Pode conter qualquer informação de interesse da Empresa. A informação contida neste campo sempre retornará com o respectivo título no arquivo-retorno. Caso não seja informado, será enviado na remessa o valor passado em `document_number`.
-| **divergent_payment_type**       | Não   | Integer |         | Tipo de pagamento divergente. Válido apenas para [Itaú](/bank_contracts/itau) e [Caixa](/bank_contracts/cef). ([possíveis valores](#divergent_payment_type))
-| **divergent_payment_value_type** | Não   | Integer |         | Tipo de valor a considerar para os limites de pagamentos. Válido apenas para [Itaú](/bank_contracts/itau) e [Caixa](/bank_contracts/cef). ([possíveis valores](#divergent_payment_value_type))
-| **divergent_payment_minimum_value** | Não | Float |          | Valor mínimo para a faixa de pagamentos divergentes. Válido apenas para [Itaú](/bank_contracts/itau) e [Caixa](/bank_contracts/cef).
-| **divergent_payment_maximum_value** | Não | Float |          | Valor máximo para a faixa de pagamentos divergentes. Válido apenas para [Itaú](/bank_contracts/itau) e [Caixa](/bank_contracts/cef).
-| **divergent_payment_minimum_percentage** | Não | Float |          | Percentual mínimo para a faixa de pagamentos divergentes. Válido apenas para [Itaú](/bank_contracts/itau) e [Caixa](/bank_contracts/cef).
-| **divergent_payment_maximum_percentage** | Não | Float |          | Percentual máximo para a faixa de pagamentos divergentes. Válido apenas para [Itaú](/bank_contracts/itau) e [Caixa](/bank_contracts/cef).
-| **divergent_payment_limit**         | Não | Integer |          | Quantidade de pagamentos permitida. Obrigatório se informados dados para pagamento divergente. Usado somente pela [Caixa](/bank_contracts/cef).
+| **third_discount_percentage** | Não | Float | | Percentual do valor do boleto equivalente ao terceiro desconto.
+| **days_for_third_discount** | Não | Integer | | Dias para terceiro desconto.
+| **payment_place** | Não | String | 100 | Local de Pagamento
+| **instructions** | Não | Text | | Instruções para o Caixa
+| **document_date** | Não | Date | | Data do Documento
+| **document_type** | Sim | String | | Tipo de Documento ([possíveis valores](#document_type)) Padrão: "02" (Duplicata Mercantil)
+| **document_number** | Não | String | | Número do Documento
+| **acceptance** | Sim | String | | Aceite. Padrão: N
+| **bank_billet_layout_id** | Não | Integer | | ID do Modelo de Boleto
+| **notes** | Não | Text | | Anotações
+| **tags** | Não | Array | | Tags associadas ao boleto
+| **days_for_sue** | Não | Integer | | Dias corridos para Protesto
+| **days_for_revoke** | Não | Integer | | Dias corridos para Baixa/Devolução
+| **days_for_negativation** | Não | Integer | | Dias corridos para Negativação ([mais](#days_for_negativation))
+| **created_at** | N/A | DateTime | | Data e hora de criação do boleto
+| **updated_at** | N/A | DateTime | | Data e hora de atualização do boleto
+| **paid_bank** | N/A | String | | Banco de Pagamento
+| **paid_agency** | N/A | String | | Agência de Pagamento
+| **line** | N/A | String | | Linha Digitável
+| **bank_rate** | N/A | Float | | Taxa bancária
+| **beneficiary_name** | N/A | String | 100 | Nome do Beneficiário
+| **beneficiary_cnpj_cpf** | N/A | String | | CNPJ/CPF do Beneficiário
+| **beneficiary_address** | N/A | String | | Endereço do Beneficiário
+| **beneficiary_assignor_code** | N/A | String | | Agência/Código do Beneficiário
+| **processed_our_number** | N/A | String | | Nosso Número com DV (formatado)
+| **processed_our_number_raw** | N/A | String | | Nosso Número com DV (limpo)
+| **bank_contract_slug** | N/A | String | | [Slug da Carteira](/bank_contracts)
+| **agency_number** | N/A | String | | Agência
+| **agency_digit** | N/A | String | | Dígito da Agência
+| **account_number** | N/A | String | | Conta
+| **account_digit** | N/A | String | | Dígito da Conta
+| **extra1** | N/A | String | | Campo extra 1
+| **extra1_digit** | N/A | String | | Digito do Campo extra 1
+| **extra2** | N/A | String | | Campo extra 2
+| **extra2_digit** | N/A | String | | Dígito do Campo extra 2
+| **customer_subscription_id** | N/A | Integer | | ID da [Assinatura](/reference/v1/customer_subscriptions/)
+| **installment_number** | N/A | Integer | | Número da parcela do carnê
+| **installment_id** | N/A | Integer | | ID do [Carnê](/reference/v1/installments/)
+| **bank_billet_discharges** | N/A | Array | | Retornos bancários
+| **first_instruction** | Não | String | 2 | Primeira Instrução(CNAB 400). Consulte os possíveis valores <a href="/bank_contracts">para cada banco</a>.
+| **second_instruction** | Não | String | 2 | Segunda Instrução(CNAB 400). Consulte os possíveis valores <a href="/bank_contracts">para cada banco</a>.
+| **sue_code** | Não | String | 1 | Código de Protesto(CNAB 240). Consulte os possíveis valores <a href="/bank_contracts">para cada banco</a>.
+| **revoke_code** | Não | String | 1 | Código de Baixa(CNAB 240). Consulte os possíveis valores <a href="/bank_contracts">para cada banco</a>.
+| **guarantor_name** | Não | String | 100 | Nome do Benecifiário final (Sacador/Avalista)
+| **guarantor_cnpj_cpf** | Não | String | 20 | CNPJ/CPF do Benecifiário final (Sacador/Avalista)
+| **guarantor_zipcode** | Não | String | 8 | CEP (formato 99999999) do Benecifiário final (Sacador/Avalista)
+| **guarantor_address** | Não | String | 255 | Endereço do Benecifiário final (Sacador/Avalista)
+| **guarantor_city_name** | Não | String | 60 | Cidade(Nome deve estar correto e completo) do Benecifiário final (Sacador/Avalista)
+| **guarantor_state** | Não | String | 2 | Estado do Benecifiário final (Sacador/Avalista)
+| **guarantor_neighborhood** | Não | String | 80 | Bairro do Benecifiário final (Sacador/Avalista)
+| **guarantor_address_number** | Não | String | 10 | Número do Benecifiário final (Sacador/Avalista)
+| **guarantor_address_complement** | Não | String | 60 | Complemento do Benecifiário final (Sacador/Avalista)
+| **guarantor_phone_number** | Não | String | 11 | Telefone (com DDD) do Benecifiário final (Sacador/Avalista)
+| **registered_at** | N/A | DateTime | | Data e hora do registro
+| **prevent_registration** | Não | Boolean | | Caso `true`, impede que o boleto seja registrado. Para ser usado nos casos em que o boleto já foi registrado fora do Boleto Simples mas deseja-se incluí-lo no sistema.
+| **control_number** | Não | String | 25 | Pode conter qualquer informação de interesse da Empresa. A informação contida neste campo sempre retornará com o respectivo título no arquivo-retorno. Caso não seja informado, será enviado na remessa o valor passado em `document_number`.
+| **divergent_payment_type** | Não | Integer | | Tipo de pagamento divergente. Válido apenas para [Itaú](/bank_contracts/itau) e [Caixa](/bank_contracts/cef). ([possíveis valores](#divergent_payment_type))
+| **divergent_payment_value_type** | Não | Integer | | Tipo de valor a considerar para os limites de pagamentos. Válido apenas para [Itaú](/bank_contracts/itau) e [Caixa](/bank_contracts/cef). ([possíveis valores](#divergent_payment_value_type))
+| **divergent_payment_minimum_value** | Não | Float | | Valor mínimo para a faixa de pagamentos divergentes. Válido apenas para [Itaú](/bank_contracts/itau) e [Caixa](/bank_contracts/cef).
+| **divergent_payment_maximum_value** | Não | Float | | Valor máximo para a faixa de pagamentos divergentes. Válido apenas para [Itaú](/bank_contracts/itau) e [Caixa](/bank_contracts/cef).
+| **divergent_payment_minimum_percentage** | Não | Float | | Percentual mínimo para a faixa de pagamentos divergentes. Válido apenas para [Itaú](/bank_contracts/itau) e [Caixa](/bank_contracts/cef).
+| **divergent_payment_maximum_percentage** | Não | Float | | Percentual máximo para a faixa de pagamentos divergentes. Válido apenas para [Itaú](/bank_contracts/itau) e [Caixa](/bank_contracts/cef).
+| **divergent_payment_limit** | Não | Integer | | Quantidade de pagamentos permitida. Obrigatório se informados dados para pagamento divergente. Usado somente pela [Caixa](/bank_contracts/cef).
 | **custom_attachment_name** | Não | String | 255 | Nome para ser usado nos arquivos de boleto enviados para o cliente em notificações. Aceita uso de variáveis. Caso seja deixado vazio, o padrão é a palavra "boleto" acompanhada do ID.
-| **charge_type**               | Não   | Integer  |         | Tipo de Cobrança ([possíveis valores](#charge_type)) Padrão: 1 - Simples
-| **dispatch_type**               | Não   | Integer  |         | Tipo de Impressão ([possíveis valores](#dispatch_type)) Padrão: 1 - Cliente
-| **register_type**               | Não   | Integer  |         | Tipo de Registro ([possíveis valores](#register_type))
-| **split_payment**         | Não   | Boolean |         | Split de Pagamento. Caso `true`, o rateio do boleto será registrado. Informar as contas para rateio em `split_accounts`.
-| **split_accounts**       | Não   | Array |         | Contas para Split de pagamento. Válido apenas para [ABC Brasil](/bank_contracts/abc) e [Bradesco](/bank_contracts/bradesco). ([possíveis valores](#split_accounts))
-| **custom_data**       | Não   | Json |         | Disponível para envio de um JSON, os valores podem ser usados ao e-mail ou em um template personalizado. Variável a ser substituida `bank_billet.custom_data`)
+| **charge_type** | Não | Integer | | Tipo de Cobrança ([possíveis valores](#charge_type)) Padrão: 1 - Simples
+| **dispatch_type** | Não | Integer | | Tipo de Impressão ([possíveis valores](#dispatch_type)) Padrão: 1 - Cliente
+| **register_type** | Não | Integer | | Tipo de Registro ([possíveis valores](#register_type))
+| **split_payment** | Não | Boolean | | Split de Pagamento. Caso `true`, o rateio do boleto será registrado. Informar as contas para rateio em `split_accounts`.
+| **split_accounts** | Não | Array | | Contas para Split de pagamento. Válido apenas para [ABC Brasil](/bank_contracts/abc) e [Bradesco](/bank_contracts/bradesco). ([possíveis valores](#split_accounts))
+| **custom_data** | Não | Json | | Disponível para envio de um JSON, os valores podem ser usados ao e-mail ou em um template personalizado. Variável a ser substituida `bank_billet.custom_data`)
 
-\* Caso sua empresa utilize o serviço de registro via web service a inclusão de dias para protesto ou negativação poderá não fazer efeito. Consulte a nossa equipe de suporte para saber mais.
+\* Caso sua empresa utilize o serviço de registro via web service a inclusão de dias para protesto poderá não fazer efeito. Consulte a nossa equipe de suporte para saber mais.
 
 ### Dicionário de Dados
 
 #### status
 
 | generating | Gerando
-| opened     | Aberto
-| canceled   | Cancelado
-| paid       | Pago
-| overdue    | Vencido
+| opened | Aberto
+| canceled | Cancelado
+| paid | Pago
+| overdue | Vencido
 | generation_failed | Falha ao gerar
 | validation_failed | Inválido
 
@@ -196,57 +199,57 @@ layout: pt
 #### customer_person_type
 
 | individual | Pessoa Física
-| juridical  | Pessoa Jurídica
+| juridical | Pessoa Jurídica
 
 #### document_type
 
-| **Código** | **Sigla**    | **Descrição**
-| 01     | CH       | Cheque
-| 02     | DM       | Duplicata Mercantil (Padrão)
-| 03     | DMI      | Duplicata Mercantil p/ Indicação
-| 04     | DS       | Duplicata de Serviço
-| 05     | DSI      | Duplicata de Serviço p/ Indicação
-| 06     | DR       | Duplicata Rural
-| 07     | LC       | Letra de Câmbio
-| 08     | NCC      | Nota de Crédito Comercial
-| 09     | NCE      | Nota de Crédito a Exportação
-| 10     | NCI      | Nota de Crédito Industrial
-| 11     | NCR      | Nota de Crédito Rural
-| 12     | NP       | Nota Promissória
-| 13     | NPR      | Nota Promissória Rural
-| 14     | TM       | Triplicata Mercantil
-| 15     | TS       | Triplicata de Serviço
-| 16     | NS       | Nota de Seguro
-| 17     | RC       | Recibo
-| 18     | FAT      | Fatura
-| 19     | ND       | Nota de Débito
-| 20     | AP       | Apólice de Seguro
-| 21     | ME       | Mensalidade Escolar
-| 22     | PC       | Parcela de Consórcio
-| 23     | NF       | Nota Fiscal
-| 24     | DD       | Documento de Dívida
-| 25     | CPR      | Cédula de Produto Rural
-| 26     | CTR      | Contrato
-| 27     | CSG      | Cosseguros
-| 28     | EC       | Encargos Condominiais
-| 29     | CPS      | Conta de Prestação de Serviços
-| 30     | WR       | Warrant
-| 31     | DP       | Duplicata Prestação
-| 32     | CSR      | Cobrança Seriada
-| 33     | CAR      | Carnê
-| 34     | ARE      | Apólice Ramos Elementares
-| 35     | CC        | Cartão de Crédito
-| 36     | BDP      | Boleto de Proposta
-| 37     | NPD      | Nota Promissória Direta
-| 38     | DAE     | Dívida Ativa de Estado
-| 39     | DAM      | Divida Ativa de Município
-| 40     | DAU      | Dívida Ativa União
-| 41     | CCB      | Célula de Crédito Bancário
-| 42     | FI           | Financiamento
-| 43     | RD           | Rateio de Despesas
-| 44     | DRI          | Duplicata Rural p/ Indicação
-| 45     | ECI           | Encargos Condominiais p/ Indicação
-| 99     | Outros   | Outros
+| **Código** | **Sigla** | **Descrição**
+| 01 | CH | Cheque
+| 02 | DM | Duplicata Mercantil (Padrão)
+| 03 | DMI | Duplicata Mercantil p/ Indicação
+| 04 | DS | Duplicata de Serviço
+| 05 | DSI | Duplicata de Serviço p/ Indicação
+| 06 | DR | Duplicata Rural
+| 07 | LC | Letra de Câmbio
+| 08 | NCC | Nota de Crédito Comercial
+| 09 | NCE | Nota de Crédito a Exportação
+| 10 | NCI | Nota de Crédito Industrial
+| 11 | NCR | Nota de Crédito Rural
+| 12 | NP | Nota Promissória
+| 13 | NPR | Nota Promissória Rural
+| 14 | TM | Triplicata Mercantil
+| 15 | TS | Triplicata de Serviço
+| 16 | NS | Nota de Seguro
+| 17 | RC | Recibo
+| 18 | FAT | Fatura
+| 19 | ND | Nota de Débito
+| 20 | AP | Apólice de Seguro
+| 21 | ME | Mensalidade Escolar
+| 22 | PC | Parcela de Consórcio
+| 23 | NF | Nota Fiscal
+| 24 | DD | Documento de Dívida
+| 25 | CPR | Cédula de Produto Rural
+| 26 | CTR | Contrato
+| 27 | CSG | Cosseguros
+| 28 | EC | Encargos Condominiais
+| 29 | CPS | Conta de Prestação de Serviços
+| 30 | WR | Warrant
+| 31 | DP | Duplicata Prestação
+| 32 | CSR | Cobrança Seriada
+| 33 | CAR | Carnê
+| 34 | ARE | Apólice Ramos Elementares
+| 35 | CC | Cartão de Crédito
+| 36 | BDP | Boleto de Proposta
+| 37 | NPD | Nota Promissória Direta
+| 38 | DAE | Dívida Ativa de Estado
+| 39 | DAM | Divida Ativa de Município
+| 40 | DAU | Dívida Ativa União
+| 41 | CCB | Célula de Crédito Bancário
+| 42 | FI | Financiamento
+| 43 | RD | Rateio de Despesas
+| 44 | DRI | Duplicata Rural p/ Indicação
+| 45 | ECI | Encargos Condominiais p/ Indicação
+| 99 | Outros | Outros
 
 #### divergent_payment_type
 
@@ -282,18 +285,26 @@ Este campo é apenas retornado. Não é aceito para envio.
 | 1 | API
 | 2 | EDI
 
+#### days_for_negativation
+
+Disponível apenas para os seguintes bancos e formatos:
+
+| **Banco** | **CNAB 240** | **CNAB 400** | **Webservice**
+| Bradesco | Sim | Sim |Não
+| Itaú | Não | Sim |Não
+
 #### split_accounts
 
-| **Parâmetro**  | **Obrigatório**  | **Tipo**    | **Tamanho** | **Descrição**
-| bank_number    | Sim | String  | 3   | Número do banco
-| agency_number  | Sim | String  | 5   | Agência (Sem dígito)
-| agency_digit   | Sim | String  | 1   | Dígito da Agência
-| account_number | Sim | String  | 12  | Conta (Sem dígito)
-| account_digit  | Sim | String  | 1   | Dígito da Conta
-| cnpj_cpf       | Sim | String  | 20  | CNPJ/CPF do Beneficiário
-| name           | Sim | String  | 40  | Nome do Beneficiário
-| amount         | Sim | String  | 15  | Quantia (R$) Formato: 1.345,56
-| floating       | Sim | Integer | 2   | Quantidade de Dias para Crédito. Padrão 5 dias. Máximo 30 dias.
+| **Parâmetro** | **Obrigatório** | **Tipo** | **Tamanho** | **Descrição**
+| bank_number | Sim | String | 3 | Número do banco
+| agency_number | Sim | String | 5 | Agência (Sem dígito)
+| agency_digit | Sim | String | 1 | Dígito da Agência
+| account_number | Sim | String | 12 | Conta (Sem dígito)
+| account_digit | Sim | String | 1 | Dígito da Conta
+| cnpj_cpf | Sim | String | 20 | CNPJ/CPF do Beneficiário
+| name | Sim | String | 40 | Nome do Beneficiário
+| amount | Sim | String | 15 | Quantia (R$) Formato: 1.345,56
+| floating | Sim | Integer | 2 | Quantidade de Dias para Crédito. Padrão 5 dias. Máximo 30 dias.
 
 ### Criar boleto
 
@@ -1619,13 +1630,13 @@ Status Final: canceled
 
 ### Modelo de Dados
 
-| **Parâmetro**                       | **Obrigatório**  | **Tipo**    | **Tamanho** | **Descrição**
-| ------------------------------- | ----- | ------- | ------- | ------------------------
-| **id**                          | Sim   | Integer |         | ID do boleto
-| **expire_at_in_days**           | Não   | Integer |         | Nº de dias para vencimento a partir da data de hoje (Default: 7)
-| **cancel**                      | Não   | Boolean |         | Cancelar o boleto que está sendo duplicado(Default: true)
-| **amount**                      | Não   | String  |         | Valor do novo boleto. Formato: 1.345,56
-| **with_fines**                  | Não   | Boolean |         | Atualizar o valor do novo boleto com juros e multa (Default: false)
+| **Parâmetro**         | **Obrigatório** | **Tipo** | **Tamanho** | **Descrição**                                                       |
+| --------------------- | --------------- | -------- | ----------- | ------------------------------------------------------------------- |
+| **id**                | Sim             | Integer  |             | ID do boleto                                                        |
+| **expire_at_in_days** | Não             | Integer  |             | Nº de dias para vencimento a partir da data de hoje (Default: 7)    |
+| **cancel**            | Não             | Boolean  |             | Cancelar o boleto que está sendo duplicado(Default: true)           |
+| **amount**            | Não             | String   |             | Valor do novo boleto. Formato: 1.345,56                             |
+| **with_fines**        | Não             | Boolean  |             | Atualizar o valor do novo boleto com juros e multa (Default: false) |
 
 É permitido o envio de qualquer outro parâmetro do [boleto](/reference/v1/bank_billets/#modelo-de-dados).
 
@@ -2394,13 +2405,13 @@ Array
 
 ### Modelo de Dados
 
-| Parâmetro                       | Obrigatório  | Tipo    | Tamanho | Descrição
-| ------------------------------- | ----- | ------- | ------- | ------------------------
-| **id**                          | Sim   | Integer |         | ID do boleto
-| **paid_at**                     | Sim   | Date    |         | Data de pagamento
-| **paid_amount**                 | Sim   | String  |         | Valor pago. Formato: 1.345,56
-| **bank_rate**                   | Não   | String  |         | Valor da taxa bancária. Formato: 1.345,56
-| **direct_payment**              | Não   | Boolean |         | Informa se o pagamento foi feito diretamente ao beneficiário.
+| Parâmetro          | Obrigatório | Tipo    | Tamanho | Descrição                                                     |
+| ------------------ | ----------- | ------- | ------- | ------------------------------------------------------------- |
+| **id**             | Sim         | Integer |         | ID do boleto                                                  |
+| **paid_at**        | Sim         | Date    |         | Data de pagamento                                             |
+| **paid_amount**    | Sim         | String  |         | Valor pago. Formato: 1.345,56                                 |
+| **bank_rate**      | Não         | String  |         | Valor da taxa bancária. Formato: 1.345,56                     |
+| **direct_payment** | Não         | Boolean |         | Informa se o pagamento foi feito diretamente ao beneficiário. |
 
 #### Exemplo de requisição inválida
 
