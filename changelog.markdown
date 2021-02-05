@@ -22,6 +22,12 @@ Você também pode se inscrever para receber as notificações de alterações d
 
 #### Últimas alterações realizadas na API.
 
+### 04/02/2021
+
+- Adiciona os campos `guarantor_name`, `guarantor_cnpj_cpf`, `guarantor_zipcode`, `guarantor_address`, `guarantor_city_name`, `guarantor_state`, `guarantor_neighborhood`, `guarantor_address_number`, `guarantor_address_complement` e `guarantor_phone_number` em [Carnês](/reference/v1/installments)
+
+- Adiciona os campos `guarantor_name`, `guarantor_cnpj_cpf`, `guarantor_zipcode`, `guarantor_address`, `guarantor_city_name`, `guarantor_state`,`guarantor_neighborhood`, `guarantor_address_number`, `guarantor_address_complement` e `guarantor_phone_number` em [Assinaturas](/reference/v1/customer_subscriptions)
+
 ### 02/02/2021
 
 - Adiciona o campo `allow_expiration_on_weekends` em [Carteiras de Cobrança](/reference/v1/bank_billet_accounts)
@@ -34,6 +40,15 @@ Você também pode se inscrever para receber as notificações de alterações d
 ### 28/01/2021
 
 - Adiciona o campo `days_for_negativation` em [Boletos](/reference/v1/bank_billets/#days_for_negativation)
+
+### 11/01/2020
+
+* Depreciado o campo `default_to_import` em [Carteiras de Cobrança](/reference/v1/bank_billet_accounts)
+
+### 08/01/2021
+
+* Adiciona novo formato de endereço do beneficiário em [Carteiras de Cobrança](/reference/v1/bank_billet_accounts),
+a antiga maneira continua funcionando da mesma forma mas será depreciada.
 
 ### 30/12/2020
 
