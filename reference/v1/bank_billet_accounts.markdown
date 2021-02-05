@@ -41,7 +41,14 @@ breadcrumb: Carteiras de Cobrança
 | **extra3**               | **    | String  | 30      | [Código de Remessa](/reference/v1/remittances/)
 | **beneficiary_name**     | Sim   | String  | 255     | Nome do Beneficiário
 | **beneficiary_cnpj_cpf** | Sim   | String  | 20      | CPF/CNPJ do Beneficiário
-| **beneficiary_address**  | Sim   | String  | 255     | Endereço do Beneficiário
+| **beneficiary_address_street**  | Sim   | String  | 255     | Rua do Beneficiário
+| **beneficiary_address_street_number**  | Sim   | String  | 30     | Numero da rua do Beneficiário
+| **beneficiary_address_complement**  | Sim   | String  | 255     | Complemento do endereço do Beneficiário
+| **beneficiary_address_neighborhood**  | Sim   | String  | 255     | Bairro do Beneficiário
+| **beneficiary_address_city**  | Sim   | String  | 50     | Cidade do Beneficiário
+| **beneficiary_address_state**  | Sim   | String  | 2     | Estado do Beneficiário
+| **beneficiary_address_zipcode**  | Sim   | String  | 255     | CEP do Beneficiário
+| **beneficiary_address**  | Sim   | String  |      | Endereço completo do Beneficiário ***
 | **name**                 | Não   | String  |         | Nome da Conta ***
 | [**status**](#status)    | Não   | String  |         | Situação da carteira
 | **homologated_at**       | Não   | DateTime    |         | Data de homologação
@@ -209,7 +216,7 @@ Array
 <pre class="bash">
 curl -i \
 -H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
--d '{"bank_billet_account":{"bank_contract_slug": "sicoob-02", "agency_number": "4327", "agency_digit": "3", "account_number": "3666", "account_digit": "8", "next_our_number": "1", "extra1": "1234567"}}' \
+-d '{"bank_billet_account":{"bank_contract_slug": "sicoob-02", "agency_number": "4327", "agency_digit": "3", "account_number": "3666", "account_digit": "8", "next_our_number": "1", "extra1": "1234567", "beneficiary_address_street": "Av. Presidente Vargas", "beneficiary_address_street_number": "633", "beneficiary_address_complement": "sala 1716", "beneficiary_address_city": "Rio de Janeiro", "beneficiary_address_neighborhood": "Centro", "beneficiary_address_state": "RJ", "beneficiary_address_zipcode": "20071-004"}}' \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
 -X POST 'https://sandbox.boletosimples.com.br/api/v1/bank_billet_accounts'
@@ -241,7 +248,14 @@ Content-Type: application/json; charset=utf-8
   "extra3":null,
   "beneficiary_name":"Boleto Simples Cobranças Ltda.",
   "beneficiary_cnpj_cpf":"05.813.794/0001-26",
-  "beneficiary_address":"Av. Presidente Vargas, 633 sala 1716. Rio de Janeiro - RJ",
+  "beneficiary_address_street": "Av. Presidente Vargas",
+  "beneficiary_address_street_number": "633",
+  "beneficiary_address_complement": "sala 1716",
+  "beneficiary_address_city": "Rio de Janeiro",
+  "beneficiary_address_neighborhood": "Centro",
+  "beneficiary_address_state": "RJ",
+  "beneficiary_address_zipcode": "20071-004",
+  "beneficiary_address": "Av. Presidente Vargas, 633, sala 1716 - Centro, Rio de Janeiro - RJ, 20071-004",
   "name":"Bancoob/Sicoob 02 - CC 00003666-8",
   "status":"pending",
   "custom_name":"Minha Carteira",
@@ -271,7 +285,15 @@ Content-Type: application/json; charset=utf-8
   agency_digit: '3',
   account_number: '3666',
   account_digit: '8',
-  extra1: '1234567'
+  extra1: '1234567',
+  beneficiary_address_street: 'Av. Presidente Vargas',
+  beneficiary_address_street_number: '633',
+  beneficiary_address_complement: 'sala 1716',
+  beneficiary_address_city: 'Rio de Janeiro',
+  beneficiary_address_neighborhood: 'Centro',
+  beneficiary_address_state: 'RJ',
+  beneficiary_address_zipcode: '20071-004'
+  beneficiary_address: 'Av. Presidente Vargas, 633, sala 1716 - Centro, Rio de Janeiro - RJ, 20071-004'
 })
 if @bank_billet_account.persisted?
   puts "Sucesso :)"
@@ -299,8 +321,15 @@ Sucesso :)
             "extra2_digit" => nil,
                   "extra3" => nil,
         "beneficiary_name" => "Boleto Simples Cobranças Ltda.",
-    "beneficiary_cnpj_cpf" => "05.813.794/0001-26",
-     "beneficiary_address" => "Av. Presidente Vargas, 633 sala 1716. Rio de Janeiro - RJ",
+      "beneficiary_cnpj_cpf" => "05.813.794/0001-26",
+      "beneficiary_address_street": "Av. Presidente Vargas",
+      "beneficiary_address_street_number": "633",
+      "beneficiary_address_complement": "sala 1716",
+      "beneficiary_address_city": "Rio de Janeiro",
+      "beneficiary_address_neighborhood": "Centro",
+      "beneficiary_address_state": "RJ",
+      "beneficiary_address_zipcode": "20071-004",
+      "beneficiary_address" => "Av. Presidente Vargas, 633, sala 1716 - Centro, Rio de Janeiro - RJ, 20071-004",
                     "name" => "Bancoob/Sicoob 02 - CC 00003666-8",
                   "status" => "pending",
              "custom_name" => nil,
@@ -422,7 +451,14 @@ Content-Type: application/json; charset=utf-8
   "extra3":null,
   "beneficiary_name":"Boleto Simples Cobranças Ltda.",
   "beneficiary_cnpj_cpf":"05.813.794/0001-26",
-  "beneficiary_address":"Av. Presidente Vargas, 633 sala 1716. Rio de Janeiro - RJ",
+  "beneficiary_address_street": "Av. Presidente Vargas",
+  "beneficiary_address_street_number": "633",
+  "beneficiary_address_complement": "sala 1716",
+  "beneficiary_address_city": "Rio de Janeiro",
+  "beneficiary_address_neighborhood": "Centro",
+  "beneficiary_address_state": "RJ",
+  "beneficiary_address_zipcode": "20071-004",
+  "beneficiary_address":"Av. Presidente Vargas, 633, sala 1716 - Centro, Rio de Janeiro - RJ, 20071-004",
   "name":"Bancoob/Sicoob 02 - CC 00003666-8",
   "status":"pending",
   "custom_name":"Minha Carteira",
@@ -466,7 +502,14 @@ ap @bank_billet_account.attributes
                   "extra3" => nil,
         "beneficiary_name" => "Boleto Simples Cobranças Ltda.",
     "beneficiary_cnpj_cpf" => "05.813.794/0001-26",
-     "beneficiary_address" => "Av. Presidente Vargas, 633 sala 1716. Rio de Janeiro - RJ",
+    "beneficiary_address_street" => "Av. Presidente Vargas",
+    "beneficiary_address_street_number" => "633",
+    "beneficiary_address_complement" => "sala 1716",
+    "beneficiary_address_city" => "Rio de Janeiro",
+    "beneficiary_address_neighborhood" => "Centro",
+    "beneficiary_address_state" => "RJ",
+    "beneficiary_address_zipcode" => "20071-004",
+    "beneficiary_address" => "Av. Presidente Vargas, 633, sala 1716 - Centro, Rio de Janeiro - RJ, 20071-004",
                     "name" => "Bancoob/Sicoob 02 - CC 00003666-8",
                   "status" => "pending",
              "custom_name" => "Minha Carteira",
@@ -793,7 +836,14 @@ Content-Type: application/json; charset=utf-8
     "extra3":null,
     "beneficiary_name":"Boleto Simples Cobranças Ltda.",
     "beneficiary_cnpj_cpf":"05.813.794/0001-26",
-    "beneficiary_address":"Av. Presidente Vargas, 633 sala 1716. Rio de Janeiro - RJ",
+    "beneficiary_address_street": "Av. Presidente Vargas",
+    "beneficiary_address_street_number": "633",
+    "beneficiary_address_complement": "sala 1716",
+    "beneficiary_address_city": "Rio de Janeiro",
+    "beneficiary_address_neighborhood": "Centro",
+    "beneficiary_address_state": "RJ",
+    "beneficiary_address_zipcode": "20071-004",
+    "beneficiary_address":"Av. Presidente Vargas, 633, sala 1716 - Centro, Rio de Janeiro - RJ, 20071-004",
     "name":"Bancoob/Sicoob 02 - CC 00003666-8",
     "status":"pending",
     "custom_name":"Minha Carteira",
@@ -913,7 +963,14 @@ Content-Type: application/json; charset=utf-8
   "extra3":null,
   "beneficiary_name":"Boleto Simples Cobranças Ltda.",
   "beneficiary_cnpj_cpf":"05.813.794/0001-26",
-  "beneficiary_address":"Av. Presidente Vargas, 633 sala 1716. Rio de Janeiro - RJ",
+  "beneficiary_address_street": "Av. Presidente Vargas",
+  "beneficiary_address_street_number": "633",
+  "beneficiary_address_complement": "sala 1716",
+  "beneficiary_address_city": "Rio de Janeiro",
+  "beneficiary_address_neighborhood": "Centro",
+  "beneficiary_address_state": "RJ",
+  "beneficiary_address_zipcode": "20071-004",
+  "beneficiary_address":"Av. Presidente Vargas, 633, sala 1716 - Centro, Rio de Janeiro - RJ, 20071-004",
   "name":"Bancoob/Sicoob 02 - CC 00003666-8",
   "status":"homologating",
   "custom_name":"Minha Carteira",
@@ -958,7 +1015,14 @@ ap @bank_billet_account.attributes
                   "extra3" => nil,
         "beneficiary_name" => "Boleto Simples Cobranças Ltda.",
     "beneficiary_cnpj_cpf" => "05.813.794/0001-26",
-     "beneficiary_address" => "Av. Presidente Vargas, 633 sala 1716. Rio de Janeiro - RJ",
+    "beneficiary_address_street" => "Av. Presidente Vargas",
+    "beneficiary_address_street_number" => "633",
+    "beneficiary_address_complement" => "sala 1716",
+    "beneficiary_address_city" => "Rio de Janeiro",
+    "beneficiary_address_neighborhood" => "Centro",
+    "beneficiary_address_state" => "RJ",
+    "beneficiary_address_zipcode" => "20071-004",
+    "beneficiary_address" => "Av. Presidente Vargas, 633, sala 1716 - Centro, Rio de Janeiro - RJ, 20071-004",
                     "name" => "Bancoob/Sicoob 02 - CC 00003666-8",
            "bank_contract" => {
                                 "bank" => {

@@ -45,6 +45,11 @@ Você também pode se inscrever para receber as notificações de alterações d
 
 * Depreciado o campo `default_to_import` em [Carteiras de Cobrança](/reference/v1/bank_billet_accounts)
 
+### 08/01/2021
+
+* Adiciona novo formato de endereço do beneficiário em [Carteiras de Cobrança](/reference/v1/bank_billet_accounts),
+a antiga maneira continua funcionando da mesma forma mas será depreciada.
+
 ### 30/12/2020
 
 - Adiciona o campo `default_to_import` em [Carteiras de Cobrança](/reference/v1/bank_billet_accounts)
