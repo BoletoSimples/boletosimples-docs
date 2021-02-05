@@ -85,6 +85,16 @@ layout: pt
 | **divergent_payment_maximum_percentage** | Não         | Float   |         | Percentual máximo para a faixa de pagamentos divergentes. Válido apenas para [Itaú](/bank_contracts/itau) e [Caixa](/bank_contracts/cef).                                                                                                                                                                                                                                            |
 | **divergent_payment_limit**              | Não         | Integer |         | Quantidade de pagamentos permitida. Obrigatório se informados dados para pagamento divergente. Usado somente pela [Caixa](/bank_contracts/cef).                                                                                                                                                                                                                                      |
 | **custom_attachment_name**               | Não         | String  | 255     | Nome para ser usado nos arquivos de boleto enviados para o cliente em notificações. Aceita uso de variáveis. Caso seja deixado vazio, o padrão é a palavra "boleto" acompanhada do ID.                                                                                                                                                                                               |
+| **guarantor_name** | Não | String | 100 | Nome do Benecifiário final (Sacador/Avalista)
+| **guarantor_cnpj_cpf** | Não | String | 20 | CNPJ/CPF do Benecifiário final (Sacador/Avalista)
+| **guarantor_zipcode** | Não | String | 8 | CEP (formato 99999999) do Benecifiário final (Sacador/Avalista)
+| **guarantor_address** | Não | String | 255 | Endereço do Benecifiário final (Sacador/Avalista)
+| **guarantor_city_name** | Não | String | 60 | Cidade(Nome deve estar correto e completo) do Benecifiário final (Sacador/Avalista)
+| **guarantor_state** | Não | String | 2 | Estado do Benecifiário final (Sacador/Avalista)
+| **guarantor_neighborhood** | Não | String | 80 | Bairro do Benecifiário final (Sacador/Avalista)
+| **guarantor_address_number** | Não | String | 10 | Número do Benecifiário final (Sacador/Avalista)
+| **guarantor_address_complement** | Não | String | 60 | Complemento do Benecifiário final (Sacador/Avalista)
+| **guarantor_phone_number** | Não | String | 11 | Telefone (com DDD) do Benecifiário final (Sacador/Avalista)
 
 ### Dicionário de Dados
 
