@@ -8,43 +8,44 @@ layout: pt
 
 ## Clientes
 
-| Recurso                  | Descrição
-| ------------------------ | ------------------------
-| [POST /api/v1/customers](#criar-cliente) | Criar cliente
-| [GET /api/v1/customers/:id](#informações-do-cliente) | Informações do cliente
-| [PATCH /api/v1/customers/:id](#atualizar-cliente) | Atualizar cliente
-| [PUT /api/v1/customers/:id](#atualizar-cliente) | Atualizar cliente
-| [GET /api/v1/customers](#listar-clientes) | Listar clientes
-| [GET /api/v1/customers/cnpj_cpf](#buscar-por-cpf-ou-cnpj) | Buscar por CPF ou CNPJ
-| [GET /api/v1/customers/email](#buscar-por-e-mail) | Buscar por e-mail
+| Recurso                                                   | Descrição              |
+| --------------------------------------------------------- | ---------------------- |
+| [POST /api/v1/customers](#criar-cliente)                  | Criar cliente          |
+| [GET /api/v1/customers/:id](#informações-do-cliente)      | Informações do cliente |
+| [PATCH /api/v1/customers/:id](#atualizar-cliente)         | Atualizar cliente      |
+| [PUT /api/v1/customers/:id](#atualizar-cliente)           | Atualizar cliente      |
+| [GET /api/v1/customers](#listar-clientes)                 | Listar clientes        |
+| [GET /api/v1/customers/cnpj_cpf](#buscar-por-cpf-ou-cnpj) | Buscar por CPF ou CNPJ |
+| [GET /api/v1/customers/email](#buscar-por-e-mail)         | Buscar por e-mail      |
 
 ### Modelo de Dados
 
-| Parâmetro              | Obrigatório  | Tipo    | Tamanho | Descrição
-| ---------------------- | ----- | ------- | ------- | ------------------------
-| **id**                 | N/A   | Integer |         | ID do cliente
-| **person_name**        | Sim   | String  | 120     | Nome Completo ou Razão Social
-| **nickname**           | Não   | String  | 255     | Apelido ou Nome Fantasia
-| **person_type**        | N/A   | String  |         | Tipo de Cliente
-| **cnpj_cpf**           | Sim   | String  | 20      | CNPJ/CPF (formato 999.999.999-99 ou 99.999.999/9999-99)
-| **zipcode**            | Sim   | Integer | 8       | CEP (formato 99999999)
-| **address**            | Sim   | String  | 255         | Endereço
-| **city_name**          | Sim   | String  | 60     | Cidade
-| **state**              | Sim   | String  | 2       | Estado (sigla do estado, Ex: RJ)
-| **neighborhood**       | Sim   | String  | 80     | Bairro
-| **address_number**     | Não   | String  | 10     | Número
-| **address_complement** | Não   | String  | 60     | Complemento
-| **phone_number**       | Não   | String  | 11      | Telefone (formato 9988888888)
-| **email**              | Não   | String  | 80     | E-mail
-| **mobile_local_code**  | Não   | String  | 2       | DDD do Celular
-| **mobile_number**      | Não   | String  | 9      | Celular
-| **notes**              | Não   | Text    |         | Anotações
-| **email_cc**           | Não   | String  | 80     | E-mail alternativo
-| **created_via_api**    | N/A   | Boolean |         | Enviado pela API
-| **contact_person**     | Não   | String  | 255     | Pessoa de contato
-| **truncated_address**  | Não   | String  | 40      | Endereço para remessa
-| **external_code**      | Não   | String  | 60      | Código externo do Cliente
-| **tags**               | Não   | Array   |         | Etiquetas (Tags)
+| Parâmetro              | Obrigatório | Tipo    | Tamanho | Descrição                                               |
+| ---------------------- | ----------- | ------- | ------- | ------------------------------------------------------- |
+| **id**                 | N/A         | Integer |         | ID do cliente                                           |
+| **person_name**        | Sim         | String  | 120     | Nome Completo ou Razão Social                           |
+| **nickname**           | Não         | String  | 255     | Apelido ou Nome Fantasia                                |
+| **person_type**        | N/A         | String  |         | Tipo de Cliente                                         |
+| **cnpj_cpf**           | Sim         | String  | 20      | CNPJ/CPF (formato 999.999.999-99 ou 99.999.999/9999-99) |
+| **zipcode**            | Sim         | Integer | 8       | CEP (formato 99999999)                                  |
+| **address**            | Sim         | String  | 255     | Endereço                                                |
+| **city_name**          | Sim         | String  | 60      | Cidade                                                  |
+| **state**              | Sim         | String  | 2       | Estado (sigla do estado, Ex: RJ)                        |
+| **neighborhood**       | Sim         | String  | 80      | Bairro                                                  |
+| **address_number**     | Não         | String  | 10      | Número                                                  |
+| **address_complement** | Não         | String  | 60      | Complemento                                             |
+| **phone_number**       | Não         | String  | 11      | Telefone (formato 9988888888)                           |
+| **email**              | Não         | String  | 80      | E-mail                                                  |
+| **mobile_local_code**  | Não         | String  | 2       | DDD do Celular                                          |
+| **mobile_number**      | Não         | String  | 9       | Celular                                                 |
+| **notes**              | Não         | Text    |         | Anotações                                               |
+| **email_cc**           | Não         | String  | 80      | E-mail alternativo                                      |
+| **created_via_api**    | N/A         | Boolean |         | Enviado pela API                                        |
+| **contact_person**     | Não         | String  | 255     | Pessoa de contato                                       |
+| **truncated_address**  | Não         | String  | 40      | Endereço para remessa                                   |
+| **external_code**      | Não         | String  | 60      | Código externo do Cliente                               |
+| **tags**               | Não         | Array   |         | Etiquetas (Tags)                                        |
+| **ignore_email**       | Não         | Boolean |         | Nunca enviar e-mail para este cliente                   |
 
 ### Criar cliente
 
@@ -146,6 +147,7 @@ Array
 </pre>
 
     </div>
+
 </div>
 
 #### Exemplo de requisição válida
@@ -236,7 +238,8 @@ else
   puts @customer.response_errors
 end
 </pre>
-  <small>Resposta:</small>
+
+<small>Resposta:</small>
 
 <pre class="ruby">
 Sucesso :)
@@ -294,7 +297,8 @@ if($customer->isPersisted()) {
   print_r($customer->response_errors);
 }
 </pre>
-  <small>Resposta:</small>
+
+<small>Resposta:</small>
 
 <pre class="php">
 Sucesso :)
@@ -560,6 +564,7 @@ Array
 </pre>
 
     </div>
+
 </div>
 
 #### Exemplo de requisição válida
@@ -610,7 +615,8 @@ else
   puts @customer.response_errors
 end
 </pre>
-  <small>Resposta:</small>
+
+<small>Resposta:</small>
 
 <pre class="ruby">
 Sucesso :)
@@ -632,7 +638,8 @@ if($customer->save()) {
   print_r($customer->response_errors);
 }
 </pre>
-  <small>Resposta:</small>
+
+<small>Resposta:</small>
 
 <pre class="php">
 Sucesso :)
@@ -962,7 +969,6 @@ Array
 </pre>
   </div> -->
 </div>
-
 
 ### Buscar por e-mail
 
