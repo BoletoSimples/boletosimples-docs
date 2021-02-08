@@ -22,6 +22,10 @@ Você também pode se inscrever para receber as notificações de alterações d
 
 #### Últimas alterações realizadas na API.
 
+### 08/02/2021
+
+- Atualiza o módulo do [Totvs RM](/modules/totvs-rm)
+
 ### 04/02/2021
 
 - Adiciona os campos `guarantor_name`, `guarantor_cnpj_cpf`, `guarantor_zipcode`, `guarantor_address`, `guarantor_city_name`, `guarantor_state`, `guarantor_neighborhood`, `guarantor_address_number`, `guarantor_address_complement` e `guarantor_phone_number` em [Carnês](/reference/v1/installments)
