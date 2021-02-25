@@ -24,6 +24,10 @@ Você também pode se inscrever para receber as notificações de alterações d
 
 ### 08/02/2021
 
+- Atualiza slug de carteira `cecred-bs-1` para `ailos-bs-1` em [Ailos](/bank_contracts/ailos)
+
+### 08/02/2021
+
 - Atualiza o módulo do [Totvs RM](/modules/totvs-rm)
 
 ### 04/02/2021
@@ -47,12 +51,12 @@ Você também pode se inscrever para receber as notificações de alterações d
 
 ### 11/01/2020
 
-* Depreciado o campo `default_to_import` em [Carteiras de Cobrança](/reference/v1/bank_billet_accounts)
+- Depreciado o campo `default_to_import` em [Carteiras de Cobrança](/reference/v1/bank_billet_accounts)
 
 ### 08/01/2021
 
-* Adiciona novo formato de endereço do beneficiário em [Carteiras de Cobrança](/reference/v1/bank_billet_accounts),
-a antiga maneira continua funcionando da mesma forma mas será depreciada.
+- Adiciona novo formato de endereço do beneficiário em [Carteiras de Cobrança](/reference/v1/bank_billet_accounts),
+  a antiga maneira continua funcionando da mesma forma mas será depreciada.
 
 ### 30/12/2020
 
