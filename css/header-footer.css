@@ -614,6 +614,32 @@ footer#main-footer {
     color: #444; }
   footer#main-footer .bs-infos {
     margin-bottom: 4em; }
+  footer#main-footer .whatsapp-button {
+    background-color: #46a648;
+    width: 75px;
+    height: 75px;
+    font-size: 35px;
+    right: 20px;
+    left: auto;
+    bottom: 20px;
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    color: #fff !important;
+    -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    position: fixed;
+    z-index: 2000;
+    -webkit-box-align: center !important;
+        -ms-flex-align: center !important;
+            align-items: center !important;
+    -webkit-box-pack: center !important;
+        -ms-flex-pack: center !important;
+            justify-content: center !important;
+    border-radius: 50% !important;
+    text-decoration: none; }
 
 /*
 Max Width, 960px
