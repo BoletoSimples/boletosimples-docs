@@ -154,6 +154,8 @@ layout: pt
 | **split_payment** | Não | Boolean | | Split de Pagamento. Caso `true`, o rateio do boleto será registrado. Informar as contas para rateio em `split_accounts`.
 | **split_accounts** | Não | Array | | Contas para Split de pagamento. Válido apenas para [ABC Brasil](/bank_contracts/abc) e [Bradesco](/bank_contracts/bradesco). ([possíveis valores](#split_accounts))
 | **custom_data** | Não | Json | | Disponível para envio de um JSON, os valores podem ser usados ao e-mail ou em um template personalizado. Variável a ser substituida `bank_billet.custom_data`)
+| **pix_enabled** | N/A | Boolean | | Caso `true`, indica que esse boleto é híbrido.
+| **pix_qrcode** | N/A | String | | EMV do PIX, pode ser usado para ser pago através do pix copia e cola ou gerando um qrcode com esse texto. 
 
 \* Caso sua empresa utilize o serviço de registro via web service a inclusão de dias para protesto poderá não fazer efeito. Consulte a nossa equipe de suporte para saber mais.
 
