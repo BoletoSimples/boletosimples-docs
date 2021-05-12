@@ -22,6 +22,12 @@ Você também pode se inscrever para receber as notificações de alterações d
 
 #### Últimas alterações realizadas na API.
 
+### 11/05/2021
+
+- Adiciona os campos `pix_enabled` e `pix_qrcode` em [Boletos](/reference/v1/bank_billets)
+
+- Adiciona o campo `paid_by_pix` em [Pagamentos de Boleto](/reference/v1/bank_billet_payments)
+
 ### 08/02/2021
 
 - Atualiza slug de carteira `cecred-bs-1` para `ailos-bs-1` em [Ailos](/bank_contracts/ailos)
