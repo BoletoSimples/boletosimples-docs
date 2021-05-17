@@ -1,0 +1,73 @@
+---
+title: Módulo TOTVS Microsiga Protheus
+en: "/en/modules/totvs-rm"
+layout: pt
+---
+
+## Módulo TOTVS Microsiga Protheus
+
+[TOTVS](https://www.totvs.com) é a empresa líder do mercado brasileiro de ERP. Ela possui alguns sistemas de gestão, dentre eles o Protheus.
+
+A integração realiza a geração dos boletos a partir dos títulos cadastrados no contas a receber e permite baixa automática pelo agendamento de processos.
+
+### Desenvolvedor
+
+![LEEF](/img/modules/totvs-protheus/leef.webp)
+
+Esse módulo foi desenvolvido e é comercializado pela [LEEF Tecnologia](https://www.leef.com.br/)
+
+A LEEF é parceira do Boleto Simples especialista em implantação, desenvolvimento sob demanda e suporte ao ERP TOTVS Microsiga Protheus.
+
+Dentre os serviços prestados estão:
+
+* Suporte ao suporte
+* Administração de ERP terceirizada
+* Migração de versão
+* Atualizações
+* Obrigações fiscais eletrônicas
+* Desenvolvimento específico
+* Outsourcing
+* Desenvolvimento de facilitadores de interface ao usuário
+* Treinamentos
+
+### Características do Módulo
+
+  * Transmissão automática on line (em tempo real) dos títulos de contas a receber gerados após emissão de documentos de saída, permitindo a impressão e ou envio do boleto em e-mail separado para o cliente.
+  * Schedule para recepção e processamento das baixas e retornos recebidos do banco.
+  * Interface para acompanhamento dos envios, retornos e mensagens do banco (status)
+  * Interface para reenvio de boleto
+  * Relatórios de envios e retornos
+  * Interface para instruções de cobrança (prorrogação, descontos, protestos, baixas , etc.)
+  * Envio de boleto no mesmo email do DANFE
+
+### Código Fonte
+
+O código fonte deste módulo não é disponibilizado.
+
+### Requisitos
+
+* ERP TOTVS Protheus
+
+### Instalação
+
+A instalação e implementação são realizadas pela equipe especializada da LEEF.
+
+O preço da instalação e suporte é de R$ 1.800 (mil e oitocentos reais)
+
+A implementação cobre:
+
+  * Configuração do menu padão SIGAFIN
+  * Criação, instalação e configuração do schedule
+  * Implementação/compilação e troca de RPO em até 5 RPOs
+  * Configuração de 1 (UM) cliente e  1 (UMA) filial
+  * Treinamento e acompanhamento por até 3 horas.
+
+O prazo para implementação é de 5 dias uteis após a confirmação da aquisição.
+
+### Custo
+
+O custo para utilização deste módulo é de R$ 240/mês (duzentos e quarenta reais por mês).
+
+### Demonstração
+
+<iframe width="100%" height="473" src="https://www.youtube.com/embed/Nrz4N1_Mihw?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

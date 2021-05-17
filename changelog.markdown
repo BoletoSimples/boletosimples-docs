@@ -22,6 +22,10 @@ Você também pode se inscrever para receber as notificações de alterações d
 
 #### Últimas alterações realizadas na API.
 
+### 17/05/2021
+
+- Adiciona informações sobre o [módulo TOTVS Microsiga Protheus](/modules/totvs-protheus)
+
 ### 13/05/2021
 
 - Documenta o campo `allow_expiration_on_weekends` em [Carteiras de Cobrança](/reference/v1/bank_billet_accounts)
