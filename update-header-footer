@@ -32,7 +32,8 @@ class Runner
         update('header')
         update('footer')
         update_css
-        update_js
+        # don't need to update js because there is no css for header and footer at the time
+        # update_js
       end
     end
 
