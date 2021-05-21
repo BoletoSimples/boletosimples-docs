@@ -22,6 +22,15 @@ Você também pode se inscrever para receber as notificações de alterações d
 
 #### Últimas alterações realizadas na API.
 
+### 21/05/2021
+
+- Remove obrigatoriedade do campo `description` em Boletos, Assinaturas e Carnês
+- Remove campos descontinuados `interest_daily_percentage`, `interest_daily_value`, `interest_monthly_percentage`, `late_payment_interest`, `discount_limit_date`, `fine_for_delay` em Boletos, Assinaturas e Carnês
+- Remove endpoints descontinuados `GET /api/v1/bank_billets/cnpj_cpf`, `GET /api/v1/bank_billets/our_number` e `GET /api/v1/bank_billets/status` e `POST /api/v1/bank_billets/bulk` em [Boletos](/reference/v1/bank_billets)
+- Documenta os campos `customer_ignore_sms`, `customer_contact_person` e `payment_count` em [Boletos](/reference/v1/bank_billets)
+- Documenta os campos `customer_ignore_sms`, `customer_contact_person`, `payment_count`, `days_for_sue`, `days_for_revoke` e `days_for_negativation` em [Assinaturas](/reference/v1/customer_subscriptions)
+- Documenta os campos `customer_ignore_sms`, `customer_contact_person`, `payment_count`, `days_for_sue`, `days_for_revoke`, `days_for_negativation`, `document_date`, `document_type`, `document_number` e `custom_bank_billets` em [Carnês](/reference/v1/installments)
+
 ### 17/05/2021
 
 - Adiciona informações sobre o [módulo TOTVS Microsiga Protheus](/modules/totvs-protheus)
