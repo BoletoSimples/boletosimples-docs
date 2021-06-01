@@ -9,14 +9,13 @@ layout: pt
 [TOTVS](https://www.totvs.com) é a empresa líder do mercado brasileiro de ERP. Ela possui alguns sistemas de gestão, dentre eles o Protheus.
 
 A integração realiza a geração dos boletos a partir dos títulos cadastrados no contas a receber e permite baixa automática pelo agendamento de processos.
-
-### Desenvolvedor
+### Parceiro
 
 ![LEEF](/img/modules/totvs-protheus/leef.webp)
 
 Esse módulo foi desenvolvido e é comercializado pela [LEEF Tecnologia](https://www.leef.com.br/)
 
-A LEEF é parceira do Boleto Simples especialista em implantação, desenvolvimento sob demanda e suporte ao ERP TOTVS Microsiga Protheus.
+A LEEF é parceira do Boleto Simples especialista em implantação, desenvolvimento sob demanda e suporte ao ERP TOTVS Microsiga Protheus. Ela própira comercializa a solução de forma que sua empresa não precise contratar o Boleto Simples e tenha condições especiais para emissão de menos de 1.500 boletos/mês.
 
 Dentre os serviços prestados estão:
 
@@ -40,10 +39,6 @@ Dentre os serviços prestados estão:
   * Interface para instruções de cobrança (prorrogação, descontos, protestos, baixas , etc.)
   * Envio de boleto no mesmo email do DANFE
 
-### Código Fonte
-
-O código fonte deste módulo não é disponibilizado.
-
 ### Requisitos
 
 * ERP TOTVS Protheus
@@ -63,11 +58,10 @@ A implementação cobre:
   * Treinamento e acompanhamento por até 3 horas.
 
 O prazo para implementação é de 5 dias uteis após a confirmação da aquisição.
-
-### Custo
-
-O custo para utilização deste módulo é de R$ 240/mês (duzentos e quarenta reais por mês).
-
 ### Demonstração
 
 <iframe width="100%" height="473" src="https://www.youtube.com/embed/Nrz4N1_Mihw?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+### Disclaimer 
+
+Os nomes TOTVS, Microsiga e Protheus são marcas registradas de uma companhia do grupo TOTVS.
