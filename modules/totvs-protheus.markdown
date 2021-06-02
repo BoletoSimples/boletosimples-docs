@@ -15,7 +15,7 @@ A integração realiza a geração dos boletos a partir dos títulos cadastrados
 
 Esse módulo foi desenvolvido e é comercializado pela [LEEF Tecnologia](https://www.leef.com.br/)
 
-A LEEF é parceira do Boleto Simples especialista em implantação, desenvolvimento sob demanda e suporte ao ERP TOTVS Microsiga Protheus. Ela própira comercializa a solução de forma que sua empresa não precise contratar o Boleto Simples e tenha condições especiais para emissão de menos de 1.500 boletos/mês.
+A LEEF é parceira do Boleto Simples especialista em implantação, desenvolvimento sob demanda e suporte ao ERP TOTVS Microsiga Protheus. Ela própria comercializa a solução de forma que sua empresa não precise contratar o Boleto Simples e tenha condições especiais para emissão de menos de 1.500 boletos/mês, se for o caso.
 
 Dentre os serviços prestados estão:
 
@@ -46,8 +46,6 @@ Dentre os serviços prestados estão:
 ### Instalação
 
 A instalação e implementação são realizadas pela equipe especializada da LEEF.
-
-O preço da instalação e suporte é de R$ 1.800 (mil e oitocentos reais)
 
 A implementação cobre:
 
