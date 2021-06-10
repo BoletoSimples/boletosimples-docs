@@ -15,4 +15,4 @@ exclude:
 - README.textile
 permalink: pretty
 plugins:
-  - jekyll-sitemap
+- jekyll-sitemap
