@@ -14,5 +14,5 @@ exclude:
 - Gemfile.lock
 - README.textile
 permalink: pretty
-jekyll-sitemap:
-- 
+plugins:
+  - jekyll-sitemap
