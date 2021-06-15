@@ -65,3 +65,7 @@ Deve ser marcada a opção *"Importar Gatilhos"*, na aba Parâmetros, para cada 
 ⦁   Após execução do processo de inclusão de boleto no TOTVS Gestão Financeira será feita a integração incluindo o boleto no Boletos Simples, caso o convenio associado ao boleto esteja integrado. O status da remessa do boleto no TOTVS Gestão Financeira será alterado para Remetido.
 
 ⦁   Para atualizar o status do boleto no TOTVS Gestão Financeira deve ser executada a fórmula visual “Consulta Status do Boleto”, menu Gestão/Fórmula Visual/Executar, onde será consultado o status do boleto no Boleto Simples. Caso o boleto estiver com status de “Pago” ou “Cancelado” no Boleto Simples será realizado a baixa ou cancelamento do boleto no TOTVS Gestão Financeira respectivamente. Essa fórmula visual pode ser agendada. É gerado um log de cada execução na pasta RM.NET\Processos\FV.
+
+### Disclaimer 
+
+TOTVS RM®️ e TOTVS®️ são marcas registradas da TOTVS®️.

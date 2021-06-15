@@ -62,4 +62,6 @@ O prazo para implementação é de 5 dias uteis após a confirmação da aquisi�
 
 ### Disclaimer 
 
-Os nomes TOTVS, Microsiga e Protheus são marcas registradas de uma companhia do grupo TOTVS.
+MICROSIGA®️, PROTHEUS®️ e TOTVS®️ são marcas registradas da TOTVS®️.
+
+LEEF TECNOLOGIA DE NEGOCIOS é uma empresa independente. Não revende ou representa a marca e produtos da TOTVS®️
