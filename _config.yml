@@ -16,3 +16,5 @@ exclude:
 permalink: pretty
 plugins:
 - jekyll-sitemap
+include:
+- _headers
