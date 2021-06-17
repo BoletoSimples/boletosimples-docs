@@ -1,10 +1,10 @@
 ---
-title: Módulo TOTVS Microsiga Protheus
+title: Rotina TOTVS Microsiga Protheus
 en: "/en/modules/totvs-rm"
 layout: pt
 ---
 
-## Módulo TOTVS Microsiga Protheus
+## Rotina TOTVS Microsiga Protheus
 
 [TOTVS](https://www.totvs.com) é a empresa líder do mercado brasileiro de ERP. Ela possui alguns sistemas de gestão, dentre eles o Protheus.
 
@@ -13,7 +13,7 @@ A integração realiza a geração dos boletos a partir dos títulos cadastrados
 
 ![LEEF](/img/modules/totvs-protheus/leef.webp)
 
-Esse módulo foi desenvolvido e é comercializado pela [LEEF Tecnologia](https://www.leef.com.br/)
+Essa rotina foi desenvolvido e é comercializado pela [LEEF Tecnologia](https://www.leef.com.br/)
 
 A LEEF é parceira do Boleto Simples especialista em implantação, desenvolvimento sob demanda e suporte ao ERP TOTVS Microsiga Protheus. Ela própria comercializa a solução de forma que sua empresa não precise contratar o Boleto Simples e tenha condições especiais para emissão de menos de 1.500 boletos/mês, se for o caso.
 
@@ -29,7 +29,7 @@ Dentre os serviços prestados estão:
 * Desenvolvimento de facilitadores de interface ao usuário
 * Treinamentos
 
-### Características do Módulo
+### Características da Rotina
 
   * Transmissão automática on line (em tempo real) dos títulos de contas a receber gerados após emissão de documentos de saída, permitindo a impressão e ou envio do boleto em e-mail separado para o cliente.
   * Schedule para recepção e processamento das baixas e retornos recebidos do banco.
