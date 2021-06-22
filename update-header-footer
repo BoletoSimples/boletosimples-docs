@@ -40,16 +40,16 @@ class Runner
     def update(part)
       output = open("#{base_url}/#{part}").read
       output = output.gsub('http://localhost:4567','https://www.boletosimples.com.br')
-      output = output.gsub('https://www.boletosimples.com.br/images/','/img/')
+      output = output.gsub('https://www.boletosimples.com.br/assets/images/','/img/')
       open("_includes/#{part}.html", 'w') do |file|
         file << output
       end
     end
 
     def update_css
-      output = open("#{base_url}/stylesheets/header-footer.css").read
+      output = open("#{base_url}/assets/stylesheets/header-footer.css").read
       output = output.gsub('http://localhost:4567','https://www.boletosimples.com.br')
-      output = output.gsub('https://www.boletosimples.com.br/images/','/img/')
+      output = output.gsub('https://www.boletosimples.com.br/assets/images/','/img/')
       open('css/header-footer.css', 'w') do |file|
         file << output
       end
@@ -57,7 +57,7 @@ class Runner
 
     def update_js
       open('js/header-footer.js', 'w') do |file|
-        file << open("#{base_url}/javascripts/header-footer.js").read
+        file << open("#{base_url}/assets/javascripts/header-footer.js").read
       end
     end
 
