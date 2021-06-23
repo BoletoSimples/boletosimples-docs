@@ -63,6 +63,7 @@ Content-Type: application/json; charset=utf-8
   "id": 223,
   "code": "transaction.created",
   "bank_billet_account_id": 2
+  "resource_owner_id":68,
   "data": {
     "object": {
       "id": 68,
@@ -191,7 +192,7 @@ Array
 
 <tr>
       <td>
-        <strong>object_id </strong>
+        <strong>resource_owner_id </strong>
       </td>
       <td>
         Não
@@ -284,6 +285,7 @@ Content-Type: application/json; charset=utf-8
     "id": 224,
     "code": "customer.updated",
     "bank_billet_account_id": null,
+    "resource_owner_id":67,
     "data": {
       "object": {
         "id": 67,
@@ -328,6 +330,7 @@ Content-Type: application/json; charset=utf-8
     "id": 223,
     "code": "transaction.created",
     "bank_billet_account_id": null,
+    "resource_owner_id":68,
     "data": {
       "object": {
         "id": 68,

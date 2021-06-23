@@ -79,6 +79,7 @@ Content-Type: application/json; charset=utf-8
 {
   "id":1,
   "content":"{}",
+  "resource_owner_id":1,
   "delivered_at":'2015-03-17T03:36:08-03:00',
   "event_code":'bank_billet.generated',
   "failed_at":nil,
@@ -156,13 +157,13 @@ Array
 
 `GET /api/v1/email_deliveries`
 
-| Parâmetro      | Obrigatório | Tipo    | Descrição                                                                       |
-| -------------- | ----------- | ------- | ------------------------------------------------------------------------------- |
-| **page**       | Não         | Integer | Número da Página                                                                |
-| **per_page**   | Não         | Integer | Quantidade de registros por página                                              |
-| **event_code** | Não         | String  | Código do evento. Ver possíveis valores na [lista de eventos](/webhooks/events) |
-| **status**     | Não         | Integer | Status do e-mail enviado ([possíveis valores](#status))                         |
-| **obj_id**     | Não         | Integer | ID do Objeto                                                                    |
+| Parâmetro             | Obrigatório | Tipo    | Descrição                                                                       |
+| --------------------- | ----------- | ------- | ------------------------------------------------------------------------------- |
+| **page**              | Não         | Integer | Número da Página                                                                |
+| **per_page**          | Não         | Integer | Quantidade de registros por página                                              |
+| **event_code**        | Não         | String  | Código do evento. Ver possíveis valores na [lista de eventos](/webhooks/events) |
+| **status**            | Não         | Integer | Status do e-mail enviado ([possíveis valores](#status))                         |
+| **resource_owner_id** | Não         | Integer | ID do Objeto                                                                    |
 
 O `ID do Objeto` vai retornar todos e qualquer tipo de objeto que tenha o ID enviado, ou seja, se você enviar `1`, poderá retornar boletos, clientes e etc. Caso queira um filtro mais refinado, combine o `ID do Objeto ` com o `Código do evento`.
 
@@ -202,36 +203,7 @@ Content-Type: application/json; charset=utf-8
     "id":1,
     "content":"{}",
     "delivered_at":'2015-03-17T03:36:08-03:00',
-    "event": {
-      "id": 212,
-      "code": "bank_billet.generated",
-      "data": {
-        "object": {
-          "id":1,
-          "expire_at":"2014-11-15",
-          "paid_at":null,
-          "description":"Prestação de Serviço",
-          "status":"opened",
-          "url":"http://bole.to/xxxxxxxx",
-          "customer_person_type":"individual",
-          "customer_person_name":"Nome do Cliente",
-          "customer_cnpj_cpf":"125.812.717-28",
-          "customer_address":"Rua quinhentos",
-          "customer_state":"RJ",
-          "customer_neighborhood":"bairro",
-          "customer_zipcode":"12312-123",
-          "customer_address_number":null,
-          "customer_address_complement":null,
-          "customer_phone_number":null,
-          "customer_email":null,
-          "created_via_api":true,
-          "customer_city_name":null,
-          "paid_amount":0.0,
-          "amount":12.34
-        }
-      },
-      "occurred_at": "2015-03-16T22:56:05.000-03:00"
-    }
+    "resource_owner_id":1,
     "event_code":'bank_billet.generated',
     "failed_at":nil,
     "sent_error":nil,
