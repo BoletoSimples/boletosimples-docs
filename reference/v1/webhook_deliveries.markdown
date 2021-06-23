@@ -8,36 +8,33 @@ breadcrumb: Webhook Enviados
 
 ## Webhook Enviados
 
-| Recurso                  | Descrição
-| ------------------------ | ------------------------
-| [GET /api/v1/webhook_deliveries/:id](#informações-do-webhook-enviado) | Informações do webhook enviado
-| [GET /api/v1/webhook_deliveries](#listar-webhook-enviados) | Listar webhook enviados
-| [PUT /api/v1/webhook_deliveries/resend](#reenviar-webhook) | Reenviar webhook
+| Recurso                                                               | Descrição                      |
+| --------------------------------------------------------------------- | ------------------------------ |
+| [GET /api/v1/webhook_deliveries/:id](#informações-do-webhook-enviado) | Informações do webhook enviado |
+| [GET /api/v1/webhook_deliveries](#listar-webhook-enviados)            | Listar webhook enviados        |
+| [PUT /api/v1/webhook_deliveries/resend](#reenviar-webhook)            | Reenviar webhook               |
 
 ### Modelo de Dados
 
-| Parâmetro            | Obrigatório  | Tipo     | Tamanho | Descrição
-| -------------------- | ----- | -------- | ------- | ------------------------
-| **id**               | N/A   | Integer  |         | ID do webhook delivery
-| **uid**              | N/A   | String   | 36      | UID usado no cabeçalho da requisição
-| **url**              | N/A   | String   | 255     | Endereço onde a entrega foi realizada, herdado do webhook
-| **request_payload**  | N/A   | Hash     |         | Payload que será enviado no corpo da mensagem. Ver possíveis valores em [Payloads](/webhooks/payloads)
-| **request_error**    | N/A   | String   | 255     | Mensagem de erro retornada na resquisição
-| **response_headers** | N/A   | Hash     |         | Cabeçalhos da resposta
-| **response_body**    | N/A   | Text     |         | Conteúdo do corpo da resposta
-| **response_code**    | N/A   | Integer  |         | Código HTTP da resposta. [Leia mais](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes)
-| **response_message** | N/A   | String   | 255     | Mensagem relativa ao Código HTTP da resposta [Leia mais](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes)
-| **delivered_at**     | N/A   | DateTime |         | Data e hora que a entrega foi realizada
-| **duration**         | N/A   | Integer  |         | Duração em milesegundos do round trip entre requisição e resposta
-| **event**            | N/A   | Object   |         | Evento relativo à entrega. [Leia mais](/reference/v1/events/#modelo-de-dados)
-| **webhook**          | N/A   | Object   |         | [Webhook](/reference/v1/webhooks/#modelo-de-dados)
-| **event_code**       | N/A   | String   | 255     | Código do evento. Ver possíveis valores na [lista de eventos](/webhooks/events)
-| **event_id**         | N/A   | Integer  |         | ID do Evento
-| **webhook_id**       | N/A   | Integer  |         | ID do Webhook
-| **response_code**    | N/A   | Integer  |         | Código HTTP da resposta. [Leia mais](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes)
-| **uid**              | N/A   | String   | 255     | UID usado no cabeçalho da requisição
-| **status**           | N/A   | Integer  |         | Situação do webhook delivery ([possíveis valores](#status))
-
+| Parâmetro             | Obrigatório | Tipo     | Tamanho      | Descrição                                                                                                         |
+| --------------------- | ----------- | -------- | ------------ | ----------------------------------------------------------------------------------------------------------------- |
+| **id**                | N/A         | Integer  |              | ID do webhook delivery                                                                                            |
+| **uid**               | N/A         | String   | 36           | UID usado no cabeçalho da requisição                                                                              |
+| **url**               | N/A         | String   | 255          | Endereço onde a entrega foi realizada, herdado do webhook                                                         |
+| **request_payload**   | N/A         | Hash     |              | Payload que será enviado no corpo da mensagem. Ver possíveis valores em [Payloads](/webhooks/payloads)            |
+| **request_error**     | N/A         | String   | 255          | Mensagem de erro retornada na resquisição                                                                         |
+| **response_headers**  | N/A         | Hash     |              | Cabeçalhos da resposta                                                                                            |
+| **response_body**     | N/A         | Text     |              | Conteúdo do corpo da resposta                                                                                     |
+| **response_code**     | N/A         | Integer  |              | Código HTTP da resposta. [Leia mais](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes)                     |
+| **response_message**  | N/A         | String   | 255          | Mensagem relativa ao Código HTTP da resposta [Leia mais](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes) |
+| **delivered_at**      | N/A         | DateTime |              | Data e hora que a entrega foi realizada                                                                           |
+| **duration**          | N/A         | Integer  |              | Duração em milesegundos do round trip entre requisição e resposta                                                 |
+| **event_code**        | N/A         | String   | 255          | Código do evento. Ver possíveis valores na [lista de eventos](/webhooks/events)                                   |
+| **webhook_id**        | N/A         | Integer  |              | ID do [Webhook](/reference/v1/webhooks/#modelo-de-dados)                                                          |
+| **response_code**     | N/A         | Integer  |              | Código HTTP da resposta. [Leia mais](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes)                     |
+| **uid**               | N/A         | String   | 255          | UID usado no cabeçalho da requisição                                                                              |
+| **status**            | N/A         | Integer  |              | Situação do webhook delivery ([possíveis valores](#status))                                                       |
+| **resource_owner_id** | Não         | Integer  | ID do Objeto |
 
 ### Dicionário de Dados
 
@@ -46,7 +43,6 @@ breadcrumb: Webhook Enviados
 | 0 | pending
 | 1 | delivered
 | 2 | failed
-
 
 ### Informações do webhook enviado
 
@@ -164,38 +160,7 @@ Content-Type: application/json; charset=utf-8
     ]
   },
   "response_message": "OK",
-  "delivered_at": "2015-03-16T22:56:05.426-03:00",
-  "event": {
-    "id": 212,
-    "code": "bank_billet.generated",
-    "data": {
-      "object": {
-        "id":1,
-        "expire_at":"2014-11-15",
-        "paid_at":null,
-        "description":"Prestação de Serviço",
-        "status":"opened",
-        "url":"http://bole.to/xxxxxxxx",
-        "customer_person_type":"individual",
-        "customer_person_name":"Nome do Cliente",
-        "customer_cnpj_cpf":"125.812.717-28",
-        "customer_address":"Rua quinhentos",
-        "customer_state":"RJ",
-        "customer_neighborhood":"bairro",
-        "customer_zipcode":"12312-123",
-        "customer_address_number":null,
-        "customer_address_complement":null,
-        "customer_phone_number":null,
-        "customer_email":null,
-        "send_email_on_creation":null,
-        "created_via_api":true,
-        "customer_city_name":null,
-        "paid_amount":0.0,
-        "amount":12.34
-      }
-    },
-    "occurred_at": "2015-03-16T22:56:05.000-03:00"
-  }
+  "delivered_at": "2015-03-16T22:56:05.426-03:00"
 }
 </pre>
   </div>
@@ -297,12 +262,6 @@ Array
       <td>Código do evento. Ver possíveis valores na <a href="/webhooks/events">lista de eventos</a></td>
     </tr>
     <tr>
-      <td><strong>event_id </strong></td>
-      <td>Não</td>
-      <td>Number</td>
-      <td>ID do Evento</td>
-    </tr>
-    <tr>
       <td><strong>webhook_id </strong></td>
       <td>Não</td>
       <td>Number</td>
@@ -327,7 +286,7 @@ Array
       <td>Situação do webhook delivery (<a href="#status">possíveis valores</a>)</td>
     </tr>
     <tr>
-      <td><strong>obj_id</strong></td>
+      <td><strong>resource_owner_id</strong></td>
       <td>Não</td>
       <td>Integer</td>
       <td>ID do Objeto</td>
@@ -452,38 +411,7 @@ Content-Type: application/json; charset=utf-8
       ]
     },
     "response_message": "OK",
-    "delivered_at": "2015-03-16T22:56:05.426-03:00",
-    "event": {
-      "id": 212,
-      "code": "bank_billet.generated",
-      "data": {
-        "object": {
-          "id":1,
-          "expire_at":"2014-11-15",
-          "paid_at":null,
-          "description":"Prestação de Serviço",
-          "status":"opened",
-          "url":"http://bole.to/xxxxxxxx",
-          "customer_person_type":"individual",
-          "customer_person_name":"Nome do Cliente",
-          "customer_cnpj_cpf":"125.812.717-28",
-          "customer_address":"Rua quinhentos",
-          "customer_state":"RJ",
-          "customer_neighborhood":"bairro",
-          "customer_zipcode":"12312-123",
-          "customer_address_number":null,
-          "customer_address_complement":null,
-          "customer_phone_number":null,
-          "customer_email":null,
-          "send_email_on_creation":null,
-          "created_via_api":true,
-          "customer_city_name":null,
-          "paid_amount":0.0,
-          "amount":12.34
-        }
-      },
-      "occurred_at": "2015-03-16T22:56:05.000-03:00"
-    }
+    "delivered_at": "2015-03-16T22:56:05.426-03:00"
   }
 ]
 </pre>
@@ -538,7 +466,6 @@ Próxima Página: https://sandbox.boletosimples.com.br/api/v1/transactions?page=
   </div-->
 </div>
 
-
 ### Reenviar webhook
 
 `PUT /api/v1/webhook_deliveries/resend` ou `PATCH /api/v1/webhook_deliveries/resend`
@@ -560,12 +487,6 @@ Está limitado aos primeiros 1000 encontrados na busca conforme os parâmetros.
       <td>Não</td>
       <td>String</td>
       <td>Código do evento. Ver possíveis valores na <a href="/webhooks/events">lista de eventos</a></td>
-    </tr>
-    <tr>
-      <td><strong>event_id </strong></td>
-      <td>Não</td>
-      <td>Integer</td>
-      <td>ID do Evento</td>
     </tr>
     <tr>
       <td><strong>webhook_id </strong></td>
@@ -592,7 +513,7 @@ Está limitado aos primeiros 1000 encontrados na busca conforme os parâmetros.
       <td>Situação do webhook delivery (<a href="#status">possíveis valores</a>)</td>
     </tr>
     <tr>
-      <td><strong>obj_id</strong></td>
+      <td><strong>resource_owner_id</strong></td>
       <td>Não</td>
       <td>Integer</td>
       <td>ID do Objeto</td>

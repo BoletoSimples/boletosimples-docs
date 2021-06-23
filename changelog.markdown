@@ -24,6 +24,7 @@ Você também pode se inscrever para receber as notificações de alterações d
 
 ### 22/06/2021
 
+- Ajusta documentação em [Webhook Enviados](/reference/v1/webhook_deliveries/)
 - Ajusta documentação em [E-mails enviados](/reference/v1/email_deliveries/)
 - Documenta o campo `resource_owner_id` em [Eventos](/reference/v1/events/)
 
