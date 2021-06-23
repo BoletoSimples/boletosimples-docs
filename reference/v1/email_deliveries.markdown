@@ -8,26 +8,28 @@ breadcrumb: E-mails enviados
 
 ## E-mails enviados
 
-| Recurso                  | Descrição
-| ------------------------ | ------------------------
-| [GET /api/v1/email_deliveries/:id](#informações-do-e-mail-enviado) | Informações do e-mail enviado
-| [GET /api/v1/email_deliveries](#listar-e-mails-enviados) | Listar e-mails enviados
-| [PUT /api/v1/email_deliveries/:id/resend](#reenviar-e-mail-enviado) | Reenviar e-mail enviado
+| Recurso                                                             | Descrição                     |
+| ------------------------------------------------------------------- | ----------------------------- |
+| [GET /api/v1/email_deliveries/:id](#informações-do-e-mail-enviado)  | Informações do e-mail enviado |
+| [GET /api/v1/email_deliveries](#listar-e-mails-enviados)            | Listar e-mails enviados       |
+| [PUT /api/v1/email_deliveries/:id/resend](#reenviar-e-mail-enviado) | Reenviar e-mail enviado       |
 
 ### Modelo de Dados
 
-| Parâmetro            | Obrigatório  | Tipo     | Tamanho | Descrição
-| -------------------- | ----- | -------- | ------- | ------------------------
-| **id**               | N/A   | Integer  |         | ID do e-mail enviado
-| **uid**              | N/A   | String   | 36      | UID usado no cabeçalho da requisição
-| **delivered_at**     | N/A   | DateTime |         | Data e hora que a entrega foi realizada
-| **failed_at**        | N/A   | DateTime |         | Data e hora que a entrega falhou
-| **event**            | N/A   | Object   |         | Evento relativo à entrega. [Leia mais](/reference/v1/events/#modelo-de-dados)
-| **event_code**       | N/A   | String   | 255     | Código do evento. Ver possíveis valores na [lista de eventos](/webhooks/events)
-| **content**          | N/A   | Text     |         | Conteúdo do email
-| **sent_error**       | N/A   | String   | 255     | Erro ocorrido no envio
-| **bank_billet_id**   | N/A   | Integer  |         | ID do Boleto
-| **obj_id**         | N/A   | Integer  |         | ID do Objeto associado ao evento
+| Parâmetro                  | Obrigatório | Tipo     | Tamanho | Descrição                                                                       |
+| -------------------------- | ----------- | -------- | ------- | ------------------------------------------------------------------------------- |
+| **id**                     | N/A         | Integer  |         | ID do e-mail enviado                                                            |
+| **uid**                    | N/A         | String   | 36      | UID usado no cabeçalho da requisição                                            |
+| **delivered_at**           | N/A         | DateTime |         | Data e hora que a entrega foi realizada                                         |
+| **failed_at**              | N/A         | DateTime |         | Data e hora que a entrega falhou                                                |
+| **event_code**             | N/A         | String   | 255     | Código do evento. Ver possíveis valores na [lista de eventos](/webhooks/events) |
+| **content**                | N/A         | Text     |         | Conteúdo do email                                                               |
+| **sent_error**             | N/A         | String   | 255     | Erro ocorrido no envio                                                          |
+| **email_notification_id**  | N/A         | Integer  |         | ID da Notificação                                                               |
+| **bank_billet_account_id** | N/A         | Integer  |         | ID da [Carteira de Cobrança](/reference/v1/bank_billet_accounts/).              |
+| **resource_owner_id**      | N/A         | Integer  |         | ID do Objeto associado ao evento                                                |
+| **status**                 | N/A         | String   | 255     | Situação                                                                        |
+| **status_occurred_at**     | N/A         | DateTime |         | Data e hora que o status ocorreu                                                |
 
 O `ID do Objeto` vai retornar todos e qualquer tipo de objeto que tenha o ID enviado, ou seja, se você enviar `1`, poderá retornar boletos, clientes e etc. Caso queira um filtro mais refinado, combine o `ID do Objeto ` com o `Código do evento`.
 
@@ -36,9 +38,10 @@ O `ID do Objeto` vai retornar todos e qualquer tipo de objeto que tenha o ID env
 #### status
 
 | 0 | Pendente
-| 1 | Enviado
-| 2 | Com falha
-
+| 1 | Enviado para o Servidor de E-mail
+| 2 | Falha no Envio para o Servidor de E-mail
+| 3 | Lido pelo Destinatário
+| 4 | Link Acessado pelo Destinatário
 
 ### Informações do e-mail enviado
 
@@ -75,39 +78,8 @@ Content-Type: application/json; charset=utf-8
 
 {
   "id":1,
-  "bank_billet_id":bank_billet1.id,
   "content":"{}",
   "delivered_at":'2015-03-17T03:36:08-03:00',
-  "event": {
-    "id": 212,
-    "code": "bank_billet.generated",
-    "data": {
-      "object": {
-        "id":1,
-        "expire_at":"2014-11-15",
-        "paid_at":null,
-        "description":"Prestação de Serviço",
-        "status":"opened",
-        "customer_person_type":"individual",
-        "customer_person_name":"Nome do Cliente",
-        "customer_cnpj_cpf":"125.812.717-28",
-        "customer_address":"Rua quinhentos",
-        "customer_state":"RJ",
-        "customer_neighborhood":"bairro",
-        "customer_zipcode":"12312-123",
-        "customer_address_number":null,
-        "customer_address_complement":null,
-        "customer_phone_number":null,
-        "customer_email":null,
-        "send_email_on_creation":null,
-        "created_via_api":true,
-        "customer_city_name":null,
-        "paid_amount":0.0,
-        "amount":12.34
-      }
-    },
-    "occurred_at": "2015-03-16T22:56:05.000-03:00"
-  }
   "event_code":'bank_billet.generated',
   "failed_at":nil,
   "sent_error":nil,
@@ -184,14 +156,13 @@ Array
 
 `GET /api/v1/email_deliveries`
 
-| Parâmetro            | Obrigatório  | Tipo     | Descrição
-| -------------------- | ----- | -------- | -----------------------
-| **page**             | Não   | Integer  | Número da Página
-| **per_page**         | Não   | Integer  | Quantidade de registros por página
-| **bank_billet_id**   | Não   | Integer  | ID do Boleto
-| **event_code**       | Não   | String   | Código do evento. Ver possíveis valores na [lista de eventos](/webhooks/events)
-| **status**           | Não   | Integer  | Status do e-mail enviado ([possíveis valores](#status))
-| **obj_id**           | Não   | Integer  | ID do Objeto
+| Parâmetro      | Obrigatório | Tipo    | Descrição                                                                       |
+| -------------- | ----------- | ------- | ------------------------------------------------------------------------------- |
+| **page**       | Não         | Integer | Número da Página                                                                |
+| **per_page**   | Não         | Integer | Quantidade de registros por página                                              |
+| **event_code** | Não         | String  | Código do evento. Ver possíveis valores na [lista de eventos](/webhooks/events) |
+| **status**     | Não         | Integer | Status do e-mail enviado ([possíveis valores](#status))                         |
+| **obj_id**     | Não         | Integer | ID do Objeto                                                                    |
 
 O `ID do Objeto` vai retornar todos e qualquer tipo de objeto que tenha o ID enviado, ou seja, se você enviar `1`, poderá retornar boletos, clientes e etc. Caso queira um filtro mais refinado, combine o `ID do Objeto ` com o `Código do evento`.
 
@@ -229,7 +200,6 @@ Content-Type: application/json; charset=utf-8
 [
   {
     "id":1,
-    "bank_billet_id":bank_billet1.id,
     "content":"{}",
     "delivered_at":'2015-03-17T03:36:08-03:00',
     "event": {
@@ -319,7 +289,6 @@ Próxima Página: https://sandbox.boletosimples.com.br/api/v1/transactions?page=
 </pre>
   </div-->
 </div>
-
 
 ### Reenviar e-mail enviado
 

@@ -8,22 +8,23 @@ layout: pt
 
 ## Eventos
 
-| Recurso                  | Descrição
-| ------------------------ | ------------------------
-| [GET /api/v1/events/:id](#informações-do-evento) | Informações do evento
-| [GET /api/v1/events](#listar-eventos) | Listar eventos
+| Recurso                                          | Descrição             |
+| ------------------------------------------------ | --------------------- |
+| [GET /api/v1/events/:id](#informações-do-evento) | Informações do evento |
+| [GET /api/v1/events](#listar-eventos)            | Listar eventos        |
 
 ### Modelo de Dados
 
-| Parâmetro       | Obrigatório  | Tipo     | Tamanho | Descrição
-| --------------- | ----- | -------- | ------- | ------------------------
-| **id**          | N/A   | Integer  |         | ID do evento
-| **code**        | N/A   | String   | 255     | Código do evento. Ver possíveis valores na [lista de eventos](/webhooks/events)
-| **data**        | N/A   | Hash     |         | Mais informações relativas ao evento. Ver possíveis valores em [Payloads](/webhooks/payloads)
-| **occurred_at** | N/A   | DateTime |         | Data e hora de quando o evento ocorreu.
-| **bank_billet_account_id**   | N/A   | Integer |         | ID da [Carteira de Cobrança](/reference/v1/bank_billet_accounts/).
-| **created_at**                  | N/A   | DateTime    |         | Data e hora de criação do evento
-| **updated_at**                  | N/A   | DateTime    |         | Data e hora de atualização do evento
+| Parâmetro                  | Obrigatório | Tipo     | Tamanho | Descrição                                                                                     |
+| -------------------------- | ----------- | -------- | ------- | --------------------------------------------------------------------------------------------- |
+| **id**                     | N/A         | Integer  |         | ID do evento                                                                                  |
+| **code**                   | N/A         | String   | 255     | Código do evento. Ver possíveis valores na [lista de eventos](/webhooks/events)               |
+| **data**                   | N/A         | Hash     |         | Mais informações relativas ao evento. Ver possíveis valores em [Payloads](/webhooks/payloads) |
+| **occurred_at**            | N/A         | DateTime |         | Data e hora de quando o evento ocorreu.                                                       |
+| **bank_billet_account_id** | N/A         | Integer  |         | ID da [Carteira de Cobrança](/reference/v1/bank_billet_accounts/).                            |
+| **resource_owner_id**      | N/A         | Integer  |         | ID do Objeto associado ao evento                                                              |
+| **created_at**             | N/A         | DateTime |         | Data e hora de criação do evento                                                              |
+| **updated_at**             | N/A         | DateTime |         | Data e hora de atualização do evento                                                          |
 
 ### Informações do evento
 
@@ -187,6 +188,7 @@ Array
         Quantidade de registros por página
       </td>
     </tr>
+
 <tr>
       <td>
         <strong>object_id </strong>
