@@ -52,7 +52,7 @@ layout: pt
 | **customer_ignore_sms**         | Não | Boolean | | Nunca enviar SMS para este cliente
 | **customer_contact_person**     | Não   | String  | 120     | Contato do Pagador
 | **ignore_email**                | Não | Boolean | | Não enviar este boleto por email
-| **meta**                        | Não   | Campo Genérico | | Aceita qualquer formato passado. Pode ser usado para salvar dados que não existam dentro do Boleto Simples. Exemplo: {pedido: 12345}
+| **meta**                        | Não   | Json | | Disponível para envio de um JSON. Pode ser usado para salvar dados que não existam dentro do Boleto Simples. Exemplo: {"pedido": 12345}
 | **status**                      | N/A   | String  |         | Situação do boleto ([possíveis valores](#status))
 | **paid_at**                     | N/A   | Date    |         | Data do pagamento
 | **paid_amount**                 | N/A   | Float   |         | Valor pago
