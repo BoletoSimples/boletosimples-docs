@@ -9,7 +9,7 @@ layout: pt
 
 #### Código fonte da documentação
 
-A documentação da API é um [projeto público no Github](https://github.com/BoletoSimples/boletosimples-api). Você pode acompanhar as mudanças na documentação na [página dos commits](https://github.com/BoletoSimples/boletosimples-api/commits/master).
+A documentação da API é um [projeto público no Github](https://github.com/BoletoSimples/boletosimples-docs). Você pode acompanhar as mudanças na documentação na [página dos commits](https://github.com/BoletoSimples/boletosimples-docs/commits/master).
 
 <!-- #### Receba as atualizações por e-mail
 
@@ -21,6 +21,47 @@ Você também pode se inscrever para receber as notificações de alterações d
 </form> -->
 
 #### Últimas alterações realizadas na API.
+
+### 22/06/2021
+
+- Ajusta documentação em [Webhook Enviados](/reference/v1/webhook_deliveries/)
+- Ajusta documentação em [E-mails enviados](/reference/v1/email_deliveries/)
+- Documenta o campo `resource_owner_id` em [Eventos](/reference/v1/events/)
+
+### 11/06/2021
+
+- Retiramos a documentação sobre o banco S4fr4 por solicitação do banco.
+
+### 21/05/2021
+
+- Remove obrigatoriedade do campo `description` em Boletos, Assinaturas e Carnês
+- Remove campos descontinuados `interest_daily_percentage`, `interest_daily_value`, `interest_monthly_percentage`, `late_payment_interest`, `discount_limit_date`, `fine_for_delay` em Boletos, Assinaturas e Carnês
+- Remove endpoints descontinuados `GET /api/v1/bank_billets/cnpj_cpf`, `GET /api/v1/bank_billets/our_number` e `GET /api/v1/bank_billets/status` e `POST /api/v1/bank_billets/bulk` em [Boletos](/reference/v1/bank_billets)
+- Documenta os campos `customer_ignore_sms`, `customer_contact_person` e `payment_count` em [Boletos](/reference/v1/bank_billets)
+- Documenta os campos `customer_ignore_sms`, `customer_contact_person`, `payment_count`, `days_for_sue`, `days_for_revoke` e `days_for_negativation` em [Assinaturas](/reference/v1/customer_subscriptions)
+- Documenta os campos `customer_ignore_sms`, `customer_contact_person`, `payment_count`, `days_for_sue`, `days_for_revoke`, `days_for_negativation`, `document_date`, `document_type`, `document_number` e `custom_bank_billets` em [Carnês](/reference/v1/installments)
+
+### 17/05/2021
+
+- Adiciona informações sobre o [módulo TOTVS Microsiga Protheus](/modules/totvs-protheus)
+
+### 13/05/2021
+
+- Documenta o campo `allow_expiration_on_weekends` em [Carteiras de Cobrança](/reference/v1/bank_billet_accounts)
+
+### 11/05/2021
+
+- Adiciona os campos `pix_enabled` e `pix_qrcode` em [Boletos](/reference/v1/bank_billets)
+
+- Adiciona o campo `paid_by_pix` em [Pagamentos de Boleto](/reference/v1/bank_billet_payments)
+
+### 08/02/2021
+
+- Atualiza slug de carteira `cecred-bs-1` para `ailos-bs-1` em [Ailos](/bank_contracts/ailos)
+
+### 08/02/2021
+
+- Atualiza o módulo do [Totvs RM](/modules/totvs-rm)
 
 ### 04/02/2021
 
@@ -43,12 +84,12 @@ Você também pode se inscrever para receber as notificações de alterações d
 
 ### 11/01/2020
 
-* Depreciado o campo `default_to_import` em [Carteiras de Cobrança](/reference/v1/bank_billet_accounts)
+- Depreciado o campo `default_to_import` em [Carteiras de Cobrança](/reference/v1/bank_billet_accounts)
 
 ### 08/01/2021
 
-* Adiciona novo formato de endereço do beneficiário em [Carteiras de Cobrança](/reference/v1/bank_billet_accounts),
-a antiga maneira continua funcionando da mesma forma mas será depreciada.
+- Adiciona novo formato de endereço do beneficiário em [Carteiras de Cobrança](/reference/v1/bank_billet_accounts),
+  a antiga maneira continua funcionando da mesma forma mas será depreciada.
 
 ### 30/12/2020
 

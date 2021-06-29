@@ -37,7 +37,7 @@ breadcrumb: Pagamento de Boleto
 | **created_at**             | Não  | DateTime    |         | Criado em                |
 | [**line_parsed**](/reference/v1/bank_billet_discharges/#line_parsed)            | N/A  | Hash/Array  |        | Linha parseada com informações vindas do banco     |
 | **customer_person_name**              | Não  | String  |    3    | Nome do cliente             |
-
+| **paid_by_pix**        | N/A  | Boolean |         | Pagamento via PIX    |
 
 ### Efetuar Pagamento de Boleto
 

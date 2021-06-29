@@ -16,7 +16,7 @@ O código fonte deste módulo não é disponibilizado.
 
 ### Requisitos
 
-* RM 12.1.18.180 ou superior
+* RM 12.1.28.216 ou superior
 
 ### Download
 
@@ -24,7 +24,7 @@ O código fonte deste módulo não é disponibilizado.
 
 ### Instalação
 
-⦁   Acesse o menu Serviços Globais | Metadados | Projeto, onde devem ser importados os projetos de metadados disponibilizados no arquivo:
+⦁ Acesse o menu Serviços Globais/Metadados/Projeto, onde devem ser importados os projetos de metadados disponibilizados no arquivo:
 
 “BoletoSimples-TOTVSRM.TotvsMD”.
 
@@ -34,7 +34,7 @@ Após importação, deve ser executado o processo “Gerar Projeto de Metadados�
 
 ![hahahahaha.png](/uploads/hahahahaha.png)
 
-⦁   Acesse o menu Gestão Financeira - Customização - Parâmetros Boleto Simples, onde devem ser definidos os seguintes campos:
+⦁ Acesse o menu Gestão Financeira/Customização/Parâmetros Boleto Simples, onde devem ser definidos os seguintes campos:
 
 **Status:**  define se a integração está ativa ou inativa.
 
@@ -42,19 +42,21 @@ Após importação, deve ser executado o processo “Gerar Projeto de Metadados�
 
 **Token de Acesso:** deve ser informado o token de acesso do ambiente do Boleto Simples.
 
-Usar Conta Caixa associada ao convênio do boleto: define se será usado a conta caixa associada ao convênio do boleto no momento da baixa realizado pelo processo ‘Consulta de Status Boleto Simples’.
+**Usar Conta Caixa associada ao convênio do boleto:** define se será usado a conta caixa associada ao convênio do boleto no momento da baixa realizado pelo processo ‘Consulta de Status Boleto Simples’.
 
-Conta Caixa: define a conta caixa que será usada no momento da baixa do boleto, se o parâmetro acima estiver desmarcado.
+**Conta Caixa:** define a conta caixa que será usada no momento da baixa do boleto, se o parâmetro acima estiver desmarcado.
 
-Meio de Pagamento: define o meio de pagamento que será usado na baixa realizada pelo processo ‘Consulta de Status Boleto Simples’.
+**Meio de Pagamento:** define o meio de pagamento que será usado na baixa realizada pelo processo ‘Consulta de Status Boleto Simples’.
 
 ![3.png](/uploads/3.png)
 
-⦁   Acesse o menu Gestão - Fórmula Visual - Fórmula Visual onde devem ser importadas as fórmulas visuais responsáveis pela integração com o Boleto Simples, disponibilizadas no arquivo:
+⦁ Acesse o menu Gestão/Fórmula Visual/Fórmula Visual onde devem ser importadas as fórmulas visuais responsáveis pela integração com o Boleto Simples, disponibilizadas no arquivo:
 
 “BoletoSimples-TOTVSRM.TotvsWF”
 
 ![4.png](/uploads/4.png)
+
+Deve ser marcada a opção *"Importar Gatilhos"*, na aba Parâmetros, para cada uma das fórmulas visuais.
 
 **Utilização:**
 
@@ -62,4 +64,8 @@ Meio de Pagamento: define o meio de pagamento que será usado na baixa realizada
 
 ⦁   Após execução do processo de inclusão de boleto no TOTVS Gestão Financeira será feita a integração incluindo o boleto no Boletos Simples, caso o convenio associado ao boleto esteja integrado. O status da remessa do boleto no TOTVS Gestão Financeira será alterado para Remetido.
 
-⦁   Para atualizar o status do boleto no TOTVS Gestão Financeira deve ser executada a fórmula visual “Consulta Status do Boleto”, menu Gestão - Fórmula Visual - Executar, onde será consultado o status do boleto no Boleto Simples. Caso o boleto estiver com status de “Pago” ou “Cancelado” no Boleto Simples será realizado a baixa ou cancelamento do boleto no TOTVS Gestão Financeira respectivamente. Essa fórmula visual pode ser agendada.
+⦁   Para atualizar o status do boleto no TOTVS Gestão Financeira deve ser executada a fórmula visual “Consulta Status do Boleto”, menu Gestão/Fórmula Visual/Executar, onde será consultado o status do boleto no Boleto Simples. Caso o boleto estiver com status de “Pago” ou “Cancelado” no Boleto Simples será realizado a baixa ou cancelamento do boleto no TOTVS Gestão Financeira respectivamente. Essa fórmula visual pode ser agendada. É gerado um log de cada execução na pasta RM.NET\Processos\FV.
+
+### Disclaimer 
+
+TOTVS RM®️ e TOTVS®️ são marcas registradas da TOTVS®️.

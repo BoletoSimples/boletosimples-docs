@@ -1,5 +1,5 @@
 ---
-title: Boleto Simples API
+title: Boleto Simples Docs
 timezone: America/Sao_Paulo
 collections:
   posts:
@@ -14,5 +14,7 @@ exclude:
 - Gemfile.lock
 - README.textile
 permalink: pretty
-jekyll-sitemap:
-- 
+plugins:
+- jekyll-sitemap
+include:
+- _headers

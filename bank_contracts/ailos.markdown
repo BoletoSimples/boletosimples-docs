@@ -7,34 +7,34 @@ layout: pt
 
 ## Ailos
 
-| Carteiras          | Slug
-| ------------------ | ------------
-| Carteira 1         | cecred-bs-1
+| Carteiras  | Slug       |
+| ---------- | ---------- |
+| Carteira 1 | ailos-bs-1 |
 
 ### Ocorrências
 
 #### CNAB 240
 
-| Our code | Descrição                                           | Suporte Banco | Suporte Boleto Simples |
-|:---------|:----------------------------------------------------|:--------------|:-----------------------|
-| 1001     | Entrada de título                                   | Sim           | Sim                    |
-| 1002     | Pedido de baixa                                     | Sim           | Sim                    |
-| 1003     | Alteração de vencimento                             | Sim           | [Veja tabela](https://suporte.boletosimples.com.br/article/pten2qs3c0-posso-alterar-a-data-de-vencimento-e-o-valor-de-um-boleto-j-emitido)                           |
-| 1004     | Concessão de abatimento                             | Sim           | Não                    |
-| 1005     | Cancelamento de abatimento                          | Sim           | Sim                    |
-| 1009     | Protestar                                           | Sim           | Sim                    |
-| 1013     | Alteração de endereço do pagador                    | Sim           | Não                    |
-| 1018     | Sustar o protesto                                   | Não           | Sim                    |
-| 1019     | Sustar protesto e manter em carteira                | Não           | Sim                    |
-| 1034     | Pago diretamente ao beneficiário                    | Não           | Não                    |
-| 1041     | Cancelar instrução automática de protesto           | Sim           | Sim                    |
-| 1066     | Solicitar negativação expressa                      | Sim           | Sim                    |
-| 1067     | Não negativar                                       | Sim           | Sim                    |
-| 1071     | Concessão de desconto                               | Sim           | Não                    |
-| 1072     | Cancelamento de desconto                            | Sim           | Sim                    |
-| 1115     | Alterar tipo de emissão - Cooperativa/EE            | Sim           | Não                    |
-| 1116     | Envio de SMS ao pagador                             | Sim           | Não                    |
-| 1117     | Cancelamento Instrução de SMS                       | Sim           | Sim                    |
+| Our code | Descrição                                 | Suporte Banco | Suporte Boleto Simples                                                                                                                     |
+| :------- | :---------------------------------------- | :------------ | :----------------------------------------------------------------------------------------------------------------------------------------- |
+| 1001     | Entrada de título                         | Sim           | Sim                                                                                                                                        |
+| 1002     | Pedido de baixa                           | Sim           | Sim                                                                                                                                        |
+| 1003     | Alteração de vencimento                   | Sim           | [Veja tabela](https://suporte.boletosimples.com.br/article/pten2qs3c0-posso-alterar-a-data-de-vencimento-e-o-valor-de-um-boleto-j-emitido) |
+| 1004     | Concessão de abatimento                   | Sim           | Não                                                                                                                                        |
+| 1005     | Cancelamento de abatimento                | Sim           | Sim                                                                                                                                        |
+| 1009     | Protestar                                 | Sim           | Sim                                                                                                                                        |
+| 1013     | Alteração de endereço do pagador          | Sim           | Não                                                                                                                                        |
+| 1018     | Sustar o protesto                         | Não           | Sim                                                                                                                                        |
+| 1019     | Sustar protesto e manter em carteira      | Não           | Sim                                                                                                                                        |
+| 1034     | Pago diretamente ao beneficiário          | Não           | Não                                                                                                                                        |
+| 1041     | Cancelar instrução automática de protesto | Sim           | Sim                                                                                                                                        |
+| 1066     | Solicitar negativação expressa            | Sim           | Sim                                                                                                                                        |
+| 1067     | Não negativar                             | Sim           | Sim                                                                                                                                        |
+| 1071     | Concessão de desconto                     | Sim           | Não                                                                                                                                        |
+| 1072     | Cancelamento de desconto                  | Sim           | Sim                                                                                                                                        |
+| 1115     | Alterar tipo de emissão - Cooperativa/EE  | Sim           | Não                                                                                                                                        |
+| 1116     | Envio de SMS ao pagador                   | Sim           | Não                                                                                                                                        |
+| 1117     | Cancelamento Instrução de SMS             | Sim           | Sim                                                                                                                                        |
 
 <!--- comment: old occurrences for reference in the documentation
 | 1007     | Alteração do "uso da empresa"                       | Sim           | Não                    |
