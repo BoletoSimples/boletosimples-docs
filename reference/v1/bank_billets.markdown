@@ -315,7 +315,7 @@ Para clientes sem registro automático ativado, o registro é feito via [Remessa
 
 Só então você poderá disponibilizar o boleto aos seus clientes.
 
-Para saber se um boleto foi gerado por completo, você deve preparar seu sisema para receber nossos [Webhooks](/webhooks)
+Para saber se um boleto foi gerado por completo, você deve preparar seu sistema para receber nossos [Webhooks](/webhooks)
 
 Será retornado `404 Not Found` ao tentar acessar a url de um boleto que ainda esteja sendo gerado(`generating`)
 
