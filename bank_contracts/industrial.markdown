@@ -1,6 +1,6 @@
 ---
-title: Inter
-en: "/en/bank_contracts/inter"
+title: Industrial
+en: "/en/bank_contracts/industrial"
 layout: pt
 ---
 
@@ -10,7 +10,7 @@ layout: pt
 | ------------------------ | ------------
 | 121                      | bib-bs-121
 
-### Ocorrências
+<!--### Ocorrências
 
 #### CNAB 240
 
@@ -49,3 +49,4 @@ layout: pt
 | 1067    | Não negativar                                       | Sim           | Sim                    |
 | 1068    | Excluir negativação expressa                        | Sim           | Sim                    |
 | 1069    | Cancelar negativação expressa                       | Sim           | Sim
+-->

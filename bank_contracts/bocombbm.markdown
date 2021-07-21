@@ -1,7 +1,7 @@
 ---
-title: Banese
+title: BOCOM BBM
 position: 10
-en: "/en/bank_contracts/banese"
+en: "/en/bank_contracts/bocombbm"
 layout: pt
 ---
 
@@ -12,7 +12,7 @@ layout: pt
 | 21                       | bbm-bs-21
 
 
-### Ocorrências
+<!--### Ocorrências
 
 ### CNAB Sem Suporte
 

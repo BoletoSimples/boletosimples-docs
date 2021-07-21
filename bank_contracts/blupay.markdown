@@ -1,7 +1,7 @@
 ---
-title: Banese
+title: Blupay
 position: 10
-en: "/en/bank_contracts/banese"
+en: "/en/bank_contracts/blupay"
 layout: pt
 ---
 
@@ -12,7 +12,7 @@ layout: pt
 | 17                       | blupay-bb-17
 
 
-### Ocorrências
+<!---### Ocorrências
 
 ### CNAB Sem Suporte
 

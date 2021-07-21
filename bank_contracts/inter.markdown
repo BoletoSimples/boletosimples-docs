@@ -10,7 +10,7 @@ layout: pt
 | ------------------------ | ------------
 | 112                      | inter-bs-112
 
-### Ocorrências
+<!--### Ocorrências
 
 #### CNAB 400
 
@@ -49,3 +49,4 @@ layout: pt
 | 1067    | Não negativar                                       | Sim           | Sim                    |
 | 1068    | Excluir negativação expressa                        | Sim           | Sim                    |
 | 1069    | Cancelar negativação expressa                       | Sim           | Sim
+-->
