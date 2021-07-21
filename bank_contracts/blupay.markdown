@@ -1,20 +1,20 @@
 ---
-title: Banese
+title: Blupay
 position: 10
-en: "/en/bank_contracts/banese"
+en: "/en/bank_contracts/blupay"
 layout: pt
 ---
 
-## Banco do Estado de Sergipe S.A
+## Blupay
 
 | Carteiras                | Slug
 | ------------------------ | ------------
-| 1 - CS ou 01             | banese-bs-1
+| 17                       | blupay-bb-17
 
 
-### Ocorrências
+<!---### Ocorrências
 
-### CNAB 240
+### CNAB Sem Suporte
 
 | Our code | Descrição                                           | Suporte Banco | Suporte Boleto Simples |
 |:---------|:----------------------------------------------------|:--------------|:-----------------------|

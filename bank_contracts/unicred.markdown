@@ -9,13 +9,11 @@ layout: pt
 
 | Carteiras          | Slug
 | ------------------ | ------------
-| 1 - Sem registro   | brb-bs-1
-| 2 - Com registro   | brb-bs-2
-
+| 21                 | unicred-bs-21
 
 ### Ocorrências
 
-#### CNAB 240
+### CNAB 240
 
 | Our code | Descrição                                           | Suporte Banco | Suporte Boleto Simples |
 |:---------|:----------------------------------------------------|:--------------|:-----------------------|
