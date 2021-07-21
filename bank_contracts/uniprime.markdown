@@ -1,7 +1,7 @@
 ---
 title: Uniprime
 position: 13
-en: "/en/bank_contracts/unicred"
+en: "/en/bank_contracts/uniprime"
 layout: pt
 ---
 
