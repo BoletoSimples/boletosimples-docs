@@ -748,6 +748,34 @@ Array
         Filtro por ID da Carteira.
       </td>
     </tr>
+    <tr>
+      <td>
+        <strong>created_from </strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        Date
+      </td>
+      <td>
+        A partir da Data de criação da Carteira
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>created_to </strong>
+      </td>
+      <td>
+        Não
+      </td>
+      <td>
+        Date
+      </td>
+      <td>
+        Até a Data de criação da Carteira
+      </td>
+    </tr>
   </tbody>
 </table>
 

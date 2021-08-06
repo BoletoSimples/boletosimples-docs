@@ -497,89 +497,52 @@ Array
   </thead>
   <tbody>
     <tr>
-      <td>
-        <strong>page </strong>
-      </td>
-      <td>
-        Não
-      </td>
-      <td>
-        Number
-      </td>
-      <td>
-        Número da Página
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        <strong>per_page </strong>
-      </td>
-      <td>
-        Não
-      </td>
-      <td>
-        Number
-      </td>
-      <td>
-        Quantidade de registros por página (Máximo de 50)
-      </td>
+      <td><strong>page </strong></td>
+      <td>Não </td>
+      <td>Number </td>
+      <td>Número da Página </td>
     </tr>
     <tr>
-      <td>
-        <strong>expire_from </strong>
-      </td>
-      <td>
-        Não
-      </td>
-      <td>
-        Date
-      </td>
-      <td>
-        A partir da Data de vencimento do boleto
-      </td>
+      <td><strong>per_page </strong> </td>
+      <td>Não </td>
+      <td>Number </td>
+      <td>Quantidade de registros por página (Máximo de 50) </td>
     </tr>
     <tr>
-      <td>
-        <strong>expire_to </strong>
-      </td>
-      <td>
-        Não
-      </td>
-      <td>
-        Date
-      </td>
-      <td>
-        Até a Data de vencimento do boleto
-      </td>
+      <td><strong>expire_from </strong> </td>
+      <td>Não </td>
+      <td>Date </td>
+      <td>A partir da Data de vencimento do boleto </td>
     </tr>
     <tr>
-      <td>
-        <strong>our_code </strong>
-      </td>
-      <td>
-        Não
-      </td>
-      <td>
-        String
-      </td>
-      <td>
-        Filtro por Nosso número.
-      </td>
+      <td><strong>expire_to </strong> </td>
+      <td>Não </td>
+      <td>Date </td>
+      <td>Até a Data de vencimento do boleto </td>
     </tr>
     <tr>
-      <td>
-        <strong>bank_billet_account_id </strong>
-      </td>
-      <td>
-        Não
-      </td>
-      <td>
-        Number
-      </td>
-      <td>
-        Filtro por ID da Carteira.
-      </td>
+      <td><strong>created_from </strong> </td>
+      <td>Não </td>
+      <td>Date </td>
+      <td>A partir da Data de criação do boleto </td>
+    </tr>
+    <tr>
+      <td><strong>created_to </strong> </td>
+      <td>Não </td>
+      <td>Date </td>
+      <td>Até a Data de criação do boleto </td>
+    </tr>
+    <tr>
+      <td><strong>our_code </strong> </td>
+      <td>Não </td>
+      <td>String </td>
+      <td>Filtro por Nosso número. </td>
+    </tr>
+    <tr>
+      <td><strong>bank_billet_account_id </strong> </td>
+      <td>Não </td>
+      <td>Number </td>
+      <td>Filtro por ID da Carteira. </td>
     </tr>
   </tbody>
 </table>
