@@ -8,36 +8,36 @@ breadcrumb: CNAB (Retorno)
 
 ## CNAB (Retorno)
 
-| Recurso                  | Descrição
-| ------------------------ | ------------------------
-| [POST /api/v1/discharges](#enviar-cnab) | Enviar CNAB
-| [GET /api/v1/discharges/:id](#informações-do-cnab) | Informações do CNAB
-| [GET /api/v1/discharges](#listar-cnabs) | Listar CNABs
-| [PUT /api/v1/discharges/:id/pay_off](#quitar-boletos) | Quitar boletos
-| [PUT /api/v1/discharges/:id/reprocess](#reprocessar-cnab) | Reprocessar CNAB
-| [GET /api/v1/discharges/:id/download](#download-do-cnab) | Download do CNAB
+| Recurso                                                   | Descrição           |
+| --------------------------------------------------------- | ------------------- |
+| [POST /api/v1/discharges](#enviar-cnab)                   | Enviar CNAB         |
+| [GET /api/v1/discharges/:id](#informações-do-cnab)        | Informações do CNAB |
+| [GET /api/v1/discharges](#listar-cnabs)                   | Listar CNABs        |
+| [PUT /api/v1/discharges/:id/pay_off](#quitar-boletos)     | Quitar boletos      |
+| [PUT /api/v1/discharges/:id/reprocess](#reprocessar-cnab) | Reprocessar CNAB    |
+| [GET /api/v1/discharges/:id/download](#download-do-cnab)  | Download do CNAB    |
 
 ### Modelo de Dados
 
-| Parâmetro              | Obrigatório  | Tipo    | Tamanho | Descrição
-| ---------------------- | ----- | ------- | ------- | ------------------------
-| **id**                 | N/A   | Integer |         | ID do CNAB
-| **file**               | Sim   |         |         | Arquivo
-| **content**            | Sim   |         |         | Conteúdo do arquivo
-| **filename**           | Não   | String  | 255     | Nome do arquivo
-| **status**             | N/A   | String  | 20      | Situação do arquivo ([possíveis valores](#status))
-| **processed_at**       | N/A   | DateTime    |         | Data de Processamento
-| **created_via_api**    | N/A   | Boolean |         | Enviado pela API
-| **bank_billet_account_id**    | Não   | Integer |         | ID da [Carteira de Cobrança](/reference/v1/bank_billet_accounts/)
-| **created_via_integration**        | Não   | DateTime    |         | Data de recebimento automático do banco
-| **bank_billet_discharges**         | N/A   | Array   |         | Retornos bancários
+| Parâmetro                   | Obrigatório | Tipo     | Tamanho | Descrição                                                         |
+| --------------------------- | ----------- | -------- | ------- | ----------------------------------------------------------------- |
+| **id**                      | N/A         | Integer  |         | ID do CNAB                                                        |
+| **file**                    | Sim         |          |         | Arquivo                                                           |
+| **content**                 | Sim         |          |         | Conteúdo do arquivo                                               |
+| **filename**                | Não         | String   | 255     | Nome do arquivo                                                   |
+| **status**                  | N/A         | String   | 20      | Situação do arquivo ([possíveis valores](#status))                |
+| **processed_at**            | N/A         | DateTime |         | Data de Processamento                                             |
+| **created_via_api**         | N/A         | Boolean  |         | Enviado pela API                                                  |
+| **bank_billet_account_id**  | Não         | Integer  |         | ID da [Carteira de Cobrança](/reference/v1/bank_billet_accounts/) |
+| **created_via_integration** | Não         | DateTime |         | Data de recebimento automático do banco                           |
+| **bank_billet_discharges**  | N/A         | Array    |         | Retornos bancários                                                |
 
 ### Dicionário de Dados
 
 #### status
 
 | unprocessed | Pendente
-| processed   | Processado
+| processed | Processado
 
 ### Enviar CNAB
 
@@ -139,6 +139,7 @@ Array
 </pre>
 
     </div> -->
+
 </div>
 
 #### Exemplo de requisição válida
@@ -203,7 +204,8 @@ else
   ap @bank_billet_account.response_errors
 end
 </pre>
-  <small>Resposta:</small>
+
+<small>Resposta:</small>
 
 <pre class="ruby">
 Sucesso :)
@@ -248,7 +250,8 @@ if($bank_billet_account->isPersisted()) {
   print_r($bank_billet_account->response_errors);
 }
 </pre>
-  <small>Resposta:</small>
+
+<small>Resposta:</small>
 
 <pre class="php">
 Sucesso :)
@@ -759,7 +762,7 @@ Array
         Date
       </td>
       <td>
-        A partir da Data de criação da Carteira
+        A partir da Data de criação do Retorno
       </td>
     </tr>
     <tr>
@@ -773,9 +776,10 @@ Array
         Date
       </td>
       <td>
-        Até a Data de criação da Carteira
+        Até a Data de criação do Retorno
       </td>
     </tr>
+
   </tbody>
 </table>
 
