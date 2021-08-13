@@ -45,6 +45,17 @@ layout: pt
 
 `POST /api/v1/imports/installments`
 
+<p>Você pode enviar arquivos no formato&nbsp;<a href="https://pt.wikipedia.org/wiki/Comma-separated_values">CSV</a>&nbsp;</p>
+<h4>Arquivo CSV</h4>
+<p>A extensão do arquivo deve ser .csv</p>
+<p>Exemplo: carnês.csv</p>
+<p>Arquivos de Exemplo</p>
+<ul>
+    <li><a target="_blank" href="https://docs.google.com/spreadsheets/d/1J7ocYhRA3hUcXiddN9_lRcN7z6RDu1GNbGlFZ0BR6_w/pub?output=csv">Baixar Exemplo em CSV</a></li>
+    <li><a target="_blank" href="https://docs.google.com/spreadsheets/d/1J7ocYhRA3hUcXiddN9_lRcN7z6RDu1GNbGlFZ0BR6_w/pub?output=xlsx">Baixar Exemplo em Excel</a></li>
+    <li><a target="_blank" href="https://docs.google.com/spreadsheets/d/1J7ocYhRA3hUcXiddN9_lRcN7z6RDu1GNbGlFZ0BR6_w/edit#gid=0">Acessar no Google Sheets</a></li>
+</ul>
+
 #### Exemplo de requisição inválida
 
 <ul class="nav nav-tabs" role="tablist">
