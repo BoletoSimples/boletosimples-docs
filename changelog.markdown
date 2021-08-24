@@ -22,6 +22,15 @@ Você também pode se inscrever para receber as notificações de alterações d
 
 #### Últimas alterações realizadas na API.
 
+### 28/07/2021
+
+- Adiciona filtro por `created_at` para CNAB (Remessa) [Listar CNABs](/reference/v1/remittances/#listar-cnabs)
+- Adiciona filtro por `created_at`para CNAB (Retorno) [Listar CNABs](/reference/v1/discharges/#listar-cnabs).
+
+### 15/07/2021
+
+- Adicionado novo endpoint para [Download do CNAB de Retorno](/reference/v1/discharges/#download-do-cnab).
+
 ### 22/06/2021
 
 - Ajusta documentação em [Webhook Enviados](/reference/v1/webhook_deliveries/)

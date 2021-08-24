@@ -8,40 +8,40 @@ layout: pt
 
 ## CNAB (Remessa)
 
-| Recurso                  | Descrição
-| ------------------------ | ------------------------
-| [POST /api/v1/remittances](#criar-cnab) | Criar CNAB
-| [GET /api/v1/remittances/:id](#informações-do-cnab) | Informações do CNAB
-| [GET /api/v1/remittances](#listar-cnabs) | Listar CNABs
-| [DELETE /api/v1/remittances/:id](#apagar-cnab) | Apagar CNAB
-| [GET /api/v1/remittances/:id/raw](#rawtextplain-do-cnab) | Raw(text/plain) do CNAB
-| [POST /api/v1/remittances/bulk](#criar-cnabs-em-lote) | Criar CNABs em lote
+| Recurso                                                  | Descrição               |
+| -------------------------------------------------------- | ----------------------- |
+| [POST /api/v1/remittances](#criar-cnab)                  | Criar CNAB              |
+| [GET /api/v1/remittances/:id](#informações-do-cnab)      | Informações do CNAB     |
+| [GET /api/v1/remittances](#listar-cnabs)                 | Listar CNABs            |
+| [DELETE /api/v1/remittances/:id](#apagar-cnab)           | Apagar CNAB             |
+| [GET /api/v1/remittances/:id/raw](#rawtextplain-do-cnab) | Raw(text/plain) do CNAB |
+| [POST /api/v1/remittances/bulk](#criar-cnabs-em-lote)    | Criar CNABs em lote     |
 
 ### Modelo de Dados
 
-| Parâmetro                     | Obrigatório  | Tipo    | Tamanho | Descrição
-| ------------------------------| ----- | ------- | ------- | ------------------------
-| **id**                        | N/A   | Integer |         | ID do CNAB
-| **content**                   | Não   | Text    |         | Conteúdo da remessa
-| **filename**                  | Não   | String  | 255     | Nome do arquivo
-| **processed_at**              | Não   | Time    |         | Data de Processamento
-| **created_via_api**           | Não   | Boolean |         | Enviado pela API
-| **status**                    | Não   | String  |         | Situação do arquivo ([possíveis valores](#status))
-| **created_at**                | Não   | DateTime|         | Data e hora de criação
-| **url**                       | Não   | String  |         | URL do arquivo de remessa
-| **bank_billet_account_id**    | Sim   | Integer |         | ID da [Carteira de Cobrança](/reference/v1/bank_billet_accounts/)
-| **bank_billet_ids**           | Não   | Array   |         | IDs de boletos
-| **remittance_number**         | Não   | Integer |         | Número da remessa
-| **sent_via_integration**      | Não   | DateTime    |         | Data e hora de envio automático para o banco
-| **bank_billet_remittance_ids**           | Não   | Array   |         | IDs de [Registros de Remessa](/reference/v1/bank_billet_remittances/)
+| Parâmetro                      | Obrigatório | Tipo     | Tamanho | Descrição                                                             |
+| ------------------------------ | ----------- | -------- | ------- | --------------------------------------------------------------------- |
+| **id**                         | N/A         | Integer  |         | ID do CNAB                                                            |
+| **content**                    | Não         | Text     |         | Conteúdo da remessa                                                   |
+| **filename**                   | Não         | String   | 255     | Nome do arquivo                                                       |
+| **processed_at**               | Não         | Time     |         | Data de Processamento                                                 |
+| **created_via_api**            | Não         | Boolean  |         | Enviado pela API                                                      |
+| **status**                     | Não         | String   |         | Situação do arquivo ([possíveis valores](#status))                    |
+| **created_at**                 | Não         | DateTime |         | Data e hora de criação                                                |
+| **url**                        | Não         | String   |         | URL do arquivo de remessa                                             |
+| **bank_billet_account_id**     | Sim         | Integer  |         | ID da [Carteira de Cobrança](/reference/v1/bank_billet_accounts/)     |
+| **bank_billet_ids**            | Não         | Array    |         | IDs de boletos                                                        |
+| **remittance_number**          | Não         | Integer  |         | Número da remessa                                                     |
+| **sent_via_integration**       | Não         | DateTime |         | Data e hora de envio automático para o banco                          |
+| **bank_billet_remittance_ids** | Não         | Array    |         | IDs de [Registros de Remessa](/reference/v1/bank_billet_remittances/) |
 
 ### Dicionário de Dados
 
 #### status
 
 | unprocessed | Pendente
-| processed   | Processado
-| sent        | Enviada para o banco (Somente quando contratado envio automático)
+| processed | Processado
+| sent | Enviada para o banco (Somente quando contratado envio automático)
 
 ### Criar CNAB
 
@@ -147,6 +147,7 @@ Array
 </pre>
 
     </div> -->
+
 </div>
 
 #### Exemplo de requisição válida
@@ -215,7 +216,8 @@ else
   ap @bank_billet_account.response_errors
 end
 </pre>
-  <small>Resposta:</small>
+
+<small>Resposta:</small>
 
 <pre class="ruby">
 Sucesso :)
@@ -260,7 +262,8 @@ if($bank_billet_account->isPersisted()) {
   print_r($bank_billet_account->response_errors);
 }
 </pre>
-  <small>Resposta:</small>
+
+<small>Resposta:</small>
 
 <pre class="php">
 Sucesso :)
@@ -286,7 +289,6 @@ Array
 </pre>
   </div> -->
 </div>
-
 
 ### Criar CNABs em lote
 
@@ -324,7 +326,6 @@ ao término do processamento serão emitidas notificações através dos Webhook
   </tbody>
 </table>
 
-
 #### Exemplo
 
 <ul class="nav nav-tabs" role="tablist">
@@ -345,7 +346,6 @@ curl -i \
 -H 'User-Agent: MyApp (myapp@example.com)' \
 -X POST 'https://sandbox.boletosimples.com.br/api/v1/remittances/bulk'
 </pre>
-
 
     <small>Resposta:</small>
 
@@ -373,7 +373,6 @@ Content-Type: application/json; charset=utf-8
 </pre>
 </div>
 </div>
-
 
 ### Informações do CNAB
 
@@ -497,89 +496,52 @@ Array
   </thead>
   <tbody>
     <tr>
-      <td>
-        <strong>page </strong>
-      </td>
-      <td>
-        Não
-      </td>
-      <td>
-        Number
-      </td>
-      <td>
-        Número da Página
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        <strong>per_page </strong>
-      </td>
-      <td>
-        Não
-      </td>
-      <td>
-        Number
-      </td>
-      <td>
-        Quantidade de registros por página (Máximo de 50)
-      </td>
+      <td><strong>page </strong></td>
+      <td>Não </td>
+      <td>Number </td>
+      <td>Número da Página </td>
     </tr>
     <tr>
-      <td>
-        <strong>expire_from </strong>
-      </td>
-      <td>
-        Não
-      </td>
-      <td>
-        Date
-      </td>
-      <td>
-        A partir da Data de vencimento do boleto
-      </td>
+      <td><strong>per_page </strong> </td>
+      <td>Não </td>
+      <td>Number </td>
+      <td>Quantidade de registros por página (Máximo de 50) </td>
     </tr>
     <tr>
-      <td>
-        <strong>expire_to </strong>
-      </td>
-      <td>
-        Não
-      </td>
-      <td>
-        Date
-      </td>
-      <td>
-        Até a Data de vencimento do boleto
-      </td>
+      <td><strong>expire_from </strong> </td>
+      <td>Não </td>
+      <td>Date </td>
+      <td>A partir da Data de vencimento do boleto </td>
     </tr>
     <tr>
-      <td>
-        <strong>our_code </strong>
-      </td>
-      <td>
-        Não
-      </td>
-      <td>
-        String
-      </td>
-      <td>
-        Filtro por Nosso número.
-      </td>
+      <td><strong>expire_to </strong> </td>
+      <td>Não </td>
+      <td>Date </td>
+      <td>Até a Data de vencimento do boleto </td>
     </tr>
     <tr>
-      <td>
-        <strong>bank_billet_account_id </strong>
-      </td>
-      <td>
-        Não
-      </td>
-      <td>
-        Number
-      </td>
-      <td>
-        Filtro por ID da Carteira.
-      </td>
+      <td><strong>created_from </strong> </td>
+      <td>Não </td>
+      <td>Date </td>
+      <td>A partir da Data de criação do Retorno </td>
+    </tr>
+    <tr>
+      <td><strong>created_to </strong> </td>
+      <td>Não </td>
+      <td>Date </td>
+      <td>Até a Data de criação do Retorno </td>
+    </tr>
+    <tr>
+      <td><strong>our_code </strong> </td>
+      <td>Não </td>
+      <td>String </td>
+      <td>Filtro por Nosso número. </td>
+    </tr>
+    <tr>
+      <td><strong>bank_billet_account_id </strong> </td>
+      <td>Não </td>
+      <td>Number </td>
+      <td>Filtro por ID da Carteira. </td>
     </tr>
   </tbody>
 </table>

@@ -9,9 +9,7 @@ layout: pt
 
 | Carteiras          | Slug
 | ------------------ | ------------
-| 1 - Sem registro   | brb-bs-1
-| 2 - Com registro   | brb-bs-2
-
+| 1 - Com registro   | mercantil-rg-1
 
 ### Ocorrências
 
