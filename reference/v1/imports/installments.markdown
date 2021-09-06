@@ -32,6 +32,8 @@ layout: pt
 | **source_file_size**   | N/A   | Integer  |         | Tamanho em bytes do arquivo
 | **status**             | N/A   | String  |         | Situação do arquivo ([possíveis valores](#status))
 | **created_via_api**    | N/A   | Boolean |         | Enviado pela API
+| **customer_ignore_email** | Não| Boolean |         | Nunca enviar e-mail para este cliente
+| **customer_ignore_sms** | Não  | Boolean |         | Nunca enviar SMS para este cliente
 
 ### Dicionário de Dados
 
