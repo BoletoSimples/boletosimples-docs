@@ -45,7 +45,8 @@ layout: pt
 | **truncated_address**  | Não         | String  | 40      | Endereço para remessa                                   |
 | **external_code**      | Não         | String  | 60      | Código externo do Cliente                               |
 | **tags**               | Não         | Array   |         | Etiquetas (Tags)                                        |
-| **ignore_email**       | Não         | Boolean |         | Nunca enviar e-mail para este cliente                   |
+| **ignore_email**       | Não         | Boolean |         | Nunca enviar e-mail para este cliente
+| **ignore_sms**         | Não         | Boolean |         | Nunca enviar SMS para este cliente                  |
 
 ### Criar cliente
 
