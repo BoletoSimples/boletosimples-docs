@@ -22,6 +22,10 @@ Você também pode se inscrever para receber as notificações de alterações d
 
 #### Últimas alterações realizadas na API.
 
+### 13/09/2021
+
+- Inclui endpoint de [Lotes](/reference/v1/batches)
+
 ### 28/07/2021
 
 - Adiciona filtro por `created_at` para CNAB (Remessa) [Listar CNABs](/reference/v1/remittances/#listar-cnabs)
