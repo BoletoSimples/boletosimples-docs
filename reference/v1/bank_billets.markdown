@@ -50,6 +50,7 @@ layout: pt
 | **customer_notes**              | Não   | Text    |         | Anotações do Pagador
 | **customer_ignore_email**       | Não | Boolean | | Nunca enviar e-mail para este cliente
 | **customer_ignore_sms**         | Não | Boolean | | Nunca enviar SMS para este cliente
+| **customer_update**             | Não | Boolean | | Atualizar dados no cadastro do cliente
 | **customer_contact_person**     | Não   | String  | 120     | Contato do Pagador
 | **ignore_email**                | Não | Boolean | | Não enviar este boleto por email
 | **ignore_sms**                  | Não | Boolean | | Não enviar este boleto por SMS
