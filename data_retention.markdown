@@ -2,7 +2,7 @@
 title: Política de Retenção de Dados
 position: 2
 layout: pt
-en: '/en/data_retention'
+en: "/en/data_retention"
 ---
 
 ## Política de Retenção de Dados
