@@ -2,6 +2,7 @@
 @import url("sidr.css");
 @import url("bootstrap.min.css");
 @import url("fontface.css");
+@import url("kobana-banner.css");
 
 /* Main */
 
@@ -256,7 +257,6 @@ table small {
 
 .generic-call {
   background: #008de4;
-  margin-top: 69px;
   padding: 40px 0;
 }
 
@@ -512,4 +512,77 @@ Media Queries for Smartphones.
     line-height: 21px;
   }
 
+}
+
+
+
+
+/**
+KOBANA BANNER
+===========================
+*/
+
+.kobana-banner {
+  background: #000 url("../img/kobana.png") bottom right no-repeat;
+  background-size: 40%;
+  min-height: 300px;
+}
+
+@media only screen and (max-width: 800px) {
+  .kobana-banner {
+    min-height: 200px;
+    background-size: 50%;
+  }
+}
+
+.kobana-banner::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.col-01 {
+  width: 47%;
+  float: left;
+}
+
+@media only screen and (max-width: 800px) {
+  .col-01 {
+    width: 100%;
+  }
+}
+
+.col-01 h1 {
+  color: #D3FD54;
+  font-weight: bold;
+  margin: 35px 0 15px 0;
+}
+
+@media only screen and (max-width: 800px) {
+  .col-01 h1 {
+    font-size: 25px;
+  }
+}
+
+.col-01 p {
+  color: #fff;
+}
+
+@media only screen and (max-width: 800px) {
+  .col-01 p {
+    display: none;
+  }
+}
+
+.col-01 a {
+    border: 2px solid #D3FD54;
+    font-size: 14px;
+    padding: 0 20px;
+    height: 36px;
+    line-height: 32px;
+    border-radius: 20px;
+    display: inline-block;
+    font-weight: bold;
+    color: #D3FD54 !important;
+    margin-top: 15px;
 }
