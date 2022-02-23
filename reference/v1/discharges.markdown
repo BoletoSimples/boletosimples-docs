@@ -2,7 +2,7 @@
 title: CNAB (Retorno)
 position: 7
 layout: pt
-en: "/en/references"
+en: '/en/references'
 breadcrumb: CNAB (Retorno)
 ---
 
@@ -23,7 +23,6 @@ breadcrumb: CNAB (Retorno)
 | --------------------------- | ----------- | -------- | ------- | ----------------------------------------------------------------- |
 | **id**                      | N/A         | Integer  |         | ID do CNAB                                                        |
 | **file**                    | Sim         |          |         | Arquivo                                                           |
-| **content**                 | Sim         |          |         | Conteúdo do arquivo                                               |
 | **filename**                | Não         | String   | 255     | Nome do arquivo                                                   |
 | **status**                  | N/A         | String   | 20      | Situação do arquivo ([possíveis valores](#status))                |
 | **processed_at**            | N/A         | DateTime |         | Data de Processamento                                             |
