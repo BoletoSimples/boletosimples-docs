@@ -182,7 +182,7 @@ curl -i \
 -d '{"installment":{}}' \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X POST 'https://sandbox.boletosimples.com.br/api/v1/installments'
+-X POST 'https://api-sandbox.kobana.com.br/v1/installments'
 </pre>
 
     <small>Resposta:</small>
@@ -282,7 +282,7 @@ Array
   -d '{"installment":{"customer_id":"1", "bank_billet_account_id": "1", "amount": "1.120,4", "cycle": "monthly", "start_at": "2016-09-15", "total": "3", "description": "Hospedagem"}}' \
   -H 'Content-Type: application/json' \
   -H 'User-Agent: MyApp (myapp@example.com)' \
-  -X POST 'https://sandbox.boletosimples.com.br/api/v1/installments'
+  -X POST 'https://api-sandbox.kobana.com.br/v1/installments'
 </pre>
 
     <small>Resposta:</small>
@@ -291,7 +291,7 @@ Array
 HTTP/1.1 201 Created
 Date: Fri, 17 Oct 2014 19:30:06 GMT
 Status: 201 Created
-Location: https://sandbox.boletosimples.com.br/api/v1/installments/1
+Location: https://api-sandbox.kobana.com.br/v1/installments/1
 Content-Type: application/json; charset=utf-8
 ...
 
@@ -449,7 +449,7 @@ curl -i \
 -H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X GET 'https://sandbox.boletosimples.com.br/api/v1/installments/1'
+-X GET 'https://api-sandbox.kobana.com.br/v1/installments/1'
 </pre>
 
     <small>Resposta:</small>
@@ -621,7 +621,7 @@ curl -i \
 -H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X GET "https://sandbox.boletosimples.com.br/api/v1/installments?page=1&per_page=50"
+-X GET "https://api-sandbox.kobana.com.br/v1/installments?page=1&per_page=50"
 </pre>
 
     <small>Resposta:</small>
@@ -630,7 +630,7 @@ curl -i \
 HTTP/1.1 200 OK
 Date: Fri, 17 Oct 2014 19:46:16 GMT
 Status: 200 OK
-Link: <https://sandbox.boletosimples.com.br/api/v1/installments?page=3&per_page=50>; rel="last", <https://sandbox.boletosimples.com.br/api/v1/installments?page=2&per_page=50>; rel="next"
+Link: <https://api-sandbox.kobana.com.br/v1/installments?page=3&per_page=50>; rel="last", <https://api-sandbox.kobana.com.br/v1/installments?page=2&per_page=50>; rel="next"
 Total: 101
 Content-Type: application/json; charset=utf-8
 ...
@@ -687,8 +687,8 @@ Carnês Retornados: 2
 Total: 9
 Primeira Página:
 Página Anterior:
-Próxima Página: https://sandbox.boletosimples.com.br/api/v1/installments?page=2&per_page=2
-Última Página: https://sandbox.boletosimples.com.br/api/v1/installments?page=5&per_page=2
+Próxima Página: https://api-sandbox.kobana.com.br/v1/installments?page=2&per_page=2
+Última Página: https://api-sandbox.kobana.com.br/v1/installments?page=5&per_page=2
 </pre>
   </div>
   <div class="tab-pane" id="php6">
@@ -711,8 +711,8 @@ Carnês Retornados: 2
 Total: 9
 Primeira Página:
 Página Anterior:
-Próxima Página: https://sandbox.boletosimples.com.br/api/v1/installments?page=2&per_page=2
-Última Página: https://sandbox.boletosimples.com.br/api/v1/installments?page=5&per_page=2
+Próxima Página: https://api-sandbox.kobana.com.br/v1/installments?page=2&per_page=2
+Última Página: https://api-sandbox.kobana.com.br/v1/installments?page=5&per_page=2
 </pre>
   </div>
   -->
@@ -740,7 +740,7 @@ Nenhum boleto gerado pela carnê será excluído.
 curl -i \
 -H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X DELETE 'https://sandbox.boletosimples.com.br/api/v1/installments/1'
+-X DELETE 'https://api-sandbox.kobana.com.br/v1/installments/1'
 </pre>
 
     <small>Resposta:</small>

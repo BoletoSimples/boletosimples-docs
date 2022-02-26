@@ -68,7 +68,7 @@ curl -i \
 -H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X POST 'https://sandbox.boletosimples.com.br/api/v1/remittances'
+-X POST 'https://api-sandbox.kobana.com.br/v1/remittances'
 </pre>
 
     <small>Resposta:</small>
@@ -168,7 +168,7 @@ curl -i \
 -d '{"remittance":{"bank_billet_account_id": "1"}}' \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X POST 'https://sandbox.boletosimples.com.br/api/v1/remittances'
+-X POST 'https://api-sandbox.kobana.com.br/v1/remittances'
 </pre>
 
     <small>Resposta:</small>
@@ -178,7 +178,7 @@ HTTP/1.1 201 Created
 Server: Cowboy
 Connection: keep-alive
 Strict-Transport-Security: max-age=2592000
-Location: https://sandbox.boletosimples.com.br/api/v1/remittances/1
+Location: https://api-sandbox.kobana.com.br/v1/remittances/1
 Content-Type: application/json; charset=utf-8
 ...
 
@@ -189,7 +189,7 @@ Content-Type: application/json; charset=utf-8
     "bank_billet_account_id" => 1,
                 "created_at" => "2016-05-06",
               "processed_at" => "2016-05-06",
-                       "url" => "https://sandbox.boletosimples.com.br/remessas/06tt1bcc3f6132720866b53a57c76de4/download",
+                       "url" => "https://app-sandbox.kobana.com.br/remessas/06tt1bcc3f6132720866b53a57c76de4/download",
                         "id" => 1,
            "bank_billet_ids" => [1]
 }
@@ -344,7 +344,7 @@ curl -i \
 -d '{"remittance":{"bank_billet_remittance_ids":["1","2"]}}' \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X POST 'https://sandbox.boletosimples.com.br/api/v1/remittances/bulk'
+-X POST 'https://api-sandbox.kobana.com.br/v1/remittances/bulk'
 </pre>
 
     <small>Resposta:</small>
@@ -365,7 +365,7 @@ Content-Type: application/json; charset=utf-8
       "bank_billet_account_id" => 1,
                   "created_at" => "2016-05-06",
                 "processed_at" => "2016-05-06",
-                         "url" => "https://sandbox.boletosimples.com.br/remessas/06tt1bcc3f6132720866b53a57c76de4/download",
+                         "url" => "https://app-sandbox.kobana.com.br/remessas/06tt1bcc3f6132720866b53a57c76de4/download",
                           "id" => 1,
              "bank_billet_ids" => [1]
   }
@@ -395,7 +395,7 @@ curl -i \
 -H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X GET 'https://sandbox.boletosimples.com.br/api/v1/remittances/1'
+-X GET 'https://api-sandbox.kobana.com.br/v1/remittances/1'
 </pre>
 
     <small>Resposta:</small>
@@ -415,7 +415,7 @@ Content-Type: application/json; charset=utf-8
     "bank_billet_account_id" => 1,
                 "created_at" => "2016-05-06",
               "processed_at" => "2016-05-06",
-                       "url" => "https://sandbox.boletosimples.com.br/remessas/06tt1bcc3f6132720866b53a57c76de4/download",
+                       "url" => "https://app-sandbox.kobana.com.br/remessas/06tt1bcc3f6132720866b53a57c76de4/download",
                         "id" => 1,
            "bank_billet_ids" => [1]
 }
@@ -563,7 +563,7 @@ curl -i \
 -H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X GET "https://sandbox.boletosimples.com.br/api/v1/remittances?page=1&per_page=50"
+-X GET "https://api-sandbox.kobana.com.br/v1/remittances?page=1&per_page=50"
 </pre>
 
     <small>Resposta:</small>
@@ -585,7 +585,7 @@ Content-Type: application/json; charset=utf-8
       "bank_billet_account_id" => 1,
                   "created_at" => "2016-05-06",
                 "processed_at" => "2016-05-06",
-                         "url" => "https://boletosimples.com.br/remessas/06tt1bcc3f6132720866b53a57c76de4/download",
+                         "url" => "https://app.kobana.com.br/remessas/06tt1bcc3f6132720866b53a57c76de4/download",
                           "id" => 1,
              "bank_billet_ids" => [1]
   }
@@ -612,8 +612,8 @@ CNABs Retornadas: 3
 Total: 3
 Primeira Página:
 Página Anterior:
-Próxima Página: https://sandbox.boletosimples.com.br/api/v1/remittances?page=2&per_page=2
-Última Página: https://sandbox.boletosimples.com.br/api/v1/remittances?page=2&per_page=2
+Próxima Página: https://api-sandbox.kobana.com.br/v1/remittances?page=2&per_page=2
+Última Página: https://api-sandbox.kobana.com.br/v1/remittances?page=2&per_page=2
 </pre>
   </div> -->
   <!-- <div class="tab-pane" id="php6">
@@ -636,8 +636,8 @@ CNABs Retornados: 2
 Total: 9
 Primeira Página:
 Página Anterior:
-Próxima Página: https://sandbox.boletosimples.com.br/api/v1/remittances?page=2&per_page=2
-Última Página: https://sandbox.boletosimples.com.br/api/v1/remittances?page=5&per_page=2
+Próxima Página: https://api-sandbox.kobana.com.br/v1/remittances?page=2&per_page=2
+Última Página: https://api-sandbox.kobana.com.br/v1/remittances?page=5&per_page=2
 </pre>
   </div> -->
 </div>
@@ -663,7 +663,7 @@ curl -i \
 -H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X DELETE 'https://sandbox.boletosimples.com.br/api/v1/remittances/11'
+-X DELETE 'https://api-sandbox.kobana.com.br/v1/remittances/11'
 </pre>
 
     <small>Resposta:</small>
@@ -766,7 +766,7 @@ curl -i \
 -H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -H 'Content-Type: text/plain' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X GET 'https://sandbox.boletosimples.com.br/api/v1/remittances/1/raw'
+-X GET 'https://api-sandbox.kobana.com.br/v1/remittances/1/raw'
 </pre>
 
     <small>Resposta:</small>

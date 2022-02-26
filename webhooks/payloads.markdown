@@ -351,7 +351,7 @@ A regra é que todos os payloads possuem as chaves `event_code`, `webhook`, `obj
     "gender": "Masculino",
     "full_name": "Luiz Silva",
     "last_name": "Silva",
-    "login_url": "https://boletosimples.com.br/welcome?email=suporte%boletosimples.com.br&token=TJEz4fMFv2Q4jp8SLj6q",
+    "login_url": "https://app.kobana.com.br/welcome?email=suporte%boletosimples.com.br&token=TJEz4fMFv2Q4jp8SLj6q",
     "first_name": "Luiz",
     "father_name": null,
     "middle_name": null,

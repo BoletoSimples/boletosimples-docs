@@ -8,7 +8,7 @@ layout: pt
 ## Eventos
 
 Alguns eventos que ocorrem dentro do Boleto Simples são registrados. Todos eles, quando registrados, geram notificações para cada webhook que esteja ativo e configurado para receber o respectivo evento.
-Você pode acessar a qualquer momento o [Log de Eventos](https://boletosimples.com.br/conta/eventos) da sua conta.
+Você pode acessar a qualquer momento o [Log de Eventos](https://app.kobana.com.br/conta/eventos) da sua conta.
 
 Os códigos dos eventos seguem um padrão `resource.event`, onde `resource` é o nome do recurso que gerou o evento e `event` é a ação propriamente dita.
 

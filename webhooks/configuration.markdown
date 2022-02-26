@@ -7,7 +7,7 @@ en: "/en/webhooks/configuration"
 
 ## Configurando Webhooks
 
-Você pode criar webhooks em [Minha Conta > API > Webhooks](https://boletosimples.com.br/conta/api/webhooks).
+Você pode criar webhooks em [Minha Conta > API > Webhooks](https://app.kobana.com.br/conta/api/webhooks).
 
 ### Endereço para o Payload (URL)
 

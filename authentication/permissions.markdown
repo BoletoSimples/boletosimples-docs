@@ -81,4 +81,4 @@ Permissões em grupo devem ser separadas com caracter `+` na URL.
 
 Abaixo um exemplo de URL de requisição com parâmetro `scope` no final:
 
-<pre class="html">https://boletosimples.com.br/api/v1/oauth/authorize?response_type=code&amp;client_id=YOUR_CLIENT_ID&amp;redirect_uri=YOUR_CALLBACK_URL&amp;scope=login+email+profile</pre>
+<pre class="html">https://api.kobana.com.br/v1/oauth/authorize?response_type=code&amp;client_id=YOUR_CLIENT_ID&amp;redirect_uri=YOUR_CALLBACK_URL&amp;scope=login+email+profile</pre>

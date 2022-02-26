@@ -34,7 +34,7 @@ curl -i \
 -H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X GET 'https://sandbox.boletosimples.com.br/api/v1/bank_billet_batch_exports/1'
+-X GET 'https://api-sandbox.kobana.com.br/v1/bank_billet_batch_exports/1'
 </pre>
 
     <small>Resposta:</small>

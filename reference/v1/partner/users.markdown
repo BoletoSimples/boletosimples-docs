@@ -421,7 +421,7 @@ curl -i \
 -H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X POST 'https://sandbox.boletosimples.com.br/api/v1/partner/users'
+-X POST 'https://api-sandbox.kobana.com.br/v1/partner/users'
 </pre>
 
     <small>Resposta:</small>
@@ -517,7 +517,7 @@ curl -i \
 -d '{"user":{"email": "customer@example.com"}}' \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X POST 'https://sandbox.boletosimples.com.br/api/v1/partner/users'
+-X POST 'https://api-sandbox.kobana.com.br/v1/partner/users'
 </pre>
 
     <small>Resposta:</small>
@@ -527,7 +527,7 @@ HTTP/1.1 201 Created
 Server: Cowboy
 Connection: keep-alive
 Strict-Transport-Security: max-age=2592000
-Location: https://sandbox.boletosimples.com.br/api/v1/partner/users/2
+Location: https://api-sandbox.kobana.com.br/v1/partner/users/2
 Content-Type: application/json; charset=utf-8
 ...
 
@@ -541,7 +541,7 @@ Content-Type: application/json; charset=utf-8
   "business_category"=>nil, "business_subcategory"=>nil, "business_website"=>nil, 
   "business_name"=>nil, "business_legal_name"=>nil, "business_type"=>nil, 
   "business_cnpj"=>nil, "address_city_name"=>nil, "full_name"=>nil, 
-  "login_url"=>"https://sandbox.boletosimples.com.br/welcome?email=kivanio%2Bsand10%40boletosimples.com.br&token=25m48-FeVVqpzrUtMvXZ", 
+  "login_url"=>"https://app-sandbox.kobana.com.br/welcome?email=kivanio%2Bsand10%40boletosimples.com.br&token=25m48-FeVVqpzrUtMvXZ", 
   "mother_name"=>nil, "father_name"=>nil, "account_level"=>2,
   "application_access_token"=>"3cfa8aa4a9a3ee1e4cab4e1839c8c4fa279e1411b5f22587713f7b705685c4e8"
 }
@@ -572,7 +572,7 @@ Sucesso :)
   "withdrawal_period"=>"biweekly",  
   "first_name"=>nil, "middle_name"=>nil, "last_name"=>nil, "date_of_birth"=>nil, 
   "business_category"=>nil, "business_subcategory"=>nil, "business_website"=>nil, 
-  "business_name"=>nil, "business_legal_name"=>nil, "business_type"=>nil, "business_cnpj"=>nil, "address_city_name"=>nil, "full_name"=>nil, "login_url"=>"https://sandbox.boletosimples.com.br/welcome?email=kivanio%2Bsand10%40boletosimples.com.br&token=25m48-FeVVqpzrUtMvXZ", 
+  "business_name"=>nil, "business_legal_name"=>nil, "business_type"=>nil, "business_cnpj"=>nil, "address_city_name"=>nil, "full_name"=>nil, "login_url"=>"https://app-sandbox.kobana.com.br/welcome?email=kivanio%2Bsand10%40boletosimples.com.br&token=25m48-FeVVqpzrUtMvXZ", 
   "mother_name"=>nil, "father_name"=>nil, "account_level"=>2,
   "application_access_token"=>"3cfa8aa4a9a3ee1e4cab4e1839c8c4fa279e1411b5f22587713f7b705685c4e8"
 }

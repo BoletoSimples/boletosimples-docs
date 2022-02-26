@@ -19,7 +19,7 @@ Há bibliotecas OAuth2 para quase todas as linguagens visto que é um protocolo 
 
 ### Registro da Aplicação
 
-Para começar você precisa [cadastrar a sua aplicação](https://sandbox.boletosimples.com.br/conta/api/aplicacoes). Nós te forneceremos um `client_id` e `client_secret`.
+Para começar você precisa [cadastrar a sua aplicação](https://app-sandbox.kobana.com.br/conta/api/aplicacoes). Nós te forneceremos um `client_id` e `client_secret`.
 
 Você também deverá nos fornecer uma URL de Redirecionamento `redirect_uri` para o seu site.
 
@@ -35,11 +35,11 @@ Você também deverá nos fornecer uma URL de Redirecionamento `redirect_uri` pa
   <tbody>
     <tr>
       <td>Authorize URL</td>
-      <td>GET https://sandbox.boletosimples.com.br/api/v1/oauth2/authorize</td>
+      <td>GET https://api-sandbox.kobana.com.br/v1/oauth2/authorize</td>
     </tr>
     <tr>
       <td>Token URL</td>
-      <td>POST https://sandbox.boletosimples.com.br/api/v1/oauth2/token</td>
+      <td>POST https://api-sandbox.kobana.com.br/v1/oauth2/token</td>
     </tr>
   </tbody>
 </table>
@@ -54,11 +54,11 @@ Você também deverá nos fornecer uma URL de Redirecionamento `redirect_uri` pa
   <tbody>
     <tr>
       <td>Authorize URL</td>
-      <td>GET https://boletosimples.com.br/api/v1/oauth2/authorize</td>
+      <td>GET https://api.kobana.com.br/v1/oauth2/authorize</td>
     </tr>
     <tr>
       <td>Token URL</td>
-      <td>POST https://boletosimples.com.br/api/v1/oauth2/token</td>
+      <td>POST https://api.kobana.com.br/v1/oauth2/token</td>
     </tr>
   </tbody>
 </table>
@@ -91,7 +91,7 @@ OAuth2 requer que o usuário autorize o acesso da sua app à conta dele. Para au
 
     <div class="tab-content">
       <div class="tab-pane active" id="bash1">
-       <pre class="bash">https://sandbox.boletosimples.com.br/api/v1/oauth2/authorize?response_type=code&amp;client_id=fc4e525ff3&amp;redirect_uri=http://seusite.com.br</pre>
+       <pre class="bash">https://api-sandbox.kobana.com.br/v1/oauth2/authorize?response_type=code&amp;client_id=fc4e525ff3&amp;redirect_uri=http://seusite.com.br</pre>
       </div>
 
       <div class="tab-pane" id="ruby1">
@@ -100,7 +100,7 @@ OAuth2 requer que o usuário autorize o acesso da sua app à conta dele. Para au
     client_secret = '95ea9a477d'
     redirect_url = 'http://seusite.com.br'
 
-    client = OAuth2::Client.new(client_id, client_secret, site: 'https://sandbox.boletosimples.com.br/api/v1')
+    client = OAuth2::Client.new(client_id, client_secret, site: 'https://api-sandbox.kobana.com.br/v1')
     redirect_to client.auth_code.authorize_url(redirect_uri: redirect_url)
         </pre>
       </div>
@@ -121,7 +121,7 @@ OAuth2 requer que o usuário autorize o acesso da sua app à conta dele. Para au
 
 1. Faça uma requisição `POST` para o endereço abaixo para receber o access token.
 
-    <pre class="bash">https://sandbox.boletosimples.com.br/api/v1/oauth2/token?grant_type=authorization_code&amp;code=57858ba460&amp;redirect_uri=http://seusite.com.br&amp;client_id=fc4e525ff3&amp;client_secret=95ea9a477d</pre>
+    <pre class="bash">https://api-sandbox.kobana.com.br/v1/oauth2/token?grant_type=authorization_code&amp;code=57858ba460&amp;redirect_uri=http://seusite.com.br&amp;client_id=fc4e525ff3&amp;client_secret=95ea9a477d</pre>
 
     <ul class="nav nav-tabs" role="tablist">
       <li class="active"><a href="#bash2" role="tab" data-toggle="tab">Bash</a></li>
@@ -136,7 +136,7 @@ OAuth2 requer que o usuário autorize o acesso da sua app à conta dele. Para au
 curl -i \
 -d 'grant_type=authorization_code&code=57858ba460&redirect_uri=http://seusite.com.br&client_id=fc4e525ff3&client_secret=95ea9a477d' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X POST 'https://sandbox.boletosimples.com.br/api/v1/oauth2/token'
+-X POST 'https://api-sandbox.kobana.com.br/v1/oauth2/token'
         </pre>
 
         <small>Resposta em caso de erro:</small>
@@ -170,7 +170,7 @@ curl -i \
     redirect_url = 'http://seusite.com.br'
     code = 'código de autorização retornado'
 
-    client = OAuth2::Client.new(client_id, client_secret, site: 'https://sandbox.boletosimples.com.br/api/v1')
+    client = OAuth2::Client.new(client_id, client_secret, site: 'https://api-sandbox.kobana.com.br/v1')
     access_token = client.auth_code.get_token(code, redirect_uri: redirect_uri)
         </pre>
       </div>
@@ -192,7 +192,7 @@ curl -i \
 -H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X GET 'https://sandbox.boletosimples.com.br/api/v1/userinfo'
+-X GET 'https://api-sandbox.kobana.com.br/v1/userinfo'
         </pre>
 
         <small>Resposta:</small>
@@ -219,7 +219,7 @@ access_token.get('/api/v1/userinfo').body
 Para parceiros interessados na criação de novas contas no Boleto Simples a partir do seu produto,
 será necessário obter um tipo especial de token de acesso.
 
-Para isso, [cadastre a sua aplicação](https://sandbox.boletosimples.com.br/conta/api/aplicacoes) e obtenha o `client_id` e `client_secret`.
+Para isso, [cadastre a sua aplicação](https://app-sandbox.kobana.com.br/conta/api/aplicacoes) e obtenha o `client_id` e `client_secret`.
 
 Depois obtenha o token de acesso usando o tipo de permissão `client_credentials`:
 
@@ -233,7 +233,7 @@ Depois obtenha o token de acesso usando o tipo de permissão `client_credentials
     <small>Requisição:</small>
 
 <pre class="bash">
-curl https://sandbox.boletosimples.com.br/api/v1/oauth2/token \
+curl https://api-sandbox.kobana.com.br/v1/oauth2/token \
 -d 'grant_type=client_credentials&client_id=seu_client_id&client_secret=seu_client_secret'
 </pre>
 

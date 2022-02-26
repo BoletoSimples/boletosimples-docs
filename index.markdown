@@ -23,7 +23,7 @@ Para dúvidas sobre a API faça suas perguntas em nossa [central de suporte](htt
 
 ### Endpoint da API
 
-A URL Base da API é `https://boletosimples.com.br/api/v1/`
+A URL Base da API é `https://api.kobana.com.br/v1/`
 
 Todas as requisições devem usar o schema `https` por questões de segurança.
 

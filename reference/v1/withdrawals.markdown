@@ -68,7 +68,7 @@ curl -i \
 -H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X GET 'https://sandbox.boletosimples.com.br/api/v1/withdrawals/new'
+-X GET 'https://api-sandbox.kobana.com.br/v1/withdrawals/new'
 </pre>
 
     <small>Resposta:</small>
@@ -182,7 +182,7 @@ curl -i \
 -H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X POST 'https://sandbox.boletosimples.com.br/api/v1/withdrawals'
+-X POST 'https://api-sandbox.kobana.com.br/v1/withdrawals'
 </pre>
 
     <small>Resposta:</small>
@@ -279,7 +279,7 @@ curl -i \
 -H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X POST 'https://sandbox.boletosimples.com.br/api/v1/withdrawals'
+-X POST 'https://api-sandbox.kobana.com.br/v1/withdrawals'
 </pre>
 
     <small>Resposta:</small>
@@ -288,7 +288,7 @@ curl -i \
 HTTP/1.1 201 Created
 Date: Fri, 17 Oct 2014 19:30:06 GMT
 Status: 201 Created
-Location: https://sandbox.boletosimples.com.br/api/v1/withdrawals/1
+Location: https://api-sandbox.kobana.com.br/v1/withdrawals/1
 Content-Type: application/json; charset=utf-8
 ...
 
@@ -427,7 +427,7 @@ curl -i \
 -H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X GET 'https://sandbox.boletosimples.com.br/api/v1/withdrawals/1'
+-X GET 'https://api-sandbox.kobana.com.br/v1/withdrawals/1'
 </pre>
 
     <small>Resposta:</small>
@@ -581,7 +581,7 @@ curl -i \
 -H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X GET "https://sandbox.boletosimples.com.br/api/v1/withdrawals?page=1&per_page=2"
+-X GET "https://api-sandbox.kobana.com.br/v1/withdrawals?page=1&per_page=2"
 </pre>
 
     <small>Resposta:</small>
@@ -590,7 +590,7 @@ curl -i \
 HTTP/1.1 200 OK
 Date: Fri, 17 Oct 2014 19:46:16 GMT
 Status: 200 OK
-Link: <https://sandbox.boletosimples.com.br/api/v1/withdrawals?page=2&per_page=2>; rel="last", <https://sandbox.boletosimples.com.br/api/v1/withdrawals?page=2&per_page=2>; rel="next"
+Link: <https://api-sandbox.kobana.com.br/v1/withdrawals?page=2&per_page=2>; rel="last", <https://api-sandbox.kobana.com.br/v1/withdrawals?page=2&per_page=2>; rel="next"
 Total: 4
 Content-Type: application/json; charset=utf-8
 ...
@@ -641,8 +641,8 @@ Saques Retornadas: 2
 Total: 4
 Primeira Página:
 Página Anterior:
-Próxima Página: https://sandbox.boletosimples.com.br/api/v1/withdrawals?page=2&per_page=2
-Última Página: https://sandbox.boletosimples.com.br/api/v1/withdrawals?page=2&per_page=2
+Próxima Página: https://api-sandbox.kobana.com.br/v1/withdrawals?page=2&per_page=2
+Última Página: https://api-sandbox.kobana.com.br/v1/withdrawals?page=2&per_page=2
 </pre>
   </div> -->
   <!-- <div class="tab-pane" id="php4">
@@ -665,8 +665,8 @@ Saques Retornadas: 2
 Total: 4
 Primeira Página:
 Página Anterior:
-Próxima Página: https://sandbox.boletosimples.com.br/api/v1/withdrawals?page=2&per_page=2
-Última Página: https://sandbox.boletosimples.com.br/api/v1/withdrawals?page=2&per_page=2
+Próxima Página: https://api-sandbox.kobana.com.br/v1/withdrawals?page=2&per_page=2
+Última Página: https://api-sandbox.kobana.com.br/v1/withdrawals?page=2&per_page=2
 </pre>
   </div> -->
 </div>

@@ -338,7 +338,7 @@ curl -i \
 -d '{"bank_billet":{}}' \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X POST 'https://sandbox.boletosimples.com.br/api/v1/bank_billets'
+-X POST 'https://api-sandbox.kobana.com.br/v1/bank_billets'
 </pre>
 
     <small>Resposta:</small>
@@ -490,7 +490,7 @@ curl -i \
 -d '{"bank_billet":{"amount":12.34, "expire_at": "2021-11-15", "description": "Prestação de Serviço", "customer_person_name": "Nome do Cliente", "customer_cnpj_cpf": "125.812.717-28", "customer_zipcode": "12312123", "customer_address": "Rua quinhentos", "customer_city_name": "Rio de Janeiro", "customer_state": "RJ", "customer_neighborhood": "bairro"}}' \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X POST 'https://sandbox.boletosimples.com.br/api/v1/bank_billets'
+-X POST 'https://api-sandbox.kobana.com.br/v1/bank_billets'
 </pre>
 
     <small>Resposta:</small>
@@ -499,7 +499,7 @@ curl -i \
 HTTP/1.1 201 Created
 Date: Fri, 17 Oct 2014 19:30:06 GMT
 Status: 201 Created
-Location: https://sandbox.boletosimples.com.br/api/v1/bank_billets/1
+Location: https://api-sandbox.kobana.com.br/v1/bank_billets/1
 Content-Type: application/json; charset=utf-8
 ...
 
@@ -665,7 +665,7 @@ curl -i \
 -H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X GET 'https://sandbox.boletosimples.com.br/api/v1/bank_billets/1'
+-X GET 'https://api-sandbox.kobana.com.br/v1/bank_billets/1'
 </pre>
 
 <small>Resposta:</small>
@@ -1038,7 +1038,7 @@ curl -i \
 -H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X GET "https://sandbox.boletosimples.com.br/api/v1/bank_billets?page=1&per_page=50"
+-X GET "https://api-sandbox.kobana.com.br/v1/bank_billets?page=1&per_page=50"
 </pre>
 
     <small>Resposta:</small>
@@ -1047,7 +1047,7 @@ curl -i \
 HTTP/1.1 200 OK
 Date: Fri, 17 Oct 2014 19:46:16 GMT
 Status: 200 OK
-Link: [https://sandbox.boletosimples.com.br/api/v1/bank_billets?page=3&per_page=50](https://sandbox.boletosimples.com.br/api/v1/bank_billets?page=3&per_page=50); rel="last", [https://sandbox.boletosimples.com.br/api/v1/bank_billets?page=2&per_page=50](https://sandbox.boletosimples.com.br/api/v1/bank_billets?page=2&per_page=50); rel="next"
+Link: [https://api-sandbox.kobana.com.br/v1/bank_billets?page=3&per_page=50](https://api-sandbox.kobana.com.br/v1/bank_billets?page=3&per_page=50); rel="last", [https://api-sandbox.kobana.com.br/v1/bank_billets?page=2&per_page=50](https://api-sandbox.kobana.com.br/v1/bank_billets?page=2&per_page=50); rel="next"
 Total: 101
 Content-Type: application/json; charset=utf-8
 ...
@@ -1100,8 +1100,8 @@ Boletos Retornados: 2
 Total: 124
 Primeira Página:
 Página Anterior:
-Próxima Página: https://sandbox.boletosimples.com.br/api/v1/bank_billets?page=2&per_page=2
-Última Página: https://sandbox.boletosimples.com.br/api/v1/bank_billets?page=62&per_page=2
+Próxima Página: https://api-sandbox.kobana.com.br/v1/bank_billets?page=2&per_page=2
+Última Página: https://api-sandbox.kobana.com.br/v1/bank_billets?page=62&per_page=2
 </pre>
 
 </div>
@@ -1125,8 +1125,8 @@ Boletos Retornados: 2
 Total: 124
 Primeira Página:
 Página Anterior:
-Próxima Página: https://sandbox.boletosimples.com.br/api/v1/bank_billets?page=2&per_page=2
-Última Página: https://sandbox.boletosimples.com.br/api/v1/bank_billets?page=62&per_page=2
+Próxima Página: https://api-sandbox.kobana.com.br/v1/bank_billets?page=2&per_page=2
+Última Página: https://api-sandbox.kobana.com.br/v1/bank_billets?page=62&per_page=2
 </pre>
 
     </div>
@@ -1156,7 +1156,7 @@ curl -i \
 -H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X PUT https://sandbox.boletosimples.com.br/api/v1/bank_billets/1/cancel
+-X PUT https://api-sandbox.kobana.com.br/v1/bank_billets/1/cancel
 </pre>
 
     <small>Resposta:</small>
@@ -1252,7 +1252,7 @@ curl -i \
 -H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X PUT https://sandbox.boletosimples.com.br/api/v1/bank_billets/1/cancel
+-X PUT https://api-sandbox.kobana.com.br/v1/bank_billets/1/cancel
 </pre>
 
     <small>Resposta:</small>
@@ -1458,7 +1458,7 @@ curl -i \
 -d '{"bank_billet":{}}' \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X PUT https://sandbox.boletosimples.com.br/api/v1/bank_billets/1
+-X PUT https://api-sandbox.kobana.com.br/v1/bank_billets/1
 </pre>
 
     <small>Resposta:</small>
@@ -1552,7 +1552,7 @@ curl -i \
 -d '{"bank_billet":{"expire_at":"2017-11-15"}}' \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X PUT https://sandbox.boletosimples.com.br/api/v1/bank_billets/1
+-X PUT https://api-sandbox.kobana.com.br/v1/bank_billets/1
 </pre>
 
     <small>Resposta:</small>
@@ -1651,7 +1651,7 @@ curl -i \
 -d '{"expire_at_in_days":"5"}' \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X POST 'https://sandbox.boletosimples.com.br/api/v1/bank_billets/1/duplicate'
+-X POST 'https://api-sandbox.kobana.com.br/v1/bank_billets/1/duplicate'
 </pre>
 
     <small>Resposta:</small>
@@ -1660,7 +1660,7 @@ curl -i \
 HTTP/1.1 201 Created
 Date: Fri, 17 Oct 2014 19:30:06 GMT
 Status: 201 Created
-Location: https://sandbox.boletosimples.com.br/api/v1/bank_billets/2
+Location: https://api-sandbox.kobana.com.br/v1/bank_billets/2
 Content-Type: application/json; charset=utf-8
 ...
 
@@ -1837,7 +1837,7 @@ curl -i \
 -d '{"bank_billet":{}}' \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X PUT https://sandbox.boletosimples.com.br/api/v1/bank_billets/1/pay
+-X PUT https://api-sandbox.kobana.com.br/v1/bank_billets/1/pay
 </pre>
 
     <small>Resposta:</small>
@@ -1992,7 +1992,7 @@ curl -i \
 -d '{"bank_billet":{"paid_amount":120.34, "paid_at": "2014-11-15"}}' \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X PUT https://sandbox.boletosimples.com.br/api/v1/bank_billets/1/pay
+-X PUT https://api-sandbox.kobana.com.br/v1/bank_billets/1/pay
 </pre>
 
     <small>Resposta:</small>
@@ -2113,7 +2113,7 @@ curl -i \
 -d '{"status":""}' \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X POST 'https://sandbox.boletosimples.com.br/api/v1/bank_billets/cancel_all'
+-X POST 'https://api-sandbox.kobana.com.br/v1/bank_billets/cancel_all'
 </pre>
 
     <small>Resposta:</small>
@@ -2148,7 +2148,7 @@ curl -i \
 -d '{"status":"opened", "expire_from":"20-04-2017", "expire_to"="20-10-2017", "bank_billet_ids":"\[345,456,788\]", "cnpj_cpf": "125.812.717-28"}' \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X POST 'https://sandbox.boletosimples.com.br/api/v1/bank_billets/cancel_all'
+-X POST 'https://api-sandbox.kobana.com.br/v1/bank_billets/cancel_all'
 </pre>
 
 <small>Resposta:</small>

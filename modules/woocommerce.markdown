@@ -35,8 +35,8 @@ O código fonte do módulo oficial do Boleto Simples para WooCommerce está disp
 
 #### Configuração do Boleto Simples
 
-2. Gere um Token em [Boleto Simples - API](https://boletosimples.com.br/conta/api/tokens);
-3. Crie um [Novo WebHook](https://boletosimples.com.br/conta/api/webhooks) e em **Endereço para o Payload (URL)** preencha com `http://seusite.com.br/?wc-api=WC_BoletoSimples_Gateway` onde seusite.com.br deve ser trocado para o site da sua loja. Nos eventos deixe marcado apenas **Todos os eventos de boleto (atuais e futuros).**;
+2. Gere um Token em [Boleto Simples - API](https://app.kobana.com.br/conta/api/tokens);
+3. Crie um [Novo WebHook](https://app.kobana.com.br/conta/api/webhooks) e em **Endereço para o Payload (URL)** preencha com `http://seusite.com.br/?wc-api=WC_BoletoSimples_Gateway` onde seusite.com.br deve ser trocado para o site da sua loja. Nos eventos deixe marcado apenas **Todos os eventos de boleto (atuais e futuros).**;
 4. Pronto, conta configurada.
 
 #### Configuração do Plugin

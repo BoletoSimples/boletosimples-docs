@@ -72,7 +72,7 @@ curl -i \
 -H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X GET 'https://sandbox.boletosimples.com.br/api/v1/userinfo'
+-X GET 'https://api-sandbox.kobana.com.br/v1/userinfo'
 </pre>
 
     <small>Resposta:</small>
@@ -111,7 +111,7 @@ Content-Type: application/json; charset=utf-8
   "business_cnpj": "18.174.681/0001-70",
   "address_city_name": "Rio de Janeiro",
   "full_name": "Margret Simões Gonçalo",
-  "login_url": "https://sandbox.boletosimples.com.br/welcome?email=meuecommerce%40example.com&token=UCefpzbGRrM1UrLEuUDS",
+  "login_url": "https://app-sandbox.kobana.com.br/welcome?email=meuecommerce%40example.com&token=UCefpzbGRrM1UrLEuUDS",
   "mother_name": "Lenadra Simões Gonçalo",
   "father_name": "José Simões Gonçalo",
   "balance_cents": "0",
@@ -132,7 +132,7 @@ puts @userinfo
 <pre class="ruby">
 {
                       :id => 1,
-               :login_url => "https://sandbox.boletosimples.com.br/welcome?email=user1%40example.com&token=xxx",
+               :login_url => "https://app-sandbox.kobana.com.br/welcome?email=user1%40example.com&token=xxx",
                    :email => "user@example.com",
             :account_type => nil,
               :first_name => nil,
@@ -173,7 +173,7 @@ print_r($userinfo);
 Array
 (
     [id] => 1
-    [login_url] => https://sandbox.boletosimples.com.br/welcome?email=user1%40example.com&token=xxx
+    [login_url] => https://app-sandbox.kobana.com.br/welcome?email=user1%40example.com&token=xxx
     [email] => user@example.com
     [account_type] =>
     [first_name] =>

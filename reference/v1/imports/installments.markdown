@@ -75,7 +75,7 @@ curl -i \
 -H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -H 'Content-Type: multipart/form-data' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X POST 'https://sandbox.boletosimples.com.br/api/v1/imports/installments'
+-X POST 'https://api-sandbox.kobana.com.br/v1/imports/installments'
 </pre>
 
     <small>Resposta:</small>
@@ -111,7 +111,7 @@ curl -i \
 -H 'Content-Type: multipart/form-data' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
 -F "installment_import[source]=@carnes.csv" \
--X POST 'https://sandbox.boletosimples.com.br/api/v1/imports/installments'
+-X POST 'https://api-sandbox.kobana.com.br/v1/imports/installments'
 </pre>
 
     <small>Resposta:</small>
@@ -121,7 +121,7 @@ HTTP/1.1 201 Created
 Server: Cowboy
 Connection: keep-alive
 Strict-Transport-Security: max-age=2592000
-Location: https://sandbox.boletosimples.com.br/api/v1/imports/installments
+Location: https://api-sandbox.kobana.com.br/v1/imports/installments
 Content-Type: application/json; charset=utf-8
 ...
 
@@ -168,7 +168,7 @@ curl -i \
 -H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X GET 'https://sandbox.boletosimples.com.br/api/v1/imports/installments/1'
+-X GET 'https://api-sandbox.kobana.com.br/v1/imports/installments/1'
 </pre>
 
     <small>Resposta:</small>
@@ -266,7 +266,7 @@ curl -i \
 -H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X GET "https://sandbox.boletosimples.com.br/api/v1/imports/installments?page=1&per_page=50"
+-X GET "https://api-sandbox.kobana.com.br/v1/imports/installments?page=1&per_page=50"
 </pre>
 
     <small>Resposta:</small>
@@ -303,4 +303,3 @@ Content-Type: application/json; charset=utf-8
 </pre>
   </div>
 </div>
-

@@ -49,7 +49,7 @@ curl -i \
 -d '{"webhook":{}}' \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X POST 'https://sandbox.boletosimples.com.br/api/v1/webhooks'
+-X POST 'https://api-sandbox.kobana.com.br/v1/webhooks'
 </pre>
 
     <small>Resposta:</small>
@@ -149,7 +149,7 @@ curl -i \
 -d '{"webhook":{"url":"https://example.com/callbacks/boletosimples/"}}' \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X POST 'https://sandbox.boletosimples.com.br/api/v1/webhooks'
+-X POST 'https://api-sandbox.kobana.com.br/v1/webhooks'
 </pre>
 
     <small>Resposta:</small>
@@ -158,7 +158,7 @@ curl -i \
 HTTP/1.1 201 Created
 Date: Fri, 17 Oct 2014 19:30:06 GMT
 Status: 201 Created
-Location: https://sandbox.boletosimples.com.br/api/v1/customers/1
+Location: https://api-sandbox.kobana.com.br/v1/customers/1
 Content-Type: application/json; charset=utf-8
 ...
 
@@ -293,7 +293,7 @@ curl -i \
 -H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X GET 'https://sandbox.boletosimples.com.br/api/v1/webhooks/1'
+-X GET 'https://api-sandbox.kobana.com.br/v1/webhooks/1'
 </pre>
 
     <small>Resposta:</small>
@@ -401,7 +401,7 @@ curl -i \
 -d '{"webhook":{"url": ""}}' \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X PATCH 'https://sandbox.boletosimples.com.br/api/v1/webhooks/1'
+-X PATCH 'https://api-sandbox.kobana.com.br/v1/webhooks/1'
 </pre>
 
     <small>Resposta:</small>
@@ -502,7 +502,7 @@ curl -i \
 -d '{"webhook":{"url":"https://example.com/callbacks/boletosimples/"}}' \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X PATCH 'https://sandbox.boletosimples.com.br/api/v1/webhooks/1'
+-X PATCH 'https://api-sandbox.kobana.com.br/v1/webhooks/1'
 </pre>
 
     <small>Resposta:</small>
@@ -511,7 +511,7 @@ curl -i \
 HTTP/1.1 204 No Content
 Date: Fri, 17 Oct 2014 19:30:06 GMT
 Status: 204 No Content
-Location: https://sandbox.boletosimples.com.br/api/v1/webhooks/1
+Location: https://api-sandbox.kobana.com.br/v1/webhooks/1
 ...
 
 </pre>
@@ -677,7 +677,7 @@ curl -i \
 -H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X GET "https://sandbox.boletosimples.com.br/api/v1/webhooks?page=1&per_page=2"
+-X GET "https://api-sandbox.kobana.com.br/v1/webhooks?page=1&per_page=2"
 </pre>
 
     <small>Resposta:</small>
@@ -686,7 +686,7 @@ curl -i \
 HTTP/1.1 200 OK
 Date: Fri, 17 Oct 2014 19:46:16 GMT
 Status: 200 OK
-Link: <https://sandbox.boletosimples.com.br/api/v1/webhooks?page=2&per_page=2>; rel="last", <https://sandbox.boletosimples.com.br/api/v1/webhooks?page=2&per_page=2>; rel="next"
+Link: <https://api-sandbox.kobana.com.br/v1/webhooks?page=2&per_page=2>; rel="last", <https://api-sandbox.kobana.com.br/v1/webhooks?page=2&per_page=2>; rel="next"
 Total: 4
 Content-Type: application/json; charset=utf-8
 ...
@@ -727,8 +727,8 @@ Transações Retornadas: 2
 Total: 4
 Primeira Página:
 Página Anterior:
-Próxima Página: https://sandbox.boletosimples.com.br/api/v1/transactions?page=2&per_page=2
-Última Página: https://sandbox.boletosimples.com.br/api/v1/transactions?page=2&per_page=2
+Próxima Página: https://api-sandbox.kobana.com.br/v1/transactions?page=2&per_page=2
+Última Página: https://api-sandbox.kobana.com.br/v1/transactions?page=2&per_page=2
 </pre>
   </div>
   <div class="tab-pane" id="php4">
@@ -751,8 +751,8 @@ Transações Retornadas: 2
 Total: 4
 Primeira Página:
 Página Anterior:
-Próxima Página: https://sandbox.boletosimples.com.br/api/v1/transactions?page=2&per_page=2
-Última Página: https://sandbox.boletosimples.com.br/api/v1/transactions?page=2&per_page=2
+Próxima Página: https://api-sandbox.kobana.com.br/v1/transactions?page=2&per_page=2
+Última Página: https://api-sandbox.kobana.com.br/v1/transactions?page=2&per_page=2
 </pre>
   </div-->
 </div>
@@ -773,7 +773,7 @@ Próxima Página: https://sandbox.boletosimples.com.br/api/v1/transactions?page=
 curl -i \
 -H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X DELETE 'https://sandbox.boletosimples.com.br/api/v1/webhooks/1'
+-X DELETE 'https://api-sandbox.kobana.com.br/v1/webhooks/1'
 </pre>
 
     <small>Resposta:</small>

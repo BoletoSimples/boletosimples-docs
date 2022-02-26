@@ -176,7 +176,7 @@ breadcrumb: Registro de Remessa
   -H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
   -H 'Content-Type: application/json' \
   -H 'User-Agent: MyApp (myapp@example.com)' \
-  -X GET 'https://sandbox.boletosimples.com.br/api/v1/bank_billet_remittances?page=1&per_page=50'
+  -X GET 'https://api-sandbox.kobana.com.br/v1/bank_billet_remittances?page=1&per_page=50'
 </pre>
 
     <small>Resposta:</small>
@@ -362,7 +362,7 @@ Content-Type: application/json; charset=utf-8
   -H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
   -H 'Content-Type: application/json' \
   -H 'User-Agent: MyApp (myapp@example.com)' \
-  -X GET 'https://sandbox.boletosimples.com.br/api/v1/bank_billet_remittances/pending?page=1'
+  -X GET 'https://api-sandbox.kobana.com.br/v1/bank_billet_remittances/pending?page=1'
 </pre>
 
     <small>Resposta:</small>
@@ -464,7 +464,7 @@ curl -i \
 -H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X POST 'https://sandbox.boletosimples.com.br/api/v1/bank_billet_remittances/2/occurrence/9989x'
+-X POST 'https://api-sandbox.kobana.com.br/v1/bank_billet_remittances/2/occurrence/9989x'
 </pre>
 
     <small>Resposta:</small>
@@ -500,7 +500,7 @@ curl -i \
 -H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X POST 'https://sandbox.boletosimples.com.br/api/v1/bank_billet_remittances/2/occurrence/1034'
+-X POST 'https://api-sandbox.kobana.com.br/v1/bank_billet_remittances/2/occurrence/1034'
 </pre>
 
     <small>Resposta:</small>
@@ -539,7 +539,7 @@ Content-Type: application/json; charset=utf-8
 curl -i \
 -H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X DELETE 'https://sandbox.boletosimples.com.br/api/v1/bank_billet_remittances/1'
+-X DELETE 'https://api-sandbox.kobana.com.br/v1/bank_billet_remittances/1'
 </pre>
 
     <small>Resposta:</small>

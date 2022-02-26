@@ -43,8 +43,8 @@ O código fonte do módulo oficial do Boleto Simples para Magento v1 está dispo
 ### Configuração
 
 #### 1. Configuração da sua conta Boleto Simples
-1. Crie uma conta no [Boleto Simples](https://boletosimples.com.br/?ref=nmylb);
-2. Com a conta criada gere um Token em [Boleto Simples > API](https://boletosimples.com.br/conta/api/tokens) e guarde-o em um local seguro para usarmos posteriormente;
+1. Crie uma conta no [Boleto Simples](https://app.kobana.com.br/?ref=nmylb);
+2. Com a conta criada gere um Token em [Boleto Simples > API](https://app.kobana.com.br/conta/api/tokens) e guarde-o em um local seguro para usarmos posteriormente;
 4. Pronto, conta configurada.
 
 #### 2. Pré-configuração do Módulo
@@ -64,7 +64,7 @@ Caso seu template não tenha o campo CPF/CNPJ habilitado, siga os seguintes pass
 1. Siga todos os passos das [Pré-configuração do Módulo](https://github.com/BoletoSimples/boletosimples-magento-v1/blob/master/README.md#2-pré-configuração-do-módulo) antes de prosseguir;
 2. Vá até `Sistema > Configuração > Vendas > Métodos de Pagamento > Boleto Simples`;
 3. Habilite o **Boleto Simples** e preencha como preferir a opção de **Ordem de Exibição** e **Título**;
-4. Copie o token gerado da sua conta através do [site do Boleto Simples](https://boletosimples.com.br/conta/api/tokens) e cole na opção **Token de Acesso**;
+4. Copie o token gerado da sua conta através do [site do Boleto Simples](https://app.kobana.com.br/conta/api/tokens) e cole na opção **Token de Acesso**;
 5. Deixe a opção **Chave Secreta do Webhook** vazia para ser preenchida automaticamente;
 6. Especifique em quantos dias seu Boleto vence após ser gerado na opção **Dias para Vencimento**;
 7. Só mude a opção **Novo Status do Pedido** caso você saiba o que está fazendo;

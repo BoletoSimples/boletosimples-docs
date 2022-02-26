@@ -70,7 +70,7 @@ curl -i \
 -d '{"customer":{}}' \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X POST 'https://sandbox.boletosimples.com.br/api/v1/customers'
+-X POST 'https://api-sandbox.kobana.com.br/v1/customers'
 </pre>
 
     <small>Resposta:</small>
@@ -169,7 +169,7 @@ curl -i \
 -d '{"customer":{"person_name":"Nome do Cliente", "cnpj_cpf": "125.812.717-28", "zipcode": "20071004", "address": "Rua quinhentos", "city_name": "Rio de Janeiro", "state": "RJ", "neighborhood": "bairro", "tags": ["tag1", "tag2"]}}' \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X POST 'https://sandbox.boletosimples.com.br/api/v1/customers'
+-X POST 'https://api-sandbox.kobana.com.br/v1/customers'
 </pre>
 
     <small>Resposta:</small>
@@ -178,7 +178,7 @@ curl -i \
 HTTP/1.1 201 Created
 Date: Fri, 17 Oct 2014 19:30:06 GMT
 Status: 201 Created
-Location: https://sandbox.boletosimples.com.br/api/v1/customers/1
+Location: https://api-sandbox.kobana.com.br/v1/customers/1
 Content-Type: application/json; charset=utf-8
 ...
 
@@ -355,7 +355,7 @@ curl -i \
 -H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X GET 'https://sandbox.boletosimples.com.br/api/v1/customers/1'
+-X GET 'https://api-sandbox.kobana.com.br/v1/customers/1'
 </pre>
 
     <small>Resposta:</small>
@@ -493,7 +493,7 @@ curl -i \
 -d '{"customer":{"person_name":""}}' \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X PATCH 'https://sandbox.boletosimples.com.br/api/v1/customers/1'
+-X PATCH 'https://api-sandbox.kobana.com.br/v1/customers/1'
 </pre>
 
     <small>Resposta:</small>
@@ -586,7 +586,7 @@ curl -i \
 -d '{"customer":{"person_name":"Nome do Cliente Atualizado"}}' \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X PUT 'https://sandbox.boletosimples.com.br/api/v1/customers/1'
+-X PUT 'https://api-sandbox.kobana.com.br/v1/customers/1'
 </pre>
 
     <small>Resposta:</small>
@@ -597,7 +597,7 @@ Server: Cowboy
 Content-Length: 0
 Connection: keep-alive
 Strict-Transport-Security: max-age=2592000
-Location: https://sandbox.boletosimples.com.br/api/v1/customers/1
+Location: https://api-sandbox.kobana.com.br/v1/customers/1
 ...
 
 </pre>
@@ -728,7 +728,7 @@ curl -i \
 -H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X GET "https://sandbox.boletosimples.com.br/api/v1/customers?page=1&per_page=50"
+-X GET "https://api-sandbox.kobana.com.br/v1/customers?page=1&per_page=50"
 </pre>
 
     <small>Resposta:</small>
@@ -737,7 +737,7 @@ curl -i \
 HTTP/1.1 200 OK
 Date: Fri, 17 Oct 2014 19:46:16 GMT
 Status: 200 OK
-Link: <https://sandbox.boletosimples.com.br/api/v1/customers?page=3&per_page=50>; rel="last", <https://sandbox.boletosimples.com.br/api/v1/customers?page=2&per_page=50>; rel="next"
+Link: <https://api-sandbox.kobana.com.br/v1/customers?page=3&per_page=50>; rel="last", <https://api-sandbox.kobana.com.br/v1/customers?page=2&per_page=50>; rel="next"
 Total: 101
 Content-Type: application/json; charset=utf-8
 ...
@@ -790,8 +790,8 @@ Clientes Retornados: 2
 Total: 9
 Primeira Página:
 Página Anterior:
-Próxima Página: https://sandbox.boletosimples.com.br/api/v1/customers?page=2&per_page=2
-Última Página: https://sandbox.boletosimples.com.br/api/v1/customers?page=5&per_page=2
+Próxima Página: https://api-sandbox.kobana.com.br/v1/customers?page=2&per_page=2
+Última Página: https://api-sandbox.kobana.com.br/v1/customers?page=5&per_page=2
 </pre>
   </div>
   <div class="tab-pane" id="php6">
@@ -814,8 +814,8 @@ Clientes Retornados: 2
 Total: 9
 Primeira Página:
 Página Anterior:
-Próxima Página: https://sandbox.boletosimples.com.br/api/v1/customers?page=2&per_page=2
-Última Página: https://sandbox.boletosimples.com.br/api/v1/customers?page=5&per_page=2
+Próxima Página: https://api-sandbox.kobana.com.br/v1/customers?page=2&per_page=2
+Última Página: https://api-sandbox.kobana.com.br/v1/customers?page=5&per_page=2
 </pre>
   </div>
 </div>
@@ -868,7 +868,7 @@ curl -i \
 -H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X GET 'https://sandbox.boletosimples.com.br/api/v1/customers/cnpj_cpf?q=125.812.717-28'
+-X GET 'https://api-sandbox.kobana.com.br/v1/customers/cnpj_cpf?q=125.812.717-28'
 </pre>
 
     <small>Resposta:</small>
@@ -1019,7 +1019,7 @@ curl -i \
 -H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X GET 'https://sandbox.boletosimples.com.br/api/v1/customers/email?q=cliente@example.com'
+-X GET 'https://api-sandbox.kobana.com.br/v1/customers/email?q=cliente@example.com'
 </pre>
 
     <small>Resposta:</small>

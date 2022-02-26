@@ -15,7 +15,7 @@ A versão do sistema no ambiente Sandbox é sempre a mesma versão do ambiente d
 
 ### Começando
 
-Para começar a utilizar o ambiente Sandbox, é necessário criar uma conta neste ambiente, através do endereço [https://sandbox.boletosimples.com.br/users/sign_up](https://sandbox.boletosimples.com.br/users/sign_up).
+Para começar a utilizar o ambiente Sandbox, é necessário criar uma conta neste ambiente, através do endereço [https://app-sandbox.kobana.com.br/users/sign_up](https://app-sandbox.kobana.com.br/users/sign_up).
 
 Após criar a conta, você poderá utilizar o ambiente Sandbox da mesma forma que usará o ambiente de Produção. Leia sobre [autenticação](/authentication) para começar.
 
@@ -25,7 +25,7 @@ Nenhuma validação de conta é realizada neste ambiente e logo após a criaçã
 
 ### Endpoint do Sandbox
 
-A URL Base do ambiente Sandbox é `https://sandbox.boletosimples.com.br/api/v1/`
+A URL Base do ambiente Sandbox é `https://api-sandbox.kobana.com.br/v1/`
 
 Todas as requisições devem usar o schema `https` por questões de segurança.
 

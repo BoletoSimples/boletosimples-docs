@@ -9,7 +9,7 @@ layout: pt
 
 #### Nós recomendamos essa opção se você precisar acessar apenas os dados da sua conta.
 
-Para poder usar a autenticação via **Token de Acesso**, você precisa pegar o seu `Token` na [página de API (Sandbox)](https://sandbox.boletosimples.com.br/conta/api) da sua conta. 
+Para poder usar a autenticação via **Token de Acesso**, você precisa pegar o seu `Token` na [página de API (Sandbox)](https://app-sandbox.kobana.com.br/conta/api) da sua conta. 
 
 Acessar -> Ajustes da Conta -> API
 
@@ -17,7 +17,7 @@ Acessar -> Ajustes da Conta -> API
 
 <div class="alert alert-info"><strong>ATENÇÃO</strong> O Token é diferente entre Sandbox e sua conta real.</div>
 
-Quando for começar a gerar os boletos em sua conta verdadeira, você deve repetir o procedimento acima e pegar o `Token` da sua [conta real](https://boletosimples.com.br/conta/api).
+Quando for começar a gerar os boletos em sua conta verdadeira, você deve repetir o procedimento acima e pegar o `Token` da sua [conta real](https://app.kobana.com.br/conta/api).
 
 A autenticação usando o `Token de Acesso` é feita via [Bearer authentication](https://tools.ietf.org/html/rfc6750).
 
@@ -40,7 +40,7 @@ curl -i \
 -H "Authorization: Bearer zjuio96wkixkzy6z98sy" \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X GET 'https://sandbox.boletosimples.com.br/api/v1/userinfo'
+-X GET 'https://api-sandbox.kobana.com.br/v1/userinfo'
 </pre>
 
     <small>Resposta:</small>
@@ -51,7 +51,7 @@ Date: Fri, 17 Oct 2014 18:14:56 GMT
 Status: 200 OK
 ...
 
-{"id":1,"login_url":"https://sandbox.boletosimples.com.br/welcome?email=user%40example.com\\u0026token=xxx","email":"user@example.com","account_type":null,"first_name":null,"middle_name":null,"last_name":null,"full_name":null,"cpf":null,"date_of_birth":null,"mother_name":null,"father_name":null,"account_level":0,"phone_number":null,"address_street_name":null,"address_number":null,"address_complement":null,"address_neighborhood":null,"address_postal_code":null,"address_city_name":null,"address_state":null,"business_name":null,"business_cnpj":null,"business_legal_name":null}
+{"id":1,"login_url":"https://app-sandbox.kobana.com.br/welcome?email=user%40example.com\\u0026token=xxx","email":"user@example.com","account_type":null,"first_name":null,"middle_name":null,"last_name":null,"full_name":null,"cpf":null,"date_of_birth":null,"mother_name":null,"father_name":null,"account_level":0,"phone_number":null,"address_street_name":null,"address_number":null,"address_complement":null,"address_neighborhood":null,"address_postal_code":null,"address_city_name":null,"address_state":null,"business_name":null,"business_cnpj":null,"business_legal_name":null}
 </pre>
 </div>
 <div class="tab-pane" id="ruby">
@@ -70,7 +70,7 @@ BoletoSimples::Extra.userinfo
 <pre class="ruby">
 {
 "id": 1,
-"login_url": "https://sandbox.boletosimples.com.br/welcome?email=user%40example.com&token=xxx",
+"login_url": "https://app-sandbox.kobana.com.br/welcome?email=user%40example.com&token=xxx",
 "email": "user@example.com",
 "account_type": null,
 "first_name": null,
@@ -112,7 +112,7 @@ BoletoSimples\\Extra::userinfo();
 Array
 \(
 \[id\] => 1
-\[login_url\] => https://sandbox.boletosimples.com.br/welcome?email=user%40example.com&token=xxx
+\[login_url\] => https://app-sandbox.kobana.com.br/welcome?email=user%40example.com&token=xxx
 \[email\] => user@example.com
 \[account_type\] =>
 \[first_name\] =>
@@ -157,7 +157,7 @@ curl -i \
 -H "Authorization: Bearer tokeninvalido" \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X GET 'https://sandbox.boletosimples.com.br/api/v1/userinfo'
+-X GET 'https://api-sandbox.kobana.com.br/v1/userinfo'
 </pre>
 
     <small>Resposta:</small>
@@ -185,7 +185,7 @@ BoletoSimples::Extra.userinfo
     <small>Resposta:</small>
 
 <pre class="bash">
-BoletoSimples::ResponseError: 401 GET https://sandbox.boletosimples.com.br/api/v1/userinfo.json (Você precisa se logar ou registrar antes de prosseguir.)
+BoletoSimples::ResponseError: 401 GET https://api-sandbox.kobana.com.br/v1/userinfo.json (Você precisa se logar ou registrar antes de prosseguir.)
 \(See full trace by running task with --trace)
 </pre>
 </div>

@@ -155,7 +155,7 @@ curl -i \
   -H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
   -H 'Content-Type: application/json' \
   -H 'User-Agent: MyApp (myapp@example.com)' \
-  -X GET 'https://sandbox.boletosimples.com.br/api/v1/bank_billet_registrations?page=1&per_page=50'
+  -X GET 'https://api-sandbox.kobana.com.br/v1/bank_billet_registrations?page=1&per_page=50'
 </pre>
 
     <small>Resposta:</small>
@@ -206,7 +206,7 @@ curl -i \
 -H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X GET 'https://sandbox.boletosimples.com.br/api/v1/bank_billet_registrations/1'
+-X GET 'https://api-sandbox.kobana.com.br/v1/bank_billet_registrations/1'
 </pre>
 
     <small>Resposta:</small>

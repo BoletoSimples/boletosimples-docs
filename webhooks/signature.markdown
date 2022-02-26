@@ -31,7 +31,7 @@ Qualquer pessoa com acesso à Chave Secreta é capaz de forjar requisições com
 
 ### Chave Secreta do webhook
 
-Para pegar a chave secreta do webhook vá até a página dos webhooks [Minha Conta > API > Webhooks](https://boletosimples.com.br/conta/api/webhooks) e selecione o webhook em questão.
+Para pegar a chave secreta do webhook vá até a página dos webhooks [Minha Conta > API > Webhooks](https://app.kobana.com.br/conta/api/webhooks) e selecione o webhook em questão.
 
 ![](/img/webhook-show.png)
 

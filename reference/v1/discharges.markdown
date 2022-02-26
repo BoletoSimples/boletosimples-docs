@@ -59,7 +59,7 @@ curl -i \
 -H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -H 'Content-Type: multipart/form-data' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X POST 'https://sandbox.boletosimples.com.br/api/v1/discharges'
+-X POST 'https://api-sandbox.kobana.com.br/v1/discharges'
 </pre>
 
     <small>Resposta:</small>
@@ -159,7 +159,7 @@ curl -i \
 -H 'Content-Type: multipart/form-data' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
 -F "discharge[file]=@cnab240.ret" \
--X POST 'https://sandbox.boletosimples.com.br/api/v1/discharges'
+-X POST 'https://api-sandbox.kobana.com.br/v1/discharges'
 </pre>
 
     <small>Resposta:</small>
@@ -169,7 +169,7 @@ HTTP/1.1 201 Created
 Server: Cowboy
 Connection: keep-alive
 Strict-Transport-Security: max-age=2592000
-Location: https://sandbox.boletosimples.com.br/api/v1/discharges/1
+Location: https://api-sandbox.kobana.com.br/v1/discharges/1
 Content-Type: application/json; charset=utf-8
 ...
 
@@ -298,7 +298,7 @@ curl -i \
 -H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X GET 'https://sandbox.boletosimples.com.br/api/v1/discharges/1'
+-X GET 'https://api-sandbox.kobana.com.br/v1/discharges/1'
 </pre>
 
     <small>Resposta:</small>
@@ -673,7 +673,7 @@ Array
   -H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
   -H 'Content-Type: application/json' \
   -H 'User-Agent: MyApp (myapp@example.com)' \
-  -X GET 'https://sandbox.boletosimples.com.br/api/v1/discharges/1/download'
+  -X GET 'https://api-sandbox.kobana.com.br/v1/discharges/1/download'
   </pre>
 
       <small>Resposta:</small>
@@ -799,7 +799,7 @@ curl -i \
 -H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X GET "https://sandbox.boletosimples.com.br/api/v1/discharges?page=1&per_page=50"
+-X GET "https://api-sandbox.kobana.com.br/v1/discharges?page=1&per_page=50"
 </pre>
 
     <small>Resposta:</small>
@@ -844,8 +844,8 @@ CNABs Retornadas: 3
 Total: 3
 Primeira Página:
 Página Anterior:
-Próxima Página: https://sandbox.boletosimples.com.br/api/v1/discharges?page=2&per_page=2
-Última Página: https://sandbox.boletosimples.com.br/api/v1/discharges?page=2&per_page=2
+Próxima Página: https://api-sandbox.kobana.com.br/v1/discharges?page=2&per_page=2
+Última Página: https://api-sandbox.kobana.com.br/v1/discharges?page=2&per_page=2
 </pre>
   </div> -->
   <!-- <div class="tab-pane" id="php6">
@@ -868,8 +868,8 @@ CNABs Retornados: 2
 Total: 9
 Primeira Página:
 Página Anterior:
-Próxima Página: https://sandbox.boletosimples.com.br/api/v1/discharges?page=2&per_page=2
-Última Página: https://sandbox.boletosimples.com.br/api/v1/discharges?page=5&per_page=2
+Próxima Página: https://api-sandbox.kobana.com.br/v1/discharges?page=2&per_page=2
+Última Página: https://api-sandbox.kobana.com.br/v1/discharges?page=5&per_page=2
 </pre>
   </div> -->
 </div>
@@ -898,7 +898,7 @@ curl -i \
 -H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X PUT 'https://sandbox.boletosimples.com.br/api/v1/discharges/1/pay_off'
+-X PUT 'https://api-sandbox.kobana.com.br/v1/discharges/1/pay_off'
 </pre>
 
     <small>Resposta:</small>
@@ -1001,7 +1001,7 @@ curl -i \
 -H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X PUT 'https://sandbox.boletosimples.com.br/api/v1/discharges/1/reprocess'
+-X PUT 'https://api-sandbox.kobana.com.br/v1/discharges/1/reprocess'
 </pre>
 
     <small>Resposta:</small>

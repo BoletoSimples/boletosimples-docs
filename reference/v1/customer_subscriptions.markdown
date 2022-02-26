@@ -167,7 +167,7 @@ curl -i \
 -d '{"customer_subscription":{}}' \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X POST 'https://sandbox.boletosimples.com.br/api/v1/customer_subscriptions'
+-X POST 'https://api-sandbox.kobana.com.br/v1/customer_subscriptions'
 </pre>
 
     <small>Resposta:</small>
@@ -267,7 +267,7 @@ curl -i \
 -d '{"customer_subscription":{"customer_id":"1", "bank_billet_account_id": "1", "amount": "1.120,4", "cycle": "monthly", "description": "Hospedagem"}}' \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X POST 'https://sandbox.boletosimples.com.br/api/v1/customer_subscriptions'
+-X POST 'https://api-sandbox.kobana.com.br/v1/customer_subscriptions'
 </pre>
 
     <small>Resposta:</small>
@@ -276,7 +276,7 @@ curl -i \
 HTTP/1.1 201 Created
 Date: Fri, 17 Oct 2014 19:30:06 GMT
 Status: 201 Created
-Location: https://sandbox.boletosimples.com.br/api/v1/customer_subscriptions/1
+Location: https://api-sandbox.kobana.com.br/v1/customer_subscriptions/1
 Content-Type: application/json; charset=utf-8
 ...
 
@@ -433,7 +433,7 @@ curl -i \
 -H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X GET 'https://sandbox.boletosimples.com.br/api/v1/customer_subscriptions/1'
+-X GET 'https://api-sandbox.kobana.com.br/v1/customer_subscriptions/1'
 </pre>
 
     <small>Resposta:</small>
@@ -562,7 +562,7 @@ curl -i \
 -d '{"customer_subscription":{"amount":""}}' \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X PATCH 'https://sandbox.boletosimples.com.br/api/v1/customer_subscriptions/1'
+-X PATCH 'https://api-sandbox.kobana.com.br/v1/customer_subscriptions/1'
 </pre>
 
     <small>Resposta:</small>
@@ -657,7 +657,7 @@ curl -i \
 -d '{"customer_subscription":{"amount":"120,40"}}' \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X PUT 'https://sandbox.boletosimples.com.br/api/v1/customer_subscriptions/1'
+-X PUT 'https://api-sandbox.kobana.com.br/v1/customer_subscriptions/1'
 </pre>
 
     <small>Resposta:</small>
@@ -669,7 +669,7 @@ Connection: keep-alive
 Status: 204 No Content
 Cache-Control: no-cache
 X-Ratelimit-Limit: 500
-Location: https://sandbox.boletosimples.com.br/api/v1/customer_subscriptions/1
+Location: https://api-sandbox.kobana.com.br/v1/customer_subscriptions/1
 </pre>
   </div>
  <!--
@@ -785,7 +785,7 @@ curl -i \
 -H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X GET "https://sandbox.boletosimples.com.br/api/v1/customer_subscriptions?page=1&per_page=50"
+-X GET "https://api-sandbox.kobana.com.br/v1/customer_subscriptions?page=1&per_page=50"
 </pre>
 
     <small>Resposta:</small>
@@ -794,7 +794,7 @@ curl -i \
 HTTP/1.1 200 OK
 Date: Fri, 17 Oct 2014 19:46:16 GMT
 Status: 200 OK
-Link: <https://sandbox.boletosimples.com.br/api/v1/customer_subscriptions?page=3&per_page=50>; rel="last", <https://sandbox.boletosimples.com.br/api/v1/customer_subscriptions?page=2&per_page=50>; rel="next"
+Link: <https://api-sandbox.kobana.com.br/v1/customer_subscriptions?page=3&per_page=50>; rel="last", <https://api-sandbox.kobana.com.br/v1/customer_subscriptions?page=2&per_page=50>; rel="next"
 Total: 101
 Content-Type: application/json; charset=utf-8
 ...
@@ -850,8 +850,8 @@ Assinaturas Retornados: 2
 Total: 9
 Primeira Página:
 Página Anterior:
-Próxima Página: https://sandbox.boletosimples.com.br/api/v1/customer_subscriptions?page=2&per_page=2
-Última Página: https://sandbox.boletosimples.com.br/api/v1/customer_subscriptions?page=5&per_page=2
+Próxima Página: https://api-sandbox.kobana.com.br/v1/customer_subscriptions?page=2&per_page=2
+Última Página: https://api-sandbox.kobana.com.br/v1/customer_subscriptions?page=5&per_page=2
 </pre>
   </div>
   <div class="tab-pane" id="php6">
@@ -874,8 +874,8 @@ Assinaturas Retornados: 2
 Total: 9
 Primeira Página:
 Página Anterior:
-Próxima Página: https://sandbox.boletosimples.com.br/api/v1/customer_subscriptions?page=2&per_page=2
-Última Página: https://sandbox.boletosimples.com.br/api/v1/customer_subscriptions?page=5&per_page=2
+Próxima Página: https://api-sandbox.kobana.com.br/v1/customer_subscriptions?page=2&per_page=2
+Última Página: https://api-sandbox.kobana.com.br/v1/customer_subscriptions?page=5&per_page=2
 </pre>
   </div>
   -->
@@ -902,7 +902,7 @@ curl -i \
 -H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X POST 'https://sandbox.boletosimples.com.br/api/v1/customer_subscriptions/1/next_charge'
+-X POST 'https://api-sandbox.kobana.com.br/v1/customer_subscriptions/1/next_charge'
 </pre>
 
     <small>Resposta:</small>
@@ -1031,7 +1031,7 @@ Nenhum boleto gerado pela assinatura será excluído.
 curl -i \
 -H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X DELETE 'https://sandbox.boletosimples.com.br/api/v1/customer_subscriptions/1'
+-X DELETE 'https://api-sandbox.kobana.com.br/v1/customer_subscriptions/1'
 </pre>
 
     <small>Resposta:</small>

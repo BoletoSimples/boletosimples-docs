@@ -161,7 +161,7 @@ curl -i \
 -H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X GET "https://sandbox.boletosimples.com.br/api/v1/report/bank_billets?created_from=2019-10-01"
+-X GET "https://api-sandbox.kobana.com.br/v1/report/bank_billets?created_from=2019-10-01"
 </pre>
 
     <small>Resposta:</small>
