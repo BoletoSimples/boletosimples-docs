@@ -2,41 +2,42 @@
 @import url("sidr.css");
 @import url("bootstrap.min.css");
 @import url("fontface.css");
-@import url("kobana-banner.css");
 
 /* Main */
 
 .containner {
-  width: 100%;
-  max-width: 1100px;
-  margin: auto;
+    width: 100%;
+    max-width: 1100px;
+    margin: auto;
 }
 
 a {
-  text-decoration: none !important;
+    text-decoration: none !important;
 }
 
 .half {
-  display: inline-block;
-  padding-top: 30px;
-  text-align: center;
-  vertical-align: middle;
-  width: calc(100% / 2.1);
+    display: inline-block;
+    padding-top: 30px;
+    text-align: center;
+    vertical-align: middle;
+    width: calc(100% / 2.1);
 }
 
-*, *:before, *:after {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+*,
+*:before,
+*:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 body {
-  background: white;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-  color: #4d4d4d;
-  font-family: "Open Sans", Arial, Helvetica, sans-serif;
-  font-size: 16px;
+    background: white;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    color: #4d4d4d;
+    font-family: "Open Sans", Arial, Helvetica, sans-serif;
+    font-size: 16px;
 }
 
 h1,
@@ -45,237 +46,252 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "proxima-nova-soft", Helvetica, Arial, sans-serif;
+    font-family: "proxima-nova-soft", Helvetica, Arial, sans-serif;
 }
 
 h4 {
-  line-height: 20px;
-  text-transform: uppercase;
+    line-height: 20px;
+    text-transform: uppercase;
 }
 
 h5 {
-  border-bottom: 1px solid #ccc;
-  padding-bottom: 10px;
-  margin: 20px 0 0 0;
-  text-transform: uppercase;
-  font-weight: bold;
-  color: #999;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    margin: 20px 0 0 0;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #999;
 }
 
 .button {
-  background: #008de4;
-  color: white;
-  border-radius: 3px;
-  font-size: 1.05em;
-  letter-spacing: 0.06em;
-  padding: 15px 40px;
-  text-transform: uppercase;
+    background: #008de4;
+    color: white;
+    border-radius: 3px;
+    font-size: 1.05em;
+    letter-spacing: 0.06em;
+    padding: 15px 40px;
+    text-transform: uppercase;
 }
 
 .button:hover {
-  background: rgba(0, 141, 228, 0.8);
-  text-decoration: none;
-  color: white;
+    background: rgba(0, 141, 228, 0.8);
+    text-decoration: none;
+    color: white;
 }
 
 .btn {
-  border: none;
-  padding: 10px 20px;
+    border: none;
+    padding: 10px 20px;
 }
 
 .btn-primary {
-  background: #008de4;
+    background: #008de4;
 }
 
 .icon-bar {
-  background-color: #fff;
-  border-radius: 1px;
-  display: block;
-  height: 2px;
-  margin: 3px 0;
-  width: 22px;
+    background-color: #fff;
+    border-radius: 1px;
+    display: block;
+    height: 2px;
+    margin: 3px 0;
+    width: 22px;
 }
 
 .nav-tabs {
-  width: 100%;
-  float: left;
-  margin-bottom: 20px;
+    width: 100%;
+    float: left;
+    margin-bottom: 20px;
 }
 
 
 /* Content */
 
 article.content {
-  margin: 40px 0 40px 240px;
+    margin: 40px 0 40px 240px;
 }
 
-article .breadcrumb { margin-top: 30px; }
+article .breadcrumb {
+    margin-top: 30px;
+}
 
 article h2 {
-  color: #62a4cf;
-  font-size: 30px;
-  font-weight: 600;
+    color: #62a4cf;
+    font-size: 30px;
+    font-weight: 600;
 }
 
 article h3 {
-  color: #393939;
-  font-family: 'proxima_nova_rgbold';
-  font-size: 22px;
+    color: #393939;
+    font-family: 'proxima_nova_rgbold';
+    font-size: 22px;
 }
 
-h3 + table { margin: 0 0 35px 0 !important; }
+h3+table {
+    margin: 0 0 35px 0 !important;
+}
 
 article h4 {
-  color: #393939;
-  font-family: 'proxima_nova_rgbold';
-  font-size: 16px;
-  margin-top: 20px;
-  margin-bottom: 10px;
+    color: #393939;
+    font-family: 'proxima_nova_rgbold';
+    font-size: 16px;
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
 
 article code {
-  background-color: rgba(0,0,0,0.04);
-  border: 1px solid #ddd;
-  color: #666;
-  font-family: Monaco,"DejaVu Sans Mono","Courier New",monospace;
-  font-size: 85%;
-  padding: 0.2em;
-  border-radius: 3px;
+    background-color: rgba(0, 0, 0, 0.04);
+    border: 1px solid #ddd;
+    color: #666;
+    font-family: Monaco, "DejaVu Sans Mono", "Courier New", monospace;
+    font-size: 85%;
+    padding: 0.2em;
+    border-radius: 3px;
 }
 
-article small { text-transform: uppercase; }
+article small {
+    text-transform: uppercase;
+}
 
-article pre { padding:0; }
+article pre {
+    padding: 0;
+}
 
 article h4 {
-  color: #393939;
-  font-family: 'proxima_nova_rgbold';
-  font-size: 14px;
-  margin: 20px 0 10px 0;
+    color: #393939;
+    font-family: 'proxima_nova_rgbold';
+    font-size: 14px;
+    margin: 20px 0 10px 0;
 }
 
 article strong,
 article b {
-  font-family: 'proxima_nova_rgbold';
+    font-family: 'proxima_nova_rgbold';
 }
 
 article img {
-  max-width: 100%;
-  border: 1px solid #DDD;
+    max-width: 100%;
+    border: 1px solid #DDD;
 }
 
 article p,
 article li {
-  line-height: 25px;
+    line-height: 25px;
 }
 
 article a {
-  color: #4f8db5;
+    color: #4f8db5;
 }
 
 
 /* Sidebar */
 
 aside {
-  width: 210px;
-  float: left;
-  margin: 0 0 40px 0;
-  border-right: solid 1px #ecf0f1;
+    width: 210px;
+    float: left;
+    margin: 0 0 40px 0;
+    border-right: solid 1px #ecf0f1;
 }
 
 #sidr {
-  display: none;
+    display: none;
 }
 
 aside ul,
 .sidr ul {
-  padding: 0;
-  margin: 0;
+    padding: 0;
+    margin: 0;
 }
 
 aside li,
 .sidr li {
-  list-style-type: none;
-  margin-bottom: 8px;
+    list-style-type: none;
+    margin-bottom: 8px;
 }
 
 aside a,
 #sidr a {
-  font-size: 14px;
-  color: #666;
+    font-size: 14px;
+    color: #666;
 }
 
-.main-link, .main-link-subnav {
-  font-weight: bold;
+.main-link,
+.main-link-subnav {
+    font-weight: bold;
 }
 
-.active .main-link, .active .main-link-subnav {
-  color: #62a4cf;
+.active .main-link,
+.active .main-link-subnav {
+    color: #62a4cf;
 }
 
-.subnav, .subnav-subnav {
-  padding-left: 15px !important;
-  margin-bottom: 15px !important;
+.subnav,
+.subnav-subnav {
+    padding-left: 15px !important;
+    margin-bottom: 15px !important;
 }
 
 
 /* Panel */
 
-.panel { border: solid 1px #cccccc; }
+.panel {
+    border: solid 1px #cccccc;
+}
 
 .panel pre {
-  margin: 0;
+    margin: 0;
 }
 
 .panel small {
-  display: inline-block;
-  margin: 20px 0 0 0;
+    display: inline-block;
+    margin: 20px 0 0 0;
 }
 
 table small {
-  margin: 0 !important;
-  text-transform: none;
+    margin: 0 !important;
+    text-transform: none;
 }
 
 .panel .panel-heading {
-  background: #2a86c1;
-  border-bottom: solid 1px #cccccc;
-  border-radius: 4px 4px 0 0;
-  padding: 20px 15px;
+    background: #2a86c1;
+    border-bottom: solid 1px #cccccc;
+    border-radius: 4px 4px 0 0;
+    padding: 20px 15px;
 }
 
 .panel .panel-heading p {
-  color: #fff;
-  margin: 0;
-  text-transform: uppercase;
+    color: #fff;
+    margin: 0;
+    text-transform: uppercase;
 }
 
-.tab-content { margin: 15px 0 30px 0; }
+.tab-content {
+    margin: 15px 0 30px 0;
+}
 
 
 /* Generic call */
 
 .generic-call {
-  background: #008de4;
-  padding: 40px 0;
+    background: #008de4;
+    padding: 40px 0;
 }
 
 .generic-call .containner {
-  position: relative;
+    position: relative;
 }
 
 .generic-call h1 {
-  color: #fff;
-  text-align: left;
-  text-transform: uppercase;
-  font-family: 'PT Sans Narrow', sans-serif;
-  margin: 0;
-  font-size: 2.4em;
-  text-align: left;
+    color: #fff;
+    text-align: left;
+    text-transform: uppercase;
+    font-family: 'PT Sans Narrow', sans-serif;
+    margin: 0;
+    font-size: 2.4em;
+    text-align: left;
 }
 
 #simple-menu {
-  display: none;
+    display: none;
 }
 
 
@@ -285,35 +301,29 @@ Media Queries for Tablets.
 ------------------------------------------------------------------------------*/
 
 @media (max-width: 960px) {
-
-  .containner {
-    width: 94% !important;
-  }
-
-  #main-header .logo {
-    margin-top: 21px;
-  }
-
-  #main-header .logo img {
-    width: 120px;
-  }
-
-  #main-header nav li {
-    margin-left: 10px;
-  }
-
-  .sitemap .column {
-    width: 170px;
-    margin-bottom: 40px;
-    float: left;
-  }
-
-  .more-infos li {
-    margin-right: 0;
-    margin-bottom: 8px;
-    margin-top: 0;
-    display: block;
-  }
+    .containner {
+        width: 94% !important;
+    }
+    #main-header .logo {
+        margin-top: 21px;
+    }
+    #main-header .logo img {
+        width: 120px;
+    }
+    #main-header nav li {
+        margin-left: 10px;
+    }
+    .sitemap .column {
+        width: 170px;
+        margin-bottom: 40px;
+        float: left;
+    }
+    .more-infos li {
+        margin-right: 0;
+        margin-bottom: 8px;
+        margin-top: 0;
+        display: block;
+    }
 }
 
 
@@ -322,199 +332,166 @@ Max Width, 686px
 Media Queries for Smartphones.
 ------------------------------------------------------------------------------*/
 
+
 /* Changed from 686px to 810px because that size the menu doesn't fit in screen */
+
 @media only screen and (max-width: 810px) {
-
-  #sidr {
-    display: block;
-  }
-
-  .containner {
-    width: 94% !important;
-  }
-
-  #simple-menu {
-    display: inline-block;
-    left: 0;
-    top: -20px;
-    position: absolute;
-    font-size: 40px;
-    color: #fff;
-  }
-
-  .generic-call h1 {
-    margin-left: 50px;
-    font-size: 1.2em;
-  }
-
-  tr {
-    font-size: 12px;
-  }
-
-  tr th {
-    font-size: 10px;
-    text-transform: uppercase;
-  }
-
-  tr code {
-    font-size: 8px;
-  }
-
-  article.content {
-    margin: 30px 0 35px 0;
-  }
-
-  aside {
-    width: 100%;
-    float: none;
-    border-right: none;
-    display: none;
-  }
-
-  #main-header {
-    height: auto;
-    min-height: 69px;
-  }
-
-  #menu-trigger {
-    border-radius: 4px;
-    width: 34px;
-    height: 34px;
-    line-height: 34px;
-    background: #008de4;
-    display: inline-block;
-    text-align: center;
-    outline: none;
-    position: absolute;
-    font-weight: bold;
-    font-size: 1.4em;
-    top: 14px;
-    color: #fff;
-    right: 0;
-  }
-
-  .login-trigger,
-  .signup-trigger,
-  .new-account-link {
-    right: 44px;
-  }
-
-  #login-dropdown {
-    width: 100%;
-    display: none;
-    position: inherit;
-    padding-bottom: 12px;
-    right: none;
-    top: none;
-    float: left;
-  }
-
-  #login-dropdown form {
-    height: auto;
-    padding-right: 0;
-    text-align: left;
-    padding-bottom: 0;
-  }
-
-  #login-dropdown input[type="email"],
-  #login-dropdown input[type="password"] {
-    width: 100%;
-    padding: 0 2%;
-  }
-
-  #login-dropdown input[type="password"] {
-    margin-top: 5px;
-  }
-
-  #login-dropdown input[type="submit"] {
-    right: 5%;
-  }
-
-  #main-header nav.signup ul {
-    padding: 0;
-  }
-
-  #main-header nav ul {
-    width: 100%;
-    padding: 0;
-    margin: 12px 0;
-    display: none;
-  }
-
-  #main-header nav li {
-    margin-left: 0;
-    width: 100%;
-    display: block;
-    height: 34px;
-    line-height: 34px;
-    padding: 0 7px;
-  }
-
-  #main-header nav li a {
-    right: 80px;
-    display: block;
-    padding: 0 7px;
-    margin: -1px -10px 0 -10px;
-    height: 34px;
-    line-height: 34px;
-    border: 1px solid $gray;
-    background: #f8f8f8;
-  }
-
-  #main-header nav .button {
-    right: 70px;
-  }
-
-  .content table {
-    width: 100% !important;
-  }
-
-  article h2 {
-    font-size: 20px;
-  }
-
-  article p,
-  article li {
-    font-size: 15px;
-    line-height: 21px;
-  }
-
-  article li {
-    margin-bottom: 5px;
-  }
-
-  .sitemap {
-    padding: 10px 0 40px 0;
-  }
-
-  .sitemap h4 {
-    margin: 30px 0 15px 0;
-  }
-
-  .sitemap li {
-    border-top: 1px solid #eee;
-    margin-top: 12px;
-    padding-top: 12px;
-  }
-
-  .sitemap li:first-child {
-    padding-top: 0;
-    border-top: none;
-  }
-
-  .sitemap .column {
-    width: 100%;
-    margin-bottom: 0;
-    float: none;
-  }
-
-  .more-infos p {
-    line-height: 21px;
-  }
-
+    #sidr {
+        display: block;
+    }
+    .containner {
+        width: 94% !important;
+    }
+    #simple-menu {
+        display: inline-block;
+        left: 0;
+        top: -20px;
+        position: absolute;
+        font-size: 40px;
+        color: #fff;
+    }
+    .generic-call h1 {
+        margin-left: 50px;
+        font-size: 1.2em;
+    }
+    tr {
+        font-size: 12px;
+    }
+    tr th {
+        font-size: 10px;
+        text-transform: uppercase;
+    }
+    tr code {
+        font-size: 8px;
+    }
+    article.content {
+        margin: 30px 0 35px 0;
+    }
+    aside {
+        width: 100%;
+        float: none;
+        border-right: none;
+        display: none;
+    }
+    #main-header {
+        height: auto;
+        min-height: 69px;
+    }
+    #menu-trigger {
+        border-radius: 4px;
+        width: 34px;
+        height: 34px;
+        line-height: 34px;
+        background: #008de4;
+        display: inline-block;
+        text-align: center;
+        outline: none;
+        position: absolute;
+        font-weight: bold;
+        font-size: 1.4em;
+        top: 14px;
+        color: #fff;
+        right: 0;
+    }
+    .login-trigger,
+    .signup-trigger,
+    .new-account-link {
+        right: 44px;
+    }
+    #login-dropdown {
+        width: 100%;
+        display: none;
+        position: inherit;
+        padding-bottom: 12px;
+        right: none;
+        top: none;
+        float: left;
+    }
+    #login-dropdown form {
+        height: auto;
+        padding-right: 0;
+        text-align: left;
+        padding-bottom: 0;
+    }
+    #login-dropdown input[type="email"],
+    #login-dropdown input[type="password"] {
+        width: 100%;
+        padding: 0 2%;
+    }
+    #login-dropdown input[type="password"] {
+        margin-top: 5px;
+    }
+    #login-dropdown input[type="submit"] {
+        right: 5%;
+    }
+    #main-header nav.signup ul {
+        padding: 0;
+    }
+    #main-header nav ul {
+        width: 100%;
+        padding: 0;
+        margin: 12px 0;
+        display: none;
+    }
+    #main-header nav li {
+        margin-left: 0;
+        width: 100%;
+        display: block;
+        height: 34px;
+        line-height: 34px;
+        padding: 0 7px;
+    }
+    #main-header nav li a {
+        right: 80px;
+        display: block;
+        padding: 0 7px;
+        margin: -1px -10px 0 -10px;
+        height: 34px;
+        line-height: 34px;
+        border: 1px solid $gray;
+        background: #f8f8f8;
+    }
+    #main-header nav .button {
+        right: 70px;
+    }
+    .content table {
+        width: 100% !important;
+    }
+    article h2 {
+        font-size: 20px;
+    }
+    article p,
+    article li {
+        font-size: 15px;
+        line-height: 21px;
+    }
+    article li {
+        margin-bottom: 5px;
+    }
+    .sitemap {
+        padding: 10px 0 40px 0;
+    }
+    .sitemap h4 {
+        margin: 30px 0 15px 0;
+    }
+    .sitemap li {
+        border-top: 1px solid #eee;
+        margin-top: 12px;
+        padding-top: 12px;
+    }
+    .sitemap li:first-child {
+        padding-top: 0;
+        border-top: none;
+    }
+    .sitemap .column {
+        width: 100%;
+        margin-bottom: 0;
+        float: none;
+    }
+    .more-infos p {
+        line-height: 21px;
+    }
 }
-
-
 
 
 /**
@@ -523,55 +500,55 @@ KOBANA BANNER
 */
 
 .kobana-banner {
-  background: #000 url("../img/kobana.png") bottom right no-repeat;
-  background-size: 40%;
-  min-height: 300px;
+    background: #000 url("../img/kobana.png") bottom right no-repeat;
+    background-size: 40%;
+    min-height: 300px;
 }
 
 @media only screen and (max-width: 800px) {
-  .kobana-banner {
-    min-height: 200px;
-    background-size: 50%;
-  }
+    .kobana-banner {
+        min-height: 200px;
+        background-size: 50%;
+    }
 }
 
 .kobana-banner::after {
-  content: "";
-  clear: both;
-  display: table;
+    content: "";
+    clear: both;
+    display: table;
 }
 
 .col-01 {
-  width: 47%;
-  float: left;
+    width: 47%;
+    float: left;
 }
 
 @media only screen and (max-width: 800px) {
-  .col-01 {
-    width: 100%;
-  }
+    .col-01 {
+        width: 100%;
+    }
 }
 
 .col-01 h1 {
-  color: #D3FD54;
-  font-weight: bold;
-  margin: 35px 0 15px 0;
+    color: #D3FD54;
+    font-weight: bold;
+    margin: 35px 0 15px 0;
 }
 
 @media only screen and (max-width: 800px) {
-  .col-01 h1 {
-    font-size: 25px;
-  }
+    .col-01 h1 {
+        font-size: 25px;
+    }
 }
 
 .col-01 p {
-  color: #fff;
+    color: #fff;
 }
 
 @media only screen and (max-width: 800px) {
-  .col-01 p {
-    display: none;
-  }
+    .col-01 p {
+        display: none;
+    }
 }
 
 .col-01 a {
