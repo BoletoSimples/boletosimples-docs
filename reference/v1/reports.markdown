@@ -1,7 +1,7 @@
 ---
 title: Relatórios
 position: 2
-en: '/en/reference'
+en: "/en/reference"
 breadcrumb: Relatórios
 layout: pt
 ---
