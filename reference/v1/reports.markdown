@@ -1,21 +1,21 @@
 ---
 title: Relatórios
 position: 2
-en: "/en/reference"
+en: '/en/reference'
 breadcrumb: Relatórios
 layout: pt
 ---
 
 ## Relatórios
 
-| Recurso                  | Descrição
+| Recurso | Descrição
 | [GET /api/v1/reports/bank_billet](#contagem-de-boletos) | Contagem de boletos
 
 ### Modelo de Dados
 
-| **Parâmetro**                   | **Tipo** | **Tamanho** | **Descrição**
-| **bank_billet_account_id**      | Integer  |             | ID da [Carteira de Cobrança](/reference/v1/bank_billet_accounts/). Se não informado, usará a carteira padrão.
-| **bank_billet_count**           | Integer  |             | Quantidade de boletos.
+| **Parâmetro** | **Tipo** | **Tamanho** | **Descrição**
+| **bank_billet_account_id** | Integer | | ID da [Carteira de Cobrança](/reference/v1/bank_billet_accounts/). Se não informado, usará a carteira padrão.
+| **bank_billet_count** | Integer | | Quantidade de boletos.
 
 ### Contagem de boletos
 
@@ -161,7 +161,7 @@ curl -i \
 -H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
 -H 'Content-Type: application/json' \
 -H 'User-Agent: MyApp (myapp@example.com)' \
--X GET "https://api-sandbox.kobana.com.br/v1/report/bank_billets?created_from=2019-10-01"
+-X GET "https://api-sandbox.kobana.com.br/v1/reports/bank_billets?created_from=2019-10-01"
 </pre>
 
     <small>Resposta:</small>
